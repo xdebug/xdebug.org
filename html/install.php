@@ -64,7 +64,7 @@ case you want to retrieve the latest stable version from CVS, use the following
 checkout line:
 </p>
 <pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r XDEBUG_1_3 xdebug
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r xdebug_1_3 xdebug
 </pre>
 
 <a name="compile"></a>
