@@ -131,8 +131,8 @@ for example the Apache 2 work MPM or the the ISAPI module)</li>
 <li>Restart your webserver.</li>
 
 <li>Write a PHP page that calls "<i>phpinfo()</i>" Load it in a browser and
-look for the info on the Xdebug module.  If you see it, you have been
-successful!</li>
+look for the info on the Xdebug module.  If you see it next to the Zend logo,
+you have been successful!</li>
 </ol>
 </p>
 
@@ -141,7 +141,7 @@ successful!</li>
 <p>
 Xdebug does not work together with the Zend Optimizer or any other Zend
 extension (DBG, APC, APD etc).  This is due to compatibility problems with
-those modules. We will be working on figuring our what the problems are, and of
+those modules. We will be working on figuring out what the problems are, and of
 course try to fix those.
 </p>
 

@@ -132,6 +132,9 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 <dt><a href="#xdebug_get_function_stack">xdebug_get_function_stack()</a></dt>
 <dd>returns an array representing the current stack</dd>
 
+<dt><a href="#xdebug_get_stack_depth">xdebug_get_stack_depth()</a> [2]</dt>
+<dd>returns the stack depth</dd>
+
 </dl>
 
 <br /><br />
@@ -215,6 +218,11 @@ array(3) {
 }
 </pre>
 </dd>
+
+<a name='xdebug_get_stack_depth'></a>
+<dt>integer xdebug_get_stack_depth() (Xdebug 2)</dt>
+<dd>Returns the stack depth level. The main body of a script is level 0 and
+each include and/or function call adds one to the stack depth level.</dd>
 
 <a name='xdebug_call_class'></a>
 <a name='xdebug_call_function'></a>

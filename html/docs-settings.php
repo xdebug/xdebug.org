@@ -100,7 +100,7 @@ calls. If Xdebug is configured to generate computer-readable trace files then
 they will always show this information.</dd>
 
 <a name="max_nesting_level"></a>
-<dt>xdebug.max_nesting_level [integer] (default: 64)</dt>
+<dt>xdebug.max_nesting_level [integer] (default: 64 in Xdebug 1, 100 in Xdebug 2)</dt>
 <dd>Controls the protection mechanism for infinite recursion protection. The
 value of this setting is the maximum level of nested functions that are allowed
 before the script will be aborted.</dd>
