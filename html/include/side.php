@@ -4,19 +4,21 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[06-04-2003]</dt>
+<dt>[30-06-2003]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug131', 'xdebug 1.3.1'); ?></li>
+<li><?php url ('xdebug132', 'xdebug 1.3.2'); ?></li>
 </ul>
 <br />
 
+<!--
 Modules for 4.3.x (binary):
 <ul class="status">
 <li><?php url ('xdebug131-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
 </ul>
 <br />
+-->
 
 Debug client 0.7.0 (binary):
 <ul class="status">
@@ -68,6 +70,7 @@ Modules for 5.0.0dev:
 <dd>
 Source:
 <ul class="status">
+<li><?php url ('xdebug131', 'Xdebug 1.3.1'); ?></li>
 <li><?php url ('xdebug130', 'Xdebug 1.3.0'); ?></li>
 <li><?php url ('xdebug120', 'Xdebug 1.2.0'); ?></li>
 <li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>

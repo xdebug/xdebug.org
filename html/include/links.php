@@ -50,6 +50,8 @@
 		'xdebug131' => 'http://www.xdebug.org/files/xdebug-1.3.1.tgz',
 		'xdebug131-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-1.3.1.dll',
 
+		'xdebug132' => 'http://www.xdebug.org/files/xdebug-1.3.2.tgz',
+
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',

@@ -42,6 +42,10 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[30-06-2004]</dt>
+<dd class="main">Xdebug version 1.3.2 has been released. This release will
+compile against the latest CVS of PHP 5 again.</dd>
+
 <dt class="main">[06-04-2004]</dt>
 <dd class="main">Xdebug version 1.3.1 has been released. This release just
 includes some small bugfixes:

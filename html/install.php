@@ -50,7 +50,7 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">INSTALLATION FROM SOURCE</span><br />
 
 <p>
-You can download the source of the latest <b>stable</b> release <?php url ('xdebug131', 'here'); ?>.
+You can download the source of the latest <b>stable</b> release <?php url ('xdebug132', 'here'); ?>.
 Alternatively you can obtain Xdebug from CVS:
 </p>
 <pre>
@@ -191,19 +191,20 @@ course try to fix those.
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
 		<td class="ctr">1.3.1</td>
+	</tr>
 	<tr>
-		<th class="ctr">4.3.7</th>
+		<th class="ctr">4.3.7-4.3.8</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">2.0.0-cvs</td>
+		<td class="ctr">1.3.2 / 2.0.0-cvs</td>
 	</tr>
 	<tr>
 		<th class="ctr">5.0.0rc3</th>
 		<td class="ctr">20031224</td>
 		<td class="ctr">20040412</td>
 		<td class="ctr">220040412</td>
-		<td class="ctr">2.0.0-cvs</td>
+		<td class="ctr">1.3.2 / 2.0.0-cvs</td>
 	</tr>
 </table>
 <br/>
