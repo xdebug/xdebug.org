@@ -29,16 +29,16 @@
 		a        { text-decoration: underline; color: #116633; }
 		a:hover  { color: #004411 }
 		
-		p        { font-size: small; line-height: 1.5em; margin-left: 20px; }
-		.serif   { font-size: small; line-height: 1.5em; }
-		.quote   { font-size: x-small; font-family: arial; }
-        .mk      { font-size: x-small; color: #004411; font-weight: bold; }
-     	.fin	 { font-size: x-small; color: #004411; }
-        .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: bold; color: #003300; }
-        .date    { font-size: x-small; display: block; margin-bottom: 6px; }
+		p        { font-size: 8pt; line-height: 1.5em; margin-left: 20px; }
+		.serif   { font-size: 8pt; line-height: 1.5em; }
+		.quote   { font-size: 7pt; font-family: arial; }
+        .mk      { font-size: 7pt; color: #004411; font-weight: bold; }
+     	.fin	 { font-size: 7pt; color: #004411; }
+        .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: 7pt; font-weight: bold; color: #003300; }
+        .date    { font-size: 7pt; display: block; margin-bottom: 6px; }
         .sc      { font-variant: small-caps; }
         .st      { text-decoration: line-through; }
-        .copy    { font-size: x-small; line-height: 1.5em; color: #999999; }
+        .copy    { font-size: 7pt; line-height: 1.5em; color: #999999; }
 		p.center { text-align: center; }
         .pause   { font-size: medium; display: block; color: #004411;
                    margin-top: 24px; margin-bottom: 8px; text-align: center; }
@@ -57,7 +57,7 @@
 		li.green { color: #00bb00; }
 		dl.status { margin-left: -20px; padding-left: 0px; }
 		ul.status { margin-left: 25px; padding-left: 0px; }
-		dl.functionlist, dl.faq { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: normal; }
+		dl.functionlist, dl.faq { font-family: verdana, helvetica, arial, sans-serif; font-size: 7pt; font-weight: normal; }
 		dl.functionlist dt { margin-top: 3px; }
 		dl.faq dt { margin-left: 20px; margin-bottom: 5px; }
 		dl.faq dd { margin-left: 20px; margin-top: 5px; }
