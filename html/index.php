@@ -42,6 +42,10 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[29-11-2004]</dt>
+<dd class="main">Xdebug version 2.0.0beta2 has been released. This release
+<a href='/updates.php'>fixes</a> some problems in the beta1 release.</dd>
+
 <dt class="main">[15-09-2004]</dt>
 <dd class="main">Xdebug version 2 has finally reached beta status. We celebrate
 that with the release of 2.0.0beta1. For a full changelog, see the <a

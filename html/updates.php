@@ -20,6 +20,34 @@
 <span class='quote'>
 <dl>
 
+<dt>[29-11-2004]</dt>
+
+<dd><h3>Added new features</h3></dd>
+<dd>DBGP: Added error messages to returned errors (in most cases)</dd>
+  
+<dd><h3>Added new functions</h3></dd>
+<dd>xdebug_debug_zval() to debug zvals by printing its refcounts and is_ref values.</dd>
+  
+<dd><h3>Changed features</h3></dd>
+<dd>xdebug_code_coverage_stop() will now clean up the code coverage array, unless you specify FALSE as parameter.</dd>
+<dd>The proper Xdebug type is "hash" for associative arrays.</dd>
+<dd>Extended the code-coverage functionality by returning lines with executable code on them, but where not executed with a count value of -1.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>DBGP: Make property_get and property_value finally work as they should, including retrieving information from different depths then the most top stack frame.</dd>
+<dd>DBGP: Fix eval'ed $varnames in property_get.</dd>
+<dd>DBGP: Support the -d option for property_get.</dd>
+<dd>Fixed the exit handler hook to use the new "5.1" way of handling it; which fortunately also works with PHP 5.0.</dd>
+<dd>Fixed <?php bug(102); ?>: Problems with configure for automake 1.8.</dd>
+<dd>Fixed <?php bug(101); ?>: crash with set_exeception_handler() and uncatched exceptions.</dd>
+<dd>Fixed <?php bug(99); ?>: unset variables return the name as a string with property_get.</dd>
+<dd>Fixed <?php bug(98); ?>: 'longname' attribute not returned for unintialized property in context_get request.</dd>
+<dd>Fixed <?php bug(94); ?>: xdebug_sprintf misbehaves with x86_64/glibc-2.3.3</dd>
+<dd>Fixed <?php bug(93); ?>: Crash in lookup_hostname on x86_64</dd>
+<dd>Fixed <?php bug(92); ?>: xdebug_disable() doesn't disable the exception handler.</dd>
+<dd>Fixed <?php bug(68); ?>: Summary not written when script ended with "exit()".</dd>
+
+
 <dt>[15-09-2004]</dt>
 
 <dd><h3>Added new features</h3></dd>
