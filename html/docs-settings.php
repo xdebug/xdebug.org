@@ -9,8 +9,8 @@
 
 <?php include "include/menu-docs.php"; ?>
 
-<a name="debugger"></a>
-<span class="sans">PHP.INI SETTINGS</span><br />
+<a name="general"></a>
+<span class="sans">GENERAL SETTINGS</span><br />
 
 <dl>
 <dt>xdebug.auto_trace [boolean] (default: Off)</dt>
@@ -18,6 +18,12 @@
 enabled just before the script is run. This makes it possible to trace code in
 the <a
 href="http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend-file">auto_prepend_file</a>.</dd>
+
+<a name="collect_includes"></a>
+<dt>xdebug.collect_includes [boolean] (default: On) (Xdebug 2)</dt>
+<dd>This setting, defaulting to Off, controls whether Xdebug should write the
+filename used in include(), include_once(), require() or require_once() to the
+trace files.</dd>
 
 <a name="collect_params"></a>
 <dt>xdebug.collect_params [boolean] (default: Off)</dt>
@@ -27,7 +33,15 @@ function trace or the stack trace. It defaults to Off because for very large
 scripts it may use huge amounts of memory and therefore make it impossible for
 the huge script to run. You can most safely turn this setting on, but you can
 expect some problems in scripts with a lot of functioncalls and/or huge data
-structures as parameters.</dd>
+structures as parameters. Xdebug 2 will not have this problem with increased
+memory usage, as it will never store this information in memory. Instead it
+will only be written to disk. This means that you need to have a look at the
+disk usage though.</dd>
+
+<a name="collect_return"></a>
+<dt>xdebug.collect_return [boolean] (default: Off) (Xdebug 2)</dt>
+<dd>This setting, defaulting to Off, controls whether Xdebug should write the
+return value of function calls to the trace files.</dd>
 
 <dt>xdebug.default_enable [boolean] (default: On)</dt>
 <dd>If this setting is On then stacktraces will be shown by default on an error
@@ -58,6 +72,18 @@ to set this setting to use the closest mirror.</dd>
 <dd>Controls the protection mechanism for infinite recursion protection. The
 value of this setting is the maximum level of nested functions that are allowed
 before the script will be aborted.</dd>
+
+<a name="trace_output_dir"></a>
+<dt>xdebug.trace_output_dir [string] (default: /tmp) (Xdebug 2)</dt>
+<dd>The directory where the tracing files will be written to, make sure that
+the user who the PHP will be running as has write permissions to that
+directory.</dd>
+
+<a name="trace_output_name"></a>
+<dt>xdebug.trace_output_name [string] (default: crc32) (Xdebug 2)</dt>
+<dd>When set to "crc32" the middle part of a trace file name will be
+a crc32 hash of the current working directory, in all other cases 
+the Process ID of the PHP process is used here.
 </dl>
 
 <br />
@@ -109,7 +135,7 @@ profiler at the start of the script. By default, automatic is disabled.</dd>
 generate, use the integer value used to represent each profiling mode <a
 href="docs-profiling.php#retrieve">listed here</a>.</dd>
 	
-<dt>xdebug.output_dir [string] (default: /tmp)</dt>
+<dt>xdebug.output_dir [string] (default: /tmp) (Xdebug 1)</dt>
 <dd>The directory where the profiler output will be written to, make sure that
 the user who the PHP will be running as has write permissions to that
 directory. The created files will look something like this:

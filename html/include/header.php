@@ -56,6 +56,8 @@
 		li.green { color: #00bb00; }
 		dl.status { margin-left: -20px; padding-left: 0px; }
 		ul.status { margin-left: 25px; padding-left: 0px; }
+		dl.functionlist { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: normal; }
+		dl.functionlist dt { margin-top: 3px; }
 
 		dt.main { font-weight: normal; }
 		dd.main { margin-left: 20px; }
