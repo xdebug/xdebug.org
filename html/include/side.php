@@ -23,8 +23,8 @@ Modules for 4.3.0 and higher:
 Debug client 0.7.0:
 <ul class="status">
 <li><?php url ('xdebugclient-0.7.0-lnx', 'Linux'); ?></li>
-<!--<li><?php url ('xdebugclient-0.7.0-win', 'Windows'); ?></li>-->
 <li><?php url ('xdebugclient-0.7.0-f46', 'FreeBSD 4.6'); ?></li>
+<li><?php url ('xdebugclient-0.7.0-win', 'Windows'); ?></li>
 </ul>
 </dd>
 </dl>

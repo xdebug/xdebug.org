@@ -36,5 +36,6 @@
 
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
+		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
 	);
 ?>
