@@ -40,11 +40,11 @@
 
 		dt       { margin-left: 20px; margin-top: 10px; font-weight: bold; }
 		dd       { margin-left: 40px; margin-bottom: 0px; }
-		dd.red   { margin-left: 10px; margin-bottom: 10px; color: #dd0000; }
+		dd.red   { margin-left: 40px; margin-bottom: 10px; color: #dd0000; }
 		li.red   { color: #dd0000; }
-		dd.orange{ margin-left: 10px; margin-bottom: 10px; color: #ffc300; }
+		dd.orange{ margin-left: 40px; margin-bottom: 10px; color: #ffc300; }
 		li.orange{ color: #ffc300; }
-		dd.green { margin-left: 10px; margin-bottom: 10px; color: #00bb00; }
+		dd.green { margin-left: 40px; margin-bottom: 10px; color: #00bb00; }
 		li.green { color: #00bb00; }
 		dl.status { margin-left: -20px; padding-left: 0px; }
 		ul.status { margin-left: 25px; padding-left: 0px; }
