@@ -33,7 +33,8 @@ Module for 4.2.2/4.2.3:
 <span class="sans">ROADMAP</span><br />
 
 <span class='quote'>
-<dl>xdebug 1.1.0</dt>
+<dl>
+<dt>xdebug 1.1.0</dt>
 <dd class="green">Implement PHP 3 compatible debugging capabilities</dd>
 <dd class="green">Implement gdb like debugging capabilities</li>
   <ul class="status">
@@ -46,10 +47,11 @@ Module for 4.2.2/4.2.3:
   </ul>
 </dd>
 <dd class="red">Respect error_reporting value in debug output</dd>
-<dd class="red">Window compatibility</dd>
+<dd class="red">Windows compatibility</dd>
 </dl>
 
-<dl>xdebug 1.2.0</dt>
+<dl>
+<dt>xdebug 1.2.0</dt>
 <dd class="red">Update gdb like debugging capabilities</li>
   <ul class="status">
     <li class="red">accessing data</li>
@@ -58,6 +60,11 @@ Module for 4.2.2/4.2.3:
     </ul>
     <li class="red">watches / conditional breakpoints</li>
   </ul>
+<dd class="red">Evaluating code</li>
+</dl>
+
+<dl>
+<dt>xdebug 1.3.0</dt>
 <dd class="red">Profiling</li>
 </dl>
 <br />
