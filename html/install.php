@@ -56,14 +56,6 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">DOWNLOAD SOURCE</span><br />
 
 <p>
-The extension is not totally finished yet, but it works fine for me. If you
-have questions, feel free to send me an e-mail (but read <a
-href="http://www.derickrethans.nl/20020430.php">this</a> first) at <a href="mailto:derick@php.net">derick
-at php dot net</a>. If you like this piece of software, feel free to checkout
-my <?php url('giftlist', 'wishlist'); ?>. This improves changes that I will be
-continuing developing Xdebug as an open source extension.
-</p>
-<p>
 You can download the source <?php url ('xdebug110pre2', 'here'); ?>.
 </p>
 <p>

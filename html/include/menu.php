@@ -4,6 +4,7 @@
 <a href="install.php">installation</a> |
 <a href="config.php">configuration</a> | 
 <a href="docs.php">documentation</a> |
-<a href="screens.php">screenshots</a>
+<a href="screens.php">screenshots</a> |
+<a href="support.php">support</a>
 </span>
 <br /><br />
