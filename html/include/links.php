@@ -28,9 +28,9 @@
 		'xdebug110pre2' => 'http://files.derickrethans.nl/xdebug-1.1.0pre2.tgz',
 
 		'xdebug110' => 'http://files.derickrethans.nl/xdebug-1.1.0.tgz',
-		'xdebug110-430pre2-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.0pre2-1.1.0.so',
+		'xdebug110-430pre2-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.0pre2-1.1.0-lnx.so',
 		'xdebug110-430pre2-f46' => 'http://files.derickrethans.nl/xdebug-4.3.0pre2-1.1.0-fbsd46.so',
-		'xdebug110-430dev-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0.so',
+		'xdebug110-430dev-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0-lnx.so',
 		'xdebug110-430dev-win' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0.dll',
 		'xdebug110-430dev-f46' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0-fbsd46.so',
 

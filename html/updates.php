@@ -13,7 +13,7 @@
 
 <span class='quote'>
 <dl>
-<td>[13-11-2002]</dt>
+<dt>[13-11-2002]</dt>
 <dd>Parameters to functions are no longer recorded by default; use the
   xdebug.collect_params=1 setting in php.ini to turn it on again.</dd>
 
