@@ -42,7 +42,7 @@ If you have questions, feel free to send me an e-mail (but read <a
 href="http://www.derickrethans.nl/20020430.php">this</a> first) at <u>derick at
 xdebug dot org</u>. If you like Xdebug and
 make use it it, feel free to checkout my <?php url('giftlist', 'wishlist'); ?>.
-This improves changes that I will be continuing developing Xdebug as an open
+This improves chances that I will be continuing developing Xdebug as an open
 source extension.
 </p>
 
