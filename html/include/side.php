@@ -4,11 +4,11 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[06-04-2003]</dt>
+<dt>[15-04-2003]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug120rc1', 'xdebug 1.2.0rc1'); ?></li>
+<li><?php url ('xdebug120rc2', 'xdebug 1.2.0rc2'); ?></li>
 </ul>
 </dd>
 </dl>

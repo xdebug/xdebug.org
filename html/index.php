@@ -33,6 +33,11 @@ provide includes the following:
 
 <dl class="main">
 
+<dt class="main">14-04-2003</dt>
+<dd class="main">The second release candidate of Xdebug version 1.2.0rc1 has
+been released. This RC fixes a few bugs in RC1. See
+the full <a href="updates.php">Changelog</a> for more information. </dd>
+
 <dt class="main">06-04-2003</dt>
 <dd class="main">Xdebug version 1.2.0rc1 has finally been released. This new
 version's main enhancements are the profiling support and code coverage.  See

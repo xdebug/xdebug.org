@@ -13,6 +13,15 @@
 
 <span class='quote'>
 <dl>
+<dt>[14-04-2003]</dt>
+<dd>Fixed handling pathnames and files under Windows for the debugger.</dd>
+
+<dt>[10-04-2003]</dt>
+<dd>Fixed accessing of superglobal variables from the debugger client.</dd>
+
+<dt>[06-04-2003]</dt>
+<dd>Fixed a segfault that happened while dealing with include files with ZE2.</dd>
+
 <dt>[05-04-2003]</dt>
 <dd>Allow remote debugging to be enabled in httpd.conf and .htaccess files.</dd>
 <dd>Added code coverage, enable with xdebug_start_code_coverage(), disable with
