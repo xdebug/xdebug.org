@@ -23,8 +23,8 @@
 		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 
 		img      { border: 0px; vertical-align: bottom; }
-		img.l    { margin-right: 10px; }
-		img.r    { margin-left: 10px; }
+		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
+		img.r    { margin-left: 10px; margin-top: 10px; margin-bottom: 10px; }
 		
 		a        { text-decoration: underline; color: #116633; }
 		a:hover  { color: #004411 }
@@ -57,8 +57,10 @@
 		li.green { color: #00bb00; }
 		dl.status { margin-left: -20px; padding-left: 0px; }
 		ul.status { margin-left: 25px; padding-left: 0px; }
-		dl.functionlist { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: normal; }
+		dl.functionlist, dl.faq { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: normal; }
 		dl.functionlist dt { margin-top: 3px; }
+		dl.faq dt { margin-left: 20px; margin-bottom: 5px; }
+		dl.faq dd { margin-left: 20px; margin-top: 5px; }
 
 		dt.main { font-weight: normal; }
 		dd.main { margin-left: 20px; }

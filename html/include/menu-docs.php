@@ -15,7 +15,8 @@
 <a href="docs-profiling2.php">Xdebug 2</a><br />
 &gt; Debugger: <a href="docs-debugger.php">Usage</a>,
 <a href="docs-gdb.php">GDB Protocol</a>,
-<a href="docs-dbgp.php">DBGp Protocol</a>
+<a href="docs-dbgp.php">DBGp Protocol</a><br />
+&gt; <a href="docs-faq.php">FAQ: Frequently Asked Questions</a>
 </div>
 <br /><br />
 

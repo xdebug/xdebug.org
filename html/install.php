@@ -50,7 +50,7 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">INSTALLATION FROM SOURCE</span><br />
 
 <p>
-You can download the source of the latest <b>stable</b> release <?php url ('xdebug120', 'here'); ?>.
+You can download the source of the latest <b>stable</b> release <?php url ('xdebug131', 'here'); ?>.
 Alternatively you can obtain Xdebug from CVS:
 </p>
 <pre>
