@@ -61,16 +61,19 @@
 		dl.functionlist dt { margin-top: 3px; }
 		dl.faq dt { margin-left: 20px; margin-bottom: 5px; }
 		dl.faq dd { margin-left: 20px; margin-top: 5px; }
+		ol li { margin-bottom: 5px; }
 
 		dt.main { font-weight: normal; }
 		dd.main { margin-left: 20px; }
 
-		pre { margin-left: 20px; line-height: 1em; }
+		pre { margin-left: 20px; line-height: 1.5em; }
 		pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
 
 		h1 { font-variant: small-caps; font-size: x-large }
 		h2 { font-variant: small-caps; font-size: large }
 		h3 { font-variant: small-caps; font-size: large }
+
+		code { background-color: #eaffeb; }
 	</style>
 </head>
 <body>

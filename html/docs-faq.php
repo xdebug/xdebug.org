@@ -19,6 +19,12 @@ still don't get any stacktraces when an error happens.
 or change the body of the handler function to call xdebug_* api functions.
 </dd>
 
+<dt>Q: The debug client doesn't receive any connections, what do I do
+wrong?</dt>
+<dd>A: You probably forgot to set the environment variable or to add 
+the necessary information to your URL. See the 
+<a href='docs-debugger.php#activate_debugger'>documentation</a> for
+more information.</dd>
 </dl>
 
 

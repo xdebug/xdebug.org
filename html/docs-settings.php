@@ -139,12 +139,14 @@ the Process ID of the PHP process is used here.
 <span class="sans">REMOTE DEBUGGER SETTINGS</span><br />
 
 <dl>
+<a name="remote_enable"></a>
 <dt>xdebug.remote_enable [boolean] (default: Off)</dt>
 <dd>This switch controls whether Xdebug should try to contact a debug client
 which is listening on the host and port as set with the settings
 'xdebug.remote_host' and 'xdebug.remote_port'. If a connection can not be
 established the script will just continue as if this setting was Off.</dd>
 
+<a name="remote_handler"></a>
 <dt>xdebug.remote_handler [string] (default: gdb)</dt>
 <dd>Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
@@ -153,16 +155,19 @@ currently no bundled client for the PHP 3 style debugger and because it's much
 less powerfull then the GDB like one, it is advised to leave this setting to
 'gdb'.</dd>
 
+<a name="remote_host"></a>
 <dt>xdebug.remote_host [string] (default: localhost)</dt>
 <dd>Selects the host where the debug client is running, you can either use a
 host name or an IP address.</dd>
 
+<a name="remote_mode"></a>
 <dt>xdebug.remote_mode [string] (default: req)</dt>
 <dd>Selects between the 'req' and 'jit' debugging modes for the 'gdb' handler.
 If it is set to 'req' (the default) then Xdebug will try to connect to the
 debug client as soon as the script starts. If it is set to 'jit' it will only
 try to connect as soon as an error condition occurs.</dd>
 
+<a name="remote_port"></a>
 <dt>xdebug.remote_port [integer] (default: 17869)</dt>
 <dd>The port to which Xdebug tries to connect on the remote host. As the
 bundled debug client only listens at the hardcoded port 17689 it is best to

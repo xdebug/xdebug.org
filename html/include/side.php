@@ -12,13 +12,13 @@ Source:
 </ul>
 <br />
 
-Modules for 4.3.x:
+Modules for 4.3.x (binary):
 <ul class="status">
 <li><?php url ('xdebug131-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
 </ul>
 <br />
 
-Debug client 0.7.0:
+Debug client 0.7.0 (binary):
 <ul class="status">
 <li><?php url ('xdebugclient-0.7.0-lnx', 'Linux'); ?></li>
 <li><?php url ('xdebugclient-0.7.0-f46', 'FreeBSD 4.6'); ?></li>
@@ -45,15 +45,15 @@ Debug client 0.7.0:
 <span class="sans">DEVELOPMENT VERSION (2.0dev)</span><br />
 <dl class="status">
 <dd>
-Instructions to get Xdebug 2.0dev from CVS can
-be found <a href='/install.php#source'>here</a>.
+Instructions to get Xdebug 2.0dev from CVS can be found <a
+href='/install.php#source'>here</a>. This version compiles on PHP 4.3.0 and
+higher.
 </dd>
 </dl>
 <br />
 
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
-<br />
 <dd>
 Modules for 5.0.0dev:
 <ul class="status">

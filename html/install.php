@@ -183,22 +183,41 @@ course try to fix those.
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
 		<td class="ctr">1.3.1</td>
-	</tr>
 	<tr>
-		<th class="ctr">&lt; 5.0.0rc2</th>
-		<td class="ctr">20031113</td>
+		<th class="ctr">4.3.7</th>
+		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
-		<td class="ctr">90021012</td>
-		<td class="ctr">1.3.1</td>
+		<td class="ctr">20021010</td>
+		<td class="ctr">2.0.0-cvs</td>
 	</tr>
 	<tr>
-		<th class="ctr">=&gt; 5.0.0rc2</th>
+		<th class="ctr">5.0.0rc3</th>
 		<td class="ctr">20031224</td>
-		<td class="ctr">20040316</td>
-		<td class="ctr">90021012</td>
+		<td class="ctr">20040412</td>
+		<td class="ctr">220040412</td>
 		<td class="ctr">2.0.0-cvs</td>
 	</tr>
 </table>
+<br/>
+</p>
+
+<a name="debugclient"></a>
+<span class="sans">DEBUGCLIENT INSTALLATION</span><br />
+
+<p>
+Unpack the Xdebug source tarball and issue the following commands:
+</p>
+<pre class="example">
+$ cd debugclient
+$ ./configure --with-libedit
+$ make
+# make install
+</pre>
+<p>
+This will install the debugclient binary in /usr/local/bin unless you don't 
+have libedit installed on your system. You can either install it, or leave
+out the "--with-libedit" option to configure. Debian 'unstable' users can
+install the library with <code>apt-get install libedit-dev libedit2</code>.
 </p>
 <br /><br />
 
