@@ -5,7 +5,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | SUPPORT</span><br />
+<span class="sans">XDEBUG EXTENSION FOR PHP | LICENSE</span><br />
 
 <?php include "include/menu.php"; ?>
 

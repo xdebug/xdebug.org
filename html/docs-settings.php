@@ -62,7 +62,7 @@ basic functions of Xdebug, it is advisable to leave this setting set to
 </table>
 </dd>
 
-<a name="extended_info"/>
+<a name="extended_info"></a>
 <dt>xdebug.extended_info [integer] (default: 1)</dt>
 <dd>Controls whether Xdebug should enforce "extended_info" mode for the PHP
 parser; this allows Xdebug to do file/line breakpoints with the remote
@@ -71,20 +71,20 @@ option as PHP's generated oparrays will increase with about a third of the size
 slowing down your scripts. This setting can not be set in your scripts with
 ini_set(), but only in php.ini.</dd>
 
-<a name="manual_url"/>
+<a name="manual_url"></a>
 <dt>xdebug.manual_url [string] (default: http://www.php.net)</dt>
 <dd>This is the base url for the links from the function traces and error
 message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.</dd>
 
-<a name="show_local_vars"/>
+<a name="show_local_vars"></a>
 <dt>xdebug.show_local_vars [integer] (default: 0)</dt>
 <dd>When this setting is set to something != 0 Xdebug's generated stack dumps
 in error situations will also show all variables in the top-most scope. Beware
 that this might generate a lot of information, and is therefore turned off by
 default.</dd>
 
-<a name="show_mem_delta"/>
+<a name="show_mem_delta"></a>
 <dt>xdebug.show_mem_delta [integer] (default: 0)</dt>
 <dd>When this setting is set to something != 0 Xdebug's human-readable
 generated trace files will show the difference in memory usage between function
@@ -188,7 +188,8 @@ href="docs-profiling.php#retrieve">listed here</a>.</dd>
 the user who the PHP will be running as has write permissions to that
 directory. The created files will look something like this:
 xdebug_[timestamp]_[pid].txt.</dd>
-	
+
+<br />
 <a name="profiler2"></a>
 <span class="sans">PROFILER SETTINGS <small>(Xdebug 2)</small></span><br />
 <a name="profiler_enable"></a>

@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Documentation - Functions"; include "include/header.php"; hits ('xdebug-docs-functions'); ?>
+<?php $title = "Xdebug: Documentation"; include "include/header.php"; hits ('xdebug-docs'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

@@ -42,6 +42,7 @@
 		p.center { text-align: center; }
         .pause   { font-size: medium; display: block; color: #004411;
                    margin-top: 24px; margin-bottom: 8px; text-align: center; }
+		span.filename { font-family: sans-serif; }
                    
         acronym, abbr
                  { font-variant: small-caps; text-decoration: none; border-bottom: 0;}

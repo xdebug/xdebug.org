@@ -1,11 +1,11 @@
-<?php $title = "Xdebug: Documentation - Profiler"; include "include/header.php"; hits ('xdebug-docs-profiler'); ?>
+<?php $title = "Xdebug: Documentation - Profiler - Xdebug 1.3"; include "include/header.php"; hits ('xdebug-docs-profiler'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION - PROFILER</span><br />
+<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION - PROFILER - XDEBUG 1.3</span><br />
 
 <?php include "include/menu-docs.php"; ?>
 
@@ -475,7 +475,7 @@ public, otherwise it means that the method is private.
 <p>
 If you are profiling your code in a web enviroment then
 <i><a
-href='docs-functions.php#xdebug_dump_function_trace'>xdebug_dump_function_trace()</a></i>
+href='docs-functions.php#dump_function_trace'>xdebug_dump_function_trace()</a></i>
 will output the data as HTML rather then plain text as it would if you were
 using CLI or told the profiler to write the
 data to disk. This will allow the data to be properly displayed in your

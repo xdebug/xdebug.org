@@ -1,11 +1,11 @@
-<?php $title = "Xdebug: Documentation - Protocol for version 2"; include "include/header.php"; hits ('xdebug-docs-protocol'); ?>
+<?php $title = "Xdebug: Documentation - Protocol - DBGp"; include "include/header.php"; hits ('xdebug-docs-protocol'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION - PROTOCOL</span><br />
+<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION - PROTOCOL - DBGP</span><br />
 
 <?php include "include/menu-docs.php"; ?>
 
