@@ -1,4 +1,4 @@
-<?php include "include/header.php"; hits ('xdebug-screens'); ?>
+<?php $title = "Xdebug: Screenshots"; include "include/header.php"; hits ('xdebug-screens'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

@@ -1,4 +1,4 @@
-<?php include "include/header.php"; hits ('xdebug-install'); ?>
+<?php $title = "Xdebug: Installation"; include "include/header.php"; hits ('xdebug-install'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

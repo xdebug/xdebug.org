@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Derick Rethans</title>
+	<title><?php echo $title; ?></title>
 	<meta name="ROBOTS" content="ALL" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta name="DESCRIPTION" content="Upholding the tradition of personal home pages with a site devoted to, well, me." />
