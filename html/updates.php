@@ -20,6 +20,81 @@
 <span class='quote'>
 <dl>
 
+<dt>[15-09-2004]</dt>
+
+<dd><h3>Added new features</h3></dd>
+<dd>Added support for the new DBGp protocol for communicating with the debug
+engine.</dd>
+<dd>A computerized trace format for easier parsing by external programs.</dd>
+<dd>The ability to set remote debugging features via the environment.  This
+allows an IDE to emulate CGI and still pass the configuration through to the
+debugger.  In CGI mode, PHP does not allow -d arguments.</dd>
+<dd>Reimplementation of the tracing code, you can now only trace to file; this
+greatly enhances performance as no string representation of variables need to
+be kept in memory any more.</dd>
+<dd>Re-implemented profiling support. Xdebug outputs information the same way
+that cachegrind does so it is possible to use Kcachegrind as front-end.</dd>
+<dd>Xdebug emits warnings when it was not loaded as a Zend extension.</dd>
+<dd>Added showing private, protected and public to the fancy var_dump()
+replacement function.</dd>
+<dd>Added the setting of the TCP_NODELAY socket option to stop delays in
+transferring data to the remote debugger client. (Patch by Christof J.  Reetz)</dd>
+<dd>DebugClient: Added setting for port to listen on and implemented running
+the previous command when pressing just enter.</dd>
+
+<dd><h3>Added new functions</h3></dd>
+<dd>xdebug_get_stack_depth() to return the current stack depth level.  </dd>
+<dd>xdebug_get_tracefile_name() to retrieve the name of the tracefile. This is useful in case auto trace is enabled and you want to clean the trace file.  </dd>
+<dd>xdebug_peak_memory_usage() which returns the peak memory used in a script. (Only works when --enable-memory-limit was enabled) </dd>
+
+<dd><h3>Added feature requests</h3></dd>
+<dd>FR #5: xdebug_break() function which interupts the script for the debug engine.  </dd>
+<dd>FR #30: Dump current scope information in stack traces on error.  </dd>
+<dd>FR #88: Make the url parameter XDEBUG_SESSION_START optional. So it can be disabled and the user does not need to add it.  </dd>
+
+<dd><h3>Added new php.ini settings</h3></dd>
+<dd>xdebug.auto_trace_file: to configure a trace file to write to as addition to the xdebug.auto_trace setting which just turns on tracing.  </dd>
+<dd>xdebug.collect_includes: separates collecting names of include files from the xdebug.collect_params setting.  </dd>
+<dd>xdebug.collect_return: showing return values in traces.  </dd>
+<dd>xdebug.dump_global: with which you can turn off dumping of super globals even in you have that configured.  </dd>
+<dd>xdebug.extended_info: turns off the generation of extended opcodes that are needed for stepping and breakpoints for the remote debugger. This is useful incase you want to profile memory usage as the generation of this extended info increases memory usage of oparrrays by about 33%.  </dd>
+<dd>xdebug.profiler_output_dir: profiler output directory.  </dd>
+<dd>xdebug.profiler_enable: enable the profiler.  </dd>
+<dd>xdebug.show_local_vars: turn off the showing of local variables in the top most stack frame on errors.  </dd>
+<dd>xdebug.show_mem_delta: show differences between current and previous memory usage on a function call level.  </dd>
+<dd>xdebug.trace_options: to configure extra options for trace dumping: o XDEBUG_TRACE_APPEND option (1) </dd>
+
+<dd><h3>Changed features</h3></dd>
+<dd>xdebug_start_trace() now returns the filename of the tracefile (.xt is added to the requested name).  </dd>
+<dd>Changed default debugging protocol to dbgp instead of gdb.  </dd>
+<dd>Changed default debugger port from 17869 to 9000.  </dd>
+<dd>Changed trace file naming: xdebug.trace_output_dir is now used to configure a directory to dump automatic traces; the trace file name now also includes the pid (xdebug.trace_output_name=pid) or a crc32 checksum of the current working dir (xdebug.trace_output_name=crc32) and traces are not being appended to an existing file anymore, but simply overwritten.  </dd>
+<dd>Removed $this and $GLOBALS from showing variables in the local scope.  </dd>
+
+<dd><h3>Removed functions</h3></dd>
+<dd>xdebug_get_function_trace/xdebug_dump_function_trace() because of the new idea of tracing.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(89); ?>: var_dump shows empty strings garbled.  </dd>
+<dd>Fixed <?php bug(85); ?>: Xdebug segfaults when no idekey is set.  </dd>
+<dd>Fixed <?php bug(83); ?>: More than 32 parameters functions make xdebug crash.  </dd>
+<dd>Fixed <?php bug(75); ?>: xdebug's var_dump implementation is not binary safe.  </dd>
+<dd>Fixed <?php bug(73); ?>: komodo beta 4.3.7 crash.  </dd>
+<dd>Fixed <?php bug(72); ?>: breakpoint_get returns wrong structure.  </dd>
+<dd>Fixed <?php bug(69); ?>: Integer overflow in cachegrind summary.  </dd>
+<dd>Fixed <?php bug(67); ?>: Filenames in Xdebug break URI RFC with spaces.  </dd>
+<dd>Fixed <?php bug(64); ?>: Missing include of xdebug_compat.h.  </dd>
+<dd>Fixed <?php bug(57); ?>: Crash with overloading functions.  </dd>
+<dd>Fixed <?php bug(54); ?>: source command did not except missing -f parameter.  </dd>
+<dd>Fixed <?php bug(53); ?>: Feature get misusing the supported attribute.  </dd>
+<dd>Fixed <?php bug(51); ?>: Only start a debug session if XDEBUG_SESSION_START is passed as GET or POST parameter, or the DBGP_COOKIE is send to the server.  Passing XDEBUG_SESSION_STOP as GET/POST parameter will end the debug session and removes the cookie again. The cookie is also passed to the remote handler backends; for DBGp it is added to the <init> packet.  </dd>
+<dd>Fixed <?php bug(49); ?>: Included file's names should not be stored by address.  </dd>
+<dd>Fixed <?php bug(44); ?>: Script time-outs should be disabled when debugging.  </dd>
+<dd>Fixed <?php bug(36); ?>: GDB handler using print causes segfault with wrong syntax </dd>
+<dd>Fixed <?php bug(33); ?>: Implemented the use of the ZEND_POST_DEACTIVATE hook. Now we can handle destructors safely too.  </dd>
+<dd>Fixed <?php bug(32); ?>: Unusual dynamic variables cause xdebug to crash.  </dd>
+
+
 <dt>[26-12-2003]</dt>
 
 <dd>GDB: Added file/line to signals.</dd>

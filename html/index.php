@@ -42,6 +42,11 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[15-09-2004]</dt>
+<dd class="main">Xdebug version 2 has finally reached beta status. We celebrate
+that with the release of 2.0.0beta1. For a full changelog, see the <a
+href='/updates.php'>updates</a> page.</dd>
+
 <dt class="main">[30-06-2004]</dt>
 <dd class="main">Xdebug version 1.3.2 has been released. This release will
 compile against the latest CVS of PHP 5 again.</dd>
