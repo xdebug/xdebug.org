@@ -55,7 +55,11 @@
 		dd.main { margin-left: 20px; }
 
 		pre { margin-left: 20px; line-height: 1em; }
-		pre.example { background-color: #ebeaff; }
+		pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #ebeaff; }
+
+		h1 { font-variant: small-caps; font-size: x-large }
+		h2 { font-variant: small-caps; font-size: large }
+		h3 { font-variant: small-caps; font-size: large }
 	</style>
 </head>
 <body>
@@ -76,8 +80,8 @@
 
 	include 'include/links.php';
 
-	mysql_pconnect ('localhost', $login, $passwd);
-	mysql_select_db ($db);
+	@mysql_pconnect ('localhost', $login, $passwd);
+	@mysql_select_db ($db);
 	
 
 	function ulink ($url)
@@ -92,12 +96,11 @@
 
 	function hits ($key)
 	{
-		$res = mysql_query ("SELECT * FROM hits WHERE idkey = '$key'");
-		echo mysql_error();
-		if (mysql_num_rows ($res) == 0) {
-			mysql_query ("INSERT INTO hits (idkey, hits) VALUES ('$key', 1)");
+		$res = @mysql_query ("SELECT * FROM hits WHERE idkey = '$key'");
+		if (@mysql_num_rows ($res) == 0) {
+			@mysql_query ("INSERT INTO hits (idkey, hits) VALUES ('$key', 1)");
 		} else {
-			mysql_query ("UPDATE hits SET hits = hits + 1 WHERE idkey = '$key'");
+			@mysql_query ("UPDATE hits SET hits = hits + 1 WHERE idkey = '$key'");
 		}
 	}
 
@@ -106,12 +109,11 @@
 		if (isset ($_SERVER["HTTP_REFERER"]) && !empty ($_SERVER["HTTP_REFERER"])) {
 			$ref = $_SERVER["HTTP_REFERER"];
 
-			$res = mysql_query ("SELECT * FROM refer WHERE refer = '$ref'");
-			echo mysql_error();
-			if (mysql_num_rows ($res) == 0) {
-				mysql_query ("INSERT INTO refer (refer, hits) VALUES ('$ref', 1)");
+			$res = @mysql_query ("SELECT * FROM refer WHERE refer = '$ref'");
+			if (@mysql_num_rows ($res) == 0) {
+				@mysql_query ("INSERT INTO refer (refer, hits) VALUES ('$ref', 1)");
 			} else {
-				mysql_query ("UPDATE refer SET hits = hits + 1 WHERE refer = '$ref'");
+				@mysql_query ("UPDATE refer SET hits = hits + 1 WHERE refer = '$ref'");
 			}
 		}
 	}
