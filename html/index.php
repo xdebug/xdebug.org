@@ -264,6 +264,12 @@ Module for 4.2.2/4.2.3:
 
 <span class='quote'>
 <dl>
+<dt>[28-10-2002]</dt>
+<dd>Added xdebug.collect_params setting. If this setting is on (the default)
+  then Xdebug collects all parameters passed to functions, otherwise they
+  are not collected at all.</dd>
+<dd>Implemented correct handling of include/require and eval.</dd>
+
 <dt>[22-10-2002]</dt>
 <dd>Fixed bug which caused wrong filenames to be reported.</dd>
 
