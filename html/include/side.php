@@ -23,8 +23,6 @@ Modules for 4.3.x:
 <li><i>none available</i></li>
 </ul>
 </dl>
-<br />
-
 
 <dl class="status">
 <dt>[21-04-2003]</dt>
@@ -58,7 +56,7 @@ Debug client 0.7.0:
 </dd>
 </dl>
 
-<!-- Begin PayPal Logo -->
+<!-- Begin PayPal Logo 
 <p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_xclick">
@@ -69,9 +67,27 @@ Debug client 0.7.0:
 <input type="hidden" name="tax" value="0">
 <input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
 </p>
-<!-- End PayPal Logo -->
 <br /><br />
+ End PayPal Logo -->
 
+<span class="sans">BINARY SNAPSHOTS</span><br />
+<dl class="status">
+<dd>
+Modules for 4.3.x:
+<ul class="status">
+<li><?php url ('snap-43-win', 'Windows'); ?></li>
+</ul>
+</dd>
+<br />
+<dd>
+Modules for 5.0.0dev:
+<ul class="status">
+<li><?php url ('snap-50-win', 'Windows'); ?></li>
+</ul>
+</dd>
+</dl>
+
+<br />
 <span class="sans">OLDER RELEASES</span><br />
 <dl class="status">
 <dd>
