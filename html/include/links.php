@@ -36,6 +36,7 @@
 
 		'xdebug120rc1' => 'http://files.derickrethans.nl/xdebug-1.2.0rc1.tgz',
 		'xdebug120rc2' => 'http://files.derickrethans.nl/xdebug-1.2.0rc2.tgz',
+		'xdebug120'    => 'http://files.derickrethans.nl/xdebug-1.2.0.tgz',
 
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
