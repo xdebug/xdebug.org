@@ -1,3 +1,7 @@
+Sun Nov 14 18:12:56 CET 2004 Derick Rethans <derick@derickrethans.nl>
+html/include/menu-docs.php:
+- Link downloadble docs.
+
 Sun Nov 14 18:11:44 CET 2004 Derick Rethans <derick@derickrethans.nl>
 make-docs.sh
 www.xdebug.org/html/files/docs.tar.gz:
