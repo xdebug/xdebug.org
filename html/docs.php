@@ -313,12 +313,13 @@ array(1) {
 
 <br />
 <a name="profile"></a>
+<a name='dump_function_profile'></a>
 <span class="sans">PROFILING RELATED</span><br />
 <dl>
 <dt>void xdebug_start_profiling()<br />
 void xdebug_stop_profiling()<br />
-void xdebug_dump_function_profile()<br />
-void xdebug_get_function_profile()</dt>
+void xdebug_dump_function_profile([int profileing_mode])<br />
+void xdebug_get_function_profile([int profileing_mode])</dt>
 <dd>Please see the section on <a href='docs-profiling.php'>Profiling</a> for
 information about these functions.</dl>
 </dl>
