@@ -90,7 +90,7 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 </dl>
 
 
-<span class="sans"><a href="#coverage">PROFILING RELATED FUNCTIONS</a></span>
+<span class="sans"><a href="#profiling">PROFILING RELATED FUNCTIONS</a></span>
 <dl class="functionlist">
 <dt><a href="#xdebug_dump_function_profile">xdebug_dump_function_profile()</a> [1]</dt>
 <dd>displays two tables with profiling information</dd>
@@ -408,6 +408,7 @@ seconds.</dd>
 </p>
 
 <br />
+<a name="coverage"></a>
 <span class="sans">CODE COVERAGE RELATED</span><br />
 <dl>
 <a name='xdebug_start_code_coverage'></a>

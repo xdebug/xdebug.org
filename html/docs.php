@@ -15,6 +15,8 @@ CONFIGURATION SETTINGS
 <li><a href="docs-settings.php#debugger">Debugging Settings</a></li>
 <li><a href="docs-settings.php#general">General Settings</a></li>
 <li><a href="docs-settings.php#profiler">Profiler Settings <small>(Xdebug 1)</small></a></li>
+<li><a href="docs-settings.php#profiler2">Profiler Settings <small>(Xdebug 2)</small></a></li>
+<li><a href="docs-settings.php#debugger">Remote Debugger Settings</a></li>
 <li><a href="docs-settings.php#stack">Superglobal Dumping Settings</a></li>
 </ul>
 </span>
@@ -24,10 +26,14 @@ CONFIGURATION SETTINGS
 <span class="sans">
 FUNCTION REFERENCE
 <ul>
-<li><a href="docs-functions.php#stack">Activation Related Functions</a></li>
+<li><a href="docs-functions.php">Introduction</a></li>
+<li><a href="docs-functions.php#activation">Activation Related Functions</a></li>
 <li><a href="docs-functions.php#coverage">Code Coverage Functions</a></li>
-<li><a href="docs-functions.php#tracing">Execution Related Functions</a></li>
+<li><a href="docs-functions.php#superglobals">Information Dumping Functions</a></li>
+<li><a href="docs-functions.php#profiling">Profiling Functions</a></li>
+<li><a href="docs-functions.php#debug">Remote Debugging Functions</a></li>
 <li><a href="docs-functions.php#stack">Stack Related Functions</a></li>
+<li><a href="docs-functions.php#tracing">Tracing Related Functions</a></li>
 </ul>
 </span>
 

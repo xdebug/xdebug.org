@@ -171,7 +171,7 @@ leave this setting unchanged.</dd>
 
 <br />
 <a name="profiler"></a>
-<span class="sans">PROFILER SETTINGS</span><br />
+<span class="sans">PROFILER SETTINGS <small>(Xdebug 1)</small></span><br />
 
 <dl>
 <dt>xdebug.auto_profile [boolean] (default: Off) (Xdebug 1)</dt>
@@ -189,6 +189,8 @@ the user who the PHP will be running as has write permissions to that
 directory. The created files will look something like this:
 xdebug_[timestamp]_[pid].txt.</dd>
 	
+<a name="profiler2"></a>
+<span class="sans">PROFILER SETTINGS <small>(Xdebug 2)</small></span><br />
 <a name="profiler_enable"></a>
 <dt>xdebug.profiler_enable [integer] (default: 0) (Xdebug 2)</dt>
 <dd>Enables Xdebug's profiler which creates files in the <a
