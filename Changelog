@@ -1,3 +1,10 @@
+Fri Jun 18 23:53:36 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-profiling2.php
+www.xdebug.org/html/images/docs/kc-right-callers.png
+www.xdebug.org/html/images/docs/kc-right-callmap.png
+www.xdebug.org/html/images/docs/kc-right-source.png:
+- Some more screenshots and docs.
+
 Fri Jun 18 09:24:18 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/include/header.php:
 - Fixed some CSS issues
