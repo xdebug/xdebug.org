@@ -54,6 +54,9 @@
 		'xdebug132-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-1.3.2.dll',
 
 		'xdebug200b1' => 'http://www.xdebug.org/files/xdebug-2.0.0beta1.tgz',
+		'xdebug200b1-43-win' => 'http://www.xdebug.org/files/xdebug-4.3.6-2.0.0beta1.dll',
+		'xdebug200b1-50-win' => 'http://www.xdebug.org/files/xdebug-5.0-2.0.0beta1.dll',
+		'xdebug200b1-51-win' => 'http://www.xdebug.org/files/xdebug-5.1-2.0.0beta1.dll',
 
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',

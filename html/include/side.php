@@ -10,6 +10,14 @@ Source:
 <ul class="status">
 <li><?php url ('xdebug200b1', 'xdebug 2.0.0beta1'); ?></li>
 </ul>
+<br />
+
+Windows modules:
+<ul class="status">
+<li><?php url ('xdebug200b1-43-win', 'PHP 4.3.6+'); ?></li>
+<li><?php url ('xdebug200b1-50-win', 'PHP 5.0.x'); ?></li>
+<li><?php url ('xdebug200b1-51-win', 'PHP 5.1.0-dev'); ?></li>
+</ul>
 </dd>
 </dl>
 
