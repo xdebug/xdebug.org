@@ -61,6 +61,8 @@
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
+		
+		'xdebugclient-0.8.0-win' => 'http://xdebug.org/files/debugclient08.exe',
 
 		'snap-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-2.0dev.dll',
 		'snap-50-win' => 'http://snaps.php.net/win32/PECL_5_0/php_xdebug.dll',

@@ -18,6 +18,12 @@ Windows modules:
 <li><?php url ('xdebug200b1-50-win', 'PHP 5.0.x'); ?></li>
 <li><?php url ('xdebug200b1-51-win', 'PHP 5.1.0-dev'); ?></li>
 </ul>
+<br />
+
+Debug client 0.8.0 (binary):
+<ul class="status">
+<li><?php url ('xdebugclient-0.8.0-win', 'Windows'); ?></li>
+</ul>
 </dd>
 </dl>
 
