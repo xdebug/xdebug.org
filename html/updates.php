@@ -13,6 +13,15 @@
 
 <span class='quote'>
 <dl>
+<dt>[07-11-2002]</dt>
+<dd>Lots of small bugfixes, under them memory leaks and crash bugs.</dd>
+
+<dt>[03-11-2002]</dt>
+<dd>Implemented the "list" (source listing), "print" (printing variable
+contents), "show" (show all variables in the scope), "step" (step through
+execution) and "pwd" (print working directory) commands to the remote
+debugger.</dd>
+
 <dt>[29-10-2002]</dt>
 <dd>Implemented class::method, object-&gt;method and file.ext:line style
   breakpoints.</dd>
