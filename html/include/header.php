@@ -13,6 +13,7 @@
 		         { margin: 0px; padding: 0px; }
 		table.table
                  { border: solid gray; border-width: thin; margin: 0px; padding: 0px; }
+		.hide    { visibility: hidden; display: none; }
 		body     { background-color: white; }
 	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
