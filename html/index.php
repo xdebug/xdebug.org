@@ -243,12 +243,21 @@ Module for 4.2.2/4.2.3:
     <li class="red">accessing data</li>
     <ul>
       <li class="red">reading variables / globals</li>
-      <li class="red">modifying variables / globals</li>
     </ul>
-    <li class="red">watches</li>
   </ul>
 </dl>
 
+<dl>xdebug 1.2.0</dt>
+<dd class="red">Update gdb like debugging capabilities</li>
+  <ul>
+    <li class="red">accessing data</li>
+    <ul>
+      <li class="red">modifying variables / globals</li>
+    </ul>
+    <li class="red">watches / conditional breakpoints</li>
+  </ul>
+<dd class="red">Profiling</li>
+</dl>
 <br />
 
 <span class="sans">UPDATES</span><br />
