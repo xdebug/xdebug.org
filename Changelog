@@ -1,3 +1,11 @@
+Thu May 27 08:17:40 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-functions.php
+www.xdebug.org/html/docs-settings.php
+www.xdebug.org/html/docs.php
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php:
+- First batch of documentation updates.
+
 Thu May 13 17:25:25 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-dbgp.php:
 - New version of DBGp specs.
