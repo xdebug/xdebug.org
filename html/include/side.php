@@ -22,6 +22,7 @@ Modules for 4.3.x:
 <ul class="status">
 <li><i>none available</i></li>
 </ul>
+</dl>
 <br />
 
 
