@@ -1,3 +1,7 @@
+Sun Jun 20 23:09:03 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/include/side.php:
+- Add CVS instructions to right menu.
+
 Fri Jun 18 23:53:36 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-profiling2.php
 www.xdebug.org/html/images/docs/kc-right-callers.png
