@@ -78,7 +78,7 @@ message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.</dd>
 
 <a name="show_local_vars"></a>
-<dt>xdebug.show_local_vars [integer] (default: 0)</dt>
+<dt>xdebug.show_local_vars [integer] (default: 0) (Xdebug 2)</dt>
 <dd>When this setting is set to something != 0 Xdebug's generated stack dumps
 in error situations will also show all variables in the top-most scope. Beware
 that this might generate a lot of information, and is therefore turned off by
