@@ -13,6 +13,38 @@
 
 <span class='quote'>
 <dl>
+<dt>[14-01-2003]</dt>
+<dd>Updated Xdebug to support Xdebug (PHP 5.0.0-dev).</dd>
+
+<dt>[07-01-2003]</dt>
+<dd>Implemented the "eval" (evalutes PHP code) to the remote debugger.</dd>
+
+<dt>[05-01-2003]</dt>
+<dd>Enabled support for Windows again.</dd>directing profiling output to
+
+<dt>[20-12-2002]</dt>
+<dd>Fixed the "init" state of the debugger, from now on you can print data
+(like environment variables) from this state.</dd>
+<dd>The array returned by get_function_trace() now includes the memory
+footprint and timing information.</dd>
+
+<dt>[08-12-2002]</dt>
+<dd>Automatic profiling added, including redirecting profiling output to
+disk.</dd>
+
+<dt>[29-11-2002]</dt>
+<dd>Added a new profiling mode: Stack-Dump.</dd>
+
+<dt>[27-11-2002]</dt>
+<dd>Basic profiling added to Xdebug, including three new functions:
+xdebug_start_profiling() that begins profiling process, xdebug_stop_profiling()
+that ends the profiling process and xdebug_dump_function_trace() that dumps the
+profiling data.</dd>
+
+<dt>[15-11-2002]</dt>
+<dd>Implemented the "kill" (kills the running script) and "delete" (deletes
+an already set breakpoint) command for the remote debugger.</dd>
+
 <dt>[13-11-2002]</dt>
 <dd>Parameters to functions are no longer recorded by default; use the
   xdebug.collect_params=1 setting in php.ini to turn it on again.</dd>

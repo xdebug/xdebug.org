@@ -33,6 +33,12 @@ provide includes the following:
 
 <dl class="main">
 
+<dt class="main">16-01-2003</dt>
+<dd class="main">Xdebug supports Zend Engine 2! With the updated OO
+functionality in this new engine for PHP Xdebug wouldn't compile anymore, with
+this update it works again. Namespaces are not yet supported but will be
+implemented soon.</dd>
+
 <dt class="main">28-11-2002</dt>
 <dd class="main">Work on a profiler in Xdebug has started by Ilia
 Alshanetsky. A few different output sortings will be implemented,

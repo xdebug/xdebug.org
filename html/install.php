@@ -20,13 +20,13 @@ Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one)
 <pre>
-zend_extension="/usr/local/php/modules/xdebug-4.2.2-1.0.0rc1.so"
+zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.1.0.so"
 </pre>
 <p>
 Or for the Windows:
 </p>
 <pre>
-zend_extension_ts="c:/php/modules/xdebug-4.2.2-1.0.0rc1.dll"
+zend_extension_ts="c:/php/modules/xdebug-4.3.0-1.1.0.dll"
 </pre>
 </p>
 
@@ -42,7 +42,7 @@ some UNIX.
 Installing with PEAR/PECL is as easy as:
 </p>
 <pre>
-# pear install http://files.derickrethans.nl/xdebug-1.1.0pre2.tgz
+# pear install http://files.derickrethans.nl/xdebug-1.1.0.tgz
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
@@ -56,7 +56,7 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">DOWNLOAD SOURCE</span><br />
 
 <p>
-You can download the source <?php url ('xdebug110pre2', 'here'); ?>.
+You can download the source <?php url ('xdebug110', 'here'); ?>.
 </p>
 <p>
 You compile xdebug separately from the rest of PHP.  Note, however,
@@ -101,6 +101,25 @@ successful!</li>
 </ol>
 </p>
 
+<a name="compat"></a>
+<span class="sans">COMPATIBILITY</span><br />
+<p>
+Xdebug does not work when the Zend Optimizer is loaded due to limitations in
+that module. If you want to use Xdebug with, or if you have other problems
+getting Xdebug to work as Zend extension, you can use Xdebug as a normal PHP
+extension instead. To make this work copy the .so (or .dll) into the PHP
+extensions dir as configured in your php.ini and add the following to this
+same php.ini file:
+</p>
+<pre>
+extension=xdebug-4.3.0-1.1.0.so
+</pre>
+<p>
+You will miss some functionality here, which is currently only single-stepping
+through PHP code from the remote debugger.
+</p>
+
+
 <a name="phpize"></a>
 <span class="sans">PHPIZE OUTPUT TABLE</span><br />
 <p>
@@ -110,30 +129,49 @@ successful!</li>
 		<td class="ctr">PHP Api Version:</td>
 		<td class="ctr">Zend Module Api No:</td>
 		<td class="ctr">Zend Extension Api No:</td>
+		<td class="ctr">Recommended version:</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.2.3</th>
+		<td class="ctr">20010901</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">1.0.0rc1</td>
 	</tr>
 	<tr>
 		<th class="ctr">4.3.0pre2</th>
 		<td class="ctr">20020307</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
+		<td class="ctr">1.1.0pre2</td>
 	</tr>
 	<tr>
 		<th class="ctr">4.3.0rc1</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
+		<td class="ctr">1.1.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.3.0dev</th>
+		<th class="ctr">4.3.0</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
+		<td class="ctr">1.1.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.4.0dev</th>
+		<th class="ctr">4.3.1dev</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
+		<td class="ctr">1.1.0</td>
+	</tr>
+	<tr>
+		<th class="ctr">5.0.0dev</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">90021012</td>
+		<td class="ctr">CVS Version</td>
 	</tr>
 </table>
 </p>
