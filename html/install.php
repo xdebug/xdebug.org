@@ -28,12 +28,6 @@ For Windows:
 <pre>
 zend_extension_ts="c:/php/modules/xdebug-4.3.0-1.2.0.dll"
 </pre>
-<p>
-For MacOSX:
-</p>
-<pre>
-zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.2.0.bundle"
-</pre>
 </p>
 
 <a name="pecl"></a>
@@ -80,11 +74,14 @@ that you need access to the scripts "phpize" and "php-config".  If
 your system does not have "phpize" and "php-config", you will need to
 compile and install PHP from a source tarball first, as these script
 are by-products of the PHP compilation and installation processes. It is
-important that the source version matches the installed version as there
-are slight, but important, differences between PHP versions.
+important that the source version matches the installed version as there are
+slight, but important, differences between PHP versions.  For a detailed
+installation on Mac OSX see <a
+href='http://somebodydial911.com/archives/000910.php'>Jason Perkins'</a>
+installation instructions.  Once you have access to "phpize" and "php-config",
+do the following:
 </p>
 <p>
-Once you have access to "phpize" and "php-config", do the following:
 <ol>
 <li>Unpack the tarball: tar -xzf xdebug-1.x.x.tgz.  Note that you do
 not need to unpack the tarball inside the PHP source code tree.
@@ -120,8 +117,6 @@ upgrade your autotools (autoconf, automake and libtool) or install the known
 working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 
 <li>make</li>
-
-<li>(Only on MacOSX <b>before</b> PHP 4.3.3):<br />gcc -bundle -bundle_loader /path/to/sapi/cli/php *.o -o modules/xdebug.so</li>
 
 <li>cp modules/xdebug.so /to/wherever/you/want/it</li>
 
