@@ -9,8 +9,7 @@
 
 <?php include "include/menu-docs.php"; ?>
 
-<div class="document" id="dbgp-a-common-debugger-protocol-for-languages-and-debugger-ui-communication">
-<h1 class="title">DBGp - A common debugger protocol for languages and debugger UI communication</h1>
+<h1 class="title">DBGP - A common debugger protocol for languages and debugger UI communication</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
 <col class="docinfo-content" />
@@ -18,108 +17,110 @@
 <tr><th class="docinfo-name">Version:</th>
 <td>1.0</td></tr>
 <tr><th class="docinfo-name">Status:</th>
-<td>draft 13</td></tr>
+<td>draft 14</td></tr>
 <tr><th class="docinfo-name">Author:</th>
 <td>Shane Caraveo, ActiveState &lt;<a class="reference" href="mailto:shanec&#64;ActiveState.com">shanec&#64;ActiveState.com</a>&gt;</td></tr>
 <tr><th class="docinfo-name">Author:</th>
 <td>Derick Rethans &lt;<a class="reference" href="mailto:derick&#64;derickrethans.nl">derick&#64;derickrethans.nl</a>&gt;</td></tr>
 </tbody>
 </table>
+<div class="document" id="dbgp-a-common-debugger-protocol-for-languages-and-debugger-ui-communication">
 <div class="contents topic" id="contents">
-<p class="topic-title"><a name="contents">Contents</a></p>
+<p class="topic-title first"><a name="contents">Contents</a></p>
 <ul class="simple">
-<li><a class="reference" href="#description" id="id28" name="id28">1. Description</a></li>
-<li><a class="reference" href="#issues" id="id29" name="id29">1.1 Issues</a></li>
-<li><a class="reference" href="#changes" id="id30" name="id30">1.2 Changes</a><ul>
-<li><a class="reference" href="#id1" id="id31" name="id31">2003-12-16</a></li>
-<li><a class="reference" href="#id2" id="id32" name="id32">2003-12-09</a></li>
-<li><a class="reference" href="#id3" id="id33" name="id33">2003-12-05</a></li>
-<li><a class="reference" href="#id4" id="id34" name="id34">2003-12-02</a></li>
-<li><a class="reference" href="#id5" id="id35" name="id35">2003-11-25</a></li>
-<li><a class="reference" href="#id6" id="id36" name="id36">2003-11-24</a></li>
-<li><a class="reference" href="#id7" id="id37" name="id37">2003-11-20</a></li>
-<li><a class="reference" href="#id8" id="id38" name="id38">2003-11-18</a></li>
-<li><a class="reference" href="#id9" id="id39" name="id39">2003-11-12</a></li>
-<li><a class="reference" href="#id10" id="id40" name="id40">2003-11-09</a></li>
-<li><a class="reference" href="#id11" id="id41" name="id41">2003-11-05</a></li>
-<li><a class="reference" href="#id12" id="id42" name="id42">2003-10-15</a></li>
-<li><a class="reference" href="#id13" id="id43" name="id43">2003-10-09</a></li>
-<li><a class="reference" href="#id14" id="id44" name="id44">2003-10-07</a></li>
-<li><a class="reference" href="#id15" id="id45" name="id45">2003-10-06</a></li>
-<li><a class="reference" href="#id16" id="id46" name="id46">2003-10-02</a></li>
-<li><a class="reference" href="#id17" id="id47" name="id47">2003-09-30</a></li>
+<li><a class="reference" href="#description" id="id11" name="id11">1. Description</a></li>
+<li><a class="reference" href="#issues" id="id12" name="id12">1.1 Issues</a></li>
+<li><a class="reference" href="#requirements" id="id13" name="id13">2. Requirements</a></li>
+<li><a class="reference" href="#terminology" id="id14" name="id14">3. Terminology</a></li>
+<li><a class="reference" href="#security" id="id15" name="id15">4. Security</a></li>
+<li><a class="reference" href="#initiating-a-debugging-session" id="id16" name="id16">5. Initiating a debugging session</a><ul>
+<li><a class="reference" href="#standard-dbgp-port" id="id17" name="id17">5.1 Standard DBGP port</a></li>
+<li><a class="reference" href="#connection-initialization" id="id18" name="id18">5.2 Connection Initialization</a></li>
+<li><a class="reference" href="#just-in-time-debugging-and-debugger-proxies" id="id19" name="id19">5.3 Just in time debugging and debugger proxies</a><ul>
+<li><a class="reference" href="#init-packet-handling" id="id20" name="id20">5.3.1 Init Packet Handling</a></li>
+<li><a class="reference" href="#proxy-errors" id="id21" name="id21">5.3.2 Proxy Errors</a></li>
+<li><a class="reference" href="#proxy-ports" id="id22" name="id22">5.3.3 Proxy Ports</a></li>
 </ul>
 </li>
-<li><a class="reference" href="#requirements" id="id48" name="id48">2. Requirements</a></li>
-<li><a class="reference" href="#terminology" id="id49" name="id49">3. Terminology</a></li>
-<li><a class="reference" href="#security" id="id50" name="id50">4. Security</a></li>
-<li><a class="reference" href="#initiating-a-debugging-session" id="id51" name="id51">5. Initiating a debugging session</a><ul>
-<li><a class="reference" href="#just-in-time-debugging-and-debugger-proxies" id="id52" name="id52">5.1 Just in time debugging and debugger proxies</a></li>
-<li><a class="reference" href="#multiple-processes-or-threads" id="id53" name="id53">5.2 Multiple Processes or Threads</a></li>
-<li><a class="reference" href="#feature-negotiation" id="id54" name="id54">5.3 Feature Negotiation</a><ul>
-<li><a class="reference" href="#data-packet-negotiation" id="id55" name="id55">Data packet negotiation</a></li>
-<li><a class="reference" href="#asynchronous-communications" id="id56" name="id56">Asynchronous Communications</a></li>
+<li><a class="reference" href="#multiple-processes-or-threads" id="id23" name="id23">5.4 Multiple Processes or Threads</a></li>
+<li><a class="reference" href="#feature-negotiation" id="id24" name="id24">5.5 Feature Negotiation</a><ul>
+<li><a class="reference" href="#data-packet-negotiation" id="id25" name="id25">Data packet negotiation</a></li>
+<li><a class="reference" href="#asynchronous-communications" id="id26" name="id26">Asynchronous Communications</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference" href="#message-packets" id="id57" name="id57">6. Message Packets</a><ul>
-<li><a class="reference" href="#why-not-xml-both-ways" id="id58" name="id58">6.1 Why not XML both ways?</a></li>
-<li><a class="reference" href="#packet-communications" id="id59" name="id59">6.2 Packet Communications</a></li>
-<li><a class="reference" href="#ide-to-debugger-engine-communications" id="id60" name="id60">6.3 IDE to debugger engine communications</a></li>
-<li><a class="reference" href="#debugger-engine-to-ide-communications" id="id61" name="id61">6.4 debugger engine to IDE communications</a></li>
-<li><a class="reference" href="#debugger-engine-errors" id="id62" name="id62">6.5 debugger engine errors</a></li>
-<li><a class="reference" href="#error-codes" id="id63" name="id63">6.5.1 Error Codes</a></li>
-<li><a class="reference" href="#file-paths" id="id64" name="id64">6.6 file paths</a></li>
-<li><a class="reference" href="#dynamic-code-and-virtual-files" id="id65" name="id65">6.7 Dynamic code and virtual files</a></li>
+<li><a class="reference" href="#message-packets" id="id27" name="id27">6. Message Packets</a><ul>
+<li><a class="reference" href="#why-not-xml-both-ways" id="id28" name="id28">6.1 Why not XML both ways?</a></li>
+<li><a class="reference" href="#packet-communications" id="id29" name="id29">6.2 Packet Communications</a></li>
+<li><a class="reference" href="#ide-to-debugger-engine-communications" id="id30" name="id30">6.3 IDE to debugger engine communications</a></li>
+<li><a class="reference" href="#debugger-engine-to-ide-communications" id="id31" name="id31">6.4 debugger engine to IDE communications</a></li>
+<li><a class="reference" href="#debugger-engine-errors" id="id32" name="id32">6.5 debugger engine errors</a></li>
+<li><a class="reference" href="#error-codes" id="id33" name="id33">6.5.1 Error Codes</a></li>
+<li><a class="reference" href="#file-paths" id="id34" name="id34">6.6 file paths</a></li>
+<li><a class="reference" href="#dynamic-code-and-virtual-files" id="id35" name="id35">6.7 Dynamic code and virtual files</a></li>
 </ul>
 </li>
-<li><a class="reference" href="#core-commands" id="id66" name="id66">7. Core Commands</a><ul>
-<li><a class="reference" href="#status" id="id67" name="id67">7.1 status</a></li>
-<li><a class="reference" href="#feature-get" id="id68" name="id68">7.2 feature_get</a></li>
-<li><a class="reference" href="#feature-set" id="id69" name="id69">7.3 feature_set</a></li>
-<li><a class="reference" href="#continuation-commands" id="id70" name="id70">7.5 continuation commands</a></li>
-<li><a class="reference" href="#breakpoints" id="id71" name="id71">7.6 breakpoints</a><ul>
-<li><a class="reference" href="#id18" id="id72" name="id72">7.6.1 breakpoint_set</a></li>
-<li><a class="reference" href="#id19" id="id73" name="id73">7.6.2 breakpoint_get</a></li>
-<li><a class="reference" href="#id20" id="id74" name="id74">7.6.3 breakpoint_update</a></li>
-<li><a class="reference" href="#id21" id="id75" name="id75">7.6.4 breakpoint_remove</a></li>
-<li><a class="reference" href="#id22" id="id76" name="id76">7.6.5 breakpoint_list</a></li>
+<li><a class="reference" href="#core-commands" id="id36" name="id36">7. Core Commands</a><ul>
+<li><a class="reference" href="#status" id="id37" name="id37">7.1 status</a></li>
+<li><a class="reference" href="#options-and-configuration" id="id38" name="id38">7.2 Options and Configuration</a><ul>
+<li><a class="reference" href="#feature-names" id="id39" name="id39">7.2.1 Feature Names</a></li>
+<li><a class="reference" href="#feature-get" id="id40" name="id40">7.2.2 feature_get</a></li>
+<li><a class="reference" href="#feature-set" id="id41" name="id41">7.2.3 feature_set</a></li>
 </ul>
 </li>
-<li><a class="reference" href="#stack-depth" id="id77" name="id77">7.7 stack_depth</a></li>
-<li><a class="reference" href="#stack-get" id="id78" name="id78">7.8 stack_get</a></li>
-<li><a class="reference" href="#context-names" id="id79" name="id79">7.9 context_names</a></li>
-<li><a class="reference" href="#context-get" id="id80" name="id80">7.10 context_get</a></li>
-<li><a class="reference" href="#properties-variables-and-values" id="id81" name="id81">7.11 Properties, variables and values</a></li>
-<li><a class="reference" href="#data-types" id="id82" name="id82">7.12 Data Types</a><ul>
-<li><a class="reference" href="#common-data-types" id="id83" name="id83">7.12.1 Common Data Types</a></li>
-<li><a class="reference" href="#typemap-get" id="id84" name="id84">7.12.2 typemap_get</a></li>
+<li><a class="reference" href="#continuation-commands" id="id42" name="id42">7.5 continuation commands</a></li>
+<li><a class="reference" href="#breakpoints" id="id43" name="id43">7.6 breakpoints</a><ul>
+<li><a class="reference" href="#id1" id="id44" name="id44">7.6.1 breakpoint_set</a></li>
+<li><a class="reference" href="#id2" id="id45" name="id45">7.6.2 breakpoint_get</a></li>
+<li><a class="reference" href="#id3" id="id46" name="id46">7.6.3 breakpoint_update</a></li>
+<li><a class="reference" href="#id4" id="id47" name="id47">7.6.4 breakpoint_remove</a></li>
+<li><a class="reference" href="#id5" id="id48" name="id48">7.6.5 breakpoint_list</a></li>
 </ul>
 </li>
-<li><a class="reference" href="#property-get-property-set-property-value" id="id85" name="id85">7.13 property_get, property_set, property_value</a></li>
-<li><a class="reference" href="#source" id="id86" name="id86">7.14 source</a></li>
-<li><a class="reference" href="#stdout-stderr" id="id87" name="id87">7.15 stdout, stderr</a></li>
+<li><a class="reference" href="#stack-depth" id="id49" name="id49">7.7 stack_depth</a></li>
+<li><a class="reference" href="#stack-get" id="id50" name="id50">7.8 stack_get</a></li>
+<li><a class="reference" href="#context-names" id="id51" name="id51">7.9 context_names</a></li>
+<li><a class="reference" href="#context-get" id="id52" name="id52">7.10 context_get</a></li>
+<li><a class="reference" href="#properties-variables-and-values" id="id53" name="id53">7.11 Properties, variables and values</a></li>
+<li><a class="reference" href="#data-types" id="id54" name="id54">7.12 Data Types</a><ul>
+<li><a class="reference" href="#common-data-types" id="id55" name="id55">7.12.1 Common Data Types</a></li>
+<li><a class="reference" href="#typemap-get" id="id56" name="id56">7.12.2 typemap_get</a></li>
 </ul>
 </li>
-<li><a class="reference" href="#extended-commands" id="id88" name="id88">8. Extended Commands</a><ul>
-<li><a class="reference" href="#stdin" id="id89" name="id89">8.1 stdin</a></li>
-<li><a class="reference" href="#break" id="id90" name="id90">8.2 break</a></li>
-<li><a class="reference" href="#eval" id="id91" name="id91">8.3 eval</a></li>
-<li><a class="reference" href="#spawnpoints" id="id92" name="id92">8.4 spawnpoints</a><ul>
-<li><a class="reference" href="#id23" id="id93" name="id93">8.4.1 spawnpoint_set</a></li>
-<li><a class="reference" href="#id24" id="id94" name="id94">8.4.2 spawnpoint_get</a></li>
-<li><a class="reference" href="#id25" id="id95" name="id95">8.4.3 spawnpoint_update</a></li>
-<li><a class="reference" href="#id26" id="id96" name="id96">8.4.4 spawnpoint_remove</a></li>
-<li><a class="reference" href="#id27" id="id97" name="id97">8.4.5 spawnpoint_list</a></li>
+<li><a class="reference" href="#property-get-property-set-property-value" id="id57" name="id57">7.13 property_get, property_set, property_value</a></li>
+<li><a class="reference" href="#source" id="id58" name="id58">7.14 source</a></li>
+<li><a class="reference" href="#stdout-stderr" id="id59" name="id59">7.15 stdout, stderr</a></li>
 </ul>
 </li>
+<li><a class="reference" href="#extended-commands" id="id60" name="id60">8. Extended Commands</a><ul>
+<li><a class="reference" href="#stdin" id="id61" name="id61">8.1 stdin</a></li>
+<li><a class="reference" href="#break" id="id62" name="id62">8.2 break</a></li>
+<li><a class="reference" href="#eval" id="id63" name="id63">8.3 eval</a><ul>
+<li><a class="reference" href="#expr" id="id64" name="id64">8.3.1 expr</a></li>
+<li><a class="reference" href="#exec" id="id65" name="id65">8.3.2 exec</a></li>
 </ul>
 </li>
+<li><a class="reference" href="#spawnpoints" id="id66" name="id66">8.4 spawnpoints</a><ul>
+<li><a class="reference" href="#id6" id="id67" name="id67">8.4.1 spawnpoint_set</a></li>
+<li><a class="reference" href="#id7" id="id68" name="id68">8.4.2 spawnpoint_get</a></li>
+<li><a class="reference" href="#id8" id="id69" name="id69">8.4.3 spawnpoint_update</a></li>
+<li><a class="reference" href="#id9" id="id70" name="id70">8.4.4 spawnpoint_remove</a></li>
+<li><a class="reference" href="#id10" id="id71" name="id71">8.4.5 spawnpoint_list</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#notifications" id="id72" name="id72">8.5 Notifications</a><ul>
+<li><a class="reference" href="#standard-notifications" id="id73" name="id73">8.5.1 Standard Notifications</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#interact-interactive-shell" id="id74" name="id74">8.6 interact - Interactive Shell</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#a-changelog" id="id75" name="id75">A. ChangeLog</a></li>
 </ul>
 </div>
 <div class="section" id="description">
-<h1><a class="toc-backref" href="#id28" name="description">1. Description</a></h1>
+<h1><a class="toc-backref" href="#id11" name="description">1. Description</a></h1>
 <p>This document describes a simple protocol for use with language tools
 and engines for the purpose of debugging applications.  It does not
 describe user interfaces or interactions with the debugger.  The
@@ -130,226 +131,26 @@ provided for additional explanation or as reasoning for specific
 design decisions.</p>
 </div>
 <div class="section" id="issues">
-<h1><a class="toc-backref" href="#id29" name="issues">1.1 Issues</a></h1>
+<h1><a class="toc-backref" href="#id12" name="issues">1.1 Issues</a></h1>
 <p>1. The handling of proxy errors needs to be clarified.  Without both
 IDE and debugger engine supporting commands to be received at
 arbitrary times, the proxy may have problems sending error or status
-information to either one.  See section 5.1.  We should think a bit
+information to either one.  See section 5.3.2.  We should think a bit
 more about what a proxy might need to do.</p>
-<p>2. Need to look at specific behaviours and document them.  eg. what
-does the debugger engine do once connected?  It should break at the
-first possible point, send the init then wait for debugger commands.</p>
-</div>
-<div class="section" id="changes">
-<h1><a class="toc-backref" href="#id30" name="changes">1.2 Changes</a></h1>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id31" name="id1">2003-12-16</a></h2>
-<ul class="simple">
-<li>7.6, 8.4 re-write the breakpoint and spawnpoint sections to be clearer</li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id32" name="id2">2003-12-09</a></h2>
-<ul class="simple">
-<li>6.7 new section describing dbgp file protocol</li>
-<li>7.6 better document breakpoints</li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id33" name="id3">2003-12-05</a></h2>
-<ul class="simple">
-<li>6 Change the deliminator for command data to '--'.  This conforms to
-standard getopt libraries.</li>
-<li>7.11 remove the recursive attribute, if an IDE wants to handle
-circular references, it can do so based on the address attribute if
-the engine provides it.</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id34" name="id4">2003-12-02</a></h2>
-<ul class="simple">
-<li>7.6 remove breakpoint_enable/disable, and add breakpoint_update
-command.  Enable/disable states are changed through breakpoint_update.</li>
-<li>8.4 new (optional) spawnpoint commands</li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id35" name="id5">2003-11-25</a></h2>
-<ul class="simple">
-<li>7.6 Change the breakpoint <em>hits</em> and <em>ignore</em> attributes to <em>hit_count</em>,
-<em>hit_value</em> and <em>hit_condition</em> to add functionality available in VS.NET
-and to simplify usage. Also clarify some other breakpoint attribute legal
-values.</li>
-</ul>
-</div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id36" name="id6">2003-11-24</a></h2>
-<ul class="simple">
-<li>7.5 correct the stop command documentation, stop is 'detach', and
-does not allow for continued interaction.  Document how expressions
-are returned from breakpoint_get.</li>
-<li>7.8 correct old documentation on the stack element.  Add new
-attributes: where, cmdbegin, cmdlength.  Provide further documentation
-about all the attributes.</li>
-</ul>
-</div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id37" name="id7">2003-11-20</a></h2>
-<ul class="simple">
-<li>5.1 better define session keys vs. ide key for proxy, document how
-proxy works better.</li>
-<li>7.6 better document attributes and hit option</li>
-</ul>
-</div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#id38" name="id8">2003-11-18</a></h2>
-<ul class="simple">
-<li>7.1 Clarify stopping and stopped states</li>
-<li>7.5 Clarify the stop command</li>
-<li>7.6 Remove 'temporary' as a status for breakpoints, make it an option
-in the command line.  Remove the 'function' breakpoint type, provide
-two new types, 'call' and 'return'.  Add 'hits' option to allow a
-breakpoint to be ignored a number of times before being used.</li>
-</ul>
-</div>
-<div class="section" id="id9">
-<h2><a class="toc-backref" href="#id39" name="id9">2003-11-12</a></h2>
-<ul class="simple">
-<li>draft 12</li>
-<li>Rest markup tweaks</li>
-</ul>
-</div>
-<div class="section" id="id10">
-<h2><a class="toc-backref" href="#id40" name="id10">2003-11-09</a></h2>
-<ul class="simple">
-<li>draft 11</li>
-<li>7.12 new section inserted as 7.12.  This section specifies common
-data types, and how to map more specific data types to the the common
-types.</li>
-<li>7.11 two new optional attributes, classname and facet, that provide
-additional hints to the IDE about the nature of the property.  New
-key attribute for language specific keys to properties.</li>
-<li>6.5 new section, 6.5.1 for defining common error codes.</li>
-</ul>
-</div>
-<div class="section" id="id11">
-<h2><a class="toc-backref" href="#id41" name="id11">2003-11-05</a></h2>
-<ul class="simple">
-<li>spelling fixes</li>
-<li>5.1 change proxy options</li>
-<li>7.6 clarify breakpoint command options</li>
-<li>7.12 fix old text about context names</li>
-</ul>
-</div>
-<div class="section" id="id12">
-<h2><a class="toc-backref" href="#id42" name="id12">2003-10-15</a></h2>
-<ul class="simple">
-<li>6 remove the first NULL in the command structure from IDE to debugger
-engine.  This makes dealing with those commands easier.</li>
-<li>6.6 NEW File paths must be URI's.</li>
-<li>7 source command returns the source for the current context if no
-file uri is provided.</li>
-<li>7 added sub-item numbering</li>
-<li>7.1 clarify the status values</li>
-<li>8 added sub-item numbering</li>
-</ul>
-</div>
-<div class="section" id="id13">
-<h2><a class="toc-backref" href="#id43" name="id13">2003-10-09</a></h2>
-<ul class="simple">
-<li>7 remove run_to, unnecessary</li>
-<li>7 remove 'step', there is no generic step command</li>
-<li>7 clarify continuation commands</li>
-<li>7 clarify breakpoints</li>
-</ul>
-</div>
-<div class="section" id="id14">
-<h2><a class="toc-backref" href="#id44" name="id14">2003-10-07</a></h2>
-<ul class="simple">
-<li>more layout changes for reStructuredText</li>
-</ul>
-</div>
-<div class="section" id="id15">
-<h2><a class="toc-backref" href="#id45" name="id15">2003-10-06</a></h2>
-<ul class="simple">
-<li>reformat to <a class="reference" href="http://docutils.sourceforge.net/spec/rst/reStructuredText.html">reStructuredText markup</a></li>
-<li>6 clarify message packets</li>
-<li>6.3 clarify command packets</li>
-<li>7 clarify feature_get/set</li>
-<li>7 allow error results on breakpoints if a type of breakpoint
-is not supported by a debugger engine.</li>
-<li>7 add recursive attribute to properties, and clarify the
-address attribute and how recursive data is handled.</li>
-<li>7,8 moved stdin to the optional commands section</li>
-</ul>
-</div>
-<div class="section" id="id16">
-<h2><a class="toc-backref" href="#id46" name="id16">2003-10-02</a></h2>
-<ul class="simple">
-<li>5.1 changed proxy error to be the same as that in 6.5</li>
-<li>5.1 the IDE and proxy ports have been defined to 9000/9001</li>
-<li>5.3 exclude protocol overhead from data size definition</li>
-<li>6.2 changed typo 'stdin and stdout' to 'stdout and stderr'</li>
-<li>6.5 changed error id to error code</li>
-<li>7 removed comments on 'body' from the run commands</li>
-<li>7 clarified 'source' command arguments to be optional</li>
-<li>7 added 'disable' option to stdin/out/err commands</li>
-<li>7 breakpoint arguments and types have been better defined since
-not all arguments need to be required for all types</li>
-<li>7 the expression breakpoint type has been removed since it is
-covered by the conditional breakpoint type</li>
-</ul>
-</div>
-<div class="section" id="id17">
-<h2><a class="toc-backref" href="#id47" name="id17">2003-09-30</a></h2>
-<ul class="simple">
-<li>section numbers added, changes below are marked with the section
-number</li>
-<li>3 Terminology changed (frontend -&gt; IDE, backend -&gt; debugger engine)</li>
-<li>5.1 added response packet from proxy to IDE when IDE issues the
-proxyinit command.</li>
-<li>5.1 the proxy now adds a proxyclientid to the init packet from
-the debugger engine when it passes the packet through to the IDE.</li>
-<li>5.1 the proxy must be able to send errors to the IDE, for instance,
-if it looses the connection to the debugger engine.</li>
-<li>5.1 the proxy must be able to send errors to the Debugger, for
-instance, if it looses the connection to the IDE.</li>
-<li>5.3 added new section to help better define feature negotiation
-with feature_get/set commands.</li>
-<li>6 packets have been better defined.  This section has also been
-reorganized.</li>
-<li>6.2 the communication of packets has been rewritten.</li>
-<li>7 feature_get/set have some modifications.</li>
-<li>7 context_get and property_* commands have been modified to better
-reflect negotiation of features using the feature_get/set commands.</li>
-<li>7 property_* commands have been commented a bit more, and an
-additional argument is available for paging arrays, etc.</li>
-<li>7 The definition of the property tag has been modified</li>
-<li>7 stdin command has been modified, the debugger engine may choose
-to not redirect stdin.</li>
-<li>7 status command modified to support the async state</li>
-<li>7 source command now accepts begin and end line arguments for
-retrieving only parts of a file.</li>
-<li>7 stack_get now defines an enumeration for the stack</li>
-<li>8 break command clarified so it can only be sent while the debugger
-engine is in a run state.</li>
-<li>8 eval can return a property as part of the response</li>
-</ul>
-</div>
 </div>
 <div class="section" id="requirements">
-<h1><a class="toc-backref" href="#id48" name="requirements">2. Requirements</a></h1>
+<h1><a class="toc-backref" href="#id13" name="requirements">2. Requirements</a></h1>
 <ul class="simple">
 <li>extensibility, allow for vendor or language specific features</li>
-<li>backwards compatibility</li>
+<li>backwards and forwards compatibility</li>
 <li>firewall and tunneling support</li>
 <li>support for multiple languages</li>
 <li>support for multiple processes or threads</li>
-<li>support for both dynamic and compiled languages</li>
+<li>support for dynamic and possibly for compiled languages</li>
 </ul>
 </div>
 <div class="section" id="terminology">
-<h1><a class="toc-backref" href="#id49" name="terminology">3. Terminology</a></h1>
+<h1><a class="toc-backref" href="#id14" name="terminology">3. Terminology</a></h1>
 <dl>
 <dt>IDE</dt>
 <dd>An IDE, or other debugger UI IDE or tool.</dd>
@@ -371,45 +172,181 @@ application will attach separately.</dd>
 </dl>
 </div>
 <div class="section" id="security">
-<h1><a class="toc-backref" href="#id50" name="security">4. Security</a></h1>
+<h1><a class="toc-backref" href="#id15" name="security">4. Security</a></h1>
 <p>It is expected that implementations will provide security, such as ip
 filtering, ssh tunneling, etc.  This protocol itself does not provide
 a means of securing the debugging session.</p>
 </div>
 <div class="section" id="initiating-a-debugging-session">
-<h1><a class="toc-backref" href="#id51" name="initiating-a-debugging-session">5. Initiating a debugging session</a></h1>
+<h1><a class="toc-backref" href="#id16" name="initiating-a-debugging-session">5. Initiating a debugging session</a></h1>
 <p>The debugger engine initiates a debugging session.  The debugger engine
 will make a connection to a listening IDE, then wait for the IDE to
-initiate commands.  The first thing that should happen in a debug
-session is that the IDE negotiates features using the
-feature_get and feature_set commands.  It is important to negotiate
-a shared encoding.  All implementations must at least support UTF-8.
-The IDE listens on port 9000 for debugger connections, unless the
+initiate commands.  The debugger engine does not step into the first line of
+execution until the IDE issues one of the continuation commands.
+The first thing that should happen in a debug session is that the IDE
+negotiates features using the feature_get and feature_set commands, and sets
+any additional data, such as breakpoints.  Debugger engine implementations
+should store and data it receives if it is unable to process them prior to
+compiling and/or executing code.  Commands such as stack_get should not be
+expected to work during this phase, otherwise known as the 'starting' state (see
+section 7.1 for status levels).</p>
+<p>Likewise, at the end of a debug session, there is a 'stopping' state.  This state
+is entered after all execution is complete.  For most debugger engine implementations,
+only a 'stop' command can be accepted at this point, however some implementations
+may provide additional commands for retrieving various data from the engine for
+post debug session processing.</p>
+<div class="section" id="standard-dbgp-port">
+<h2><a class="toc-backref" href="#id17" name="standard-dbgp-port">5.1 Standard DBGP port</a></h2>
+<p>The IDE listens on port 9000 for debugger connections, unless the
 IDE is using a proxy, in which case it may listen on any port.  In
-that case, the IDE will tell the proxy which port it is listening on.</p>
+that case, the IDE will tell the proxy which port it is listening on, and the
+proxy should listen on port 9000.  While this document defines port 9000
+as the standard DBGP port, an implementation may support the use of any
+port.  Current implementations accept various forms of configuration that
+allow this port to be defined.</p>
+</div>
+<div class="section" id="connection-initialization">
+<h2><a class="toc-backref" href="#id18" name="connection-initialization">5.2 Connection Initialization</a></h2>
+<p>When a debugger engine connects to either a IDE or proxy, it must send an
+init packet:</p>
+<pre class="literal-block">
+&lt;init appid=&quot;APPID&quot;
+      idekey=&quot;IDE_KEY&quot;
+      session=&quot;DBGP_COOKIE&quot;
+      thread=&quot;THREAD_ID&quot;
+      parent=&quot;PARENT_APPID&quot;
+      language=&quot;LANGUAGE_NAME&quot;
+      protocol_version=&quot;1.0&quot;
+      fileuri=&quot;file://path/to/file&quot;&gt;
+</pre>
+<p>Attributes in the init element can include:</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>appid</td>
+<td>defined by the debugger engine</td>
+</tr>
+<tr><td>idekey</td>
+<td>defined by the user.  The DBGP_IDEKEY environment
+variable SHOULD be used if it is available,
+otherwise setting this value is debugger engine
+implementation specific.  This value may be empty.</td>
+</tr>
+<tr><td>session</td>
+<td>If the environment variable DBGP_COOKIE exists,
+then the init packet MUST contain a session
+attribute with the value of the variable.  This
+allows an IDE to execute a debugger engine, and
+maintain some state information between the
+execution and the protocol connection.  This value
+should not be expected to be set in 'remote'
+debugging situations where the IDE is not in
+control of the process.</td>
+</tr>
+<tr><td>thread_id</td>
+<td>the systems thread id</td>
+</tr>
+<tr><td>parent_appid</td>
+<td>the appid of the application that spawned the
+process.  When an application is executed, it
+should set it's APPID into the environment.
+If an APPID already exists, it should first
+read that value and use it as the PARENT_APPID.</td>
+</tr>
+<tr><td>language_name</td>
+<td>debugger engine specific, must not contain
+additional information, such as version, etc.</td>
+</tr>
+<tr><td>protocol</td>
+<td>The highest version of this protocol supported</td>
+</tr>
+<tr><td>fileuri</td>
+<td>URI of the script file being debugged</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>The IDE responds by dropping socket connection, or starting with
+debugger commands.</p>
+<p>The init packet may have child elements for additional vendor specific
+data.  These are entirely optional and must not effect behavior
+of the debugger interaction.  Suggested child elements include:</p>
+<pre class="literal-block">
+&lt;engine version=&quot;1.abcd&quot;&gt;product title&lt;/engine&gt;
+&lt;author&gt;author&lt;/author&gt;
+&lt;company&gt;company&lt;/company&gt;
+&lt;license&gt;licensing info&lt;/license&gt;
+&lt;url&gt;url&lt;/url&gt;
+&lt;copyright&gt;xxx&lt;/copyright&gt;
+</pre>
+</div>
 <div class="section" id="just-in-time-debugging-and-debugger-proxies">
-<h2><a class="toc-backref" href="#id52" name="just-in-time-debugging-and-debugger-proxies">5.1 Just in time debugging and debugger proxies</a></h2>
-<p>To support proxies and jit demons, the IDE should be configured with
+<h2><a class="toc-backref" href="#id19" name="just-in-time-debugging-and-debugger-proxies">5.3 Just in time debugging and debugger proxies</a></h2>
+<p>Proxies are supported to allow multiuser systems work with a defined
+port for debugging.  Each IDE would listen on a unique port and notify the
+proxy what port it is listening on, along with a key value that is used by
+the debugger engine to specify which IDE it should be connected with.</p>
+<p>With the exception of the init packet, all communications
+will be passed through without modifications.  A proxy could also implement
+support for just in time debugging.  In this case, a debugger engine would
+break (perhaps on an error or exception) and connect to the proxy.  The proxy
+would then start the IDE (if it is not already running) and initiate a
+debugging session with it.</p>
+<p>The method for handling just in time debugging is not defined by the protocol
+and is implementation specific.  One example of how this may work is that the
+proxy has a configuration file that defines key's for each user, along with
+the path to the executable that will provide the UI for that user.  The debugger
+engine would have to know this key value in advance and provide it to the proxy
+in the init packet (see IDE_KEY in section 5.2).  The proxy would know if the
+IDE is running, since the IDE should have communicated with the proxy already,
+if it has not, the proxy could execute the IDE directly.</p>
+<p>To support proxies and jit deamons, the IDE should be configured with
 and ip:port pointing to the proxy/jit.  The IDE then makes a
-connection when it starts and sends the following command:</p>
+connection to the proxy when it starts and sends the following command:</p>
+<blockquote>
+<p>IDE command</p>
 <pre class="literal-block">
 proxyinit -a ip:port -k ide_key -m [0|1]
-
--p  the port that the IDE listens for debugging on.  The address
-    is retrieved from the connection information.
--k  a IDE key, which the debugger engine will also use in it's
-    debugging init command.  this allows the proxy to match
-    request to IDE.  Typically the user will provide the
-    session key as a configuration item.
--m  this tells the demon that the IDE supports (or doesn't)
-    multiple debugger sessions.  if -m is missing, zero or no
-    support is default.
-
-proxystop -k ide_key
-
-The IDE sends a proxystop command when it wants the proxy
-server to stop listening for it.
 </pre>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-p</td>
+<td>the port that the IDE listens for debugging on.  The address
+is retrieved from the connection information.</td>
+</tr>
+<tr><td>-k</td>
+<td>a IDE key, which the debugger engine will also use in it's
+debugging init command.  this allows the proxy to match
+request to IDE.  Typically the user will provide the
+session key as a configuration item.</td>
+</tr>
+<tr><td>-m</td>
+<td>this tells the demon that the IDE supports (or doesn't)
+multiple debugger sessions.  if -m is missing, zero or no
+support is default.</td>
+</tr>
+</tbody>
+</table>
+<p>IDE command</p>
+<pre class="literal-block">
+proxystop -k ide_key
+</pre>
+<p>The IDE sends a proxystop command when it wants the proxy
+server to stop listening for it.</p>
+</blockquote>
 <p>The proxy should respond with a simple XML statement alerting the
 IDE to an error, or the success of the initialization (see section
 6.5 for more details on the error element).</p>
@@ -423,74 +360,37 @@ IDE to an error, or the success of the initialization (see section
 </pre>
 <p>Once the IDE has sent this command, and received a confirmation, it
 disconnects from the proxy.  The IDE will only connect to the proxy
-when it initialy wants to start accepting connections from the proxy,
+when it initially wants to start accepting connections from the proxy,
 or when it wants to stop accepting connections from the proxy.</p>
-<p>Upon connection to either a IDE or proxy, the debugger engine sends:</p>
-<pre class="literal-block">
-&lt;init appid=&quot;APPID&quot;
-      idekey=&quot;IDE_KEY&quot;
-      session=&quot;DBGP_COOKIE&quot;
-      thread=&quot;THREAD_ID&quot;
-      parent=&quot;PARENT_APPID&quot;
-      language=&quot;LANGUAGE_NAME&quot;
-      protocol_version=&quot;1.0&quot;
-      fileuri=&quot;file://path/to/file&quot;&gt;
-
-
-appid           defined by the debugger engine
-idekey          defined by the user
-session         If the environment variable DBGP_COOKIE exists,
-                then the init packet MUST contain a session
-                attribute with the value of the variable.  This
-                allows an IDE to execute a debugger engine, and
-                maintain some state information between the
-                execution and the protocol connection.  This value
-                should not be expected to be set in 'remote'
-                debugging situations where the IDE is not in
-                control of the process.  
-thread_id       the systems thread id
-parent_appid    the appid of the application that spawned the
-                process.  When an application is executed, it
-                should set it's APPID into the environment.
-                If an APPID already exists, it should first
-                read that value and use it as the PARENT_APPID.
-language_name   debugger engine specific, must not contain
-                additional information, such as version, etc.
-protocol        The highest version of this protocol supported
-fileuri         URI of the script file being debugged
-</pre>
-<p>The IDE responds by dropping socket connection, or starting with
-debugger commands.</p>
-<p>The init packet may have child elements for additional vendor specific
-data.  These are entirely optional and must not effect behaviour
-of the debugger interaction.  Suggested child elements include:</p>
-<pre class="literal-block">
-&lt;engine version=&quot;1.abcd&quot;&gt;product title&lt;/engine&gt;
-&lt;author&gt;author&lt;/author&gt;
-&lt;company&gt;company&lt;/company&gt;
-&lt;license&gt;licensing info&lt;/license&gt;
-&lt;url&gt;url&lt;/url&gt;
-&lt;copyright&gt;xxx&lt;/copyright&gt;
-</pre>
-<p>If a proxy receives this packet, it will use the idekey attribute to pass
-the request to the correct IDE, or to do some other operation such as
-which may be required to implement security or initiate just in time
-debugging.  The proxy will add the idekey as a attribute to
-the init packet when it passes it through to the IDE.  The proxy may
+<div class="section" id="init-packet-handling">
+<h3><a class="toc-backref" href="#id20" name="init-packet-handling">5.3.1 Init Packet Handling</a></h3>
+<p>If a proxy receives the init packet (see section 5.2), it will use the
+idekey attribute to pass the request to the correct IDE, or to do some
+other operation such as which may be required to implement security or
+initiate just in time debugging.  The proxy will add the idekey as a attribute
+to the init packet when it passes it through to the IDE.  The proxy may
 also add child elements with further information, and must add an
 attribute to the init element called 'proxied' with the attribute
 value being the ip address of the debugger engine.  This is the only
-time the proxy will modify data being passed to the IDE.</p>
+time the proxy should modify data being passed to the IDE.</p>
+</div>
+<div class="section" id="proxy-errors">
+<h3><a class="toc-backref" href="#id21" name="proxy-errors">5.3.2 Proxy Errors</a></h3>
 <p>If the proxy must send error data to the IDE, it may send an XML
 message with the root element named 'proxyerror'.  This message will
 be in the format of the error packets defined in 6.3 below.</p>
 <p>If the proxy must send error data to the debugger engine, it may
 send the proxyerror command defined in section 7 below.</p>
+</div>
+<div class="section" id="proxy-ports">
+<h3><a class="toc-backref" href="#id22" name="proxy-ports">5.3.3 Proxy Ports</a></h3>
 <p>The proxy listens for IDE connections on port 9001, and for debugger
-engine connections on port 9000.</p>
+engine connections on port 9000.  As with section 5.1, these ports may
+be configurable in the implementation.</p>
+</div>
 </div>
 <div class="section" id="multiple-processes-or-threads">
-<h2><a class="toc-backref" href="#id53" name="multiple-processes-or-threads">5.2 Multiple Processes or Threads</a></h2>
+<h2><a class="toc-backref" href="#id23" name="multiple-processes-or-threads">5.4 Multiple Processes or Threads</a></h2>
 <p>The debugger protocol is designed to use a separate socket connection
 for each process or thread.  The IDE may or may not support
 multiple debugger sessions.  If it does not, the debugger engine must
@@ -498,10 +398,14 @@ not attempt to start debug sessions for threads, and the IDE should
 not accept more than one socket connection for debugging.  The
 IDE should tell the debugger engine whether it supports multiple
 debugger sessions, the debugger engine should assume that the IDE does
-not.</p>
+not.  The IDE can use the feature_set command with the feature name of
+'multiple_sessions' to notify the debugger engine that it supports multiple
+session debugging.  The IDE may also query the the debugger engine specifically
+for multithreaded debugging support by using the feature_get command with
+a feature name of 'language_supports_threads'.</p>
 </div>
 <div class="section" id="feature-negotiation">
-<h2><a class="toc-backref" href="#id54" name="feature-negotiation">5.3 Feature Negotiation</a></h2>
+<h2><a class="toc-backref" href="#id24" name="feature-negotiation">5.5 Feature Negotiation</a></h2>
 <p>Although the IDE may at any time during the debugging session send
 feature_get or feature_set commands, the IDE should be designed to
 negotiate the base set of features up front.  Differing languages and
@@ -515,7 +419,7 @@ required features are outlined here in the form of discussion,
 actual implementation of feature arguments are detailed in section 7
 under the feature_get and feature_set commands.</p>
 <div class="section" id="data-packet-negotiation">
-<h3><a class="toc-backref" href="#id55" name="data-packet-negotiation">Data packet negotiation</a></h3>
+<h3><a class="toc-backref" href="#id25" name="data-packet-negotiation">Data packet negotiation</a></h3>
 <p>IDE's may want to limit the size of data that is retrieved from
 debugger engines.  While the debugger engines will define their own
 base default values, the IDE should negotiate these terms if it
@@ -526,7 +430,7 @@ tree like structures.  The data size excludes any the protocol
 overhead.</p>
 </div>
 <div class="section" id="asynchronous-communications">
-<h3><a class="toc-backref" href="#id56" name="asynchronous-communications">Asynchronous Communications</a></h3>
+<h3><a class="toc-backref" href="#id26" name="asynchronous-communications">Asynchronous Communications</a></h3>
 <p>While the protocol does not depend on asynchronous socket support,
 certain design considerations may require that the IDE and/or debugger
 engine treat incoming and outgoing data in an asynchronous fashion.</p>
@@ -538,7 +442,7 @@ asynchronous fashion.  One example of this is the break command.</p>
 in a run state.  To support this, the debugger engine must periodically
 peek at the socket to see if there are any incoming commands.  For
 this reason the break command is optional.  If a command requires
-this type of asynchronous behaviour on the part of the debugger
+this type of asynchronous behavior on the part of the debugger
 engine it must be optional for the debugger engine to support it.</p>
 <p>On the other hand, IDE's MUST at times behave in an asynchronous
 fashion.  When an IDE tells the debugger engine to enter a 'run' state,
@@ -550,7 +454,7 @@ protocol are defined further in section 6.2 below.</p>
 </div>
 </div>
 <div class="section" id="message-packets">
-<h1><a class="toc-backref" href="#id57" name="message-packets">6. Message Packets</a></h1>
+<h1><a class="toc-backref" href="#id27" name="message-packets">6. Message Packets</a></h1>
 <p>The IDE sends simple ASCII commands to the debugger engine.  The
 debugger engine responds with XML data.  The XML data is prepended
 with a stringified integer representing the length of the XML data
@@ -572,27 +476,27 @@ command -a value -b value ...
 the number is noted to be debugger engine specific (eg. the address
 attribute on property elements).</p>
 <div class="section" id="why-not-xml-both-ways">
-<h2><a class="toc-backref" href="#id58" name="why-not-xml-both-ways">6.1 Why not XML both ways?</a></h2>
+<h2><a class="toc-backref" href="#id28" name="why-not-xml-both-ways">6.1 Why not XML both ways?</a></h2>
 <p>The primary reason is to avoid the requirement that a debugger
 engine has an XML parser available.  XML is easy to generate, but
 requires additional libraries for parsing.</p>
 </div>
 <div class="section" id="packet-communications">
-<h2><a class="toc-backref" href="#id59" name="packet-communications">6.2 Packet Communications</a></h2>
+<h2><a class="toc-backref" href="#id29" name="packet-communications">6.2 Packet Communications</a></h2>
 <p>The IDE sends a command, then waits for a response from the
 debugger engine.  If the command is not received in a reasonable
 time (implementation dependent) it may assume the debugger engine
 has entered a non-responsive state.  The exception to this is when
-the IDE sends a 'run' command which may not have an immediate response.</p>
-<p>'run' commands include, but may not be limited to: run, step_into,
+the IDE sends a 'continuation' command which may not have an immediate response.</p>
+<p>'continuation' commands include, but may not be limited to: run, step_into,
 step_over, step_out and eval.  When the debugger engine
 receives such a command, it is considered to have entered a
 'run state'.</p>
-<p>During a 'run' command, the IDE should expect to possibly receive
+<p>During a 'continuation' command, the IDE should expect to possibly receive
 stdin and/or stderr packets from the debugger engine prior to
 receiving a response to the command itself.  It may also possibly
 receive error packets from either the debugger engine, or a proxy
-if one is in use, either prior to the 'run' response, or in response
+if one is in use, either prior to the 'continuation' response, or in response
 to any other command.</p>
 <p>Stdout and stderr, if requested by the IDE, may only be sent during
 commands that have put the debugger engine into a 'run' state.</p>
@@ -629,7 +533,7 @@ DBG:  good bye
 </pre>
 </div>
 <div class="section" id="ide-to-debugger-engine-communications">
-<h2><a class="toc-backref" href="#id60" name="ide-to-debugger-engine-communications">6.3 IDE to debugger engine communications</a></h2>
+<h2><a class="toc-backref" href="#id30" name="ide-to-debugger-engine-communications">6.3 IDE to debugger engine communications</a></h2>
 <p>A debugging IDE (IDE) sends commands to the debugger engine in
 the form of command line arguments.  One argument that is included in
 all commands is the data length.  The data itself is the last part of
@@ -642,14 +546,10 @@ command [SPACE] [arguments] [SPACE] base64(data) [NULL]
 <pre class="literal-block">
 -i      Transaction ID
         unique for each command generated by the IDE
--l      data length, base 10, stringified.  If not present, zero
-        data length is assumed, and no data section will be present
-        (ie. command [arguments] [NULL]).  Length is optional but
-        useful for verifying data length.
 </pre>
 </div>
 <div class="section" id="debugger-engine-to-ide-communications">
-<h2><a class="toc-backref" href="#id61" name="debugger-engine-to-ide-communications">6.4 debugger engine to IDE communications</a></h2>
+<h2><a class="toc-backref" href="#id31" name="debugger-engine-to-ide-communications">6.4 debugger engine to IDE communications</a></h2>
 <p>The debugger engine always replies or sends XML data.  The standard
 namespace for the root elements returned from the debugger
 engine MUST be &quot;<a class="reference" href="urn:debugger_protocol_v1">urn:debugger_protocol_v1</a>&quot;.  Namespaces have been left
@@ -675,7 +575,7 @@ data_length
 rest of the examples in this document.</p>
 </div>
 <div class="section" id="debugger-engine-errors">
-<h2><a class="toc-backref" href="#id62" name="debugger-engine-errors">6.5 debugger engine errors</a></h2>
+<h2><a class="toc-backref" href="#id32" name="debugger-engine-errors">6.5 debugger engine errors</a></h2>
 <p>A debugger engine may need to relay error information back to the IDE in
 response to any command.  The debugger engine may add an error element
 as a child of the response element.  Note that this is not the same
@@ -694,7 +594,7 @@ to avoid conflicts with other implementations.</p>
 </pre>
 </div>
 <div class="section" id="error-codes">
-<h2><a class="toc-backref" href="#id63" name="error-codes">6.5.1 Error Codes</a></h2>
+<h2><a class="toc-backref" href="#id33" name="error-codes">6.5.1 Error Codes</a></h2>
 <p>The following are predefined error codes for the response to commands:</p>
 <p>000 Command parsing errors</p>
 <pre class="literal-block">
@@ -707,10 +607,10 @@ to avoid conflicts with other implementations.</p>
     if the engine is in state &quot;run&quot; than only &quot;break&quot; and &quot;status&quot;
     are available). 
 </pre>
-<p>100 Filerelated errors</p>
+<p>100 File related errors</p>
 <pre class="literal-block">
 100 - can not open file (as a reply to a &quot;source&quot; command if the
-      requested source file can't be openend)
+      requested source file can't be opened)
 101 - stream redirect failed 
 </pre>
 <p>200 Breakpoint, or code flow errors</p>
@@ -742,28 +642,28 @@ to avoid conflicts with other implementations.</p>
 <pre class="literal-block">
 300 - Can not get property (when the requested property to get did
       not exist, this is NOT used for an existing but uninitialized
-      property, which just gets the type &quot;unintialised&quot; (See:
+      property, which just gets the type &quot;uninitialised&quot; (See:
       PreferredTypeNames)).
 301 - Stack depth invalid (the -d stack depth parameter did not
-      exist (ie, there were less stack alements than the number
+      exist (ie, there were less stack elements than the number
       requested) or the parameter was &lt; 0)
-302 - Context invalid (an unexisting context was requested) 
+302 - Context invalid (an non existing context was requested) 
 </pre>
 <p>900 Protocol errors</p>
 <pre class="literal-block">
 900 - Encoding not supported
-998 - An internal exception in the debugger occured
+998 - An internal exception in the debugger occurred
 999 - Unknown error 
 </pre>
 </div>
 <div class="section" id="file-paths">
-<h2><a class="toc-backref" href="#id64" name="file-paths">6.6 file paths</a></h2>
+<h2><a class="toc-backref" href="#id34" name="file-paths">6.6 file paths</a></h2>
 <p>All file paths passed between the IDE and debugger engine must be in
 the URI format specified by IETF RFC 1738 and 2396, and must be
 absolute paths.</p>
 </div>
 <div class="section" id="dynamic-code-and-virtual-files">
-<h2><a class="toc-backref" href="#id65" name="dynamic-code-and-virtual-files">6.7 Dynamic code and virtual files</a></h2>
+<h2><a class="toc-backref" href="#id35" name="dynamic-code-and-virtual-files">6.7 Dynamic code and virtual files</a></h2>
 <p>The protocol reserves the URI scheme 'dbgp' for all virtual
 files generated and maintained by language engines. Such
 virtual files are usually managed by a language engine for
@@ -778,14 +678,14 @@ dbgp:engine-specific-identifier</blockquote>
 <p>The engine-specific-identifier is some string which the debugger engine
 uses to keep track of the specific virtual file.  The IDE must return
 the URI to the debugger engine unchanged through the source command to
-retreive the virtual file.</p>
+retrieve the virtual file.</p>
 </div>
 </div>
 <div class="section" id="core-commands">
-<h1><a class="toc-backref" href="#id66" name="core-commands">7. Core Commands</a></h1>
+<h1><a class="toc-backref" href="#id36" name="core-commands">7. Core Commands</a></h1>
 <p>Both IDE and debugger engine must support all core commands.</p>
 <div class="section" id="status">
-<h2><a class="toc-backref" href="#id67" name="status">7.1 status</a></h2>
+<h2><a class="toc-backref" href="#id37" name="status">7.1 status</a></h2>
 <p>The status command is a simple way for the IDE to find out from
 the debugger engine whether execution may be continued or not.
 no body is required on request.  If async support has been
@@ -838,41 +738,145 @@ status -i transaction_id
 &lt;/response&gt;
 </pre>
 </div>
-<div class="section" id="feature-get">
-<h2><a class="toc-backref" href="#id68" name="feature-get">7.2 feature_get</a></h2>
-<p>The feature command is used to request feature support from the
-debugger engine.  The body of the request contains a string with
-the name of the 'feature' or command.  The body of the response is
-one byte, true or false, followed by a character string (first byte
-may be zero).  An example of usage would be to send a feature
-request with the string 'redirect-stdout' to find out if the engine
-supports redirection of the stdout stream through the debugger
-socket.  The debugger engine must consider all commands as keys for
-this command, but may also have keys that are for features that
-do not map directly to commands.  Keys should be prepended with a
-string to provide a simplified namespacing for extensions.</p>
+<div class="section" id="options-and-configuration">
+<h2><a class="toc-backref" href="#id38" name="options-and-configuration">7.2 Options and Configuration</a></h2>
+<p>The feature commands are used to request feature support from the debugger
+engine. This includes configuration options, some of which may be changed via
+feature_set, the ability to discover support for implemented commands, and to
+discover values for various features, such as the language version or name.</p>
+<p>An example of usage would be to send a feature request with the string 'stdin'
+to find out if the engine supports redirection of the stdin stream through the
+debugger socket. The debugger engine must consider all commands as keys for this
+command, but may also have keys that are for features that do not map directly
+to commands.</p>
+<div class="section" id="feature-names">
+<h3><a class="toc-backref" href="#id39" name="feature-names">7.2.1 Feature Names</a></h3>
 <p>The following features strings MUST be available:</p>
-<pre class="literal-block">
-language_supports_threads
-language_name               {eg. PHP, Python, Perl}
-language_version            {version string}
-encoding                    current encoding in use by
-                            the debugger session
-protocol_version            {for now, always 1}
-supports_async              {for commands such as break}
-data_encoding               optional, allows to turn off
-                            the default base64 encoding of
-                            data.  This should only be used
-                            for development and debugging of
-                            the debugger engines themselves,
-                            and not for general use.  If
-                            implemented the value 'base64'
-                            must be supported to turn back on
-                            regular encoding.  the value
-                            'none' means no encoding is in use.
-                            all elements that use encoding
-                            must include an encoding attribute.
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="34%" />
+<col width="9%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>language_supports_threads</td>
+<td>get</td>
+<td>[0|1]</td>
+</tr>
+<tr><td>language_name</td>
+<td>get</td>
+<td>{eg. PHP, Python, Perl}</td>
+</tr>
+<tr><td>language_version</td>
+<td>get</td>
+<td>{version string}</td>
+</tr>
+<tr><td>encoding</td>
+<td>get</td>
+<td>current encoding in use by
+the debugger session</td>
+</tr>
+<tr><td>protocol_version</td>
+<td>get</td>
+<td>{for now, always 1}</td>
+</tr>
+<tr><td>supports_async</td>
+<td>get</td>
+<td>{for commands such as break}</td>
+</tr>
+<tr><td>data_encoding</td>
+<td>get</td>
+<td>optional, allows to turn off
+the default base64 encoding of data. This
+should only be used for development and
+debugging of the debugger engines
+themselves, and not for general use. If
+implemented the value 'base64' must be
+supported to turn back on regular
+encoding. the value 'none' means no
+encoding is in use. all elements that use
+encoding must include an encoding
+attribute.</td>
+</tr>
+<tr><td>breakpoint_languages</td>
+<td>get</td>
+<td>some engines may support more than one
+language. This feature returns a string
+which is a comma separated list of
+supported languages. <strong>If the engine does
+not provide this feature, then it is
+assumed that the engine only supports the
+language defined in the feature
+language_name.</strong> One example of this is an
+XSLT debugger engine which supports XSLT,
+XML, HTML and XHTML. An IDE may need this
+information to to know what types of
+breakpoints an engine will accept.</td>
+</tr>
+<tr><td>multiple_sessions</td>
+<td>get|set</td>
+<td>{0|1}</td>
+</tr>
+<tr><td>encoding</td>
+<td>get|set</td>
+<td>{ISO8859-15, UTF-8, etc.}</td>
+</tr>
+<tr><td>max_children</td>
+<td>get|set</td>
+<td>max number of array or object
+children to initially retrieve</td>
+</tr>
+<tr><td>max_data</td>
+<td>get|set
+get|set</td>
+<td>max amount of variable data to
+initially retrieve.</td>
+</tr>
+<tr><td>max_depth</td>
+<td>get|set</td>
+<td>maximum depth that the debugger
+engine may return when sending arrays,
+hashs or object structures to the IDE.</td>
+</tr>
+<tr><td>data_encoding</td>
+<td>get|set</td>
+<td>see feature_get</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>The following features strings MAY be available, if they are not, the IDE should
+assume that the feature is not available:</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="34%" />
+<col width="9%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>supports_postmortem</td>
+<td>get</td>
+<td>[0|1]  This feature lets an IDE know that
+there is benefit to continuing interaction
+during the STOPPING state (sect. 7.1).</td>
+</tr>
+<tr><td>show_hidden</td>
+<td>get|set</td>
+<td>[0|1]  This feature can get set by the IDE
+if it wants to have more detailed internal
+information on properties (eg. private
+members of classes, etc.)  Zero means that
+hidden members are not shown to the IDE.</td>
+</tr>
+<tr><td>notify_ok</td>
+<td>get|set</td>
+<td>[0|1]  See section 8.5</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>Additionally, all protocol commands supported must have a string,
 such as the following examples:</p>
 <pre class="literal-block">
@@ -880,10 +884,23 @@ breakpoint_set
 break
 eval
 </pre>
+</div>
+<div class="section" id="feature-get">
+<h3><a class="toc-backref" href="#id40" name="feature-get">7.2.2 feature_get</a></h3>
 <p>arguments for feature_get include:</p>
-<pre class="literal-block">
--n      feature_name
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-n</td>
+<td>feature_name</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 feature-get -i transaction_id -n feature_name
@@ -900,38 +917,32 @@ feature-get -i transaction_id -n feature_name
 </pre>
 </div>
 <div class="section" id="feature-set">
-<h2><a class="toc-backref" href="#id69" name="feature-set">7.3 feature_set</a></h2>
-<p>The feature set command allows a IDE to tell the debugger engine
-what additional capabilities it has.  This is done by sending a
-feature-set command with the body containing a string name for the
-feature.  One example of this would be telling the debugger engine
-whether the IDE supports multiple debugger sessions (for threads,
-etc.).  The debugger engine responds with telling the IDE whether
-it has enabled the feature or not.</p>
-<p>Note: The IDE does not have to listen for additional debugger
-connections if it does not support debugging multiple sessions.
-debugger engines must handle connection failures gracefully.</p>
-<p>The following features MUST be supported by the debugger engine,
-though some options in the commands may not be supported (eg.
-the only required encoding in this protocol is UTF-8).</p>
-<pre class="literal-block">
-multiple_sessions          {0|1}
-encoding                   {ISO8859-15, UTF-8, etc.}
-max_children               max number of array or object
-                           children to initially retrieve
-max_data                   max amount of variable data to
-                           initially retrieve.
-max_depth                  maximum depth that the debugger
-                           engine may return when sending
-                           arrays, hashs or object structures
-                           to the IDE.
-data_encoding              see feature_get
-</pre>
+<h3><a class="toc-backref" href="#id41" name="feature-set">7.2.3 feature_set</a></h3>
+<p>The feature set command allows a IDE to tell the debugger engine what additional
+capabilities it has. One example of this would be telling the debugger engine
+whether the IDE supports multiple debugger sessions (for threads, etc.). The
+debugger engine responds with telling the IDE whether it has enabled the feature
+or not.</p>
+<p>Note: The IDE does not have to listen for additional debugger connections if it
+does not support debugging multiple sessions. debugger engines must handle
+connection failures gracefully.</p>
 <p>arguments for feature_set include:</p>
-<pre class="literal-block">
--n      feature_name
--v      value to be set
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-n</td>
+<td>feature_name</td>
+</tr>
+<tr><td>-v</td>
+<td>value to be set</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>feature_set can be called at any time during a debug session to
 change values previously set.  This allows a IDE to change
 encodings.</p>
@@ -947,8 +958,9 @@ feature_set -i transaction_id -n feature-name -v value
           transaction_id=&quot;transaction_id&quot;/&gt;
 </pre>
 </div>
+</div>
 <div class="section" id="continuation-commands">
-<h2><a class="toc-backref" href="#id70" name="continuation-commands">7.5 continuation commands</a></h2>
+<h2><a class="toc-backref" href="#id42" name="continuation-commands">7.5 continuation commands</a></h2>
 <p>resume the execution of the application.</p>
 <dl>
 <dt>run:</dt>
@@ -966,15 +978,23 @@ scope as from where the command was issued</dd>
 <dd>steps out of the current scope and breaks on the statement after
 returning from the current function. (Also called 'finish' in
 GDB)</dd>
-<dt>kill:</dt>
-<dd>kills the script, no response will follow as the script will be
-terminated right away and followed by a disconnection of the
-network connection from the IDE (and debugger engine if required
-in multi request apache processes).</dd>
 <dt>stop:</dt>
+<dd>ends execution of the script immediately, the debugger engine may
+not respond, though if possible should be designed to do so.
+The script will be terminated right away and be followed by a
+disconnection of the network connection from the IDE (and debugger
+engine if required in multi request apache processes).</dd>
+<dt>detach (optional):</dt>
 <dd>stops interaction with the debugger engine.  Once this command
 is executed, the IDE will no longer be able to communicate with
-the debugger engine.</dd>
+the debugger engine.  This does not end execution of the script
+as does the stop command above, but rather detaches from debugging.
+Support of this continuation command is optional, and the IDE should
+verify support for it via the feature_get command.  If the IDE has
+created stdin/stdout/stderr pipes for execution of the script
+(eg. an interactive shell or other console to catch script output),
+it should keep those open and usable by the process until the process
+has terminated normally.</dd>
 </dl>
 <p>The response to a continue command is a status response (see
 status above).  The debugger engine does not send this response
@@ -993,12 +1013,12 @@ run -i transaction_id
 </pre>
 </div>
 <div class="section" id="breakpoints">
-<h2><a class="toc-backref" href="#id71" name="breakpoints">7.6 breakpoints</a></h2>
+<h2><a class="toc-backref" href="#id43" name="breakpoints">7.6 breakpoints</a></h2>
 <p>Breakpoints are locations or conditions at which a debugger engine
 pauses execution, responds to the IDE, and waits for further commands
 from the IDE.  A failure in any breakpoint commands results in an
 error defined in <a class="reference" href="#debugger-engine-errors">section 6.5</a>.</p>
-<p>The following DBGp commands relate to breakpoints:</p>
+<p>The following DBGP commands relate to breakpoints:</p>
 <blockquote>
 <table border class="table">
 <colgroup>
@@ -1006,19 +1026,19 @@ error defined in <a class="reference" href="#debugger-engine-errors">section 6.5
 <col width="73%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference" href="#id18">breakpoint_set</a></td>
+<tr><td><a class="reference" href="#id1">breakpoint_set</a></td>
 <td>Set a new breakpoint on the session.</td>
 </tr>
-<tr><td><a class="reference" href="#id19">breakpoint_get</a></td>
+<tr><td><a class="reference" href="#id2">breakpoint_get</a></td>
 <td>Get breakpoint info for the given breakpoint id.</td>
 </tr>
-<tr><td><a class="reference" href="#id20">breakpoint_update</a></td>
+<tr><td><a class="reference" href="#id3">breakpoint_update</a></td>
 <td>Update one or more attributes of a breakpoint.</td>
 </tr>
-<tr><td><a class="reference" href="#id21">breakpoint_remove</a></td>
+<tr><td><a class="reference" href="#id4">breakpoint_remove</a></td>
 <td>Remove the given breakpoint on the session.</td>
 </tr>
-<tr><td><a class="reference" href="#id22">breakpoint_list</a></td>
+<tr><td><a class="reference" href="#id5">breakpoint_list</a></td>
 <td>Get a list of all of the session's breakpoints.</td>
 </tr>
 </tbody>
@@ -1109,7 +1129,7 @@ breakpoints.</td>
 temporary breakpoint is one that is deleted after its
 first use. This is useful for features like &quot;Run to
 Cursor&quot;.  Once the debugger engine uses a temporary
-breakpoint, it should automaticaly remove the breakpoint
+breakpoint, it should automatically remove the breakpoint
 from it's list of valid breakpoints.</td>
 </tr>
 <tr><td>hit_count</td>
@@ -1154,12 +1174,12 @@ MUST provide breakpoint id's that are global for the application, and must
 use all breakpoints for all threads where applicable.</p>
 <p>As for any other commands, if there is error the debugger engine should
 return an error response as described in <a class="reference" href="#debugger-engine-errors">section 6.5</a>.</p>
-<div class="section" id="id18">
-<h3><a class="toc-backref" href="#id72" name="id18">7.6.1 breakpoint_set</a></h3>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id44" name="id1">7.6.1 breakpoint_set</a></h3>
 <p>This command is used by the IDE to set a breakpoint for the session.</p>
 <p>IDE to debugger engine:</p>
 <pre class="literal-block">
-breakpoint_set -i TRANSACTION_ID [&lt;arguments...&gt;]
+breakpoint_set -i TRANSACTION_ID [&lt;arguments...&gt;] -- base64(expression)
 </pre>
 <p>where the arguments are:</p>
 <blockquote>
@@ -1192,10 +1212,6 @@ breakpoint types]</td>
 <td><em>exception</em> name [required for <em>exception</em> breakpoint
 types]</td>
 </tr>
-<tr><td>-c EXPRESSION</td>
-<td>code <em>expression</em>, in the language of the debugger
-engine [required for <em>conditional</em> breakpoint types]</td>
-</tr>
 <tr><td>-h HIT_VALUE</td>
 <td>hit value (<em>hit_value</em>) used with the hit condition
 to determine if should break; a value of zero
@@ -1212,9 +1228,18 @@ hit_condition documentation above; BTW 'o' stands for
 <td>Boolean value indicating if this breakpoint is
 <em>temporary</em>. [optional, defaults to false]</td>
 </tr>
+<tr><td>-- EXPRESSION</td>
+<td>code <em>expression</em>, in the language of the debugger
+engine [required for <em>conditional</em> breakpoint types]</td>
+</tr>
 </tbody>
 </table>
 </blockquote>
+<p>An example breakpoint_set command for a conditional breakpoint could look
+like this:</p>
+<pre class="literal-block">
+breakpoint_set -i 1 -f test.pl -l 20 -- base64($x &gt; 3)
+</pre>
 <p>A unique id for this breakpoint for this session is returned by the debugger
 engine. This <em>session breakpoint id</em> is used by the IDE to identify the
 breakpoint in other breakpoint commands.</p>
@@ -1245,8 +1270,8 @@ debugger engine</td>
 </table>
 </blockquote>
 </div>
-<div class="section" id="id19">
-<h3><a class="toc-backref" href="#id73" name="id19">7.6.2 breakpoint_get</a></h3>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id45" name="id2">7.6.2 breakpoint_get</a></h3>
 <p>This command is used by the IDE to get breakpoint information from the
 debugger engine.</p>
 <p>IDE to debugger engine:</p>
@@ -1291,8 +1316,8 @@ E.g., the &lt;expression/&gt; child element need only be included if there is an
 expression defined, the <em>function</em> attribute need only be included if this is
 a <em>function</em> breakpoint.</p>
 </div>
-<div class="section" id="id20">
-<h3><a class="toc-backref" href="#id74" name="id20">7.6.3 breakpoint_update</a></h3>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id46" name="id3">7.6.3 breakpoint_update</a></h3>
 <p>This command is used by the IDE to update one or more attributes of a
 breakpoint that was already set on the debugger engine via <em>breakpoint_set</em>.</p>
 <p>IDE to debugger engine:</p>
@@ -1300,30 +1325,26 @@ breakpoint that was already set on the debugger engine via <em>breakpoint_set</e
 breakpoint_update -i TRANSACTION_ID -d BREAKPOINT_ID [&lt;arguments...&gt;]
 </pre>
 <p>where the arguments are as follows.  All arguments are optional, however
-at least one argument should be present.  See <a class="reference" href="#id18">breakpoint_set</a> for a description of
+at least one argument should be present.  See <a class="reference" href="#id1">breakpoint_set</a> for a description of
 each argument:</p>
 <blockquote>
 <table border class="table">
 <colgroup>
-<col width="25%" />
-<col width="75%" />
+<col width="12%" />
+<col width="88%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>-s STATE</td>
-<td>&nbsp;</td>
+<tr><td>-s</td>
+<td>STATE</td>
 </tr>
-<tr><td>-n LINENO</td>
-<td>&nbsp;</td>
+<tr><td>-n</td>
+<td>LINENO</td>
 </tr>
-<tr><td>-h HIT_VALUE</td>
-<td>&nbsp;</td>
+<tr><td>-h</td>
+<td>HIT_VALUE</td>
 </tr>
-<tr><td>-o HIT_CONDITION</td>
-<td>&nbsp;</td>
-</tr>
-<tr><td>-r 0|1</td>
-<td><strong>Do we need to allow changing the *temporary*
-attribute?</strong></td>
+<tr><td>-o</td>
+<td>HIT_CONDITION</td>
 </tr>
 </tbody>
 </table>
@@ -1334,8 +1355,8 @@ attribute?</strong></td>
           transaction_id=&quot;TRANSACTION_ID&quot;/&gt;
 </pre>
 </div>
-<div class="section" id="id21">
-<h3><a class="toc-backref" href="#id75" name="id21">7.6.4 breakpoint_remove</a></h3>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id47" name="id4">7.6.4 breakpoint_remove</a></h3>
 <p>This command is used by the IDE to remove the given breakpoint.</p>
 <p>IDE to debugger engine:</p>
 <pre class="literal-block">
@@ -1343,12 +1364,12 @@ breakpoint_remove -i TRANSACTION_ID -d BREAKPOINT_ID
 </pre>
 <p>debugger engine to IDE:</p>
 <pre class="literal-block">
-&lt;response command=&quot;breakpoint_update&quot;
+&lt;response command=&quot;breakpoint_remove&quot;
           transaction_id=&quot;TRANSACTION_ID&quot;/&gt;
 </pre>
 </div>
-<div class="section" id="id22">
-<h3><a class="toc-backref" href="#id76" name="id22">7.6.5 breakpoint_list</a></h3>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id48" name="id5">7.6.5 breakpoint_list</a></h3>
 <p>This command is used by the IDE to get breakpoint information for all
 breakpoints that the debugger engine has.</p>
 <p>IDE to debugger engine:</p>
@@ -1378,7 +1399,7 @@ breakpoint_list -i TRANSACTION_ID
 </div>
 </div>
 <div class="section" id="stack-depth">
-<h2><a class="toc-backref" href="#id77" name="stack-depth">7.7 stack_depth</a></h2>
+<h2><a class="toc-backref" href="#id49" name="stack-depth">7.7 stack_depth</a></h2>
 <p>IDE</p>
 <pre class="literal-block">
 stack-depth -i transaction_id
@@ -1391,7 +1412,7 @@ stack-depth -i transaction_id
 </pre>
 </div>
 <div class="section" id="stack-get">
-<h2><a class="toc-backref" href="#id78" name="stack-get">7.8 stack_get</a></h2>
+<h2><a class="toc-backref" href="#id50" name="stack-get">7.8 stack_get</a></h2>
 <p>Returns stack information for a given stack depth.  For extended
 debuggers, multiple file/line's may be returned by having
 child elements of the stack element.  This is to allow
@@ -1405,9 +1426,19 @@ requested, though child elements may be returned also.  The
 current context is stack depth of zero, the 'oldest' context
 (in some languages known as 'main') is the highest numbered
 context.</p>
-<pre class="literal-block">
--d      stack depth (optional)
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-d</td>
+<td>stack depth (optional)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 stack_get -d {NUM} -i transaction_id
@@ -1421,8 +1452,8 @@ stack_get -d {NUM} -i transaction_id
            filename=&quot;...&quot;
            lineno=&quot;{NUM}&quot;
            where=&quot;&quot;
-           cmdbegin=&quot;&quot;
-           cmdlength=&quot;&quot;/&gt;
+           cmdbegin=&quot;line_number:offset&quot;
+           cmdend=&quot;line_number:offset&quot;/&gt;
     &lt;stack level=&quot;{NUM}&quot;
            type=&quot;file|eval|?&quot;
            filename=&quot;...&quot;
@@ -1434,26 +1465,53 @@ stack_get -d {NUM} -i transaction_id
     &lt;/stack&gt;
 &lt;/response&gt;
 </pre>
-<p>attributes</p>
-<pre class="literal-block">
-level       stack depth for this stack element
-type        file or evaluated code (default file if not present)
-filename    file URI
-lineno      1-based line offset into the buffer
-where       current command name (optional)
-cmdbegin    current text offset from beginning of file for the
-            command (optional)
-cmdlength   length of text representing command (optional)
-</pre>
+<p>Attributes for the stack element can include:</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>level</td>
+<td>stack depth for this stack element</td>
+</tr>
+<tr><td>type</td>
+<td>the type of stack frame.  Valid values are file or eval.</td>
+</tr>
+<tr><td>filename</td>
+<td>file URI</td>
+</tr>
+<tr><td>lineno</td>
+<td>1-based line offset into the buffer</td>
+</tr>
+<tr><td>where</td>
+<td>current command name (optional)</td>
+</tr>
+<tr><td>cmdbegin</td>
+<td>line number and text offset from beginning of line
+for the current instruction (optional)</td>
+</tr>
+<tr><td>cmdend</td>
+<td>same as cmdbegin, denotes end of current instruction</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>The attributes where, cmdbegin and cmdlength are primarily used
-for relaying visual information in the IDE.  cmdbegin and cmdlength
+for relaying visual information in the IDE.  cmdbegin and cmdend
 can be used by the IDE for high lighting the command that is
 currently being debugged.  The where attribute contains the name
 of the current stack.  This could be the current function name
 that the user is stepping through.</p>
 </div>
 <div class="section" id="context-names">
-<h2><a class="toc-backref" href="#id79" name="context-names">7.9 context_names</a></h2>
+<h2><a class="toc-backref" href="#id51" name="context-names">7.9 context_names</a></h2>
 <p>The names of currently available contexts at a given stack depth,
 typically Local, Global and Class.  These SHOULD be UI friendly
 names.  The id attribute returned with the names is used in other
@@ -1461,9 +1519,19 @@ commands such as context_get to identify the context.  The context
 id zero is always considered to be the 'default' context is no
 context id is provided.  In most languages, this will the be
 'local' context.</p>
-<pre class="literal-block">
--d      stack depth (optional)
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-d</td>
+<td>stack depth (optional)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 context_names -d {NUM} -i transaction_id
@@ -1479,15 +1547,27 @@ context_names -d {NUM} -i transaction_id
 </pre>
 </div>
 <div class="section" id="context-get">
-<h2><a class="toc-backref" href="#id80" name="context-get">7.10 context_get</a></h2>
+<h2><a class="toc-backref" href="#id52" name="context-get">7.10 context_get</a></h2>
 <p>Returns an array of properties in a given context at a given
 stack depth.  If the stack depth is omitted, the current
 stack depth is used.  If the context name is omitted, the context
 with an id zero is used (generally the 'locals' context).</p>
-<pre class="literal-block">
--d      stack depth (optional)
--c      context id  (optional, retrieved by context-names)
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-d</td>
+<td>stack depth (optional)</td>
+</tr>
+<tr><td>-c</td>
+<td>context id  (optional, retrieved by context-names)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 context_get -d {NUM} -i transaction_id
@@ -1502,13 +1582,13 @@ context_get -d {NUM} -i transaction_id
 </pre>
 </div>
 <div class="section" id="properties-variables-and-values">
-<h2><a class="toc-backref" href="#id81" name="properties-variables-and-values">7.11 Properties, variables and values</a></h2>
+<h2><a class="toc-backref" href="#id53" name="properties-variables-and-values">7.11 Properties, variables and values</a></h2>
 <p>Properties that have children may return an arbitrary depth of
 children, as defaulted by the debugger engine.  A maximum depth
 may be defined by the IDE using the feature_set command with the
 max_depth argument.  The IDE may then use the fullname attribute of
 a property to dig further into the tree.  Data types are defined
-futher in section 7.12 below.</p>
+further in section 7.12 below.</p>
 <p>The number of children sent is defined by the debugger engine
 unless otherwise defined by sending the feature_set command with
 the max_children argument.</p>
@@ -1530,49 +1610,88 @@ the max_children argument.</p>
 ...encoded Value Data...
 &lt;/property&gt;
 </pre>
-<p>attributes:</p>
-<pre class="literal-block">
-name            variable name.  This is the short part of the
-                name.  For instance, in PHP:
-                $v = 0; // short name 'v'
-                class:$v; // short name 'v'
-fullname        variable name.  This is the long form of the name
-                which can be eval'd by the language to retrieve
-                the value of the variable.
-                $v = 0; // long name 'v'
-                class::$v; // short name 'v', long 'class::$v'
-                $this-&gt;v; // short name 'v', long '$this-&gt;v'
-classname       If the type is an object or resource, then the
-                debugger engine MAY specify the class name
-                This is an optional attribute.
-page            if not all the children in the first level are
-                returned, then the page attribute, in combination
-                with the pagesize attribute will define where in
-                the array or object these children should be
-                located.
-pagesize        the size of each page of data, defaulted by the
-                debugger engine, or negotiated with feature_set
-                and max_children
-type            language specific data type name
-facet           provides a hint to the IDE about additional
-                facets of this value.  These are space seperated
-                names, such as private, protected, public,
-                constant, etc.
-size            size of property data in bytes
-children        true/false whether the property has children
-                this would be true for objects or array's.
-numchildren     optional attribute with number of children for
-                the property.
-key             language dependent reference for the property.
-                if the key is available, the IDE SHOULD use it
-                to retrieve further data for the property
-address         containing physical memory address
-encoding        if this is binary data, it should be base64 encoded
-                with this attribute set
-</pre>
+<p>Attributes in the property element can include:</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>name</td>
+<td>variable name.  This is the short part of the
+name.  For instance, in PHP:
+$v = 0; // short name 'v'
+class:$v; // short name 'v'</td>
+</tr>
+<tr><td>fullname</td>
+<td>variable name.  This is the long form of the name
+which can be eval'd by the language to retrieve
+the value of the variable.
+$v = 0; // long name 'v'
+class::$v; // short name 'v', long 'class::$v'
+$this-&gt;v; // short name 'v', long '$this-&gt;v'</td>
+</tr>
+<tr><td>classname</td>
+<td>If the type is an object or resource, then the
+debugger engine MAY specify the class name
+This is an optional attribute.</td>
+</tr>
+<tr><td>page</td>
+<td>if not all the children in the first level are
+returned, then the page attribute, in combination
+with the pagesize attribute will define where in
+the array or object these children should be
+located.</td>
+</tr>
+<tr><td>pagesize</td>
+<td>the size of each page of data, defaulted by the
+debugger engine, or negotiated with feature_set
+and max_children</td>
+</tr>
+<tr><td>type</td>
+<td>language specific data type name</td>
+</tr>
+<tr><td>facet</td>
+<td>provides a hint to the IDE about additional
+facets of this value.  These are space separated
+names, such as private, protected, public,
+constant, etc.</td>
+</tr>
+<tr><td>size</td>
+<td>size of property data in bytes</td>
+</tr>
+<tr><td>children</td>
+<td>true/false whether the property has children
+this would be true for objects or array's.</td>
+</tr>
+<tr><td>numchildren</td>
+<td>optional attribute with number of children for
+the property.</td>
+</tr>
+<tr><td>key</td>
+<td>language dependent reference for the property.
+if the key is available, the IDE SHOULD use it
+to retrieve further data for the property</td>
+</tr>
+<tr><td>address</td>
+<td>containing physical memory address</td>
+</tr>
+<tr><td>encoding</td>
+<td>if this is binary data, it should be base64 encoded
+with this attribute set</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 </div>
 <div class="section" id="data-types">
-<h2><a class="toc-backref" href="#id82" name="data-types">7.12 Data Types</a></h2>
+<h2><a class="toc-backref" href="#id54" name="data-types">7.12 Data Types</a></h2>
 <p>Languages may have different names or meanings for data types,
 however the IDE may want to be able to handle similar data types
 as the same type.  For this reason, we define a minimal set of
@@ -1598,12 +1717,12 @@ The use of the schema type is completely
 optional.  The language engine should not
 expect an IDE to support usage of this
 attribute.  The IDE identifies support for
-this in the debugger engine by retreiving
+this in the debugger engine by retrieving
 the data map, which would contain the
 schema type attribute.</dd>
 </dl>
 <div class="section" id="common-data-types">
-<h3><a class="toc-backref" href="#id83" name="common-data-types">7.12.1 Common Data Types</a></h3>
+<h3><a class="toc-backref" href="#id55" name="common-data-types">7.12.1 Common Data Types</a></h3>
 <p>This is a list of the common data types supported by this protocol.
 For ease of documentation, and as hints to the IDE, they are mapped
 to one or more schema data types, which are documented at
@@ -1627,7 +1746,7 @@ by XML Schema.</p>
 </tr>
 <tr><td>int</td>
 <td>integer, long, short, byte, and signed or
-unsigned varients</td>
+unsigned variants</td>
 </tr>
 <tr><td>float</td>
 <td>float, double, decimal</td>
@@ -1662,7 +1781,7 @@ the property.</dd>
 not map into one of the common types.  This
 could include pointers in C, various Python
 types such as Method or Class types, or
-file descripters, database resources, etc. in
+file descriptors, database resources, etc. in
 PHP.  Complex types may also be defined by
 using XML Schema, and mapping a type to the
 Schema type.  This is a more specialized use
@@ -1675,7 +1794,7 @@ same way, placing the key or index into the name attribute of the
 property element.</p>
 </div>
 <div class="section" id="typemap-get">
-<h3><a class="toc-backref" href="#id84" name="typemap-get">7.12.2 typemap_get</a></h3>
+<h3><a class="toc-backref" href="#id56" name="typemap-get">7.12.2 typemap_get</a></h3>
 <p>The IDE calls this command to get information on how to
 map language specific type names (as received in the property
 element returned by the context_get, and property_*
@@ -1732,7 +1851,7 @@ support for this:</p>
 </div>
 </div>
 <div class="section" id="property-get-property-set-property-value">
-<h2><a class="toc-backref" href="#id85" name="property-get-property-set-property-value">7.13 property_get, property_set, property_value</a></h2>
+<h2><a class="toc-backref" href="#id57" name="property-get-property-set-property-value">7.13 property_get, property_set, property_value</a></h2>
 <p>Gets/sets a property value.  When retrieving a property with the
 get method, the maximum data that should be returned is a default
 defined by the debugger engine unless it has been negotiated using
@@ -1746,18 +1865,48 @@ not read more data than the length defined in the packet header.
 The IDE can determine if there is more data by using the property
 data length information.  As per the context_get command, the depth
 of nested elements returned is either defaulted by the debugger
-engine, or negotiated using feature_set with max_children</p>
-<pre class="literal-block">
--d      stack depth (optional)
--c      context id (optional, retrieved by context-names)
--n      property long name
--m      max data size to retrieve
--t      data type
--p      data page (for arrays, hashes, objects, etc.)
--k      property key as retrieved in a property element,
-        optional, used for property_get of children and
-        property_value
-</pre>
+engine, or negotiated using feature_set with max_children.</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-d</td>
+<td>stack depth (optional, debugger engine should assume
+zero if not provided)</td>
+</tr>
+<tr><td>-c</td>
+<td>context id (optional, retrieved by context-names,
+debugger engine should assume zero if not provided)</td>
+</tr>
+<tr><td>-n</td>
+<td>property long name (required)</td>
+</tr>
+<tr><td>-m</td>
+<td>max data size to retrieve (optional)</td>
+</tr>
+<tr><td>-t</td>
+<td>data type (optional)</td>
+</tr>
+<tr><td>-p</td>
+<td>data page (optional, for arrays, hashes, objects, etc.)</td>
+</tr>
+<tr><td>-k</td>
+<td>property key as retrieved in a property element,
+optional, used for property_get of children and
+property_value, required if it was provided by the
+debugger engine.</td>
+</tr>
+<tr><td>-a</td>
+<td>property address as retrieved in a property element,
+optional, used for property_set/value, required if it
+was provided by the debugger engine.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 property_get -n property_long_name -d {NUM} -i transaction_id
@@ -1796,16 +1945,30 @@ property_value -n property_long_name -d {NUM} -i transaction_id
 </pre>
 </div>
 <div class="section" id="source">
-<h2><a class="toc-backref" href="#id86" name="source">7.14 source</a></h2>
+<h2><a class="toc-backref" href="#id58" name="source">7.14 source</a></h2>
 <p>The body of the request is the URI (retrieved from the stack info),
 the body of the response is the data contents of the URI.  If the
 file uri is not provided, then the file for the current context
 is returned.</p>
-<pre class="literal-block">
--b  begin line (optional)
--e  end line (optional)
--f  file URI
-</pre>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-b</td>
+<td>begin line (optional)</td>
+</tr>
+<tr><td>-e</td>
+<td>end line (optional)</td>
+</tr>
+<tr><td>-f</td>
+<td>file URI</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 source -i transaction_id -f fileURI
@@ -1820,18 +1983,32 @@ source -i transaction_id -f fileURI
 </pre>
 </div>
 <div class="section" id="stdout-stderr">
-<h2><a class="toc-backref" href="#id87" name="stdout-stderr">7.15 stdout, stderr</a></h2>
+<h2><a class="toc-backref" href="#id59" name="stdout-stderr">7.15 stdout, stderr</a></h2>
 <p>Body of the request is null, body of the response is true or false.
 Upon receiving one of these redirect requests, the debugger engine
 will start to copy data bound for one of these streams to the IDE,
 using the message packets.</p>
-<pre class="literal-block">
--c      [0|1|2] 0 - disable, 1 - copy data, 2 - redirection
-
-    0 (disable)   stdout/stderr output goes to regular place, but not to IDE
-    1 (copy)      stdout/stderr output goes to both regular destination and IDE
-    2 (redirect)  stdout/stderr output goes to IDE only.
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-c</td>
+<td><p class="first">[0|1|2] 0 - disable, 1 - copy data, 2 - redirection</p>
+<pre class="last literal-block">
+0 (disable)   stdout/stderr output goes to regular
+              place, but not to IDE
+1 (copy)      stdout/stderr output goes to both regular
+              destination and IDE
+2 (redirect)  stdout/stderr output goes to IDE only.
 </pre>
+</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 stdout -i transaction_id -c 1
@@ -1845,14 +2022,14 @@ stdout -i transaction_id -c 1
 </div>
 </div>
 <div class="section" id="extended-commands">
-<h1><a class="toc-backref" href="#id88" name="extended-commands">8. Extended Commands</a></h1>
+<h1><a class="toc-backref" href="#id60" name="extended-commands">8. Extended Commands</a></h1>
 <p>A IDE can query the debugger engine by using the feature_get command
 (see above).  The feature strings for extended commands defined in this
 specification are the same as the command itself.  For commands not
 listed in this specification, the prefix is 'xcmd_name'.  Vendor or language
 specific commands may be prefixed with 'xcmd_vendorname_name'.</p>
 <div class="section" id="stdin">
-<h2><a class="toc-backref" href="#id89" name="stdin">8.1 stdin</a></h2>
+<h2><a class="toc-backref" href="#id61" name="stdin">8.1 stdin</a></h2>
 <p>The stdin command has nearly the same arguments and responses as
 stdout and stderr from the core commands (section 7).  Since
 redirecting stdin may be very difficult to support in some
@@ -1868,12 +2045,25 @@ and the debugger engine must not accept stdin from any other
 source.  The debugger engine may choose to not allow stdin to be
 redirected in certain situations (such as when running under
 a web server).</p>
-<pre class="literal-block">
--c      [0|1] 0 - disable, 1 - redirection
-
-    0 (disable)   stdin is read from the regular place
-    1 (redirect)  stdin is read from stdin packets received from the IDE.
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-c</td>
+<td><p class="first">[0|1] 0 - disable, 1 - redirection</p>
+<pre class="last literal-block">
+0 (disable)   stdin is read from the regular place
+1 (redirect)  stdin is read from stdin packets received
+              from the IDE.
 </pre>
+</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 stdin -i transaction_id -c 1
@@ -1887,7 +2077,7 @@ stdin -i transaction_id -- base64(data)
 </pre>
 </div>
 <div class="section" id="break">
-<h2><a class="toc-backref" href="#id90" name="break">8.2 break</a></h2>
+<h2><a class="toc-backref" href="#id62" name="break">8.2 break</a></h2>
 <p>This command can be sent to interrupt the execution of the
 debugger engine while it is in a 'run state'.</p>
 <p>IDE</p>
@@ -1902,24 +2092,48 @@ break -i transaction_id
 </pre>
 </div>
 <div class="section" id="eval">
-<h2><a class="toc-backref" href="#id91" name="eval">8.3 eval</a></h2>
+<h2><a class="toc-backref" href="#id63" name="eval">8.3 eval</a></h2>
 <p>Evaluate a given string within the current execution context.  A
 property element MAY be returned as a child element of the
-response, but the IDE MUST NOT expect one.</p>
+response, but the IDE MUST NOT expect one.  The string being evaluated
+may be an expression or a code segment to be executed.  Languages, such
+as Python, which have separate statements for these, will need to handle
+both appropriately.  For implementations that need to be more explicit, use
+the expr or exec commands below.</p>
 <p>IDE</p>
 <pre class="literal-block">
-eval -i transaction_id -l data_length -- {DATA}
+eval -i transaction_id -- {DATA}
 </pre>
 <p>debugger engine</p>
 <pre class="literal-block">
 &lt;response command=&quot;eval&quot;
       success=&quot;0|1&quot;
       transaction_id=&quot;transaction_id&quot;&gt;
+      &lt;property .../&gt;
 &lt;/response&gt;
 </pre>
+<div class="section" id="expr">
+<h3><a class="toc-backref" href="#id64" name="expr">8.3.1 expr</a></h3>
+<p>expr, short for expression, uses the same command and response as eval above,
+except that it is limited to evaluating expressions.  Only some languages
+support this functionality.  expr should always return a property element
+if the expression is evaluated successfully.  This command is specified for
+those applications that may need to implement this specific functionality.
+General uses of the protocol should not expect to find this command available,
+and should rely on eval above.</p>
+</div>
+<div class="section" id="exec">
+<h3><a class="toc-backref" href="#id65" name="exec">8.3.2 exec</a></h3>
+<p>exec, short for execute, uses the same command and response as eval above,
+except that it is limited to executing code fragments.  Only some languages
+support this functionality.  An IDE should not expect exec to return a value.
+This command is specified for those applications that may need to implement
+this specific functionality.  General uses of the protocol should not expect
+to find this command available, and should rely on eval above.</p>
+</div>
 </div>
 <div class="section" id="spawnpoints">
-<h2><a class="toc-backref" href="#id92" name="spawnpoints">8.4 spawnpoints</a></h2>
+<h2><a class="toc-backref" href="#id66" name="spawnpoints">8.4 spawnpoints</a></h2>
 <p>Spawnpoints are points in (currently Tcl) file where a new debug session
 might (i.e. if this position is a point in the code where a new application
 is created) get spawned when hit. Spawnpoints are treated much like a
@@ -1927,7 +2141,7 @@ different type of breakpoint: They share many of the same attributes as
 breakpoints, using a <em>type==&quot;spawn&quot;</em> to distinguish themselves. Spawnpoints
 have an equivalent set of commands.  A failure in any spawnpoint commands
 results in an error defined in <a class="reference" href="#debugger-engine-errors">section 6.5</a>.</p>
-<p>The following DBGp commands relate to spawnpoints:</p>
+<p>The following DBGP commands relate to spawnpoints:</p>
 <blockquote>
 <table border class="table">
 <colgroup>
@@ -1935,19 +2149,19 @@ results in an error defined in <a class="reference" href="#debugger-engine-error
 <col width="73%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference" href="#id23">spawnpoint_set</a></td>
+<tr><td><a class="reference" href="#id6">spawnpoint_set</a></td>
 <td>Set a new spawnpoint on the session.</td>
 </tr>
-<tr><td><a class="reference" href="#id24">spawnpoint_get</a></td>
+<tr><td><a class="reference" href="#id7">spawnpoint_get</a></td>
 <td>Get spawnpoint info for the given spawnpoint id.</td>
 </tr>
-<tr><td><a class="reference" href="#id25">spawnpoint_update</a></td>
+<tr><td><a class="reference" href="#id8">spawnpoint_update</a></td>
 <td>Update one or more attributes of a spawnpoint.</td>
 </tr>
-<tr><td><a class="reference" href="#id26">spawnpoint_remove</a></td>
+<tr><td><a class="reference" href="#id9">spawnpoint_remove</a></td>
 <td>Remove the given spawnpoint on the session.</td>
 </tr>
-<tr><td><a class="reference" href="#id27">spawnpoint_list</a></td>
+<tr><td><a class="reference" href="#id10">spawnpoint_list</a></td>
 <td>Get a list of all of the session's spawnpoints.</td>
 </tr>
 </tbody>
@@ -1977,10 +2191,7 @@ enforced.</td>
 </tr>
 <tr><td>state</td>
 <td>Current state of the spawnpoint. This must be one of
-<em>enabled</em>, <em>disabled</em> or <em>deleted</em>. <em>deleted</em> is only
-received after calling spawnpoint_remove. <strong>(XXX
-Shane, how is *deleted* used? Why is it necessary?
---TM)</strong></td>
+<em>enabled</em>, <em>disabled</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -1991,8 +2202,8 @@ MUST provide spawnpoint id's that are global for the application, and must
 use all spawnpoints for all threads where applicable.</p>
 <p>As for any other commands, if there is error the debugger engine should
 return an error response as described in <a class="reference" href="#debugger-engine-errors">section 6.5</a>.</p>
-<div class="section" id="id23">
-<h3><a class="toc-backref" href="#id93" name="id23">8.4.1 spawnpoint_set</a></h3>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id67" name="id6">8.4.1 spawnpoint_set</a></h3>
 <p>This command is used by the IDE to set a spawnpoint for the session.</p>
 <p>IDE to debugger engine:</p>
 <pre class="literal-block">
@@ -2050,8 +2261,8 @@ debugger engine</td>
 </table>
 </blockquote>
 </div>
-<div class="section" id="id24">
-<h3><a class="toc-backref" href="#id94" name="id24">8.4.2 spawnpoint_get</a></h3>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id68" name="id7">8.4.2 spawnpoint_get</a></h3>
 <p>This command is used by the IDE to get spawnpoint information from the
 debugger engine.</p>
 <p>IDE to debugger engine:</p>
@@ -2084,8 +2295,8 @@ spawnpoint_get -i TRANSACTION_ID -d SPAWNPOINT_ID
 &lt;/response&gt;
 </pre>
 </div>
-<div class="section" id="id25">
-<h3><a class="toc-backref" href="#id95" name="id25">8.4.3 spawnpoint_update</a></h3>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id69" name="id8">8.4.3 spawnpoint_update</a></h3>
 <p>This command is used by the IDE to update one or more attributes of a
 spawnpoint that was already set on the debugger engine via <em>spawnpoint_set</em>.</p>
 <p>IDE to debugger engine:</p>
@@ -2093,7 +2304,7 @@ spawnpoint that was already set on the debugger engine via <em>spawnpoint_set</e
 spawnpoint_update -i TRANSACTION_ID -d SPAWNPOINT_ID [&lt;arguments...&gt;]
 </pre>
 <p>where the arguments are as follows.  Both arguments are optional, however
-at least one should be provided. See <a class="reference" href="#id23">spawnpoint_set</a> for a description of
+at least one should be provided. See <a class="reference" href="#id6">spawnpoint_set</a> for a description of
 each option:</p>
 <blockquote>
 <table border class="table">
@@ -2117,8 +2328,8 @@ each option:</p>
           transaction_id=&quot;TRANSACTION_ID&quot;/&gt;
 </pre>
 </div>
-<div class="section" id="id26">
-<h3><a class="toc-backref" href="#id96" name="id26">8.4.4 spawnpoint_remove</a></h3>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id70" name="id9">8.4.4 spawnpoint_remove</a></h3>
 <p>This command is used by the IDE to remove the given spawnpoint.</p>
 <p>IDE to debugger engine:</p>
 <pre class="literal-block">
@@ -2130,8 +2341,8 @@ spawnpoint_remove -i TRANSACTION_ID -d SPAWNPOINT_ID
           transaction_id=&quot;TRANSACTION_ID&quot;/&gt;
 </pre>
 </div>
-<div class="section" id="id27">
-<h3><a class="toc-backref" href="#id97" name="id27">8.4.5 spawnpoint_list</a></h3>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id71" name="id10">8.4.5 spawnpoint_list</a></h3>
 <p>This command is used by the IDE to get spawnpoint information for all
 spawnpoints that the debugger engine has.</p>
 <p>IDE to debugger engine:</p>
@@ -2152,6 +2363,368 @@ spawnpoint_list -i TRANSACTION_ID
 </pre>
 </div>
 </div>
+<div class="section" id="notifications">
+<h2><a class="toc-backref" href="#id72" name="notifications">8.5 Notifications</a></h2>
+<p>At times it may be desirable to recieve a notification from the debugger
+engine for various events.  This notification tag allows for some simple
+data to be passed from the debugger engine to the IDE.  Customized
+implementations may add child elements for additional data.</p>
+<p>As an example, this is usefull for handling STDIN.  The debugger engine
+interupts all STDIN reads, and when a read is done by the application, it sends
+a notification to the IDE.  The IDE is then able to do something to let the user
+know the application is waiting for input, such as placing a cursor in the
+debugger output window.</p>
+<p>A new feature name is introduced: notify_ok.  The IDE will call feature_set
+with the notify_ok name and a TRUE value.  This lets the debugger engine know
+that it can send notifications to the IDE.  If the IDE has not set this value,
+or sets it to FALSE, then the debugger engine MUST NOT send notifications to
+the IDE.</p>
+<p>The debugger engine MUST NOT expect a notification to cause an IDE to behave
+in any particular way, or even to be handled by the IDE at all.</p>
+<p>A proxy may also use notifications, during a debug session, to let the IDE know
+about events that happen in the proxy.  To do this, the proxy will have to
+listen for feature_set commands and keep track of the values set, as well as
+passing them through to the debugger engine.</p>
+<p>IDE initialization of notifications:</p>
+<pre class="literal-block">
+feature_set -i TRANSACTION_ID -n notify_ok -- base64(1)
+</pre>
+<p>debugger engine notifications to IDE:</p>
+<pre class="literal-block">
+&lt;notify name=&quot;notification_name&quot;&gt;
+TEXT_NODE or CDATA
+&lt;custom.../&gt;
+&lt;/notify&gt;
+</pre>
+<div class="section" id="standard-notifications">
+<h3><a class="toc-backref" href="#id73" name="standard-notifications">8.5.1 Standard Notifications</a></h3>
+<p>The following list of notifications are standardized for the protocol. Other
+notifications may be added by other implementations.  It is suggested that
+notification names not found in this document are preceeded with 'XXX' or some
+similar tag as a means of preventing name conflicts when new notifications get
+added to the protocol in the future.</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>stdin</td>
+<td>notification occurs when the debugger engine is about
+to read the stdin pipe.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<div class="section" id="interact-interactive-shell">
+<h2><a class="toc-backref" href="#id74" name="interact-interactive-shell">8.6 interact - Interactive Shell</a></h2>
+<p>The interact command allows an IDE to send chunks of code to be compiled and
+executed by the debugger engine.  While this is similar to the eval command,
+it has a couple important differences.</p>
+<p>First, it buffers code sent to it until a successful compile is achieved.  The
+buffering allows the IDE to send a line of code for each call to the interact
+command, which reflects a user typing code into a console.  Each line is joined
+in the debugger engine with a newline character.  As soon as a successful
+compile happens, the code is run and any output returned to the IDE (via
+stdout/stderr or otherwise).</p>
+<p>Second, it returns a prompt string that can be used by the IDE as an input
+prompt for the user.</p>
+<p>The interact command can only be called during a break or interactive state.</p>
+<p>The debugger engine implementation MAY also be designed to work in
+and interactive-only mode, where there is no script being debugged, and
+all code is received through the interact command.  This allows the
+protocol to be utilized for the purpose of a pure interactive shell
+for the language.</p>
+<p>Control characters should be sent in the data section of the command, and the
+debugger engine should handle the control characters in a way that is expected
+by the implementation.  These characters can include Ctrl-C (KeyboardInterupt
+in Python) and other such console like controls.  The IDE should not expect
+the debugger engine to handle control characters in any specific way.</p>
+<p>The IDE can query the debugger engine for interact support using the
+feature_get command.</p>
+<p>The 'filename' in the stack for an interactive session should be '&lt;console&gt;'
+or some other string to denote a console stack level.</p>
+<p>The debugger engine is not required to enable debugging of code
+recieved via the interact command, however it should provide access
+to other information, such as the variables retrieved via context_get.</p>
+<p>IDE to debugger engine:</p>
+<pre class="literal-block">
+interact -i TRANSACTION_ID -m mode -- base64(code)
+</pre>
+<p>where,</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-m mode</td>
+<td>a mode of zero tells the interact command
+to clear the buffer and any other state
+that was maintained for previous interact
+commands.  The prompt attribute returned
+should be an empty string.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>debugger engine to IDE:</p>
+<pre class="literal-block">
+&lt;response command=&quot;interact&quot;
+    transaction_id=&quot;TRANSACTION_ID&quot;
+    status=&quot;STATUS_NAME&quot;
+    more=&quot;CONTINUE_FLAG&quot;
+    prompt=&quot;PROMPT&quot; /&gt;
+</pre>
+<p>where,</p>
+<blockquote>
+<table border class="table">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>STATUS_NAME</td>
+<td>A valid status name from the list of
+status names in section 7.1.  A new name
+is added specificaly for this command
+which is 'interactive'.  The interactive
+status is returned unless the mode in the
+command was zero, in which case the
+status will be up to the debugger engine
+(typically the last status before running
+interact), or some error has occured
+that causes a different status.</td>
+</tr>
+<tr><td>CONTINUE_FLAG</td>
+<td>a boolean which is true if the interact
+command requires more code to compile
+successfully</td>
+</tr>
+<tr><td>PROMPT</td>
+<td>a string containing the prompt for the
+next line of code</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+<div class="section" id="a-changelog">
+<h1><a class="toc-backref" href="#id75" name="a-changelog">A. ChangeLog</a></h1>
+<p>2004-05-12</p>
+<ul>
+<li><dl class="first">
+<dt>7.2 reorganize the feature names, add a couple missing names</dt>
+<dd><p class="first last">(supports_postmortem, show_hidden, notify_ok).</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>2004-04-05</p>
+<ul class="simple">
+<li>8.5 New notification support</li>
+<li>8.6 New interact command</li>
+</ul>
+<p>2004-02-20</p>
+<ul class="simple">
+<li>1.2 moved the change log to appendix A</li>
+<li>5 massive reorganization of section 5</li>
+<li>5.3 expanded description of proxies and just in time debugging.</li>
+<li>5.4 expand description of multisession and multithreaded debugging.</li>
+<li>7.2 A new feature name, breakpoint_languages, has been added.  This option
+is only required if the engine supports more than one language.</li>
+<li>7.2 and 7.3 Remove crufty documentation that still referred to old binary
+protocol information.</li>
+<li>7.6.1 For conditional breakpoints the expression has been moved to the data
+section of the command.</li>
+<li>8.3 remove the length argument in the eval command, it is unnecessary.</li>
+<li>8.3 be more explicit about how eval works, add 8.3.1 expr and 8.3.2 exec as
+additional optional commands that can be used in special implementations.</li>
+<li>8.4 Remove the 'delete' state, this was old and removed in breakpoints.</li>
+</ul>
+<p>2004-01-28</p>
+<ul class="simple">
+<li>7.8 Fix cmdbegin/end attributes for stack_get</li>
+</ul>
+<p>2004-01-09</p>
+<ul class="simple">
+<li>5.1 New DBGP_IDEKEY environment variable</li>
+</ul>
+<p>2004-01-07</p>
+<ul class="simple">
+<li>7.5 renamed the stop and kill commands to detach and stop, added
+some clarification to the description of the commands.</li>
+</ul>
+<p>2003-12-16</p>
+<ul class="simple">
+<li>7.6, 8.4 re-write the breakpoint and spawnpoint sections to be clearer</li>
+</ul>
+<p>2003-12-09</p>
+<ul class="simple">
+<li>6.7 new section describing dbgp file protocol</li>
+<li>7.6 better document breakpoints</li>
+</ul>
+<p>2003-12-05</p>
+<ul class="simple">
+<li>6 Change the deliminator for command data to '--'.  This conforms to
+standard getopt libraries.</li>
+<li>7.11 remove the recursive attribute, if an IDE wants to handle
+circular references, it can do so based on the address attribute if
+the engine provides it.</li>
+</ul>
+<p>2003-12-02</p>
+<ul class="simple">
+<li>7.6 remove breakpoint_enable/disable, and add breakpoint_update
+command.  Enable/disable states are changed through breakpoint_update.</li>
+<li>8.4 new (optional) spawnpoint commands</li>
+</ul>
+<p>2003-11-25</p>
+<ul class="simple">
+<li>7.6 Change the breakpoint <em>hits</em> and <em>ignore</em> attributes to <em>hit_count</em>,
+<em>hit_value</em> and <em>hit_condition</em> to add functionality available in VS.NET
+and to simplify usage. Also clarify some other breakpoint attribute legal
+values.</li>
+</ul>
+<p>2003-11-24</p>
+<ul class="simple">
+<li>7.5 correct the stop command documentation, stop is 'detach', and
+does not allow for continued interaction.  Document how expressions
+are returned from breakpoint_get.</li>
+<li>7.8 correct old documentation on the stack element.  Add new
+attributes: where, cmdbegin, cmdlength.  Provide further documentation
+about all the attributes.</li>
+</ul>
+<p>2003-11-20</p>
+<ul class="simple">
+<li>5.1 better define session keys vs. ide key for proxy, document how
+proxy works better.</li>
+<li>7.6 better document attributes and hit option</li>
+</ul>
+<p>2003-11-18</p>
+<ul class="simple">
+<li>7.1 Clarify stopping and stopped states</li>
+<li>7.5 Clarify the stop command</li>
+<li>7.6 Remove 'temporary' as a status for breakpoints, make it an option
+in the command line.  Remove the 'function' breakpoint type, provide
+two new types, 'call' and 'return'.  Add 'hits' option to allow a
+breakpoint to be ignored a number of times before being used.</li>
+</ul>
+<p>2003-11-12</p>
+<ul class="simple">
+<li>draft 12</li>
+<li>Rest markup tweaks</li>
+</ul>
+<p>2003-11-09</p>
+<ul class="simple">
+<li>draft 11</li>
+<li>7.12 new section inserted as 7.12.  This section specifies common
+data types, and how to map more specific data types to the the common
+types.</li>
+<li>7.11 two new optional attributes, classname and facet, that provide
+additional hints to the IDE about the nature of the property.  New
+key attribute for language specific keys to properties.</li>
+<li>6.5 new section, 6.5.1 for defining common error codes.</li>
+</ul>
+<p>2003-11-05</p>
+<ul class="simple">
+<li>spelling fixes</li>
+<li>5.1 change proxy options</li>
+<li>7.6 clarify breakpoint command options</li>
+<li>7.12 fix old text about context names</li>
+</ul>
+<p>2003-10-15</p>
+<ul class="simple">
+<li>6 remove the first NULL in the command structure from IDE to debugger
+engine.  This makes dealing with those commands easier.</li>
+<li>6.6 NEW File paths must be URI's.</li>
+<li>7 source command returns the source for the current context if no
+file uri is provided.</li>
+<li>7 added sub-item numbering</li>
+<li>7.1 clarify the status values</li>
+<li>8 added sub-item numbering</li>
+</ul>
+<p>2003-10-09</p>
+<ul class="simple">
+<li>7 remove run_to, unnecessary</li>
+<li>7 remove 'step', there is no generic step command</li>
+<li>7 clarify continuation commands</li>
+<li>7 clarify breakpoints</li>
+</ul>
+<p>2003-10-07</p>
+<ul class="simple">
+<li>more layout changes for reStructuredText</li>
+</ul>
+<p>2003-10-06</p>
+<ul class="simple">
+<li>reformat to <a class="reference" href="http://docutils.sourceforge.net/spec/rst/reStructuredText.html">reStructuredText markup</a></li>
+<li>6 clarify message packets</li>
+<li>6.3 clarify command packets</li>
+<li>7 clarify feature_get/set</li>
+<li>7 allow error results on breakpoints if a type of breakpoint
+is not supported by a debugger engine.</li>
+<li>7 add recursive attribute to properties, and clarify the
+address attribute and how recursive data is handled.</li>
+<li>7,8 moved stdin to the optional commands section</li>
+</ul>
+<p>2003-10-02</p>
+<ul class="simple">
+<li>5.1 changed proxy error to be the same as that in 6.5</li>
+<li>5.1 the IDE and proxy ports have been defined to 9000/9001</li>
+<li>5.3 exclude protocol overhead from data size definition</li>
+<li>6.2 changed typo 'stdin and stdout' to 'stdout and stderr'</li>
+<li>6.5 changed error id to error code</li>
+<li>7 removed comments on 'body' from the run commands</li>
+<li>7 clarified 'source' command arguments to be optional</li>
+<li>7 added 'disable' option to stdin/out/err commands</li>
+<li>7 breakpoint arguments and types have been better defined since
+not all arguments need to be required for all types</li>
+<li>7 the expression breakpoint type has been removed since it is
+covered by the conditional breakpoint type</li>
+</ul>
+<p>2003-09-30</p>
+<ul class="simple">
+<li>section numbers added, changes below are marked with the section
+number</li>
+<li>3 Terminology changed (frontend -&gt; IDE, backend -&gt; debugger engine)</li>
+<li>5.1 added response packet from proxy to IDE when IDE issues the
+proxyinit command.</li>
+<li>5.1 the proxy now adds a proxyclientid to the init packet from
+the debugger engine when it passes the packet through to the IDE.</li>
+<li>5.1 the proxy must be able to send errors to the IDE, for instance,
+if it looses the connection to the debugger engine.</li>
+<li>5.1 the proxy must be able to send errors to the Debugger, for
+instance, if it looses the connection to the IDE.</li>
+<li>5.3 added new section to help better define feature negotiation
+with feature_get/set commands.</li>
+<li>6 packets have been better defined.  This section has also been
+reorganized.</li>
+<li>6.2 the communication of packets has been rewritten.</li>
+<li>7 feature_get/set have some modifications.</li>
+<li>7 context_get and property_* commands have been modified to better
+reflect negotiation of features using the feature_get/set commands.</li>
+<li>7 property_* commands have been commented a bit more, and an
+additional argument is available for paging arrays, etc.</li>
+<li>7 The definition of the property tag has been modified</li>
+<li>7 stdin command has been modified, the debugger engine may choose
+to not redirect stdin.</li>
+<li>7 status command modified to support the async state</li>
+<li>7 source command now accepts begin and end line arguments for
+retrieving only parts of a file.</li>
+<li>7 stack_get now defines an enumeration for the stack</li>
+<li>8 break command clarified so it can only be sent while the debugger
+engine is in a run state.</li>
+<li>8 eval can return a property as part of the response</li>
+</ul>
 </div>
 </div>
 
