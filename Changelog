@@ -1,3 +1,7 @@
+Mon Jan 19 11:30:15 CET 2004 Derick Rethans <derick@derickrethans.nl>
+/www.xdebug.org/html/include/side.php:
+- Fix install instructions
+
 Thu Jan 15 14:03:42 CET 2004 Derick Rethans <derick@derickrethans.nl>
 /www.xdebug.org/html/install.php:
 - Added tip for thread safe mode
