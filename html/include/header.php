@@ -21,20 +21,20 @@
 
 		img      { border: 0px; vertical-align: bottom; }
 		
-		a        { text-decoration: underline; color: #334455; }
-		a:hover  { color: #667788 }
+		a        { text-decoration: underline; color: #116633; }
+		a:hover  { color: #004411 }
 		
 		p        { font-size: small; line-height: 1.5em; margin-left: 20px; }
 		.serif   { font-size: small; line-height: 1.5em; }
 		.quote   { font-size: x-small; font-family: arial; }
-        .mk      { font-size: x-small; color: #667788; font-weight: bold; }
-     	.fin	 { font-size: x-small; color: #667788; }
+        .mk      { font-size: x-small; color: #004411; font-weight: bold; }
+     	.fin	 { font-size: x-small; color: #004411; }
         .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; }
         .date    { font-size: x-small; display: block; margin-bottom: 6px; }
         .sc      { font-variant: small-caps; }
         .st      { text-decoration: line-through; }
         .copy    { font-size: x-small; line-height: 1.5em; color: #999999; }
-        .pause   { font-size: medium; display: block; color: #667788;
+        .pause   { font-size: medium; display: block; color: #004411;
                    margin-top: 24px; margin-bottom: 8px; text-align: center; }
                    
         acronym, abbr
@@ -63,26 +63,9 @@
 		<tr>
 			<td style="height: 64px; width: 9%; background: url(images/topleft.gif);">&nbsp;</td>
 			<td class="head" style="height: 64px; background: url(images/topleft.gif);">
-				<a href="http://www.derickrethans.nl/"><img src="http://www.derickrethans.nl/images/home_black.gif" alt="Home" width="20" height="7" id="home" /></a>
-				<img src="http://www.derickrethans.nl/images/trans.gif" width="9" height="1" alt="" />
-
-				<a href="http://www.derickrethans.nl/archive.php"><img src="http://www.derickrethans.nl/images/archive_black.gif" alt="Archive" width="32" height="7" id="archive" /></a>
-				<img src="http://www.derickrethans.nl/images/trans.gif" width="9" height="1" alt="" />
-
-				<a href="http://www.derickrethans.nl/who.php"><img src="http://www.derickrethans.nl/images/who_black.gif" alt="Who" width="17" height="7" id="who" /></a>
-				<img src="http://www.derickrethans.nl/images/trans.gif" width="9" height="1" alt="" />
-
-				<a href="http://photos.derickrethans.nl/"><img src="http://www.derickrethans.nl/images/photos_black.gif" alt="Photos" width="28" height="7" id="photos" /></a>
-				<img src="http://www.derickrethans.nl/images/trans.gif" width="9" height="1" alt="" />
-
-				<a href="http://www.derickrethans.nl/people.php"><img src="http://www.derickrethans.nl/images/people_black.gif" alt="People" width="29" height="7" id="people" /></a>
-				<img src="http://www.derickrethans.nl/images/trans.gif" width="9" height="1" alt="" />
-
-				<a href="http://www.derickrethans.nl/projects.php"><img src="http://www.derickrethans.nl/images/projects_black.gif" alt="Projects" width="38" height="7" id="readinglist" /></a>
-				<br /><img src="http://www.derickrethans.nl/images/trans.gif" width="451" height="39" alt="" />
 			</td>
 			<td style="height: 64px; width: 35px; background: url(images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; width: 220px; background: url(images/topleft.gif);"><img src="http://www.derickrethans.nl/images/derickrethans.gif" alt="Derick Rethans" width="140" height="9" /><br /><img src="images/trans.gif" width="150" height="38" alt="" /></td>
+			<td class="head" style="height: 64px; width: 220px; background: url(images/topleft.gif);"><img src="images/xdebug.gif" alt="Xdebug"/></td>
 			<td style="height: 64px; width: 9%; background: url(images/topleft.gif);">&nbsp;</td>
 		</tr>
 <?php
