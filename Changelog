@@ -1,3 +1,7 @@
+Wed Jun 30 09:11:29 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/install.php:
+- Add 1.3cvs instructions.
+
 Wed Jun 23 15:33:25 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-debugger.php
 www.xdebug.org/html/docs-faq.php
