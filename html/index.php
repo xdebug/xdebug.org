@@ -42,6 +42,10 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[01-04-2004]</dt>
+<dd class="main">Added archives for the <a href='/archives/xdebug-general'>Xdebug General</a>
+and <a href='/archives/xdebug-dev'>Xdebug Development</a> mailinglists.</dd>
+
 <dt class="main">[28-12-2003]</dt>
 <dd class="main">Added the Xdebug <a href="license.php">license</a> to this
 website.</dd>
