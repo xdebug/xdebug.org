@@ -1,3 +1,18 @@
+Fri Jun 18 09:23:03 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-debugger.php
+www.xdebug.org/html/docs-faq.php
+www.xdebug.org/html/docs-gdb.php
+www.xdebug.org/html/docs-profiling2.php
+www.xdebug.org/html/install.php
+www.xdebug.org/html/images/docs/kc-open.png
+www.xdebug.org/html/images/docs/kc-percentage.png
+www.xdebug.org/html/images/docs/kc-profile.png
+www.xdebug.org/html/images/docs/kc-right-call.png
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php:
+- Added some more docs
+#- Still not finished...
+
 Mon Jun 14 09:51:18 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-profiling2.php
 www.xdebug.org/html/docs-dbgp.php
