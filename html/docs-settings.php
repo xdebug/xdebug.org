@@ -21,7 +21,7 @@ href="http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend
 
 <a name="collect_includes"></a>
 <dt>xdebug.collect_includes [boolean] (default: On) (Xdebug 2)</dt>
-<dd>This setting, defaulting to Off, controls whether Xdebug should write the
+<dd>This setting, defaulting to On, controls whether Xdebug should write the
 filename used in include(), include_once(), require() or require_once() to the
 trace files.</dd>
 
@@ -131,15 +131,15 @@ directory.</dd>
 
 <a name="trace_options"></a>
 <dt>xdebug.trace_options [integer] (default: 0) (Xdebug 2)</dt>
-<dd>When set to "crc32" the middle part of a trace file name will be
-a crc32 hash of the current working directory, in all other cases 
-the Process ID of the PHP process is used here.
+<dd>When set to "1" the trace files will be appended to, instead of
+being overwritten in subsequent requests.</dd>
 
 <a name="trace_output_name"></a>
 <dt>xdebug.trace_output_name [string] (default: crc32) (Xdebug 2)</dt>
 <dd>When set to "crc32" the middle part of a trace file name will be
 a crc32 hash of the current working directory, in all other cases 
-the Process ID of the PHP process is used here.
+the Process ID of the PHP process is used here.</dd>
+
 </dl>
 
 <br />
