@@ -143,6 +143,7 @@ Called @ /home/httpd/html/test/xdebug_caller.php:12 from {main}
 <a name="tracing"></a>
 <span class="sans">TRACING RELATED</span><br />
 <dl>
+<a name='xdebug_start_trace'></a>
 <dt>void xdebug_start_trace([string trace_file])</dt>
 <dd>Start tracing function calls from this point. If the trace_file parameter
 is specified the function calls will also be logged to this file.</dd>
@@ -232,6 +233,10 @@ the following table with information is shown:
 <dd>Returns the current amount of memory the script uses. (Only works when PHP
 was compiled with --enable-memory-limit).</dd>
 </dl>
+
+<a name="xdebug_time_index"></a>
+<dt>float xdebug_time_index()</dt>
+<dd>Returns the current time index since the starting of the script.</dd>
 </p>
 
 <br />
@@ -362,6 +367,7 @@ displays:
 <img src='images/vardump.png' align='center' border='0'/>
 </dd>
 
+</dl>
 </dl>
 
 <br /><br />

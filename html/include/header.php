@@ -5,7 +5,7 @@
 	<title><?php echo $title; ?></title>
 	<meta name="ROBOTS" content="ALL" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<meta name="DESCRIPTION" content="Upholding the tradition of personal home pages with a site devoted to, well, me." />
+	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP." />
 	<meta name="KEYWORDS" content="derick, rethans, opensrc, php, php4, xml, xhtml, xml-rpc, soap, blog, weblog" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick @ php dot net or opensrc @ EFNet" />
 	<style type="text/css">

@@ -42,6 +42,20 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<!--
+<dt class="main">[16-07-2003] - Clients</dt>
+<dd class="main">At this moment there are three clients being written for
+Xdebug: <a href="http://xdebug.weaverslave.ws/">XdebugC/Weaverslave</a> by
+Thomas Weinert, a native MacOSX client by Bertrand Mansion and <a
+href="http://www.maguma.com/en/index.html">Maguma Studio 2</a> will feature a
+built-in client too.</dd>
+-->
+<dt class="main">[16-07-2003]</dt>
+<dd class="main">Xdebug version 1.3.0 will have greatly improved performance over older versions.
+Changing the folding (creating a string out of a variable) is now only done when it is required:
+when being in trace mode (started from <i><a
+href='docs.php#xdebug_start_trace'>xdebug_start_trace()</a></i>, or on error. See the full <a
+href="updates.php">Changelog</a> for information on other improvements.</dd>
 
 <dt class="main">[21-04-2003]</dt>
 <dd class="main">Xdebug version 1.2.0 has been released. This release adds one

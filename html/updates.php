@@ -13,6 +13,27 @@
 
 <span class='quote'>
 <dl>
+<dt>[16-07-2003]</dt>
+<dd>Greatly cut down on the overhead that Xdebug causes on running scripts.</dd>
+<dd>Fixed a bug with "quit" that would disable the extension.</dd>
+<dd>Fixed a bug in the folding of recursive elements.</dd>
+
+<dt>[03-07-2003]</dt>
+<dd>Implemented an argument to the "bt" command. If this is set to "full" all
+local variables for a stack frame are showed too.</dd>
+
+<dt>[28-06-2003]</dt>
+<dd>Updated licence: "PHP Licence" was renamed to "Xdebug Licence",
+"The PHP Group" to "Derick Rethans" and "PHP" to "Xdebug".</dd>
+<dd>Added the xdebug_time_index() function which returns the time index since
+the start of the script.</dd>
+
+<dt>[23-06-2003]</dt>
+<dd>Updated licence: "PHP Licence" was renamed to "Xdebug Licence",
+"The PHP Group" to "Derick Rethans" and "PHP" to "Xdebug".</dd>
+<dd>Implemented the "show-breakpoints" command which shows all currently
+active breakpoints including conditions.</dd>
+
 <dt>[14-05-2003]</dt>
 <dd>Implemented the "show-local" command (shows all local variables in the
 current scope including all contents) and conditions for breakpoints in the
