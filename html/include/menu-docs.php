@@ -10,8 +10,8 @@
 <div align='right' class="sans">
 <a href="docs.php">functions</a> |
 <a href="docs-settings.php">settings</a> |
-<a href="docs-profiling.php">profiling</a><!-- |
-<a href="docs-remote.php">remote debugger</a>-->
+<a href="docs-profiling.php">profiling</a> |
+<a href="docs-dbgp.php">protocol</a>
 </div>
 <br /><br />
 

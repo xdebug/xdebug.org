@@ -20,6 +20,8 @@
 		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 
 		img      { border: 0px; vertical-align: bottom; }
+		img.l    { margin-right: 10px; }
+		img.r    { margin-left: 10px; }
 		
 		a        { text-decoration: underline; color: #116633; }
 		a:hover  { color: #004411 }

@@ -42,6 +42,20 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[09-10-2003]</dt>
+<dd class="main">Together with Shane Caraveo from <a
+href="http://www.activestate.com">ActiveState</a> a new protocol, <a
+href="docs-dbgp.php">DBGp</a>, was developed. This will be <a
+href="http://www.maguma.com"><img align="left" class="l"
+src="/images/maguma.png" border="0"/></a>implemented for Xdebug 2 and is a true
+multi-language protocol. This means that a client written for Xdebug 2 will
+also work in combination with the Perl, Python, Tcl and XSLT debuggers from
+Active State. For a description of (a draft) of this new protocol, see the <a
+href="docs-dbgp.php">documentation - protocol</a> page. The development of the
+protocol is sponsored by <a href="http://www.maguma.com">Maguma</a>  and will
+also be implemented in Maguma Studio 2.
+</dd>
+
 <dt class="main">[18-09-2003]</dt>
 <dd class="main">Xdebug version 1.3.0rc1 has been released. This new
 version's main enhancements are the increased performance and additional
@@ -84,29 +98,6 @@ the full <a href="updates.php">Changelog</a> to find out what's new. </dd>
 functionality in this new engine for PHP Xdebug wouldn't compile anymore, with
 this update it works again. Namespaces are not yet supported but will be
 implemented soon.</dd>
-
-<dt class="main">[28-11-2002]</dt>
-<dd class="main">Work on a profiler in Xdebug has started by Ilia
-Alshanetsky. A few different output sortings will be implemented,
-more about this later.</dd>
-
-<dt class="main">[13-11-2002]</dt>
-<dd class="main">Xdebug version 1.1.0 has finally been released. This new
-version's main enhancements are support for remote clients. The client-server
-works on both unices and Windows.  See the full <a
-href="updates.php">Changelog</a> to find out what's new. </dd>
-
-<dt class="main">[09-11-2002]</dt>
-<dd class="main"><a href="http://www.subjective.de/en/weaverslave/index.php">Weaverslave</a>
-will be the first IDE that supports Xdebug as debugging back-end. The author,
-Thomas Weinert, is currently including support for the remote debugging
-capabilities. More information in this will follow later.</dd>
-
-<dt class="main">[08-11-2002]</dt>
-<dd class="main">Slides <a
-href="http://pres.derickrethans.nl/ze-xdebug">on-line</a> of my
-presentation on Zend Internals and Xdebug
-at the <a href="http://www.derickrethans.nl/20021107.php">International PHP Conference</a>.</dd>
 </dl>
 
 <br /><br />

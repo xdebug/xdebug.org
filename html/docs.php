@@ -333,7 +333,7 @@ information about these functions.</dl>
 <a name="superglobals"></a>
 <span class="sans">INFORMATION DUMPING RELATED</span><br />
 <dl>
-<dt>void xdebug_dump_super_globals()</dt>
+<dt>void xdebug_dump_superglobals()</dt>
 <dd>This function dumps the values of the elements of the superglobals as
 specifed with the 'xdebug.dump.' php.ini settings as decribed in the section <a
 href='docs-settings.php#superglobal'>settings</a>. An example output might look like (the
