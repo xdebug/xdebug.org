@@ -212,9 +212,9 @@ course try to fix those.
 		<td class="ctr">2.0.0-dev</td>
 	</tr>
 	<tr>
-		<th class="ctr">5.0.0rc1-dev</th>
+		<th class="ctr">&gt; 5.0.0rc2</th>
 		<td class="ctr">20031224</td>
-		<td class="ctr">20020429</td>
+		<td class="ctr">20040316</td>
 		<td class="ctr">90021012</td>
 		<td class="ctr">2.0.0-cvs</td>
 	</tr>
