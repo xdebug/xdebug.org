@@ -1,3 +1,11 @@
+Wed Jun 30 13:55:05 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/install.php
+www.xdebug.org/html/files/xdebug-1.3.2.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Added 1.3.2 release announcement.
+
 Wed Jun 30 09:11:29 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/install.php:
 - Add 1.3cvs instructions.
