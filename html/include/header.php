@@ -66,7 +66,7 @@
 		dd.main { margin-left: 20px; }
 
 		pre { margin-left: 20px; line-height: 1em; }
-		pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; }
+		pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
 
 		h1 { font-variant: small-caps; font-size: x-large }
 		h2 { font-variant: small-caps; font-size: large }
