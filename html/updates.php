@@ -1,11 +1,11 @@
-<?php include "include/header.php"; hits ('xdebug'); ?>
+<?php include "include/header.php"; hits ('xdebug-updates'); ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP</span><br />
+<span class="sans">XDEBUG EXTENSION FOR PHP | UPDATES</span><br />
 
 <?php include "include/menu.php"; ?>
 
