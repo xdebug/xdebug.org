@@ -90,7 +90,9 @@ different PHP versions.</li>
 <li>./configure --enable-xdebug
 (or:
 ./configure --enable-xdebug --with-php-config=/path/to/php-config
-if php-config is not in your path). If this fails with something like:
+if php-config is not in your path).
+<br /><br />
+If this fails with something like:
 <pre>../configure: line 1960: syntax error near unexpected token
 `PHP_NEW_EXTENSION(xdebug,'
 ../configure: line 1960: `  PHP_NEW_EXTENSION(xdebug, xdebug.c
@@ -98,7 +100,14 @@ xdebug_code_coverage.c xdebug_com.c xdebug_handler_gdb.c
 xdebug_handler_php3.c xdebug_handlers.c xdebug_llist.c xdebug_hash.c
 xdebug_profiler.c xdebug_superglobals.c xdebug_var.c usefulstuff.c,
 $ext_shared)'</pre> then it means that you do not meet the PHP 4.3.x version
-requirement for Xdebug.</li>
+requirement for Xdebug.
+<br /><br />
+Another problem that might occur is:
+<pre>configure: line 1145: PHP_INIT_BUILD_SYSTEM: command not found
+configure: line 1151: syntax error near unexpected token `config.nice'
+configure: line 1151: `PHP_CONFIG_NICE(config.nice)'</pre> You will need to
+upgrade your autotools (autoconf, automake and libtool) or install the known
+working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 
 <li>make</li>
 
