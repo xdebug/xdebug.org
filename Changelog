@@ -1,3 +1,11 @@
+Fri Sep 17 13:30:52 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/files/xdebug-4.3.6-2.0.0beta1.dll
+www.xdebug.org/html/files/xdebug-5.0-2.0.0beta1.dll
+www.xdebug.org/html/files/xdebug-5.1-2.0.0beta1.dll
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Added Windows modules.
+
 Fri Sep 17 13:20:42 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-settings.php:
 - Fixed some inconsistencies.
