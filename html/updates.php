@@ -8,11 +8,47 @@
 <span class="sans">XDEBUG EXTENSION FOR PHP | UPDATES</span><br />
 
 <?php include "include/menu.php"; ?>
+<?php
+	function bug($nr) {
+		echo "bug <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+			sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
+	}
+?>
 
 <span class="sans">UPDATES</span><br />
 
 <span class='quote'>
 <dl>
+
+<dt>[26-12-2003]</dt>
+
+<dd>GDB: Added file/line to signals.</dd>
+<dd>Fixed logging to adhere to the error_reporting setting.</dd>
+<dd>Fixed <?php bug(32); ?>: Unusual dynamic variables cause xdebug to
+crash.</dd>
+<dd>Fixed <?php bug(31); ?>: &amp; entity replaced after others, wrong HTML
+output.</dd>
+<dd>Fixed <?php bug(22); ?>: Segmentation fault with
+<i><a href='docs.php#xdebug_get_function_stack'>xdebug_get_function_stack()</a></i>
+and collect_params=1.</dd>
+
+<dt>[08-11-2003]</dt>
+
+<dd>Added version info to handlers which show in phpinfo() output.</dd>
+<dd>GDB: Fixed bug with continuing after breakpoint where only 'cont'
+worked.</dd>
+<dd>GDB: Fixed bug in deleting absolute breakpoints on Windows.</dd>
+<dd>Fixed <?php bug(27); ?>: Repeated connect attempts when no debugger is
+listening.</dd>
+<dd>Fixed <?php bug(19); ?>: The value of xdebug.output_dir in a .htaccess
+never takes effect.</dd>
+<dd>Fixed <?php bug(18); ?>: Mistyped sizeof()'s for array indexes in profiler
+output.</dd>
+<dd>Fixed handling stack traces for when display_errors was set to Off.</dd>
+<dd>Fixed segfault where a function name didn't exist in case of a
+"call_user_function".</dd>
+<dd>Fixed reading a filename in case of an callback to a PHP function from an
+internal function (like "array_map()").</dd>
 
 <dt>[18-09-2003]</dt>
 <dd>Fixed bug with wrong file names for functions called from call_user_*().</dd>

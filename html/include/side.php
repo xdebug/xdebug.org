@@ -4,46 +4,23 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[18-09-2003]</dt>
+<dt>[26-12-2003]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug130rc1', 'xdebug 1.3.0rc1'); ?></li>
+<li><?php url ('xdebug130', 'xdebug 1.3.0'); ?></li>
 </ul>
 <br />
 
 Modules for 5.0.0dev:
 <ul class="status">
-<li><i>none available</i></li>
+<li><?php url ('xdebug130-50-win', 'Windows'); ?></li>
 </ul>
 <br />
 
 Modules for 4.3.x:
 <ul class="status">
-<li><i>none available</i></li>
-</ul>
-</dl>
-
-<dl class="status">
-<dt>[21-04-2003]</dt>
-<dd>
-Source:
-<ul class="status">
-<li><?php url ('xdebug120', 'xdebug 1.2.0'); ?></li>
-</ul>
-<br />
-
-Modules for 5.0.0dev:
-<ul class="status">
-<li><i>none available</i></li>
-</ul>
-<br />
-
-Modules for 4.3.x:
-<ul class="status">
-<li><?php url ('xdebug120-43-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug120-43-win', 'Windows'); ?> (4.3.2 only)</li>
-<li><?php url ('xdebug120-43-mac', 'MacOSX'); ?></li>
+<li><?php url ('xdebug130-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
 </ul>
 <br />
 
@@ -70,7 +47,7 @@ Debug client 0.7.0:
 <br /><br />
  End PayPal Logo -->
 
-<span class="sans">BINARY SNAPSHOTS</span><br />
+<span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
 <dd>
 Modules for 4.3.x:
@@ -93,6 +70,7 @@ Modules for 5.0.0dev:
 <dd>
 Source:
 <ul class="status">
+<li><?php url ('xdebug120', 'Xdebug 1.2.0'); ?></li>
 <li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
 <li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
 <li><?php url ('xdebug100', 'Xdebug 1.0.0'); ?></li>

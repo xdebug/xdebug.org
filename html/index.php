@@ -42,6 +42,11 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[26-12-2003]</dt>
+<dd class="main">Xdebug version 1.3.0 has been released. Changes since 1.3.0rc1
+includes numerous bugfixes and the addition of file/line information to signals.
+See the full <a href="updates.php">Changelog</a> to find out what's new. </dd>
+
 <dt class="main">[09-10-2003]</dt>
 <dd class="main">Together with Shane Caraveo from <a
 href="http://www.activestate.com">ActiveState</a> a new protocol, <a
