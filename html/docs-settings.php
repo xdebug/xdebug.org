@@ -178,7 +178,7 @@ try to connect as soon as an error condition occurs.</dd>
 <a name="remote_port"></a>
 <dt>xdebug.remote_port [integer] (default: 17869)</dt>
 <dd>The port to which Xdebug tries to connect on the remote host. As the
-bundled debug client only listens at the hardcoded port 17689 it is best to
+bundled debug client only listens at the hardcoded port 17869 it is best to
 leave this setting unchanged.</dd>
 </dl>
 
