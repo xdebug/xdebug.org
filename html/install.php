@@ -121,7 +121,10 @@ working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 <li>cp modules/xdebug.so /to/wherever/you/want/it</li>
 
 <li>add the following line to php.ini:
-zend_extension="/wherever/you/put/it/xdebug.so"</li>
+zend_extension="/wherever/you/put/it/xdebug.so" (for non-threaded use of PHP,
+for example the CLI, CGI or Apache 1.3 module) or:
+zend_extension_ts="/wherever/you/put/it/xdebug.so" (for threaded usage of PHP,
+for example the Apache 2 work MPM or the the ISAPI module)</li>
 
 <li>Restart your webserver.</li>
 
