@@ -73,7 +73,7 @@ Source:
 <li><?php url ('xdebug120', 'Xdebug 1.2.0'); ?></li>
 <li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
 <li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
-<li><?php url ('xdebug100', 'Xdebug 1.0.0'); ?></li>
+<li><?php url ('xdebug100rc1', 'Xdebug 1.0.0rc1'); ?></li>
 <li><?php url ('xdebug090', 'Xdebug 0.9.0'); ?></li>
 <li><?php url ('xdebug080', 'Xdebug 0.8.0'); ?></li>
 <li><?php url ('xdebug070', 'Xdebug 0.7.0'); ?></li>

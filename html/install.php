@@ -188,35 +188,35 @@ course try to fix those.
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.2.0</td>
+		<td class="ctr">1.3.0</td>
 	</tr>
 	<tr>
 		<th class="ctr">4.3.2</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.2.0</td>
+		<td class="ctr">1.3.0</td>
 	</tr>
 	<tr>
 		<th class="ctr">4.3.3</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.2.0</td>
+		<td class="ctr">1.3.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">5.0.0dev</th>
-		<td class="ctr">20020918</td>
+		<th class="ctr">5.0.0beta3</th>
+		<td class="ctr">20031113</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">90021012</td>
-		<td class="ctr">1.2.0</td>
+		<td class="ctr">2.0.0-dev</td>
 	</tr>
 	<tr>
-		<th class="ctr">5.0.0b2-dev</th>
-		<td class="ctr">20030820</td>
+		<th class="ctr">5.0.0rc1-dev</th>
+		<td class="ctr">20031224</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">90021012</td>
-		<td class="ctr">1.3.0-cvs</td>
+		<td class="ctr">2.0.0-cvs</td>
 	</tr>
 </table>
 </p>
