@@ -63,11 +63,15 @@ and you can do that in two ways:
 <li>When running the script from the command line you need to set an
 environment variable, like:
 <pre class="example">
-export XDEBUG_CONFIG="idekey=session_name remote_enable=1"
+export XDEBUG_CONFIG="<a href="/docs-settings.php#idekey">idekey</a>=session_name <a href="/docs-settings.php#remote_enable">remote_enable</a>=1"
 php myscript.php
 </pre>
-You can also configure the remote_host, remote_port, remote_mode and
-remote_handler in this same environment variable.</li>
+You can also configure the <a href="/docs-settings.php#remote_host">remote_host</a>,
+<a href="/docs-settings.php#remote_port">remote_port</a>,
+<a href="/docs-settings.php#remote_mode">remote_mode</a> and
+<a href="/docs-settings.php#remote_handler">remote_handler</a> in this same
+environment variable. All those configurable settings can also be set with
+normal php.ini settings.</li>
 
 <li>If you want to debug a script started through a web browser, simply add
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL. Refer

@@ -71,6 +71,14 @@ option as PHP's generated oparrays will increase with about a third of the size
 slowing down your scripts. This setting can not be set in your scripts with
 ini_set(), but only in php.ini.</dd>
 
+<a name="idekey"></a>
+<dt>xdebug.idekey [string] (default: *complex*)</dt>
+<dd>Controls which IDE Key Xdebug should pass on to the DBGp debugger handler.
+The default is based on environment settings. First the environment setting
+DBGP_IDEKEY is consulted, then USER and as last USERNAME.  The default is set
+to the first environment variable that is found. If none could be found the
+setting has as default "".</dd>
+
 <a name="manual_url"></a>
 <dt>xdebug.manual_url [string] (default: http://www.php.net)</dt>
 <dd>This is the base url for the links from the function traces and error
