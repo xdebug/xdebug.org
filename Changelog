@@ -1,3 +1,7 @@
+Fri Jun 18 09:24:18 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/include/header.php:
+- Fixed some CSS issues
+
 Fri Jun 18 09:23:03 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-debugger.php
 www.xdebug.org/html/docs-faq.php
