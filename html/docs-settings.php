@@ -62,10 +62,34 @@ basic functions of Xdebug, it is advisable to leave this setting set to
 </table>
 </dd>
 
+<a name="extended_info"/>
+<dt>xdebug.extended_info [integer] (default: 1)</dt>
+<dd>Controls whether Xdebug should enforce "extended_info" mode for the PHP
+parser; this allows Xdebug to do file/line breakpoints with the remote
+debugger. When tracing or profiling scripts you generally want to turn off this
+option as PHP's generated oparrays will increase with about a third of the size
+slowing down your scripts. This setting can not be set in your scripts with
+ini_set(), but only in php.ini.</dd>
+
+<a name="manual_url"/>
 <dt>xdebug.manual_url [string] (default: http://www.php.net)</dt>
 <dd>This is the base url for the links from the function traces and error
 message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.</dd>
+
+<a name="show_local_vars"/>
+<dt>xdebug.show_local_vars [integer] (default: 0)</dt>
+<dd>When this setting is set to something != 0 Xdebug's generated stack dumps
+in error situations will also show all variables in the top-most scope. Beware
+that this might generate a lot of information, and is therefore turned off by
+default.</dd>
+
+<a name="show_mem_delta"/>
+<dt>xdebug.show_mem_delta [integer] (default: 0)</dt>
+<dd>When this setting is set to something != 0 Xdebug's human-readable
+generated trace files will show the difference in memory usage between function
+calls. If Xdebug is configured to generate computer-readable trace files then
+they will always show this information.</dd>
 
 <a name="max_nesting_level"></a>
 <dt>xdebug.max_nesting_level [integer] (default: 64)</dt>
@@ -73,11 +97,35 @@ to set this setting to use the closest mirror.</dd>
 value of this setting is the maximum level of nested functions that are allowed
 before the script will be aborted.</dd>
 
+<a name="trace_format"></a>
+<dt>xdebug.trace_format [integer] (default: 0) (Xdebug 2)</dt>
+<dd>The format of the trace file.
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>0</td><td>shows a human readable indented trace file with:
+<i>time index</i>, <i>memory usage</i>, <i>memory delta</i> (if the setting <a
+href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
+<i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
+<i>filename</i> and <i>line number</i>.</td></tr>
+<tr><td>1</td><td>writes a computer readable format with the following
+tab-separated fields: <i>level</i>, <i>time index</i>, <i>memory usage</i>,
+<i>memory delta since last line</i>, <i>function name</i>, <i>user-defined (1)
+or internal function (0)</i>, <i>name of the include/require file</i>,
+<i>filename</i> and <i>line number</i>.</td></tr>
+</table>
+</dd>
+
 <a name="trace_output_dir"></a>
 <dt>xdebug.trace_output_dir [string] (default: /tmp) (Xdebug 2)</dt>
 <dd>The directory where the tracing files will be written to, make sure that
 the user who the PHP will be running as has write permissions to that
 directory.</dd>
+
+<a name="trace_options"></a>
+<dt>xdebug.trace_options [integer] (default: 0) (Xdebug 2)</dt>
+<dd>When set to "crc32" the middle part of a trace file name will be
+a crc32 hash of the current working directory, in all other cases 
+the Process ID of the PHP process is used here.
 
 <a name="trace_output_name"></a>
 <dt>xdebug.trace_output_name [string] (default: crc32) (Xdebug 2)</dt>
@@ -126,11 +174,11 @@ leave this setting unchanged.</dd>
 <span class="sans">PROFILER SETTINGS</span><br />
 
 <dl>
-<dt>xdebug.auto_profile [boolean] (default: Off)</dt>
+<dt>xdebug.auto_profile [boolean] (default: Off) (Xdebug 1)</dt>
 <dd>This option either enables or disables the automatic initialization of the
 profiler at the start of the script. By default, automatic is disabled.</dd>
 	
-<dt>xdebug.auto_profile_mode [integer] (default: 0)</dt>
+<dt>xdebug.auto_profile_mode [integer] (default: 0) (Xdebug 1)</dt>
 <dd>Allows you to specify what kind of output would you like the profiler to
 generate, use the integer value used to represent each profiling mode <a
 href="docs-profiling.php#retrieve">listed here</a>.</dd>
@@ -140,6 +188,27 @@ href="docs-profiling.php#retrieve">listed here</a>.</dd>
 the user who the PHP will be running as has write permissions to that
 directory. The created files will look something like this:
 xdebug_[timestamp]_[pid].txt.</dd>
+	
+<a name="profiler_enable"></a>
+<dt>xdebug.profiler_enable [integer] (default: 0) (Xdebug 2)</dt>
+<dd>Enables Xdebug's profiler which creates files in the <a
+href='#profiler_output_dir'>profile output directory</a>.  Those files can be
+read by KCacheGrind to visualize your data.  This setting can not be set in
+your script with ini_set().</dd>
+
+<a name="profiler_output_dir"></a>
+<dt>xdebug.profiler_output_dir [string] (default: /tmp) (Xdebug 2)</dt>
+<dd>The directory where the profiler output will be written to, make sure that
+the user who the PHP will be running as has write permissions to that
+directory. This setting can not be set in your script with ini_set().</dd>
+
+<a name="profiler_output_name"></a>
+<dt>xdebug.profiler_output_name [string] (default: crc32) (Xdebug 2)</dt>
+<dd>When set to "crc32" the last part of a profile filename will be
+a crc32 hash of the current working directory, in all other cases 
+the Process ID of the PHP process is used here. The base name of the generated
+file is always "cachegrind.out.". An example of a filename is:
+cachegrind.out.5123 . This setting can not be set in your script with ini_set().
 </dl>
 
 <br />

@@ -9,6 +9,19 @@
 
 <?php include "include/menu-docs.php"; ?>
 
+<span class="sans">INTRODUCTION</span>
+<p>
+This page lists all available functions in Xdebug. First a short description of
+each function per section is shown, with links to the full description of a
+functions, and in some cases examples.
+</p>
+<p>
+Functions marked with <b>[1]</b> in the following index are only available in
+Xdebug 1.3 and all functions marked with <b>[2]</b> are only available in
+Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
+2.x.
+</p>
+
 <span class="sans"><a href="#stack">ACTIVATION RELATED FUNCTIONS</a></span>
 <dl class="functionlist">
 <dt><a href="#xdebug_disable">xdebug_disable()</a></dt>
@@ -23,22 +36,19 @@
 </dl>
 
 
-<span class="sans"><a href="#stack">STACK RELATED FUNCTIONS</a></span>
+<span class="sans"><a href="#coverage">CODE COVERAGE FUNCTIONS</a></span>
 <dl class="functionlist">
-<dt><a href="#xdebug_call_class">xdebug_call_class()</a></dt>
-<dd>returns the class from which the current function was called</dd>
+<dt><a href="#xdebug_get_code_coverage">xdebug_get_code_coverage()</a></dt>
+<dd>returns an array containing information on which lines are touched while executing the script</dd>
 
-<dt><a href="#xdebug_call_file">xdebug_call_file()</a></dt>
-<dd>returns the file name from which the current function was called</dd>
+<dt><a href="#xdebug_get_function_count">xdebug_get_function_count()</a> [2]</dt>
+<dd>returns the number of functions called since the beginning of the script</dd>
 
-<dt><a href="#xdebug_call_function">xdebug_call_function()</a></dt>
-<dd>returns the function from which the current function was called</dd>
+<dt><a href="#xdebug_start_code_coverage">xdebug_start_code_coverage()</a></dt>
+<dd>starts collecting information on which lines are touched while executing the script</dd>
 
-<dt><a href="#xdebug_call_line">xdebug_call_line()</a></dt>
-<dd>returns the line number from which the current function was called</dd>
-
-<dt><a href="#xdebug_get_function_stack">xdebug_get_function_stack()</a></dt>
-<dd>returns an array representing the current stack</dd>
+<dt><a href="#xdebug_stop_code_coverage">xdebug_stop_code_coverage()</a></dt>
+<dd>stops collecting information on which lines are touched while executing the script</dd>
 
 </dl>
 
@@ -69,16 +79,58 @@
 </dl>
 
 
-<span class="sans"><a href="#coverage">CODE COVERAGE FUNCTIONS</a></span>
+<span class="sans"><a href="#superglobals">INFORMATION DUMPING RELATED FUNCTIONS</a></span>
 <dl class="functionlist">
-<dt><a href="#xdebug_get_code_coverage">xdebug_get_code_coverage()</a></dt>
+<dt><a href="#xdebug_dump_superglobals">xdebug_dump_superglobals()</a></dt>
+<dd>dumps values of elements of superglobals</dd>
+
+<dt><a href="#xdebug_var_dump">xdebug_var_dump()</a></dt>
+<dd>displays an HTML colourized representation of one or more variables</dd>
+
+</dl>
+
+
+<span class="sans"><a href="#coverage">PROFILING RELATED FUNCTIONS</a></span>
+<dl class="functionlist">
+<dt><a href="#xdebug_dump_function_profile">xdebug_dump_function_profile()</a> [1]</dt>
+<dd>displays two tables with profiling information</dd>
+
+<dt><a href="#xdebug_get_function_profile">xdebug_get_function_profile()</a> [1]</dt>
+<dd>return the profiling profile nformation on which lines are touched while executing the script</dd>
+
+<dt><a href="#xdebug_start_profiling">xdebug_start_profiling()</a> [1]</dt>
 <dd>returns an array containing information on which lines are touched while executing the script</dd>
 
-<dt><a href="#xdebug_start_code_coverage">xdebug_start_code_coverage()</a></dt>
-<dd>starts collecting information on which lines are touched while executing the script</dd>
+<dt><a href="#xdebug_stop_profiling">xdebug_stop_profiling()</a> [1]</dt>
+<dd>returns an array containing information on which lines are touched while executing the script</dd>
 
-<dt><a href="#xdebug_stop_code_coverage">xdebug_stop_code_coverage()</a></dt>
-<dd>stops collecting information on which lines are touched while executing the script</dd>
+</dl>
+
+
+<span class="sans"><a href="#debug">REMOTE DEBUGGING RELATED FUNCTIONS</a></span>
+<dl class="functionlist">
+<dt><a href="#xdebug_break">xdebug_break()</a> [2]</dt>
+<dd>makes the remote debugger break as if a breakpoint was set on this line</dd>
+
+</dl>
+
+
+<span class="sans"><a href="#stack">STACK RELATED FUNCTIONS</a></span>
+<dl class="functionlist">
+<dt><a href="#xdebug_call_class">xdebug_call_class()</a></dt>
+<dd>returns the class from which the current function was called</dd>
+
+<dt><a href="#xdebug_call_file">xdebug_call_file()</a></dt>
+<dd>returns the file name from which the current function was called</dd>
+
+<dt><a href="#xdebug_call_function">xdebug_call_function()</a></dt>
+<dd>returns the function from which the current function was called</dd>
+
+<dt><a href="#xdebug_call_line">xdebug_call_line()</a></dt>
+<dd>returns the line number from which the current function was called</dd>
+
+<dt><a href="#xdebug_get_function_stack">xdebug_get_function_stack()</a></dt>
+<dd>returns an array representing the current stack</dd>
 
 </dl>
 
@@ -236,22 +288,29 @@ href='docs-settings.php#collect_params'>xdebug.collect_params</a> setting.</dd>
 <dd>Start tracing function calls from this point to the file in the <i>trace_file</i> parameter.
 The trace file will be placed in the directory as configured by the
 <a href="docs-settings.php#trace_output_dir">trace_output_dir</a> setting.
-The name of the trace file is "xdebug.{hash}.xt" where the "{hash}" part depends on the
-<a href="docs-settings.php#trace_output_name">trace_output_name</a> setting. The <i>options</i>
-parameter is a bitfield; currently only the option "XDEBUG_TRACE_APPEND" is available which 
-will make the trace file open in append mode rather than overwrite mode. Unlike Xdebug 1, Xdebug 2
-will not store function calls in memory, but always only write to disk to relieve the pressure
-on used memory. The settings <a href='docs-settings.php#collect_includes'>collect_includes</a>, 
-<a href='docs-settings.php#collect_params'>collect_params</a>
-and <a href='docs-settings.php#collect_return'>collect_return</a> influence what information
-is logged to the trace file.</dd>
+The name of the trace file is "xdebug.{hash}.xt" where the "{hash}" part
+depends on the <a
+href="docs-settings.php#trace_output_name">trace_output_name</a> setting. The
+<i>options</i> parameter is a bitfield; currently there are two options:
+"XDEBUG_TRACE_APPEND" (1) makes the trace file open in append mode rather than
+overwrite mode and "XDEBUG_TRACE_COMPUTERIZED" (2) creates a trace file with
+the format as described under <i>1</i> <a
+href='docs-settings.php#trace_format'>here</a>. Unlike Xdebug 1, Xdebug 2 will
+not store function calls in memory, but always only write to disk to relieve
+the pressure on used memory. The settings <a
+href='docs-settings.php#collect_includes'>collect_includes</a>, <a
+href='docs-settings.php#collect_params'>collect_params</a> and <a
+href='docs-settings.php#collect_return'>collect_return</a> influence what
+information is logged to the trace file and the setting <a
+href='docs-settings.php#trace_format'>trace_format</a> influences the format of
+the trace file.</dd>
 
 <a name='xdebug_stop_trace'></a>
 <dt>void xdebug_stop_trace() (Xdebug 1)</dt>
 <dd>Stop tracing function calls and destroys the trace currently in memory.</dd>
 
 <dt>void xdebug_stop_trace() (Xdebug 2)</dt>
-<dd>Stop tracing function calls and destroys the trace currently in memory.</dd>
+<dd>Stop tracing function calls and closes the tracefile.</dd>
 
 <a name='xdebug_get_function_trace'></a>
 <dt>array xdebug_get_function_trace() (Xdebug 1)</dt>
@@ -330,24 +389,22 @@ the following table with information is shown:
 <tr><td bgcolor='#ffffff' align='center'>0.000137</td><td bgcolor='#ffffff' align='left'><pre>    -></pre></td><td bgcolor='#ffffff'><a href='http://uk.php.net/xdebug_call_function' target='_new'>xdebug_call_function</a>
 ()</td><td bgcolor='#ffffff'>/home/httpd/html/test/xdebug_caller.php<b>:</b>10</td><td bgcolor='#ffffff' align='right'>37472</td></tr>
 </table>
-</dl>
 
 <a name="xdebug_memory_usage"></a>
 <dt>int xdebug_memory_usage()</dt>
 <dd>Returns the current amount of memory the script uses. (Only works when PHP
 was compiled with --enable-memory-limit).</dd>
-</dl>
 
 <a name="xdebug_peak_memory_usage"></a>
 <dt>int xdebug_peak_memory_usage() (Xdebug 2)</dt>
 <dd>Returns the maximum amount of memory the script used up til now. (Only
 works when PHP was compiled with --enable-memory-limit).</dd>
-</dl>
 
 <a name="xdebug_time_index"></a>
 <dt>float xdebug_time_index()</dt>
 <dd>Returns the current time index since the starting of the script in
 seconds.</dd>
+</dl>
 </p>
 
 <br />
@@ -424,20 +481,28 @@ array(1) {
   }
 }</pre>
 </dd>
+
+<a name='xdebug_get_function_count'></a>
+<dt>int xdebug_get_function_count()</dt>
+<dd>This function returns the number of functions called since the beginning of
+the script, including the call to <i>xdebug_get_function_count()</i> itself.
 </dl>
 
 <br />
 <a name="profile"></a>
-<a name='dump_function_profile'></a>
+<a name='xdebug_dump_function_profile'></a>
+<a name='xdebug_get_function_profile'></a>
+<a name='xdebug_start_profiling'></a>
+<a name='xdebug_stop_profiling'></a>
 <span class="sans">PROFILING RELATED</span><br />
 <dl>
-<dt>void xdebug_start_profiling()<br />
-void xdebug_stop_profiling()<br />
-void xdebug_dump_function_profile([int profiling_mode])<br />
-void xdebug_get_function_profile([int profiling_mode])</dt>
-<dd>Please see the section on <a href='docs-profiling.php'>Profiling</a> for
-information about these functions.</dl>
-</dl>
+<dt>void xdebug_start_profiling() (Xdebug 1)<br />
+void xdebug_stop_profiling() (Xdebug 1)<br />
+void xdebug_dump_function_profile([int profiling_mode]) (Xdebug 1)<br />
+array xdebug_get_function_profile([int profiling_mode]) (Xdebug 1)</dt>
+<dd>Please see the section on <a href='docs-profiling.php'>Profiling (Xdebug
+1)</a> for information about these functions or <a
+href='docs-profiling2.php'>Profiling (Xdebug 2)</a>.</dl>
 
 <br />
 <a name="superglobals"></a>
@@ -452,9 +517,10 @@ only ini setting that is made for this is 'xdebug.dump.SERVER = REMOTE_ADDR'):
 <tr><th colspan='3' bgcolor='#aaaaaa'>Dump $_SERVER</th></tr>
 <tr><td colspan='2' bgcolor='#ffffff'>$_SERVER['REMOTE_ADDR']</td><td bgcolor='#ffffff'>'127.0.0.1'</td></tr>
 </table>
+</dd>
 
-<a name="var_dump"></a>
-<dt>void var_dump([mixed var])</dt>
+<a name="xdebug_var_dump"></a>
+<dt>void xdebug_var_dump([mixed var [, ...]])</dt>
 <dd>This function displays structured information about one or more expressions
 that includes its type and value. Arrays are explored recursively with values
 <pre class='example'><?php
@@ -478,6 +544,17 @@ displays:
 </dd>
 
 </dl>
+
+<br />
+<a name="debug"></a>
+<span class="sans">REMOTE DEBUGGING RELATED</span><br />
+<dl>
+<a name='xdebug_break'></a>
+<dt>bool xdebug_break() (Xdebug 2)</dt>
+<dd>This function makes the debugger break on the specific line as if a normal
+file/line breakpoint was set on this line.</dd>
+</dl>
+
 </dl>
 
 <br /><br />

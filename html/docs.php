@@ -10,7 +10,7 @@
 <?php include "include/menu-docs.php"; ?>
 
 <span class="sans">
-CONFIGURATION
+CONFIGURATION SETTINGS
 <ul>
 <li><a href="docs-settings.php#debugger">Debugging Settings</a></li>
 <li><a href="docs-settings.php#general">General Settings</a></li>
