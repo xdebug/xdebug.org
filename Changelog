@@ -1,3 +1,7 @@
+Fri Sep 17 13:20:42 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-settings.php:
+- Fixed some inconsistencies.
+
 Thu Sep 16 09:45:36 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/install.php:
 - Added "php -m" tip.
