@@ -20,13 +20,6 @@ Modules for 4.3.0dev/4.3.0RC1:
 </ul>
 <br />
 
-Module for 4.3.0pre2:
-<ul class="status">
-<li><?php url ('xdebug110-430pre2-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug110-430pre2-f46', 'FreeBSD 4.6'); ?></li>
-</ul>
-<br />
-
 Debug client 0.7.0:
 <ul class="status">
 <li><?php url ('xdebugclient-0.7.0-lnx', 'Linux'); ?></li>
