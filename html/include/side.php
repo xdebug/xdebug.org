@@ -12,9 +12,17 @@ Source:
 </ul>
 <br />
 
-Debug client 0.8.0 (binary):
+Debug client 0.9.0 (DBGp) (binary):
 <ul class="status">
-<li><?php url ('xdebugclient-0.8.0-win', 'Windows'); ?></li>
+<li><?php url ('xdebugclient-0.9.0-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebugclient-0.9.0-win', 'Windows'); ?></li>
+</ul>
+<br />
+
+Debug client 0.7.3 (GDB) (binary):
+<ul class="status">
+<li><?php url ('xdebugclient-0.7.3-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebugclient-0.7.3-win', 'Windows'); ?></li>
 </ul>
 <br />
 </dd>
