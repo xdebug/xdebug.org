@@ -1,3 +1,9 @@
+Tue Oct 05 12:59:05 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/files/debugclient08.exe
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Added DBGp debugclient for windows.
+
 Fri Sep 17 13:30:52 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/files/xdebug-4.3.6-2.0.0beta1.dll
 www.xdebug.org/html/files/xdebug-5.0-2.0.0beta1.dll
