@@ -48,7 +48,60 @@ specified in <i>xdebug_start_profiling()</i>. The other function,
 containing the profile data. Both of the functions take an optional parameter
 that allows you to specify what sort of output would you like to see, if this
 parameter is not specified line by line profile mode will be assumed.  Xdebug
-supports nine profiling modes, which you can use:<a name="modes"> </a></p>
+supports nine profiling modes, which you can find below.
+</p>
+<p>
+Each dump always shows five different totals which tell you a bit more about
+the way PHP spend handling your script. The following table shows their meaning:
+<table border='1' cellspacing='0'>
+	<tr>
+		<th>Field:</th>
+		<td>Meaning:</td>
+	</tr>
+	<tr>
+		<th>Opcode Compiling</th>
+		<td>
+			This is the time that the Zend Engine spend on
+			converting your plain text scripts into an internal structural
+			reprensentation of the logic, the so-called op arrays. For more
+			information on this process, see the talk on <a
+			href="http://www.derickrethans.nl/ze-xdebug/talk.html">Xdebug and
+			an introduction to Zend Magic</a>.
+		</td>
+	</tr>
+	<tr>
+		<th>Function Execution</th>
+		<td>
+			The time spend executing functions in your PHP script. This
+			includes time spend for <i>include()</i> and <i>require()</i>.
+		</td>
+	</tr>
+	<tr>
+		<th>Ambient Code Execution</th>
+		<td>
+			All time NOT spend in executing PHP functions. This includes code
+			in your main script, but excludes code in the global space of
+			<i>include()'d</i> files.
+		</td>
+	</tr>
+	<tr>
+		<th>Total Execution</th>
+		<td>
+			Time spend executing your script. This is the sum of "Function
+			Execution" and "Ambient Code Execution".
+		</td>
+	</tr>
+	<tr>
+		<th>Total Processing</th>
+		<td>
+			The total time spend on processing the script. This is the sum
+			of "Opcode Compiling" and "Total Execution".
+		</td>
+	</tr>
+</table>
+</p>
+<a name="modes"></a>
+<span class="sans">PROFILING MODES</span><br />
 	<dl>
 	<dt>XDEBUG_PROFILER_LBL (0) <i>default</i></dt>
 	<dd>
