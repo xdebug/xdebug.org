@@ -1,3 +1,15 @@
+Mon Jun 14 09:51:18 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-profiling2.php
+www.xdebug.org/html/docs-dbgp.php
+www.xdebug.org/html/docs-profiling.php
+www.xdebug.org/html/docs-settings.php
+www.xdebug.org/html/docs.php
+www.xdebug.org/html/license.php
+www.xdebug.org/html/include/footer.php
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php:
+- Tiny issues and start of profiling for Xdebug 2 docs.
+
 Sun Jun 13 15:44:06 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-functions.php
 www.xdebug.org/html/docs-settings.php
