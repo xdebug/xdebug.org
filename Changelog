@@ -1,3 +1,7 @@
+Tue Mar 16 23:29:48 CET 2004 Derick Rethans <derick@derickrethans.nl>
+html/install.php:
+- Bump API no in instructions
+
 Fri Mar 12 11:11:36 CET 2004 Derick Rethans <derick@derickrethans.nl>
 html/files/1.1:
 - Added VIM syntax file
