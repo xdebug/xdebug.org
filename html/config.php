@@ -15,7 +15,7 @@
 <dl>
 <dt>xdebug.auto_trace (default: Off)</dt>
 
-<dt>xdebug.collect_params (default: On)</dt>
+<dt>xdebug.collect_params (default: Off)</dt>
 
 <dt>xdebug.default_enable (default: On)</dt>
 <dd>If this setting is On then stacktraces will be shown by default. You can
