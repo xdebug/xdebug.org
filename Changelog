@@ -1,3 +1,10 @@
+Fri Sep 12 14:00:27 CEST 2003 Derick Rethans <d.rethans@jdimedia.nl>
+/www.xdebug.org/html/install.php
+/www.xdebug.org/html/support.php
+/www.xdebug.org/html/updates.php
+/www.xdebug.org/html/include/header.php:
+- Fixed up some docs
+
 Fri Sep 12 12:10:53 CEST 2003 Derick Rethans <d.rethans@jdimedia.nl>
 /www.xdebug.org/html/images/xdebug.gif:
 - Fix image
