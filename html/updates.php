@@ -13,7 +13,25 @@
 
 <span class='quote'>
 <dl>
+
+<dt>[18-09-2003]</dt>
+<dd>Fixed bug with wrong file names for functions called from call_user_*().</dd>
+
+<dt>[30-08-2003]</dt>
+<dd>Added the option "dump_superglobals" to the remote debugger. If you set
+this option to 0 the "show-local" and similar commands will not return any data
+from superglobals anymore.</dd>
+
+<dt>[30-08-2003]</dt>
+<dd>Fixed bug <a
+href='http://bugs.xdebug.org/bug_view_page.php?bug_id=0000002'>#2</a>: "pear
+package" triggers a segfault.</dd> <dd>Fixed crash bug when a function had
+sprintf style parameters (ie.  strftime()).</dd>
+
 <dt>[16-07-2003]</dt>
+<dd>Added "id" attribute to &lt;var /&gt; elements in responses from the remove
+debugger when the response method is XML. This makes it possible to distinguish
+between unique elements by use of recursion for example.</dd>
 <dd>Greatly cut down on the overhead that Xdebug causes on running scripts.</dd>
 <dd>Fixed a bug with "quit" that would disable the extension.</dd>
 <dd>Fixed a bug in the folding of recursive elements.</dd>
@@ -23,8 +41,10 @@
 local variables for a stack frame are showed too.</dd>
 
 <dt>[28-06-2003]</dt>
-<dd>Added the xdebug_time_index() function which returns the time index since
-the start of the script.</dd>
+<dd>Updated licence: "PHP Licence" was renamed to "Xdebug Licence",
+"The PHP Group" to "Derick Rethans" and "PHP" to "Xdebug".</dd>
+<dd>Added the <i><a href='docs.php#xdebug_time_index'>xdebug_time_index()</a></i>
+function which returns the time index since the start of the script.</dd>
 
 <dt>[23-06-2003]</dt>
 <dd>Updated licence: "PHP Licence" was renamed to "Xdebug Licence",

@@ -42,6 +42,12 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[18-09-2003]</dt>
+<dd class="main">Xdebug version 1.3.0rc1 has been released. This new
+version's main enhancements are the increased performance and additional
+commands for remote debugging (conditional breakpoints, "full" backtrace, show
+local variables) See the full <a href="updates.php">Changelog</a> to find out
+what's new. </dd>
 <!--
 <dt class="main">[16-07-2003] - Clients</dt>
 <dd class="main">At this moment there are three clients being written for

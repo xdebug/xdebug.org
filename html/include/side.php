@@ -4,6 +4,28 @@
 
 <span class='quote'>
 <dl class="status">
+<dt>[18-09-2003]</dt>
+<dd>
+Source:
+<ul class="status">
+<li><?php url ('xdebug130rc1', 'xdebug 1.3.0rc1'); ?></li>
+</ul>
+<br />
+
+Modules for 5.0.0dev:
+<ul class="status">
+<li><i>none available</i></li>
+</ul>
+<br />
+
+Modules for 4.3.x:
+<ul class="status">
+<li><i>none available</i></li>
+</ul>
+<br />
+
+
+<dl class="status">
 <dt>[21-04-2003]</dt>
 <dd>
 Source:
@@ -14,12 +36,7 @@ Source:
 
 Modules for 5.0.0dev:
 <ul class="status">
-<li><i>none available yet</i></li>
-<!--
-<li><?php url ('xdebug110-430dev-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug110-430dev-win', 'Windows'); ?></li>
-<li><?php url ('xdebug110-430dev-f46', 'FreeBSD 4.6'); ?></li>
--->
+<li><i>none available</i></li>
 </ul>
 <br />
 
@@ -39,25 +56,6 @@ Debug client 0.7.0:
 </ul>
 </dd>
 </dl>
-
-<dl class="status">
-<dt>[29-10-2002]</dt>
-<dd>
-Source:
-<ul class="status">
-<li><?php url ('xdebug100rc1', 'xdebug 1.0.0rc1'); ?></li>
-</ul>
-<br />
-
-Modules for 4.2.2/4.2.3:
-<ul class="status">
-<li><?php url ('xdebug100rc1-422-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug100rc1-422-win', 'Windows'); ?></li>
-<li><?php url ('xdebug100rc1-422-f46', 'FreeBSD 4.6'); ?></li>
-</ul>
-</dd>
-</dl>
-<br />
 
 <!-- Begin PayPal Logo -->
 <p>
@@ -80,6 +78,7 @@ Source:
 <ul class="status">
 <li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
 <li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
+<li><?php url ('xdebug100', 'Xdebug 1.0.0'); ?></li>
 <li><?php url ('xdebug090', 'Xdebug 0.9.0'); ?></li>
 <li><?php url ('xdebug080', 'Xdebug 0.8.0'); ?></li>
 <li><?php url ('xdebug070', 'Xdebug 0.7.0'); ?></li>
