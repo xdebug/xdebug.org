@@ -4,27 +4,34 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[29-10-2002]</dt>
+<dt>[13-11-2002]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug110pre2', 'xdebug 1.1.0pre2'); ?></li>
+<li><?php url ('xdebug110', 'xdebug 1.1.0'); ?></li>
 </ul>
 <br />
 
-Modules for 4.3.0dev:
+Modules for 4.3.0dev/4.3.0RC1:
 <ul class="status">
-<li><?php url ('xdebug100rc1-430-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug100rc1-430-win', 'Windows'); ?></li>
-<li><?php url ('xdebug100rc1-430-f46', 'FreeBSD 4.6'); ?></li>
+<li><?php url ('xdebug110-430dev-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebug110-430dev-win', 'Windows'); ?></li>
+<li><?php url ('xdebug110-430dev-f46', 'FreeBSD 4.6'); ?></li>
 </ul>
 <br />
 
-Module for 4.2.2/4.2.3:
+Module for 4.3.0pre2:
 <ul class="status">
-<li><?php url ('xdebug100rc1-422-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug100rc1-422-win', 'Windows'); ?></li>
-<li><?php url ('xdebug100rc1-422-f46', 'FreeBSD 4.6'); ?></li>
+<li><?php url ('xdebug110-430pre2-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebug110-430pre2-f46', 'FreeBSD 4.6'); ?></li>
+</ul>
+<br />
+
+Debug client 0.7.0:
+<ul class="status">
+<li><?php url ('xdebugclient-0.7.0-lnx', 'Linux'); ?></li>
+<!--<li><?php url ('xdebugclient-0.7.0-win', 'Windows'); ?></li>-->
+<li><?php url ('xdebugclient-0.7.0-f46', 'FreeBSD 4.6'); ?></li>
 </ul>
 </dd>
 </dl>
@@ -46,8 +53,8 @@ Module for 4.2.2/4.2.3:
     </ul>
   </ul>
 </dd>
-<dd class="red">Respect error_reporting value in debug output</dd>
-<dd class="red">Windows compatibility</dd>
+<dd class="green">Respect error_reporting value in debug output</dd>
+<dd class="green">Windows compatibility</dd>
 </dl>
 
 <dl class="status">

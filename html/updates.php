@@ -13,6 +13,13 @@
 
 <span class='quote'>
 <dl>
+<td>[13-11-2002]</dt>
+<dd>Parameters to functions are no longer recorded by default; use the
+  xdebug.collect_params=1 setting in php.ini to turn it on again.</dd>
+
+<dt>[12-11-2002]</dt>
+<dd>Made the xdebug server and client working under Windows.</dd>
+
 <dt>[09-11-2002]</dt>
 <dd>Implemented the "next" (step over) and "finish" (step out) commands
 for the remote debugger.</dd>

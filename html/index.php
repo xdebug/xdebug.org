@@ -33,6 +33,12 @@ provide includes the following:
 
 <dl class="main">
 
+<dt class="main">13-11-2002</dt>
+<dd class="main">Xdebug version 1.1.0 has finally been released. This new
+version's main enhancements are support for remote clients. The client-server
+works on both unices and Windows.  See the full <a
+href="updates.php">Changelog</a> to find out what's new. </dd>
+
 <dt class="main">09-11-2002</dt>
 <dd class="main"><a href="http://www.subjective.de/en/weaverslave/index.php">Weaverslave</a>
 will be the first IDE that supports Xdebug as debugging back-end. The author,
