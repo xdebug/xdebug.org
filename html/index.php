@@ -52,7 +52,7 @@ capabilities. More information in this will follow later.</dd>
 
 <dt class="main">08-11-2002</dt>
 <dd class="main">Slides <a
-href="http://pres.derickrethans.nl/show.php/ze-xdebug/0">on-line</a> of my
+href="http://pres.derickrethans.nl/ze-xdebug">on-line</a> of my
 presentation on Zend Internals and Xdebug
 at the <a href="http://www.derickrethans.nl/20021107.php">International PHP Conference</a>.</dd>
 </dl>
