@@ -16,6 +16,7 @@
 The Xdebug extension helps you debugging your script by providing a lot of
 valuable debug information. The debug information that Xdebug can
 provide includes the following:
+</p>
 <ul>
 <li>stack and function traces in error messages with:
   <ul>
@@ -26,7 +27,10 @@ provide includes the following:
 <li>memory allocation</li>
 <li>protection for infinite recursions</li>
 </ul>
+<p>
 Xdebug also provides:
+</p>
+<p>
 <ul>
 <li><a href='docs-profiling.php'>profiling</a> information for PHP scripts</li>
 <li><a href='docs.php#xdebug_start_code_coverage'>script execution analysis</a></li>
