@@ -33,6 +33,11 @@ provide includes the following:
 
 <dl class="main">
 
+<dt class="main">28-11-2002</dt>
+<dd class="main">Work on a profiler in Xdebug has started by Ilia
+Alshanetsky. A few different output sortings will be implemented,
+more about this later.</dd>
+
 <dt class="main">13-11-2002</dt>
 <dd class="main">Xdebug version 1.1.0 has finally been released. This new
 version's main enhancements are support for remote clients. The client-server

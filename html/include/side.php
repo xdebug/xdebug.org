@@ -41,38 +41,19 @@ Debug client 0.7.0:
 
 <span class='quote'>
 <dl class="status">
-<dt>xdebug 1.1.0</dt>
-<dd class="green">Implement PHP 3 compatible debugging capabilities</dd>
-<dd class="green">Implement gdb like debugging capabilities</li>
-  <ul class="status">
-    <li class="green">breakpoints</li>
-    <li class="green">step in / step out / step over</li>
-    <li class="green">accessing data</li>
-    <ul class="status">
-      <li class="green">reading variables / globals</li>
-    </ul>
-  </ul>
-</dd>
-<dd class="green">Respect error_reporting value in debug output</dd>
-<dd class="green">Windows compatibility</dd>
-</dl>
-
-<dl class="status">
 <dt>xdebug 1.2.0</dt>
 <dd class="red">Update gdb like debugging capabilities</li>
   <ul class="status">
     <li class="red">accessing data</li>
     <ul class="status">
-      <li class="red">modifying variables / globals</li>
+      <li class="red">modifying variables</li>
+      <li class="red">reading and writing superglobals</li>
     </ul>
     <li class="red">watches / conditional breakpoints</li>
   </ul>
-<dd class="red">Evaluating code</li>
-</dl>
-
-<dl class="status">
-<dt>xdebug 1.3.0</dt>
-<dd class="red">Profiling</li>
+</dd>
+<dd class="red">Evaluating code</dd>
+<dd class="red">Profiling</dd>
 </dl>
 <br />
 
