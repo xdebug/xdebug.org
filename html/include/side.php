@@ -42,6 +42,15 @@ Debug client 0.7.0:
 <br /><br />
  End PayPal Logo -->
 
+<span class="sans">DEVELOPMENT VERSION (2.0dev)</span><br />
+<dl class="status">
+<dd>
+Instructions to get Xdebug 2.0dev from CVS can
+be found <a href='/install.php#source'>here</a>.
+</dd>
+</dl>
+<br />
+
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
 <br />
