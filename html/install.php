@@ -62,7 +62,7 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">DOWNLOAD SOURCE</span><br />
 
 <p>
-You can download the source <?php url ('xdebug110', 'here'); ?>.
+You can download the source <?php url ('xdebug120', 'here'); ?>.
 </p>
 <p>
 You compile xdebug separately from the rest of PHP.  Note, however,
