@@ -13,6 +13,16 @@
 
 <span class='quote'>
 <dl>
+<dt>[14-05-2003]</dt>
+<dd>Implemented the "show-local" command (shows all local variables in the
+current scope including all contents) and conditions for breakpoints in the
+"break" command.</dd>
+
+<dt>[27-04-2003]</dt>
+<dd>Added a fancy replacement function for <a
+href='docs.php#var_dump'>var_dump</a></i> which overloads the standard PHP
+function while HTML errors are enabled.</dd>
+
 <dt>[21-04-2003]</dt>
 <dd>Added the <i><a href='docs.php#xdebug_call_class'>xdebug_call_class</a></i>
 function as addition to <i><a

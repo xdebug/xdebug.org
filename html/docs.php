@@ -326,7 +326,7 @@ information about these functions.</dl>
 
 <br />
 <a name="superglobals"></a>
-<span class="sans">SUPERGLOBAL DUMPING RELATED</span><br />
+<span class="sans">INFORMATION DUMPING RELATED</span><br />
 <dl>
 <dt>void xdebug_dump_super_globals()</dt>
 <dd>This function dumps the values of the elements of the superglobals as
@@ -337,8 +337,32 @@ only ini setting that is made for this is 'xdebug.dump.SERVER = REMOTE_ADDR'):
 <tr><th colspan='3' bgcolor='#aaaaaa'>Dump $_SERVER</th></tr>
 <tr><td colspan='2' bgcolor='#ffffff'>$_SERVER['REMOTE_ADDR']</td><td bgcolor='#ffffff'>'127.0.0.1'</td></tr>
 </table>
-</dl>
 
+<a name="var_dump"></a>
+<dt>void var_dump([mixed var])</dt>
+<dd>This function displays structured information about one or more expressions
+that includes its type and value. Arrays are explored recursively with values
+<pre class='example'><?php
+$script = <<<SCRIPT
+ 1 <?php
+ 2     var_dump(
+ 3         array(
+ 4             array(TRUE, FALSE, 3), 
+ 5             'twee' => array('4', NULL, '6')
+ 6         )
+ 7     );
+ 8 ?>  
+SCRIPT;
+highlight_string($script);
+?>
+</pre>
+displays:
+<br />
+<br />
+<img src='images/vardump.png' align='center' border='0'/>
+</dd>
+
+</dl>
 
 <br /><br />
 
