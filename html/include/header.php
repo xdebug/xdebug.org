@@ -9,10 +9,12 @@
 	<meta name="KEYWORDS" content="derick, rethans, opensrc, php, php4, xml, xhtml, xml-rpc, soap, blog, weblog" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick @ php dot net or opensrc @ EFNet" />
 	<style type="text/css">
-		body, table, td
+		body, table, td, table.table
 		         { margin: 0px; padding: 0px; }
+		table.table
+                 { border: solid gray; border-width: thin; margin: 0px; padding: 0px; }
 		body     { background-color: white; }
-		
+	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
 		body, td { font-family: georgia, palatino, serif; }
