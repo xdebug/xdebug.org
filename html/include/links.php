@@ -34,6 +34,8 @@
 		'xdebug110-430dev-win' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0.dll',
 		'xdebug110-430dev-f46' => 'http://files.derickrethans.nl/xdebug-4.3.0dev-1.1.0-fbsd46.so',
 
+		'xdebug120rc1' => 'http://files.derickrethans.nl/xdebug-1.2.0rc1.tgz',
+
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',

@@ -33,6 +33,11 @@ provide includes the following:
 
 <dl class="main">
 
+<dt class="main">06-04-2003</dt>
+<dd class="main">Xdebug version 1.2.0rc1 has finally been released. This new
+version's main enhancements are the profiling support and code coverage.  See
+the full <a href="updates.php">Changelog</a> to find out what's new. </dd>
+
 <dt class="main">16-01-2003</dt>
 <dd class="main">Xdebug supports Zend Engine 2! With the updated OO
 functionality in this new engine for PHP Xdebug wouldn't compile anymore, with

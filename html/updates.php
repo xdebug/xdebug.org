@@ -13,8 +13,25 @@
 
 <span class='quote'>
 <dl>
+<dt>[05-04-2003]</dt>
+<dd>Allow remote debugging to be enabled in httpd.conf and .htaccess files.</dd>
+<dd>Added code coverage, enable with xdebug_start_code_coverage(), disable with
+xdebug_stop_code_coverage() and get the information with
+xdebug_get_code_coverage(). The latter returns an array with each element being
+an array containing the lines and the number of times a statement was run on
+that line, per executed file.</dd>
+
+<dt>[14-02-2003]</dt>
+<dd>Added dumping of super globals when an error occurs.</dd>
+
+<dt>[27-01-2003]</dt>
+<dd>Added an XML transport layer for the remote debugger.</dd>
+
+<dt>[22-01-2003]</dt>
+<dd>Fixed handling of 'continue' (in addition to 'cont').</dd>
+
 <dt>[14-01-2003]</dt>
-<dd>Updated Xdebug to support Xdebug (PHP 5.0.0-dev).</dd>
+<dd>Updated Xdebug to support Zend Engine 2 (PHP 5.0.0-dev).</dd>
 
 <dt>[07-01-2003]</dt>
 <dd>Implemented the "eval" (evalutes PHP code) to the remote debugger.</dd>

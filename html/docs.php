@@ -12,6 +12,8 @@
 <a name="functionality"></a>
 <span class="sans">FUNCTIONS</span><br />
 
+<p><i>(This information is currently not 100% updated)</i></p>
+
 <dl>
 <dt>array xdebug_get_function_stack()</dt>
 <dd>Returns an array which resembles a stack trace</dd>

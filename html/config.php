@@ -12,6 +12,8 @@
 <a name="functionality"></a>
 <span class="sans">PHP.INI SETTINGS</span><br />
 
+<p><i>(This information is currently not 100% updated)</i></p>
+
 <dl>
 <dt>xdebug.auto_trace (default: Off)</dt>
 
