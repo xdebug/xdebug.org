@@ -42,6 +42,18 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[06-04-2004]</dt>
+<dd class="main">Xdebug version 1.3.1 has been released. This release just
+includes some small bugfixes:
+<ul>
+<li>Fixed profiler to aggregate class/method calls correctly. (Robert Beenen)</li>
+<li>Fixed debugclient to initialize socket structure correctly. (Brandon Philips
+  and David Sklar)</li>
+<li>GDB: Fixed bug where the source file wasn't closed after a "source" command.
+(Derick)</li>
+</ul>
+</dd>
+
 <dt class="main">[01-04-2004]</dt>
 <dd class="main">Added archives for the <a href='/archives/xdebug-general'>Xdebug General</a>
 and <a href='/archives/xdebug-dev'>Xdebug Development</a> mailinglists.</dd>

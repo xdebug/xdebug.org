@@ -4,23 +4,17 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[26-12-2003]</dt>
+<dt>[06-04-2003]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug130', 'xdebug 1.3.0'); ?></li>
-</ul>
-<br />
-
-Modules for 5.0.0dev:
-<ul class="status">
-<li><?php url ('xdebug130-50-win', 'Windows'); ?></li>
+<li><?php url ('xdebug131', 'xdebug 1.3.1'); ?></li>
 </ul>
 <br />
 
 Modules for 4.3.x:
 <ul class="status">
-<li><?php url ('xdebug130-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
+<li><?php url ('xdebug131-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
 </ul>
 <br />
 
@@ -33,6 +27,7 @@ Debug client 0.7.0:
 </dd>
 </dl>
 
+<br />
 <!-- Begin PayPal Logo 
 <p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -49,12 +44,6 @@ Debug client 0.7.0:
 
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
-<dd>
-Modules for 4.3.x:
-<ul class="status">
-<li><?php url ('snap-43-win', 'Windows'); ?></li>
-</ul>
-</dd>
 <br />
 <dd>
 Modules for 5.0.0dev:
@@ -70,6 +59,7 @@ Modules for 5.0.0dev:
 <dd>
 Source:
 <ul class="status">
+<li><?php url ('xdebug130', 'Xdebug 1.3.0'); ?></li>
 <li><?php url ('xdebug120', 'Xdebug 1.2.0'); ?></li>
 <li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
 <li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
