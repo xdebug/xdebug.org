@@ -57,9 +57,16 @@ higher.
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
 <dd>
-Modules for 5.0.0dev:
+Modules for 5.0.x-dev:
 <ul class="status">
 <li><?php url ('snap-50-win', 'Windows'); ?></li>
+</ul>
+<br />
+</dd>
+<dd>
+Modules for 5.1.x-dev:
+<ul class="status">
+<li><?php url ('snap-51-win', 'Windows'); ?></li>
 </ul>
 </dd>
 </dl>
