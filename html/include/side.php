@@ -62,6 +62,20 @@ Modules for 4.2.2/4.2.3:
 </dl>
 <br />
 
+<!-- Begin PayPal Logo -->
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="d.rethans@jdimedia.nl">
+<input type="hidden" name="amount" value="10.00">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</p>
+<!-- End PayPal Logo -->
+<br /><br />
+
 <span class="sans">OLDER RELEASES</span><br />
 <dl class="status">
 <dd>
