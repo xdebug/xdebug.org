@@ -12,13 +12,11 @@ Source:
 </ul>
 <br />
 
-<!--
 Modules for 4.3.x (binary):
 <ul class="status">
-<li><?php url ('xdebug131-43-win', 'Windows'); ?> (&gt;= 4.3.2 only)</li>
+<li><?php url ('xdebug132-43-win', 'Windows'); ?> (&gt;= 4.3.5 only)</li>
 </ul>
 <br />
--->
 
 Debug client 0.7.0 (binary):
 <ul class="status">
@@ -56,6 +54,13 @@ higher.
 
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
+<dd>
+Modules for 4.3.x-dev:
+<ul class="status">
+<li><?php url ('snap-43-win', 'Windows'); ?></li>
+</ul>
+<br />
+</dd>
 <dd>
 Modules for 5.0.x-dev:
 <ul class="status">

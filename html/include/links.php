@@ -51,12 +51,13 @@
 		'xdebug131-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-1.3.1.dll',
 
 		'xdebug132' => 'http://www.xdebug.org/files/xdebug-1.3.2.tgz',
+		'xdebug132-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-1.3.2.dll',
 
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
 
-		'snap-43-win' => 'http://files.derickrethans.nl/xdebug-4.3-2.0dev.dll',
+		'snap-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-2.0dev.dll',
 		'snap-50-win' => 'http://snaps.php.net/win32/PECL_5_0/php_xdebug.dll',
 		'snap-51-win' => 'http://snaps.php.net/win32/PECL_UNSTABLE/php_xdebug.dll',
 	);
