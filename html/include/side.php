@@ -38,15 +38,15 @@ Module for 4.2.2/4.2.3:
 <dd class="green">Implement gdb like debugging capabilities</li>
   <ul class="status">
     <li class="green">breakpoints</li>
-    <li class="green">step in</li>
-	<li class="red">step out / step over</li>
+    <li class="green">step in / step out / step over</li>
     <li class="green">accessing data</li>
     <ul class="status">
-      <li class="orange">reading variables / globals</li>
+      <li class="green">reading variables / globals</li>
     </ul>
   </ul>
 </dd>
 <dd class="red">Respect error_reporting value in debug output</dd>
+<dd class="red">Window compatibility</dd>
 </dl>
 
 <dl>xdebug 1.2.0</dt>

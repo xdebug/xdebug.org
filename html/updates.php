@@ -13,6 +13,10 @@
 
 <span class='quote'>
 <dl>
+<dt>[09-11-2002]</dt>
+<dd>Implemented the "next" (step over) and "finish" (step out) commands
+for the remote debugger.</dd>
+
 <dt>[07-11-2002]</dt>
 <dd>Lots of small bugfixes, under them memory leaks and crash bugs.</dd>
 
