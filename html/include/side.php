@@ -26,7 +26,7 @@ Modules for 5.0.0dev:
 Modules for 4.3.x:
 <ul class="status">
 <li><?php url ('xdebug120-43-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug120-43-win', 'Windows'); ?></li>
+<li><?php url ('xdebug120-43-win', 'Windows'); ?> (4.3.2 only)</li>
 <li><?php url ('xdebug120-43-mac', 'MacOSX'); ?></li>
 </ul>
 <br />
