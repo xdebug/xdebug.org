@@ -78,6 +78,19 @@ pane shows the time spend while calling the function from the list. While adding
 the numbers in this list up, you will most likely never reach 100% as the
 selected function itself will also takes time to execute.</p>
 
+<p>The "All Callers" and "All Calls" tabs show not only the direct call from
+<img class='l' src='images/docs/kc-right-callers.png' align='left'/>
+which the function was called respectively all directly made
+function calls but also function calls made more levels up and down.
+The upper pane in the screenshot on the left shows all functions calling the
+current selected one, both directly and indirectly with other functions
+inbetween them on the stack. The "Distance" column shows how many function
+calls are between the listed and the current selected one (-1). If there are
+different distances between two functions, it is shown as a range (for example
+"5-24". The number in parentheses is the median distance. The lower pane is
+similar except that it shows information on functions called from the current
+selected one, again either direct or indirect.</p>
+
 <p><b>more will follow soon</b></p>
 			</span></td>
 			<td>&nbsp;</td>
