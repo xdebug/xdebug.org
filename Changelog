@@ -1,3 +1,10 @@
+Fri Oct 31 11:24:03 CET 2003 Derick Rethans <d.rethans@jdimedia.nl>
+/www.xdebug.org/html/docs.php
+/www.xdebug.org/html/index.php
+/www.xdebug.org/html/include/header.php
+/www.xdebug.org/html/include/menu-docs.php:
+- Fix typo in function name
+
 Sat Oct 11 23:15:51 CEST 2003 Derick Rethans <d.rethans@jdimedia.nl>
 /www.xdebug.org/html/install.php:
 - Add link to Mac instructions
