@@ -16,7 +16,8 @@
 &gt; Debugger: <a href="docs-debugger.php">Usage</a>,
 <a href="docs-gdb.php">GDB Protocol</a>,
 <a href="docs-dbgp.php">DBGp Protocol</a><br />
-&gt; <a href="docs-faq.php">FAQ: Frequently Asked Questions</a>
+&gt; <a href="docs-faq.php">FAQ: Frequently Asked Questions</a><br />
+&gt; <a href="files/docs.tar.gz"Download Documentation</a>
 </div>
 <br /><br />
 
