@@ -42,6 +42,10 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[28-12-2003]</dt>
+<dd class="main">Added the Xdebug <a href="license.php">license</a> to this
+website.</dd>
+
 <dt class="main">[26-12-2003]</dt>
 <dd class="main">Xdebug version 1.3.0 has been released. Changes since 1.3.0rc1
 includes numerous bugfixes and the addition of file/line information to signals.

@@ -38,6 +38,7 @@
         .sc      { font-variant: small-caps; }
         .st      { text-decoration: line-through; }
         .copy    { font-size: x-small; line-height: 1.5em; color: #999999; }
+		p.center { text-align: center; }
         .pause   { font-size: medium; display: block; color: #004411;
                    margin-top: 24px; margin-bottom: 8px; text-align: center; }
                    
