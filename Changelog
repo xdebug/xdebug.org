@@ -1,3 +1,8 @@
+Thu Apr 08 21:50:17 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/support.php
+www.xdebug.org/html/include/header.php:
+- Update support site
+
 Thu Apr 08 17:14:49 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/install.php:
 - Fixed install instructions and added new link to MacOSX stuff
