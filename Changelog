@@ -1,3 +1,12 @@
+Wed Jun 23 15:33:25 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-debugger.php
+www.xdebug.org/html/docs-faq.php
+www.xdebug.org/html/docs-settings.php
+www.xdebug.org/html/install.php
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/side.php:
+- Added debugger docs, updated some other docs.
+
 Sun Jun 20 23:09:03 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/include/side.php:
 - Add CVS instructions to right menu.
