@@ -4,29 +4,33 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[15-04-2003]</dt>
+<dt>[21-04-2003]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug120rc2', 'xdebug 1.2.0rc2'); ?></li>
-</ul>
-</dd>
-</dl>
-
-<dl class="status">
-<dt>[13-11-2002]</dt>
-<dd>
-Source:
-<ul class="status">
-<li><?php url ('xdebug110', 'xdebug 1.1.0'); ?></li>
+<li><?php url ('xdebug120', 'xdebug 1.2.0'); ?></li>
 </ul>
 <br />
 
-Modules for 4.3.0 and higher:
+Modules for 5.0.0dev:
 <ul class="status">
+<li><i>none available yet</i></li>
+<!--
 <li><?php url ('xdebug110-430dev-lnx', 'Linux'); ?></li>
 <li><?php url ('xdebug110-430dev-win', 'Windows'); ?></li>
 <li><?php url ('xdebug110-430dev-f46', 'FreeBSD 4.6'); ?></li>
+-->
+</ul>
+<br />
+
+Modules for 4.3.x:
+<ul class="status">
+<li><i>none available yet</i></li>
+<!--
+<li><?php url ('xdebug110-430dev-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebug110-430dev-win', 'Windows'); ?></li>
+<li><?php url ('xdebug110-430dev-f46', 'FreeBSD 4.6'); ?></li>
+-->
 </ul>
 <br />
 
@@ -48,14 +52,6 @@ Source:
 </ul>
 <br />
 
-Modules for 4.3.0dev:
-<ul class="status">
-<li><?php url ('xdebug100rc1-430-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug100rc1-430-win', 'Windows'); ?></li>
-<li><?php url ('xdebug100rc1-430-f46', 'FreeBSD 4.6'); ?></li>
-</ul>
-<br />
-
 Modules for 4.2.2/4.2.3:
 <ul class="status">
 <li><?php url ('xdebug100rc1-422-lnx', 'Linux'); ?></li>
@@ -71,6 +67,7 @@ Modules for 4.2.2/4.2.3:
 <dd>
 Source:
 <ul class="status">
+<li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
 <li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
 <li><?php url ('xdebug090', 'Xdebug 0.9.0'); ?></li>
 <li><?php url ('xdebug080', 'Xdebug 0.8.0'); ?></li>
@@ -81,7 +78,7 @@ Source:
 
 </dl>
 <br />
-
+<!--
 <br />
 <span class="sans">ROADMAP</span><br />
 
@@ -102,5 +99,5 @@ Source:
 <dd class="orange">Profiling</dd>
 </dl>
 <br />
-
+-->
 <!-- SIDEBAR END -->

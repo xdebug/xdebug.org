@@ -13,6 +13,20 @@
 
 <span class='quote'>
 <dl>
+<dt>[21-04-2003]</dt>
+<dd>Added the <i><a href='docs.php#xdebug_call_class'>xdebug_call_class</a></i>
+function as addition to <i><a
+href='docs.php#xdebug_call_function'>xdebug_call_function</a></i>.</dd>
+
+<dt>[19-04-2003]</dt>
+<dd>Re-implemented the <a href='docs-settings.php#max_nesting_level'>maximum
+nesting level protection</a>.</dd>
+
+<dt>[18-04-2003]</dt>
+<dd>Turned off <a href='docs-settings.php#collect_params'>xdebug.collect_params
+by default</a>.</dd>
+<dd>Fix problems with symbols on MacOSX.</dd>
+
 <dt>[14-04-2003]</dt>
 <dd>Fixed handling pathnames and files under Windows for the debugger.</dd>
 
@@ -24,11 +38,15 @@
 
 <dt>[05-04-2003]</dt>
 <dd>Allow remote debugging to be enabled in httpd.conf and .htaccess files.</dd>
-<dd>Added code coverage, enable with xdebug_start_code_coverage(), disable with
-xdebug_stop_code_coverage() and get the information with
-xdebug_get_code_coverage(). The latter returns an array with each element being
-an array containing the lines and the number of times a statement was run on
-that line, per executed file.</dd>
+<dd>Added code coverage, enable with <i><a
+href='docs.php#xdebug_start_code_coverage'>xdebug_start_code_coverage()</a></i>,
+disable with <i><a
+href='docs.php#xdebug_stop_code_coverage'>xdebug_stop_code_coverage()</a></i>
+and get the information with <i><a
+href='docs.php#xdebug_get_code_coverage'>xdebug_get_code_coverage()</a></i>.
+The latter returns an array with each element being an array containing the
+lines and the number of times a statement was run on that line, per executed
+file.</dd>
 
 <dt>[14-02-2003]</dt>
 <dd>Added dumping of super globals when an error occurs.</dd>

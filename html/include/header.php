@@ -54,7 +54,8 @@
 		dt.main { font-weight: normal; }
 		dd.main { margin-left: 20px; }
 
-		pre { margin-left: 20px; }
+		pre { margin-left: 20px; line-height: 1em; }
+		pre.example { background-color: #ebeaff; }
 	</style>
 </head>
 <body>

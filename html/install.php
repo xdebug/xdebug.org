@@ -12,21 +12,27 @@
 <span class="sans">PRECOMPILED MODULES</span><br />
 
 <p>
-There are a few precompiled modules, they are all for the non-debug version of PHP.
-See the links on the right side.
+There are a few precompiled modules, they are all for the non-debug version of
+PHP.  See the links on the right side.
 </p>
 <p>
 Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one)
 <pre>
-zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.1.0.so"
+zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.2.0.so"
 </pre>
 <p>
-Or for the Windows:
+For Windows:
 </p>
 <pre>
-zend_extension_ts="c:/php/modules/xdebug-4.3.0-1.1.0.dll"
+zend_extension_ts="c:/php/modules/xdebug-4.3.0-1.2.0.dll"
+</pre>
+<p>
+For MacOSX:
+</p>
+<pre>
+zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.2.0.bundle"
 </pre>
 </p>
 
@@ -42,7 +48,7 @@ some UNIX.
 Installing with PEAR/PECL is as easy as:
 </p>
 <pre>
-# pear install http://files.derickrethans.nl/xdebug-1.1.0.tgz
+# pear install http://files.derickrethans.nl/xdebug-1.2.0.tgz
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
@@ -83,10 +89,12 @@ different PHP versions.</li>
 
 <li>./configure --enable-xdebug
 (or:
-../configure --enable-xdebug --with-php-config=/path/to/php-config
+./configure --enable-xdebug --with-php-config=/path/to/php-config
 if php-config is not in your path)</li>
 
 <li>make</li>
+
+<li>(Only on MacOSX:)<br />gcc -bundle -bundle_loader /path/to/sapi/cli/php *.o -o modules/xdebug.so</li>
 
 <li>cp modules/xdebug.so /to/wherever/you/want/it</li>
 
@@ -95,7 +103,7 @@ zend_extension="/wherever/you/put/it/xdebug.so"</li>
 
 <li>Restart your webserver.</li>
 
-<li>Write a PHP page that calls "phpinfo ();" Load it in a browser and
+<li>Write a PHP page that calls "<i>phpinfo()</i>" Load it in a browser and
 look for the info on the xdebug module.  If you see it, you have been
 successful!</li>
 </ol>
@@ -112,11 +120,11 @@ extensions dir as configured in your php.ini and add the following to this
 same php.ini file:
 </p>
 <pre>
-extension=xdebug-4.3.0-1.1.0.so
+extension=xdebug-4.3.0-1.2.0.so
 </pre>
 <p>
-You will miss some functionality here, which is currently only single-stepping
-through PHP code from the remote debugger.
+You will miss some functionality here, which is currently single-stepping
+through PHP code from the remote debugger and the code-coverage functionality.
 </p>
 
 
@@ -157,21 +165,28 @@ through PHP code from the remote debugger.
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.1.0</td>
+		<td class="ctr">1.2.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.3.1dev</th>
+		<th class="ctr">4.3.1</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.1.0</td>
+		<td class="ctr">1.2.0</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.3.2dev</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+		<td class="ctr">1.2.0</td>
 	</tr>
 	<tr>
 		<th class="ctr">5.0.0dev</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">90021012</td>
-		<td class="ctr">CVS Version</td>
+		<td class="ctr">1.2.0</td>
 	</tr>
 </table>
 </p>
