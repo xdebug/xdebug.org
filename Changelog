@@ -1,3 +1,7 @@
+Thu Apr 08 21:51:23 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/support.php:
+- Fixed typo in URL
+
 Thu Apr 08 21:50:17 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/support.php
 www.xdebug.org/html/include/header.php:
