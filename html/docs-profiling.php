@@ -41,7 +41,7 @@ section</a>.</p>
 <p>Now that you've enabled the profiler, you undoubtly want to see profile
 generated from your code, amazingly Xdebug's profiler can do that too. When
 generating a profile you have two functions at your disposal, <i><a
-href='docs.php#dump_function_trace'>xdebug_dump_function_trace()</a></i>, which
+href='docs.php#dump_function_profile'>xdebug_dump_function_profile()</a></i>, which
 will output the profiling data to screen or write it to a file if one was
 specified in <i>xdebug_start_profiling()</i>. The other function,
 <i>xdebug_get_function_profile()</i> will instead return an array of data
