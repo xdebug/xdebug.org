@@ -1,3 +1,11 @@
+Wed Sep 15 14:59:31 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/xdebug-2.0.0beta1.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Go with 2.0.0beta1
+
 Wed Sep 01 11:00:38 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/install.php:
 - Added some more information on Debian.
