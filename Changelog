@@ -1,3 +1,11 @@
+Tue Apr 06 22:46:51 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/files/xdebug-1.3.1.tgz
+www.xdebug.org/html/files/xdebug-4.3-1.3.1.dll
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Put Xdebug 1.3.1 on the page too
+
 Thu Apr 01 00:14:26 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/index.php:
 - Archive announcements.
