@@ -133,7 +133,9 @@ for example the Apache 2 work MPM or the the ISAPI module)</li>
 
 <li>Write a PHP page that calls "<i>phpinfo()</i>" Load it in a browser and
 look for the info on the Xdebug module.  If you see it next to the Zend logo,
-you have been successful!</li>
+you have been successful! You can also use "php -m" if you have a command
+line version of PHP, it lists all loaded modules. Xdebug should appear
+twice there (once under "PHP Modules" and once under "Zend Modules").</li>
 </ol>
 </p>
 
