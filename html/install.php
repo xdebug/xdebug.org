@@ -40,9 +40,9 @@ zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.2.0.bundle"
 <span class="sans">PECL INSTALLATION</span><br />
 
 <p>
-As of xdebug 0.9.0 you can install xdebug through PEAR/PECL. This only works
-with the latest CVS version of PHP (with PEAR version 0.9.1-dev installed) and
-some UNIX.
+As of Xdebug 0.9.0 you can install Xdebug through PEAR/PECL. This only works
+with the latest CVS version of PHP (with PEAR version 0.9.1-dev or higher
+installed) and some UNIX.
 </p>
 <p>
 Installing with PEAR/PECL is as easy as:
@@ -59,13 +59,23 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 </pre>
 
 <a name="source"></a>
-<span class="sans">DOWNLOAD SOURCE</span><br />
+<span class="sans">INSTALLATION FROM SOURCE</span><br />
 
 <p>
-You can download the source <?php url ('xdebug120', 'here'); ?>.
+You can download the source of the latest <b>stable</b> release <?php url ('xdebug120', 'here'); ?>.
+Alternatively you can obtain Xdebug from CVS:
 </p>
+<pre>
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository login
+CVS password: srmread
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
+</pre>
+
+<a name="compile"></a>
+<span class="sans">COMPILING</span><br />
+
 <p>
-You compile xdebug separately from the rest of PHP.  Note, however,
+You compile Xdebug separately from the rest of PHP.  Note, however,
 that you need access to the scripts "phpize" and "php-config".  If
 your system does not have "phpize" and "php-config", you will need to
 compile and install PHP from a source tarball first, as these script
@@ -111,7 +121,7 @@ working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 
 <li>make</li>
 
-<li>(Only on MacOSX:)<br />gcc -bundle -bundle_loader /path/to/sapi/cli/php *.o -o modules/xdebug.so</li>
+<li>(Only on MacOSX <b>before</b> PHP 4.3.3):<br />gcc -bundle -bundle_loader /path/to/sapi/cli/php *.o -o modules/xdebug.so</li>
 
 <li>cp modules/xdebug.so /to/wherever/you/want/it</li>
 
@@ -121,7 +131,7 @@ zend_extension="/wherever/you/put/it/xdebug.so"</li>
 <li>Restart your webserver.</li>
 
 <li>Write a PHP page that calls "<i>phpinfo()</i>" Load it in a browser and
-look for the info on the xdebug module.  If you see it, you have been
+look for the info on the Xdebug module.  If you see it, you have been
 successful!</li>
 </ol>
 </p>
@@ -129,19 +139,10 @@ successful!</li>
 <a name="compat"></a>
 <span class="sans">COMPATIBILITY</span><br />
 <p>
-Xdebug does not work when the Zend Optimizer is loaded due to limitations in
-that module. If you want to use Xdebug with, or if you have other problems
-getting Xdebug to work as Zend extension, you can use Xdebug as a normal PHP
-extension instead. To make this work copy the .so (or .dll) into the PHP
-extensions dir as configured in your php.ini and add the following to this
-same php.ini file:
-</p>
-<pre>
-extension=xdebug-4.3.0-1.2.0.so
-</pre>
-<p>
-You will miss some functionality here, which is currently single-stepping
-through PHP code from the remote debugger and the code-coverage functionality.
+Xdebug does not work together with the Zend Optimizer or any other Zend
+extension (DBG, APC, APD etc).  This is due to compatibility problems with
+those modules. We will be working on figuring our what the problems are, and of
+course try to fix those.
 </p>
 
 
@@ -192,7 +193,14 @@ through PHP code from the remote debugger and the code-coverage functionality.
 		<td class="ctr">1.2.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.3.2dev</th>
+		<th class="ctr">4.3.2</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+		<td class="ctr">1.2.0</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.3.3</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
@@ -204,6 +212,13 @@ through PHP code from the remote debugger and the code-coverage functionality.
 		<td class="ctr">20020429</td>
 		<td class="ctr">90021012</td>
 		<td class="ctr">1.2.0</td>
+	</tr>
+	<tr>
+		<th class="ctr">5.0.0b2-dev</th>
+		<td class="ctr">20030820</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">90021012</td>
+		<td class="ctr">1.3.0-cvs</td>
 	</tr>
 </table>
 </p>

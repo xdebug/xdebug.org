@@ -23,8 +23,6 @@
 local variables for a stack frame are showed too.</dd>
 
 <dt>[28-06-2003]</dt>
-<dd>Updated licence: "PHP Licence" was renamed to "Xdebug Licence",
-"The PHP Group" to "Derick Rethans" and "PHP" to "Xdebug".</dd>
 <dd>Added the xdebug_time_index() function which returns the time index since
 the start of the script.</dd>
 

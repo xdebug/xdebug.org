@@ -29,7 +29,7 @@
 		.quote   { font-size: x-small; font-family: arial; }
         .mk      { font-size: x-small; color: #004411; font-weight: bold; }
      	.fin	 { font-size: x-small; color: #004411; }
-        .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; }
+        .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: x-small; font-weight: bold; color: #003300; }
         .date    { font-size: x-small; display: block; margin-bottom: 6px; }
         .sc      { font-variant: small-caps; }
         .st      { text-decoration: line-through; }
