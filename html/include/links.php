@@ -24,5 +24,7 @@
 		'xdebug100rc1-430-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.0-1.0.0rc1.so',
 		'xdebug100rc1-430-win' => 'http://files.derickrethans.nl/xdebug-4.3.0-1.0.0rc1.dll',
 		'xdebug100rc1-430-f46' => 'http://files.derickrethans.nl/xdebug-4.3.0-1.0.0rc1-fbsd46.so',
+
+		'xdebug110pre2' => 'http://files.derickrethans.nl/xdebug-1.1.0pre2.tgz',
 	);
 ?>

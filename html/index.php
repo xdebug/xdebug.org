@@ -64,12 +64,12 @@ some UNIX.
 <p>
 Installing with PEAR/PECL is as easy as:
 <pre>
-# pear install http://files.derickrethans.nl/xdebug-1.0.0rc1.tgz
+# pear install http://files.derickrethans.nl/xdebug-1.1.0pre2.tgz
 </pre>
 but you still need to add the correct line to your php.ini: (don't forget to
 change the path and filename to the correct one)
 <pre>
-zend_extension="/usr/local/php/modules/xdebug-4.2.2-1.0.0rc1.so"
+zend_extension="/usr/local/php/modules/xdebug.so"
 </pre>
 </p>
 
@@ -85,7 +85,7 @@ my <?php url('giftlist', 'wishlist'); ?>. This improves changes that I will be
 continuing developing Xdebug as an open source extension.
 </p>
 <p>
-You can download the source <?php url ('xdebug100rc1', 'here'); ?>.
+You can download the source <?php url ('xdebug110pre2', 'here'); ?>.
 </p>
 <p>
 You compile xdebug separately from the rest of PHP.  Note, however,
@@ -204,11 +204,11 @@ pages.</dd>
 
 <span class='quote'>
 <dl>
-<dt>[01-09-2002]</dt>
+<dt>[29-10-2002]</dt>
 <dd>
 Source:
 <ul>
-<li><?php url ('xdebug100rc1', 'xdebug 1.0.0rc1'); ?></li>
+<li><?php url ('xdebug110pre2', 'xdebug 1.1.0pre2'); ?></li>
 </ul>
 <br />
 
@@ -234,17 +234,18 @@ Module for 4.2.2/4.2.3:
 
 <span class='quote'>
 <dl>xdebug 1.1.0</dt>
-<dd class="red">Respect error_reporting value in debug output</dd>
 <dd class="green">Implement PHP 3 compatible debugging capabilities</dd>
 <dd class="green">Implement gdb like debugging capabilities</li>
   <ul>
-    <li class="orange">breakpoints</li>
+    <li class="green">breakpoints</li>
     <li class="red">step in / step out / step over</li>
     <li class="red">accessing data</li>
     <ul>
       <li class="red">reading variables / globals</li>
     </ul>
   </ul>
+</dd>
+<dd class="red">Respect error_reporting value in debug output</dd>
 </dl>
 
 <dl>xdebug 1.2.0</dt>
@@ -264,6 +265,11 @@ Module for 4.2.2/4.2.3:
 
 <span class='quote'>
 <dl>
+<dt>[29-10-2002]</dt>
+<dd>Implemented class::method, object-&gt;method and file.ext:line style
+  breakpoints.</dd>
+<dd>Changed debugger port from 7869 to 17869.</dd>
+
 <dt>[28-10-2002]</dt>
 <dd>Added xdebug.collect_params setting. If this setting is on (the default)
   then Xdebug collects all parameters passed to functions, otherwise they
