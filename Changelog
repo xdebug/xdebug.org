@@ -1,3 +1,8 @@
+Tue Aug 03 22:44:42 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Fixed links to PECL snapshots
+
 Mon Aug 02 10:42:15 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/docs-profiling2.php
 www.xdebug.org/html/docs-settings.php:
