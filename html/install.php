@@ -75,8 +75,9 @@ You compile Xdebug separately from the rest of PHP.  Note, however,
 that you need access to the scripts "phpize" and "php-config".  If
 your system does not have "phpize" and "php-config", you will need to
 compile and install PHP from a source tarball first, as these script
-are by-products of the PHP compilation and installation processes. It is
-important that the source version matches the installed version as there are
+are by-products of the PHP compilation and installation processes. (Debian users
+can install the required tools with <code>apt-get install php4-dev</code>). It
+is important that the source version matches the installed version as there are
 slight, but important, differences between PHP versions.  For a detailed
 installation on Mac OSX see <a
 href='http://pressedpants.com/archives/dated/2004/04/08/xdebug_on_os_x/'>Jason
