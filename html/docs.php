@@ -318,8 +318,8 @@ array(1) {
 <dl>
 <dt>void xdebug_start_profiling()<br />
 void xdebug_stop_profiling()<br />
-void xdebug_dump_function_profile([int profileing_mode])<br />
-void xdebug_get_function_profile([int profileing_mode])</dt>
+void xdebug_dump_function_profile([int profiling_mode])<br />
+void xdebug_get_function_profile([int profiling_mode])</dt>
 <dd>Please see the section on <a href='docs-profiling.php'>Profiling</a> for
 information about these functions.</dl>
 </dl>
