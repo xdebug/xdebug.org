@@ -58,6 +58,14 @@ cvs -d :pserver:srmread@cvs.xdebug.org:/repository login
 CVS password: srmread
 cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
 </pre>
+<p>
+This will checkout the latest development version which is currently 2.0dev. In
+case you want to retrieve the latest stable version from CVS, use the following
+checkout line:
+</p>
+<pre>
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r XDEBUG_1_3 xdebug
+</pre>
 
 <a name="compile"></a>
 <span class="sans">COMPILING</span><br />
