@@ -22,7 +22,7 @@
 		a        { text-decoration: underline; color: #334455; }
 		a:hover  { color: #667788 }
 		
-		p        { font-size: small; line-height: 1.5em; }
+		p        { font-size: small; line-height: 1.5em; margin-left: 20px; }
 		.serif   { font-size: small; line-height: 1.5em; }
 		.quote   { font-size: x-small; font-family: arial; }
         .mk      { font-size: x-small; color: #667788; font-weight: bold; }
@@ -38,15 +38,21 @@
         acronym, abbr
                  { font-variant: small-caps; text-decoration: none; border-bottom: 0;}
 
-		dt       { font-weight: bold; }
-		dd       { margin-left: 10px; margin-bottom: 10px; }
+		dt       { margin-left: 20px; margin-top: 10px; font-weight: bold; }
+		dd       { margin-left: 40px; margin-bottom: 0px; }
 		dd.red   { margin-left: 10px; margin-bottom: 10px; color: #dd0000; }
 		li.red   { color: #dd0000; }
 		dd.orange{ margin-left: 10px; margin-bottom: 10px; color: #ffc300; }
 		li.orange{ color: #ffc300; }
 		dd.green { margin-left: 10px; margin-bottom: 10px; color: #00bb00; }
 		li.green { color: #00bb00; }
+		dl.status { margin-left: -20px; padding-left: 0px; }
+		ul.status { margin-left: 25px; padding-left: 0px; }
 
+		dt.main { font-weight: normal; }
+		dd.main { margin-left: 20px; }
+
+		pre { margin-left: 20px; }
 	</style>
 </head>
 <body>
