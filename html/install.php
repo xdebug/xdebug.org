@@ -12,21 +12,15 @@
 <span class="sans">PRECOMPILED MODULES</span><br />
 
 <p>
-There are a few precompiled modules, they are all for the non-debug version of
-PHP.  See the links on the right side.
+There are a few precompiled modules for Windows, they are all for the non-debug
+version of PHP.  See the links on the right side.
 </p>
 <p>
 Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one)
 <pre>
-zend_extension="/usr/local/php/modules/xdebug-4.3.0-1.2.0.so"
-</pre>
-<p>
-For Windows:
-</p>
-<pre>
-zend_extension_ts="c:/php/modules/xdebug-4.3.0-1.2.0.dll"
+zend_extension_ts="c:/php/modules/xdebug-4.3-1.3.1.dll"
 </pre>
 </p>
 
@@ -42,7 +36,7 @@ installed) and some UNIX.
 Installing with PEAR/PECL is as easy as:
 </p>
 <pre>
-# pear install http://files.derickrethans.nl/xdebug-1.2.0.tgz
+# pear install xdebug
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
@@ -77,9 +71,9 @@ are by-products of the PHP compilation and installation processes. It is
 important that the source version matches the installed version as there are
 slight, but important, differences between PHP versions.  For a detailed
 installation on Mac OSX see <a
-href='http://somebodydial911.com/archives/000910.php'>Jason Perkins'</a>
-installation instructions.  Once you have access to "phpize" and "php-config",
-do the following:
+href='http://pressedpants.com/archives/dated/2004/04/08/xdebug_on_os_x/'>Jason
+Perkins'</a> installation instructions.  Once you have access to "phpize" and
+"php-config", do the following:
 </p>
 <p>
 <ol>
@@ -184,35 +178,21 @@ course try to fix those.
 		<td class="ctr">1.2.0</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.3.1</th>
+		<th class="ctr">4.3.1-4.3.5</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">20021010</td>
-		<td class="ctr">1.3.0</td>
+		<td class="ctr">1.3.1</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.3.2</th>
-		<td class="ctr">20020918</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.3.0</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.3</th>
-		<td class="ctr">20020918</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.3.0</td>
-	</tr>
-	<tr>
-		<th class="ctr">5.0.0beta3</th>
+		<th class="ctr">&lt; 5.0.0rc2</th>
 		<td class="ctr">20031113</td>
 		<td class="ctr">20020429</td>
 		<td class="ctr">90021012</td>
-		<td class="ctr">2.0.0-dev</td>
+		<td class="ctr">1.3.1</td>
 	</tr>
 	<tr>
-		<th class="ctr">&gt; 5.0.0rc2</th>
+		<th class="ctr">=&gt; 5.0.0rc2</th>
 		<td class="ctr">20031224</td>
 		<td class="ctr">20040316</td>
 		<td class="ctr">90021012</td>
