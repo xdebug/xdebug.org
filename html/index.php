@@ -255,6 +255,9 @@ Module for 4.2.2/4.2.3:
 
 <span class='quote'>
 <dl>
+<dt>[22-10-2002]</dt>
+<dd>Fixed bug which caused wrong filenames to be reported.</dd>
+
 <dt>[18-10-2002]</dt>
 <dd>Added automatic starting of function traces (xdebug.auto_trace, defaulting to
   "off").</dd>
@@ -263,11 +266,11 @@ Module for 4.2.2/4.2.3:
   breakpoints.</dd>
 
 <dt>[16-09-2002]</dt>
-<dd>Fixed bug with argument lists. (Derick)</dd>
+<dd>Fixed bug with argument lists.</dd>
 
 <dt>[04-09-2002]</dt>
-<dd>Implemented remote debugger handler abstraction. (Derick)</dd>
-<dd>Added a php3 compatible debugger handler. (Derick)</dd>
+<dd>Implemented remote debugger handler abstraction.</dd>
+<dd>Added a php3 compatible debugger handler.</dd>
 
 <dt>[01-09-2002]</dt>
 <dd>Fixed memory footprint readings by not counting memory used by xdebug.</dd>
