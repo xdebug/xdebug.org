@@ -33,9 +33,9 @@ moderated unless you are subscribed to the list. To unsubscribe send e-mail to
 the same address, but then use the subject <b>unsubscribe xdebug-general</b>.
 You need to do this from the same e-mail address as from the address you
 subscribe with. You can find an archive for the Xdebug General list <a
-href="http://xdebug.org/archive/xdebug-general/">here</a> and one for the
+href="http://xdebug.org/archives/xdebug-general/">here</a> and one for the
 closed developers list <a
-href="http://xdebug.org/archive/xdebug-dev/">here</a>.
+href="http://xdebug.org/archives/xdebug-dev/">here</a>.
 </p>
 
 <br />
