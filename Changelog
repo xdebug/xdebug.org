@@ -1,3 +1,9 @@
+Thu Aug 05 13:07:24 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-debugger.php
+www.xdebug.org/html/docs-settings.php:
+- Added documentation for the xdebug.idekey setting
+#- Fixed part of bug #85
+
 Tue Aug 03 22:44:42 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/include/links.php
 www.xdebug.org/html/include/side.php:
