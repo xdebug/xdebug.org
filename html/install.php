@@ -90,7 +90,15 @@ different PHP versions.</li>
 <li>./configure --enable-xdebug
 (or:
 ./configure --enable-xdebug --with-php-config=/path/to/php-config
-if php-config is not in your path)</li>
+if php-config is not in your path). If this fails with something like:
+<pre>../configure: line 1960: syntax error near unexpected token
+`PHP_NEW_EXTENSION(xdebug,'
+../configure: line 1960: `  PHP_NEW_EXTENSION(xdebug, xdebug.c
+xdebug_code_coverage.c xdebug_com.c xdebug_handler_gdb.c
+xdebug_handler_php3.c xdebug_handlers.c xdebug_llist.c xdebug_hash.c
+xdebug_profiler.c xdebug_superglobals.c xdebug_var.c usefulstuff.c,
+$ext_shared)'</pre> then it means that you do not meet the PHP 4.3.x version
+requirement for Xdebug.</li>
 
 <li>make</li>
 
