@@ -1,3 +1,10 @@
+Mon Aug 02 10:42:15 CEST 2004 Derick Rethans <derick@derickrethans.nl>
+html/docs-profiling2.php
+www.xdebug.org/html/docs-settings.php:
+- Added tip on ct_annotate
+- Fixed bug #80: Missing "Xdebug 2" identifier for xdebug.show_local_vars
+  setting documentation.
+
 Mon Aug 02 10:41:25 CEST 2004 Derick Rethans <derick@derickrethans.nl>
 html/include/header.php:
 - Update styles a bit
