@@ -77,7 +77,9 @@ Xdebug is compiled separately, all by itself, as stated above.</li>
 <li>cd xdebug-1.x.x</li>
 
 <li>Run phpize: phpize
-(or /path/to/phpize if phpize is not in your path).</li>
+(or /path/to/phpize if phpize is not in your path). See in the <a
+href="#phpize">table below</a> which version numbers it should show for
+different PHP versions.</li>
 
 <li>./configure --enable-xdebug
 (or:
@@ -99,6 +101,42 @@ successful!</li>
 </ol>
 </p>
 
+<a name="phpize"></a>
+<span class="sans">PHPIZE OUTPUT TABLE</span><br />
+<p>
+<table border='1' cellspacing='0'>
+	<tr>
+		<th class="ctr">PHP Version:</th>
+		<td class="ctr">PHP Api Version:</td>
+		<td class="ctr">Zend Module Api No:</td>
+		<td class="ctr">Zend Extension Api No:</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.3.0pre2</th>
+		<td class="ctr">20020307</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.3.0rc1</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.3.0dev</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+	</tr>
+	<tr>
+		<th class="ctr">4.4.0dev</th>
+		<td class="ctr">20020918</td>
+		<td class="ctr">20020429</td>
+		<td class="ctr">20021010</td>
+	</tr>
+</table>
+</p>
 <br /><br />
 
 <!-- MAIN FEATURE END -->

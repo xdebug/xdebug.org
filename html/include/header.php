@@ -15,8 +15,10 @@
 		
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
-		
 		body, td { font-family: georgia, palatino, serif; }
+		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
+		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
+
 		img      { border: 0px; vertical-align: bottom; }
 		
 		a        { text-decoration: underline; color: #334455; }
