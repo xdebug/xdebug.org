@@ -1,3 +1,10 @@
+Sun Dec 28 20:33:06 CET 2003 Derick Rethans <derick@derickrethans.nl>
+/www.xdebug.org/html/license.php
+/www.xdebug.org/html/index.php
+/www.xdebug.org/html/include/header.php
+/www.xdebug.org/html/include/menu.php:
+- Added the license to the website
+
 Fri Dec 26 23:33:04 CET 2003 Derick Rethans <d.rethans@jdimedia.nl>
 /www.xdebug.org/html/include/links.php:
 - Fix link
