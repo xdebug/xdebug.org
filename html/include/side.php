@@ -25,12 +25,9 @@ Modules for 5.0.0dev:
 
 Modules for 4.3.x:
 <ul class="status">
-<li><i>none available yet</i></li>
-<!--
-<li><?php url ('xdebug110-430dev-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebug110-430dev-win', 'Windows'); ?></li>
-<li><?php url ('xdebug110-430dev-f46', 'FreeBSD 4.6'); ?></li>
--->
+<li><?php url ('xdebug120-43-lnx', 'Linux'); ?></li>
+<li><?php url ('xdebug120-43-win', 'Windows'); ?></li>
+<li><?php url ('xdebug120-43-mac', 'MacOSX'); ?></li>
 </ul>
 <br />
 
