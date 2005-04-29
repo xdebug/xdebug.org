@@ -1,3 +1,7 @@
+Fri Apr 29 09:27:24 CEST 2005 Derick Rethans <derick@derickrethans.nl>
+html/docs-profiling2.php:
+- Added WinCacheGrind link.
+
 Thu Mar 10 09:29:07 CET 2005 Derick Rethans <derick@derickrethans.nl>
 html/files/debugclient-0.7.3
 www.xdebug.org/html/files/debugclient-0.7.3.exe
