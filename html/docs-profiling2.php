@@ -17,7 +17,11 @@ your PHP code and determine bottlenecks or generally see which parts of your
 code are slow and could use a speed boost. The profiler in Xdebug 2 outputs
 profiling information in the form of a cachegrind compatible file.  This allows
 you to use the excellent <a href='http://kcachegrind.sf.net'>KCacheGrind</a>
-tool (Linux, KDE) to analyse your profiling data.</p>
+tool (Linux, KDE) to analyse your profiling data. Users of the Windows
+operating system can use <a
+href="http://sourceforge.net/projects/wincachegrind.">WinCacheGrind</a>, the
+functionality is different from KCacheGrind so the section that documents the
+use of KCacheGrind on this page doesn't apply to this program.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
