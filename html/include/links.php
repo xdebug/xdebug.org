@@ -71,6 +71,7 @@
 		'xdebugclient-0.9.0-win' => 'http://xdebug.org/files/debugclient-0.9.0.exe',
 
 		'snap-43-win' => 'http://www.xdebug.org/files/xdebug-4.3-2.0dev.dll',
+		'snap-44-win' => 'http://www.xdebug.org/files/xdebug-4.4-2.0dev.dll',
 		'snap-50-win' => 'http://snaps.php.net/win32/PECL_5_0/php_xdebug.dll',
 		'snap-51-win' => 'http://snaps.php.net/win32/PECL_UNSTABLE/php_xdebug.dll',
 	);

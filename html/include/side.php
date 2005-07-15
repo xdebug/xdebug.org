@@ -94,6 +94,13 @@ higher.
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
 <dd>
+Modules for 4.4.x-dev:
+<ul class="status">
+<li><?php url ('snap-44-win', 'Windows'); ?></li>
+</ul>
+<br />
+</dd>
+<dd>
 Modules for 4.3.x-dev:
 <ul class="status">
 <li><?php url ('snap-43-win', 'Windows'); ?></li>
