@@ -1,3 +1,10 @@
+Fri Jul 15 13:56:44 CEST 2005 Derick Rethans <derick@derickrethans.nl>
+html/files/xdebug-4.4dev-1.3dev.dll
+www.xdebug.org/html/files/xdebug-4.4dev-2.0dev.dll
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Add Xdebug snapshot for 4.4
+
 Fri Apr 29 09:27:24 CEST 2005 Derick Rethans <derick@derickrethans.nl>
 html/docs-profiling2.php:
 - Added WinCacheGrind link.
