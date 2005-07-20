@@ -1,3 +1,7 @@
+Wed Jul 20 09:50:24 CEST 2005 Derick Rethans <derick@derickrethans.nl>
+html/include/links.php:
+- Fix links.
+
 Fri Jul 15 13:56:44 CEST 2005 Derick Rethans <derick@derickrethans.nl>
 html/files/xdebug-4.4dev-1.3dev.dll
 www.xdebug.org/html/files/xdebug-4.4dev-2.0dev.dll
