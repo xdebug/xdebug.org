@@ -1,3 +1,7 @@
+Mon Aug 01 19:15:22 CEST 2005 Derick Rethans <derick@derickrethans.nl>
+html/docs-profiling2.php:
+- Fixed bug #140: Docs regarding crc32 of directory for profiling are wrong.
+
 Wed Jul 20 09:50:24 CEST 2005 Derick Rethans <derick@derickrethans.nl>
 html/include/links.php:
 - Fix links.
