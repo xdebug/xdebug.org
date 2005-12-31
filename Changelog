@@ -1,3 +1,19 @@
+Sat Dec 31 13:17:01 CET 2005 Derick Rethans <derick@derickrethans.nl>
+html/docs-functions.php
+www.xdebug.org/html/docs-settings.php
+www.xdebug.org/html/index.php
+www.xdebug.org/html/install.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/php_xdebug-4.3.11-2.0.0beta5.dll
+www.xdebug.org/html/files/php_xdebug-4.4.1-2.0.0beta5.dll
+www.xdebug.org/html/files/php_xdebug-5.0.5-2.0.0beta5.dll
+www.xdebug.org/html/files/php_xdebug-5.1.1-2.0.0beta5.dll
+www.xdebug.org/html/files/xdebug-2.0.0beta5.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Update docs
+- Added files for beta5.
+
 Wed Nov 09 10:26:52 CET 2005 Derick Rethans <derick@derickrethans.nl>
 html/docs-profiling2.php:
 - Fixed typo.
