@@ -13,6 +13,7 @@
 <span class="sans">GENERAL SETTINGS</span><br />
 
 <dl>
+<a name="auto_trace"></a>
 <dt>xdebug.auto_trace [boolean] (default: Off)</dt>
 <dd>When this setting is set to on, the tracing of function calls will be
 enabled just before the script is run. This makes it possible to trace code in
@@ -147,6 +148,14 @@ the Process ID of the PHP process is used here.</dd>
 <span class="sans">REMOTE DEBUGGER SETTINGS</span><br />
 
 <dl>
+<a name="remote_autostart"></a>
+<dt>xdebug.remote_autostart [boolean] (default: Off)</dt>
+<dd>Normally you need to use a specific HTTP GET/POST variable to start
+remote debugging (see <a href="/docs-debugger.php">Debugger Usage</a>). When
+this setting is set to "On" Xdebug will always attempt to start a remote
+debugging session and try to connect to a client, even if the GET/POST/COOKIE
+variable was not present.</dd>
+
 <a name="remote_enable"></a>
 <dt>xdebug.remote_enable [boolean] (default: Off)</dt>
 <dd>This switch controls whether Xdebug should try to contact a debug client
@@ -205,12 +214,25 @@ xdebug_[timestamp]_[pid].txt.</dd>
 <br />
 <a name="profiler2"></a>
 <span class="sans">PROFILER SETTINGS <small>(Xdebug 2)</small></span><br />
+<a name="profiler_append"</a>
+<dt>xdebug.profiler_append [integer] (default: 0) (Xdebug 2)</dt>
+<dd>When this setting is set to 1, profiler files will not be overwritten when
+a new request would map to the same file (depnding on the <a
+href='#profiler_output_name'>xdebug.profiler_output_name</a> setting.
+Instead the file will be appended to with the new profile.</dd>
+
 <a name="profiler_enable"></a>
 <dt>xdebug.profiler_enable [integer] (default: 0) (Xdebug 2)</dt>
 <dd>Enables Xdebug's profiler which creates files in the <a
 href='#profiler_output_dir'>profile output directory</a>.  Those files can be
 read by KCacheGrind to visualize your data.  This setting can not be set in
 your script with ini_set().</dd>
+
+<a name="profiler_enable_trigger"</a>
+<dt>xdebug.profiler_enable_trigger [integer] (default: 0) (Xdebug 2)</dt>
+<dd>When this setting is set to 1, you can trigger the generation of profiler
+files by using the XDEBUG_PROFILE GET/POST parameter. This will then write the
+profiler data to <a href="#profiler_output_dir">defined directory</a>.</dd>
 
 <a name="profiler_output_dir"></a>
 <dt>xdebug.profiler_output_dir [string] (default: /tmp) (Xdebug 2)</dt>

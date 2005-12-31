@@ -61,6 +61,9 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 <dt><a href="#xdebug_get_function_trace">xdebug_get_function_trace()</a> [1]</dt>
 <dd>returns all functions called since <a href='#xdebug_start_trace'>xdebug_start_trace()</a> as an array</dd>
 
+<dt><a href="#xdebug_get_tracefile_name">xdebug_get_tracefile_name()</a> [2]</dt>
+<dd>returns the name of the file to which the current script is traced to</dd>
+
 <dt><a href="#xdebug_memory_usage">xdebug_memory_usage()</a></dt>
 <dd>returns the current amount of script memory in use</dd>
 
@@ -81,6 +84,12 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 
 <span class="sans"><a href="#superglobals">INFORMATION DUMPING RELATED FUNCTIONS</a></span>
 <dl class="functionlist">
+<dt><a href="#xdebug_debug_zval">xdebug_debug_zval()</a> [2]</dt>
+<dd>prints the contents of a variable including reference count information</dd>
+
+<dt><a href="#xdebug_debug_zval">xdebug_debug_zval_stdout()</a> [2]</dt>
+<dd>outputs the contents of a variable including reference count information</dd>
+
 <dt><a href="#xdebug_dump_superglobals">xdebug_dump_superglobals()</a></dt>
 <dd>dumps values of elements of superglobals</dd>
 
@@ -97,6 +106,9 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 
 <dt><a href="#xdebug_get_function_profile">xdebug_get_function_profile()</a> [1]</dt>
 <dd>return the profiling profile nformation on which lines are touched while executing the script</dd>
+
+<dt><a href="#xdebug_get_profiler_filename">xdebug_get_profiler_filename()</a> [2]</dt>
+<dd>returns the name of the file to which the current script is being profiled to</dd>
 
 <dt><a href="#xdebug_start_profiling">xdebug_start_profiling()</a> [1]</dt>
 <dd>returns an array containing information on which lines are touched while executing the script</dd>
@@ -129,6 +141,9 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 <dt><a href="#xdebug_call_line">xdebug_call_line()</a></dt>
 <dd>returns the line number from which the current function was called</dd>
 
+<dt><a href="#xdebug_get_declared_vars">xdebug_get_declared_vars()</a> [2]</dt>
+<dd>returns an array of variable names which are defined (and used) in the current stack</dd>
+
 <dt><a href="#xdebug_get_function_stack">xdebug_get_function_stack()</a></dt>
 <dd>returns an array representing the current stack</dd>
 
@@ -143,6 +158,37 @@ Xdebug 2.x. All unmarked functions are available in both Xdebug 1.3 and Xdebug
 <span class="sans">STACK RELATED</span><br />
 
 <dl>
+<a name='xdebug_get_declared_vars'></a>
+<dt>array xdebug_get_declared_vars()</dt>
+<dd>Returns an array where each element is a variable name which is defined and
+<b>used</b> in the current scope:
+<pre class='example'><?php
+$script = <<<SCRIPT
+ 1 <?php
+ 2     class strings {
+ 3         static function fix_strings(\$a, \$b) {
+ 4             foreach (\$b as \$item) {
+ 5             }
+ 6             var_dump(xdebug_get_declared_vars());
+ 7         }
+ 8     }
+ 9     strings::fix_strings(array(1,2,3), array(4,5,6));
+10 ?>
+SCRIPT;
+highlight_string($script);
+?></pre>
+Returns:
+<pre class='example'>
+array(2) {
+  [0]=&gt;
+  string(1) "b"
+  [1]=&gt;
+  string(4) "item"
+}
+</pre>
+The variable name "a" is not returned here, as it is not used in that scope.
+</dd>
+
 <a name='xdebug_get_function_stack'></a>
 <dt>array xdebug_get_function_stack()</dt>
 <dd>Returns an array which resembles the stack trace up to this point. The example script:
@@ -296,8 +342,8 @@ href='docs-settings.php#collect_params'>xdebug.collect_params</a> setting.</dd>
 <dd>Start tracing function calls from this point to the file in the <i>trace_file</i> parameter.
 The trace file will be placed in the directory as configured by the
 <a href="docs-settings.php#trace_output_dir">trace_output_dir</a> setting.
-The name of the trace file is "xdebug.{hash}.xt" where the "{hash}" part
-depends on the <a
+The name of the trace file is "{trace_file}.xt". If <a href='docs-settings.php#auto_trace'>auto tracing</a> then the format of the filename is 
+"trace.{hash}.xt" where the "{hash}" part depends on the <a
 href="docs-settings.php#trace_output_name">trace_output_name</a> setting. The
 <i>options</i> parameter is a bitfield; currently there are two options:
 "XDEBUG_TRACE_APPEND" (1) makes the trace file open in append mode rather than
@@ -397,6 +443,12 @@ the following table with information is shown:
 <tr><td bgcolor='#ffffff' align='center'>0.000137</td><td bgcolor='#ffffff' align='left'><pre>    -></pre></td><td bgcolor='#ffffff'><a href='http://uk.php.net/xdebug_call_function' target='_new'>xdebug_call_function</a>
 ()</td><td bgcolor='#ffffff'>/home/httpd/html/test/xdebug_caller.php<b>:</b>10</td><td bgcolor='#ffffff' align='right'>37472</td></tr>
 </table>
+
+<a name='xdebug_get_tracefile_name'></a>
+<dt>string xdebug_get_tracefile_name() (Xdebug 2)</dt>
+<dd>Returns the name of the file which is used to trace the output of this
+script too. This is useful when <a href='docs-settings.php#auto_trace'>auto
+tracing</a> is used.</dd>
 
 <a name="xdebug_memory_usage"></a>
 <dt>int xdebug_memory_usage()</dt>
@@ -511,12 +563,81 @@ void xdebug_dump_function_profile([int profiling_mode]) (Xdebug 1)<br />
 array xdebug_get_function_profile([int profiling_mode]) (Xdebug 1)</dt>
 <dd>Please see the section on <a href='docs-profiling.php'>Profiling (Xdebug
 1)</a> for information about these functions or <a
-href='docs-profiling2.php'>Profiling (Xdebug 2)</a>.</dl>
+href='docs-profiling2.php'>Profiling (Xdebug 2)</a>.
 
-<br />
+<a name='xdebug_get_profiler_filename'></a>
+<dt>string xdebug_get_profiler_filename() (Xdebug 2)</dt>
+<dd>Returns the name of the file which is used to save profile information to.
+script too.</dd>
+
+</dl>
+
 <a name="superglobals"></a>
 <span class="sans">INFORMATION DUMPING RELATED</span><br />
 <dl>
+<a name="xdebug_debug_zval"></a>
+<dt>void xdebug_debug_zval([string varname [, ...]])</dt>
+<dd>This function displays structured information about one or more expressions
+that includes its type, value and refcount information. Arrays are explored
+recursively with values.
+<pre class='example'><?php
+$script = <<<SCRIPT
+ 1 <?php
+ 2     \$a = array(1, 2, 3);
+ 3     \$b =& \$a;
+ 4     \$c =& \$a[2];
+ 5
+ 6     xdebug_debug_zval('a');
+ 7 ?>
+SCRIPT;
+highlight_string($script);
+?>
+</pre>
+displays (in a browser):
+<br />
+<br />
+<img src='images/debug_zval.png' align='center' border='0'/>
+<br />
+<br />
+On the command line it displays:
+<pre class="example">
+a: (refcount=2, is_ref=1)=array (
+	0 =&gt; (refcount=1, is_ref=0)=1, 
+	1 =&gt; (refcount=1, is_ref=0)=2, 
+	2 =&gt; (refcount=2, is_ref=1)=3)
+</pre>
+</dd>
+
+<a name="xdebug_debug_zval_stdout"></a>
+<dt>void xdebug_debug_zval_stdout([string varname [, ...]])</dt>
+<dd>This function displays structured information about one or more expressions
+that includes its type, value and refcount information. Arrays are explored
+recursively with values. Differences with <a
+href="#xdebug_debug_zval">xdebug_debug_zval()</a> are that information is not
+displayed through a webserver API layer, but directly shown on stdout (so that
+when you run it wirh apache in single process mode it ends up on the console).
+<pre class='example'><?php
+$script = <<<SCRIPT
+ 1 <?php
+ 2     \$a = array(1, 2, 3);
+ 3     \$b =& \$a;
+ 4     \$c =& \$a[2];
+ 5
+ 6     xdebug_debug_zval_stdout('a');
+ 7 ?>
+SCRIPT;
+highlight_string($script);
+?>
+</pre>
+displays (on the command line):
+<pre class="example">
+a: (refcount=2, is_ref=1)=array (
+	0 =&gt; (refcount=1, is_ref=0)=1, 
+	1 =&gt; (refcount=1, is_ref=0)=2, 
+	2 =&gt; (refcount=2, is_ref=1)=3)
+</pre>
+</dd>
+
 <dt>void xdebug_dump_superglobals()</dt>
 <dd>This function dumps the values of the elements of the superglobals as
 specifed with the 'xdebug.dump.' php.ini settings as decribed in the section <a

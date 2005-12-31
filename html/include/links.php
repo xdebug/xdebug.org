@@ -60,6 +60,12 @@
 
 		'xdebug200b2' => 'http://www.xdebug.org/files/xdebug-2.0.0beta2.tgz',
 
+		'xdebug200b5' => 'http://www.xdebug.org/files/xdebug-2.0.0beta5.tgz',
+		'xdebug200b5-4311-win' => 'http://www.xdebug.org/files/php_xdebug-4.3.11-2.0.0beta5.dll',
+		'xdebug200b5-441-win' => 'http://www.xdebug.org/files/php_xdebug-4.4.1-2.0.0beta5.dll',
+		'xdebug200b5-505-win' => 'http://www.xdebug.org/files/php_xdebug-5.0.5-2.0.0beta5.dll',
+		'xdebug200b5-511-win' => 'http://www.xdebug.org/files/php_xdebug-5.1.1-2.0.0beta5.dll',
+
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
@@ -74,5 +80,6 @@
 		'snap-44-win' => 'http://www.xdebug.org/files/xdebug-4.4dev-2.0dev.dll',
 		'snap-50-win' => 'http://snaps.php.net/win32/PECL_5_0/php_xdebug.dll',
 		'snap-51-win' => 'http://snaps.php.net/win32/PECL_UNSTABLE/php_xdebug.dll',
+		'snaps-win' => 'http://pecl4win.php.net/ext.php/php_xdebug.dll',
 	);
 ?>

@@ -20,7 +20,7 @@ Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one)
 <pre>
-zend_extension_ts="c:/php/modules/xdebug-4.3-1.3.1.dll"
+zend_extension_ts="c:/php/modules/php_xdebug-4.4.1-2.0.0beta5.dll"
 </pre>
 </p>
 
@@ -29,14 +29,13 @@ zend_extension_ts="c:/php/modules/xdebug-4.3-1.3.1.dll"
 
 <p>
 As of Xdebug 0.9.0 you can install Xdebug through PEAR/PECL. This only works
-with the latest CVS version of PHP (with PEAR version 0.9.1-dev or higher
-installed) and some UNIX.
+with with PEAR version 0.9.1-dev or higher and some UNIX.
 </p>
 <p>
 Installing with PEAR/PECL is as easy as:
 </p>
 <pre>
-# pear install xdebug
+# pear install xdebug-beta
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
@@ -50,7 +49,7 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <span class="sans">INSTALLATION FROM SOURCE</span><br />
 
 <p>
-You can download the source of the latest <b>stable</b> release <?php url ('xdebug132', 'here'); ?>.
+You can download the source of the latest <b>stable</b> release <?php url ('xdebug200beta5', 'here'); ?>.
 Alternatively you can obtain Xdebug from CVS:
 </p>
 <pre>
@@ -59,13 +58,8 @@ CVS password: srmread
 cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
 </pre>
 <p>
-This will checkout the latest development version which is currently 2.0dev. In
-case you want to retrieve the latest stable version from CVS, use the following
-checkout line:
+This will checkout the latest development version which is currently 2.0dev.
 </p>
-<pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r xdebug_1_3 xdebug
-</pre>
 
 <a name="compile"></a>
 <span class="sans">COMPILING</span><br />
@@ -86,11 +80,11 @@ Perkins'</a> installation instructions.  Once you have access to "phpize" and
 </p>
 <p>
 <ol>
-<li>Unpack the tarball: tar -xzf xdebug-1.x.x.tgz.  Note that you do
+<li>Unpack the tarball: tar -xzf xdebug-2.0.x.tgz.  Note that you do
 not need to unpack the tarball inside the PHP source code tree.
 Xdebug is compiled separately, all by itself, as stated above.</li>
 
-<li>cd xdebug-1.x.x</li>
+<li>cd xdebug-2.0.x</li>
 
 <li>Run phpize: phpize
 (or /path/to/phpize if phpize is not in your path). See in the <a
@@ -208,6 +202,20 @@ course try to fix those.
 		<td class="ctr">20040412</td>
 		<td class="ctr">220040412</td>
 		<td class="ctr">1.3.2 / 2.0.0-cvs</td>
+	</tr>
+	<tr>
+		<th class="ctr">5.0.5 or later</th>
+		<td class="ctr">20041225</td>
+		<td class="ctr">20041030</td>
+		<td class="ctr">220040412</td>
+		<td class="ctr">2.0.0-beta5 or cvs</td>
+	</tr>
+	<tr>
+		<th class="ctr">5.1.x</th>
+		<td class="ctr">20041225</td>
+		<td class="ctr">20050922</td>
+		<td class="ctr">220051025</td>
+		<td class="ctr">2.0.0-beta5 or cvs</td>
 	</tr>
 </table>
 <br/>

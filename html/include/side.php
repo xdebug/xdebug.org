@@ -4,11 +4,11 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[29-11-2004]</dt>
+<dt>[31-12-2004]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug200b2', 'xdebug 2.0.0beta2'); ?></li>
+<li><?php url ('xdebug200b5', 'xdebug 2.0.0beta5'); ?></li>
 </ul>
 <br />
 
@@ -28,43 +28,17 @@ Debug client 0.7.3 (GDB) (binary):
 </dd>
 </dl>
 
-<dl class="status">
-<dt>[15-09-2004]</dt>
-<dd>
-
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200b1-43-win', 'PHP 4.3.6+'); ?></li>
-<li><?php url ('xdebug200b1-50-win', 'PHP 5.0.x'); ?></li>
-<li><?php url ('xdebug200b1-51-win', 'PHP 5.1.0-dev'); ?></li>
+<li><?php url ('xdebug200b5-4311-win', 'PHP 4.3.11'); ?></li>
+<li><?php url ('xdebug200b5-441-win', 'PHP 4.4.1+'); ?></li>
+<li><?php url ('xdebug200b5-505-win', 'PHP 5.0.5+'); ?></li>
+<li><?php url ('xdebug200b5-511-win', 'PHP 5.1.1+'); ?></li>
 </ul>
 <br />
 </dd>
 </dl>
 
-<dl class="status">
-<dt>[30-06-2004]</dt>
-<dd>
-Source:
-<ul class="status">
-<li><?php url ('xdebug132', 'xdebug 1.3.2'); ?></li>
-</ul>
-<br />
-
-Modules for 4.3.x (binary):
-<ul class="status">
-<li><?php url ('xdebug132-43-win', 'Windows'); ?> (&gt;= 4.3.5 only)</li>
-</ul>
-<br />
-
-Debug client 0.7.0 (binary):
-<ul class="status">
-<li><?php url ('xdebugclient-0.7.0-lnx', 'Linux'); ?></li>
-<li><?php url ('xdebugclient-0.7.0-f46', 'FreeBSD 4.6'); ?></li>
-<li><?php url ('xdebugclient-0.7.0-win', 'Windows'); ?></li>
-</ul>
-</dd>
-</dl>
 
 <br />
 <!-- Begin PayPal Logo 
@@ -94,31 +68,11 @@ higher.
 <span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
 <dl class="status">
 <dd>
-Modules for 4.4.x-dev:
+Modules for:
 <ul class="status">
-<li><?php url ('snap-44-win', 'Windows'); ?></li>
+<li><?php url ('snaps-win', 'Windows'); ?></li>
 </ul>
 <br />
-</dd>
-<dd>
-Modules for 4.3.x-dev:
-<ul class="status">
-<li><?php url ('snap-43-win', 'Windows'); ?></li>
-</ul>
-<br />
-</dd>
-<dd>
-Modules for 5.0.x-dev:
-<ul class="status">
-<li><?php url ('snap-50-win', 'Windows'); ?></li>
-</ul>
-<br />
-</dd>
-<dd>
-Modules for 5.1.x-dev:
-<ul class="status">
-<li><?php url ('snap-51-win', 'Windows'); ?></li>
-</ul>
 </dd>
 </dl>
 
@@ -129,15 +83,6 @@ Modules for 5.1.x-dev:
 Source:
 <ul class="status">
 <li><?php url ('xdebug131', 'Xdebug 1.3.1'); ?></li>
-<li><?php url ('xdebug130', 'Xdebug 1.3.0'); ?></li>
-<li><?php url ('xdebug120', 'Xdebug 1.2.0'); ?></li>
-<li><?php url ('xdebug110', 'Xdebug 1.1.0'); ?></li>
-<li><?php url ('xdebug110pre2', 'Xdebug 1.1.0pre2'); ?></li>
-<li><?php url ('xdebug100rc1', 'Xdebug 1.0.0rc1'); ?></li>
-<li><?php url ('xdebug090', 'Xdebug 0.9.0'); ?></li>
-<li><?php url ('xdebug080', 'Xdebug 0.8.0'); ?></li>
-<li><?php url ('xdebug070', 'Xdebug 0.7.0'); ?></li>
-<li><?php url ('xdebug060', 'Xdebug 0.6.0'); ?></li>
 </ul>
 </dd>
 

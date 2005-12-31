@@ -20,6 +20,20 @@
 <span class='quote'>
 <dl>
 
+<dt>[31-12-2005] &mdash; Xdebug 2.0.0beta5</dt>
+<dd><h3>Added new features</h3></dd>
+<dd>Implemented FR #161: var_dump doesn't show lengths for strings.</dd>
+<dd>Implemented FR #158: Function calls from the {main} scope always have the line number 0. </dd>
+<dd>Implemented FR #156: it's impossible to know the time taken by the last func call in xdebug trace mode 0.</dd>
+<dd>Implemented FR #153: xdebug_get_declared_vars().</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed shutdown crash with ZTS on Win32</dd>
+<dd>Fixed bad memory leak when a E_ERROR of exceeding memory_limit was thrown.</dd>
+<dd>Fixed bug #154: GCC 4.0.2 optimizes too much out with -O2.</dd>
+<dd>Fixed bug #141: Remote context_get causes segfault.</dd>
+
+
 <dt>[29-11-2004]</dt>
 
 <dd><h3>Added new features</h3></dd>
