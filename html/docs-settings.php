@@ -117,11 +117,10 @@ href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>f
 <i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
 <i>filename</i> and <i>line number</i>.</td></tr>
 <tr><td>1</td><td>writes a computer readable format with the following
-tab-separated fields: <i>level</i>, <i>time index</i>, <i>function entry (0) or
-function exit (1)</i>, <i>memory usage</i>, <i>memory delta since last
-line</i>, <i>function name</i>, <i>user-defined (1) or internal function
-(0)</i>, <i>name of the include/require file</i>, <i>filename</i> and <i>line
-number</i>.</td></tr>
+tab-separated fields: <i>level</i>, <i>function #</i>, <i>function entry (0) or
+function exit (1)</i>, <i>time index</i>, <i>memory usage</i>, <i>function
+name</i>, <i>user-defined (1) or internal function (0)</i>, <i>name of the
+include/require file</i>, <i>filename</i> and <i>line number</i>.</td></tr>
 </table>
 </dd>
 
