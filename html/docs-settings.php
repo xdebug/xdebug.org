@@ -138,7 +138,8 @@ being overwritten in subsequent requests.</dd>
 <a name="trace_output_name"></a>
 <dt>xdebug.trace_output_name [string] (default: crc32) (Xdebug 2)</dt>
 <dd>When set to "crc32" the middle part of a trace file name will be
-a crc32 hash of the current working directory, in all other cases 
+a crc32 hash of the current working directory. If it is set to "timestamp" the
+filename will include the current Unix timestamp instead. In all other cases
 the Process ID of the PHP process is used here.</dd>
 
 </dl>
@@ -243,7 +244,8 @@ directory. This setting can not be set in your script with ini_set().</dd>
 <a name="profiler_output_name"></a>
 <dt>xdebug.profiler_output_name [string] (default: crc32) (Xdebug 2)</dt>
 <dd>When set to "crc32" the last part of a profile filename will be
-a crc32 hash of the current working directory, in all other cases 
+a crc32 hash of the current working directory. If it is set to "timestamp" the
+filename will include the current Unix timestamp instead. In all other cases 
 the Process ID of the PHP process is used here. The base name of the generated
 file is always "cachegrind.out.". An example of a filename is:
 cachegrind.out.5123 . This setting can not be set in your script with ini_set().
