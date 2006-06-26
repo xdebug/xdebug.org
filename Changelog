@@ -1,3 +1,7 @@
+Mon Jun 26 22:54:51 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/docs-settings.php:
+- Fixed default value for remote_port setting in docs.
+
 Fri May 26 19:44:29 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/images/debug_zval.png:
 - Adding missing image.
