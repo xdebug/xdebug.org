@@ -186,7 +186,7 @@ debug client as soon as the script starts. If it is set to 'jit' it will only
 try to connect as soon as an error condition occurs.</dd>
 
 <a name="remote_port"></a>
-<dt>xdebug.remote_port [integer] (default: 17869)</dt>
+<dt>xdebug.remote_port [integer] (default: 17869 for Xdebug 1.3 or 9000 for Xdebug 2.x)</dt>
 <dd>The port to which Xdebug tries to connect on the remote host. As the
 bundled debug client only listens at the hardcoded port 17869 it is best to
 leave this setting unchanged.</dd>
