@@ -1,3 +1,7 @@
+Mon Jun 26 22:56:53 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/docs-settings.php:
+- Fix it for real now.
+
 Mon Jun 26 22:54:51 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/docs-settings.php:
 - Fixed default value for remote_port setting in docs.
