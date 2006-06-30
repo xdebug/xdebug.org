@@ -42,6 +42,11 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[30-06-2006]</dt>
+<dd class="main">Xdebug version 2.0.0beta6 has been released. This release
+includes some performance enhancing patches and <a
+href='/updates.php'>fixes</a> some problems in the previous beta releases.</dd>
+
 <dt class="main">[31-12-2005]</dt>
 <dd class="main">Xdebug version 2.0.0beta5 has been released. This release
 <a href='/updates.php'>fixes</a> some problems in the previous beta releases.</dd>

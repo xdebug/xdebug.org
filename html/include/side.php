@@ -8,7 +8,7 @@
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug200b5', 'xdebug 2.0.0beta5'); ?></li>
+<li><?php url ('xdebug200b6', 'xdebug 2.0.0beta6'); ?></li>
 </ul>
 <br />
 
@@ -30,10 +30,9 @@ Debug client 0.7.3 (GDB) (binary):
 
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200b5-4311-win', 'PHP 4.3.11'); ?></li>
-<li><?php url ('xdebug200b5-441-win', 'PHP 4.4.1+'); ?></li>
-<li><?php url ('xdebug200b5-505-win', 'PHP 5.0.5+'); ?></li>
-<li><?php url ('xdebug200b5-511-win', 'PHP 5.1.1+'); ?></li>
+<li><?php url ('xdebug200b6-4311-win', 'PHP 4.3.11'); ?></li>
+<li><?php url ('xdebug200b6-441-win', 'PHP 4.4.1+'); ?></li>
+<li><?php url ('xdebug200b6-512-win', 'PHP 5.1.2+'); ?></li>
 </ul>
 <br />
 </dd>
