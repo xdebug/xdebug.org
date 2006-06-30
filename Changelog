@@ -1,3 +1,14 @@
+Fri Jun 30 14:39:33 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/php_xdebug-4.3.11-2.0.0beta6.dll
+www.xdebug.org/html/files/php_xdebug-4.4.1-2.0.0beta6.dll
+www.xdebug.org/html/files/php_xdebug-5.1.2-2.0.0beta6.dll
+www.xdebug.org/html/files/xdebug-2.0.0beta6.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Publish 2.0.0beta6
+
 Mon Jun 26 22:56:53 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/docs-settings.php:
 - Fix it for real now.
