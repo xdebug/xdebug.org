@@ -1,3 +1,10 @@
+Fri Jun 30 15:25:51 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/include/header.php
+www.xdebug.org/html/include/menu-docs.php
+www.xdebug.org/html/include/menu.php
+www.xdebug.org/html/include/side.php:
+- Fixed bug #179: obnoxiously small font on website.
+
 Fri Jun 30 14:40:52 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/include/links.php
 www.xdebug.org/html/include/side.php:
