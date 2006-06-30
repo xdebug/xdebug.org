@@ -4,7 +4,7 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[31-12-2004]</dt>
+<dt>[30-06-2006]</dt>
 <dd>
 Source:
 <ul class="status">

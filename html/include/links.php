@@ -66,7 +66,7 @@
 		'xdebug200b5-505-win' => 'http://www.xdebug.org/files/php_xdebug-5.0.5-2.0.0beta5.dll',
 		'xdebug200b5-511-win' => 'http://www.xdebug.org/files/php_xdebug-5.1.1-2.0.0beta5.dll',
 
-		'xdebug200b5' => 'http://www.xdebug.org/files/xdebug-2.0.0beta6.tgz',
+		'xdebug200b6' => 'http://www.xdebug.org/files/xdebug-2.0.0beta6.tgz',
 		'xdebug200b6-4311-win' => 'http://www.xdebug.org/files/php_xdebug-4.3.11-2.0.0beta6.dll',
 		'xdebug200b6-441-win' => 'http://www.xdebug.org/files/php_xdebug-4.4.1-2.0.0beta6.dll',
 		'xdebug200b6-512-win' => 'http://www.xdebug.org/files/php_xdebug-5.1.2-2.0.0beta6.dll',
