@@ -1,5 +1,5 @@
 <!-- SIDEBAR START -->
-
+<div id="sidebar">
 <span class="sans">RELEASES</span><br />
 
 <span class='quote'>
@@ -110,3 +110,4 @@ Source:
 <br />
 -->
 <!-- SIDEBAR END -->
+</div>

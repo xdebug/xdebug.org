@@ -15,10 +15,12 @@
                  { border: solid gray; border-width: thin; margin: 0px; padding: 0px; }
 		.hide    { visibility: hidden; display: none; }
 		body     { background-color: white; }
+		#sidebar      { font-size: 85%; }
+		#menu	 { font-size: 70%; }
 	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
-		body, td { font-family: georgia, palatino, serif; }
+		body, td { font-family: sans-serif; }
 		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 
@@ -29,18 +31,18 @@
 		a        { text-decoration: underline; color: #116633; }
 		a:hover  { color: #004411 }
 		
-		p        { font-size: 8pt; line-height: 1.5em; margin-left: 20px; }
-		.serif   { font-size: 8pt; line-height: 1.5em; }
-		.quote   { font-size: 7pt; font-family: arial; }
-        .mk      { font-size: 7pt; color: #004411; font-weight: bold; }
-     	.fin	 { font-size: 7pt; color: #004411; }
-        .sans	 { font-family: verdana, helvetica, arial, sans-serif; font-size: 7pt; font-weight: bold; color: #003300; }
-        .date    { font-size: 7pt; display: block; margin-bottom: 6px; }
+		p        { line-height: 1.5em; margin-left: 20px; }
+		.serif   { line-height: 1.5em; }
+		.quote   { font-family: sans-serif; }
+        .mk      { color: #004411; font-weight: bold; }
+     	.fin	 { color: #004411; }
+        .sans	 { font-family: sans-serif; font-weight: bold; color: #003300; }
+        .date    { display: block; margin-bottom: 6px; }
         .sc      { font-variant: small-caps; }
         .st      { text-decoration: line-through; }
-        .copy    { font-size: 7pt; line-height: 1.5em; color: #999999; }
+        .copy    { font-size: 70%; line-height: 1.5em; color: #999999; }
 		p.center { text-align: center; }
-        .pause   { font-size: medium; display: block; color: #004411;
+        .pause   { display: block; color: #004411;
                    margin-top: 24px; margin-bottom: 8px; text-align: center; }
 		span.filename { font-family: sans-serif; }
                    
@@ -57,7 +59,7 @@
 		li.green { color: #00bb00; }
 		dl.status { margin-left: -20px; padding-left: 0px; }
 		ul.status { margin-left: 25px; padding-left: 0px; }
-		dl.functionlist, dl.faq { font-family: verdana, helvetica, arial, sans-serif; font-size: 7pt; font-weight: normal; }
+		dl.functionlist, dl.faq { font-family: sans-serif; font-weight: normal; }
 		dl.functionlist dt { margin-top: 3px; }
 		dl.faq dt { margin-left: 20px; margin-bottom: 5px; }
 		dl.faq dd { margin-left: 20px; margin-top: 5px; }

@@ -1,3 +1,4 @@
+<div id="menu">
 <span class="sans">
 <a href="index.php">home</a> |
 <a href="updates.php">updates</a> |
@@ -18,6 +19,7 @@
 <a href="docs-dbgp.php">DBGp Protocol</a><br />
 &gt; <a href="docs-faq.php">FAQ: Frequently Asked Questions</a><br />
 &gt; <a href="files/docs.tar.gz">Download Documentation</a>
+</div>
 </div>
 <br /><br />
 
