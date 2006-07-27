@@ -1,3 +1,7 @@
+Thu Jul 27 09:14:21 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/docs-functions.php:
+- Fixed typo
+
 Fri Jun 30 15:25:51 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/include/header.php
 www.xdebug.org/html/include/menu-docs.php
