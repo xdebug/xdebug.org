@@ -615,7 +615,7 @@ that includes its type, value and refcount information. Arrays are explored
 recursively with values. Differences with <a
 href="#xdebug_debug_zval">xdebug_debug_zval()</a> are that information is not
 displayed through a webserver API layer, but directly shown on stdout (so that
-when you run it wirh apache in single process mode it ends up on the console).
+when you run it with apache in single process mode it ends up on the console).
 <pre class='example'><?php
 $script = <<<SCRIPT
  1 <?php
