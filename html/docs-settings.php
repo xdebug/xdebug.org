@@ -229,7 +229,7 @@ href='#profiler_output_dir'>profile output directory</a>.  Those files can be
 read by KCacheGrind to visualize your data.  This setting can not be set in
 your script with ini_set().</dd>
 
-<a name="profiler_enable_trigger"</a>
+<a name="profiler_enable_trigger"></a>
 <dt>xdebug.profiler_enable_trigger [integer] (default: 0) (Xdebug 2)</dt>
 <dd>When this setting is set to 1, you can trigger the generation of profiler
 files by using the XDEBUG_PROFILE GET/POST parameter. This will then write the
