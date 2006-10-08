@@ -20,6 +20,35 @@
 <span class='quote'>
 <dl>
 
+<dt>[08-10-2006] &mdash; Xdebug 2.0.0RC1</dt>
+
+<dd><h3>Added new features</h3></dd>
+<dd>Implemented FR #70: Provide optional depth on xdebug_call_* functions.</dd>
+<dd>Partially implemented FR #50: Resource limiting for variable display. By default only two levels of nested variables and max string lengths of 512 are shown. This can be changed by setting the ini settings xdebug.var_display_max_depth and xdebug.var_display_max_data.</dd>
+<dd>Implemented breakpoints for different types of PHP errors. You can now set an 'exception' breakpoint on "Fatal error", "Warning", "Notice" etc.  This is related to bug #187.</dd>
+<dd>Added the xdebug_print_function_trace() function to display a stack trace on demand.</dd>
+<dd>Reintroduce HTML tracing by adding a new tracing option "XDEBUG_TRACE_HTML" (4).</dd>
+<dd>Made xdebug_stop_trace() return the trace file name, so that the following works: &lt;?php echo file_get_contents( xdebug_stop_trace() ); ?&gt;</dd>
+<dd>Added the xdebug.collect_vars setting to tell Xdebug to collect information about which variables are used in a scope. Now you don't need to show variables with xdebug.show_local_vars anymore for xdebug_get_declared_vars() to work.</dd>
+<dd>Make the filename parameter to the xdebug_start_trace() function optional. If left empty it will use the same algorithm to pick a filename as when you are using the xdebug.auto_trace setting.</dd>
+
+<dd><h3>Changes</h3></dd>
+<dd>Implemented dead code analysis during code coverage for: abstract methods, dead code after return, throw and exit, and implicit returns when a normal return is present.</dd>
+<dd>Improved readability of stack traces.</dd>
+<dd>Use PG(html_errors) instead of checking whether we run with CLI when deciding when to use HTML messages or plain text messages.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #203: PHP errors with HTML content processed incorrectly. This patch backs out the change that was made to fix bug #182.</dd>
+<dd>Fixed bug #198: Segfault when trying to use a non-existing debug handler.</dd>
+<dd>Fixed bug #197: Race condition fixes created too many files.</dd>
+<dd>Fixed bug #196: Profile timing on Windows does not work.</dd>
+<dd>Fixed bug #195: CLI Error after debugging session.</dd>
+<dd>Fixed bug #193: Compile problems with PHP 5.2.</dd>
+<dd>Fixed bug #191: File/line breakpoints are case-sensitive on Windows.</dd>
+<dd>Fixed bug #181: Xdebug doesn't handle uncaught exception output correctly.</dd>
+<dd>Fixed bug #173: Coverage produces wrong coverage.</dd>
+<dd>Fixed a typo that prevented the XDEBUG_CONFIG option "profiler_enable" from working.</dd>
+
 <dt>[30-06-2006] &mdash; Xdebug 2.0.0beta6</dt>
 
 <dd><h3>Added new features</h3></dd>
