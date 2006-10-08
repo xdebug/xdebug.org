@@ -1,3 +1,11 @@
+Sun Oct 08 23:12:50 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/xdebug-2.0.0RC1.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Updates for RC1.
+
 Thu Sep 14 18:02:07 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/docs-settings.php:
 - Fixed typo.
