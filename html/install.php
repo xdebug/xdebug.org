@@ -155,67 +155,25 @@ course try to fix those.
 		<td class="ctr">Recommended version:</td>
 	</tr>
 	<tr>
-		<th class="ctr">4.2.3</th>
-		<td class="ctr">20010901</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">1.0.0rc1</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.0pre2</th>
-		<td class="ctr">20020307</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.1.0pre2</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.0rc1</th>
+		<th class="ctr">4.4.x</th>
 		<td class="ctr">20020918</td>
 		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.1.0</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.0</th>
-		<td class="ctr">20020918</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.2.0</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.1-4.3.5</th>
-		<td class="ctr">20020918</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.3.1</td>
-	</tr>
-	<tr>
-		<th class="ctr">4.3.7-4.3.8</th>
-		<td class="ctr">20020918</td>
-		<td class="ctr">20020429</td>
-		<td class="ctr">20021010</td>
-		<td class="ctr">1.3.2 / 2.0.0-cvs</td>
-	</tr>
-	<tr>
-		<th class="ctr">5.0.0rc3</th>
-		<td class="ctr">20031224</td>
-		<td class="ctr">20040412</td>
-		<td class="ctr">220040412</td>
-		<td class="ctr">1.3.2 / 2.0.0-cvs</td>
-	</tr>
-	<tr>
-		<th class="ctr">5.0.5 or later</th>
-		<td class="ctr">20041225</td>
-		<td class="ctr">20041030</td>
-		<td class="ctr">220040412</td>
-		<td class="ctr">2.0.0-beta5 or cvs</td>
+		<td class="ctr">20050606</td>
+		<td class="ctr">2.0.0-rc1 or cvs</td>
 	</tr>
 	<tr>
 		<th class="ctr">5.1.x</th>
 		<td class="ctr">20041225</td>
 		<td class="ctr">20050922</td>
 		<td class="ctr">220051025</td>
-		<td class="ctr">2.0.0-beta5 or cvs</td>
+		<td class="ctr">2.0.0-rc1 or cvs</td>
+	</tr>
+	<tr>
+		<th class="ctr">5.2.x</th>
+		<td class="ctr">20041225</td>
+		<td class="ctr">20060613</td>
+		<td class="ctr">220060519</td>
+		<td class="ctr">2.0.0-rc1 or cvs</td>
 	</tr>
 </table>
 <br/>
@@ -239,6 +197,26 @@ have libedit installed on your system. You can either install it, or leave
 out the "--with-libedit" option to configure. Debian 'unstable' users can
 install the library with <code>apt-get install libedit-dev libedit2</code>.
 </p>
+<p>
+If the configure script can not find libedit and you are sure you have (and
+it's headers) installed correctly and you get link errors like the
+following in your configure.log:
+</p>
+<pre class="example">
+/usr/lib64/libedit.so: undefined reference to `tgetnum'
+/usr/lib64/libedit.so: undefined reference to `tgoto'
+/usr/lib64/libedit.so: undefined reference to `tgetflag'
+/usr/lib64/libedit.so: undefined reference to `tputs'
+/usr/lib64/libedit.so: undefined reference to `tgetent'
+/usr/lib64/libedit.so: undefined reference to `tgetstr'
+collect2: ld returned 1 exit status
+</pre>
+<p>
+you need to change your configure command to:
+</p>
+<pre class="example">
+$ LDFLAGS=-lncurses ./configure --with-libedit
+</pre>
 <br /><br />
 
 <!-- MAIN FEATURE END -->
