@@ -1,3 +1,8 @@
+Tue Oct 10 13:31:08 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/install.php:
+- Some clarifications for debugclient
+- Updated phpize output numbers
+
 Sun Oct 08 23:12:50 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/index.php
 www.xdebug.org/html/updates.php
