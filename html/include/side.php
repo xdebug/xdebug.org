@@ -19,7 +19,6 @@ Debug client 0.9.0 (DBGp) (binary):
 </ul>
 <br />
 
-<!--
 Windows modules:
 <ul class="status">
 <li><?php url ('xdebug200rc1-4311-win', 'PHP 4.3.11'); ?></li>
@@ -28,7 +27,6 @@ Windows modules:
 <li><?php url ('xdebug200rc1-520-win', 'PHP 5.2.0+'); ?></li>
 </ul>
 <br />
--->
 </dd>
 </dl>
 
