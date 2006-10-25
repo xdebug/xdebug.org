@@ -1,3 +1,7 @@
+Wed Oct 25 14:56:03 CEST 2006 Derick Rethans <derick@derickrethans.nl>
+html/install.php:
+- Added linkable install instructions.
+
 Wed Oct 11 10:50:31 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/files/php_xdebug-2.0.0rc1-4.3.11.dll
 www.xdebug.org/html/files/php_xdebug-2.0.0rc1-4.4.1.dll
