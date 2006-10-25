@@ -116,7 +116,12 @@ working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 <li>make</li>
 
 <li>cp modules/xdebug.so /to/wherever/you/want/it</li>
+</ol>
 
+<a name="configure-php"></a>
+<span class="sans">CONFIGURE PHP TO USE XDEBUG</span><br />
+
+<ol>
 <li>add the following line to php.ini:
 zend_extension="/wherever/you/put/it/xdebug.so" (for non-threaded use of PHP,
 for example the CLI, CGI or Apache 1.3 module) or:
