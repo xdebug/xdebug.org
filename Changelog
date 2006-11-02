@@ -1,3 +1,7 @@
+Thu Nov 02 11:09:54 CET 2006 Derick Rethans <derick@derickrethans.nl>
+html/install.php:
+- Added Note about debug builds.
+
 Wed Oct 25 14:56:03 CEST 2006 Derick Rethans <derick@derickrethans.nl>
 html/install.php:
 - Added linkable install instructions.
