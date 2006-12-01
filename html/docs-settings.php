@@ -178,6 +178,11 @@ less powerfull then the GDB like one, it is advised to leave this setting to
 <dd>Selects the host where the debug client is running, you can either use a
 host name or an IP address.</dd>
 
+<a name="remote_log"></a>
+<dt>xdebug.remote_log [string] (default: none)</dt>
+<dd>If set to a value, it is used as filename to a file to which all remote
+debugger communications are logged.</dd>
+
 <a name="remote_mode"></a>
 <dt>xdebug.remote_mode [string] (default: req)</dt>
 <dd>Selects between the 'req' and 'jit' debugging modes for the 'gdb' handler.

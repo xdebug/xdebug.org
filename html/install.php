@@ -35,7 +35,7 @@ with with PEAR version 0.9.1-dev or higher and some UNIX.
 Installing with PEAR/PECL is as easy as:
 </p>
 <pre>
-# pear install xdebug-beta
+# pecl install xdebug-beta
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
