@@ -18,16 +18,15 @@ Debug client 0.9.0 (DBGp) (binary):
 <li><?php url ('xdebugclient-0.9.0-win', 'Windows'); ?></li>
 </ul>
 <br />
-<!--
+
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200rc1-4311-win', 'PHP 4.3.11'); ?></li>
-<li><?php url ('xdebug200rc1-441-win', 'PHP 4.4.1+'); ?></li>
-<li><?php url ('xdebug200rc1-512-win', 'PHP 5.1.2+'); ?></li>
-<li><?php url ('xdebug200rc1-520-win', 'PHP 5.2.0+'); ?></li>
+<li><?php url ('xdebug200rc2-441-win', 'PHP 4.4.1+'); ?></li>
+<li><?php url ('xdebug200rc2-512-win', 'PHP 5.1.2+'); ?></li>
+<li><?php url ('xdebug200rc2-521-win', 'PHP 5.2.1+'); ?></li>
 </ul>
 <br />
--->
+
 </dd>
 </dl>
 
