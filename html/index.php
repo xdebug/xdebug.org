@@ -42,6 +42,11 @@ Xdebug also provides:
 <span class="sans">ANNOUNCEMENTS</span><br />
 
 <dl class="main">
+<dt class="main">[24-12-2006]</dt>
+<dd class="main">Xdebug version 2.0.0RC2 has been released. This release
+features many internal clean ups and bug fixes. Some issues with the newly
+introduced layout for stack traces where also addressed.</dd>
+
 <dt class="main">[08-10-2006]</dt>
 <dd class="main">Xdebug version 2.0.0RC1 has been released. This release
 includes some performance enhancing patches and <a

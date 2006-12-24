@@ -4,11 +4,11 @@
 
 <span class='quote'>
 <dl class="status">
-<dt>[08-10-2006]</dt>
+<dt>[24-12-2006]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug200rc1', 'xdebug 2.0.0RC1'); ?></li>
+<li><?php url ('xdebug200rc2', 'xdebug 2.0.0RC2'); ?></li>
 </ul>
 <br />
 
@@ -18,7 +18,7 @@ Debug client 0.9.0 (DBGp) (binary):
 <li><?php url ('xdebugclient-0.9.0-win', 'Windows'); ?></li>
 </ul>
 <br />
-
+<!--
 Windows modules:
 <ul class="status">
 <li><?php url ('xdebug200rc1-4311-win', 'PHP 4.3.11'); ?></li>
@@ -27,6 +27,7 @@ Windows modules:
 <li><?php url ('xdebug200rc1-520-win', 'PHP 5.2.0+'); ?></li>
 </ul>
 <br />
+-->
 </dd>
 </dl>
 

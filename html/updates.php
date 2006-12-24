@@ -20,6 +20,45 @@
 <span class='quote'>
 <dl>
 
+<dt>[24-12-2006] &mdash; Xdebug 2.0.0RC2</dt>
+<dd><h3>Added new features</h3></dd>
+<dd>Implemented the "xdebug.var_display_max_children" setting. The default is set to 128 children.</dd>
+<dd>Added types to fancy var dumping function.</dd>
+<dd>Implemented FR #210: Add a way to stop the debug session without having to execute a script. The GET/POST parameter "XDEBUG_SESSION_STOP_NO_EXEC" works in the same way as XDEBUG_SESSION_STOP, except that the script will not be executed.</dd>
+<dd>DBGP: Allow postmortem analysis.</dd>
+<dd>DBGP: Added the non-standard function xcmd_profiler_name_get.</dd>
+
+<dd><h3>Changes</h3></dd>
+<dd>Fixed the issue where xdebug_get_declared_vars() did not know about variables there are in the declared function header, but were not used in the code. Due to this change expected arguments that were not send to a function will now show up as ??? in stack and function traces in PHP 5.1 and PHP 5.2.</dd>
+<dd>Allow xdebug.var_display_max_data and xdebug.var_display_max_depth settings of -1 which will unlimit those settings.</dd>
+<dd>DBGP: Sort super globals in Globals overview.</dd>
+<dd>DBGP: Fixed a bug where error messages where not added upon errors in the protocol.</dd>
+<dd>DBGP: Change context 1 from globals (superglobals + vars in bottom most stack frame) to just superglobals.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed linking error on AIX by adding libm.</dd>
+<dd>Fixed dead code analysis for THROW.</dd>
+<dd>Fixed oparray prefill caching for code coverage.</dd>
+<dd>Fixed the xdebug.remote_log feature work.</dd>
+<dd>DBGP: Fixed a bug where $this did not appear in the local scoped context.</dd>
+<dd>DBGP: Reimplemented property_set to use the same symbol fetching function as property_get. We now only use eval in case no type (-t) argument was given.</dd>
+<dd>DBGP: Fixed some issues with finding out the classname, which is important for fetching private properties.</dd>
+<dd>DBGP: Fixed usage of uninitialized memory that prevented looking up numerical array keys while fetching array elements not work properly.</dd>
+<dd>Fixed bug #228: Binary safety for stream output and property fetches.</dd>
+<dd>Fixed bug #227: The SESSION super global does not show up in the Globals scope.</dd>
+<dd>Fixed bug #225: xdebug dumps core when protocol is GDB.</dd>
+<dd>Fixed bug #224: Compile failure on Solaris.</dd>
+<dd>Fixed bug #219: Memory usage delta in traces don't work on PHP 5.2.0.</dd>
+<dd>Fixed bug #215: Cannot retrieve nested arrays when the array key is a numeric index.</dd>
+<dd>Fixed bug #214: The depth level of arrays was incorrectly checked so it would show the first page of a level too deep as well.</dd>
+<dd>Fixed bug #213: Dead code analysis doesn't take catches for throws into account.</dd>
+<dd>Fixed bug #211: When starting a new session with a different idekey, the cookie is not updated.</dd>
+<dd>Fixed bug #209: Additional remote debugging session started when triggering shutdown function.</dd>
+<dd>Fixed bug #208: Socket connection attempted when XDEBUG_SESSION_STOP.</dd>
+<dd>Fixed PECL bug #8989: Compile error with PHP 5 and GCC 2.95.</dd>
+
+
+
 <dt>[08-10-2006] &mdash; Xdebug 2.0.0RC1</dt>
 
 <dd><h3>Added new features</h3></dd>
