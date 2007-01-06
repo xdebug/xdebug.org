@@ -46,7 +46,7 @@ href="http://xdebug.org/archives/xdebug-dev/">here</a>.
 If you have a general question about Xdebug, please send an email to
 <u>xdebug-general@<span
 class="hide">remove-this-first@</span>lists.xdebug.org</u>.  If you like Xdebug
-and make use it it, feel free to checkout my <?php url('giftlist', 'wishlist');
+and make use of it, feel free to checkout my <?php url('giftlist', 'wishlist');
 ?>.  This improves chances that I will be continuing developing Xdebug as an
 open source extension.
 </p>
