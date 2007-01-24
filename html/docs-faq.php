@@ -25,7 +25,18 @@ wrong?</dt>
 the necessary information to your URL. See the 
 <a href='docs-debugger.php#activate_debugger'>documentation</a> for
 more information.</dd>
+
+<dt>Q: I'm using XAMPP, but I can't seem to get the packaged xdebug extension
+to work properly.</dt>
+<dd>A: If you uncommented the "extension=php_xdebug.dll" line, that is to be
+expected. Xdebug <b>needs</b> to be loaded with the zend_extension_ts=
+"C:\path\to\php_xdebug.dll" directive. You'll also likely have to disable the
+loading of the Zend Optimizer, since it's enabled by default, and doesn't work
+well with Xdebug. So look for the related entry in php.ini, and comment it
+out.</dd>
+
 </dl>
+
 
 
 <br /><br />
