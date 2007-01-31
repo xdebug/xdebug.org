@@ -1,3 +1,14 @@
+Wed Jan 31 20:53:38 CET 2007 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/php_xdebug-2.0.0rc3-4.4.1.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0rc3-5.1.2.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0rc3-5.2.1.dll
+www.xdebug.org/html/files/xdebug-2.0.0RC3.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Release 2.0.0rc3.
+
 Wed Jan 24 15:48:53 CET 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs-faq.php:
 - Added XAMPP FAQ.
