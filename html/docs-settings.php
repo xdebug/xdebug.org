@@ -13,55 +13,21 @@
 <span class="sans">GENERAL SETTINGS</span><br />
 
 <dl>
-<a name="auto_trace"></a>
-<dt>xdebug.auto_trace [boolean] (default: Off)</dt>
-<dd>When this setting is set to on, the tracing of function calls will be
-enabled just before the script is run. This makes it possible to trace code in
-the <a
-href="http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend-file">auto_prepend_file</a>.</dd>
+<a name="collect_vars"></a>
+<dt>xdebug.collect_vars [boolean] (default: Off) (Xdebug 2)</dt>
+<dd>This setting tells Xdebug to gather information about which variables
+are used in a certain scope. This analysis can be quite slow as Xdebug has
+to reverse engineer PHP's opcode arrays. This setting will not record which
+values the different variables have, for that use <a
+href="#collect_params">xdebug.collect_params</a>.</dd>
 
-<a name="collect_includes"></a>
-<dt>xdebug.collect_includes [boolean] (default: On) (Xdebug 2)</dt>
-<dd>This setting, defaulting to On, controls whether Xdebug should write the
-filename used in include(), include_once(), require() or require_once() to the
-trace files.</dd>
-
-<a name="collect_params"></a>
-<dt>xdebug.collect_params [boolean] (default: Off)</dt>
-<dd>This setting, defaulting to Off, controls whether Xdebug should collect the
-parameters passed to functions when a function call is recorded in either the
-function trace or the stack trace. It defaults to Off because for very large
-scripts it may use huge amounts of memory and therefore make it impossible for
-the huge script to run. You can most safely turn this setting on, but you can
-expect some problems in scripts with a lot of functioncalls and/or huge data
-structures as parameters. Xdebug 2 will not have this problem with increased
-memory usage, as it will never store this information in memory. Instead it
-will only be written to disk. This means that you need to have a look at the
-disk usage though.</dd>
-
-<a name="collect_return"></a>
-<dt>xdebug.collect_return [boolean] (default: Off) (Xdebug 2)</dt>
-<dd>This setting, defaulting to Off, controls whether Xdebug should write the
-return value of function calls to the trace files.</dd>
-
+<a name="default_enable"</a>
 <dt>xdebug.default_enable [boolean] (default: On)</dt>
 <dd>If this setting is On then stacktraces will be shown by default on an error
 event. You can disable showing stacktraces from your code with <i><a
 href='docs.php#xdebug_disable'>xdebug_disable()</a></i>. As this is one of the
 basic functions of Xdebug, it is advisable to leave this setting set to
 'On'.</dd>
-<dd><br />An example error message may look like:
-<table border='1' cellspacing='0'>
-<tr><td bgcolor='#ffbbbb' colspan="3"><b>Warning</b>: Wrong parameter count for str_replace() in <b>/home/httpd/html/test/xdebug_error.php</b> on line <b>5</b><br />
-<tr><th bgcolor='#aaaaaa' colspan='3'>Call Stack</th></tr>
-<tr><th bgcolor='#cccccc'>#</th><th bgcolor='#cccccc'>Function</th><th bgcolor='#cccccc'>Location</th></tr>
-<tr><td bgcolor='#ffffff' align='center'>1</td><td bgcolor='#ffffff'>{main}()</td><td bgcolor='#ffffff'>/home/httpd/html/test/xdebug_error.php<b>:</b>0</td></tr>
-
-<tr><td bgcolor='#ffffff' align='center'>2</td><td bgcolor='#ffffff'>fix_string(&#039;Derick&#039;)</td><td bgcolor='#ffffff'>/home/httpd/html/test/xdebug_error.php<b>:</b>8</td></tr>
-<tr><td bgcolor='#ffffff' align='center'>3</td><td bgcolor='#ffffff'><a href='http://uk.php.net/str_replace' target='_new'>str_replace</a>
-(&#039;a&#039;, &#039;b&#039;)</td><td bgcolor='#ffffff'>/home/httpd/html/test/xdebug_error.php<b>:</b>5</td></tr>
-</table>
-</dd>
 
 <a name="extended_info"></a>
 <dt>xdebug.extended_info [integer] (default: 1)</dt>
@@ -72,19 +38,29 @@ option as PHP's generated oparrays will increase with about a third of the size
 slowing down your scripts. This setting can not be set in your scripts with
 ini_set(), but only in php.ini.</dd>
 
-<a name="idekey"></a>
-<dt>xdebug.idekey [string] (default: *complex*)</dt>
-<dd>Controls which IDE Key Xdebug should pass on to the DBGp debugger handler.
-The default is based on environment settings. First the environment setting
-DBGP_IDEKEY is consulted, then USER and as last USERNAME.  The default is set
-to the first environment variable that is found. If none could be found the
-setting has as default "".</dd>
-
 <a name="manual_url"></a>
 <dt>xdebug.manual_url [string] (default: http://www.php.net)</dt>
 <dd>This is the base url for the links from the function traces and error
 message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.</dd>
+
+<a name="max_nesting_level"></a>
+<dt>xdebug.max_nesting_level [integer] (default: 64 in Xdebug 1, 100 in Xdebug 2)</dt>
+<dd>Controls the protection mechanism for infinite recursion protection. The
+value of this setting is the maximum level of nested functions that are allowed
+before the script will be aborted.</dd>
+
+</dl>
+
+<br />
+<a name="disable"></a>
+<span class="sans">DISPLAY SETTINGS</span><br />
+
+<dl>
+<a name="show_exception_trace"></a>
+<dt>xdebug.show_exception_trace [integer] (default: 0) (Xdebug 2)</dt>
+<dd>When this setting is set to 1, Xdebug will show a stack trace whenever
+an exception is raised - even if this exception is actually caught.</dd>
 
 <a name="show_local_vars"></a>
 <dt>xdebug.show_local_vars [integer] (default: 0) (Xdebug 2)</dt>
@@ -100,11 +76,65 @@ generated trace files will show the difference in memory usage between function
 calls. If Xdebug is configured to generate computer-readable trace files then
 they will always show this information.</dd>
 
-<a name="max_nesting_level"></a>
-<dt>xdebug.max_nesting_level [integer] (default: 64 in Xdebug 1, 100 in Xdebug 2)</dt>
-<dd>Controls the protection mechanism for infinite recursion protection. The
-value of this setting is the maximum level of nested functions that are allowed
-before the script will be aborted.</dd>
+<a name="var_display_max_children"></a>
+<dt>xdebug.var_display_max_children [integer] (default: 128) (Xdebug 2)</dt>
+<dd>Controls the amount of array children and object's properties are shown
+when variables are displayed with either <a
+href="docs-functions.php#xdebug_var_dump">xdebug_var_dump()</a> or <a
+href="#show_local_vars">xdebug,show_local_vars</a>.</dd>
+
+<a name="var_display_max_data"></a>
+<dt>xdebug.var_display_max_data [integer] (default: 512) (Xdebug 2)</dt>
+<dd>Controls the maximum string length that is shown
+when variables are displayed with either <a
+href="docs-functions.php#xdebug_var_dump">xdebug_var_dump()</a> or <a
+href="#show_local_vars">xdebug,show_local_vars</a>.</dd>
+
+<a name="var_display_max_depth"></a>
+<dt>xdebug.var_display_max_depth [integer] (default: 3) (Xdebug 2)</dt>
+<dd>Controls how many nested levels of array elements and object properties are
+shown when variables are displayed with either <a
+href="docs-functions.php#xdebug_var_dump">xdebug_var_dump()</a> or <a
+href="#show_local_vars">xdebug,show_local_vars</a>.</dd>
+
+</dl>
+
+<br />
+<a name="tracing"></a>
+<span class="sans">TRACING SETTINGS</span><br />
+
+<dl>
+<a name="auto_trace"></a>
+<dt>xdebug.auto_trace [boolean] (default: Off)</dt>
+<dd>When this setting is set to on, the tracing of function calls will be
+enabled just before the script is run. This makes it possible to trace code in
+the <a
+href="http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend-file">auto_prepend_file</a>.</dd>
+
+<a name="collect_includes"></a>
+<dt>xdebug.collect_includes [boolean] (default: On) (Xdebug 2)</dt>
+<dd>This setting, defaulting to On, controls whether Xdebug should write the
+filename used in include(), include_once(), require() or require_once() to the
+trace files.</dd>
+
+<a name="collect_params"></a>
+<dt>xdebug.collect_params [boolean] (default: Off)</dt>
+<dd><p>This setting, defaulting to Off, controls whether Xdebug should collect
+the parameters passed to functions when a function call is recorded in either
+the function trace or the stack trace.</p>
+<p>The setting defaults to Off because for very large
+scripts it may use huge amounts of memory and therefore make it impossible for
+the huge script to run. You can most safely turn this setting on, but you can
+expect some problems in scripts with a lot of functioncalls and/or huge data
+structures as parameters. Xdebug 2 will not have this problem with increased
+memory usage, as it will never store this information in memory. Instead it
+will only be written to disk. This means that you need to have a look at the
+disk usage though.</p></dd>
+
+<a name="collect_return"></a>
+<dt>xdebug.collect_return [boolean] (default: Off) (Xdebug 2)</dt>
+<dd>This setting, defaulting to Off, controls whether Xdebug should write the
+return value of function calls to the trace files.</dd>
 
 <a name="trace_format"></a>
 <dt>xdebug.trace_format [integer] (default: 0) (Xdebug 2)</dt>
@@ -124,23 +154,39 @@ include/require file</i>, <i>filename</i> and <i>line number</i>.</td></tr>
 </table>
 </dd>
 
+<a name="trace_options"></a>
+<dt>xdebug.trace_options [integer] (default: 0) (Xdebug 2)</dt>
+<dd>When set to "1" the trace files will be appended to, instead of
+being overwritten in subsequent requests.</dd>
+
 <a name="trace_output_dir"></a>
 <dt>xdebug.trace_output_dir [string] (default: /tmp) (Xdebug 2)</dt>
 <dd>The directory where the tracing files will be written to, make sure that
 the user who the PHP will be running as has write permissions to that
 directory.</dd>
 
-<a name="trace_options"></a>
-<dt>xdebug.trace_options [integer] (default: 0) (Xdebug 2)</dt>
-<dd>When set to "1" the trace files will be appended to, instead of
-being overwritten in subsequent requests.</dd>
-
 <a name="trace_output_name"></a>
 <dt>xdebug.trace_output_name [string] (default: crc32) (Xdebug 2)</dt>
-<dd>When set to "crc32" the middle part of a trace file name will be
-a crc32 hash of the current working directory. If it is set to "timestamp" the
-filename will include the current Unix timestamp instead. In all other cases
-the Process ID of the PHP process is used here.</dd>
+<dd><p>This setting determines the name of the file that is used to dump
+traces into. The name of the file always consists of
+"trace." + value + ".xt".  The "value" differs depending on this
+setting.</p>
+
+<p>
+There are three possible values for this setting:
+<dl>
+	<dt>crc32</dt>
+	<dd>The filename will be appended by the crc32 hash of the current working
+	directary. Example: trace.1224514426</dd>
+	<dt>timestamp</dt>
+	<dd>The filename will be appended by the current time as Unix
+	timestamp. Example: trace.1170515030</dd>
+	<dt>pid</dt>
+	<dd>The base name will be appended by the process ID of the PHP interpreter
+	(or Apache child) running the script. Example: trace.30447</dd>
+</dl>
+</p>
+</dd>
 
 </dl>
 
@@ -149,6 +195,14 @@ the Process ID of the PHP process is used here.</dd>
 <span class="sans">REMOTE DEBUGGER SETTINGS</span><br />
 
 <dl>
+<a name="idekey"></a>
+<dt>xdebug.idekey [string] (default: *complex*)</dt>
+<dd>Controls which IDE Key Xdebug should pass on to the DBGp debugger handler.
+The default is based on environment settings. First the environment setting
+DBGP_IDEKEY is consulted, then USER and as last USERNAME.  The default is set
+to the first environment variable that is found. If none could be found the
+setting has as default "".</dd>
+
 <a name="remote_autostart"></a>
 <dt>xdebug.remote_autostart [boolean] (default: Off)</dt>
 <dd>Normally you need to use a specific HTTP GET/POST variable to start
@@ -161,7 +215,8 @@ variable was not present.</dd>
 <dt>xdebug.remote_enable [boolean] (default: Off)</dt>
 <dd>This switch controls whether Xdebug should try to contact a debug client
 which is listening on the host and port as set with the settings
-'xdebug.remote_host' and 'xdebug.remote_port'. If a connection can not be
+'<a href="#remote_host">xdebug.remote_host</a>' and '<a
+href="#remote_port">xdebug.remote_port</a>'. If a connection can not be
 established the script will just continue as if this setting was Off.</dd>
 
 <a name="remote_handler"></a>
@@ -185,10 +240,18 @@ debugger communications are logged.</dd>
 
 <a name="remote_mode"></a>
 <dt>xdebug.remote_mode [string] (default: req)</dt>
-<dd>Selects between the 'req' and 'jit' debugging modes for the 'gdb' handler.
-If it is set to 'req' (the default) then Xdebug will try to connect to the
-debug client as soon as the script starts. If it is set to 'jit' it will only
-try to connect as soon as an error condition occurs.</dd>
+<dd><p>Selects when a debug connection is initiated. This setting can have two
+different values:
+<dl>
+<dt>req</dt>
+<dd>Xdebug will try to connect to the
+debug client as soon as the script starts.</dd>
+<dt>hit</dt>
+<dd>Xdebug will only
+try to connect to the debug client as soon as an error condition occurs.</dd>
+</dl>
+</p>
+</dd>
 
 <a name="remote_port"></a>
 <dt>xdebug.remote_port [integer] (default: 17869 for Xdebug 1.3 or 9000 for Xdebug 2.x)</dt>
@@ -248,12 +311,29 @@ directory. This setting can not be set in your script with ini_set().</dd>
 
 <a name="profiler_output_name"></a>
 <dt>xdebug.profiler_output_name [string] (default: crc32) (Xdebug 2)</dt>
-<dd>When set to "crc32" the last part of a profile filename will be
-a crc32 hash of the current working directory. If it is set to "timestamp" the
-filename will include the current Unix timestamp instead. In all other cases 
-the Process ID of the PHP process is used here. The base name of the generated
-file is always "cachegrind.out.". An example of a filename is:
-cachegrind.out.5123 . This setting can not be set in your script with ini_set().
+<dd><p>This setting determines the name of the file that is used to dump profiling
+information into. The name of the file always consists of "cachegrind.out.".
+This name can be prepended and appended depending on this setting.</p>
+
+<p>
+There are four possible values for this setting:
+<dl>
+	<dt>crc32</dt>
+	<dd>The filename will be appended by the crc32 hash of the current working
+	directory. Example: cachegrind.out.1224514426</dd>
+	<dt>timestamp</dt>
+	<dd>The filename will be appended by the current time as Unix
+	timestamp. Example: cachegrind.out.1170515030</dd>
+	<dt>script</dt>
+	<dd>The base name will be prepended by a sanitized version of the full
+	path to the script's file name. Example: tmp_foo_php_cachegrind.out</dd>
+	<dt>pid</dt>
+	<dd>The base name will be appended by the process ID of the PHP interpreter
+	(or Apache child) running the script. Example: cachegrind.out.30447</dd>
+</dl>
+</p>
+</dd>
+
 </dl>
 
 <br />
