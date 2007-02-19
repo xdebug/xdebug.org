@@ -65,7 +65,7 @@
 		dl.faq dd { margin-left: 20px; margin-top: 5px; }
 		ol li { margin-bottom: 5px; }
 
-		dt.main { font-weight: normal; }
+		dt.main { font-weight: normal; color: #116633; }
 		dd.main { margin-left: 20px; }
 
 		pre { margin-left: 20px; line-height: 1.5em; }
