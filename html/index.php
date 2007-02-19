@@ -169,7 +169,7 @@ implemented soon.</dd>
 
 <!-- MAIN FEATURE END -->
 
-			</class></td>
+			</td>
 			<td>&nbsp;</td>
 			<td>
 				<table cellpadding="0" cellspacing="0">
