@@ -220,13 +220,14 @@ href="#remote_port">xdebug.remote_port</a>'. If a connection can not be
 established the script will just continue as if this setting was Off.</dd>
 
 <a name="remote_handler"></a>
-<dt>xdebug.remote_handler [string] (default: gdb)</dt>
+<dt>xdebug.remote_handler [string] (default: gdb in Xdebug 1, dbgp in Xdebug 2)</dt>
 <dd>Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
 output, or 'gdb' which enables the GDB like debugger interface. As there is
 currently no bundled client for the PHP 3 style debugger and because it's much
 less powerfull then the GDB like one, it is advised to leave this setting to
 'gdb'.</dd>
+FIXME
 
 <a name="remote_host"></a>
 <dt>xdebug.remote_host [string] (default: localhost)</dt>

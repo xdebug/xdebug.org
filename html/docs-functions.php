@@ -472,12 +472,21 @@ seconds.</dd>
 <span class="sans">CODE COVERAGE RELATED</span><br />
 <dl>
 <a name='xdebug_start_code_coverage'></a>
-<dt>void xdebug_start_code_coverage()</dt>
-<dd>This function starts gathering the information for code coverage. The
+<dt>void xdebug_start_code_coverage([int options])</dt>
+<dd><p>This function starts gathering the information for code coverage. The
 information that is collected constists of an two dimensional array with as
 primairy index the executed filename and as secondairy key the line number. The
 value in the elements represents the total number of execution units on this
-line have been executed.</dd>
+line have been executed.</p>
+<p>Options to this function are:
+<dl>
+<dt>XDEBUG_CC_UNUSED</dt>
+<dd>Enables scanning of code to figure out which line has executable code.</dd>
+<dt>XDEBUG_CC_DEAD_CODE</dt>
+<dd>Enables branch analyzation to figure out whether code can be executed.</dd>
+</dl>
+</p>
+</dd>
 
 <a name='xdebug_stop_code_coverage'></a>
 <dt>void xdebug_stop_code_coverage()</dt>

@@ -14,24 +14,35 @@
 
 <p>Xdebug's (remote) debugger allows you to examine data structure, 
 interactively walk through your and debug your code. There are two different
-protocols to communicate with the debugger: a GDB-like command protocol (GDB)
-which is implemented in Xdebug 1.3 and 2; and the <a
-href='/docs-dbgp.php'>DBGp</a> protocol which is implemented in only Xdebug 2.
+protocols to communicate with the debugger: the old GDB-like command protocol
+(GDB) which is implemented in Xdebug 1.3 and 2; and the <a
+href='/docs-dbgp.php'>DBGp</a> protocol which is implemented in Xdebug 2.
 </p>
 
 <a name="clients"></a>
 <span class="sans">CLIENTS</span><br />
 <p>
-A simple commandline client for the <b>GDB</b> protocol is bundled with Xdebug
-1.3. A client implementation can also be found in the free editor
-<a href='http://weaverslave.ws'>WeaverSlave</a> and in Maguma's
-<a href='http://www.maguma.com/products/?article=Workbench'>WorkBench</a>.
+Xdebug 2 is bundled with a <b>simple command line client</b> for the
+<a href='/docs-dbgp.php'>DBGp</a> protocol.
+There are a few other client implementations (both free and commercial) as well:
+<ul>
+<li><b>Eclipse
+<a href='https://bugs.eclipse.org/bugs/show_bug.cgi?id=169408'>plugin</a></b>, which
+has been submitted as an enhancement for the
+<a href='http://www.eclipse.org/php/'>PDT</a>.</li>
+<li>ActiveState's <b><a href='http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD'>Komodo</a></b>.</li>
+<li>WaterProof's <b><a href='http://www.waterproof.fr/products/PHPEdit/'>PHPEdit</a></b> (from version 2.10).</li>
+<li><b><a href='http://protoeditor.sourceforge.net/'>Protoeditor</a></b>.</li>
+<li><b><a href='http://tswebeditor.net.tc/'>tsWebeditor</a></b>.</li>
+<li>Xored's <b><a href='http://www.xored.com/trustudio'>TrueStudio IDE</a></b>.</li>
+<li><b>VIM <a href='http://www.vim.org/scripts/script.php?script_id=1152'>plugin</a></b>.</li>
+<li>Maguma's <b><a href='http://www.maguma.com/products/?article=Workbench'>WorkBench</a></b>.</li>
+</ul>
 </p>
 <p>
-Xdebug 2 is bundled with a simple commandline client for the
-<a href='/docs-dbgp.php'>DBGp</a> protocol. Another client implementation
-of the DBGp protocol can be found in the next version of ActiveState's
-Komodo.
+A simple command line client for the GDB protocol is bundled with <b>Xdebug
+1.3</b>. A client implementation of the deprecated GDB protocol can also be found in the free editor
+<a href='http://weaverslave.ws'>WeaverSlave</a>.
 </p>
 
 <a name="starting"></a>
