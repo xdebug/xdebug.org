@@ -75,7 +75,7 @@ is important that the source version matches the installed version as there are
 slight, but important, differences between PHP versions.  For a detailed
 installation on Mac OSX see <a
 href='http://pressedpants.com/archives/dated/2004/04/08/xdebug_on_os_x/'>Jason
-Perkins'</a> installation instructions.  Once you have access to "phpize" and
+Perkins'</a> installation instructions. Once you have access to "phpize" and
 "php-config", do the following:
 </p>
 <p>
@@ -89,7 +89,8 @@ Xdebug is compiled separately, all by itself, as stated above.</li>
 <li>Run phpize: phpize
 (or /path/to/phpize if phpize is not in your path). See in the <a
 href="#phpize">table below</a> which version numbers it should show for
-different PHP versions.</li>
+different PHP versions. Make sure you use the phpize that belongs to the PHP
+version that you want to use Xdebug with.</li>
 
 <li>./configure --enable-xdebug
 (or:
