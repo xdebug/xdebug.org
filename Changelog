@@ -1,3 +1,24 @@
+Sun Mar 18 14:25:49 CET 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/index.php
+www.xdebug.org/html/docs/include/basic.php
+www.xdebug.org/html/docs/include/features.php
+www.xdebug.org/html/docs/include/functions/xdebug_call_class
+www.xdebug.org/html/docs/include/functions/xdebug_call_file
+www.xdebug.org/html/docs/include/functions/xdebug_call_function
+www.xdebug.org/html/docs/include/functions/xdebug_call_line
+www.xdebug.org/html/docs/include/functions/xdebug_debug_zval
+www.xdebug.org/html/docs/include/functions/xdebug_debug_zval_stdout
+www.xdebug.org/html/docs/include/functions/xdebug_dump_superglobals
+www.xdebug.org/html/docs/include/functions/xdebug_get_code_coverage
+www.xdebug.org/html/docs/include/functions/xdebug_get_declared_vars
+www.xdebug.org/html/docs/include/functions/xdebug_get_function_stack
+www.xdebug.org/html/docs/include/functions/xdebug_get_profiler_filename
+www.xdebug.org/html/docs/include/functions/xdebug_var_dump
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php
+www.xdebug.org/html/include/menu.php:
+- More updates.
+
 Sun Mar 18 11:57:56 CET 2007 Derick Rethans <derick@derickrethans.nl>
 html/.htaccess
 www.xdebug.org/html/docs-debugger.php
