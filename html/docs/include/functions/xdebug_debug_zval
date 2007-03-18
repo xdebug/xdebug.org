@@ -11,21 +11,12 @@ recursively with values.
 
 EXAMPLE:
 <?php
-    \$a = array(1, 2, 3);
-    \$b =& \$a;
-    \$c =& \$a[2];
+    $a = array(1, 2, 3);
+    $b =& $a;
+    $c =& $a[2];
 
     xdebug_debug_zval('a');
 ?>
-</pre>
-
-TXT:
-In the browser this shows:
-RESULT:
-<img src='images/debug_zval.png' align='center' border='0'/>
-
-TXT:
-On the command line it displays:
 
 RESULT:
 a: (refcount=2, is_ref=1)=array (

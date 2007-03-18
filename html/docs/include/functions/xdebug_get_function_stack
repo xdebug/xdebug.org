@@ -10,23 +10,23 @@ Returns an array which resembles the stack trace up to this point. The example s
 EXAMPLE:
 <?php
     class strings {
-        function fix_string(\$a)
+        function fix_string($a)
         {
-            var_dump (xdebug_get_function_stack());
+            var_dump(xdebug_get_function_stack());
         }
 
-        function fix_strings(\$b) {
-            foreach (\$b as \$item) {
-                \$this->fix_string(\$item);
+        function fix_strings($b) {
+            foreach ($b as $item) {
+                $this->fix_string($item);
             }
         }
     }
 
-    \$s = new strings();
-    \$ret = \$s->fix_strings(array('Derick'));
+    $s = new strings();
+    $ret = $s->fix_strings(array('Derick'));
 ?>
 
-RETURN:
+RESULT:
 array(3) {
   [0]=&gt;
   array(4) {

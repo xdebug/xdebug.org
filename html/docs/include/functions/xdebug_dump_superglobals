@@ -12,6 +12,14 @@ only ini setting that is made for this is 'xdebug.dump.SERVER = REMOTE_ADDR'):
 
 RESULT:
 <table border='1' cellspacing='0'>
-<tr><th colspan='3' bgcolor='#aaaaaa'>Dump $_SERVER</th></tr>
-<tr><td colspan='2' bgcolor='#ffffff'>$_SERVER['REMOTE_ADDR']</td><td bgcolor='#ffffff'>'127.0.0.1'</td></tr>
+<tr><th colspan='5' align='left' bgcolor='#e9b96e'>Dump <i>$_GET</i></th></tr>
+<tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$_GET['var']&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre><small>string</small> <font color='#cc0000'>'fourty two'</font> <i>(length=10)</i>
+</pre></td></tr>
+<tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$_GET['array']&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre>
+<b>array</b>
+
+  'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'a'</font> <i>(length=1)</i>
+  'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'b'</font> <i>(length=1)</i>
+
+</pre></td></tr>
 </table>

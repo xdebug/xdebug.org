@@ -5,21 +5,21 @@ none
 FUNC_CODE_COVERAGE
 
 TXT:
-Returns a structure which contains information about how many times an
-execution units were executed on the specified line in your script (including
-include files). The following example:
+Returns a structure which contains information about which lines were executed
+in your script (including include files). The following example shows code
+coverage for one specific file:
 
-SCRIPT:
+EXAMPLE:
 <?php
     xdebug_start_code_coverage();
 
-    function a(\$a) {
-        echo \$a * 2.5;
+    function a($a) {
+        echo $a * 2.5;
     }
 
-    function b(\$count) {
-        for (\$i = 0; \$i < \$count; \$i++) {
-            a(\$i + 0.17);
+    function b($count) {
+        for ($i = 0; $i < $count; $i++) {
+            a($i + 0.17);
         }
     }
 

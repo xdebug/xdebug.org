@@ -36,6 +36,7 @@ if ( isset( $_GET['action'] ) )
 		case 'profiler':
 		case 'remote':
 		case 'code_coverage':
+		case 'faq':
 			$no_page_selected = false;
 			$load_page = $action;
 	}
@@ -50,7 +51,7 @@ if ( isset( $_GET['action'] ) )
 		$feature = $features[$load_page];
 		echo "<p class='intro'>{$feature[2]}</p>\n";
 		echo "<hr class='light'/>\n";
-		echo "{$feature[3]}\n";
+		echo add_links( $feature[3] ). "\n";
 		echo "<hr />\n";
 		do_related_settings( $feature[1] );
 		echo "<hr />\n";

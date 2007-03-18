@@ -11,11 +11,21 @@ define( 'FUNC_VAR_DUMP',         0x0010000 ); // affects overloaded var_dump fun
 define( 'FUNC_PROFILER',         0x0020000 ); // affects overloaded var_dump function
 define( 'FUNC_CODE_COVERAGE',    0x0040000 );
 
+function add_keywords( $text )
+{
+	$text = str_replace( '[KW:last_release_version]', '2.0.0RC3', $text );
+	$text = str_replace( '[KW:last_dev_version]', '2.0.0RC4-dev', $text );
+	return $text;
+}
+
 function add_links( $text )
 {
 	$text = preg_replace( '/\[FUNC:(.*?)\]/', '<a href="/docs/all_functions#\1">\1()</a>', $text );
+	$text = preg_replace( '/\[CFG:(.*?):(.*?)\]/', '<a href="/docs/all_settings#\1">\2</a>', $text );
 	$text = preg_replace( '/\[CFG:(.*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
+	$text = preg_replace( '/\[CFGS:(.*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
 	$text = preg_replace( '/\[FEAT:(.*?)\]/e', "'<a href=\"/docs/\\1\">'. \$GLOBALS['features']['\\1'][0] . '</a>'", $text );
+	$text = add_keywords( $text );
 	return $text;
 }
 
@@ -62,12 +72,12 @@ function get_func_info()
 
 function do_format_data_TXT( $data )
 {
-	return implode( ' ', $data );
+	return add_links( implode( ' ', $data ) );
 }
 
 function do_format_data_RESULT( $data )
 {
-	return "<div class='example-returns'><strong>Returns:</strong><br /><br />\n" . implode( ' ', $data ) . "</div>\n";
+	return "<div class='example-returns'><strong>Returns:</strong><br /><br /><pre>\n" . implode( ' ', $data ) . "</pre></div>\n";
 }
 
 function do_format_data_EXAMPLE( $data )

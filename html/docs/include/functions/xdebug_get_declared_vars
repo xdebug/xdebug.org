@@ -5,8 +5,9 @@ none
 FUNC_STACK_TRACE
 
 TXT:
-Returns an array where each element is a variable name which is defined and
-<b>used</b> in the current scope:
+Returns an array where each element is a variable name which is defined in the
+current scope. The setting [CFG:collect_local_vars] needs to be enabled.
+
 EXAMPLE: 
 <?php
     class strings {
@@ -18,12 +19,12 @@ EXAMPLE:
     }
     strings::fix_strings(array(1,2,3), array(4,5,6));
 ?>
+
 RESULT:
-array(2) {
-  [0]=&gt;
-  string(1) "b"
-  [1]=&gt;
-  string(4) "item"
-}
+<b>array</b>
+  0 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'a'</font> <i>(length=1)</i>
+  1 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'b'</font> <i>(length=1)</i>
+  2 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'item'</font> <i>(length=4)</i>
+
 TXT:
 The variable name "a" is not returned here, as it is not used in that scope.

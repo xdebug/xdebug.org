@@ -10,7 +10,7 @@ function/method was called from.
 
 EXAMPLE:
 <?php
-    function fix_string(\$a)
+    function fix_string($a)
     {
         echo "Called @ ".
             xdebug_call_file().
@@ -20,7 +20,7 @@ EXAMPLE:
             xdebug_call_function();
     }
 
-    \$ret = fix_string(array('Derick'));
+    $ret = fix_string(array('Derick'));
 ?>
 
 RESULT:

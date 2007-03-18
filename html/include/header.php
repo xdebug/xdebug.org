@@ -20,7 +20,7 @@
 	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
-		body, td { font-family: sans-serif; }
+		body     { font-family: sans-serif; }
 		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
 
@@ -82,6 +82,7 @@
 		div.example { margin-top: 1em; margin-bottom: 1em; }
 
 		div.example-returns { margin-left: 30px; margin-right: 30px; background-color: #f3ffea; line-height: 1.25em; margin-bottom: 1em; }
+		div.example-returns pre { margin-left: 0px; margin-right: 0px; }
 
 		h1 { font-variant: small-caps; font-size: x-large }
 		h2 { font-variant: small-caps; font-size: large }
@@ -119,7 +120,7 @@
 
 	function url ($key, $text)
 	{
-		echo "<a href='link.php?url=$key'>$text</a>";
+		echo "<a href='/link.php?url=$key'>$text</a>";
 	}
 
 	function hits ($key)

@@ -7,21 +7,18 @@ FUNC_VAR_DUMP
 TXT:
 This function displays structured information about one or more variables
 that includes its type, value and refcount information. Arrays are explored
-recursively with values. The difference with <a
-href="#xdebug_debug_zval">xdebug_debug_zval()</a> are that information is not
-displayed through a webserver API layer, but directly shown on stdout (so that
-when you run it with apache in single process mode it ends up on the console).
+recursively with values. The difference with [FUNC:xdebug_debug_zval] is that
+the information is not displayed through a web server API layer, but directly
+shown on stdout (so that when you run it with apache in single process mode it
+ends up on the console).
 
 EXAMPLE:
 <?php
-    \$a = array(1, 2, 3);
-    \$b =& \$a;
-    \$c =& \$a[2];
+    $a = array(1, 2, 3);
+    $b =& $a;
+    $c =& $a[2];
 
     xdebug_debug_zval_stdout('a');
-
-TXT:
-displays (on the command line):
 
 RESULT:
 a: (refcount=2, is_ref=1)=array (

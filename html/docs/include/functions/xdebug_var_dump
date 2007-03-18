@@ -18,6 +18,6 @@ SCRIPT:
     );
 ?>  
 
-RETURN:
+RESULT:
 <img src='images/vardump.png' align='center' border='0'/>
 
