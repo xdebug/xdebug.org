@@ -1,0 +1,75 @@
+= xdebug_get_function_stack
+Returns information about the stack
+array
+none
+FUNC_STACK_TRACE
+
+TXT:
+Returns an array which resembles the stack trace up to this point. The example script:
+
+EXAMPLE:
+<?php
+    class strings {
+        function fix_string(\$a)
+        {
+            var_dump (xdebug_get_function_stack());
+        }
+
+        function fix_strings(\$b) {
+            foreach (\$b as \$item) {
+                \$this->fix_string(\$item);
+            }
+        }
+    }
+
+    \$s = new strings();
+    \$ret = \$s->fix_strings(array('Derick'));
+?>
+
+RETURN:
+array(3) {
+  [0]=&gt;
+  array(4) {
+    ["function"]=&gt;
+    string(6) "{main}"
+    ["file"]=&gt;
+    string(38) "/home/httpd/html/test/xdebug_error.php"
+    ["line"]=&gt;
+    int(0)
+    ["params"]=&gt;
+    array(0) {
+    }
+  }
+  [1]=&gt;
+  array(5) {
+    ["function"]=&gt;
+    string(11) "fix_strings"
+    ["class"]=&gt;
+    string(7) "strings"
+    ["file"]=&gt;
+    string(38) "/home/httpd/html/test/xdebug_error.php"
+    ["line"]=&gt;
+    int(16)
+    ["params"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(21) "array (0 =&gt; 'Derick')"
+    }
+  }
+  [2]=&gt;
+  array(5) {
+    ["function"]=&gt;
+    string(10) "fix_string"
+    ["class"]=&gt;
+    string(7) "strings"
+    ["file"]=&gt;
+    string(38) "/home/httpd/html/test/xdebug_error.php"
+    ["line"]=&gt;
+    int(10)
+    ["params"]=&gt;
+    array(1) {
+      [0]=&gt;
+      string(8) "'Derick'"
+    }
+  }
+}

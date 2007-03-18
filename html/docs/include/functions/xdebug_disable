@@ -1,0 +1,8 @@
+= xdebug_disable
+Disables stack traces
+void
+none
+FUNC_BASIC
+
+TXT:
+Disable showing stack traces on error conditions.

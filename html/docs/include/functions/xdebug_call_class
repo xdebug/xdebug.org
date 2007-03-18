@@ -1,0 +1,27 @@
+= xdebug_call_class
+Returns the calling class
+string
+none
+FUNC_BASIC
+
+TXT:
+This function returns the name of the class from which the current
+function/method was called from.
+
+EXAMPLE:
+<?php
+    function fix_string(\$a)
+    {
+        echo "Called @ ".
+            xdebug_call_file().
+            ":".
+            xdebug_call_line().
+            " from ".
+            xdebug_call_function();
+    }
+
+    \$ret = fix_string(array('Derick'));
+?>
+
+RESULT:
+Called @ /home/httpd/html/test/xdebug_caller.php:12 from {main}

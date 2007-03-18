@@ -1,0 +1,35 @@
+= xdebug_debug_zval
+Displays information about a variable
+void
+[string varname [, ...]]
+FUNC_VAR_DUMP
+
+TXT:
+This function displays structured information about one or more variables
+that includes its type, value and refcount information. Arrays are explored
+recursively with values.
+
+EXAMPLE:
+<?php
+    \$a = array(1, 2, 3);
+    \$b =& \$a;
+    \$c =& \$a[2];
+
+    xdebug_debug_zval('a');
+?>
+</pre>
+
+TXT:
+In the browser this shows:
+RESULT:
+<img src='images/debug_zval.png' align='center' border='0'/>
+
+TXT:
+On the command line it displays:
+
+RESULT:
+a: (refcount=2, is_ref=1)=array (
+	0 =&gt; (refcount=1, is_ref=0)=1, 
+	1 =&gt; (refcount=1, is_ref=0)=2, 
+	2 =&gt; (refcount=2, is_ref=1)=3)
+

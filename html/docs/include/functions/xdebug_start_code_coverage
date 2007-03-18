@@ -1,0 +1,20 @@
+= xdebug_start_code_coverage
+Starts code coverage
+void
+[int options]
+FUNC_CODE_COVERAGE
+
+TXT:
+This function starts gathering the information for code coverage. The
+information that is collected consists of an two dimensional array with as
+primairy index the executed filename and as secondary key the line number. The
+value in the elements represents the total number of execution units on this
+line have been executed.
+
+TXT:
+Options to this function are:
+
+XDEBUG_CC_UNUSED
+Enables scanning of code to figure out which line has executable code.
+XDEBUG_CC_DEAD_CODE
+Enables branch analyzes to figure out whether code can be executed.

@@ -1,0 +1,23 @@
+= xdebug_var_dump
+Displays detailed information about a variable
+void
+[mixed var [, ...]]
+FUNC_VAR_DUMP
+
+TXT:
+This function displays structured information about one or more expressions
+that includes its type and value. Arrays are explored recursively with values.
+
+SCRIPT:
+<?php
+    var_dump(
+        array(
+            array(TRUE, FALSE, 3), 
+            'twee' => array('4', NULL, '6')
+        )
+    );
+?>  
+
+RETURN:
+<img src='images/vardump.png' align='center' border='0'/>
+

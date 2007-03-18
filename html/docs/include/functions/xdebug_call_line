@@ -1,0 +1,27 @@
+= xdebug_call_line
+Returns the calling line
+int
+none
+FUNC_BASIC
+
+TXT:
+This function returns the line number that contains the function/method that
+called the current function/method.
+
+EXAMPLE:
+<?php
+    function fix_string(\$a)
+    {
+        echo "Called @ ".
+            xdebug_call_file().
+            ":".
+            xdebug_call_line().
+            " from ".
+            xdebug_call_function();
+    }
+
+    \$ret = fix_string(array('Derick'));
+?>
+
+RESULT:
+Called @ /home/httpd/html/test/xdebug_caller.php:12 from {main}

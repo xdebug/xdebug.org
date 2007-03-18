@@ -16,7 +16,7 @@
 		.hide    { visibility: hidden; display: none; }
 		body     { background-color: white; }
 		#sidebar      { font-size: 85%; }
-		#menu	 { font-size: 70%; }
+		#menu	 { font-size: 85%; }
 	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
@@ -30,8 +30,12 @@
 		
 		a        { text-decoration: underline; color: #116633; }
 		a:hover  { color: #004411 }
+		hr       { color: #ffffff; border: none; border-top: 1px solid #004411; height: 1px; }
+		hr.light { border-top: 1px solid #ebefec; }
 		
-		p        { line-height: 1.5em; margin-left: 20px; }
+		p        { line-height: 1.5em; }
+		p.intro  { font-style: italic; }
+		p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
 		.serif   { line-height: 1.5em; }
 		.quote   { font-family: sans-serif; }
         .mk      { color: #004411; font-weight: bold; }
@@ -65,11 +69,19 @@
 		dl.faq dd { margin-left: 20px; margin-top: 5px; }
 		ol li { margin-bottom: 5px; }
 
+		div.settings div.name, div.functions div.name { font-size: 100%; font-weight: bold; }
+		div.settings span.type, div.functions div.name span.type { font-style: italic; }
+		div.settings span.default { font-style: italic; }
+		div.functions div.short-description { font-style: italic; }
+
 		dt.main { font-weight: normal; color: #116633; }
 		dd.main { margin-left: 20px; }
 
 		pre { margin-left: 20px; line-height: 1.5em; }
-		pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
+		div.example, pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
+		div.example { margin-top: 1em; margin-bottom: 1em; }
+
+		div.example-returns { margin-left: 30px; margin-right: 30px; background-color: #f3ffea; line-height: 1.25em; margin-bottom: 1em; }
 
 		h1 { font-variant: small-caps; font-size: x-large }
 		h2 { font-variant: small-caps; font-size: large }
@@ -81,12 +93,12 @@
 <body>
 	<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td style="height: 64px; width: 9%; background: url(images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; background: url(images/topleft.gif);">
+			<td style="height: 64px; width: 9%; background: url(/images/topleft.gif);">&nbsp;</td>
+			<td class="head" style="height: 64px; background: url(/images/topleft.gif);">
 			</td>
-			<td style="height: 64px; width: 35px; background: url(images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; width: 220px; background: url(images/topleft.gif);"><img src="images/xdebug.gif" alt="Xdebug"/></td>
-			<td style="height: 64px; width: 9%; background: url(images/topleft.gif);">&nbsp;</td>
+			<td style="height: 64px; width: 35px; background: url(/images/topleft.gif);">&nbsp;</td>
+			<td class="head" style="height: 64px; width: 220px; background: url(/images/topleft.gif);"><img src="/images/xdebug.gif" alt="Xdebug"/></td>
+			<td style="height: 64px; width: 9%; background: url(/images/topleft.gif);">&nbsp;</td>
 		</tr>
 <?php
 	/* Defining some functions here */

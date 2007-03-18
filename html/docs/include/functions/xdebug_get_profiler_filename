@@ -1,0 +1,9 @@
+= xdebug_get_profiler_filename
+Returns the profile information filename
+string
+none
+FUNC_PROFILER
+
+TXT:
+Returns the name of the file which is used to save profile information to.
+script too.

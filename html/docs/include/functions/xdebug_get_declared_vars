@@ -1,0 +1,29 @@
+= xdebug_get_declared_vars
+Returns declared variables
+array
+none
+FUNC_STACK_TRACE
+
+TXT:
+Returns an array where each element is a variable name which is defined and
+<b>used</b> in the current scope:
+EXAMPLE: 
+<?php
+    class strings {
+        static function fix_strings($a, $b) {
+            foreach ($b as $item) {
+            }
+            var_dump(xdebug_get_declared_vars());
+        }
+    }
+    strings::fix_strings(array(1,2,3), array(4,5,6));
+?>
+RESULT:
+array(2) {
+  [0]=&gt;
+  string(1) "b"
+  [1]=&gt;
+  string(4) "item"
+}
+TXT:
+The variable name "a" is not returned here, as it is not used in that scope.

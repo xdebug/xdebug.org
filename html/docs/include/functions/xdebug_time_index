@@ -1,0 +1,9 @@
+= xdebug_time_index
+Returns the current time index
+float
+none
+FUNC_BASIC
+
+TXT:
+Returns the current time index since the starting of the script in
+seconds.

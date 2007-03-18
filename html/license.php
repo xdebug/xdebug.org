@@ -15,7 +15,7 @@
 <p class="center">
                   The Xdebug License, version 1.01<br />
              (Based on "The PHP License", version 3.0)<br />
-Copyright (c) 2002, 2003, 2004 Derick Rethans. All rights reserved.
+Copyright (c) 2002 - 2007 Derick Rethans. All rights reserved.
 </p>
 <hr />
 

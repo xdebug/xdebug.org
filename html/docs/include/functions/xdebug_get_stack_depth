@@ -1,0 +1,9 @@
+= xdebug_get_stack_depth
+Returns the current stack depth level
+integer
+none
+FUNC_STACK_TRACE
+
+TXT:
+Returns the stack depth level. The main body of a script is level 0 and
+each include and/or function call adds one to the stack depth level.

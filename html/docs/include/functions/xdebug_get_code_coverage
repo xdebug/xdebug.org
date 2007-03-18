@@ -1,0 +1,57 @@
+= xdebug_get_code_coverage
+Returns code coverage information
+array
+none
+FUNC_CODE_COVERAGE
+
+TXT:
+Returns a structure which contains information about how many times an
+execution units were executed on the specified line in your script (including
+include files). The following example:
+
+SCRIPT:
+<?php
+    xdebug_start_code_coverage();
+
+    function a(\$a) {
+        echo \$a * 2.5;
+    }
+
+    function b(\$count) {
+        for (\$i = 0; \$i < \$count; \$i++) {
+            a(\$i + 0.17);
+        }
+    }
+
+    b(6);
+    b(10);
+
+    var_dump(xdebug_get_code_coverage());
+?>  
+
+RESULT:
+array(1) {
+  ["/home/httpd/html/test/xdebug_coverage.php"]=&gt;
+  array(10) {
+    [4]=&gt;
+    int(1)
+    [5]=&gt;
+    int(16)
+    [6]=&gt;
+    int(16)
+    [8]=&gt;
+    int(1)
+    [9]=&gt;
+    int(20)
+    [10]=&gt;
+    int(16)
+    [12]=&gt;
+    int(2)
+    [14]=&gt;
+    int(1)
+    [15]=&gt;
+    int(1)
+    [17]=&gt;
+    int(1)
+  }
+}

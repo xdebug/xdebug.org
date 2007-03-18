@@ -1,0 +1,17 @@
+= xdebug_dump_superglobals
+Displays information about super globals
+void
+none
+FUNC_VAR_DUMP
+
+TXT:
+This function dumps the values of the elements of the super globals as
+specified with the 'xdebug.dump.' php.ini settings as described in the section <a
+href='docs-settings.php#superglobal'>settings</a>. An example output might look like (the
+only ini setting that is made for this is 'xdebug.dump.SERVER = REMOTE_ADDR'):
+
+RESULT:
+<table border='1' cellspacing='0'>
+<tr><th colspan='3' bgcolor='#aaaaaa'>Dump $_SERVER</th></tr>
+<tr><td colspan='2' bgcolor='#ffffff'>$_SERVER['REMOTE_ADDR']</td><td bgcolor='#ffffff'>'127.0.0.1'</td></tr>
+</table>

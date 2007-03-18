@@ -1,0 +1,10 @@
+= xdebug_get_tracefile_name
+Returns the name of the function trace file
+string
+none
+FUNC_FUNCTION_TRACE
+
+TXT:
+Returns the name of the file which is used to trace the output of this
+script too. This is useful when <a href='docs-settings.php#auto_trace'>auto
+tracing</a> is used.

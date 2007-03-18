@@ -1,0 +1,10 @@
+= xdebug_stop_code_coverage
+Stops code coverage
+void
+none
+FUNC_CODE_COVERAGE
+
+TXT:
+This function stops collecting information, the information in memory will
+not be destroyed so that you can resume the gathering of information with the
+<i>xdebug_start_code_coverage()</i> function again.

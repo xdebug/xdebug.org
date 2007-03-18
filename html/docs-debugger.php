@@ -32,6 +32,7 @@ has been submitted as an enhancement for the
 <a href='http://www.eclipse.org/php/'>PDT</a>.</li>
 <li>ActiveState's <b><a href='http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD'>Komodo</a></b>.</li>
 <li>WaterProof's <b><a href='http://www.waterproof.fr/products/PHPEdit/'>PHPEdit</a></b> (from version 2.10).</li>
+<li>Anchor System's <b><a href='http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html'>Peggy</a></b> (Japanese).</li>
 <li><b><a href='http://protoeditor.sourceforge.net/'>Protoeditor</a></b>.</li>
 <li><b><a href='http://tswebeditor.net.tc/'>tsWebeditor</a></b>.</li>
 <li>Xored's <b><a href='http://www.xored.com/trustudio'>TrueStudio IDE</a></b>.</li>

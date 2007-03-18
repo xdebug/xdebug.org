@@ -1,0 +1,8 @@
+= xdebug_stop_trace
+Stops the current function trace
+void
+none
+FUNC_FUNCTION_TRACE
+
+TXT:
+Stop tracing function calls and closes the trace file.
