@@ -10,7 +10,7 @@
 <?php include "include/menu.php"; ?>
 
 <a name="functionality"></a>
-<span class="sans">FUNCTIONALITY</span><br />
+<h2>Functionality</h2>
 
 <p>
 The Xdebug extension helps you debugging your script by providing a lot of
@@ -39,7 +39,7 @@ Xdebug also provides:
 </p>
 
 <a name="announcements"></a>
-<span class="sans">ANNOUNCEMENTS</span><br />
+<h2>Announcements</h2>
 
 <dl class="main">
 <dt class="main">[31-01-2007]</dt>

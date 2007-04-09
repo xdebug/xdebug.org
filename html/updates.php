@@ -15,7 +15,7 @@
 	}
 ?>
 
-<span class="sans">UPDATES</span><br />
+<h2>Updates</h2>
 
 <span class='quote'>
 <dl>

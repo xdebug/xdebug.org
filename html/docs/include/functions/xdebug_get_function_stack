@@ -27,49 +27,31 @@ EXAMPLE:
 ?>
 
 RESULT:
-array(3) {
-  [0]=&gt;
-  array(4) {
-    ["function"]=&gt;
-    string(6) "{main}"
-    ["file"]=&gt;
-    string(38) "/home/httpd/html/test/xdebug_error.php"
-    ["line"]=&gt;
-    int(0)
-    ["params"]=&gt;
-    array(0) {
-    }
-  }
-  [1]=&gt;
-  array(5) {
-    ["function"]=&gt;
-    string(11) "fix_strings"
-    ["class"]=&gt;
-    string(7) "strings"
-    ["file"]=&gt;
-    string(38) "/home/httpd/html/test/xdebug_error.php"
-    ["line"]=&gt;
-    int(16)
-    ["params"]=&gt;
-    array(1) {
-      [0]=&gt;
-      string(21) "array (0 =&gt; 'Derick')"
-    }
-  }
-  [2]=&gt;
-  array(5) {
-    ["function"]=&gt;
-    string(10) "fix_string"
-    ["class"]=&gt;
-    string(7) "strings"
-    ["file"]=&gt;
-    string(38) "/home/httpd/html/test/xdebug_error.php"
-    ["line"]=&gt;
-    int(10)
-    ["params"]=&gt;
-    array(1) {
-      [0]=&gt;
-      string(8) "'Derick'"
-    }
-  }
-}
+<b>array</b>
+  0 <font color='#888a85'>=&gt;</font> 
+    <b>array</b>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+      'params' <font color='#888a85'>=&gt;</font> 
+        <b>array</b>
+          <i><font color='#888a85'>empty</font></i>
+  1 <font color='#888a85'>=&gt;</font> 
+    <b>array</b>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_strings'</font> <i>(length=11)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>18</font>
+      'params' <font color='#888a85'>=&gt;</font> 
+        <b>array</b>
+          'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'array (0 =&gt; &apos;Derick&apos;)'</font> <i>(length=21)</i>
+  2 <font color='#888a85'>=&gt;</font> 
+    <b>array</b>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_string'</font> <i>(length=10)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+      'params' <font color='#888a85'>=&gt;</font> 
+        <b>array</b>
+          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&apos;Derick&apos;'</font> <i>(length=8)</i>
+

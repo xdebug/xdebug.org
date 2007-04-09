@@ -5,5 +5,6 @@ none
 FUNC_BASIC
 
 TXT:
-Returns the maximum amount of memory the script used up til now. (Only
-works when PHP was compiled with --enable-memory-limit).
+Returns the maximum amount of memory the script used until now.  Before PHP
+5.2.1, this only works if PHP is compiled with --enable-memory-limit. From PHP
+5.2.1 and later this function is always available.

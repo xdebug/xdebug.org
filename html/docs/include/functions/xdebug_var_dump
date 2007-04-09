@@ -7,17 +7,34 @@ FUNC_VAR_DUMP
 TXT:
 This function displays structured information about one or more expressions
 that includes its type and value. Arrays are explored recursively with values.
+See the introduction of [FEAT:display] on which php.ini settings affect this
+function.
 
-SCRIPT:
+EXAMPLE:
 <?php
-    var_dump(
-        array(
-            array(TRUE, FALSE, 3), 
-            'twee' => array('4', NULL, '6')
-        )
-    );
+ini_set('xdebug.var_display_max_children', 3 );
+$c = new stdClass;
+$c->foo = 'bar';
+$c->file = fopen( '/etc/passwd', 'r' );
+var_dump(
+    array(
+        array(TRUE, 2, 3.14, 'foo'),
+        'object' => $c
+    )
+);
 ?>  
 
 RESULT:
-<img src='images/vardump.png' align='center' border='0'/>
-
+<pre>
+<b>array</b>
+  0 <font color='#888a85'>=&gt;</font> 
+    <b>array</b>
+      0 <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>true</font>
+      1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2</font>
+      2 <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>3.14</font>
+      <i>more elements...</i>
+  'object' <font color='#888a85'>=&gt;</font> 
+    <b>object</b>(<i>stdClass</i>)[<i>1</i>]
+      <i>public</i> 'foo' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'bar'</font> <i>(length=3)</i>
+      <i>public</i> 'file' <font color='#888a85'>=&gt;</font> <b>resource</b>(<i>3</i><font color='#2e3436'>,</font> <i>stream</i>)
+</pre>

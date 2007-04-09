@@ -1,0 +1,9 @@
+= var_dump
+Displays detailed information about a variable
+void
+[mixed var [, ...]]
+FUNC_VAR_DUMP
+
+TXT:
+This function is overloaded by Xdebug, see the description for
+[FUNC:xdebug_var_dump].

@@ -9,7 +9,7 @@
 
 <?php include "include/menu.php"; ?>
 
-<span class="sans">BUGS</span><br />
+<h2>Bugs</h2>
 
 <p>
 If you think that you found a bug in Xdebug, please file a bugreport at the <a
@@ -21,7 +21,7 @@ fixing them.
 
 <br />
 
-<span class="sans">MAILINGLIST</span><br />
+<h2>Mailinglist</h2>
 
 <p>
 Discussions about Xdebug, feature requests etc. can be held on the Xdebug
@@ -40,7 +40,7 @@ href="http://xdebug.org/archives/xdebug-dev/">here</a>.
 
 <br />
 
-<span class="sans">E-MAIL</span><br />
+<h2>E-mail</h2>
 
 <p>
 If you have a general question about Xdebug, please send an email to

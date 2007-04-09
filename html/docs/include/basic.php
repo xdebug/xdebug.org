@@ -11,6 +11,8 @@ define( 'FUNC_VAR_DUMP',         0x0010000 ); // affects overloaded var_dump fun
 define( 'FUNC_PROFILER',         0x0020000 ); // affects overloaded var_dump function
 define( 'FUNC_CODE_COVERAGE',    0x0040000 );
 
+define( 'FUNC_ALL',              0x007ffff );
+
 function add_keywords( $text )
 {
 	$text = str_replace( '[KW:last_release_version]', '2.0.0RC3', $text );
@@ -31,32 +33,46 @@ function add_links( $text )
 
 function do_related_settings( $func )
 {
-	echo '<span class="sans">RELATED SETTINGS</span>';
-	echo "<div class='settings'>\n";
+	ksort( $GLOBALS['settings'] );
+	$settings = '';
 	foreach ( $GLOBALS['settings'] as $name => $setting )
 	{
 		if ( ( $func & $setting[4] ) )
 		{
-			echo "<hr class='light'/>\n";
+			$settings .= "<a name='{$name}'></a>\n";
+			$settings .= "<hr class='light'/>\n";
 			$type = $setting[0];
 			$default = $setting[1];
 
 			$text = add_links( $setting[3] );
-			echo "<div class='name'>xdebug.{$name}</div>\n";
-			echo "Type: <span class='type'>{$type}</span>, ";
-			echo "Default value: <span class='default'>{$default}</span>\n";
-			echo "<div class='description'>{$text}</div>\n";
+			$settings .= "<div class='name'>xdebug.{$name}</div>\n";
+			$settings .= "Type: <span class='type'>{$type}</span>, ";
+			$settings .= "Default value: <span class='default'>{$default}</span>\n";
+			$settings .= "<div class='description'>{$text}</div>\n";
 		}
 	}
+	if ( empty( $settings ) )
+	{
+		return;
+	}
+
+	echo '<h2>Related Settings</h2>';
+	echo "<div class='settings'>\n";
+	echo $settings;
 	echo "</div>\n";
+	echo "<hr />\n";
 }
 
 function get_func_info()
 {
 	$functions = array();
-	$f = glob( dirname( __FILE__ ) . '/functions/xdebug*' );
+	$f = glob( dirname( __FILE__ ) . '/functions/*' );
 	foreach ( $f as $filename )
 	{
+		if ( !is_file( $filename ) )
+		{
+			continue;
+		}
 		$contents = file( $filename );
 		$function = trim( $contents[0], "= \n" );
 		$new_func = array();
@@ -77,12 +93,12 @@ function do_format_data_TXT( $data )
 
 function do_format_data_RESULT( $data )
 {
-	return "<div class='example-returns'><strong>Returns:</strong><br /><br /><pre>\n" . implode( ' ', $data ) . "</pre></div>\n";
+	return "<div class='example-returns'><strong>Returns:</strong><br /><br /><pre>\n" . implode( '', $data ) . "</pre></div>\n";
 }
 
 function do_format_data_EXAMPLE( $data )
 {
-	return "<div class='example'><strong>Example:</strong><br /><br />\n" . highlight_string( implode( ' ', $data ), true ) . "</div>\n";
+	return "<div class='example'><strong>Example:</strong><br /><br />\n" . highlight_string( implode( '', $data ), true ) . "</div>\n";
 }
 
 function do_format_data( $contents )
@@ -134,31 +150,37 @@ function do_format_data( $contents )
 
 function do_related_functions( $func )
 {
-	echo '<span class="sans">RELATED FUNCTIONS</span>';
-	echo "<div class='functions'>\n";
+	$functions = '';
 	$GLOBALS['functions'] = get_func_info();
 	foreach ( $GLOBALS['functions'] as $name => $function )
 	{
 		if ( ( $func & $function['function'] ) )
 		{
-			echo "<hr class='light'/>\n";
+			$functions .= "<a name='{$name}'></a>\n";
+			$functions .= "<hr class='light'/>\n";
 
 			$text = add_links( $function['short_desc'] );
 			if ( $function['arguments'] === 'none' )
 			{
-				echo "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( )</div>\n";
+				$functions .= "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( )</div>\n";
 			}
 			else
 			{
-				echo "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( <span class='type'>{$function['arguments']}</span> )</div>\n";
+				$functions .= "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( <span class='type'>{$function['arguments']}</span> )</div>\n";
 			}
-			echo "<div class='short-description'>{$text}</div>\n";
-			echo "<div class='description'>\n";
-			echo $function['data'];
-			echo "</div>\n";
+			$functions .= "<div class='short-description'>{$text}</div>\n";
+			$functions .= "<div class='description'>\n";
+			$functions .= $function['data'];
+			$functions .= "</div>\n";
 		}
 	}
+	if ( empty( $functions ) )
+	{
+		return;
+	}
+	echo '<h2>Related Functions</h2>';
+	echo "<div class='functions'>\n";
+	echo $functions;
 	echo "</div>\n";
+	echo "<hr />\n";
 }
-
-

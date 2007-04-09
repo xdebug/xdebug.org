@@ -6,20 +6,26 @@ FUNC_VAR_DUMP
 
 TXT:
 This function dumps the values of the elements of the super globals as
-specified with the 'xdebug.dump.' php.ini settings as described in the section <a
-href='docs-settings.php#superglobal'>settings</a>. An example output might look like (the
-only ini setting that is made for this is 'xdebug.dump.SERVER = REMOTE_ADDR'):
+specified with the [CFG:dump.*] php.ini settings. For the example below the settings in php.ini are:
+
+EXAMPLE:
+xdebug.dump.GET=*
+xdebug.dump.SERVER=REMOTE_ADDR
+
+Query string:
+?var=fourty%20two&array[a]=a&array[9]=b
 
 RESULT:
 <table border='1' cellspacing='0'>
+<tr><th colspan='5' align='left' bgcolor='#e9b96e'>Dump <i>$_SERVER</i></th></tr>
+<tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$_SERVER['REMOTE_ADDR']&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre><small>string</small> <font color='#cc0000'>'127.0.0.1'</font> <i>(length=9)</i>
+</pre></td></tr>
 <tr><th colspan='5' align='left' bgcolor='#e9b96e'>Dump <i>$_GET</i></th></tr>
 <tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$_GET['var']&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre><small>string</small> <font color='#cc0000'>'fourty two'</font> <i>(length=10)</i>
 </pre></td></tr>
 <tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$_GET['array']&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre>
 <b>array</b>
-
   'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'a'</font> <i>(length=1)</i>
-  'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'b'</font> <i>(length=1)</i>
-
+  9 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'b'</font> <i>(length=1)</i>
 </pre></td></tr>
 </table>

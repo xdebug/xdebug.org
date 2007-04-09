@@ -9,7 +9,7 @@
 
 <?php include "include/menu.php"; ?>
 
-<span class="sans">LICENSE</span><br />
+<h2>License</h2>
 
 <hr />
 <p class="center">

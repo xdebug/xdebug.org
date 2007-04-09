@@ -7,7 +7,15 @@ FUNC_VAR_DUMP
 TXT:
 This function displays structured information about one or more variables
 that includes its type, value and refcount information. Arrays are explored
-recursively with values.
+recursively with values. This function is implemented differently from PHP's <a
+href='http://php.net/debug-zval-dump'>debug_zval_dump()</a> function in order
+to work around the problems that that function has because the variable itself
+is actually passed to the function. Xdebug's version is better as it uses the
+variable name to lookup the variable in the internal symbol table and accesses
+all the properties directly without having to deal with actually passing a
+variable to a function. The result is that the information that this function
+returns is much more accurate than PHP's own function for showing zval
+information.
 
 EXAMPLE:
 <?php

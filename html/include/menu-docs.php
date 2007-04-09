@@ -8,7 +8,7 @@
 <br />
 <br />
 » Documentation for: <b>Xdebug 2</b><br />
-<?php if ( $load_page !== '' ) { ?>
+<?php if ( isset($load_page) && $load_page !== '' ) { ?>
 » Feature: <b><?php echo $features[$load_page][0]; ?></b><br />
 <?php } ?>
 <hr />

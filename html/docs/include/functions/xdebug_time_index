@@ -7,3 +7,17 @@ FUNC_BASIC
 TXT:
 Returns the current time index since the starting of the script in
 seconds.
+
+EXAMPLE:
+<?php
+echo xdebug_time_index(), "\n";
+for ($i = 0; $i < 250000; $i++)
+{
+	// do nothing
+}
+echo xdebug_time_index(), "\n";
+?>
+
+RESULT:
+0.00038003921508789
+0.76580691337585

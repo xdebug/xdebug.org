@@ -213,8 +213,9 @@ variable was not present.",
 		'boolean', 0, ONE | TWO,
 		"This switch controls whether Xdebug should try to contact a debug client
 which is listening on the host and port as set with the settings
-[CFG:remote_host] and [CFG:remote_port]. If a connection can not be established
-the script will just continue as if this setting was Off.",
+[CFG:remote_host] and
+[CFG:remote_port]. If a connection can not be established the script will just
+continue as if this setting was Off.",
 		FUNC_REMOTE
 	),
 
@@ -222,11 +223,11 @@ the script will just continue as if this setting was Off.",
 		'string', 'dbgp', ONE | TWO,
 		"Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
-output, or 'gdb' which enables the GDB like debugger interface. As there is
-currently no bundled client for the PHP 3 style debugger and because it's much
-less powerfull then the GDB like one, it is advised to leave this setting to
-'gdb'.
-FIXME",
+output, 'gdb' which enables the GDB like debugger interface or 'dbgp' - the
+brand new <a href='/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
+more widely supported by clients. See more information in the introduction for
+[FEAT:remote].
+",
 		FUNC_REMOTE
 	),
 
@@ -262,9 +263,10 @@ condition occurs.</dd>
 
 	'remote_port' => array(
 		'integer', 9000, ONE | TWO,
-		"The port to which Xdebug tries to connect on the remote host. As the
-bundled debug client only listens at the hardcoded port 9000 (or 17869 for
-Xdebug 1.3) it is best to leave this setting unchanged.",
+		"The port to which Xdebug tries to connect on the remote host. Port
+9000 is the default for both the client and the bundled debugclient.
+As many clients use this port number, it is best to leave this setting
+unchanged.",
 		FUNC_REMOTE
 	),
 

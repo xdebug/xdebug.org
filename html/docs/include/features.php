@@ -1,11 +1,25 @@
 <?php
 $features = array(
+	'all_functions' => array(
+		'All Functions',
+		FUNC_ALL,
+		'This section describes all available functions available in Xdebug.',
+		''
+	),
+
+	'all_settings' => array(
+		'All Settings',
+		FUNC_ALL,
+		'This section describes all available configuration settings available in Xdebug.',
+		''
+	),
+
 	'install' => array(
 		'Installation',
 		FUNC_INSTALL,
 		'This section describes on how to install Xdebug.',
 		"
-<span class='sans'>PRECOMPILED MODULES</span><br />
+<h2>Precompiled Modules</h2>
 
 <p>
 There are a few precompiled modules for Windows, they are all for the non-debug
@@ -21,7 +35,7 @@ zend_extension_ts='c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll
 </p>
 
 <a name='pecl'></a>
-<span class='sans'>PECL INSTALLATION</span><br />
+<h2>PECL Installation</h2>
 
 <p>
 As of Xdebug 0.9.0 you can install Xdebug through PEAR/PECL. This only works
@@ -42,7 +56,7 @@ zend_extension='/usr/local/php/modules/xdebug.so'
 </pre>
 
 <a name='source'></a>
-<span class='sans'>INSTALLATION FROM SOURCE</span><br />
+<h2>Installation From Source</h2>
 
 <p>
 You can download the source of the latest <b>stable</b> release [KW:last_release_version].
@@ -58,7 +72,7 @@ This will checkout the latest development version which is currently [KW:last_de
 </p>
 
 <a name='compile'></a>
-<span class='sans'>COMPILING</span><br />
+<h2>Compiling</h2>
 
 <p>
 You compile Xdebug separately from the rest of PHP.  Note, however,
@@ -116,7 +130,7 @@ working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 </ol>
 
 <a name='configure-php'></a>
-<span class='sans'>CONFIGURE PHP TO USE XDEBUG</span><br />
+<h2>Configure PHP to Use Xdebug</h2>
 
 <ol>
 <li>add the following line to php.ini:
@@ -138,7 +152,7 @@ twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
 </p>
 
 <a name='compat'></a>
-<span class='sans'>COMPATIBILITY</span><br />
+<h2>Compatibility</h2>
 <p>
 Xdebug does not work together with the Zend Optimizer or any other Zend
 extension (DBG, APC, APD etc).  This is due to compatibility problems with
@@ -148,7 +162,7 @@ course try to fix those.
 
 
 <a name='phpize'></a>
-<span class='sans'>PHPIZE OUTPUT TABLE</span><br />
+<h2>phpize Output Table</h2>
 <p>
 <table border='1' cellspacing='0'>
 	<tr>
@@ -184,7 +198,7 @@ course try to fix those.
 </p>
 
 <a name='debugclient'></a>
-<span class='sans'>DEBUGCLIENT INSTALLATION</span><br />
+<h2>Debugclient Installation</h2>
 
 <p>
 Unpack the Xdebug source tarball and issue the following commands:
@@ -237,13 +251,156 @@ $ LDFLAGS=-lncurses ./configure --with-libedit
 		places limits on the amount of array elements/object properties,
 		maximum depth and string lengths. There are a few other functions
 		dealing with variable display as well.',
-		""
+		'
+<h2>Effect of settings on var_dump()</h2>
+<p>
+There is a number of settings that control the output of Xdebug\'s modified
+[FUNC:var_dump] function: [CFG:var_display_max_children],
+[CFG:var_display_max_data]
+and [CFG:var_display_max_depth]. The effect of these three settings is best
+shown with an example. The script below is run four time, each time with
+different settings. You can use the tabs to see the difference.
+</p>
+<h3>The script</h3>
+<div class="example">
+<p>
+<code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">test&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$pub&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$priv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$prot&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">42</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$t&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$t</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">pub&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$t</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'one\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">\'a&nbsp;somewhat&nbsp;long&nbsp;string!\'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two.one\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two.one.zero\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">210</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two.one.one\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two.one.one.zero\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">3.141592564</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'two.one.one.one\'&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2.7</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'three\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$t</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">\'four\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">),<br />);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span>
+
+</span>
+</code>
+</p>
+</div>
+<h3>The results</h3>
+    <div id="demosettings" class="yui-navset">
+        <ul class="yui-nav">
+            <li class="selected"><a href="#default"><em>default</em></a></li>
+            <li><a href="#children"><em>children=2</em></a></li>
+            <li><a href="#data"><em>data=16</em></a></li>
+            <li><a href="#depth"><em>depth=2</em></a></li>
+			<li><a href="#multiple"><em>children=3, data=8, depth=1</em></a></li>
+        </ul>
+        <div class="yui-content">
+            <div id="default">
+<pre>
+<b>array</b>
+  \'one\' <font color=\'#888a85\'>=&gt;</font> <small>string</small> <font color=\'#cc0000\'>\'a somewhat long string!\'</font> <i>(length=23)</i>
+  \'two\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      \'two.one\' <font color=\'#888a85\'>=&gt;</font> 
+        <b>array</b>
+          \'two.one.zero\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>210</font>
+          \'two.one.one\' <font color=\'#888a85\'>=&gt;</font> 
+            <b>array</b>
+              ...
+  \'three\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>public</i> \'pub\' <font color=\'#888a85\'>=&gt;</font> 
+        <i>&</i><b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>private</i> \'priv\' <font color=\'#888a85\'>=&gt;</font> <small>boolean</small> <font color=\'#75507b\'>true</font>
+      <i>protected</i> \'prot\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>42</font>
+  \'four\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      0 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>0</font>
+      1 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>1</font>
+      2 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>2</font>
+      3 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>3</font>
+      4 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>4</font>
+      5 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>5</font>
+</pre>
+            </div>
+            <div id="children">
+<pre>
+<b>array</b>
+  \'one\' <font color=\'#888a85\'>=&gt;</font> <small>string</small> <font color=\'#cc0000\'>\'a somewhat long string!\'</font> <i>(length=23)</i>
+  \'two\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      \'two.one\' <font color=\'#888a85\'>=&gt;</font> 
+        <b>array</b>
+          \'two.one.zero\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>210</font>
+          \'two.one.one\' <font color=\'#888a85\'>=&gt;</font> 
+            <b>array</b>
+              ...
+  <i>more elements...</i>
+</pre>
+            </div>
+            <div id="data">
+<pre>
+<b>array</b>
+  \'one\' <font color=\'#888a85\'>=&gt;</font> <small>string</small> <font color=\'#cc0000\'>\'a somewhat long \'...</font> <i>(length=23)</i>
+  \'two\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      \'two.one\' <font color=\'#888a85\'>=&gt;</font> 
+        <b>array</b>
+          \'two.one.zero\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>210</font>
+          \'two.one.one\' <font color=\'#888a85\'>=&gt;</font> 
+            <b>array</b>
+              ...
+  \'three\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>public</i> \'pub\' <font color=\'#888a85\'>=&gt;</font> 
+        <i>&</i><b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>private</i> \'priv\' <font color=\'#888a85\'>=&gt;</font> <small>boolean</small> <font color=\'#75507b\'>true</font>
+      <i>protected</i> \'prot\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>42</font>
+  \'four\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      0 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>0</font>
+      1 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>1</font>
+      2 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>2</font>
+      3 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>3</font>
+      4 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>4</font>
+      5 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>5</font>
+</pre>
+            </div>
+            <div id="depth">
+<pre>
+<b>array</b>
+  \'one\' <font color=\'#888a85\'>=&gt;</font> <small>string</small> <font color=\'#cc0000\'>\'a somewhat long string!\'</font> <i>(length=23)</i>
+  \'two\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      \'two.one\' <font color=\'#888a85\'>=&gt;</font> 
+        <b>array</b>
+          ...
+  \'three\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>public</i> \'pub\' <font color=\'#888a85\'>=&gt;</font> 
+        <i>&</i><b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>private</i> \'priv\' <font color=\'#888a85\'>=&gt;</font> <small>boolean</small> <font color=\'#75507b\'>true</font>
+      <i>protected</i> \'prot\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>42</font>
+  \'four\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      0 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>0</font>
+      1 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>1</font>
+      2 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>2</font>
+      3 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>3</font>
+      4 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>4</font>
+      5 <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>5</font>
+</pre>
+            </div>
+            <div id="multiple">
+<pre>
+<b>array</b>
+  \'one\' <font color=\'#888a85\'>=&gt;</font> <small>string</small> <font color=\'#cc0000\'>\'a somewh\'...</font> <i>(length=23)</i>
+  \'two\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>array</b>
+      ...
+  \'three\' <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>test</i>)[<i>1</i>]
+      ...
+  <i>more elements...</i>
+</pre>
+            </div>
+        </div>
+    </div>',
+		array( 'tabfields' => array( 'demosettings' ) )
 	),
 	'stack_trace' => array(
 		'Stack Traces',
 		FUNC_STACK_TRACE,
-		'The information that stack traces display, and the way how they are
-		presented, can be configured to suit your needs.',
+		'When Xdebug is activated it will show a stack trace whenever PHP
+		decides to show a notice, warning, error etc. The information that
+		stack traces display, and the way how they are presented, can be
+		configured to suit your needs.',
 		""
 	),
 	'execution_trace' => array(
@@ -269,7 +426,7 @@ $ LDFLAGS=-lncurses ./configure --with-libedit
 		WinCacheGrind.',
 		'
 <a name="introduction"></a>
-<span class="sans">INTRODUCTION</span><br />
+<h2>Introduction</h2>
 
 <p>Xdebug\'s Profiler is a powerful tool that gives you the ability to analyze
 your PHP code and determine bottlenecks or generally see which parts of your
@@ -287,7 +444,7 @@ package also comes with a perl script "ct_annotate" which produces ASCII output
 from the profiler trace files.</p>
 
 <a name="starting"></a>
-<span class="sans">STARTING THE PROFILER</span><br />
+<h2>Starting The Profiler</h2>
 
 <p>Profiling is enabled by setting the
 [CFG:profiler_enable] setting
@@ -300,10 +457,10 @@ directive. The name of the generated file always starts with
 directory containing the initially debugged script. Make sure you have enough
 space in your [CFG:profiler_output_dir] as the amount of information generated by the profiler can be
 enormous for complex scripts, for example up to 500MB for a complex application
-like <a href="http://ez.no">eZ publish</a>.</p>
+like <a href="http://ez.no">eZ Publish</a>.</p>
 
 <a name="misc"></a>
-<span class="sans">ANALYSING PROFILES</span><br />
+<h2>Analysing Profiles</h2>
 
 <p>After a profile information file has been generated you can open it with
 <a href="http://kcachegrind.sf.net">KCacheGrind</a>:</p>
@@ -366,7 +523,7 @@ selected one, again either direct or indirect.</p>
 		to allow this, and introduces a few clients.',
 		'
 <a name="introduction"></a>
-<span class="sans">INTRODUCTION</span><br />
+<h2>Introduction</h2>
 
 <p>Xdebug\'s (remote) debugger allows you to examine data structure, 
 interactively walk through your and debug your code. There are two different
@@ -376,7 +533,7 @@ href="/docs-dbgp.php">DBGp</a> protocol which is implemented in Xdebug 2.
 </p>
 
 <a name="clients"></a>
-<span class="sans">CLIENTS</span><br />
+<h2>Clients</h2>
 <p>
 Xdebug 2 is bundled with a <b>simple command line client</b> for the
 <a href="/docs-dbgp.php">DBGp</a> protocol.
@@ -397,17 +554,18 @@ has been submitted as an enhancement for the
 </ul>
 </p>
 <p>
-A simple command line client for the GDB protocol is bundled with <b>Xdebug
-1.3</b>. A client implementation of the deprecated GDB protocol can also be found in the free editor
-<a href="http://weaverslave.ws">WeaverSlave</a>.
+A simple command line client for the GDB protocol is bundled with Xdebug 1.3. A
+client implementation of the deprecated GDB protocol can also be found in the
+free editor <a href="http://weaverslave.ws">WeaverSlave</a>.
 </p>
 
 <a name="starting"></a>
-<span class="sans">STARTING THE DEBUGGER</span><br />
+<h2>Starting The Debugger</h2>
 
 <p>In order to enable Xdebug\'s debugger you need to make some configuration
 settings in php.ini. These settings are [CFG:remote_enable] to enable the
-debugger, [CFG:remote_host] and [CFG:remote_port] to configure the IP address
+debugger, [CFG:remote_host] and
+[CFG:remote_port] to configure the IP address
 and port where the debugger should connect to and [CFG:remote_handler] to
 configure which debug backend to use ("gdb" or "dbgp"). If you want the
 debugger to initiate a session when an error situation occurs (php error or
@@ -426,11 +584,13 @@ and you can do that in two ways:
 <li>When running the script from the command line you need to set an
 environment variable, like:
 <pre class="example">
-export XDEBUG_CONFIG="[CFGS:idekey]=session_name [CFGS:remote_enable]=1"
+export XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 php myscript.php
 </pre>
-You can also configure the [CFG:remote_host], [CFG:remote_port],
-[CFG:remote_mode] and [CFG:remote_handler] in this same environment variable.
+You can also configure the [CFG:remote_host],
+[CFG:remote_port],
+[CFG:remote_mode] and
+[CFG:remote_handler] in this same environment variable.
 All those configurable settings can also be set with normal php.ini
 settings.</li>
 
@@ -456,8 +616,8 @@ When the debugclient starts it will show the following information and then
 waits until a connection is initiated by the debug server:
 </p>
 <pre class="example">
-Xdebug Simple DBGp client (0.8.0)
-Copyright 2002-2004 by Derick Rethans.
+Xdebug Simple DBGp client (0.10.0)
+Copyright 2002-2007 by Derick Rethans.
 - libedit support: enabled
 	 
 Waiting for debug server to connect.
@@ -467,26 +627,31 @@ After a connection is made the output of the debug server is shown:
 </p>
 <pre class="example">
 Connect
-&lt;init fileuri="file:///home/derick/foo5.php" language="PHP"
-      protocol_version="1.0" appid="27010"&gt;
-    &lt;engine version="2.0.0dev"&gt;Xdebug&lt;/engine&gt;
-    &lt;author&gt;Derick Rethans&lt;/author&gt;
-    &lt;url&gt;http://xdebug.org&lt;/url&gt;
-    &lt;copyright&gt;Copyright (c) 2002-2004 by Derick Rethans&lt;/copyright&gt;
-&lt;/init&gt;
+&lt;?xml version="1.0" encoding="iso-8859-1"?>
+&lt;init xmlns="urn:debugger_protocol_v1"
+      xmlns:xdebug="http://xdebug.org/dbgp/xdebug"
+      fileuri="file:///home/httpd/www.xdebug.org/html/docs/index.php"
+      language="PHP"
+      protocol_version="1.0"
+      appid="13202"
+      idekey="derick">
+  &lt;engine version="2.0.0RC4-dev">&lt;![CDATA[Xdebug]]>&lt;/engine>
+  &lt;author>&lt;![CDATA[Derick Rethans]]>&lt;/author>
+  &lt;url>&lt;![CDATA[http://xdebug.org]]>&lt;/url>
+  &lt;copyright>&lt;![CDATA[Copyright (c) 2002-2007 by Derick Rethans]]>&lt;/copyright>
+&lt;/init>
 (cmd)
 </pre>
 <p>
-Now you can use the commandset as explained on the
-<a href="docs-gdb.php">GDB</a> or
-<a href="docs-dbgp.php">DBGp</a> documentation page. When the script ends the
+Now you can use the commandset as explained on the <a
+href="/docs-dbgp.php">DBGp</a> documentation page. When the script ends the
 debug server disconnects from the client and the debugclient resumes with
 waiting for a new connection.
 </p>
 
 
 <a name="browser_session"></a>
-<span class="sans">HTTP DEBUG SESSIONS</span><br />
+<h2>HTTP Debug Sessions</h2>
 <p>
 Xdebug contains functionality to keep track of a debug session when started
 through a browser: cookies. This works like this:
@@ -503,6 +668,12 @@ parameter <code>XDEBUG_SESSION_STOP</code>. Xdebug will then no longer try
 to make a connection to the debugclient.</li>
 </ul>
 </p>
+<p>
+There is also a FireFox 2 extension that allows you to trigger Xdebug\'s
+debugger without having to use XDEBUG_SESSION_START as parameter. The extension
+works by adding the XDEBUG_SESSION cookie itself. You can configure which [CFG:idekey:IDE key]
+it uses. You can find this extension <a href="https://addons.mozilla.org/en-US/firefox/addon/3960">here</a>.
+</p>
 		'
 	),
 	'faq' => array(
@@ -510,7 +681,7 @@ to make a connection to the debugclient.</li>
 		0,
 		'Frequently Asked Questions',
 		'
-<span class="sans">USING XDEBUG</span>
+<h2>Using Xdebug</h2>
 <dl class="faq">
 <dt>Q: phpinfo() reports that Xdebug is installed and enabled, yet I
 still don\'t get any stacktraces when an error happens.

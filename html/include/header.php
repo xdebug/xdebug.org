@@ -90,6 +90,38 @@
 
 		code { background-color: #eaffeb; }
 	</style>
+<?php
+	if ( !empty( $tabFields ) )
+	{
+?>
+<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/tabview.css">
+<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/border_tabs.css">
+<script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
+<script type="text/javascript" src="/yui/build/event/event.js"></script>
+<script type="text/javascript" src="/yui/build/dom/dom.js"></script>
+<script type="text/javascript" src="/yui/build/element/element-beta.js"></script>
+
+<script type="text/javascript" src="/yui/build/tabview/tabview.js"></script>
+
+<style type="text/css">
+<?php foreach( $tabFields as $field ) { ?>
+#<?php echo $field; ?> .yui-content { padding:1em; } /* pad content container */
+<?php } ?>
+</style>
+
+<script type="text/javascript">
+YAHOO.example.init = function() {
+<?php foreach( $tabFields as $field ) { ?>
+    var tabView<?php echo $field; ?> = new YAHOO.widget.TabView('<?php echo $field; ?>');
+<?php } ?>
+};
+
+YAHOO.example.init();
+</script>
+<?php
+	}
+?>
+
 </head>
 <body>
 	<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">

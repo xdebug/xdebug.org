@@ -30,28 +30,17 @@ EXAMPLE:
 ?>  
 
 RESULT:
-array(1) {
-  ["/home/httpd/html/test/xdebug_coverage.php"]=&gt;
-  array(10) {
-    [4]=&gt;
-    int(1)
-    [5]=&gt;
-    int(16)
-    [6]=&gt;
-    int(16)
-    [8]=&gt;
-    int(1)
-    [9]=&gt;
-    int(20)
-    [10]=&gt;
-    int(16)
-    [12]=&gt;
-    int(2)
-    [14]=&gt;
-    int(1)
-    [15]=&gt;
-    int(1)
-    [17]=&gt;
-    int(1)
-  }
-}
+<b>array</b>
+  '/home/httpd/html/test/xdebug/docs/xdebug_get_code_coverage.php' <font color='#888a85'>=&gt;</font> 
+    <b>array</b>
+      5 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      6 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      7 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      9 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      10 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      11 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      12 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      13 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      15 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      16 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      18 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
