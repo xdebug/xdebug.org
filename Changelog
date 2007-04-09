@@ -1,3 +1,26 @@
+Mon Apr 09 22:44:33 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs-dbgp.php
+www.xdebug.org/html/index.php
+www.xdebug.org/html/license.php
+www.xdebug.org/html/support.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/docs/index.php
+www.xdebug.org/html/docs/include/basic.php
+www.xdebug.org/html/docs/include/features.php
+www.xdebug.org/html/docs/include/settings.php
+www.xdebug.org/html/docs/include/functions/var_dump
+www.xdebug.org/html/docs/include/functions/xdebug_debug_zval
+www.xdebug.org/html/docs/include/functions/xdebug_dump_superglobals
+www.xdebug.org/html/docs/include/functions/xdebug_get_code_coverage
+www.xdebug.org/html/docs/include/functions/xdebug_get_function_stack
+www.xdebug.org/html/docs/include/functions/xdebug_memory_usage
+www.xdebug.org/html/docs/include/functions/xdebug_peak_memory_usage
+www.xdebug.org/html/docs/include/functions/xdebug_time_index
+www.xdebug.org/html/docs/include/functions/xdebug_var_dump
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php:
+- Many updates.
+
 Sun Mar 18 14:25:49 CET 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/index.php
 www.xdebug.org/html/docs/include/basic.php
