@@ -1,3 +1,12 @@
+Sun Apr 22 18:11:11 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/basic.php
+www.xdebug.org/html/docs/include/features.php
+www.xdebug.org/html/docs/include/settings.php:
+- Fixed the regular expressions for adding links to functions and settings.
+- Added information about stack trace settings in the introduction.
+- Added a FAQ entry on Debian weirdness.
+- Added documentation for the dump_globals setting.
+
 Mon Apr 09 22:44:33 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs-dbgp.php
 www.xdebug.org/html/index.php
