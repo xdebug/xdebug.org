@@ -401,7 +401,201 @@ different settings. You can use the tabs to see the difference.
 		decides to show a notice, warning, error etc. The information that
 		stack traces display, and the way how they are presented, can be
 		configured to suit your needs.',
-		""
+		'
+<p>
+The stack traces that Xdebug shows on error situations are quite conservative
+in the amount of information that they show. This is because large amounts of
+information can slow down both the execution of the scripts and the rendering
+of the stack traces themselves in the browser. However, it is possible to make
+the stack traces show more detailed information with different settings.
+</p>
+<h2>Variables in Stack Traces</h2>
+<p>
+By default Xdebug will now show variable information in the stack traces that
+it produces. Variable information can take quite a bit of resources, both while
+collecting or displaying. However, in many cases it is useful that variable
+information is displayed, and that is why Xdebug has the setting
+[CFG:collect_params]. The script below, in combination with what the output
+will look like with different values of this setting is shown in the example
+below.
+</p>
+<h3>The script</h3>
+<div class="example">
+<p>
+<code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">\'foo\'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">500000</span><span style="color: #007700">)&nbsp;</span><span style="color: #0000BB">xdebug_break</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">set_time_limit</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">stdClass</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">42&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">\'foo\'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">912124</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">,&nbsp;new&nbsp;</span><span style="color: #0000BB">stdClass</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">\'/etc/passwd\'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">\'r\'&nbsp;</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span>
+	</span>
+	</code>
+</p>
+</div>
+
+<h3>The results</h3>
+<p>
+Different values for the [CFG:collect_params] setting give different output,
+which you can see below:
+</p>
+
+    <div id="collectparams" class="yui-navset">
+        <ul class="yui-nav">
+            <li class="selected"><a href="#default"><em>default</em></a></li>
+            <li><a href="#collect-params-1"><em>1</em></a></li>
+            <li><a href="#collect-params-2"><em>2</em></a></li>
+            <li><a href="#collect-params-3"><em>3</em></a></li>
+            <li><a href="#collect-params-4"><em>4</em></a></li>
+        </ul>
+        <div class="yui-content">
+            <div id="default">
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>34</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58564</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62764</td><td bgcolor=\'#eeeeec\'>foo(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+            <div id="collect-params-1">
+<pre>
+ini_set(\'xdebug.collect_params\', \'1\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>31</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58132</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62380</td><td bgcolor=\'#eeeeec\'>foo( <span><font color=\'#ce5c00\'>array(5)</font></span> )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+            <div id="collect-params-2">
+<pre>
+ini_set(\'xdebug.collect_params\', \'2\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>31</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58564</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62812</td><td bgcolor=\'#eeeeec\'>foo( <span title=\'array (42 =&gt; FALSE, &apos;foo&apos; =&gt; 912124, 43 =&gt; class stdClass { public $bar = 100 }, 44 =&gt; class stdClass {  }, 45 =&gt; resource(2) of type (stream))\'><font color=\'#ce5c00\'>array(5)</font></span> )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+            <div id="collect-params-3">
+<pre>
+ini_set(\'xdebug.collect_params\', \'3\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>31</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58564</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62812</td><td bgcolor=\'#eeeeec\'>foo( <span>array (42 =&gt; FALSE, &apos;foo&apos; =&gt; 912124, 43 =&gt; class stdClass { public $bar = 100 }, 44 =&gt; class stdClass {  }, 45 =&gt; resource(2) of type (stream))</span> )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+            <div id="collect-params-4">
+<pre>
+ini_set(\'xdebug.collect_params\', \'4\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>31</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58132</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62380</td><td bgcolor=\'#eeeeec\'>foo( <span>$a = </span><span>array (42 =&gt; FALSE, &apos;foo&apos; =&gt; 912124, 43 =&gt; class stdClass { public $bar = 100 }, 44 =&gt; class stdClass {  }, 45 =&gt; resource(2) of type (stream))</span> )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+        </div>
+    </div>
+<h2>Additional Information</h2>
+<p>
+On top of showing the values of variables that were passed to each function
+Xdebug can also optionally show information about selected superglobals by using
+the [CFG:dump_globals] and [CFG:dump.*] settings. The settings [CFG:dump_once]
+and [CFG:dump_undefined] slightly modify when and which information is shown
+from the available superglobals. With the [CFG:show_local_vars] setting you can
+instruct Xdebug to show all variables available in the top-most stack level for
+a user defined function as well. The examples below show this (the script is
+used from the example above).
+</p>
+	<div id="othersettings" class="yui-navset">
+        <ul class="yui-nav">
+            <li class="selected"><a href="#add-default"><em>default</em></a></li>
+            <li><a href="#add-superglobals"><em>dump_superglobals=1</em></a></li>
+            <li><a href="#add-local-vars"><em>show_local_vars=1</em></a></li>
+        </ul>
+        <div class="yui-content">
+            <div id="add-default">
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>34</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58564</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62764</td><td bgcolor=\'#eeeeec\'>foo(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+</table></font>
+            </div>
+            <div id="add-superglobals">
+<pre>
+ini_set(\'xdebug.collect_vars\', \'on\');
+ini_set(\'xdebug.collect_params\', \'4\');
+ini_set(\'xdebug.dump_globals\', \'on\');
+ini_set(\'xdebug.dump.SERVER\', \'REQUEST_URI\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>33</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58132</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0004</td><td bgcolor=\'#eeeeec\' align=\'right\'>62436</td><td bgcolor=\'#eeeeec\'>foo(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+<tr><th colspan=\'5\' align=\'left\' bgcolor=\'#e9b96e\'>Dump <i>$_SERVER</i></th></tr>
+<tr><td colspan=\'2\' align=\'right\' bgcolor=\'#eeeeec\' valign=\'top\'><pre>$_SERVER[\'REQUEST_URI\']&nbsp;=</pre></td><td colspan=\'3\' bgcolor=\'#eeeeec\'><pre><small>string</small> <font color=\'#cc0000\'>\'/test/xdebug/docs/stack.php?level=5\'</font> <i>(length=35)</i>
+</pre></td></tr>
+</table></font>
+            </div>
+            <div id="add-local-vars">
+<pre>
+ini_set(\'xdebug.collect_vars\', \'on\');
+ini_set(\'xdebug.collect_params\', \'4\');
+ini_set(\'xdebug.dump_globals\', \'on\');
+ini_set(\'xdebug.dump.SERVER\', \'REQUEST_URI\');
+ini_set(\'xdebug.show_local_vars\', \'on\');
+</pre>
+<br />
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in /home/httpd/html/test/xdebug/docs/stack.php on line <i>31</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0001</td><td bgcolor=\'#eeeeec\' align=\'right\'>58132</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>0</td></tr>
+
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0005</td><td bgcolor=\'#eeeeec\' align=\'right\'>62588</td><td bgcolor=\'#eeeeec\'>foo(  )</td><td title=\'/home/httpd/html/test/xdebug/docs/stack.php\' bgcolor=\'#eeeeec\'>../stack.php<b>:</b>47</td></tr>
+<tr><th colspan=\'5\' align=\'left\' bgcolor=\'#e9b96e\'>Dump <i>$_SERVER</i></th></tr>
+<tr><td colspan=\'2\' align=\'right\' bgcolor=\'#eeeeec\' valign=\'top\'><pre>$_SERVER[\'REQUEST_URI\']&nbsp;=</pre></td><td colspan=\'3\' bgcolor=\'#eeeeec\'><pre><small>string</small> <font color=\'#cc0000\'>\'/test/xdebug/docs/stack.php?level=6\'</font> <i>(length=35)</i>
+
+</pre></td></tr>
+<tr><th align=\'left\' colspan=\'5\' bgcolor=\'#e9b96e\'>Variables in local scope (#2)</th></tr>
+<tr><td colspan=\'2\' align=\'right\' bgcolor=\'#eeeeec\' valign=\'top\'><pre>$a&nbsp;=</pre></td><td colspan=\'4\' bgcolor=\'#eeeeec\'><pre>
+<b>array</b>
+  42 <font color=\'#888a85\'>=&gt;</font> <small>boolean</small> <font color=\'#75507b\'>false</font>
+  \'foo\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>912124</font>
+  43 <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>stdClass</i>)[<i>1</i>]
+      <i>public</i> \'bar\' <font color=\'#888a85\'>=&gt;</font> <small>int</small> <font color=\'#4e9a06\'>100</font>
+  44 <font color=\'#888a85\'>=&gt;</font> 
+    <b>object</b>(<i>stdClass</i>)[<i>2</i>]
+  45 <font color=\'#888a85\'>=&gt;</font> <b>resource</b>(<i>2</i><font color=\'#2e3436\'>,</font> <i>stream</i>)
+</pre></td></tr>
+<tr><td colspan=\'2\' align=\'right\' bgcolor=\'#eeeeec\' valign=\'top\'><pre>$i&nbsp;=</pre></td><td colspan=\'4\' bgcolor=\'#eeeeec\'><pre><small>int</small> <font color=\'#4e9a06\'>275447</font>
+</pre></td></tr>
+</table></font>
+            </div>
+        </div>
+    </div>',
+		array( 'tabfields' => array( 'collectparams', 'othersettings' ) )
 	),
 	'execution_trace' => array(
 		'Function Traces',
@@ -697,7 +891,10 @@ wrong?</dt>
 the necessary information to your URL. See the 
 <a href=\'docs-debugger.php#activate_debugger\'>documentation</a> for
 more information.</dd>
+</dl>
 
+<h2>Compilation and Configuration</h2>
+<dl>
 <dt>Q: I\'m using XAMPP, but I can\'t seem to get the packaged xdebug extension
 to work properly.</dt>
 <dd>A: If you uncommented the "extension=php_xdebug.dll" line, that is to be
@@ -707,6 +904,21 @@ loading of the Zend Optimizer, since it\'s enabled by default, and doesn\'t work
 well with Xdebug. So look for the related entry in php.ini, and comment it
 out.</dd>
 
+<dt>Q: On Debian, I am seeing the following problem with the build of
+Xdebug.... any fixes?
+<pre>
+/usr/lib/libc_nonshared.a(stat.oS)(.text.__i686.get_pc_thunk.bx+0x0):
+In function `__i686.get_pc_thunk.bx\':
+: multiple definition of `__i686.get_pc_thunk.bx\'
+/usr/lib/gcc-lib/i486-linux/3.3.5/crtbeginS.o
+(.gnu.linkonce.t.__i686.get_pc_thunk.bx+0x0): first defined here
+collect2: ld returned 1 exit status
+make: *** [xdebug.la] Error 1 </pre>
+</dt>
+<dd>A: This is an issue with Debian itself, see for more information
+<a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a> 
+and <a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a>.
+</dd>
 </dl>
 		'
 	),

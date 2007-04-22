@@ -22,11 +22,11 @@ function add_keywords( $text )
 
 function add_links( $text )
 {
-	$text = preg_replace( '/\[FUNC:(.*?)\]/', '<a href="/docs/all_functions#\1">\1()</a>', $text );
-	$text = preg_replace( '/\[CFG:(.*?):(.*?)\]/', '<a href="/docs/all_settings#\1">\2</a>', $text );
-	$text = preg_replace( '/\[CFG:(.*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
-	$text = preg_replace( '/\[CFGS:(.*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
-	$text = preg_replace( '/\[FEAT:(.*?)\]/e', "'<a href=\"/docs/\\1\">'. \$GLOBALS['features']['\\1'][0] . '</a>'", $text );
+	$text = preg_replace( '/\[FUNC:([^\]]*?)\]/', '<a href="/docs/all_functions#\1">\1()</a>', $text );
+	$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\2</a>', $text );
+	$text = preg_replace( '/\[CFG:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
+	$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
+	$text = preg_replace( '/\[FEAT:([^\]]*?)\]/e', "'<a href=\"/docs/\\1\">'. \$GLOBALS['features']['\\1'][0] . '</a>'", $text );
 	$text = add_keywords( $text );
 	return $text;
 }

@@ -346,6 +346,12 @@ xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
 		FUNC_STACK_TRACE
 	),
 
+	'dump_globals' => array(
+		'boolean', 1, ONE | TWO,
+		'Controls whether the values of the superglobals as defined by the [CFG:dump.*] settings whould be shown or not.',
+		FUNC_STACK_TRACE
+	),
+
 	'dump_once' => array(
 		'boolean', 1, ONE | TWO,
 		"Controls whether the values of the superglobals should be dumped on all
