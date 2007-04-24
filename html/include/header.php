@@ -12,12 +12,13 @@
 		body, table, td, table.table
 		         { margin: 0px; padding: 0px; }
 		table.table
-                 { border: solid gray; border-width: thin; margin: 0px; padding: 0px; }
+                 { border: solid #777; border-width: thin; margin: 0px; padding: 0px; border-spacing: 0px; border-collapse: collapse; }
 		.hide    { visibility: hidden; display: none; }
 		body     { background-color: white; }
 		#sidebar      { font-size: 85%; }
 		#menu	 { font-size: 85%; }
-	    table.table td, table.table th { border: solid #aaa; border-width: thin; }
+	    table.table th { border: solid #777; padding: 3px; border-width: thin; }
+	    table.table td { border: solid #aaa; padding: 3px; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
 		body     { font-family: sans-serif; }
