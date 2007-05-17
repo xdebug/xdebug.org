@@ -1,3 +1,7 @@
+Thu May 17 22:56:00 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/settings.php:
+- Documented the new format specifiers.
+
 Thu May 17 22:55:28 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/index.php:
 - Added "RC4" to the announcement.
