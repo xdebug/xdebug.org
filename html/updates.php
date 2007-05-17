@@ -20,6 +20,48 @@
 <span class='quote'>
 <dl>
 
+<dt>[17-05-2007] &mdash; Xdebug 2.0.0RC4</dt>
+<dd><h3>Changes</h3></dd>
+<dd>Use µ seconds instead of a tenths of µ seconds to avoid confusion in profile information.</dd>
+<dd>Changed xdebug.profiler_output_name and xdebug.trace_output_name to use modifier tags:
+<dl>
+  <dt>%c</dt><dd>crc32 of the current working directory</dd>
+  <dt>%p</dt><dd>pid</dd>
+  <dt>%r</dt><dd>random number</dd>
+  <dt>%s</dt><dd>script name</dd>
+  <dt>%t</dt><dd>timestamp (seconds)</dd>
+  <dt>%u</dt><dd>timestamp (microseconds)</dd>
+  <dt>%H</dt><dd>$_SERVER['HTTP_HOST']</dd>
+  <dt>%R</dt><dd>$_SERVER['REQUEST_URI']</dd>
+  <dt>%S</dt><dd>session_id (from $_COOKIE if set)</dd>
+  <dt>%%</dt><dd>literal %</dd>
+</dl>
+</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #255: Call Stack Table doesn't show Location on Windows.</dd>
+<dd>Fixed bug #251: Using the source command with an invalid filename returns unexpected result.</dd>
+<dd>Fixed bug #243: show_exception_trace="0" ignored.</dd>
+<dd>Fixed bug #241: Crash in xdebug_get_function_stack().</dd>
+<dd>Fixed bug #240: Crash with xdebug.remote_log on Windows.</dd>
+<dd>Fixed a segfault in rendering stack traces to error logs.</dd>
+<dd>Fixed a bug that prevented variable names from being recorded for remote debug session while xdebug.collect_vars was turned off.</dd>
+<dd>Fixed xdebug_dump_superglobals() in case no super globals were configured.</dd>
+
+<dd><h3>Removed functions</h3></dd>
+<dd>Removed support for Memory profiling as that didn't work properly.</dd>
+<dd>Get rid of xdebug.default_enable setting and associated functions: xdebug_disable() and xdebug_enable().</dd>
+
+<dd><h3>Added features</h3></dd>
+<dd>Implemented support for four different xdebug.collect_params settings for stack traces and function traces.</dd>
+<dd>Allow to trigger profiling by the XDEBUG_PROFILE cookie.</dd>
+
+<dd><h3>DBGP</h3></dd>
+<dd>Correctly add namespace definitions to XML.</dd>
+<dd>Added the xdebug namespace that adds extra information to breakpoints if available.</dd>
+<dd>Stopped the use of <error> elements for exception breakpoints, as that violates the protocol.</dd>
+
+
 <dt>[31-01-2007] &mdash; Xdebug 2.0.0RC3</dt>
 <dd><h3>Changes</h3></dd>
 <dd>Removed the bogus "xdebug.allowed_clients" setting - it was not implemented.</dd>
