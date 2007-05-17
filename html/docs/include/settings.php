@@ -183,25 +183,29 @@ directory.",
 	),
 
 	'trace_output_name' => array(
-		'string', 'crc32', TWO,
+		'string', 'trace.%c', TWO,
 		"<p>This setting determines the name of the file that is used to dump
-traces into. The name of the file always consists of
-'trace.' + value + '.xt'.  The 'value' differs depending on this
-setting.</p>
+traces into. The setting specifies the format with format specifiers, very
+similar to sprintf() and strftime(). There are several format specifiers
+that can be used to format the file name. The '.xt' extension is always added
+automatically.</p>
 
 <p>
-There are three possible values for this setting:
-<dl>
-	<dt>crc32</dt>
-	<dd>The filename will be appended by the crc32 hash of the current working
-	directary. Example: trace.1224514426.xt</dd>
-	<dt>timestamp</dt>
-	<dd>The filename will be appended by the current time as Unix
-	timestamp. Example: trace.1170515030.xt</dd>
-	<dt>pid</dt>
-	<dd>The base name will be appended by the process ID of the PHP interpreter
-	(or Apache child) running the script. Example: trace.30447.xt</dd>
-</dl>
+The possible format specifiers are:
+<table class='table'>
+<tr><th>Specifier</th><th>Meaning</th><th>Example Format</th><th>Example Filename</th></tr>
+<tr><td class='ctr'>%c</td><td>crc32 of the current working directory</td><td>trace.%c</td><td>trace.1258863198.xt</tr>
+<tr><td class='ctr'>%p</td><td>pid</td><td>trace.%p</td><td>trace.5174.xt</td></tr>
+<tr><td class='ctr'>%r</td><td>random number</td><td>trace.%r</td><td>trace.072db0.xt</td></tr>
+<tr><td class='ctr'>%s</td><td>script name<sup><a href='#note2'>2</a></sup></td><td>cachegrind.out.%s</td><td>cachegrind.out._home_httpd_html_test_xdebug_test_php</td></tr>
+<tr><td class='ctr'>%t</td><td>timestamp (seconds)</td><td>trace.%t</td><td>trace.1179434742.xt</td></tr>
+<tr><td class='ctr'>%u</td><td>timestamp (microseconds)</td><td>trace.%u</td><td>trace.1179434749_642382.xt</td></tr>
+<tr><td class='ctr'>%H</td><td>\$_SERVER['HTTP_HOST']</td><td>trace.%H</td><td>trace.kossu.xt</td></tr>
+<tr><td class='ctr'>%R</td><td>\$_SERVER['REQUEST_URI']</td><td>trace.%R</td><td>trace._test_xdebug_test_php_var=1_var2=2.xt</td></tr>
+<tr><td class='ctr'>%S</td><td>session_id (from \$_COOKIE if set)</td><td>trace.%S</td><td>trace.c70c1ec2375af58f74b390bbdd2a679d.xt</td></tr>
+<tr><td class='ctr'>%%</td><td>literal %</td><td>trace.%%</td><td>trace.%%.xt</td></tr>
+<tr><td colspan='4'><a name='note2'><sup>2</sup></a> this one is not available for trace file names.</td></tr>
+</table>
 </p>
 ",
 		FUNC_FUNCTION_TRACE
@@ -323,28 +327,14 @@ directory. This setting can not be set in your script with ini_set().",
 	),
 
 	'profiler_output_name' => array(
-		'string', 'crc32', TWO,
-		"<p>This setting determines the name of the file that is used to dump profiling
-information into. The name of the file always consists of 'cachegrind.out.'.
-This name can be prepended and appended depending on this setting.</p>
+		'string', 'cachegrind.out.%p', TWO,
+		"<p>This setting determines the name of the file that is used to dump
+traces into. The setting specifies the format with format specifiers, very
+similar to sprintf() and strftime(). There are several format specifiers
+that can be used to format the file name.</p>
 
-<p>
-There are four possible values for this setting:
-<dl>
-	<dt>crc32</dt>
-	<dd>The filename will be appended by the crc32 hash of the current working
-	directory. Example: cachegrind.out.1224514426</dd>
-	<dt>timestamp</dt>
-	<dd>The filename will be appended by the current time as Unix
-	timestamp. Example: cachegrind.out.1170515030</dd>
-	<dt>script</dt>
-	<dd>The base name will be prepended by a sanitized version of the full
-	path to the script's file name. Example: tmp_foo_php_cachegrind.out</dd>
-	<dt>pid</dt>
-	<dd>The base name will be appended by the process ID of the PHP interpreter
-	(or Apache child) running the script. Example: cachegrind.out.30447</dd>
-</dl>
-</p>
+<p>See the [CFG:trace_output_name] documentation for the supported
+specifiers.</p>
 ",
 		FUNC_PROFILER
 	),
