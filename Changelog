@@ -1,3 +1,23 @@
+Thu May 17 17:53:01 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php
+www.xdebug.org/html/docs/include/settings.php
+www.xdebug.org/html/docs/include/functions/xdebug_get_declared_vars
+www.xdebug.org/html/files/php_xdebug-2.0.0rc4-4.4.1.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0rc4-5.1.2.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0rc4-5.2.1.dll
+www.xdebug.org/html/files/xdebug-2.0.0RC4.tgz
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php
+www.xdebug.org/html/yui/build/dom/dom.js
+www.xdebug.org/html/yui/build/element/element-beta.js
+www.xdebug.org/html/yui/build/event/event.js
+www.xdebug.org/html/yui/build/tabview/tabview.js
+www.xdebug.org/html/yui/build/tabview/assets/border_tabs.css
+www.xdebug.org/html/yui/build/tabview/assets/tabview.css
+www.xdebug.org/html/yui/build/yahoo/yahoo.js:
+- Many more docs.
+
 Tue Apr 24 23:18:18 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php
 www.xdebug.org/html/include/header.php:
