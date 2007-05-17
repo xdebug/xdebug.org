@@ -43,11 +43,12 @@ Xdebug also provides:
 
 <dl class="main">
 <dt class="main">[17-05-2007]</dt>
-<dd class="main">There are two major changes that needs some introduction. The
-first one is that the profiler_output_name and trace_output_name settings no
-longer accept simple values such as "crc32", but instead now accept different
-format specifiers, very similar to printf() and strftime() modifiers. This will
-show up in the newly organized documentation very soon as well.</dd>
+<dd class="main">Xdebug version 2.0.0RC4 has been released. There are two major
+changes that needs some introduction. The first one is that the
+profiler_output_name and trace_output_name settings no longer accept simple
+values such as "crc32", but instead now accept different format specifiers,
+very similar to printf() and strftime() modifiers. This will show up in the
+newly organized documentation very soon as well.</dd>
 
 <dt class="main">[31-01-2007]</dt>
 <dd class="main">Xdebug version 2.0.0RC3 has been released. This release
