@@ -5,7 +5,9 @@ $settings = array(
 		"This setting tells Xdebug to gather information about which variables
 are used in a certain scope. This analysis can be quite slow as Xdebug has
 to reverse engineer PHP's opcode arrays. This setting will not record which
-values the different variables have, for that use [CFG:collect_params].",
+values the different variables have, for that use [CFG:collect_params].
+This setting needs to be enabled only if you wish to use
+[FUNC:xdebug_get_declared_vars].",
 		FUNC_STACK_TRACE
 	),
 	'default_enable' => array(
@@ -130,7 +132,7 @@ each of the values provides. See also the introduction of the feature
 <tr><td class='ctr'>2</td><td>Type and number of elements, with a tool tip for the full information<sup><a href='#note1'>1</a></sup>.</td></tr>
 <tr><td class='ctr'>3</td><td>Full variable contents (with the limits respected as set by [CFG:var_display_max_children], [CFG:var_display_max_data] and [CFG:var_display_max_depth].</td></tr>
 <tr><td class='ctr'>4</td><td>Full variable contents and variable name.</td></tr>
-<tr><td colspan='2'><a name='note1'><sup>1</sup></a> in the CLI version of PHP it will not have the tool tip of course.</td></tr>
+<tr><td colspan='2'><a name='note1'><sup>1</sup></a> in the CLI version of PHP it will not have the tool tip, nor in output files.</td></tr>
 </table>
 ",
 		FUNC_FUNCTION_TRACE | FUNC_STACK_TRACE
@@ -146,19 +148,22 @@ return value of function calls to the trace files.",
 	'trace_format' => array(
 		'integer', 0, TWO,
 		"The format of the trace file.
-<table>
+<table class='table'>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>0</td><td>shows a human readable indented trace file with:
+<tr><td class='ctr'>0</td><td>shows a human readable indented trace file with:
 <i>time index</i>, <i>memory usage</i>, <i>memory delta</i> (if the setting <a
 href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
 <i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
 <i>filename</i> and <i>line number</i>.</td></tr>
-<tr><td>1</td><td>writes a computer readable format with the following
+<tr><td class='ctr'>1</td><td>writes a computer readable format with the following
 tab-separated fields: <i>level</i>, <i>function #</i>, <i>function entry (0) or
 function exit (1)</i>, <i>time index</i>, <i>memory usage</i>, <i>function
 name</i>, <i>user-defined (1) or internal function (0)</i>, <i>name of the
 include/require file</i>, <i>filename</i> and <i>line number</i>.</td></tr>
-</table>",
+</table>
+<p>
+See the introduction of [FEAT:execution_trace] for a few examples.
+</p>",
 		FUNC_FUNCTION_TRACE
 	),
 

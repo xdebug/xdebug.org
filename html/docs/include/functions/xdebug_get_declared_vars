@@ -6,7 +6,7 @@ FUNC_STACK_TRACE
 
 TXT:
 Returns an array where each element is a variable name which is defined in the
-current scope. The setting [CFG:collect_local_vars] needs to be enabled.
+current scope. The setting [CFG:collect_vars] needs to be enabled.
 
 EXAMPLE: 
 <?php

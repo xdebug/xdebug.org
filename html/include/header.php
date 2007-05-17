@@ -22,8 +22,8 @@
 		td		 { text-align: left; vertical-align: top; }
 		td.head  { vertical-align: bottom; }
 		body     { font-family: sans-serif; }
-		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
-		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: bottom; }
+		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
+		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
 
 		img      { border: 0px; vertical-align: bottom; }
 		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
@@ -79,6 +79,7 @@
 		dd.main { margin-left: 20px; }
 
 		pre { margin-left: 20px; line-height: 1.5em; }
+		pre.shell { margin-left: 0px; }
 		div.example, pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
 		div.example { margin-top: 1em; margin-bottom: 1em; }
 
