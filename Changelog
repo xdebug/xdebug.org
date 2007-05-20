@@ -1,3 +1,7 @@
+Sun May 20 16:58:34 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs.php:
+- Fixed redirect to new docs.
+
 Thu May 17 22:56:00 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php:
 - Documented the new format specifiers.
