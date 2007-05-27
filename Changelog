@@ -1,3 +1,7 @@
+Sun May 27 20:14:04 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/include/header.php:
+- Changed layout for h3.
+
 Sun May 20 16:58:34 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs.php:
 - Fixed redirect to new docs.
