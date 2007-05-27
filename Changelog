@@ -1,3 +1,8 @@
+Sun May 27 23:40:35 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/support.php
+www.xdebug.org/html/docs/include/settings.php:
+- Added some more docs for remote_log and on "how to report a bug".
+
 Sun May 27 20:14:04 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/include/header.php:
 - Changed layout for h3.
