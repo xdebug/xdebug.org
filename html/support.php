@@ -16,7 +16,21 @@ If you think that you found a bug in Xdebug, please file a bugreport at the <a
 href="http://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
 because this prevents abuse by smammers and other abusing parties. Try to give
 as much possible information to reproduce the bug, this will greatly help in
-fixing them.
+fixing them. For some hints on what information is useful, see the following
+sections.
+</p>
+
+<h3>Remote Debugger Bugs</h3>
+<p>
+To provide sufficient it is important to provide both a short reproducable
+script (that means a self-contained script without external requirements such
+as a database and/or other files) and a remote debugging log. This log will be
+created automatically for each debug session when the
+<a href="/docs/all_settings#remote_log">xdebug.remote_log</a> setting is not
+empty. The setting configures the filename where Xdebug will try to write all
+incoming commands and outgoing response to. Make sure that the user under which
+Xdebug runs (either the user with CLI, or the Apache/Webserver user when Xdebug
+runs as extension in a web server environment).
 </p>
 
 <br />
