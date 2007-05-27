@@ -88,7 +88,7 @@
 
 		h1 { font-variant: small-caps; font-size: x-large }
 		h2 { font-variant: small-caps; font-size: large }
-		h3 { font-variant: small-caps; font-size: large }
+		h3 { font-variant: small-caps; font-size: normal }
 
 		code { background-color: #eaffeb; }
 	</style>
