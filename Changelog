@@ -1,3 +1,8 @@
+Mon May 28 18:45:39 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/basic.php
+www.xdebug.org/html/docs/include/functions/xdebug_start_trace:
+- Document xdebug_start_trace() better.
+
 Sun May 27 23:40:35 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/support.php
 www.xdebug.org/html/docs/include/settings.php:
