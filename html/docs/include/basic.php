@@ -88,7 +88,7 @@ function get_func_info()
 
 function do_format_data_TXT( $data )
 {
-	return add_links( implode( ' ', $data ) );
+	return "<p>\n". add_links( implode( ' ', $data ) ). "\n</p>";
 }
 
 function do_format_data_RESULT( $data )

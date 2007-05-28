@@ -6,8 +6,16 @@ FUNC_FUNCTION_TRACE
 
 TXT:
 Start tracing function calls from this point to the file in the <i>trace_file</i> parameter.
-The trace file will be placed in the directory as configured by the
-<a href="docs-settings.php#trace_output_dir">trace_output_dir</a> setting.
+If no filename is given, then the trace file will be placed in the directory as
+configured by the <a href="docs-settings.php#trace_output_dir">trace_output_dir</a>
+setting. In case a file name is given as first parameter, the name is relative
+to the current working directory. This current working directory might be
+different than you expect it to be, so please use an absolute path in case you
+specify a file name. Use the PHP function <a
+href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
+working directory is.
+
+TXT:
 The name of the trace file is "{trace_file}.xt". If <a href='docs-settings.php#auto_trace'>auto tracing</a> then the format of the filename is 
 "trace.{hash}.xt" where the "{hash}" part depends on the <a
 href="docs-settings.php#trace_output_name">trace_output_name</a> setting. The
