@@ -7,7 +7,7 @@ FUNC_FUNCTION_TRACE
 TXT:
 Start tracing function calls from this point to the file in the <i>trace_file</i> parameter.
 If no filename is given, then the trace file will be placed in the directory as
-configured by the <a href="docs-settings.php#trace_output_dir">trace_output_dir</a>
+configured by the [CFG:trace_output_dir]
 setting. In case a file name is given as first parameter, the name is relative
 to the current working directory. This current working directory might be
 different than you expect it to be, so please use an absolute path in case you
@@ -16,19 +16,15 @@ href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
 working directory is.
 
 TXT:
-The name of the trace file is "{trace_file}.xt". If <a href='docs-settings.php#auto_trace'>auto tracing</a> then the format of the filename is 
-"trace.{hash}.xt" where the "{hash}" part depends on the <a
-href="docs-settings.php#trace_output_name">trace_output_name</a> setting. The
+The name of the trace file is "{trace_file}.xt". If [CFG:auto_trace] is
+enabled, then the format of the filename is "{filename}.xt" where the
+"{filename}" part depends on the [CFG:trace_output_name] setting. The
 <i>options</i> parameter is a bitfield; currently there are two options:
 "XDEBUG_TRACE_APPEND" (1) makes the trace file open in append mode rather than
 overwrite mode and "XDEBUG_TRACE_COMPUTERIZED" (2) creates a trace file with
-the format as described under <i>1</i> <a
-href='docs-settings.php#trace_format'>here</a>. Unlike Xdebug 1, Xdebug 2 will
-not store function calls in memory, but always only write to disk to relieve
-the pressure on used memory. The settings <a
-href='docs-settings.php#collect_includes'>collect_includes</a>, <a
-href='docs-settings.php#collect_params'>collect_params</a> and <a
-href='docs-settings.php#collect_return'>collect_return</a> influence what
-information is logged to the trace file and the setting <a
-href='docs-settings.php#trace_format'>trace_format</a> influences the format of
-the trace file.
+the format as described under <i>1</i> "[CFG:trace_format]". Unlike Xdebug 1,
+Xdebug 2 will not store function calls in memory, but always only write to disk
+to relieve the pressure on used memory. The settings [CFG:collect_includes],
+[CFG:collect_params] and [CFG:collect_return] influence what information is
+logged to the trace file and the setting [CFG:trace_format] influences the
+format of the trace file.
