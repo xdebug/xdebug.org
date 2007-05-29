@@ -1,3 +1,7 @@
+Tue May 29 13:56:40 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/functions/xdebug_start_trace:
+- Fixed links.
+
 Mon May 28 18:45:39 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/basic.php
 www.xdebug.org/html/docs/include/functions/xdebug_start_trace:
