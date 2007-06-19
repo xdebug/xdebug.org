@@ -1,3 +1,14 @@
+Tue Jun 19 19:03:06 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs-debugger.php
+www.xdebug.org/html/docs-faq.php
+www.xdebug.org/html/docs-functions.php
+www.xdebug.org/html/docs-profiling.php
+www.xdebug.org/html/docs-profiling2.php
+www.xdebug.org/html/docs-settings.php
+www.xdebug.org/html/docs/include/features.php:
+- Enable redirects.
+- Fixed profiler layout.
+
 Wed May 30 18:19:55 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/include/links.php:
 - Fixed links
