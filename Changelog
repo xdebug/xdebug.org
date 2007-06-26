@@ -1,3 +1,8 @@
+Tue Jun 26 08:56:49 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php
+www.xdebug.org/html/include/side.php:
+- Changed single quotes to double quotes.
+
 Tue Jun 19 19:03:06 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs-debugger.php
 www.xdebug.org/html/docs-faq.php
