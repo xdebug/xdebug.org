@@ -1,3 +1,8 @@
+Tue Jun 26 19:08:35 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/index.php
+www.xdebug.org/html/docs/include/features.php:
+- Fixed layout.
+
 Tue Jun 26 19:08:05 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Added notepad++ plugin.
