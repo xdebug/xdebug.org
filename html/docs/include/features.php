@@ -1053,6 +1053,7 @@ There are a few other client implementations (both free and commercial) as well:
 has been submitted as an enhancement for the
 <a href="http://www.eclipse.org/php/">PDT</a>.</li>
 <li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b>.</li>
+<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a>.</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (from version 2.10).</li>
 <li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (Japanese).</li>
 <li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b>.</li>
