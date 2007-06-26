@@ -1049,17 +1049,17 @@ There are a few other client implementations (both free and commercial) as well:
 <ul>
 <li><b>Eclipse
 <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=169408">plugin</a></b>, which
-has been submitted as an enhancement for the
-<a href="http://www.eclipse.org/php/">PDT</a>.</li>
-<li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b>.</li>
-<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a>.</li>
-<li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (from version 2.10).</li>
-<li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (Japanese).</li>
-<li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b>.</li>
-<li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b>.</li>
-<li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b>.</li>
-<li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1152">plugin</a></b>.</li>
-<li>Maguma\'s <b><a href="http://www.maguma.com/products/?article=Workbench">WorkBench</a></b>.</li>
+has been submitted as an enhancement for the <a href="http://www.eclipse.org/php/">PDT</a> (IDE).</li>
+<li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac).</li>
+<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (IDE: Windows).</li>
+<li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows).</li>
+<li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (IDE: Windows, Japanese).</li>
+<li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
+<li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b> (Editor: Windows).</li>
+<li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b> (IDE).</li>
+<li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1152">plugin</a></b> (Editor Plugin).</li>
+<li>Maguma\'s <b><a href="http://www.maguma.com/products/?article=Workbench">WorkBench</a></b> (IDE).</li>
+<li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
 </ul>
 </p>
 <p>
