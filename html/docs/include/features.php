@@ -1021,7 +1021,6 @@ different distances between two functions, it is shown as a range (for example
 "5-24". The number in parentheses is the median distance. The lower pane is
 similar except that it shows information on functions called from the current
 selected one, again either direct or indirect.</p>
-<div style="float: right"/>
 		'
 	),
 	'remote' => array(

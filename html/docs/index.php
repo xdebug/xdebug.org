@@ -68,7 +68,7 @@ if ( isset( $_GET['action'] ) )
 			echo "<p class='intro'>{$feature[2]}</p>\n";
 			echo "<hr class='light'/>\n";
 			echo add_links( $feature[3] ). "\n";
-			echo "<hr />\n";
+			echo "<hr style='clear: both'/>\n";
 			do_related_settings( $feature[1] );
 			do_related_functions( $feature[1] );
 		}
