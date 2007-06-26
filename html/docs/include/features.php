@@ -30,7 +30,7 @@ Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one)
 <pre>
-zend_extension_ts='c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll'
+zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
 </pre>
 </p>
 
@@ -52,7 +52,7 @@ but you still need to add the correct line to your php.ini: (don't forget to
 change the path and filename to the correct one)
 </p>
 <pre>
-zend_extension='/usr/local/php/modules/xdebug.so'
+zend_extension=\"/usr/local/php/modules/xdebug.so\"
 </pre>
 
 <a name='source'></a>
@@ -134,9 +134,9 @@ working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
 
 <ol>
 <li>add the following line to php.ini:
-zend_extension='/wherever/you/put/it/xdebug.so' (for non-threaded use of PHP,
+zend_extension=\"/wherever/you/put/it/xdebug.so\" (for non-threaded use of PHP,
 for example the CLI, CGI or Apache 1.3 module) or:
-zend_extension_ts='/wherever/you/put/it/xdebug.so' (for threaded usage of PHP,
+zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" (for threaded usage of PHP,
 for example the Apache 2 work MPM or the the ISAPI module).
 <strong>Note:</strong> In case you compiled PHP yourself and used
 --enable-debug you would have to use zend_extension_debug=.</li>

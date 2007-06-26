@@ -21,8 +21,8 @@ Debug client 0.9.0 (DBGp) (binary):
 
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200rc4-441-win', 'PHP 4.4.1+'); ?></li>
-<li><?php url ('xdebug200rc4-512-win', 'PHP 5.1.2+'); ?></li>
+<li><?php url ('xdebug200rc4-441-win', 'PHP 4.4.1-4.4.7'); ?></li>
+<li><?php url ('xdebug200rc4-512-win', 'PHP 5.1.2-5.1.6'); ?></li>
 <li><?php url ('xdebug200rc4-521-win', 'PHP 5.2.1+'); ?></li>
 </ul>
 <br />
