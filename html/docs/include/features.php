@@ -1047,6 +1047,7 @@ Xdebug 2 is bundled with a <b>simple command line client</b> for the
 <a href="/docs-dbgp.php">DBGp</a> protocol.
 There are a few other client implementations (both free and commercial) as well:
 <ul>
+<li><b><a href="http://devphp.sf.net/">Dev-PHP</a></b> (IDE: Windows)</li>
 <li><b>Eclipse
 <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=169408">plugin</a></b>, which
 has been submitted as an enhancement for the <a href="http://www.eclipse.org/php/">PDT</a> (IDE).</li>
