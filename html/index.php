@@ -12,6 +12,7 @@
 <a name="functionality"></a>
 <h2>Functionality</h2>
 
+<img src="/images/xdebug-logo.png" align="right"/>
 <p>
 The Xdebug extension helps you debugging your script by providing a lot of
 valuable debug information. The debug information that Xdebug can
