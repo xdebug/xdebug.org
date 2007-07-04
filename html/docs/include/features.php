@@ -1058,7 +1058,7 @@ has been submitted as an enhancement for the <a href="http://www.eclipse.org/php
 <li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
 <li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b> (Editor: Windows).</li>
 <li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b> (IDE).</li>
-<li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1152">plugin</a></b> (Editor Plugin).</li>
+<li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1929">plugin</a></b> (<a href="http://tech.blog.box.net/2007/06/20/how-to-debug-php-with-vim-and-xdebug-on-linux/">Tutorial</a>) (Editor Plugin).</li>
 <li>Maguma\'s <b><a href="http://www.maguma.com/products/?article=Workbench">WorkBench</a></b> (IDE).</li>
 <li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
 </ul>
