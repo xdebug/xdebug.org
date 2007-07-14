@@ -1,7 +1,7 @@
 <?php $title = "Xdebug: Support"; include "include/header.php"; hits ('xdebug-support'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="serif">
+			<td>
 			
 <!-- MAIN FEATURE START -->
 
@@ -39,10 +39,10 @@ runs as extension in a web server environment).
 
 <p>
 Discussions about Xdebug, feature requests etc. can be held on the Xdebug
-mailinglist. You can subscribe to it by sending e-mail to <u>ecartis@<span
-class="hide">remove-this-first@</span>lists.xdebug.org</u> with subject
-<b>subscribe xdebug-general</b>.  Posts to the list (<u>xdebug-general@<span
-class="hide">remove-this-first@</span>lists.xdebug.org</u>) are
+mailinglist. You can subscribe to it by sending e-mail to <em>ecartis@<span
+class="hide">remove-this-first@</span>lists.xdebug.org</em> with subject
+<b>subscribe xdebug-general</b>.  Posts to the list (<em>xdebug-general@<span
+class="hide">remove-this-first@</span>lists.xdebug.org</em>) are
 moderated unless you are subscribed to the list. To unsubscribe send e-mail to
 the same address, but then use the subject <b>unsubscribe xdebug-general</b>.
 You need to do this from the same e-mail address as from the address you
@@ -58,8 +58,8 @@ href="http://xdebug.org/archives/xdebug-dev/">here</a>.
 
 <p>
 If you have a general question about Xdebug, please send an email to
-<u>xdebug-general@<span
-class="hide">remove-this-first@</span>lists.xdebug.org</u>.  If you like Xdebug
+<em>xdebug-general@<span
+class="hide">remove-this-first@</span>lists.xdebug.org</em>.  If you like Xdebug
 and make use of it, feel free to checkout my <?php url('giftlist', 'wishlist');
 ?>.  This improves chances that I will be continuing developing Xdebug as an
 open source extension.
@@ -67,13 +67,13 @@ open source extension.
 <p>
 If you have other questions, feel free to send me an e-mail (but read <a
 href="http://www.derickrethans.nl/20020430.php">this</a> first) to
-<u>derick@<span class="hide">remove-this-first@</span>xdebug.org</u>.</p>
+<em>derick@<span class="hide">remove-this-first@</span>xdebug.org</em>.</p>
 
 <br /><br />
 
 <!-- MAIN FEATURE END -->
 
-			</span></td>
+			</td>
 			<td>&nbsp;</td>
 			<td>
 				<table cellpadding="0" cellspacing="0">

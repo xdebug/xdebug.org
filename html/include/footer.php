@@ -7,6 +7,7 @@ Copyright &copy; 2002-2007 by Derick Rethans.<br />
 All rights reserved.
 </div>
 			</td>
+		</tr>
 	</table>
 
 </body>

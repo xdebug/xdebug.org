@@ -16,7 +16,6 @@
 		.hide    { visibility: hidden; display: none; }
 		body     { background-color: white; }
 		#sidebar      { font-size: 85%; }
-		#menu	 { font-size: 85%; }
 	    table.table th { border: solid #777; padding: 3px; border-width: thin; }
 	    table.table td { border: solid #aaa; padding: 3px; border-width: thin; }
 		td		 { text-align: left; vertical-align: top; }
@@ -96,8 +95,8 @@
 	if ( !empty( $tabFields ) )
 	{
 ?>
-<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/tabview.css">
-<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/border_tabs.css">
+<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/tabview.css"/>
+<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/border_tabs.css"/>
 <script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
 <script type="text/javascript" src="/yui/build/event/event.js"></script>
 <script type="text/javascript" src="/yui/build/dom/dom.js"></script>

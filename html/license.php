@@ -1,7 +1,7 @@
 <?php $title = "Xdebug: License"; include "include/header.php"; hits ('xdebug-license'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="serif">
+			<td>
 			
 <!-- MAIN FEATURE START -->
 
@@ -24,7 +24,6 @@ Redistribution and use in source and binary forms, with or without
 modification, is permitted provided that the following conditions
 are met:
 </p>
-<p>
 <ol>
  <li>Redistributions of source code must retain the above copyright
      notice, this list of conditions and the following disclaimer.</li>
@@ -56,7 +55,6 @@ are met:
      acknowledgment: "This product includes Xdebug, freely available
      from <a href="http://xdebug.org/">http://xdebug.org/</a>".</li>
 </ol>
-</p>
 
 <p>
 THIS SOFTWARE IS PROVIDED BY DERICK RETHANS ``AS IS'' AND ANY
@@ -70,8 +68,8 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-<hr />
 </p>
+<hr />
 
 <p>
 This software consists of voluntary contributions made by some
@@ -91,7 +89,7 @@ For more information Xdebug, please see
 
 <!-- MAIN FEATURE END -->
 
-			</span></td>
+			</td>
 			<td>&nbsp;</td>
 			<td>
 				<table cellpadding="0" cellspacing="0">

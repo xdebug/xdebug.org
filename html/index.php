@@ -1,7 +1,7 @@
 <?php $title = "Xdebug - Debugger and Profiler Tool for PHP"; include "include/header.php"; hits ('xdebug'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="serif">
+			<td>
 			
 <!-- MAIN FEATURE START -->
 
@@ -12,7 +12,7 @@
 <a name="functionality"></a>
 <h2>Functionality</h2>
 
-<img src="/images/xdebug-logo.png" align="right"/>
+<img src="/images/xdebug-logo.png" align="right" alt="logo"/>
 <p>
 The Xdebug extension helps you debugging your script by providing a lot of
 valuable debug information. The debug information that Xdebug can
@@ -25,19 +25,18 @@ provide includes the following:
   <li>function name, file name and line indications</li>
   <li>support for member functions</li>
   </ul>
+</li>
 <li>memory allocation</li>
 <li>protection for infinite recursions</li>
 </ul>
 <p>
 Xdebug also provides:
 </p>
-<p>
 <ul>
 <li><a href='docs-profiling.php'>profiling</a> information for PHP scripts</li>
 <li><a href='docs.php#xdebug_start_code_coverage'>script execution analysis</a></li>
 <li>capabilities to debug your scripts interactively with a debug client</li>
 </ul>
-</p>
 
 <a name="announcements"></a>
 <h2>Announcements</h2>
@@ -120,7 +119,7 @@ See the full <a href="updates.php">Changelog</a> to find out what's new. </dd>
 <dd class="main">Together with Shane Caraveo from <a
 href="http://www.activestate.com">ActiveState</a> a new protocol, <a
 href="docs-dbgp.php">DBGp</a>, was developed. This will be <a
-href="http://www.maguma.com"><img align="left" class="l"
+href="http://www.maguma.com"><img align="left" class="l" alt="maguma"
 src="/images/maguma.png" border="0"/></a>implemented for Xdebug 2 and is a true
 multi-language protocol. This means that a client written for Xdebug 2 will
 also work in combination with the Perl, Python, Tcl and XSLT debuggers from

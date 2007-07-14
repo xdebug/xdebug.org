@@ -10,7 +10,7 @@
 ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class='serif'>
+			<td>
 			
 <!-- MAIN FEATURE START -->
 
@@ -115,7 +115,7 @@ END;
 	hits('xdebug-docs');
 	echo $text;
 ?>
-			</span></td>
+			</td>
 			<td>&nbsp;</td>
 			<td>
 				<table cellpadding="0" cellspacing="0">

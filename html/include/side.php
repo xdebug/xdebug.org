@@ -2,7 +2,6 @@
 <div id="sidebar">
 <span class="sans">RELEASES</span><br />
 
-<span class='quote'>
 <dl class="status">
 <dt>[17-05-2007]</dt>
 <dd>
