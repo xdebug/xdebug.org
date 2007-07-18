@@ -19,9 +19,9 @@ valuable debug information. The debug information that Xdebug can
 provide includes the following:
 </p>
 <ul>
-<li>stack and function traces in error messages with:
+<li><a href='/docs/stack_trace'>stack traces</a> and <a href='/docs/execution_trace'>function traces</a> in error messages with:
   <ul>
-  <li>full parameter display for user defined functions</li> 
+  <li>full <a href='/docs/display'>parameter display</a> for user defined functions</li> 
   <li>function name, file name and line indications</li>
   <li>support for member functions</li>
   </ul>
@@ -33,15 +33,19 @@ provide includes the following:
 Xdebug also provides:
 </p>
 <ul>
-<li><a href='docs-profiling.php'>profiling</a> information for PHP scripts</li>
-<li><a href='docs.php#xdebug_start_code_coverage'>script execution analysis</a></li>
-<li>capabilities to debug your scripts interactively with a debug client</li>
+<li><a href='docs/profiler'>profiling</a> information for PHP scripts</li>
+<li><a href='docs/code_coverage'>code coverage analysis</a></li>
+<li>capabilities to <a href='docs/remote'>debug your scripts interactively</a> with a debug client</li>
 </ul>
 
 <a name="announcements"></a>
 <h2>Announcements</h2>
 
 <dl class="main">
+<dt class="main">[28-07-2007]</dt>
+<dd class="main">It is finally here, Xdebug 2.0.0 has arrived! After about four
+years of work I finally found it ready to release. Have fun!</dd>
+
 <dt class="main">[17-05-2007]</dt>
 <dd class="main">Xdebug version 2.0.0RC4 has been released. There are two major
 changes that needs some introduction. The first one is that the

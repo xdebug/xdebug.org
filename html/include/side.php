@@ -3,11 +3,11 @@
 <span class="sans">RELEASES</span><br />
 
 <dl class="status">
-<dt>[17-05-2007]</dt>
+<dt>[18-07-2007]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug200rc4', 'xdebug 2.0.0RC4'); ?></li>
+<li><?php url ('xdebug200', 'xdebug 2.0.0'); ?></li>
 </ul>
 <br />
 
@@ -20,9 +20,9 @@ Debug client 0.9.0 (DBGp) (binary):
 
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200rc4-441-win', 'PHP 4.4.1-4.4.7'); ?></li>
-<li><?php url ('xdebug200rc4-512-win', 'PHP 5.1.2-5.1.6'); ?></li>
-<li><?php url ('xdebug200rc4-521-win', 'PHP 5.2.1+'); ?></li>
+<li><?php url ('xdebug200-446-win', 'PHP 4.4.1-4.4.7'); ?></li>
+<li><?php url ('xdebug200-516-win', 'PHP 5.1.2-5.1.6'); ?></li>
+<li><?php url ('xdebug200-522-win', 'PHP 5.2.1+'); ?></li>
 </ul>
 <br />
 
@@ -45,10 +45,10 @@ Windows modules:
 <br /><br />
  End PayPal Logo -->
 
-<span class="sans">DEVELOPMENT VERSION (2.0dev)</span><br />
+<span class="sans">DEVELOPMENT VERSION (2.1dev)</span><br />
 <dl class="status">
 <dd>
-Instructions to get Xdebug 2.0dev from CVS can be found <a
+Instructions to get Xdebug 2.1dev from CVS can be found <a
 href='/install.php#source'>here</a>. This version compiles on PHP 4.3.0 and
 higher.
 </dd>

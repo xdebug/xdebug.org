@@ -20,6 +20,30 @@
 <span class='quote'>
 <dl>
 
+<dt>[18-07-2007] &mdash; Xdebug 2.0.0</dt>
+<dd><h3>Changes</h3></dd>
+<dd>Put back the disabling of stack traces - apperently people were relying on this. This brings back xdebug_enable(), xdebug_disable() and xdebug_is_enabled().</dd>
+<dd>xdebug.collect_params is no longer a boolean setting. Although it worked fine, phpinfo() showed only just On or Off here.</dd>
+<dd>Fixed the Xdebug version of raw_url_encode to not encode : and \. This is not necessary according to the RFCs and it makes debug breakpoints work on Windows.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #291: Tests that use SPL do not skip when SPL is not available.</dd>
+<dd>Fixed bug #290: Function calls leak memory.</dd>
+<dd>Fixed bug #289: Xdebug terminates connection when eval() is run in the init stage.</dd>
+<dd>Fixed bug #284: Step_over on breakpointed line made Xdebug break twice.</dd>
+<dd>Fixed bug #283: Xdebug always returns $this with the value of last stack frame.</dd>
+<dd>Fixed bug #282: %s is not usable for xdebug.profiler_output_name on Windows in all stack frames.</dd>
+<dd>Fixed bug #280: var_dump() doesn't display key of array as expected.</dd>
+<dd>Fixed bug #278: Code Coverage Issue.</dd>
+<dd>Fixed bug #273: Remote debugging: context_get does not return context id.</dd>
+<dd>Fixed bug #270: Debugger aborts when PHP's eval() is encountered. </dd>
+<dd>Fixed bug #265: XDebug breaks error_get_last() .</dd>
+<dd>Fixed bug #261: Code coverage issues by overloading zend_assign_dim.</dd>
+
+<dd><h3>DBGP</h3></dd>
+<dd>Added support for "breakpoint_languages".</dd>
+
+
 <dt>[17-05-2007] &mdash; Xdebug 2.0.0RC4</dt>
 <dd><h3>Changes</h3></dd>
 <dd>Use µ seconds instead of a tenths of µ seconds to avoid confusion in profile information.</dd>
