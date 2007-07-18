@@ -44,7 +44,22 @@ Xdebug also provides:
 <dl class="main">
 <dt class="main">[28-07-2007]</dt>
 <dd class="main">It is finally here, Xdebug 2.0.0 has arrived! After about four
-years of work I finally found it ready to release. Have fun!</dd>
+years of work I finally found it ready to release. Have fun!
+After almost four years of work, Xdebug 2 is finally ready. With
+improved functionality and many new features it is ready to totally
+change the way you develop in PHP. Some of the new features and updates
+include <a href="/docs/stack_trace">improved stack
+traces</a>, <a href="/docs/execution_trace">execution traces to
+files</a>, <a href="/docs/code_coverage">code
+coverage analysis</a> and much improved <a href="/docs/remote">remote debugging</a> support.
+Xdebug's <a href="/docs">documentation</a> has also
+been rewritten for more clarity.</dd>
+		
+<dd class="main">As with most open source projects, it's very hard to know who are actually
+the users of the project. As I would like to know my users better, I would
+invite everybody who finds Xdebug useful to send me a postcard with their
+location. (Address is <a href="http://derickrethans.nl/who.php">here</a> at the
+top of the page). I am looking forwards to find out who you are!</dd>
 
 <dt class="main">[17-05-2007]</dt>
 <dd class="main">Xdebug version 2.0.0RC4 has been released. There are two major
