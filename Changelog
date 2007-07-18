@@ -1,3 +1,14 @@
+Wed Jul 18 20:49:28 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/php_xdebug-2.0.0-4.4.6.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0-5.1.6.dll
+www.xdebug.org/html/files/php_xdebug-2.0.0-5.2.2.dll
+www.xdebug.org/html/files/xdebug-2.0.0.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Xdebug 2.0.0.
+
 Mon Jul 16 20:43:54 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/basic.php:
 - Update versions.
