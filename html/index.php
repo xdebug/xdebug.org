@@ -42,7 +42,7 @@ Xdebug also provides:
 <h2>Announcements</h2>
 
 <dl class="main">
-<dt class="main">[28-07-2007]</dt>
+<dt class="main">[18-07-2007]</dt>
 <dd class="main">It is finally here, Xdebug 2.0.0 has arrived! After about four
 years of work I finally found it ready to release. Have fun!
 After almost four years of work, Xdebug 2 is finally ready. With
