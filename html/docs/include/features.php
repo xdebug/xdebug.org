@@ -403,11 +403,13 @@ different settings. You can use the tabs to see the difference.
 		configured to suit your needs.',
 		'
 <p>
-The stack traces that Xdebug shows on error situations are quite conservative
-in the amount of information that they show. This is because large amounts of
-information can slow down both the execution of the scripts and the rendering
-of the stack traces themselves in the browser. However, it is possible to make
-the stack traces show more detailed information with different settings.
+The stack traces that Xdebug shows on error situations (if <a
+href="http://www.php.net/manual/en/ref.errorfunc.php#ini.display-errors">display_errors</a>
+is set to On in php.ini) are quite conservative in the amount of
+information that they show. This is because large amounts of information can
+slow down both the execution of the scripts and the rendering of the stack
+traces themselves in the browser. However, it is possible to make the stack
+traces show more detailed information with different settings.
 </p>
 <h2>Variables in Stack Traces</h2>
 <p>
@@ -1196,10 +1198,11 @@ it uses. You can find this extension <a href="https://addons.mozilla.org/en-US/f
 <dt>Q: phpinfo() reports that Xdebug is installed and enabled, yet I
 still don\'t get any stacktraces when an error happens.
 </dt>
-<dd>A: You have to search through all your PHP libraries and include files for any
+<dd>A1: You have to search through all your PHP libraries and include files for any
 "set_error_handler" calls. If there are any, you have to either comment it out,
 or change the body of the handler function to call xdebug_* api functions.
 </dd>
+<dd>A2: You do not have set <a href="http://www.php.net/manual/en/ref.errorfunc.php#ini.display-errors">display_errors</a> to 1 in php.ini</dd>
 
 <dt>Q: The debug client doesn\'t receive any connections, what do I do
 wrong?</dt>
@@ -1210,7 +1213,7 @@ more information.</dd>
 </dl>
 
 <h2>Compilation and Configuration</h2>
-<dl>
+<dl class="faq">
 <dt>Q: I\'m using XAMPP, but I can\'t seem to get the packaged xdebug extension
 to work properly.</dt>
 <dd>A: If you uncommented the "extension=php_xdebug.dll" line, that is to be
