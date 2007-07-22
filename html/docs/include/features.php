@@ -645,13 +645,13 @@ meaning as tool tips don\'t work in text files.
 
 <div id="collectparams" class="yui-navset">
 	<ul class="yui-nav">
-		<li class="selected"><a href="#default"><em>default</em></a></li>
+		<li class="selected"><a href="#default1"><em>default</em></a></li>
 		<li><a href="#collect-params-1"><em>collect_params=1</em></a></li>
 		<li><a href="#collect-params-3"><em>collect_params=3</em></a></li>
 		<li><a href="#collect-params-4"><em>collect_params=4</em></a></li>
 	</ul>
 	<div class="yui-content">
-		<div id="default">
+		<div id="default1">
 <pre class="shell">
 TRACE START [2007-05-06 14:37:06]
     0.0003     114112   -> {main}() ../trace.php:0
@@ -752,13 +752,13 @@ additional tool to interpret the trace files.
 
 <div id="othersettings" class="yui-navset">
 	<ul class="yui-nav">
-		<li class="selected"><a href="#default"><em>default</em></a></li>
+		<li class="selected"><a href="#default2"><em>default</em></a></li>
 		<li><a href="#mem-delta"><em>show_mem_delta=1</em></a></li>
 		<li><a href="#collect-return"><em>collect_return=1</em></a></li>
 		<li><a href="#trace-format"><em>trace_format=1</em></a></li>
 	</ul>
 	<div class="yui-content">
-		<div id="default">
+		<div id="default2">
 <pre class="shell">
 TRACE START [2007-05-06 14:37:06]
     0.0003     114112   -> {main}() ../trace.php:0

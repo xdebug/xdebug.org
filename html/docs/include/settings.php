@@ -192,9 +192,10 @@ automatically.</p>
 
 <p>
 The possible format specifiers are:
+</p>
 <table class='table'>
 <tr><th>Specifier</th><th>Meaning</th><th>Example Format</th><th>Example Filename</th></tr>
-<tr><td class='ctr'>%c</td><td>crc32 of the current working directory</td><td>trace.%c</td><td>trace.1258863198.xt</tr>
+<tr><td class='ctr'>%c</td><td>crc32 of the current working directory</td><td>trace.%c</td><td>trace.1258863198.xt</td></tr>
 <tr><td class='ctr'>%p</td><td>pid</td><td>trace.%p</td><td>trace.5174.xt</td></tr>
 <tr><td class='ctr'>%r</td><td>random number</td><td>trace.%r</td><td>trace.072db0.xt</td></tr>
 <tr><td class='ctr'>%s</td><td>script name<sup><a href='#note2'>2</a></sup></td><td>cachegrind.out.%s</td><td>cachegrind.out._home_httpd_html_test_xdebug_test_php</td></tr>
@@ -206,7 +207,6 @@ The possible format specifiers are:
 <tr><td class='ctr'>%%</td><td>literal %</td><td>trace.%%</td><td>trace.%%.xt</td></tr>
 <tr><td colspan='4'><a name='note2'><sup>2</sup></a> this one is not available for trace file names.</td></tr>
 </table>
-</p>
 ",
 		FUNC_FUNCTION_TRACE
 	),
