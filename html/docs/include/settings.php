@@ -1,7 +1,7 @@
 <?php
 $settings = array(
 	'collect_vars' => array(
-		'boolean', 'Off', TWO,
+		'boolean', 'Off', null,
 		"This setting tells Xdebug to gather information about which variables
 are used in a certain scope. This analysis can be quite slow as Xdebug has
 to reverse engineer PHP's opcode arrays. This setting will not record which
@@ -11,7 +11,7 @@ This setting needs to be enabled only if you wish to use
 		FUNC_STACK_TRACE
 	),
 	'default_enable' => array(
-		'boolean', 'On', ONE | TWO,
+		'boolean', 'On', null,
 		"If this setting is On then stacktraces will be shown by default on an
 error event. You can disable showing stacktraces from your code with
 [FUNC:xdebug_disable]. As this is one of the basic functions of Xdebug, it is
@@ -19,7 +19,7 @@ advisable to leave this setting set to 'On'.",
 		FUNC_BASIC
 	),
 	'extended_info' => array(
-		'integer', 1, ONE | TWO,
+		'integer', 1, null,
 		"Controls whether Xdebug should enforce 'extended_info' mode for the PHP
 parser; this allows Xdebug to do file/line breakpoints with the remote
 debugger. When tracing or profiling scripts you generally want to turn off this
@@ -29,14 +29,14 @@ ini_set(), but only in php.ini.",
 		FUNC_REMOTE
 	),
 	'manual_url' => array(
-		'string', 'http://www.php.net', ONE | TWO,
+		'string', 'http://www.php.net', null,
 		"This is the base url for the links from the function traces and error
 message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.",
 		FUNC_STACK_TRACE
 	),
 	'max_nesting_level' => array(
-		'integer', 100, ONE | TWO,
+		'integer', 100, null,
 		"Controls the protection mechanism for infinite recursion protection.
 The value of this setting is the maximum level of nested functions that are
 allowed before the script will be aborted.",
@@ -44,14 +44,14 @@ allowed before the script will be aborted.",
 	),
 
 	'show_exception_trace' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"When this setting is set to 1, Xdebug will show a stack trace whenever
 an exception is raised - even if this exception is actually caught.",
 		FUNC_STACK_TRACE
 	),
 
 	'show_local_vars' => array(
-		'integer', 9, TWO,
+		'integer', 9, null,
 		"When this setting is set to something != 0 Xdebug's generated stack dumps
 in error situations will also show all variables in the top-most scope. Beware
 that this might generate a lot of information, and is therefore turned off by
@@ -60,7 +60,7 @@ default.",
 	),
 
 	'show_mem_delta' => array( 
-		'integer', 0, ONE | TWO,
+		'integer', 0, null,
 		"When this setting is set to something != 0 Xdebug's human-readable
 generated trace files will show the difference in memory usage between function
 calls. If Xdebug is configured to generate computer-readable trace files then
@@ -69,7 +69,7 @@ they will always show this information.",
 	),
 
 	'var_display_max_children' => array(
-		'integer', 128, TWO,
+		'integer', 128, null,
 		"Controls the amount of array children and object's properties are shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
 [CFG:show_local_vars] or through [FEAT:execution_trace].",
@@ -77,7 +77,7 @@ when variables are displayed with either [FUNC:xdebug_var_dump],
 	),
 
 	'var_display_max_data' => array(
-		'integer', 512, TWO,
+		'integer', 512, null,
 		"Controls the maximum string length that is shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
 [CFG:show_local_vars] or through [FEAT:execution_trace].",
@@ -85,7 +85,7 @@ when variables are displayed with either [FUNC:xdebug_var_dump],
 	),
 
 	'var_display_max_depth' => array(
-		'integer', 3, TWO,
+		'integer', 3, null,
 		"Controls how many nested levels of array elements and object properties are
 when variables are displayed with either [FUNC:xdebug_var_dump],
 [CFG:show_local_vars] or through [FEAT:execution_trace].",
@@ -93,7 +93,7 @@ when variables are displayed with either [FUNC:xdebug_var_dump],
 	),
 
 	'auto_trace' => array(
-		'boolean', 0, ONE | TWO,
+		'boolean', 0, null,
 		"When this setting is set to on, the tracing of function calls will be
 enabled just before the script is run. This makes it possible to trace code in
 the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend-file'>auto_prepend_file</a>.",
@@ -101,7 +101,7 @@ the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-
 	),
 
 	'collect_includes' => array(
-		'boolean', 1, TWO,
+		'boolean', 1, null,
 		"This setting, defaulting to On, controls whether Xdebug should write the
 filename used in include(), include_once(), require() or require_once() to the
 trace files.",
@@ -109,7 +109,7 @@ trace files.",
 	),
 
 	'collect_params' => array(
-		'integer', 0, ONE | TWO,
+		'integer', 0, null,
 		"<p>This setting, defaulting to 0, controls whether Xdebug should collect
 the parameters passed to functions when a function call is recorded in either
 the function trace or the stack trace.</p>
@@ -139,14 +139,14 @@ each of the values provides. See also the introduction of the feature
 	),
 
 	'collect_return' => array(
-		'boolean', 0, TWO,
+		'boolean', 0, null,
 		"This setting, defaulting to Off, controls whether Xdebug should write the
 return value of function calls to the trace files.",
 		FUNC_FUNCTION_TRACE,
 	),
 
 	'trace_format' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"The format of the trace file.
 <table class='table'>
 <tr><th>Value</th><th>Description</th></tr>
@@ -168,14 +168,14 @@ See the introduction of [FEAT:execution_trace] for a few examples.
 	),
 
 	'trace_options' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"When set to '1' the trace files will be appended to, instead of
 being overwritten in subsequent requests.",
 		FUNC_FUNCTION_TRACE
 	),
 
 	'trace_output_dir' => array(
-		'string', '/tmp', TWO,
+		'string', '/tmp', null,
 		"The directory where the tracing files will be written to, make sure that
 the user who the PHP will be running as has write permissions to that
 directory.",
@@ -183,7 +183,7 @@ directory.",
 	),
 
 	'trace_output_name' => array(
-		'string', 'trace.%c', TWO,
+		'string', 'trace.%c', null,
 		"<p>This setting determines the name of the file that is used to dump
 traces into. The setting specifies the format with format specifiers, very
 similar to sprintf() and strftime(). There are several format specifiers
@@ -213,7 +213,7 @@ The possible format specifiers are:
 
 	
 	'idekey' => array(
-		'string', '*complex*', ONE | TWO,
+		'string', '*complex*', null,
 		"Controls which IDE Key Xdebug should pass on to the DBGp debugger handler.
 The default is based on environment settings. First the environment setting
 DBGP_IDEKEY is consulted, then USER and as last USERNAME.  The default is set
@@ -223,7 +223,7 @@ setting has as default ''.",
 	),
 
 	'remote_autostart' => array(
-		'boolean', 0, ONE | TWO,
+		'boolean', 0, null,
 		"Normally you need to use a specific HTTP GET/POST variable to start
 remote debugging (see [FEAT:remote]). When
 this setting is set to 'On' Xdebug will always attempt to start a remote
@@ -233,7 +233,7 @@ variable was not present.",
 	),
 
 	'remote_enable' => array(
-		'boolean', 0, ONE | TWO,
+		'boolean', 0, null,
 		"This switch controls whether Xdebug should try to contact a debug client
 which is listening on the host and port as set with the settings
 [CFG:remote_host] and
@@ -243,7 +243,7 @@ continue as if this setting was Off.",
 	),
 
 	'remote_handler' => array(
-		'string', 'dbgp', ONE | TWO,
+		'string', 'dbgp', null,
 		"Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
 output, 'gdb' which enables the GDB like debugger interface or 'dbgp' - the
@@ -255,14 +255,14 @@ more widely supported by clients. See more information in the introduction for
 	),
 
 	'remote_host' => array(
-		'string', 'localhost', ONE | TWO,
+		'string', 'localhost', null,
 		"Selects the host where the debug client is running, you can either use a
 host name or an IP address.",
 		FUNC_REMOTE
 	),
 
 	'remote_log' => array(
-		'string', 'none', ONE | TWO,
+		'string', 'none', null,
 		"If set to a value, it is used as filename to a file to which all remote
 debugger communications are logged. The file is always opened in append-mode,
 and will therefore not be overwritten by default. There is no concurrency
@@ -278,7 +278,7 @@ Log opened at 2007-05-27 14:28:15
 	),
 
 	'remote_mode' => array(
-		'string', 'req', ONE | TWO,
+		'string', 'req', null,
 		"<p>Selects when a debug connection is initiated. This setting can have two
 different values:
 <dl>
@@ -294,7 +294,7 @@ condition occurs.</dd>
 	),
 
 	'remote_port' => array(
-		'integer', 9000, ONE | TWO,
+		'integer', 9000, null,
 		"The port to which Xdebug tries to connect on the remote host. Port
 9000 is the default for both the client and the bundled debugclient.
 As many clients use this port number, it is best to leave this setting
@@ -303,7 +303,7 @@ unchanged.",
 	),
 
 	'profiler_append' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"When this setting is set to 1, profiler files will not be overwritten when
 a new request would map to the same file (depnding on the [CFG:profiler_output_name] setting.
 Instead the file will be appended to with the new profile.",
@@ -311,7 +311,7 @@ Instead the file will be appended to with the new profile.",
 	),
 
 	'profiler_enable' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"Enables Xdebug's profiler which creates files in the
 [CFG:profiler_output_dir:profile output directory].  Those files can be
 read by KCacheGrind to visualize your data.  This setting can not be set in
@@ -320,7 +320,7 @@ your script with ini_set().",
 	),
 
 	'profiler_enable_trigger' => array(
-		'integer', 0, TWO,
+		'integer', 0, null,
 		"When this setting is set to 1, you can trigger the generation of profiler
 files by using the XDEBUG_PROFILE GET/POST parameter. This will then write the
 profiler data to [CFG:profiler_output_dir:defined directory].",
@@ -328,7 +328,7 @@ profiler data to [CFG:profiler_output_dir:defined directory].",
 	),
 
 	'profiler_output_dir' => array(
-		'string', '/tmp', TWO,
+		'string', '/tmp', null,
 		"The directory where the profiler output will be written to, make sure that
 the user who the PHP will be running as has write permissions to that
 directory. This setting can not be set in your script with ini_set().",
@@ -336,7 +336,7 @@ directory. This setting can not be set in your script with ini_set().",
 	),
 
 	'profiler_output_name' => array(
-		'string', 'cachegrind.out.%p', TWO,
+		'string', 'cachegrind.out.%p', null,
 		"<p>This setting determines the name of the file that is used to dump
 traces into. The setting specifies the format with format specifiers, very
 similar to sprintf() and strftime(). There are several format specifiers
@@ -350,7 +350,7 @@ specifiers.</p>
 
 
 	'dump.*' => array(
-		'string', "Empty", ONE | TWO,
+		'string', "Empty", null,
 		"* = COOKIE, FILES, GET, POST, REQUEST, SERVER, SESSION. These seven
 settings control which data from the superglobals is shown when an error
 situation occurs. Each php.ini setting can consist of a comma seperated list of
@@ -365,22 +365,59 @@ xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
 	),
 
 	'dump_globals' => array(
-		'boolean', 1, ONE | TWO,
+		'boolean', 1, null,
 		'Controls whether the values of the superglobals as defined by the [CFG:dump.*] settings whould be shown or not.',
 		FUNC_STACK_TRACE
 	),
 
 	'dump_once' => array(
-		'boolean', 1, ONE | TWO,
+		'boolean', 1, null,
 		"Controls whether the values of the superglobals should be dumped on all
 error situations (set to Off) or only on the first (set to On).",
 		FUNC_STACK_TRACE
 	),
 
 	'dump_undefined' => array(
-		'boolean', 0, ONE | TWO,
+		'boolean', 0, null,
 		"If you want to dump undefined values from the superglobals you should set
 this setting to On, otherwise leave it set to Off.",
+		FUNC_STACK_TRACE
+	),
+
+	'file_link_format' => array(
+		'string', '*empty string*', '2.1',
+		'<p>This setting determines the format of the links that are made in
+the display of stack traces where file names are used. This allows IDEs to set
+up a link-protocol that makes it possible to go directly to a line and file by
+clicking on the filenames that Xdebug shows in stack traces. An example format might look like:
+</p>
+<pre>
+myide://%f@%l
+</pre>
+<p>
+An example rendering follows here:
+</p>
+<div class="example">
+<p>
+<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
+<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Call to undefined function b() in <a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@7\'>/home/httpd/html/test/xdebug/file_link.php</a> on line <i>7</i></th></tr>
+<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
+<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0009</td><td bgcolor=\'#eeeeec\' align=\'right\'>112592</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@0\'>../file_link.php<b>:</b>0</a></td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0012</td><td bgcolor=\'#eeeeec\' align=\'right\'>113384</td><td bgcolor=\'#eeeeec\'>c(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@16\'>../file_link.php<b>:</b>16</a></td></tr>
+<tr><td bgcolor=\'#eeeeec\' align=\'center\'>3</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0012</td><td bgcolor=\'#eeeeec\' align=\'right\'>113696</td><td bgcolor=\'#eeeeec\'>a(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@13\'>../file_link.php<b>:</b>13</a></td></tr>
+</table></font>
+</p>
+</div>
+<p>
+The possible format specifiers are:
+</p>
+<table class="table">
+<tr><th>Specifier</th><th>Meaning</th></tr>
+<tr><td class="ctr">%f</td><td>the filename</td></tr>
+<tr><td class="ctr">%l</td><td>the line number</td></tr>
+</table>
+',
 		FUNC_STACK_TRACE
 	),
 );
