@@ -1,3 +1,8 @@
+Sun Jul 22 16:59:18 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php
+www.xdebug.org/html/docs/include/settings.php:
+- Fixed some HTML errors.
+
 Thu Jul 19 19:43:21 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Added display_errors to the FAQ.
