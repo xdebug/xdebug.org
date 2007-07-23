@@ -155,11 +155,34 @@ return value of function calls to the trace files.",
 href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
 <i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
 <i>filename</i> and <i>line number</i>.</td></tr>
-<tr><td class='ctr'>1</td><td>writes a computer readable format with the following
-tab-separated fields: <i>level</i>, <i>function #</i>, <i>function entry (0) or
-function exit (1)</i>, <i>time index</i>, <i>memory usage</i>, <i>function
-name</i>, <i>user-defined (1) or internal function (0)</i>, <i>name of the
-include/require file</i>, <i>filename</i> and <i>line number</i>.</td></tr>
+<tr><td class='ctr'>1</td><td><p>writes a computer readable format which has two
+different records. There are different records for entering a stack frame, and
+leaving a stack frame. The table below lists the fields in each type of record.
+Fields are tab separated.
+</p>
+<table class='table-inner'>
+<tr><th rowspan='2'>Record type</th><th colspan='10'>Fields</th></tr>
+<tr><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th></tr>
+<tr>
+	<th class='ctr'>Entry</th>
+	<td rowspan='2'>level</td>
+	<td rowspan='2'>function&nbsp;#</td>
+	<td>always&nbsp;'0'</td>
+	<td rowspan='2'>time index</td>
+	<td rowspan='2'>memory usage</td>
+	<td>function name</td>
+	<td>user-defined&nbsp;(1) or internal function&nbsp;(0)</td>
+	<td>name of the include/require file</td>
+	<td>filename</td>
+	<td>line number</td>
+</tr>
+<tr><th class='ctr'>Exit</th>
+	<td>always&nbsp;'1'</td>
+	<td colspan='5' class='ctr'><i>empty</i></td>
+</tr>
+</table>
+
+</td></tr>
 </table>
 <p>
 See the introduction of [FEAT:execution_trace] for a few examples.
@@ -280,7 +303,7 @@ Log opened at 2007-05-27 14:28:15
 	'remote_mode' => array(
 		'string', 'req', null,
 		"<p>Selects when a debug connection is initiated. This setting can have two
-different values:
+different values:</p>
 <dl>
 <dt>req</dt>
 <dd>Xdebug will try to connect to the debug client as soon as the script
@@ -288,8 +311,7 @@ starts.</dd>
 <dt>hit</dt>
 <dd>Xdebug will only try to connect to the debug client as soon as an error
 condition occurs.</dd>
-</dl>
-</p>",
+</dl>",
 		FUNC_REMOTE
 	),
 
