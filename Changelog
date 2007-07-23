@@ -1,3 +1,8 @@
+Mon Jul 23 21:15:35 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/settings.php
+www.xdebug.org/html/include/header.php:
+- Fixed xdebug.trace_format documentation.
+
 Sun Jul 22 23:01:29 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/basic.php
 www.xdebug.org/html/docs/include/settings.php:
