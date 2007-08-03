@@ -19,10 +19,20 @@ TXT:
 The name of the trace file is "{trace_file}.xt". If [CFG:auto_trace] is
 enabled, then the format of the filename is "{filename}.xt" where the
 "{filename}" part depends on the [CFG:trace_output_name] setting. The
-<i>options</i> parameter is a bitfield; currently there are two options:
-"XDEBUG_TRACE_APPEND" (1) makes the trace file open in append mode rather than
-overwrite mode and "XDEBUG_TRACE_COMPUTERIZED" (2) creates a trace file with
-the format as described under <i>1</i> "[CFG:trace_format]". Unlike Xdebug 1,
+<i>options</i> parameter is a bitfield; currently there are three options:
+
+<dl>
+<dt>XDEBUG_TRACE_APPEND (1)</dt>
+<dd>makes the trace file open in append mode rather than
+overwrite mode</dd>
+<dt>XDEBUG_TRACE_COMPUTERIZED (2)</dt>
+<dd>creates a trace file with
+the format as described under <i>1</i> "[CFG:trace_format]".</dd>
+<dt>XDEBUG_TRACE_HTML (4)</dt>
+<dd>creates a trace file as an HTML table</dd>
+</dl>
+
+Unlike Xdebug 1,
 Xdebug 2 will not store function calls in memory, but always only write to disk
 to relieve the pressure on used memory. The settings [CFG:collect_includes],
 [CFG:collect_params] and [CFG:collect_return] influence what information is
