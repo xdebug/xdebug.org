@@ -1,3 +1,7 @@
+Fri Aug 03 23:11:40 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/functions/xdebug_get_declared_vars:
+- Clarify when "a" is not in the array.
+
 Mon Jul 23 21:15:35 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php
 www.xdebug.org/html/include/header.php:
