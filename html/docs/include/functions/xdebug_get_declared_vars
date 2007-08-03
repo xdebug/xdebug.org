@@ -27,4 +27,5 @@ RESULT:
   2 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'item'</font> <i>(length=4)</i>
 
 TXT:
-The variable name "a" is not returned here, as it is not used in that scope.
+In PHP versions before 5.1, the variable name "a" is not in the returned
+array, as it is not used in the scope where the function is called in.
