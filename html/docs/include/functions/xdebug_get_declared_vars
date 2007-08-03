@@ -27,5 +27,6 @@ RESULT:
   2 <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'item'</font> <i>(length=4)</i>
 
 TXT:
-In PHP versions before 5.1, the variable name "a" is not in the returned
-array, as it is not used in the scope where the function is called in.
+In PHP versions before 5.1, the variable name "a" is not in the returned array,
+as it is not used in the scope where the function xdebug_get_declared_vars() is
+called in.
