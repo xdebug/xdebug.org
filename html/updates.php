@@ -136,7 +136,6 @@
 <dd>Fixed PECL bug #8989: Compile error with PHP 5 and GCC 2.95.</dd>
 
 
-
 <dt>[08-10-2006] &mdash; Xdebug 2.0.0RC1</dt>
 
 <dd><h3>Added new features</h3></dd>
