@@ -1,3 +1,9 @@
+Mon Aug 20 09:36:46 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/install.php
+www.xdebug.org/html/docs/include/basic.php
+www.xdebug.org/html/docs/include/features.php:
+- Fixed docs.
+
 Fri Aug 03 23:16:38 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/updates.php:
 - Test commit. 
