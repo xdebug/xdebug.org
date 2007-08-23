@@ -406,6 +406,15 @@ this setting to On, otherwise leave it set to Off.",
 		FUNC_STACK_TRACE
 	),
 
+	'overload_var_dump' => array(
+		'boolean', 1, '2.1',
+		"By default Xdebug overloads var_dump() with its own improved version
+		for displaying variables when the html_errors php.ini setting is set to
+		1. In case you do not want that, you can set this setting to 0, but
+		check first if it's not smarter to turn off html_errors.",
+		FUNC_VAR_DUMP
+	),
+
 	'file_link_format' => array(
 		'string', '*empty string*', '2.1',
 		'<p>This setting determines the format of the links that are made in
