@@ -1,3 +1,7 @@
+Thu Aug 23 21:47:49 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/settings.php:
+- Added docs for new setting.
+
 Mon Aug 20 09:36:46 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/install.php
 www.xdebug.org/html/docs/include/basic.php
