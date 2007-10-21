@@ -3,11 +3,11 @@
 <span class="sans">RELEASES</span><br />
 
 <dl class="status">
-<dt>[18-07-2007]</dt>
+<dt>[20-10-2007]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug200', 'xdebug 2.0.0'); ?></li>
+<li><?php url ('xdebug201', 'xdebug 2.0.1'); ?></li>
 </ul>
 <br />
 
@@ -20,9 +20,9 @@ Debug client 0.9.0 (DBGp) (binary):
 
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug200-446-win', 'PHP 4.4.1-4.4.7'); ?></li>
-<li><?php url ('xdebug200-516-win', 'PHP 5.1.2-5.1.6'); ?></li>
-<li><?php url ('xdebug200-522-win', 'PHP 5.2.1+'); ?></li>
+<li><?php url ('xdebug201-441-win', 'PHP 4.4.1-4.4.7'); ?></li>
+<li><?php url ('xdebug201-512-win', 'PHP 5.1.2-5.1.7'); ?></li>
+<li><?php url ('xdebug201-521-win', 'PHP 5.2.1+'); ?></li>
 </ul>
 <br />
 
@@ -55,7 +55,7 @@ higher.
 </dl>
 <br />
 
-<span class="sans">BINARY SNAPSHOTS (2.0dev)</span><br />
+<span class="sans">BINARY SNAPSHOTS (2.1dev)</span><br />
 <dl class="status">
 <dd>
 Modules for:
@@ -64,18 +64,6 @@ Modules for:
 </ul>
 <br />
 </dd>
-</dl>
-
-<br />
-<span class="sans">OLDER RELEASES</span><br />
-<dl class="status">
-<dd>
-Source:
-<ul class="status">
-<li><?php url ('xdebug131', 'Xdebug 1.3.1'); ?></li>
-</ul>
-</dd>
-
 </dl>
 <br />
 <!--

@@ -25,6 +25,8 @@
 		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
 		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
 
+		#flickr { margin: 20px; }
+
 		img      { border: 0px; vertical-align: bottom; }
 		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
 		img.r    { margin-left: 10px; margin-top: 10px; margin-bottom: 10px; }

@@ -19,6 +19,19 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_0_1'></a>[20-10-2007] &mdash; Xdebug 2.0.1</dt>
+
+<dd><h3>Changes</h3></dd>
+<dd>Improved code coverage performance dramatically.</dd>
+<dd>PHP 5.3 compatibility (no namespaces yet though).</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #301: Loading would cause SIGBUS on Solaris 10 SPARC. (Patch by Sean Chalmers)</dd>
+<dd>Fixed bug #300: Xdebug does not force LTR rendering for its tables.</dd>
+<dd>Fixed bug #299: Computerized traces don't have a newline for return entries if memory limit is not enabled.</dd>
+<dd>Fixed bug #298: xdebug_var_dump() doesn't handle entity replacements correctly concerning string length.</dd>
+<dd>Fixed a memory free error related to remote debugging conditions.  (Related to bug #297).</dd>
+
 
 <dt>[18-07-2007] &mdash; Xdebug 2.0.0</dt>
 <dd><h3>Changes</h3></dd>

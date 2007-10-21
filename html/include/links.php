@@ -98,6 +98,11 @@
 		'xdebug200-516-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.0-5.1.6.dll',
 		'xdebug200-522-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.0-5.2.2.dll',
 
+		'xdebug201' => 'http://www.xdebug.org/files/xdebug-2.0.1.tgz',
+		'xdebug201-441-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.1-4.4.1.dll',
+		'xdebug201-512-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.1-5.1.2.dll',
+		'xdebug201-521-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.1-5.2.1.dll',
+
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
