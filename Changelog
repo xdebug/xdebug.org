@@ -1,3 +1,16 @@
+Sun Oct 21 13:52:32 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/docs/include/basic.php
+www.xdebug.org/html/files/php_xdebug-2.0.1-4.4.1.dll
+www.xdebug.org/html/files/php_xdebug-2.0.1-5.1.2.dll
+www.xdebug.org/html/files/php_xdebug-2.0.1-5.2.1.dll
+www.xdebug.org/html/files/xdebug-2.0.1.tgz
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Update for 2.0.1.
+
 Thu Aug 23 21:47:49 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php:
 - Added docs for new setting.
