@@ -1117,7 +1117,7 @@ sessions work from within a browser window.</li>
 Before you start your script you will need to tell your client that it can
 receive debug connections, please refer to the documentation of the specific
 client on how to do this. To use the bundled client simply start it after
-<a href=install.php#debugclient>compiling and installing</a> it. You can
+<a href=install#debugclient>compiling and installing</a> it. You can
 start it by running "debugclient". If you want to use the GDB commandset
 to debug your scripts, make sure you use a debugclient as bundled with 
 Xdebug 1.3 as the one bundled with Xdebug 2 only works with the DBGp
