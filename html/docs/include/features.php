@@ -155,8 +155,8 @@ twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
 <h2>Compatibility</h2>
 <p>
 Xdebug does not work together with the Zend Optimizer or any other Zend
-extension (DBG, APC, APD etc).  This is due to compatibility problems with
-those modules. We will be working on figuring out what the problems are, and of
+extension (DBG, APD etc).  This is due to compatibility problems with those
+modules. We will be working on figuring out what the problems are, and of
 course try to fix those.
 </p>
 
