@@ -1,3 +1,8 @@
+Fri Oct 26 13:34:57 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/link.php
+www.xdebug.org/html/include/header.php:
+- No more pconnect.
+
 Thu Oct 25 22:49:51 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - It works fine with APC.
