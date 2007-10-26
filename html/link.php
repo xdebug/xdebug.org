@@ -17,7 +17,7 @@
 
 	include 'include/links.php';
 
-	mysql_pconnect ('localhost', $login, $passwd);
+	mysql_connect ('localhost', $login, $passwd);
 	mysql_select_db ($db);
 
 	url_count ($_GET['url']);
