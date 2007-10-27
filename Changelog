@@ -1,3 +1,7 @@
+Sat Oct 27 18:08:55 CEST 2007 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/settings.php:
+- Clarify that those settings do not influence remote debugging.
+
 Fri Oct 26 13:34:57 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/link.php
 www.xdebug.org/html/include/header.php:
