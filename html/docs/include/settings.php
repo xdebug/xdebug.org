@@ -72,7 +72,9 @@ they will always show this information.",
 		'integer', 128, null,
 		"Controls the amount of array children and object's properties are shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace].",
+[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
+not have any influence on the number of children that is send to the client
+through the [FEAT:remote] feature.",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
@@ -80,7 +82,9 @@ when variables are displayed with either [FUNC:xdebug_var_dump],
 		'integer', 512, null,
 		"Controls the maximum string length that is shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace].",
+[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
+not have any influence on the amount of data that is send to the client through
+the [FEAT:remote] feature.",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
@@ -88,7 +92,9 @@ when variables are displayed with either [FUNC:xdebug_var_dump],
 		'integer', 3, null,
 		"Controls how many nested levels of array elements and object properties are
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace].",
+[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
+not have any influence on the depth of children that is send to the client
+through the [FEAT:remote] feature.",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
