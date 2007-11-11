@@ -1,3 +1,16 @@
+Sun Nov 11 17:28:44 CET 2007 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/docs/include/basic.php
+www.xdebug.org/html/files/xdebug-2.0.2-4.4.6.dll
+www.xdebug.org/html/files/xdebug-2.0.2-5.1.7.dll
+www.xdebug.org/html/files/xdebug-2.0.2-5.2.5.dll
+www.xdebug.org/html/files/xdebug-2.0.2-5.3.0.dll
+www.xdebug.org/html/files/xdebug-2.0.2.tgz
+www.xdebug.org/html/include/links.php
+www.xdebug.org/html/include/side.php:
+- Put 2.0.2 online.
+
 Sat Oct 27 18:08:55 CEST 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php:
 - Clarify that those settings do not influence remote debugging.
