@@ -314,7 +314,7 @@ different values:</p>
 <dt>req</dt>
 <dd>Xdebug will try to connect to the debug client as soon as the script
 starts.</dd>
-<dt>hit</dt>
+<dt>jit</dt>
 <dd>Xdebug will only try to connect to the debug client as soon as an error
 condition occurs.</dd>
 </dl>",
