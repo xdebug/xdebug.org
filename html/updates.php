@@ -19,8 +19,18 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_0_1'></a>[20-10-2007] &mdash; Xdebug 2.0.1</dt>
+<dt><a name='x_2_0_2'></a>[11-11-2007] &mdash; Xdebug 2.0.2</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #325: DBGP: "detach" stops further sessions being established from Apache.</dd>
+<dd>Fixed bug #321: Code coverage crashes on empty PHP files.</dd>
+<dd>Fixed bug #318: Segmentation Fault in code coverage analysis.</dd>
+<dd>Fixed bug #315: Xdebug crashes when including a file that doesn't exist.</dd>
+<dd>Fixed bug #314: PHP CLI Error Logging thwarted when XDebug Loaded.</dd>
+<dd>Fixed bug #300: Direction of var_dump().</dd>
+<dd>Always set the transaction_id and command. (Related to bug #313).</dd>
 
+
+<dt><a name='x_2_0_1'></a>[20-10-2007] &mdash; Xdebug 2.0.1</dt>
 <dd><h3>Changes</h3></dd>
 <dd>Improved code coverage performance dramatically.</dd>
 <dd>PHP 5.3 compatibility (no namespaces yet though).</dd>

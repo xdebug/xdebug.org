@@ -43,17 +43,23 @@ Xdebug also provides:
 <h2>Announcements</h2>
 
 <dl class="main">
+<dt class="main">[11-11-2007]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.0.2 - which features bugfixes related to the
+improved code coverage support that was introduced in 2.0.1.  The whole change
+log can be found on the <a href="/updates.php#x_2_0_2">updates</a> page.</p>
+<p>As with most open source projects, it's very hard to know who are actually
+the users of the project. As I would like to know my users better, I would
+invite everybody who finds Xdebug useful to send me a postcard with their
+location. (Address is <a href="http://derickrethans.nl/who.php">here</a> at the
+top of the page). I am looking forwards to find out who you are!</p></dd>
+
 <dt class="main">[20-10-2007]</dt>
 <dd class="main">
 <p>I just released Xdebug 2.0.1 - which features some bugfixes,
 while the major thing is the immense increase in performance of code
 coverage.  The whole change log can be found on the <a
 href="/updates.php#x_2_0_1">updates</a> page.</p>
-<p>As with most open source projects, it's very hard to know who are actually
-the users of the project. As I would like to know my users better, I would
-invite everybody who finds Xdebug useful to send me a postcard with their
-location. (Address is <a href="http://derickrethans.nl/who.php">here</a> at the
-top of the page). I am looking forwards to find out who you are!</p></dd>
 
 <dt class="main">[18-07-2007]</dt>
 <dd class="main">It is finally here, Xdebug 2.0.0 has arrived! After about four

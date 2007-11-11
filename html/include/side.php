@@ -3,11 +3,11 @@
 <span class="sans">RELEASES</span><br />
 
 <dl class="status">
-<dt>[20-10-2007]</dt>
+<dt>[11-11-2007]</dt>
 <dd>
 Source:
 <ul class="status">
-<li><?php url ('xdebug201', 'xdebug 2.0.1'); ?></li>
+<li><?php url ('xdebug202', 'xdebug 2.0.2'); ?></li>
 </ul>
 <br />
 
@@ -20,9 +20,10 @@ Debug client 0.9.0 (DBGp) (binary):
 
 Windows modules:
 <ul class="status">
-<li><?php url ('xdebug201-441-win', 'PHP 4.4.1-4.4.7'); ?></li>
-<li><?php url ('xdebug201-512-win', 'PHP 5.1.2-5.1.7'); ?></li>
-<li><?php url ('xdebug201-521-win', 'PHP 5.2.1+'); ?></li>
+<li><?php url ('xdebug202-44-win', 'PHP 4.4.1-4.4.7'); ?></li>
+<li><?php url ('xdebug202-51-win', 'PHP 5.1.2-5.1.7'); ?></li>
+<li><?php url ('xdebug202-52-win', 'PHP 5.2.1-5.2.7'); ?></li>
+<li><?php url ('xdebug202-53-win', 'PHP 5.3.0dev'); ?></li>
 </ul>
 <br />
 
