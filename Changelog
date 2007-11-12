@@ -1,3 +1,7 @@
+Mon Nov 12 17:34:44 CET 2007 Derick Rethans <derick@derickrethans.nl>
+html/include/links.php:
+- Oops.
+
 Sun Nov 11 17:36:26 CET 2007 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php:
 - Fixed bug #333: Documentation problem: says "hit" instead of "jit".
