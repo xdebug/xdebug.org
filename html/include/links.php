@@ -103,7 +103,7 @@
 		'xdebug201-512-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.1-5.1.2.dll',
 		'xdebug201-521-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.1-5.2.1.dll',
 
-		'xdebug202' => 'http://www.xdebug.org/files/xdebug-2.0.1.tgz',
+		'xdebug202' => 'http://www.xdebug.org/files/xdebug-2.0.2.tgz',
 		'xdebug202-44-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.2-4.4.6.dll',
 		'xdebug202-51-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.2-5.1.7.dll',
 		'xdebug202-52-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.2-5.2.5.dll',
