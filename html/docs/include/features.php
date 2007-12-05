@@ -80,12 +80,10 @@ that you need access to the scripts 'phpize' and 'php-config'.  If
 your system does not have 'phpize' and 'php-config', you will need to
 compile and install PHP from a source tarball first, as these script
 are by-products of the PHP compilation and installation processes. (Debian users
-can install the required tools with <code>apt-get install php4-dev</code>). It
-is important that the source version matches the installed version as there are
-slight, but important, differences between PHP versions.  For a detailed
-installation on Mac OSX see <a
-href='http://pressedpants.com/archives/dated/2004/04/08/xdebug_on_os_x/'>Jason
-Perkins'</a> installation instructions. Once you have access to 'phpize' and
+can install the required tools with <code>apt-get install php4-dev</code>, or
+<code>apt-get install php5-dev</code>). It is important that the source version
+matches the installed version as there are slight, but important, differences
+between PHP versions.  Once you have access to 'phpize' and
 'php-config', do the following:
 </p>
 <p>
