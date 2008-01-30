@@ -28,7 +28,7 @@ version of PHP.  See the links on the right side.
 <p>
 Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
-filename to the correct one &emdash; but make sure you use the <b>full
+filename to the correct one &mdash; but make sure you use the <b>full
 path</b>)
 <pre>
 zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
@@ -50,7 +50,7 @@ Installing with PEAR/PECL is as easy as:
 </pre>
 <p>
 but you still need to add the correct line to your php.ini: (don't forget to
-change the path and filename to the correct one &emdash; but make sure you use
+change the path and filename to the correct one &mdash; but make sure you use
 the <b>full path</b>)
 </p>
 <pre>
