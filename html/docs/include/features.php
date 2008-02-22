@@ -1209,7 +1209,7 @@ or change the body of the handler function to call xdebug_* api functions.
 wrong?</dt>
 <dd>A: You probably forgot to set the environment variable or to add 
 the necessary information to your URL. See the 
-<a href=\'docs-debugger.php#activate_debugger\'>documentation</a> for
+<a href=\'remote#activate_debugger\'>documentation</a> for
 more information.</dd>
 </dl>
 
