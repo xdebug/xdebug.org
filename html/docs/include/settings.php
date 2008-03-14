@@ -51,7 +51,7 @@ an exception is raised - even if this exception is actually caught.",
 	),
 
 	'show_local_vars' => array(
-		'integer', 9, null,
+		'integer', 0, null,
 		"When this setting is set to something != 0 Xdebug's generated stack dumps
 in error situations will also show all variables in the top-most scope. Beware
 that this might generate a lot of information, and is therefore turned off by
