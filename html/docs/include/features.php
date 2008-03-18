@@ -1061,8 +1061,7 @@ There are a few other client implementations (both free and commercial) as well:
 <li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b> (Editor: Windows).</li>
 <li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b> (IDE; Commercial).</li>
 <li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1929">plugin</a></b> (<a href="http://tech.blog.box.net/2007/06/20/how-to-debug-php-with-vim-and-xdebug-on-linux/">Tutorial</a>) (Editor Plugin).</li>
-<li>jcx software\'s <b><a href="http://www.jcxsoftware.com/jcx/vsphp/beta">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
-<li>Maguma\'s <b><a href="http://www.maguma.com/products/?article=Workbench">WorkBench</a></b> (IDE; Commercial).</li>
+<li>jcx software\'s <b><a href="http://www.jcxsoftware.com/vs.php">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
 </ul>
 </p>
