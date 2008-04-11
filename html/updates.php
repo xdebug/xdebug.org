@@ -19,6 +19,19 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_0_3'></a>[09-04-2008] &mdash; Xdebug 2.0.3</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug #338: Crash with: xdebug.remote_handler=req.</dd>
+<dd>Fixed bug #334: Code Coverage Regressions.</dd>
+<dd>Fixed abstract method detection for PHP 5.3.</dd>
+<dd>Fixed code coverage dead-code detection.</dd>
+<dd>Ignore ZEND_ADD_INTERFACE, which is on a different line in PHP &gt;= 5.3 for some weird reason.</dd>
+
+<dd><h3>Changes</h3></dd>
+<dd>Added a CSS-class for xdebug's var_dump().</dd>
+<dd>Added support for the new E_DEPRECATED.</dd>
+
+
 <dt><a name='x_2_0_2'></a>[11-11-2007] &mdash; Xdebug 2.0.2</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed bug #325: DBGP: "detach" stops further sessions being established from Apache.</dd>
