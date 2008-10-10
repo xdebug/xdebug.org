@@ -947,7 +947,9 @@ tool (Linux, KDE) to analyse your profiling data. Users of the Windows
 operating system can use <a
 href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>, the
 functionality is different from KCacheGrind so the section that documents the
-use of KCacheGrind on this page doesn\'t apply to this program.</p>
+use of KCacheGrind on this page doesn\'t apply to this program. There is also a
+standalone client for Mac OSX called <a
+href="http://www.maccallgrind.com/">MacCallGrind</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
@@ -1053,6 +1055,7 @@ There are a few other client implementations (both free and commercial) as well:
 <li><b>Eclipse <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=169408">plugin</a></b>, which has been submitted as an enhancement for the <a href="http://www.eclipse.org/php/">PDT</a> (IDE).</li>
 <li><b>Emacs <a href="http://trac.sakura.ne.jp/geben/">plugin</a></b> (Editor Plugin).</li>
 <li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
+<li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> - Standalone Mac client.</li>
 <li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris.</li>
 <li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (IDE: Windows).</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
