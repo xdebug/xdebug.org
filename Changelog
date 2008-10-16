@@ -1,3 +1,7 @@
+Thu Oct 16 13:08:41 CEST 2008 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php:
+- Fixed typo.
+
 Fri Oct 10 16:56:27 CEST 2008 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Added Mac specific clients.
