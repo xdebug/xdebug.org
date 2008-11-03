@@ -948,8 +948,10 @@ operating system can use <a
 href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>, the
 functionality is different from KCacheGrind so the section that documents the
 use of KCacheGrind on this page doesn\'t apply to this program. There is also a
-standalone client for Mac OSX called <a
-href="http://www.maccallgrind.com/">MacCallGrind</a>.</p>
+standalone client for Mac OSX called
+<a href="http://www.maccallgrind.com/">MacCallGrind</a>, as well as an upcoming
+web front end called <a href="http://ccg.wiki.sourceforge.net/">Carica
+CacheGrind</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
@@ -1049,7 +1051,9 @@ href="/docs-dbgp.php">DBGp</a> protocol which is implemented in Xdebug 2.
 <p>
 Xdebug 2 is bundled with a <b>simple command line client</b> for the
 <a href="/docs-dbgp.php">DBGp</a> protocol.
-There are a few other client implementations (both free and commercial) as well:
+There are a few other client implementations (both free and commercial) as
+well. I am not the author of any of those, so please refer to the original
+authors for <b>support</b>:
 <ul>
 <li><b><a href="http://devphp.sf.net/">Dev-PHP</a></b> (IDE: Windows)</li>
 <li><b>Eclipse <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=169408">plugin</a></b>, which has been submitted as an enhancement for the <a href="http://www.eclipse.org/php/">PDT</a> (IDE).</li>
