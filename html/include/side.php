@@ -51,6 +51,7 @@ Windows modules:
 Instructions to get Xdebug 2.1dev from CVS can be found <a
 href='/install.php#source'>here</a>. This version compiles on PHP 4.3.0 and
 higher.
+You can browse the source <a href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>here</a>.
 </dd>
 </dl>
 <br />

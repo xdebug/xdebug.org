@@ -71,6 +71,7 @@ cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
 </pre>
 <p>
 This will checkout the latest development version which is currently [KW:last_dev_version].
+You can also browse the source at <a href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>http://cvs.xdebug.org</a>.
 </p>
 
 <a name='compile'></a>
