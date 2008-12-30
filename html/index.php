@@ -43,7 +43,7 @@ Xdebug also provides:
 <h2>Announcements</h2>
 
 <dl class="main">
-<dt class="main">[2008-04-09]</dt>
+<dt class="main">[2008-12-30]</dt>
 <dd class="main">
 <p>I just released Xdebug 2.0.4 - which features bugfixes and PHP 5.3
 compatibility. The whole change log can be found on the <a
