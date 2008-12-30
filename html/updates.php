@@ -19,6 +19,28 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_0_4'></a>[2008-12-30] &mdash; Xdebug 2.0.4</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed for strange jump positions in path analysis.</dd>
+<dd>Fixed issues with code coverage crashing on parse errors.</dd>
+<dd>Fixed code code coverage by overriding more opcodes.</dd>
+<dd>Fixed issues with Xdebug stalling/crashing when detaching from remote debugging.</dd>
+<dd>Fixed crash on Vista where memory was freed with routines from a different standard-C library than it was allocated with. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
+<dd>Link against the correct CRT library. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
+<dd>Sort the symbol elements according to name. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
+<dd>Fixed support for mapped-drive UNC paths for Windows. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
+<dd>Fixed a segfault in interactive mode while including a file.</dd>
+<dd>Fixed a crash in super global dumping in case somebody was strange enough to reassign them to a value type other than an Array.</dd>
+<dd>Simplify version checking for libtool. (Patch by PGNet <pgnet.trash@gmail.com>).</dd>
+<dd>Fixed display of unused returned variables from functions in PHP 5.3.</dd>
+<dd>Include config.w32 in the packages as well.</dd>
+<dd>Fixed .dsp for building with PHP 4.</dd>
+
+<dd><h3>Added features</h3></dd>
+<dd>Support debugging into phars.</dd>
+<dd>Basic PHP 5.3 support.</dd>
+
+
 <dt><a name='x_2_0_3'></a>[2008-04-09] &mdash; Xdebug 2.0.3</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed bug #338: Crash with: xdebug.remote_handler=req.</dd>

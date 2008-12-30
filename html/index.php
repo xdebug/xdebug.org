@@ -45,14 +45,20 @@ Xdebug also provides:
 <dl class="main">
 <dt class="main">[2008-04-09]</dt>
 <dd class="main">
-<p>I just released Xdebug 2.0.3 - which features bugfixes and PHP 5.3
+<p>I just released Xdebug 2.0.4 - which features bugfixes and PHP 5.3
 compatibility. The whole change log can be found on the <a
-href="/updates.php#x_2_0_3">updates</a> page.</p> <p>As with most open source
+href="/updates.php#x_2_0_4">updates</a> page.</p> <p>As with most open source
 projects, it's very hard to know who are actually the users of the project. As
 I would like to know my users better, I would invite everybody who finds Xdebug
 useful to send me a postcard with their location. (Address is <a
 href="http://derickrethans.nl/who.php">here</a> at the top of the
 page). I am looking forwards to find out who you are!</p></dd>
+
+<dt class="main">[2008-04-09]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.0.3 - which features bugfixes and PHP 5.3
+compatibility. The whole change log can be found on the <a
+href="/updates.php#x_2_0_3">updates</a> page.</p></dd>
 
 <dt class="main">[2007-11-11]</dt>
 <dd class="main">
