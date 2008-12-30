@@ -1,3 +1,10 @@
+Tue Dec 30 16:18:23 CET 2008 Derick Rethans <derick@derickrethans.nl>
+html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/xdebug-2.0.4.tgz
+www.xdebug.org/html/include/side.php:
+- Added texts and download for 2.0.4.
+
 Thu Dec 11 16:35:12 CET 2008 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php
 www.xdebug.org/html/include/side.php:
