@@ -1,3 +1,7 @@
+Tue Dec 30 16:19:38 CET 2008 Derick Rethans <derick@derickrethans.nl>
+html/include/side.php:
+- Added a note for windows.
+
 Tue Dec 30 16:18:23 CET 2008 Derick Rethans <derick@derickrethans.nl>
 html/index.php
 www.xdebug.org/html/updates.php
