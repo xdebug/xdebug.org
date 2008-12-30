@@ -17,6 +17,8 @@ Debug client 0.9.0 (DBGp) (binary):
 <li><?php url ('xdebugclient-0.9.0-win', 'Windows'); ?></li>
 </ul>
 <br />
+
+<p>Windows binaries will follow.</p>
 <!--
 Windows modules:
 <ul class="status">
