@@ -1,3 +1,7 @@
+Wed Dec 31 09:50:40 CET 2008 Derick Rethans <derick@derickrethans.nl>
+html/include/links.php:
+- Fixed download link.
+
 Tue Dec 30 19:26:22 CET 2008 Derick Rethans <derick@derickrethans.nl>
 html/index.php:
 - Fixed date.
