@@ -114,6 +114,8 @@
 		'xdebug203-52-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.3-5.2.5.dll',
 		'xdebug203-53-win' => 'http://www.xdebug.org/files/php_xdebug-2.0.3-5.3.0.dll',
 
+		'xdebug204' => 'http://www.xdebug.org/files/xdebug-2.0.4.tgz',
+
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
