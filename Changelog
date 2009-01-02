@@ -1,3 +1,20 @@
+Fri Jan 02 22:00:25 CET 2009 Derick Rethans <derick@derickrethans.nl>
+html/download.php
+www.xdebug.org/html/docs-dbgp.php
+www.xdebug.org/html/docs-gdb.php
+www.xdebug.org/html/index.php
+www.xdebug.org/html/license.php
+www.xdebug.org/html/screens.php
+www.xdebug.org/html/support.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/docs/index.php
+www.xdebug.org/html/images/xdebug.gif
+www.xdebug.org/html/include/footer.php
+www.xdebug.org/html/include/header.php
+www.xdebug.org/html/include/menu-docs.php
+www.xdebug.org/html/include/menu.php:
+- Move downloads to their own site, and freshen up the design a bit.
+
 Fri Jan 02 21:54:34 CET 2009 Derick Rethans <derick@derickrethans.nl>
 html/files/php_xdebug-2.0.4-5.2.8.dll
 www.xdebug.org/html/files/php_xdebug-2.0.4-5.2.8-nts.dll
