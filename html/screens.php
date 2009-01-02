@@ -36,16 +36,6 @@ were called plus variables (in most cases):
 
 <!-- MAIN FEATURE END -->
 
-			</class></td>
-			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
 			</td>
 			<td>&nbsp;</td>
 		</tr>

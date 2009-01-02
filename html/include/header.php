@@ -130,12 +130,9 @@ YAHOO.example.init();
 <body>
 	<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td style="height: 64px; width: 9%; background: url(/images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; background: url(/images/topleft.gif);">
-			</td>
-			<td style="height: 64px; width: 35px; background: url(/images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; width: 220px; background: url(/images/topleft.gif);"><img src="/images/xdebug.gif" alt="Xdebug"/></td>
-			<td style="height: 64px; width: 9%; background: url(/images/topleft.gif);">&nbsp;</td>
+			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
+			<td class="head" style="height: 64px; background: url(/images/topleft.gif);"><img align="right" src="/images/xdebug.gif" alt="Xdebug"/></td>
+			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
 		</tr>
 <?php
 	/* Defining some functions here */

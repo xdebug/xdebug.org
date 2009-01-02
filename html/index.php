@@ -1,7 +1,7 @@
 <?php $title = "Xdebug - Debugger and Profiler Tool for PHP"; include "include/header.php"; hits ('xdebug'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td>
+			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
@@ -43,6 +43,13 @@ Xdebug also provides:
 <h2>Announcements</h2>
 
 <dl class="main">
+
+<dt class="main">[2009-01-02]</dt>
+<dd class="main">
+<p>I moved the downloads from the right side bar to their own <a
+href="/download.php">page</a> to provide an easier way of downloading Xdebug
+releases.</p></dd>
+
 <dt class="main">[2008-12-30]</dt>
 <dd class="main">
 <p>I just released Xdebug 2.0.4 - which features bugfixes and PHP 5.3
@@ -226,16 +233,6 @@ implemented soon.</dd>
 
 <!-- MAIN FEATURE END -->
 
-			</td>
-			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
 			</td>
 			<td>&nbsp;</td>
 		</tr>

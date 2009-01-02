@@ -1,7 +1,7 @@
 <?php $title = "Xdebug: License"; include "include/header.php"; hits ('xdebug-license'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td>
+			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
@@ -89,16 +89,6 @@ For more information Xdebug, please see
 
 <!-- MAIN FEATURE END -->
 
-			</td>
-			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
 			</td>
 			<td>&nbsp;</td>
 		</tr>

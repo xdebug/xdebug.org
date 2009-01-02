@@ -25,13 +25,13 @@
 <dd>Fixed issues with code coverage crashing on parse errors.</dd>
 <dd>Fixed code code coverage by overriding more opcodes.</dd>
 <dd>Fixed issues with Xdebug stalling/crashing when detaching from remote debugging.</dd>
-<dd>Fixed crash on Vista where memory was freed with routines from a different standard-C library than it was allocated with. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
-<dd>Link against the correct CRT library. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
-<dd>Sort the symbol elements according to name. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
-<dd>Fixed support for mapped-drive UNC paths for Windows. (Patch by Eric Promislow <ericp@activestate.com>).</dd>
+<dd>Fixed crash on Vista where memory was freed with routines from a different standard-C library than it was allocated with. (Patch by Eric Promislow &lt;ericp@activestate.com>).</dd>
+<dd>Link against the correct CRT library. (Patch by Eric Promislow &lt;ericp@activestate.com>).</dd>
+<dd>Sort the symbol elements according to name. (Patch by Eric Promislow &lt;ericp@activestate.com>).</dd>
+<dd>Fixed support for mapped-drive UNC paths for Windows. (Patch by Eric Promislow &lt;ericp@activestate.com>).</dd>
 <dd>Fixed a segfault in interactive mode while including a file.</dd>
 <dd>Fixed a crash in super global dumping in case somebody was strange enough to reassign them to a value type other than an Array.</dd>
-<dd>Simplify version checking for libtool. (Patch by PGNet <pgnet.trash@gmail.com>).</dd>
+<dd>Simplify version checking for libtool. (Patch by PGNet &lt;pgnet.trash@gmail.com>).</dd>
 <dd>Fixed display of unused returned variables from functions in PHP 5.3.</dd>
 <dd>Include config.w32 in the packages as well.</dd>
 <dd>Fixed .dsp for building with PHP 4.</dd>
@@ -673,16 +673,6 @@ with recent PHP 4.3.0-dev versions!)</dd>
 
 <!-- MAIN FEATURE END -->
 
-			</class></td>
-			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
 			</td>
 			<td>&nbsp;</td>
 		</tr>

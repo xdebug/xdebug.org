@@ -10,7 +10,7 @@
 ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td>
+			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
@@ -115,16 +115,6 @@ END;
 	hits('xdebug-docs');
 	echo $text;
 ?>
-			</td>
-			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
 			</td>
 			<td>&nbsp;</td>
 		</tr>

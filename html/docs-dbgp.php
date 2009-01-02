@@ -2822,15 +2822,5 @@ engine is in a run state.</li>
 
 			</td>
 			<td>&nbsp;</td>
-			<td>
-				<table cellpadding="0" cellspacing="0">
-					<tr>
-						<td>
-<?php include "include/side.php"; ?>
-						</td>
-					</tr>
-				</table>
-			</td>
-			<td>&nbsp;</td>
 		</tr>
 <?php include "include/footer.php"; ?>
