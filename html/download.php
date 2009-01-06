@@ -26,7 +26,7 @@ while ( false !== ( $entry = $d->read() ) )
 	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9])\.tgz$@', $entry, $m)) {
 		$files[$m[1]]['source'] = $entry;
 	}
-	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9])-[456]\.[0-9]\.[0-9](-vc[69](-nts)?)?\.dll$@', $entry, $m)) {
+	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9])-[456]\.[0-9]\.[0-9](-vc[69])?(-nts)?\.dll$@', $entry, $m)) {
 		$files[$m[1]]['dll'][] = $entry;
 	}
 }
@@ -46,17 +46,17 @@ ksort( $files );
 			sort( $tar['dll'] );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
-				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9]-([456]\.[0-9])\.[0-9](-(vc[69])(-nts)?)?\.dll$@', $dls, $m);
+				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9]-([456]\.[0-9])\.[0-9](-(vc[69]))?(-nts)?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
-				if (isset($m[3])) {
+				if (isset($m[3]) && $m[3] != '') {
 					$namea .= strtoupper( " {$m[3]}" );
+				} else {
+					$namea = ' VC6';
 				}
+
 				if (isset($m[4])) {
 					$namea .= " Non-thread-safe";
-				}
-				if ($namea == '') {
-					$namea = ' VC6';
 				}
 				$links[] = "<a href='files/{$dls}'>$name$namea</a>";
 			}
