@@ -1,3 +1,7 @@
+Tue Jan 06 13:43:28 CET 2009 Derick Rethans <derick@derickrethans.nl>
+html/download.php:
+- Fixed rendering script.
+
 Sat Jan 03 20:01:27 CET 2009 Derick Rethans <derick@derickrethans.nl>
 html/files/php_xdebug-2.0.4-5.3.0-vc6-nts.dll
 www.xdebug.org/html/files/php_xdebug-2.0.4-5.3.0-vc6.dll:
