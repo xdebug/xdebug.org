@@ -17,6 +17,8 @@ version at that time. The VC<i>x</i> marker tells with which compiler the
 extension was built, and Non-thread-safe whether ZTS was disabled. Those
 qualifiers need to match the PHP version you're using.</p>
 
+<p>The source code can be browsed <a href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>here</a>.</p>
+
 <?php
 // open the files dir, and scan
 $d = Dir( 'files' );
