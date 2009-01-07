@@ -9,15 +9,29 @@
 
 <?php include "include/menu.php"; ?>
 
-<h2>Downloads</h2>
+<h2>Source</h2>
+
+<p>Xdebug is hosted in CVS. The source code can be browsed through <a
+href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>ViewVC</a> and can be checkout with:
+</p>
+<pre>
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository login
+# password= srmread
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
+</pre>
+<p>You can also checkout the 2.0 branch with:</p>
+<pre>
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug_2_0
+</pre>
+
+
+<h2>Releases</h2>
 
 <p>The Windows binaries generally work for every mini release for the mentioned
 PHP version, although the extension is built against the most current PHP
 version at that time. The VC<i>x</i> marker tells with which compiler the
 extension was built, and Non-thread-safe whether ZTS was disabled. Those
 qualifiers need to match the PHP version you're using.</p>
-
-<p>The source code can be browsed <a href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>here</a>.</p>
 
 <?php
 // open the files dir, and scan
@@ -36,10 +50,10 @@ ksort( $files );
 ?>
 <?php
 	foreach( array_reverse( $files ) as $version => $tar ) {
-		echo "<h3>Xdebug {$version}";
+		echo "<strong>Xdebug {$version}";
 		$f = stat( "files/{$tar['source']}" );
 		$d = date( 'Y-m-d', $f['mtime'] );
-		echo "<div class='copy'>Release date: $d</div></h3>\n";
+		echo "<div class='copy'>Release date: $d</div></strong>\n";
 		echo "<ul>";
 		echo "<li><a href='files/{$tar['source']}'>source</a></li>";
 		if (isset( $tar['dll'] )) {
