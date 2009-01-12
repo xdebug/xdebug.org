@@ -350,8 +350,9 @@ your script with ini_set().",
 	'profiler_enable_trigger' => array(
 		'integer', 0, null,
 		"When this setting is set to 1, you can trigger the generation of profiler
-files by using the XDEBUG_PROFILE GET/POST parameter. This will then write the
-profiler data to [CFG:profiler_output_dir:defined directory].",
+files by using the XDEBUG_PROFILE GET/POST parameter, or send a cookie with the
+name XDEBUG_PROFILE. This will then write the profiler data to
+[CFG:profiler_output_dir:defined directory].",
 		FUNC_PROFILER
 	),
 
