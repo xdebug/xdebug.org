@@ -1,3 +1,7 @@
+Tue Mar 03 09:14:35 CET 2009 Derick Rethans <derick@derickrethans.nl>
+html/download.php:
+- Fixed cvs instructions. (Reported by Lucas)
+
 Mon Jan 12 19:22:47 CET 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/settings.php:
 - Also mention the cookie.
