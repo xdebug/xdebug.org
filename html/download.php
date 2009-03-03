@@ -21,7 +21,7 @@ cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
 </pre>
 <p>You can also checkout the 2.0 branch with:</p>
 <pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug_2_0
+cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r xdebug_2_0 xdebug
 </pre>
 
 
