@@ -35,6 +35,7 @@ runs as extension in a web server environment).
 
 <br />
 
+<a name="list"></a>
 <h2>Mailinglist</h2>
 
 <p>
