@@ -999,7 +999,7 @@ function is "php::mysql_query".
 <img class="r" src="/images/docs/kc-percentage.png" align="right"/>
 The numbers in the first two columns can be
 either percentages of the full running time of the script (like in the
-example) or absolute time (1 unit is 1/10.000.000th of a second). You can
+example) or absolute time (1 unit is 1/1.000.000th of a second). You can
 switch between the two modes with the button you see on the right.</p>
 
 <p>The pane on the right contains an upper and lower pane. The upper one
