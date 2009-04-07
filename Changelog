@@ -1,3 +1,7 @@
+Tue Apr 07 16:05:05 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/functions/xdebug_get_headers:
+- Added documentation for Xdebug's xdebug_get_headers() function.
+
 Sat Mar 28 17:23:48 CET 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Fixed bug #434: Documentation is misleading about function execution times in
