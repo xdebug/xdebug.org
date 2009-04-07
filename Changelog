@@ -1,3 +1,7 @@
+Tue Apr 07 20:56:48 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/functions/xdebug_print_function_stack:
+- Added documentation for xdebug_print_function_stack.
+
 Tue Apr 07 16:05:05 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/functions/xdebug_get_headers:
 - Added documentation for Xdebug's xdebug_get_headers() function.
