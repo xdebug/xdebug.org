@@ -1,0 +1,27 @@
+= xdebug_get_headers
+Returns all the headers as set by calls to PHP's header() function
+array
+none
+FUNC_BASIC
+
+TXT:
+Returns all the headers that are set with PHP's header() function, or any other
+header set internally within PHP (such as through setcookie()), as an array.
+
+EXAMPLE:
+<?php
+header( "X-Test", "Testing" );
+setcookie( "TestCookie", "test-value" );
+var_dump( xdebug_get_headers() );
+?>
+
+RESULT:
+array(2) {
+  [0]=>
+  string(6) "X-Test"
+  [1]=>
+  string(33) "Set-Cookie: TestCookie=test-value"
+}
+
+TXT:
+This function is introduced with Xdebug 2.1.
