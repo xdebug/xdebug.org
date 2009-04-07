@@ -1,0 +1,32 @@
+= xdebug_print_function_stack
+Displays the current function stack.
+none
+[ string message ]
+FUNC_STACK_TRACE
+
+TXT:
+Displays the current function stack, in a similar way as what Xdebug would
+display in an error situation.
+
+TXT:
+The "message" argument was introduced in Xdebug 2.1.
+
+EXAMPLE:
+<?php
+function foo( $far, $out )
+{
+	xdebug_print_function_stack( 'Your own message' );
+}
+foo( 42, 3141592654 );
+?>
+
+RESULT:
+<font size='1'><table class='xdebug-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Xdebug: Your own message in /home/httpd/html/test/xdebug/print_function_stack.php on line <i>5</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0006</td><td bgcolor='#eeeeec' align='right'>653896</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/httpd/html/test/xdebug/print_function_stack.php' bgcolor='#eeeeec'>../print_function_stack.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0007</td><td bgcolor='#eeeeec' align='right'>654616</td><td bgcolor='#eeeeec'>foo( <span>42</span>, <span>3141592654</span> )</td><td title='/home/httpd/html/test/xdebug/print_function_stack.php' bgcolor='#eeeeec'>../print_function_stack.php<b>:</b>7</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0007</td><td bgcolor='#eeeeec' align='right'>654736</td><td bgcolor='#eeeeec'><a href='http://www.php.net/xdebug_print_function_stack' target='_new'>xdebug_print_function_stack</a>
+( <span>&apos;Your own message&apos;</span> )</td><td title='/home/httpd/html/test/xdebug/print_function_stack.php' bgcolor='#eeeeec'>../print_function_stack.php<b>:</b>5</td></tr>
+</table></font>
