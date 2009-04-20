@@ -1,3 +1,7 @@
+Mon Apr 20 12:52:56 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/support.php:
+- Fixed broken grammer.
+
 Tue Apr 07 20:56:48 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/functions/xdebug_print_function_stack:
 - Added documentation for xdebug_print_function_stack.
