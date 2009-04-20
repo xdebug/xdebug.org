@@ -30,7 +30,8 @@ created automatically for each debug session when the
 empty. The setting configures the filename where Xdebug will try to write all
 incoming commands and outgoing response to. Make sure that the user under which
 Xdebug runs (either the user with CLI, or the Apache/Webserver user when Xdebug
-runs as extension in a web server environment).
+runs as extension in a web server environment) has write permissions to this
+file.
 </p>
 
 <br />
