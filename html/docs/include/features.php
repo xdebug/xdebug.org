@@ -950,8 +950,10 @@ href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>, the
 functionality is different from KCacheGrind so the section that documents the
 use of KCacheGrind on this page doesn\'t apply to this program. There is also a
 standalone client for Mac OSX called
-<a href="http://www.maccallgrind.com/">MacCallGrind</a>, as well as an upcoming
-web front end called <a href="http://ccg.wiki.sourceforge.net/">Carica
+<a href="http://www.maccallgrind.com/">MacCallGrind</a>, an alternative profile
+information presentation tool called <a
+href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a> and an
+upcoming web front end called <a href="http://ccg.wiki.sourceforge.net/">Carica
 CacheGrind</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
