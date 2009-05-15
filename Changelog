@@ -1,3 +1,7 @@
+Fri May 15 11:42:28 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php:
+- Added xdebugtoolkit.
+
 Mon Apr 20 12:52:56 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/support.php:
 - Fixed broken grammer.
