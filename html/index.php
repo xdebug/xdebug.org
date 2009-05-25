@@ -37,6 +37,10 @@ Xdebug also provides:
 <li><a href='docs/code_coverage'>code coverage analysis</a></li>
 <li>capabilities to <a href='docs/remote'>debug your scripts interactively</a> with a debug client</li>
 </ul>
+<p>
+Information about Xdebug in Russian is available at <a
+href='http://xdebug.ru'>http://xdebug.ru</a>.
+</p>
 
 <iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>
 <a name="announcements"></a>
