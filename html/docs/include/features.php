@@ -1196,7 +1196,7 @@ to make a connection to the debugclient.</li>
 There is also a FireFox 2 extension that allows you to trigger Xdebug\'s
 debugger or profiler without having to use XDEBUG_SESSION_START as parameter.
 You can configure which [CFG:idekey:IDE key] it uses. You can find this
-extension <a href="http://gmckinney.blogspot.com/2008/02/xdebug-firefox-addon-for-profiling-and.html">here</a>.
+extension <a href="https://addons.mozilla.org/en-US/firefox/addon/3960">here</a>.
 </p>
 		'
 	),
