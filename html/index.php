@@ -48,6 +48,12 @@ href='http://xdebug.ru'>http://xdebug.ru</a>.
 
 <dl class="main">
 
+<dt class="main">[2009-07-03]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.0.5 - which features mostly bugfixes. The whole
+change log can be found on the <a href="/updates.php#x_2_0_5">updates</a>
+page.</p> </dd>
+
 <dt class="main">[2009-01-02]</dt>
 <dd class="main">
 <p>I moved the downloads from the right side bar to their own <a

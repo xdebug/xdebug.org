@@ -4,7 +4,8 @@
 <a href="/download.php">download</a> |
 <a href="/docs"><b>documentation</b></a> |
 <a href="/license.php">license</a> |
-<a href="/support.php">support</a>
+<a href="/support.php">support</a> |
+<a href="http://bugs.xdebug.org">issue tracker</a>
 </span>
 <br />
 <br />

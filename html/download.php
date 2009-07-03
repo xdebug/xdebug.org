@@ -42,7 +42,7 @@ while ( false !== ( $entry = $d->read() ) )
 	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9])\.tgz$@', $entry, $m)) {
 		$files[$m[1]]['source'] = $entry;
 	}
-	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9])-[456]\.[0-9]\.[0-9](-vc[69])?(-nts)?\.dll$@', $entry, $m)) {
+	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9])-[456]\.[0-9](\.[0-9])?(-vc[69])?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 		$files[$m[1]]['dll'][] = $entry;
 	}
 }
@@ -62,17 +62,23 @@ ksort( $files );
 			sort( $tar['dll'] );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
-				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9]-([456]\.[0-9])\.[0-9](-(vc[69]))?(-nts)?\.dll$@', $dls, $m);
+				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9]-([456]\.[0-9])(\.[0-9])?(-(vc[69]))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
-				if (isset($m[3]) && $m[3] != '') {
-					$namea .= strtoupper( " {$m[3]}" );
+				if (isset($m[4]) && $m[4] != '') {
+					$namea .= strtoupper( " {$m[4]}" );
 				} else {
 					$namea = ' VC6';
 				}
 
-				if (isset($m[4])) {
+				if (isset($m[5])) {
 					$namea .= " Non-thread-safe";
+				}
+
+				if (isset($m[7]) && $m[7] == 'x86_64') {
+					$namea .= " (64 bit)";
+				} else {
+					$namea .= " (32 bit)";
 				}
 				$links[] = "<a href='files/{$dls}'>$name$namea</a>";
 			}
