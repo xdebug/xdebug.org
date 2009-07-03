@@ -1,3 +1,20 @@
+Fri Jul 03 20:44:37 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/download.php
+www.xdebug.org/html/index.php
+www.xdebug.org/html/updates.php
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.2-nts.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.2.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc6-nts.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc6.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc9-nts-x86_64.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc9-nts.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc9-x86_64.dll
+www.xdebug.org/html/files/php_xdebug-2.0.5-5.3-vc9.dll
+www.xdebug.org/html/files/xdebug-2.0.5.tgz
+www.xdebug.org/html/include/menu-docs.php
+www.xdebug.org/html/include/menu.php:
+- Releasing 2.0.5.
+
 Thu Jun 11 10:09:03 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Fixed link... it moved.
