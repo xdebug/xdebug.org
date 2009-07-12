@@ -1,3 +1,8 @@
+Sun Jul 12 17:24:10 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/basic.php
+www.xdebug.org/html/docs/include/features.php:
+- Fixed docs regarding zend_extension and php 5.3.
+
 Fri Jul 03 20:44:37 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/download.php
 www.xdebug.org/html/index.php
