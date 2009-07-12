@@ -33,6 +33,8 @@ path</b>)
 <pre>
 zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
 </pre>
+<strong>From PHP 5.3 onwards, you need to use zend_extension and not
+zend_extension_ts.</strong>
 </p>
 
 <a name='pecl'></a>
@@ -140,7 +142,10 @@ for example the CLI, CGI or Apache 1.3 module) or:
 zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" (for threaded usage of PHP,
 for example the Apache 2 work MPM or the the ISAPI module).
 <strong>Note:</strong> In case you compiled PHP yourself and used
---enable-debug you would have to use zend_extension_debug=.</li>
+--enable-debug you would have to use zend_extension_debug=.
+<strong>From PHP 5.3 onwards, you always need to use zend_extension and not
+zend_extension_ts.</strong>
+</li>
 
 <li>Restart your webserver.</li>
 
@@ -1232,8 +1237,10 @@ to work properly.</dt>
 expected. Xdebug <b>needs</b> to be loaded with the zend_extension_ts=
 "C:\path\to\php_xdebug.dll" directive. You\'ll also likely have to disable the
 loading of the Zend Optimizer, since it\'s enabled by default, and doesn\'t work
-well with Xdebug. So look for the related entry in php.ini, and comment it
-out.</dd>
+well with Xdebug. So look for the related entry in php.ini, and comment it out.
+<strong>From PHP 5.3 onwards, you need to use zend_extension and not
+zend_extension_ts.</strong>
+</dd>
 
 <dt>Q: On Debian, I am seeing the following problem with the build of
 Xdebug.... any fixes?
