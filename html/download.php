@@ -71,7 +71,7 @@ ksort( $files );
 					$namea = ' VC6';
 				}
 
-				if (isset($m[5])) {
+				if (isset($m[5]) && $m[5] == '-nts') {
 					$namea .= " Non-thread-safe";
 				}
 
