@@ -1,3 +1,7 @@
+Wed Sep 09 17:33:24 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php:
+- Adding a faq entry.
+
 Tue Aug 11 10:53:44 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/download.php:
 - Fixed NTS additions.
