@@ -1219,7 +1219,10 @@ still don\'t get any stacktraces when an error happens.
 "set_error_handler" calls. If there are any, you have to either comment it out,
 or change the body of the handler function to call xdebug_* api functions.
 </dd>
-<dd>A2: You do not have set <a href="http://www.php.net/manual/en/ref.errorfunc.php#ini.display-errors">display_errors</a> to 1 in php.ini</dd>
+<dd>A2: You do not have set <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a> to 1 in php.ini</dd>
+
+<dt>Q: Xdebug doesn\'t show pretty formatted var_dump()s.</dt>
+<dd>A: Make sure you have PHP\'s <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.html-errors">html_errors</a> set to 1 in php.ini</dd>
 
 <dt>Q: The debug client doesn\'t receive any connections, what do I do
 wrong?</dt>
