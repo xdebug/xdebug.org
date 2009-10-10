@@ -58,6 +58,8 @@ the <b>full path</b>)
 <pre>
 zend_extension=\"/usr/local/php/modules/xdebug.so\"
 </pre>
+<p><b>Note:</b> You should ignore any prompts to add \"extension=xdebug.so\" to
+php.ini &mdash; this <b>will</b> cause problems.</p>
 
 <a name='source'></a>
 <h2>Installation From Source</h2>
