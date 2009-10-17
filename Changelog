@@ -1,3 +1,7 @@
+Sat Oct 17 18:58:58 CEST 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php:
+- Fixed bug #390: Quotation marks suck.
+
 Sat Oct 10 11:41:33 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Clarify docs.
