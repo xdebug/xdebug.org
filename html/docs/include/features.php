@@ -33,7 +33,7 @@ path</b>). Also, <b>somethings the quotes (\") should be removed.</b>
 <pre>
 zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
 </pre>
-<strong>From PHP 5.3 onwards, you need to use zend_extension and not
+<strong>From PHP 5.3 onwards, you <b>always</b> need to use zend_extension and not
 zend_extension_ts.</strong>
 </p>
 
@@ -162,47 +162,9 @@ twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
 <a name='compat'></a>
 <h2>Compatibility</h2>
 <p>
-Xdebug does not work together with the Zend Optimizer or any other Zend
-extension (DBG, APD etc).  This is due to compatibility problems with those
-modules. We will be working on figuring out what the problems are, and of
-course try to fix those.
-</p>
-
-
-<a name='phpize'></a>
-<h2>phpize Output Table</h2>
-<p>
-<table border='1' cellspacing='0'>
-	<tr>
-		<th class='ctr'>PHP Version:</th>
-		<td class='ctr'>PHP Api Version:</td>
-		<td class='ctr'>Zend Module Api No:</td>
-		<td class='ctr'>Zend Extension Api No:</td>
-		<td class='ctr'>Recommended version:</td>
-	</tr>
-	<tr>
-		<th class='ctr'>4.4.x</th>
-		<td class='ctr'>20020918</td>
-		<td class='ctr'>20020429</td>
-		<td class='ctr'>20050606</td>
-		<td class='ctr'>[KW:last_release_version]</td>
-	</tr>
-	<tr>
-		<th class='ctr'>5.1.x</th>
-		<td class='ctr'>20041225</td>
-		<td class='ctr'>20050922</td>
-		<td class='ctr'>220051025</td>
-		<td class='ctr'>[KW:last_release_version]</td>
-	</tr>
-	<tr>
-		<th class='ctr'>5.2.x</th>
-		<td class='ctr'>20041225</td>
-		<td class='ctr'>20060613</td>
-		<td class='ctr'>220060519</td>
-		<td class='ctr'>[KW:last_release_version]</td>
-	</tr>
-</table>
-<br/>
+Xdebug does not work together with the Zend Optimizer or any other extension
+that deals with PHP's internals (DBG, APD, ioncube etc).  This is due to
+compatibility problems with those modules.
 </p>
 
 <a name='debugclient'></a>
