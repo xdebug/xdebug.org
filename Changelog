@@ -1,3 +1,7 @@
+Sun Nov 22 16:26:49 CET 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/features.php:
+- Fixed bug #386: Missing docs: Xdebug and IonCube don't work well together.
+
 Sat Oct 17 18:58:58 CEST 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Fixed bug #390: Quotation marks suck.
