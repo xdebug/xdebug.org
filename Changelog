@@ -1,3 +1,8 @@
+Sun Nov 22 16:47:31 CET 2009 Derick Rethans <derick@derickrethans.nl>
+html/docs/include/functions/xdebug_stop_code_coverage:
+- Fixed bug #381: Code coverage documentation doesn't match behaviour.
+- Added documentation for xdebug_stop_code_coverage's cleanup argument.
+
 Sun Nov 22 16:26:49 CET 2009 Derick Rethans <derick@derickrethans.nl>
 html/docs/include/features.php:
 - Fixed bug #386: Missing docs: Xdebug and IonCube don't work well together.
