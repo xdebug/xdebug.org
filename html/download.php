@@ -11,17 +11,15 @@
 
 <h2>Source</h2>
 
-<p>Xdebug is hosted in CVS. The source code can be browsed through <a
-href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>ViewVC</a> and can be checkout with:
+<p>Xdebug is hosted in SVN. The source code can be browsed through <a
+href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>ViewVC</a> and can be checkout with:
 </p>
 <pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository login
-# password= srmread
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
+svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
 </pre>
 <p>You can also checkout the 2.0 branch with:</p>
 <pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co -r xdebug_2_0 xdebug
+svn co svn://svn.xdebug.org/svn/xdebug/xdebug/branches/xdebug_2_0 xdebug
 </pre>
 
 

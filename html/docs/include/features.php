@@ -66,16 +66,14 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 
 <p>
 You can download the source of the latest <b>stable</b> release [KW:last_release_version].
-Alternatively you can obtain Xdebug from CVS:
+Alternatively you can obtain Xdebug from SVN:
 </p>
 <pre>
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository login
-CVS password: srmread
-cvs -d :pserver:srmread@cvs.xdebug.org:/repository co xdebug
+svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
 </pre>
 <p>
 This will checkout the latest development version which is currently [KW:last_dev_version].
-You can also browse the source at <a href='http://cvs.xdebug.org/cgi-bin/viewvc.cgi/xdebug/'>http://cvs.xdebug.org</a>.
+You can also browse the source at <a href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug</a>.
 </p>
 
 <a name='compile'></a>
