@@ -919,9 +919,10 @@ use of KCacheGrind on this page doesn\'t apply to this program. There is also a
 standalone client for Mac OSX called
 <a href="http://www.maccallgrind.com/">MacCallGrind</a>, an alternative profile
 information presentation tool called <a
-href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a> and an
-upcoming web front end called <a href="http://ccg.wiki.sourceforge.net/">Carica
-CacheGrind</a>.</p>
+href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a>, an
+upcoming web front end called <a href="http://ccg.sourceforge.net/">Carica
+CacheGrind</a> as a web based front-end called <a
+href="http://code.google.com/p/webgrind/">Webgrind</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
@@ -1165,6 +1166,24 @@ debugger or profiler without having to use XDEBUG_SESSION_START as parameter.
 You can configure which [CFG:idekey:IDE key] it uses. You can find this
 extension <a href="https://addons.mozilla.org/en-US/firefox/addon/3960">here</a>.
 </p>
+
+
+<a name="multiple-users"></a>
+<h2>Multiple Users Debugging</h2>
+
+Xdebug only allows you to specify one IP address to connect to (through
+xdebug.remote_host) while doing remote debugging. It does not
+automatically connect back to the IP address that runs the browser the request
+the PHP scripts because of security reasons. You don\'t want everybody on the
+Internet to be able to run a debugging session against your code for example.
+There is no problem if all developers are working on a different project,
+because the xdebug.remote_host setting can be made for each directory (through
+Apache\'s .htaccess functionality). However, for the case where multiple
+developers work on the same code, the .htaccess trick won\'t work as the
+directory in which the code lives is the same.  For an overview on how to
+overcome this problem, please refer to the article at <a
+href="http://derickrethans.nl/debugging-with-multiple-users.html">Debugging
+with multiple users</a>.
 		'
 	),
 	'faq' => array(
