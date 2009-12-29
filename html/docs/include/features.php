@@ -944,6 +944,14 @@ space in your [CFG:profiler_output_dir] as the amount of information generated b
 enormous for complex scripts, for example up to 500MB for a complex application
 like <a href="http://ez.no">eZ Publish</a>.</p>
 
+<p>You can also selectively enable the profiler with the
+[CFG:profiler_enable_trigger] setting set to 1. If it is set to 1, then you can
+enable the profiler by using a GET/POST or COOKIE variable of the name
+XDEBUG_PROFILE. The FireFox 2 extension that can be used to enable the debugger
+(see <a href="/docs/remote#firefox-ext">HTTP Debug Sessions</a>) can also be
+used with this setting. In order for the trigger to work properly,
+[CFG:profiler_enable] needs to be set to 0.</p>
+
 <a name="misc"></a>
 <h2>Analysing Profiles</h2>
 
@@ -1160,6 +1168,7 @@ parameter <code>XDEBUG_SESSION_STOP</code>. Xdebug will then no longer try
 to make a connection to the debugclient.</li>
 </ul>
 </p>
+<a name="firefox-ext"></a>
 <p>
 There is also a FireFox 2 extension that allows you to trigger Xdebug\'s
 debugger or profiler without having to use XDEBUG_SESSION_START as parameter.

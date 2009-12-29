@@ -343,7 +343,9 @@ Instead the file will be appended to with the new profile.",
 		"Enables Xdebug's profiler which creates files in the
 [CFG:profiler_output_dir:profile output directory].  Those files can be
 read by KCacheGrind to visualize your data.  This setting can not be set in
-your script with ini_set().",
+your script with ini_set(). If you want to selectively enable the profiler,
+please set [CFG:profiler_enable_trigger] to 1 <strong>instead</strong> of using
+this setting.",
 		FUNC_PROFILER
 	),
 
@@ -352,7 +354,9 @@ your script with ini_set().",
 		"When this setting is set to 1, you can trigger the generation of profiler
 files by using the XDEBUG_PROFILE GET/POST parameter, or send a cookie with the
 name XDEBUG_PROFILE. This will then write the profiler data to
-[CFG:profiler_output_dir:defined directory].",
+[CFG:profiler_output_dir:defined directory]. In order to prevent the profiler
+to generate profile files for each request, you need to set
+[CFG:profile_enable] to 0.",
 		FUNC_PROFILER
 	),
 
