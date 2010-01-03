@@ -106,6 +106,13 @@ the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-
 		FUNC_FUNCTION_TRACE
 	),
 
+	'collect_assignments' => array(
+	    'boolean', 0, null,
+		"This setting, defaulting to Off, controls whether Xdebug should add
+variable assignments to function traces.",
+		FUNC_FUNCTION_TRACE
+	),
+
 	'collect_includes' => array(
 		'boolean', 1, null,
 		"This setting, defaulting to On, controls whether Xdebug should write the
