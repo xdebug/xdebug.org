@@ -17,10 +17,6 @@ href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>ViewVC</a> a
 <pre>
 svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
 </pre>
-<p>You can also checkout the 2.0 branch with:</p>
-<pre>
-svn co svn://svn.xdebug.org/svn/xdebug/xdebug/branches/xdebug_2_0 xdebug
-</pre>
 
 
 <h2>Releases</h2>
@@ -37,11 +33,11 @@ $d = Dir( 'files' );
 $files = array();
 while ( false !== ( $entry = $d->read() ) )
 {
-	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9])\.tgz$@', $entry, $m)) {
-		$files[$m[1]]['source'] = $entry;
+	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
+		$files[strtolower($m[1])]['source'] = $entry;
 	}
-	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9])-[456]\.[0-9](\.[0-9])?(-vc[69])?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
-		$files[$m[1]]['dll'][] = $entry;
+	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[456]\.[0-9](\.[0-9])?(-vc[69])?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+		$files[strtolower($m[1])]['dll'][] = $entry;
 	}
 }
 ksort( $files );
@@ -60,7 +56,7 @@ ksort( $files );
 			sort( $tar['dll'] );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
-				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9]-([456]\.[0-9])(\.[0-9])?(-(vc[69]))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
+				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([456]\.[0-9])(\.[0-9])?(-(vc[69]))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
 				if (isset($m[4]) && $m[4] != '') {
