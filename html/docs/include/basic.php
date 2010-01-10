@@ -47,10 +47,11 @@ function do_related_settings( $func )
 			$text = add_links( $setting[3] );
 			$settings .= "<div class='name'>xdebug.{$name}</div>\n";
 			$settings .= "Type: <span class='type'>{$type}</span>, ";
-			$settings .= "Default value: <span class='default'>{$default}</span>\n";
+			$settings .= "Default value: <span class='default'>{$default}</span>";
 			if (is_string($setting[2])) {
-				$settings .= ", Introduced in <span class='type'>Xdebug {$setting[2]}</span>\n";
+				$settings .= ", Introduced in <span class='type'>Xdebug {$setting[2]}</span>";
 			}
+			$settings .= "\n";
 			$settings .= "<div class='description'>{$text}</div>\n";
 		}
 	}
