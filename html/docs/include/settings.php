@@ -268,6 +268,16 @@ variable was not present.",
 		FUNC_REMOTE
 	),
 
+	'remote_connect_back' => array(
+		'boolean', 0, '2.1',
+		"If enable, the [CFG:remote_host] setting is ignored and Xdebug will
+try to connect to the client that made the HTTP request. It checks
+the \$_SERVER['REMOTE_ADDR'] variable to find out which IP address to use.
+Please note that there is <b>no</b> filter available, and anybody who can
+connect to the webserver will then be able to start a debugging session.",
+		FUNC_REMOTE
+	),
+
 	'remote_enable' => array(
 		'boolean', 0, null,
 		"This switch controls whether Xdebug should try to contact a debug client
