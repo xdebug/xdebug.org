@@ -19,6 +19,16 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_0beta2'></a>[2010-02-03] &mdash; Xdebug 2.1.0beta2</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed memory leak in breakpoint handling.</dd>
+<dd>Fixed <?php bug(528); ?>: Core dump generated with remote_connect_back option set and CLI usage.</dd>
+<dd>Fixed <?php bug(515); ?>: declare(ticks) statement confuses code coverage.</dd>
+<dd>Fixed <?php bug(512); ?>: DBGP: breakpoint_get doesn't return conditions in its response.</dd>
+<dd>Possible fix for <?php bug(507); ?>/#517: Crashes because of uninitalised header globals.</dd>
+<dd>Fixed <?php bug(501); ?>: Xdebug's variable tracing misses POST_INC and variants.</dd>
+
+
 <dt><a name='x_2_1_0beta1'></a>[2010-01-03] &mdash; Xdebug 2.1.0beta1</dt>
 <dd><h3>Added features</h3></dd>
 <dd>Added error display collection and suppressions.</dd>
@@ -60,31 +70,31 @@
 <dd>Possible fix for a threading issue where the headers gathering function would create stack overflows.</dd>
 <dd>Possible fix for bug #324: xdebug_dump_superglobals() only dumps superglobals that were accessed before, and #478: XDebug 2.0.x can't use %R in xdebug.profiler_output_name if register_long_arrays is off.</dd>
 
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=505'>#505</a>: %s in xdebug.trace_output_name breaks functions traces.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=494'>#494</a>: Private attributes of parent class unavailable when inheriting.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=486'>#486</a>: feature_get -n breakpoint_types returns out of date list.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=476'>#476</a>: Xdebug doesn't support PHP 5.3's exception chaining.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=472'>#472</a>: Dead Code Analysis for code coverage messed up after goto.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=470'>#470</a>: Catch blocks marked as dead code unless executed.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=469'>#469</a>: context_get for function variables always appear as "uninitialized".</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=468'>#468</a>: Property_get on $GLOBALS works only at top-level, by adding GLOBALS to the super globals context.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=453'>#453</a>: Memory leaks.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=445'>#445</a>: error_prepend_string and error_append_string are ignored by xdebug_error_cb. (Patch by Kent Davidson &lt;kent@marketruler.com>)</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=442'>#442</a>configure: error: "you have strange libedit".</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=439'>#439</a>: Xdebug crash in xdebug_header_handler.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=423'>#423</a>: Conflicts with funcall.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=419'>#419</a>: Make use of P_tmpdir if defined instead of hard coded '/tmp'.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=417'>#417</a>: Response of context_get may lack page and pagesize attributes.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=411'>#411</a>: Class/function breakpoint setting does not follow the specs.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=393'>#393</a>: eval returns array data at the previous page request.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=391'>#391</a>: Xdebug doesn't stop executing script on catchable fatal errors.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=389'>#389</a>: Destructors called on fatal error.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=368'>#368</a>: Xdebug's debugger bails out on a parse error with the eval command.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=356'>#356</a>: Temporary breakpoints persist.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=355'>#355</a>: Function numbers in trace files weren't unique.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=340'>#340</a>: Segfault while throwing an Exception.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=328'>#328</a>: Private properties are incorrectly enumerated in case of extended classes.</dd>
-<dd>Fixed <a href='http://bugs.xdebug.org/view.php?id=249'>#249</a>: Xdebug's error handler messes up with the SOAP extension's error handler.</dd>
+<dd>Fixed <?php bug(505); ?>: %s in xdebug.trace_output_name breaks functions traces.</dd>
+<dd>Fixed <?php bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
+<dd>Fixed <?php bug(486); ?>: feature_get -n breakpoint_types returns out of date list.</dd>
+<dd>Fixed <?php bug(476); ?>: Xdebug doesn't support PHP 5.3's exception chaining.</dd>
+<dd>Fixed <?php bug(472); ?>: Dead Code Analysis for code coverage messed up after goto.</dd>
+<dd>Fixed <?php bug(470); ?>: Catch blocks marked as dead code unless executed.</dd>
+<dd>Fixed <?php bug(469); ?>: context_get for function variables always appear as "uninitialized".</dd>
+<dd>Fixed <?php bug(468); ?>: Property_get on $GLOBALS works only at top-level, by adding GLOBALS to the super globals context.</dd>
+<dd>Fixed <?php bug(453); ?>: Memory leaks.</dd>
+<dd>Fixed <?php bug(445); ?>: error_prepend_string and error_append_string are ignored by xdebug_error_cb. (Patch by Kent Davidson &lt;kent@marketruler.com>)</dd>
+<dd>Fixed <?php bug(442); ?>: configure: error: "you have strange libedit".</dd>
+<dd>Fixed <?php bug(439); ?>: Xdebug crash in xdebug_header_handler.</dd>
+<dd>Fixed <?php bug(423); ?>: Conflicts with funcall.</dd>
+<dd>Fixed <?php bug(419); ?>: Make use of P_tmpdir if defined instead of hard coded '/tmp'.</dd>
+<dd>Fixed <?php bug(417); ?>: Response of context_get may lack page and pagesize attributes.</dd>
+<dd>Fixed <?php bug(411); ?>: Class/function breakpoint setting does not follow the specs.</dd>
+<dd>Fixed <?php bug(393); ?>: eval returns array data at the previous page request.</dd>
+<dd>Fixed <?php bug(391); ?>: Xdebug doesn't stop executing script on catchable fatal errors.</dd>
+<dd>Fixed <?php bug(389); ?>: Destructors called on fatal error.</dd>
+<dd>Fixed <?php bug(368); ?>: Xdebug's debugger bails out on a parse error with the eval command.</dd>
+<dd>Fixed <?php bug(356); ?>: Temporary breakpoints persist.</dd>
+<dd>Fixed <?php bug(355); ?>: Function numbers in trace files weren't unique.</dd>
+<dd>Fixed <?php bug(340); ?>: Segfault while throwing an Exception.</dd>
+<dd>Fixed <?php bug(328); ?>: Private properties are incorrectly enumerated in case of extended classes.</dd>
+<dd>Fixed <?php bug(249); ?>: Xdebug's error handler messes up with the SOAP extension's error handler.</dd>
 
 <dd><h3>DBGP</h3></dd>
 <dd>Fixed cases where private properties where shown for objects, but not accessible.</dd>

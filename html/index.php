@@ -48,6 +48,12 @@ href='http://xdebug.ru'>http://xdebug.ru</a>.
 
 <dl class="main">
 
+<dt class="main">[2010-02-03]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.1.0beta2 - which features a few bug fixes, as well
+as returned Windows binaries for PHP 5.3/VC6. The full change log can be found
+on the <a href="/updates.php#x_2_1_0beta2">updates</a> page.</p> </dd>
+
 <dt class="main">[2010-01-03]</dt>
 <dd class="main">
 <p>I just released Xdebug 2.1.0beta - which features a whole list of new
