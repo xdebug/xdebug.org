@@ -915,14 +915,11 @@ tool (Linux, KDE) to analyse your profiling data. Users of the Windows
 operating system can use <a
 href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>, the
 functionality is different from KCacheGrind so the section that documents the
-use of KCacheGrind on this page doesn\'t apply to this program. There is also a
-standalone client for Mac OSX called
-<a href="http://www.maccallgrind.com/">MacCallGrind</a>, an alternative profile
-information presentation tool called <a
-href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a>, an
-upcoming web front end called <a href="http://ccg.sourceforge.net/">Carica
-CacheGrind</a> as a web based front-end called <a
-href="http://code.google.com/p/webgrind/">Webgrind</a>.</p>
+use of KCacheGrind on this page doesn\'t apply to this program. There is also
+an alternative profile information presentation tool called
+<a href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a> and a web
+based front-end called
+<a href="http://code.google.com/p/webgrind/">Webgrind</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
