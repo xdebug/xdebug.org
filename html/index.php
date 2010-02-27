@@ -48,6 +48,13 @@ href='http://xdebug.ru'>http://xdebug.ru</a>.
 
 <dl class="main">
 
+<dt class="main">[2010-02-27]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.1.0beta3 - which features a few crashes as well
+as the "header" problem. The full change log can be found
+on the <a href="/updates.php#x_2_1_0beta3">updates</a> page. This will be the 
+last beta version, and the next release will be Xdebug 2.1.0rc1.</p> </dd>
+
 <dt class="main">[2010-02-03]</dt>
 <dd class="main">
 <p>I just released Xdebug 2.1.0beta2 - which features a few bug fixes, as well

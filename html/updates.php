@@ -19,6 +19,15 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_0beta3'></a>[2010-02-27] &mdash; Xdebug 2.1.0beta3</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed memory corruption issues.</dd>
+<dd>Fixed a threading related issue for code-coverage.</dd>
+<dd>Fixed <?php bug(532); ?>: XDebug breaks header() function.</dd>
+<dd>DBGP: Prevent Xdebug from returning properties when a too high page number has been requested.</dd>
+
+
+
 <dt><a name='x_2_1_0beta2'></a>[2010-02-03] &mdash; Xdebug 2.1.0beta2</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed memory leak in breakpoint handling.</dd>
