@@ -69,7 +69,7 @@ open source extension.
 </p>
 <p>
 If you have other questions, feel free to send me an e-mail (but read <a
-href="http://www.derickrethans.nl/20020430.php">this</a> first) to
+href="http://catb.org/~esr/faqs/smart-questions.html">this</a> first) to
 <em>derick@<span class="hide">remove-this-first@</span>xdebug.org</em>.</p>
 
 <br /><br />
