@@ -9,7 +9,20 @@
 
 <?php include "include/menu.php"; ?>
 
+<div style="float: right; width: 200px; border: solid green 1px; margin-right: 20px; padding: 10px;">
+<img src="/images/xdebug-logo.png" alt="logo"/>
+<p style="text-align: center;">
+If you like Xdebug, please consider a <a href="/donate.php">donation</a>.
+</p>
+</div>
+
 <h2>Source</h2>
+
+<p>
+The Xdebug extension helps you debugging your script by providing a lot of
+valuable debug information. The debug information that Xdebug can
+provide includes the following:
+</p>
 
 <p>Xdebug is hosted in SVN. The source code can be browsed through <a
 href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>ViewVC</a> and can be checkout with:
