@@ -12,7 +12,12 @@
 <a name="functionality"></a>
 <h2>Functionality</h2>
 
-<img src="/images/xdebug-logo.png" align="right" alt="logo"/>
+<div style="float: right; width: 200px; border: solid green 1px; margin-right: 20px; padding: 10px;">
+<img src="/images/xdebug-logo.png" alt="logo"/>
+<p style="text-align: center;">
+If you like Xdebug, please consider a <a href="/donate.php">donation</a>.
+</p>
+</div>
 <p>
 The Xdebug extension helps you debugging your script by providing a lot of
 valuable debug information. The debug information that Xdebug can
