@@ -29,7 +29,7 @@ version of PHP.  See the links on the right side.
 Installing the precompiled modules is easy. Just place them in a directory, and
 add the following line to php.ini: (don't forget to change the path and
 filename to the correct one &mdash; but make sure you use the <b>full
-path</b>). Also, <b>somethings the quotes (\") should be removed.</b>
+path</b>). Also, <b>sometimes the quotes (\") should be removed.</b>
 <pre>
 zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
 </pre>
