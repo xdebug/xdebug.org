@@ -23,7 +23,8 @@ $features = array(
 
 <p>
 There are a few precompiled modules for Windows, they are all for the non-debug
-version of PHP.  See the links on the right side.
+version of PHP. You can get those at the <a href='/download.php'>download</a>
+page.
 </p>
 <p>
 Installing the precompiled modules is easy. Just place them in a directory, and
