@@ -19,6 +19,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_0rc1'></a>[2010-04-07] &mdash; Xdebug 2.1.0rc1</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd> Fixed <?php bug(400); ?>: Xdebug shows errors, even when PHP is request startup mode.</dd>
+<dd> Fixed <?php bug(421); ?>: xdebug sends back invalid characters in xml sometimes.</dd>
+<dd> Fixed <?php bug(475); ?>: Property names with null chars are not sent fully to the client.</dd>
+<dd> Fixed <?php bug(480); ?>: Issues with the reserved resource in multi threaded environments (Patch by Francis.Grolemund@netapp.com).</dd>
+<dd> Fixed <?php bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
+<dd> Fixed <?php bug(558); ?>: PHP segfaults when running a nested eval.</dd>
+
+
+
 <dt><a name='x_2_1_0beta3'></a>[2010-02-27] &mdash; Xdebug 2.1.0beta3</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed memory corruption issues.</dd>
