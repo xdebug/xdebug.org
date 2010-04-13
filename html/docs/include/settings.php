@@ -479,4 +479,10 @@ The possible format specifiers are:
 ',
 		FUNC_STACK_TRACE
 	),
+	'scream' => array(
+		'boolean', 'Off', '2.1',
+		"If this setting is On then Xdebug will disable the @ (shut-up)
+		operator so that notices, warnings and errors are no longer hidden.",
+		FUNC_BASIC
+	),
 );
