@@ -1222,6 +1222,44 @@ more information.</dd>
 
 <h2>Compilation and Configuration</h2>
 <dl class="faq">
+<dt><a name="api"></a>
+<dt>Q: What to do with: <i>Xdebug requires Zend Engine API version
+<i>xxxxxxxx</i>. The Zend Engine API version 2<i>xxxxxxxx</i> which is
+installed, is newer.</i></dt>
+<dd>A:
+
+This message means that you are trying to load Xdebug with a PHP version for
+which it wasn\'t built. If you compiled PHP yourself, it is most likely because
+you compiled Xdebug against PHP headers that belong to a different PHP version
+that you\'re running. For example, you\'re using PHP 5.3 and the headers
+you\'re using are still PHP 5.2. If you are using a pre-compiled binary, then
+you\'re using the wrong one.</dd>
+
+<dd>To diagnose if this is your problem, make the following steps:
+<ul>
+<li>Check what the "Zend Extension" API number is of the PHP version that you
+are running by looking at phpinfo() (or "php -i") output. You can find it in
+the top part of the output, in the same block as the PHP logo and the PHP
+version. As examples, for PHP 5.2, the number is "220060519" and for PHP 5.3 it
+is "220090626".</li>
+<li>Check what the output of "phpize" is when you\'re completing the
+compilation steps. The number that you\'re looking for is on the line that says
+"Zend Extension Api No".
+</ul>
+If the two numbers from above do <b>not</b> match, you\'re compiling with the
+wrong PHP headers. If that is the case, run: "phpize --help". This shows you
+the full path to phpize. This path should be the same as where you have the CLI
+binary, "php-config" and the "pear" and "pecl" binaries. If you run "php-config
+--version" it should show the same version of PHP that you\'re running. If it
+doesn\'t match up, and perhaps the wrong "phpize" binary is found on the path,
+you can compile as follows:
+<ul>
+<li>/full/path/to/php/bin/phpize</li>
+<li>./configure --php-config=/full/path/to/php/bin/php-config</li>
+<li>make clean all install</li>
+</ul>
+</dd>
+
 <dt>Q: I\'m using XAMPP, but I can\'t seem to get the packaged xdebug extension
 to work properly.</dt>
 <dd>A: If you uncommented the "extension=php_xdebug.dll" line, that is to be
