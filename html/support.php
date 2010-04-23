@@ -64,8 +64,8 @@ If you have a general question about Xdebug, please send an email to
 <em>xdebug-general@<span
 class="hide">remove-this-first@</span>lists.xdebug.org</em>.  If you like Xdebug
 and make use of it, feel free to checkout my <?php url('giftlist', 'wishlist');
-?>.  This improves chances that I will be continuing developing Xdebug as an
-open source extension.
+?> or make a <a href='/donate.php'>donation</a>.  This improves chances that I
+will be continuing developing Xdebug as an open source extension.
 </p>
 <p>
 If you have other questions, feel free to send me an e-mail (but read <a
