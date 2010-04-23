@@ -1255,7 +1255,7 @@ doesn\'t match up, and perhaps the wrong "phpize" binary is found on the path,
 you can compile as follows:
 <ul>
 <li>/full/path/to/php/bin/phpize</li>
-<li>./configure --php-config=/full/path/to/php/bin/php-config</li>
+<li>./configure --with-php-config=/full/path/to/php/bin/php-config</li>
 <li>make clean all install</li>
 </ul>
 </dd>
