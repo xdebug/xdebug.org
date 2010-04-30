@@ -1,7 +1,7 @@
 <?php
 $settings = array(
 	'collect_vars' => array(
-		'boolean', 'Off', null,
+		'boolean', 0, null,
 		"This setting tells Xdebug to gather information about which variables
 are used in a certain scope. This analysis can be quite slow as Xdebug has
 to reverse engineer PHP's opcode arrays. This setting will not record which
@@ -11,11 +11,11 @@ This setting needs to be enabled only if you wish to use
 		FUNC_STACK_TRACE
 	),
 	'default_enable' => array(
-		'boolean', 'On', null,
-		"If this setting is On then stacktraces will be shown by default on an
+		'boolean', 1, null,
+		"If this setting is 1, then stacktraces will be shown by default on an
 error event. You can disable showing stacktraces from your code with
 [FUNC:xdebug_disable]. As this is one of the basic functions of Xdebug, it is
-advisable to leave this setting set to 'On'.",
+advisable to leave this setting set to 1.",
 		FUNC_BASIC
 	),
 	'extended_info' => array(
@@ -107,15 +107,15 @@ the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-
 	),
 
 	'collect_assignments' => array(
-	    'boolean', 0, null,
-		"This setting, defaulting to Off, controls whether Xdebug should add
+	    'boolean', 0, '2.1',
+		"This setting, defaulting to 0, controls whether Xdebug should add
 variable assignments to function traces.",
 		FUNC_FUNCTION_TRACE
 	),
 
 	'collect_includes' => array(
 		'boolean', 1, null,
-		"This setting, defaulting to On, controls whether Xdebug should write the
+		"This setting, defaulting to 1, controls whether Xdebug should write the
 filename used in include(), include_once(), require() or require_once() to the
 trace files.",
 		FUNC_FUNCTION_TRACE | FUNC_STACK_TRACE
@@ -126,7 +126,7 @@ trace files.",
 		"<p>This setting, defaulting to 0, controls whether Xdebug should collect
 the parameters passed to functions when a function call is recorded in either
 the function trace or the stack trace.</p>
-<p>The setting defaults to Off because for very large
+<p>The setting defaults to 0 because for very large
 scripts it may use huge amounts of memory and therefore make it impossible for
 the huge script to run. You can most safely turn this setting on, but you can
 expect some problems in scripts with a lot of function calls and/or huge data
@@ -142,25 +142,25 @@ each of the values provides. See also the introduction of the feature
 <tr><th>Value</th><th>Argument Information Shown</th></tr>
 <tr><td class='ctr'>0</td><td>None.</td></tr>
 <tr><td class='ctr'>1</td><td>Type and number of elements (f.e. string(6), array(8)).</td></tr>
-<tr><td class='ctr'>2</td><td>Type and number of elements, with a tool tip for the full information<sup><a href='#note1'>1</a></sup>.</td></tr>
+<tr><td class='ctr'>2</td><td><p>Type and number of elements, with a tool tip for the full information <sup>1</sup>.</p></td></tr>
 <tr><td class='ctr'>3</td><td>Full variable contents (with the limits respected as set by [CFG:var_display_max_children], [CFG:var_display_max_data] and [CFG:var_display_max_depth].</td></tr>
 <tr><td class='ctr'>4</td><td>Full variable contents and variable name.</td></tr>
-<tr><td colspan='2'><a name='note1'><sup>1</sup></a> in the CLI version of PHP it will not have the tool tip, nor in output files.</td></tr>
 </table>
+<p><sup>1</sup></a> in the CLI version of PHP it will not have the tool tip, nor in output files.</p>
 ",
 		FUNC_FUNCTION_TRACE | FUNC_STACK_TRACE
 	),
 
 	'collect_return' => array(
 		'boolean', 0, null,
-		"This setting, defaulting to Off, controls whether Xdebug should write the
+		"This setting, defaulting to 0, controls whether Xdebug should write the
 return value of function calls to the trace files.",
 		FUNC_FUNCTION_TRACE,
 	),
 
 	'trace_format' => array(
 		'integer', 0, null,
-		"The format of the trace file.
+		"<p>The format of the trace file.</p>
 <table class='table'>
 <tr><th>Value</th><th>Description</th></tr>
 <tr><td class='ctr'>0</td><td>shows a human readable indented trace file with:
@@ -168,21 +168,24 @@ return value of function calls to the trace files.",
 href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
 <i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
 <i>filename</i> and <i>line number</i>.</td></tr>
-<tr><td class='ctr'>1</td><td><p>writes a computer readable format which has two
+<tr><td class='ctr'>1</td><td>writes a computer readable format which has two
 different records. There are different records for entering a stack frame, and
 leaving a stack frame. The table below lists the fields in each type of record.
 Fields are tab separated.
+</td></tr>
+</table>
+<p>
+Fields for the computerized format:
 </p>
-<table class='table-inner'>
-<tr><th rowspan='2'>Record type</th><th colspan='10'>Fields</th></tr>
-<tr><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th></tr>
+<table class='table'>
+<tr><th>Record type</th><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th></tr>
 <tr>
 	<th class='ctr'>Entry</th>
-	<td rowspan='2'>level</td>
-	<td rowspan='2'>function&nbsp;#</td>
+	<td>level</td>
+	<td>function&nbsp;#</td>
 	<td>always&nbsp;'0'</td>
-	<td rowspan='2'>time index</td>
-	<td rowspan='2'>memory usage</td>
+	<td>time index</td>
+	<td>memory usage</td>
 	<td>function name</td>
 	<td>user-defined&nbsp;(1) or internal function&nbsp;(0)</td>
 	<td>name of the include/require file</td>
@@ -190,13 +193,15 @@ Fields are tab separated.
 	<td>line number</td>
 </tr>
 <tr><th class='ctr'>Exit</th>
+	<td>level</td>
+	<td>function&nbsp;#</td>
 	<td>always&nbsp;'1'</td>
+	<td>time index</td>
+	<td>memory usage</td>
 	<td colspan='5' class='ctr'><i>empty</i></td>
 </tr>
 </table>
 
-</td></tr>
-</table>
 <p>
 See the introduction of [FEAT:execution_trace] for a few examples.
 </p>",
@@ -234,15 +239,15 @@ The possible format specifiers are:
 <tr><td class='ctr'>%c</td><td>crc32 of the current working directory</td><td>trace.%c</td><td>trace.1258863198.xt</td></tr>
 <tr><td class='ctr'>%p</td><td>pid</td><td>trace.%p</td><td>trace.5174.xt</td></tr>
 <tr><td class='ctr'>%r</td><td>random number</td><td>trace.%r</td><td>trace.072db0.xt</td></tr>
-<tr><td class='ctr'>%s</td><td>script name<sup><a href='#note2'>2</a></sup></td><td>cachegrind.out.%s</td><td>cachegrind.out._home_httpd_html_test_xdebug_test_php</td></tr>
+<tr><td class='ctr'>%s</td><td><p>script name <sup>2</sup></p></td><td>cachegrind.out.%s</td><td>cachegrind.out._home_httpd_html_test_xdebug_test_php</td></tr>
 <tr><td class='ctr'>%t</td><td>timestamp (seconds)</td><td>trace.%t</td><td>trace.1179434742.xt</td></tr>
 <tr><td class='ctr'>%u</td><td>timestamp (microseconds)</td><td>trace.%u</td><td>trace.1179434749_642382.xt</td></tr>
 <tr><td class='ctr'>%H</td><td>\$_SERVER['HTTP_HOST']</td><td>trace.%H</td><td>trace.kossu.xt</td></tr>
 <tr><td class='ctr'>%R</td><td>\$_SERVER['REQUEST_URI']</td><td>trace.%R</td><td>trace._test_xdebug_test_php_var=1_var2=2.xt</td></tr>
 <tr><td class='ctr'>%S</td><td>session_id (from \$_COOKIE if set)</td><td>trace.%S</td><td>trace.c70c1ec2375af58f74b390bbdd2a679d.xt</td></tr>
 <tr><td class='ctr'>%%</td><td>literal %</td><td>trace.%%</td><td>trace.%%.xt</td></tr>
-<tr><td colspan='4'><a name='note2'><sup>2</sup></a> this one is not available for trace file names.</td></tr>
 </table>
+<p><sup>2</sup></a> this one is not available for trace file names.</p>
 ",
 		FUNC_FUNCTION_TRACE
 	),
@@ -262,7 +267,7 @@ setting has as default ''.",
 		'boolean', 0, null,
 		"Normally you need to use a specific HTTP GET/POST variable to start
 remote debugging (see [FEAT:remote]). When
-this setting is set to 'On' Xdebug will always attempt to start a remote
+this setting is set to 1, Xdebug will always attempt to start a remote
 debugging session and try to connect to a client, even if the GET/POST/COOKIE
 variable was not present.",
 		FUNC_REMOTE
@@ -284,18 +289,19 @@ connect to the webserver will then be able to start a debugging session.",
 which is listening on the host and port as set with the settings
 [CFG:remote_host] and
 [CFG:remote_port]. If a connection can not be established the script will just
-continue as if this setting was Off.",
+continue as if this setting was 0.",
 		FUNC_REMOTE
 	),
 
 	'remote_handler' => array(
 		'string', 'dbgp', null,
-		"Can be either 'php3' which selects the old <a
+		"<p>Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
 output, 'gdb' which enables the GDB like debugger interface or 'dbgp' - the
-brand new <a href='/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
+<a href='/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
 more widely supported by clients. See more information in the introduction for
-[FEAT:remote].
+[FEAT:remote].</p>
+<p><b>Note</b>: Xdebug 2.1 and later only support 'dbgp' as protocol.</p>
 ",
 		FUNC_REMOTE
 	),
@@ -308,7 +314,7 @@ host name or an IP address.",
 	),
 
 	'remote_log' => array(
-		'string', 'none', null,
+		'string', '', null,
 		"If set to a value, it is used as filename to a file to which all remote
 debugger communications are logged. The file is always opened in append-mode,
 and will therefore not be overwritten by default. There is no concurrency
@@ -423,14 +429,14 @@ xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
 	'dump_once' => array(
 		'boolean', 1, null,
 		"Controls whether the values of the superglobals should be dumped on all
-error situations (set to Off) or only on the first (set to On).",
+error situations (set to 0) or only on the first (set to 1).",
 		FUNC_STACK_TRACE
 	),
 
 	'dump_undefined' => array(
 		'boolean', 0, null,
 		"If you want to dump undefined values from the superglobals you should set
-this setting to On, otherwise leave it set to Off.",
+this setting to 1, otherwise leave it set to 0.",
 		FUNC_STACK_TRACE
 	),
 
@@ -444,7 +450,7 @@ this setting to On, otherwise leave it set to Off.",
 	),
 
 	'file_link_format' => array(
-		'string', '*empty string*', '2.1',
+		'string', '', '2.1',
 		'<p>This setting determines the format of the links that are made in
 the display of stack traces where file names are used. This allows IDEs to set
 up a link-protocol that makes it possible to go directly to a line and file by
@@ -453,21 +459,6 @@ clicking on the filenames that Xdebug shows in stack traces. An example format m
 <pre>
 myide://%f@%l
 </pre>
-<p>
-An example rendering follows here:
-</p>
-<div class="example">
-<p>
-<font size=\'1\'><table border=\'1\' cellspacing=\'0\' cellpadding=\'1\'>
-<tr><th align=\'left\' bgcolor=\'#f57900\' colspan="5"><span style=\'background-color: #cc0000; color: #fce94f; font-size: x-large;\'>( ! )</span> Fatal error: Call to undefined function b() in <a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@7\'>/home/httpd/html/test/xdebug/file_link.php</a> on line <i>7</i></th></tr>
-<tr><th align=\'left\' bgcolor=\'#e9b96e\' colspan=\'5\'>Call Stack</th></tr>
-<tr><th align=\'center\' bgcolor=\'#eeeeec\'>#</th><th align=\'left\' bgcolor=\'#eeeeec\'>Time</th><th align=\'left\' bgcolor=\'#eeeeec\'>Memory</th><th align=\'left\' bgcolor=\'#eeeeec\'>Function</th><th align=\'left\' bgcolor=\'#eeeeec\'>Location</th></tr>
-<tr><td bgcolor=\'#eeeeec\' align=\'center\'>1</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0009</td><td bgcolor=\'#eeeeec\' align=\'right\'>112592</td><td bgcolor=\'#eeeeec\'>{main}(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@0\'>../file_link.php<b>:</b>0</a></td></tr>
-<tr><td bgcolor=\'#eeeeec\' align=\'center\'>2</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0012</td><td bgcolor=\'#eeeeec\' align=\'right\'>113384</td><td bgcolor=\'#eeeeec\'>c(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@16\'>../file_link.php<b>:</b>16</a></td></tr>
-<tr><td bgcolor=\'#eeeeec\' align=\'center\'>3</td><td bgcolor=\'#eeeeec\' align=\'center\'>0.0012</td><td bgcolor=\'#eeeeec\' align=\'right\'>113696</td><td bgcolor=\'#eeeeec\'>a(  )</td><td title=\'/home/httpd/html/test/xdebug/file_link.php\' bgcolor=\'#eeeeec\'><a style=\'color: black\' href=\'myide:///home/httpd/html/test/xdebug/file_link.php@13\'>../file_link.php<b>:</b>13</a></td></tr>
-</table></font>
-</p>
-</div>
 <p>
 The possible format specifiers are:
 </p>
@@ -480,8 +471,8 @@ The possible format specifiers are:
 		FUNC_STACK_TRACE
 	),
 	'scream' => array(
-		'boolean', 'Off', '2.1',
-		"If this setting is On then Xdebug will disable the @ (shut-up)
+		'boolean', 0, '2.1',
+		"If this setting is 1, then Xdebug will disable the @ (shut-up)
 		operator so that notices, warnings and errors are no longer hidden.",
 		FUNC_BASIC
 	),

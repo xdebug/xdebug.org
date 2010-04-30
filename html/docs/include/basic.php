@@ -31,6 +31,17 @@ function add_links( $text )
 	return $text;
 }
 
+function ignore_links( $text )
+{
+	$text = preg_replace( '/\[FUNC:([^\]]*?)\]/', '\1()', $text );
+	$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '\2', $text );
+	$text = preg_replace( '/\[CFG:([^\]]*?)\]/', 'xdebug.\1', $text );
+	$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '\1', $text );
+	$text = preg_replace( '/\[FEAT:([^\]]*?)\]/e', "\$GLOBALS['features']['\\1'][0]", $text );
+	$text = add_keywords( $text );
+	return $text;
+}
+
 function do_related_settings( $func )
 {
 	ksort( $GLOBALS['settings'] );
