@@ -166,7 +166,7 @@ return value of function calls to the trace files.",
 <tr><td class='ctr'>0</td><td>shows a human readable indented trace file with:
 <i>time index</i>, <i>memory usage</i>, <i>memory delta</i> (if the setting <a
 href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
-<i>function parameters</i> (if the setting <a href='#collect_params'>xdebug.collect_params</a> is enabled,
+<i>function parameters</i> (if the setting [CFG:collect_params] is enabled),
 <i>filename</i> and <i>line number</i>.</td></tr>
 <tr><td class='ctr'>1</td><td>writes a computer readable format which has two
 different records. There are different records for entering a stack frame, and
@@ -298,7 +298,7 @@ continue as if this setting was 0.",
 		"<p>Can be either 'php3' which selects the old <a
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
 output, 'gdb' which enables the GDB like debugger interface or 'dbgp' - the
-<a href='/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
+<a href='http://xdebug.org/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
 more widely supported by clients. See more information in the introduction for
 [FEAT:remote].</p>
 <p><b>Note</b>: Xdebug 2.1 and later only support 'dbgp' as protocol.</p>
