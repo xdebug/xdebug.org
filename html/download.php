@@ -38,7 +38,9 @@ svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
 PHP version, although the extension is built against the most current PHP
 version at that time. The VC<i>x</i> marker tells with which compiler the
 extension was built, and Non-thread-safe whether ZTS was disabled. Those
-qualifiers need to match the PHP version you're using.</p>
+qualifiers need to match the PHP version you're using. If you don't know which
+one you need, please refer to the <a href='/find-binary.php'>custom
+installation instructions</a>.</p>
 
 <?php
 // open the files dir, and scan

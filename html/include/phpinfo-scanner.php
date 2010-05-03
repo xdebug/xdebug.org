@@ -1,0 +1,276 @@
+<?php
+class xdebugVersion
+{
+	function __construct()
+	{
+		$this->version = $this->ts = $this->debug = $this->windows = false;
+		$this->phpApi = $this->zendApi = false; $this->configFile = false;
+		$this->configPath = $this->extensionDir = $this->sapi = false;
+		$this->tarDir = $this->xdebugVersion = false;
+		$this->winCompiler= 6;
+	}
+
+	function analyse( $data )
+	{
+		$data = strip_tags( $data );
+
+		if ( preg_match( '/Server API([ =>\t]*)(.*)/', $data, $m ) )
+		{
+			$this->sapi = trim( $m[2] );
+		}
+
+		if ( preg_match( '/PHP Version([^45]+)([45][0-9.dev-]+)/', $data, $m ) )
+		{
+			$this->version = $m[2];
+		}
+
+		if ( preg_match( '/with Xdebug v([0-9.rcdevalphabeta-]+),/', $data, $m ) )
+		{
+			$this->xdebugVersion = $m[1];
+		}
+
+		if ( preg_match( '/Thread Safety([ =>\t]+)(disabled|enabled)/', $data, $m ) )
+		{
+			$this->ts = $m[2] == 'enabled';
+		}
+
+		if ( preg_match( '/Debug Build([ =>\t]+)(yes|no)/', $data, $m ) )
+		{
+			$this->debug = $m[2] == 'yes';
+		}
+
+		if ( preg_match( '/System([ =>\t]+)Windows/', $data, $m ) )
+		{
+			$this->windows = true;
+		}
+
+		// for 4.4 and 5.1
+		if ( preg_match( '/PHP Extension([ =>\t]*)([0-9]*)/', $data, $m ) )
+		{
+			$this->phpApi = $m[2];
+		}
+		if ( preg_match( '/Zend Extension([ =>\t]*)([0-9]*)/', $data, $m ) )
+		{
+			$this->zendApi = $m[2];
+		}
+
+		// paths
+		if ( preg_match( '/Loaded Configuration File([ =>\t]*)(.*)/', $data, $m ) )
+		{
+			$file = trim( $m[2] );
+			if ( $file == '(none)' )
+			{
+				$file = false;
+			}
+			$this->configFile = $file;
+		}
+		if ( preg_match( '/Configuration File \(php.ini\) Path([ =>\t]*)(.*)/', $data, $m ) )
+		{
+			$file = trim( $m[2] );
+			if ( $file == '(none)' )
+			{
+				$file = false;
+			}
+			$this->configPath = $file;
+		}
+		if ( preg_match( '/extension_dir([ =>\t]*)([^ =>\t]+)/', $data, $m ) )
+		{
+			$this->extensionDir = $m[2];
+		}
+
+		if ( preg_match( '/PHP Extension Build([ =>\t]+)(API.*)/', $data, $m ) )
+		{
+			$parts = explode( ',', trim( $m[2] ) );
+			foreach ( $parts as $part )
+			{
+				if ( preg_match( '/API([0-9]*)/', $part, $m ) )
+				{
+					$phpApi = $m[1];
+				}
+				switch ( $part )
+				{
+					case 'NTS':   $this->ts = false; break;
+					case 'TS':    $this->ts = true;  break;
+					case 'debug': $this->debug = true; break;
+					case 'VC6':   $this->winCompiler = 6; $this->windows = true; break;
+					case 'VC9':   $this->winCompiler = 9; $this->windows = true; break;
+				}
+			}
+		}
+
+		if ( preg_match( '/Zend Extension Build([ =>]+)(API.*)/', $data, $m ) )
+		{
+			$parts = explode( ',', $m[2] );
+			foreach ( $parts as $part )
+			{
+				if ( preg_match( '/API([0-9]*)/', $part, $m ) )
+				{
+					$this->zendApi = $m[1];
+				}
+			}
+		}
+
+		echo "<h2>Summary</h2\n<ul>\n";
+		echo "<li><b>Xdebug installed:</b> ", ($this->xdebugVersion ? $this->xdebugVersion : "no" ), "</li>\n";
+		echo "<li><b>Server API:</b> {$this->sapi}</li>\n";
+		echo "<li><b>Windows:</b> ", $this->windows ? 'yes' : 'no';
+		if ( $this->windows ) {
+			echo " - Compiler: MS VC", $this->winCompiler;
+		}
+		echo "</li>\n";
+		echo "<li><b>PHP Version:</b> $this->version</li>\n";
+		echo "<li><b>Zend API nr:</b> $this->zendApi</li>\n";
+		echo "<li><b>PHP API nr:</b> $this->phpApi</li>\n";
+		echo "<li><b>Debug Build:</b> ", $this->debug ? 'yes' : 'no', "</li>\n";
+		echo "<li><b>Thread Safe Build:</b> ", $this->ts ? 'yes' : 'no', "</li>\n";
+		if ( $this->configFile )
+		{
+			echo "<li><b>Configuration File Path:</b> $this->configPath</li>\n";
+			echo "<li><b>Configuration File:</b> $this->configFile</li>\n";
+		}
+		else
+		{
+			if ( $this->windows )
+			{
+				echo "<li><b>Configuration File Path:</b> unknown</li>\n";
+				echo "<li><b>Configuration File:</b> unknown</li>\n";
+			}
+			else
+			{
+				echo "<li><b>Configuration File Path:</b> $this->configPath</li>\n";
+				echo "<li><b>Configuration File:</b> {$this->configPath}/php.ini</li>\n";
+			}
+		}
+		echo "<li><b>Extensions directory:</b> $this->extensionDir</li>\n";
+		echo "</ul>\n";
+	}
+
+	function determineSupported()
+	{
+		if ( !$this->version || !$this->phpApi )
+		{
+			return "Could not find any useful information.";
+		}
+		if ( $this->windows && $this->debug )
+		{
+			return "Debug builds are not supported on Windows.";
+		}
+		if ( version_compare( $this->version, '5.1.0', '<' ) )
+		{
+			return "PHP versions below 5.1 are not supported.";
+		}
+		return true;
+	}
+
+	function determineFile()
+	{
+		$stableVersion = '2.0.5';
+		$latestVersion = '2.1.0RC1';
+		$majorPhpVersion = substr( $this->version, 0, 3 );
+
+		if ( !$this->windows )
+		{
+			if ( version_compare( $this->version, '5.3.0', '>=' ) ) 
+			{
+				$version = $latestVersion;
+			}
+			else
+			{
+				$version = $stableVersion;
+			}
+			$this->xdebugVersionToInstall = $version;
+			$this->tarDir = "xdebug-{$version}";
+			return "xdebug-{$version}.tgz";
+		}
+		else
+		{
+			$base = 'php_xdebug';
+			$version = $latestVersion;
+
+			if ( $this->debug )
+			{
+				return false;
+			}
+			switch ( $majorPhpVersion ) 
+			{
+				case '5.2':
+					if ( $this->winCompiler != 6 )
+					{
+						return false;
+					}
+					break;
+				case '5.3':
+					if ( $this->winCompiler != 6 && $this->winCompiler != 9 )
+					{
+						return false;
+					}
+					break;
+				default:
+					return false;
+			}
+
+			$this->xdebugVersionToInstall = $version;
+			$filename = "{$base}-{$version}-{$majorPhpVersion}-vc{$this->winCompiler}" . ( $this->ts ? '' : '-nts' ) . ".dll";
+			return $filename;
+		}
+	}
+
+	function determineIniFile()
+	{
+		if ( $this->configFile )
+		{
+			if ( $this->xdebugVersion )
+			{
+				return "Update <code>{$this->configFile}</code>";
+			}
+			else
+			{
+				return "Edit <code>{$this->configFile}</code>";
+			}
+		}
+		else
+		{
+			if ( $this->windows )
+			{
+				return "Create <code>php.ini</code> in the same folder as where <code>php.exe</code> is";
+			}
+			else
+			{
+				$dirSep = $this->windows ? '\\' : '/';
+				return "Create <code>{$this->configPath}{$dirSep}php.ini</code>";
+			}
+		}
+	}
+
+	function determineIniLine()
+	{
+		$line = 'zend_extension';
+
+		if ( version_compare( $this->version, '5.3.0', '<' ) )
+		{
+			if ( $this->debug )
+			{
+				$line .= '_debug';
+			}
+			if ( $this->ts )
+			{
+				$line .= '_ts';
+			}
+		}
+		$line .= ' = ';
+
+		$dirSep = $this->windows ? '\\' : '/';
+		$line .= $this->extensionDir . $dirSep;
+
+		if ( $this->windows )
+		{
+			$line .= $this->determineFile();
+		}
+		else
+		{
+			$line .= 'xdebug.so';
+		}
+		return $line;
+	}
+}
+?>

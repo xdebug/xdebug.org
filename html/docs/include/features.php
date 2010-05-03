@@ -19,23 +19,13 @@ $features = array(
 		FUNC_INSTALL,
 		'This section describes on how to install Xdebug.',
 		"
-<h2>Precompiled Modules</h2>
+<h2>Precompiled Windows Modules</h2>
 
 <p>
 There are a few precompiled modules for Windows, they are all for the non-debug
 version of PHP. You can get those at the <a href='/download.php'>download</a>
-page.
-</p>
-<p>
-Installing the precompiled modules is easy. Just place them in a directory, and
-add the following line to php.ini: (don't forget to change the path and
-filename to the correct one &mdash; but make sure you use the <b>full
-path</b>). Also, <b>sometimes the quotes (\") should be removed.</b>
-<pre>
-zend_extension_ts=\"c:/php/modules/php_xdebug-4.4.1-[KW:last_release_version].dll\"
-</pre>
-<strong>From PHP 5.3 onwards, you <b>always</b> need to use zend_extension and not
-zend_extension_ts.</strong>
+page. Follow <a href='/find-binary.php'>these instructions</a> to get Xdebug
+installed.
 </p>
 
 <a name='pecl'></a>
@@ -80,13 +70,15 @@ You can also browse the source at <a href='http://svn.xdebug.org/cgi-bin/viewvc.
 <a name='compile'></a>
 <h2>Compiling</h2>
 
+<p>There is a <a href='/find-binary.php'>wizard</a> available that provides you
+with the correct file to download, and which paths to use.</p>
 <p>
 You compile Xdebug separately from the rest of PHP.  Note, however,
 that you need access to the scripts 'phpize' and 'php-config'.  If
 your system does not have 'phpize' and 'php-config', you will need to
 compile and install PHP from a source tarball first, as these script
 are by-products of the PHP compilation and installation processes. (Debian users
-can install the required tools with <code>apt-get install php4-dev</code>, or
+can install the required tools with 
 <code>apt-get install php5-dev</code>). It is important that the source version
 matches the installed version as there are slight, but important, differences
 between PHP versions.  Once you have access to 'phpize' and
@@ -100,37 +92,14 @@ Xdebug is compiled separately, all by itself, as stated above.</li>
 
 <li>cd xdebug-[KW:last_release_version]</li>
 
-<li>Run phpize: phpize
-(or /path/to/phpize if phpize is not in your path). See in the <a
-href='#phpize'>table below</a> which version numbers it should show for
-different PHP versions. Make sure you use the phpize that belongs to the PHP
-version that you want to use Xdebug with.</li>
+<li>Run phpize: phpize (or /path/to/phpize if phpize is not in your path). Make
+sure you use the phpize that belongs to the PHP version that you want to use
+Xdebug with. See this <a href='http://xdebug/docs/faq#api'>FAQ entry</a> if
+you're having some issues with finding which phpize to use.</li>
 
 <li>./configure --enable-xdebug
-(or:
-./configure --enable-xdebug --with-php-config=/path/to/php-config
-if php-config is not in your path).
-<br /><br />
-If this fails with something like:
-<pre>../configure: line 1960: syntax error near unexpected token
-`PHP_NEW_EXTENSION(xdebug,'
-../configure: line 1960: `  PHP_NEW_EXTENSION(xdebug, xdebug.c
-xdebug_code_coverage.c xdebug_com.c xdebug_handler_gdb.c
-xdebug_handler_php3.c xdebug_handlers.c xdebug_llist.c xdebug_hash.c
-xdebug_profiler.c xdebug_superglobals.c xdebug_var.c usefulstuff.c,
-\$ext_shared)'</pre> then it means that you do not meet the PHP 4.3.x version
-requirement for Xdebug.
-<br /><br />
-Another problem that might occur is:
-<pre>configure: line 1145: PHP_INIT_BUILD_SYSTEM: command not found
-configure: line 1151: syntax error near unexpected token `config.nice'
-configure: line 1151: `PHP_CONFIG_NICE(config.nice)'</pre> You will need to
-upgrade your autotools (autoconf, automake and libtool) or install the known
-working versions: autoconf-2.13, automake-1.5 and libtool-1.4.3.</p></li>
-
 <li>make</li>
-
-<li>cp modules/xdebug.so /to/wherever/you/want/it</li>
+<li>make install</li>
 </ol>
 
 <a name='configure-php'></a>
@@ -1246,18 +1215,27 @@ is "220090626".</li>
 compilation steps. The number that you\'re looking for is on the line that says
 "Zend Extension Api No".
 </ul>
+<p>
 If the two numbers from above do <b>not</b> match, you\'re compiling with the
-wrong PHP headers. If that is the case, run: "phpize --help". This shows you
-the full path to phpize. This path should be the same as where you have the CLI
-binary, "php-config" and the "pear" and "pecl" binaries. If you run "php-config
---version" it should show the same version of PHP that you\'re running. If it
-doesn\'t match up, and perhaps the wrong "phpize" binary is found on the path,
-you can compile as follows:
-<ul>
+wrong PHP headers. Refer to the next <a href="/docs/faq#custom-phpize">FAQ
+entry</a> to figure out which phpize to use.
+</p>
+</dd>
+
+<dt><a name="custom-phpize"></a>
+<dt>Q: How do I find which phpize to use?</dt>
+<dd>A:
+
+Run: "phpize --help". This shows you the full path to
+phpize. This path should be the same as where you have the CLI binary,
+"php-config" and the "pear" and "pecl" binaries <b>installed</b>. If you
+run "php-config --version" it should show the same version of PHP that
+you\'re running. If it doesn\'t match up, and perhaps the wrong "phpize"
+binary is found on the path, you can run configure as follows:
+<ol>
 <li>/full/path/to/php/bin/phpize</li>
 <li>./configure --with-php-config=/full/path/to/php/bin/php-config</li>
-<li>make clean all install</li>
-</ul>
+</ol>
 </dd>
 
 <dt>Q: I\'m using XAMPP, but I can\'t seem to get the packaged xdebug extension
