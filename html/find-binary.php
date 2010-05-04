@@ -72,6 +72,7 @@ Zend Extension Api No:   {$x->zendApi}
 		}
 		echo "</ol>\n";
 	}
+	echo "<p>\n\tIf you like Xdebug, and thinks it saves you time and money, please have a look at the <a href='/donate.php'>donation</a> page.\n</p>\n";
 }
 else
 {
@@ -83,14 +84,20 @@ else
 	or <code>php -i</code> output) and submit the form to receive tailored
 	download and installation instructions.
 </p>
+<form method='POST'>
 <p>
-	<form method='POST'>
 	<textarea name='data' cols="80" rows="25">
 	</textarea>
-	<br/>
-	<input type='submit' name='submit' value='Analyse my phpinfo() output'/>
-	</form>
 </p>
+<p>
+	The information that you upload will not be stored. The script will only
+	use a few regular expressions to analyse the output and provide you with
+	instructions.  You can see the code <a href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/www.xdebug.org/trunk/html/include/phpinfo-scanner.php?view=markup&amp;root=xdebug'>here</a>.
+</p>
+<p>
+	<input type='submit' name='submit' value='Analyse my phpinfo() output'/>
+</p>
+	</form>
 <?php
 }
 ?>
