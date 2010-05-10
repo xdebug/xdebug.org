@@ -1178,7 +1178,7 @@ or change the body of the handler function to call xdebug_* api functions.
 </dd>
 <dd>A2: You do not have set <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a> to 1 in php.ini</dd>
 
-<dt>Q: Xdebug doesn\'t show pretty formatted var_dump()s.</dt>
+<dt><a name="format"></a>Q: Xdebug doesn\'t format output.</dt>
 <dd>A: Make sure you have PHP\'s <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.html-errors">html_errors</a> set to 1 in php.ini</dd>
 
 <dt>Q: The debug client doesn\'t receive any connections, what do I do
@@ -1192,7 +1192,7 @@ more information.</dd>
 <h2>Compilation and Configuration</h2>
 <dl class="faq">
 <dt><a name="api"></a>
-<dt>Q: What to do with: <i>Xdebug requires Zend Engine API version
+Q: What to do with: <i>Xdebug requires Zend Engine API version
 <i>xxxxxxxx</i>. The Zend Engine API version 2<i>xxxxxxxx</i> which is
 installed, is newer.</i></dt>
 <dd>A:
