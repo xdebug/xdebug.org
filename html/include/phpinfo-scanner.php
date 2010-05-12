@@ -8,12 +8,17 @@ class xdebugVersion
 		$this->configPath = $this->extensionDir = $this->sapi = false;
 		$this->tarDir = $this->xdebugVersion = false;
 		$this->winCompiler= 6;
+		$this->zendServer = false;
 	}
 
 	function analyse( $data )
 	{
 		$data = strip_tags( $data );
 
+		if ( preg_match( '/Zend Extension Manager/', $data ) )
+		{
+			$this->zendServer = true;
+		}
 		if ( preg_match( '/Server API([ =>\t]*)(.*)/', $data, $m ) )
 		{
 			$this->sapi = trim( $m[2] );
@@ -93,6 +98,7 @@ class xdebugVersion
 					case 'TS':    $this->ts = true;  break;
 					case 'debug': $this->debug = true; break;
 					case 'VC6':   $this->winCompiler = 6; $this->windows = true; break;
+					case 'VC8':   $this->winCompiler = 8; $this->windows = true; break;
 					case 'VC9':   $this->winCompiler = 9; $this->windows = true; break;
 				}
 			}
@@ -109,6 +115,19 @@ class xdebugVersion
 				}
 			}
 		}
+		$this->dirSep = $this->windows ? '\\' : '/';
+
+		// fix path's separators
+		$this->configPath = rtrim( preg_replace( '@[/\\\\]@', $this->dirSep, $this->configPath ), $this->dirSep );
+		$this->configFile = preg_replace( '@[/\\\\]@', $this->dirSep, $this->configFile );
+		$this->extensionDir = rtrim( preg_replace( '@[/\\\\]@', $this->dirSep, $this->extensionDir ), $this->dirSep );
+
+		// figure out the ZS install path
+		if ( $this->zendServer )
+		{
+			$parts = explode( $this->dirSep, $this->configFile );
+			$this->zendServerInstallPath = join( $this->dirSep, array_slice( $parts, 0, -2 ) );
+		}
 
 		echo "<h2>Summary</h2\n<ul>\n";
 		echo "<li><b>Xdebug installed:</b> ", ($this->xdebugVersion ? $this->xdebugVersion : "no" ), "</li>\n";
@@ -116,6 +135,11 @@ class xdebugVersion
 		echo "<li><b>Windows:</b> ", $this->windows ? 'yes' : 'no';
 		if ( $this->windows ) {
 			echo " - Compiler: MS VC", $this->winCompiler;
+		}
+		echo "</li>\n";
+		echo "<li><b>Zend Server:</b> ", $this->zendServer ? 'yes' : 'no';
+		if ( $this->zendServer ) {
+			echo " - Install path: ", $this->zendServerInstallPath;
 		}
 		echo "</li>\n";
 		echo "<li><b>PHP Version:</b> $this->version</li>\n";
@@ -154,6 +178,10 @@ class xdebugVersion
 		if ( $this->windows && $this->debug )
 		{
 			return "Debug builds are not supported on Windows.";
+		}
+		if ( $this->windows && $this->winCompiler == 8 )
+		{
+			return "The compiler (MS VC8) that this PHP was build with, is not supported.";
 		}
 		if ( version_compare( $this->version, '5.1.0', '<' ) )
 		{
@@ -236,8 +264,7 @@ class xdebugVersion
 			}
 			else
 			{
-				$dirSep = $this->windows ? '\\' : '/';
-				return "Create <code>{$this->configPath}{$dirSep}php.ini</code>";
+				return "Create <code>{$this->configPath}{$this->dirSep}php.ini</code>";
 			}
 		}
 	}
@@ -259,8 +286,7 @@ class xdebugVersion
 		}
 		$line .= ' = ';
 
-		$dirSep = $this->windows ? '\\' : '/';
-		$line .= $this->extensionDir . $dirSep;
+		$line .= $this->extensionDir . $this->dirSep;
 
 		if ( $this->windows )
 		{

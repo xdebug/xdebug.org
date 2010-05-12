@@ -37,6 +37,11 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 		else
 		{
 			echo "<h2>Instructions</h2>\n";
+
+			if ( $x->zendServer )
+			{
+				echo "<p><b>Warning:</b> You seem to be using Zend Server, which is known to cause issues with Xdebug. It might work, but you're on your own.</p>\n";
+			}
 		}
 
 		echo "<ol>\n";
@@ -57,14 +62,23 @@ Zend Extension Api No:   {$x->zendApi}
 </p>\n";
 			echo "<li>Run: <code>./configure</code></li>\n";
 			echo "<li>Run: <code>make</code></li>\n";
-			echo "<li>Run: <code>make install</code></li>\n";
+			echo "<li>Run: <code>cp modules/xdebug.so {$x->extensionDir}</code></li>\n";
 		}
 		else
 		{
 			echo "<li>Move the downloaded file to {$x->extensionDir}</li>\n";
 		}
+		if ( $x->zendServer )
+		{
+			$file = $x->windows
+				? "{$x->zendServerInstallPath}{$x->dirSep}etc{$x->dirSep}cfg{$x->dirSep}debugger.ini"
+				: "{$x->zendServerInstallPath}{$x->dirSep}etc{$x->dirSep}conf.d{$x->dirSep}debugger.ini";
+			echo "<li>Open <code>$file</code>\n";
+			echo "and put a <code>;</code> in front of the line that says <code>zend_extension_manager.dir.debugger=</code>\n";
+			echo "so that it says <code>;zend_extension_manager.dir.debugger=</code></li>\n";
+		}
 		echo "<li>{$iniFile} and ";
-		echo $x->xdebugVersion ? "change " : "add ";
+		echo $x->xdebugVersion ? "change " : ( $x->zendServer ? "add at the begining of the file " : "add " );
 		echo "the line<br/><code>{$iniLine}</code></li>\n";
 		if ( $x->sapi !== 'Command Line Interface' )
 		{
@@ -82,7 +96,8 @@ else
 	PHP to get Xdebug running.  Please paste the <b>full</b> output of
 	phpinfo() (either a copy &amp; paste of the HTML version, the HTML source
 	or <code>php -i</code> output) and submit the form to receive tailored
-	download and installation instructions.
+	download and installation instructions. Do <b>not</b> paste the raw HTML (from
+	view-source) into the form.
 </p>
 <form method='POST'>
 <p>
