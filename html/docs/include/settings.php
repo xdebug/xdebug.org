@@ -379,7 +379,7 @@ files by using the XDEBUG_PROFILE GET/POST parameter, or send a cookie with the
 name XDEBUG_PROFILE. This will then write the profiler data to
 [CFG:profiler_output_dir:defined directory]. In order to prevent the profiler
 to generate profile files for each request, you need to set
-[CFG:profile_enable] to 0.",
+[CFG:profiler_enable] to 0.",
 		FUNC_PROFILER
 	),
 
