@@ -192,8 +192,8 @@ class xdebugVersion
 
 	function determineFile()
 	{
-		$stableVersion = '2.0.5';
-		$latestVersion = '2.1.0RC1';
+		$stableVersion = '2.1.0';
+		$latestVersion = '2.1.0';
 		$majorPhpVersion = substr( $this->version, 0, 3 );
 
 		if ( !$this->windows )
