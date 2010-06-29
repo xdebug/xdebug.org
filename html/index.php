@@ -53,7 +53,7 @@ href='http://xdebug.ru'>http://xdebug.ru</a>.
 
 <dl class="main">
 
-<dt class="main">[2010-04-29]</dt>
+<dt class="main">[2010-06-29]</dt>
 <dd class="main">
 <p>I have just released Xdebug 2.1.0. Xdebug 2.1 includes many new features
 that have been added over the past three years. Xdebug 2.1 also provides PHP

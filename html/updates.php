@@ -19,7 +19,7 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_1_0'></a>[2010-06-25] &mdash; Xdebug 2.1.0</dt>
+<dt><a name='x_2_1_0'></a>[2010-06-29] &mdash; Xdebug 2.1.0</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd> Fixed <?php bug(562); ?>: Incorrect coverage information for closure function headers.</dd>
 <dd> Fixed <?php bug(566); ?>: Xdebug crashes when using conditional breakpoints.</dd>
