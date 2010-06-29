@@ -55,7 +55,7 @@ while ( false !== ( $entry = $d->read() ) )
 		$files[strtolower($m[1])]['dll'][] = $entry;
 	}
 }
-ksort( $files );
+uksort( $files, 'version_compare' );
 ?>
 <?php
 	foreach( array_reverse( $files ) as $version => $tar ) {
