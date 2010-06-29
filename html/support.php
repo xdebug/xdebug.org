@@ -17,7 +17,7 @@ href="http://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
 because this prevents abuse by smammers and other abusing parties. Try to give
 as much possible information to reproduce the bug, this will greatly help in
 fixing them. For some hints on what information is useful, see the following
-sections.
+sections. <b>Versions before 2.1 are no longer supported</b>.
 </p>
 
 <a name='remote'></a>
