@@ -19,6 +19,15 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_0'></a>[2010-06-25] &mdash; Xdebug 2.1.0</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd> Fixed <?php bug(562); ?>: Incorrect coverage information for closure function headers.</dd>
+<dd> Fixed <?php bug(566); ?>: Xdebug crashes when using conditional breakpoints.</dd>
+<dd> Fixed <?php bug(567); ?>: xdebug_debug_zval and xdebug_debug_zval_stdout don't work with PHP 5.3. (Patch by Endo Hiroaki).</dd>
+<dd> Fixed <?php bug(570); ?>: undefined symbol: zend_memrchr.</dd>
+
+
+
 <dt><a name='x_2_1_0rc1'></a>[2010-04-07] &mdash; Xdebug 2.1.0rc1</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd> Fixed <?php bug(400); ?>: Xdebug shows errors, even when PHP is request startup mode.</dd>
