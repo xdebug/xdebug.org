@@ -279,7 +279,8 @@ variable was not present.",
 try to connect to the client that made the HTTP request. It checks
 the \$_SERVER['REMOTE_ADDR'] variable to find out which IP address to use.
 Please note that there is <b>no</b> filter available, and anybody who can
-connect to the webserver will then be able to start a debugging session.",
+connect to the webserver will then be able to start a debugging session,
+even if their address does not match [CFG:remote_host].",
 		FUNC_REMOTE
 	),
 
@@ -309,7 +310,8 @@ more widely supported by clients. See more information in the introduction for
 	'remote_host' => array(
 		'string', 'localhost', null,
 		"Selects the host where the debug client is running, you can either use a
-host name or an IP address.",
+host name or an IP address. This setting is ignored if
+[CFG:remote_connect_back] is enabled.",
 		FUNC_REMOTE
 	),
 
