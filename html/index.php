@@ -63,7 +63,7 @@ a new <a href="/docs/all_settings#remote_connect_back">setting</a> that tries to
 <a href="/docs/all_functions#xdebug_get_headers">a function</a> to return all explicitly and implicitly set headers,
 a <a href="/docs/all_settings#scream">setting</a> that makes PHP ignore the @ operator and many other smaller features. A huge amount of bugs have been addressed as well.
 For a full list, please refer to the <a href="/updates.php#x_2_1_0">updates</a> page.</p>
-<p>You can find a more thorough description of all new features at <a href="http://derickrethans.nl/xdebug-2.1.0.html">http://derickrethans.nl/xdebug-2.1.0.html</a></p>.</dd>
+<p>You can find a more thorough description of all new features at <a href="http://derickrethans.nl/xdebug-2.1-released.html">http://derickrethans.nl/xdebug-2.1-released.html</a></p>.</dd>
 
 <dt class="main">[2010-04-06]</dt>
 <dd class="main">
