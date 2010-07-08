@@ -13,6 +13,12 @@ class xdebugVersion
 
 	function analyse( $data )
 	{
+		$html = false;
+		if ( strpos( $data, 'extension_dir</td>' ) !== false )
+		{
+			$html = true;
+			$htmlData = $data;
+		}
 		$data = strip_tags( $data );
 
 		if ( preg_match( '/Zend Extension Manager/', $data ) )
@@ -78,9 +84,19 @@ class xdebugVersion
 			}
 			$this->configPath = $file;
 		}
-		if ( preg_match( '/extension_dir([ =>\t]*)([^ =>\t]+)/', $data, $m ) )
+		if ( $html )
 		{
-			$this->extensionDir = $m[2];
+			if ( preg_match( '@extension_dir</td><td[^>]+>(.*?)</td><td[^>]+>(.*?)</td>@', $htmlData, $m ) )
+			{
+				$this->extensionDir = $m[2];
+			}
+		}
+		else 
+		{
+			if (preg_match( '/extension_dir([ =>\t]*)([^ =>\t]+)/', $data, $m ) )
+			{
+				$this->extensionDir = $m[2];
+			}
 		}
 
 		if ( preg_match( '/PHP Extension Build([ =>\t]+)(API.*)/', $data, $m ) )
