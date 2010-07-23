@@ -469,6 +469,29 @@ The possible format specifiers are:
 <tr><td class="ctr">%f</td><td>the filename</td></tr>
 <tr><td class="ctr">%l</td><td>the line number</td></tr>
 </table>
+<p>
+To make file/line links work with FireFox (Linux), use the following steps:
+</p>
+<ul>
+<li>Open <a href="about:config">about:config</a></li>
+<li>Add a new boolean setting "network.protocol-handler.expose.xdebug"</li>
+<li>Add the following into a shell script "~/bin/ff-xdebug.sh":
+<pre>
+#! /bin/sh
+
+f=`echo $1 | cut -d @ -f 1 | sed \'s/xdebug:\/\///\'`
+l=`echo $1 | cut -d @ -f 2`
+</pre>
+Add to that one of (depending whether you have komodo or gvim):
+<ul>
+	<li><code>komodo $f -l $l</code></li>
+	<li><code>gvim --remote-tab +$l $f</code></li>
+</ul>
+</pre>
+</li>
+<li>Make the script executable with <code>chmod +x ~/bin/ff-xdebug.sh</code></li>
+<li>Set the [CFG:file_link_format] to <code>xdebug://%f@%l</code></li>
+</ul>
 ',
 		FUNC_STACK_TRACE
 	),
