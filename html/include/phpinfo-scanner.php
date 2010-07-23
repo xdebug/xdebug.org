@@ -7,7 +7,7 @@ class xdebugVersion
 		$this->phpApi = $this->zendApi = false; $this->configFile = false;
 		$this->configPath = $this->extensionDir = $this->sapi = false;
 		$this->tarDir = $this->xdebugVersion = false;
-		$this->winCompiler= 6;
+		$this->winCompiler= 6; $this->architecture = 'x86';
 		$this->zendServer = false;
 		$this->xdebugAsZendExt = $this->xdebugAsPhpExt = false;
 	}
@@ -61,6 +61,11 @@ class xdebugVersion
 		if ( preg_match( '/System([ =>\t]+)Windows/', $data, $m ) )
 		{
 			$this->windows = true;
+		}
+		// windows 32/64 bit
+		if ( preg_match( '/Architecture([ =>\t]*)(x[0-9]*)/', $data, $m ) )
+		{
+			$this->architecture = $m[2];
 		}
 
 		// for 4.4 and 5.1
@@ -170,6 +175,7 @@ class xdebugVersion
 		echo "<li><b>Windows:</b> ", $this->windows ? 'yes' : 'no';
 		if ( $this->windows ) {
 			echo " - Compiler: MS VC", $this->winCompiler;
+			echo " - Architecture: ", $this->architecture;
 		}
 		echo "</li>\n";
 		echo "<li><b>Zend Server:</b> ", $this->zendServer ? 'yes' : 'no';
@@ -273,7 +279,7 @@ class xdebugVersion
 			}
 
 			$this->xdebugVersionToInstall = $version;
-			$filename = "{$base}-{$version}-{$majorPhpVersion}-vc{$this->winCompiler}" . ( $this->ts ? '' : '-nts' ) . ".dll";
+			$filename = "{$base}-{$version}-{$majorPhpVersion}-vc{$this->winCompiler}" . ( $this->ts ? '' : '-nts' ) . ( $this->architecture == 'x64' ? '-x86_64' : '' ) . ".dll";
 			return $filename;
 		}
 	}
