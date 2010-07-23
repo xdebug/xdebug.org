@@ -9,6 +9,7 @@ class xdebugVersion
 		$this->tarDir = $this->xdebugVersion = false;
 		$this->winCompiler= 6;
 		$this->zendServer = false;
+		$this->xdebugAsZendExt = $this->xdebugAsPhpExt = false;
 	}
 
 	function analyse( $data )
@@ -35,9 +36,16 @@ class xdebugVersion
 			$this->version = $m[2];
 		}
 
+		// Zend Extension check
 		if ( preg_match( '/with Xdebug v([0-9.rcdevalphabeta-]+),/', $data, $m ) )
 		{
 			$this->xdebugVersion = $m[1];
+			$this->xdebugAsZendExt = true;
+		}
+		// Xdebug as normal php ext
+		if ( preg_match( '/xdebug support/', $data, $m ) )
+		{
+			$this->xdebugAsPhpExt = true;
 		}
 
 		if ( preg_match( '/Thread Safety([ =>\t]+)(disabled|enabled)/', $data, $m ) )
@@ -146,7 +154,18 @@ class xdebugVersion
 		}
 
 		echo "<h2>Summary</h2\n<ul>\n";
-		echo "<li><b>Xdebug installed:</b> ", ($this->xdebugVersion ? $this->xdebugVersion : "no" ), "</li>\n";
+		if ( $this->xdebugAsZendExt && $this->xdebugAsPhpExt )
+		{
+			echo "<li><b>Xdebug installed:</b> ", $this->xdebugVersion, "</li>\n";
+		}
+		else if ( $this->xdebugAsPhpExt )
+		{
+			echo "<li><b>Xdebug installed:</b> <span style='color: #f00'>Only as PHP extension!</span></li>\n";
+		}
+		else
+		{
+			echo "<li><b>Xdebug installed:</b> no</li>\n";
+		}
 		echo "<li><b>Server API:</b> {$this->sapi}</li>\n";
 		echo "<li><b>Windows:</b> ", $this->windows ? 'yes' : 'no';
 		if ( $this->windows ) {

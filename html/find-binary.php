@@ -29,7 +29,14 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 		$iniFile = $x->determineIniFile();
 		$iniLine = $x->determineIniLine();
 
-		if ( $x->xdebugVersion && version_compare( $x->xdebugVersion, $x->xdebugVersionToInstall, '>=' ) )
+		if ( $x->xdebugAsPhpExt && !$x->xdebugAsZendExt )
+		{
+			echo "<h2>Instructions</h2>\n";
+
+			echo "<p><span style='color: #f00'><b>Warning:</b></span> You seem to have Xdebug loaded as a normal
+				PHP extension only. This will cause odd issues, please see <a href='/docs/faq#php-ext'>the FAQ entry on it</a>.</p>\n";
+		}
+		else if ( $x->xdebugVersion && version_compare( $x->xdebugVersion, $x->xdebugVersionToInstall, '>=' ) )
 		{
 			echo "<h2>You're already running the latest Xdebug version</h2>\n";
 			echo "<p>But here are the instructions anyway:</p>\n";
@@ -40,7 +47,10 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 
 			if ( $x->zendServer )
 			{
-				echo "<p><b>Warning:</b> You seem to be using Zend Server, which is known to cause issues with Xdebug. It might work, but you're on your own.</p>\n";
+				echo "<p><span style='color: #f00'><b>Warning:</b></span> You
+					seem to be using Zend Server, which is known to cause
+					issues with Xdebug. It might work, but you're on your
+					own.</p>\n";
 			}
 		}
 

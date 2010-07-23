@@ -1222,6 +1222,19 @@ entry</a> to figure out which phpize to use.
 </p>
 </dd>
 
+<dt><a name="php-ext"></a>Q: Xdebug is only loaded as PHP extension and not as a Zend Extensiont.</dt>
+<dd>
+<p>The tailored installation intstructions might have you pointed to this entry.</p>
+<p>In order for Xdebug to work properly, including breakpoints etc. it is required that it is loaded
+as a Zend extension, and not just as a normal PHP extension. Some installation
+tools (PEAR/PECL) sometimes advice you to use <code>extension=xdebug.so</code>
+to load Xdebug. This is <b>not</b> correct. In order to fix this issue, please
+look for a line <code>extension=xdebug.so</code> in any of the INI files that
+are listed under "Loaded Configuration File" and "Additional .ini files parsed"
+in the top block. Remove this line, and go back to the
+<a href="/find-binary.php">Tailored Installation Instructions</a>.</p>
+</dd>
+
 <dt><a name="custom-phpize"></a>
 <dt>Q: How do I find which phpize to use?</dt>
 <dd>A:
