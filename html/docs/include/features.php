@@ -1007,7 +1007,7 @@ authors for <b>support</b>:
 <li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
 <li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> - Standalone Mac client.</li>
 <li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris.</li>
-<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (IDE: Windows).</li>
+<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
 <li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (IDE: Windows, Japanese; Commercial).</li>
 <li>MP Software\'s <b><a href="http://www.mpsoftware.dk/products.php">phpDesigner</a></b> (IDE: Windows, Commercial).</li>
