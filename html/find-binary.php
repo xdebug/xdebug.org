@@ -63,8 +63,8 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 			echo "<li><p>Run: <code>phpize</code></p>
 <p>As part of its output it should show:<br/><pre>
 Configuring for:
-PHP Api Version:         {$x->phpApi}
 ...
+Zend Module Api No:      {$x->phpApi}
 Zend Extension Api No:   {$x->zendApi}
 </pre></p>
 <p>If it does not, you are using the wrong <code>phpize</code>. Please follow
