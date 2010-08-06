@@ -18,7 +18,7 @@ the far future. I has cost
 <a href='http://derickrethans.nl/contact.html'>me</a> thousands of hours to
 develop, test and support Xdebug. If you find Xdebug valuable, I would
 appreciate it if you would consider a small donation that will also go towards
-paying for the infrastructure of this website. If you require and invoice, I can
+paying for the infrastructure of this website. If you require an invoice, I can
 supply one.
 </p>
 <p>You can donate through PayPal by clicking on the Xdebug/donate logo:</p>
