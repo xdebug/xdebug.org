@@ -113,8 +113,10 @@ zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" (for threaded usage of PHP,
 for example the Apache 2 work MPM or the the ISAPI module).
 <strong>Note:</strong> In case you compiled PHP yourself and used
 --enable-debug you would have to use zend_extension_debug=.
-<strong>From PHP 5.3 onwards, you always need to use zend_extension and not
-zend_extension_ts.</strong>
+<strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini
+setting name, and not zend_extension_ts, nor zend_extension_debug. However,
+your compile options (ZTS/normal build; debug/non-debug) still need to match
+with what PHP is using.</strong>
 </li>
 
 <li>Restart your webserver.</li>
@@ -1258,8 +1260,8 @@ expected. Xdebug <b>needs</b> to be loaded with the zend_extension_ts=
 "C:\path\to\php_xdebug.dll" directive. You\'ll also likely have to disable the
 loading of the Zend Optimizer, since it\'s enabled by default, and doesn\'t work
 well with Xdebug. So look for the related entry in php.ini, and comment it out.
-<strong>From PHP 5.3 onwards, you need to use zend_extension and not
-zend_extension_ts.</strong>
+<strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini
+setting name, and not zend_extension_ts.</strong>
 </dd>
 
 <dt>Q: On Debian, I am seeing the following problem with the build of
