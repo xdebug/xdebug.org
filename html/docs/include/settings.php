@@ -98,6 +98,13 @@ through the [FEAT:remote] feature.",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
+	'cli_color' => array(
+		'boolean', 0, '2.2',
+		'If this setting is 1, Xdebug will color var_dumps and stack traces
+		output when in CLI mode.',
+		FUNC_STACK_TRACE | FUNC_VAR_DUMP
+	),
+
 	'auto_trace' => array(
 		'boolean', 0, null,
 		"When this setting is set to on, the tracing of function calls will be
