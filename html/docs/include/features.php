@@ -1224,7 +1224,7 @@ entry</a> to figure out which phpize to use.
 </p>
 </dd>
 
-<dt><a name="php-ext"></a>Q: Xdebug is only loaded as PHP extension and not as a Zend Extensiont.</dt>
+<dt><a name="php-ext"></a>Q: Xdebug is only loaded as PHP extension and not as a Zend Extension.</dt>
 <dd>
 <p>The tailored installation intstructions might have you pointed to this entry.</p>
 <p>In order for Xdebug to work properly, including breakpoints etc. it is required that it is loaded
