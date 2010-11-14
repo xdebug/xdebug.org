@@ -1035,8 +1035,7 @@ free editor <a href="http://weaverslave.ws">WeaverSlave</a>.
 settings in php.ini. These settings are [CFG:remote_enable] to enable the
 debugger, [CFG:remote_host] and
 [CFG:remote_port] to configure the IP address
-and port where the debugger should connect to and [CFG:remote_handler] to
-configure which debug backend to use ("gdb" or "dbgp"). If you want the
+and port where the debugger should connect to. If you want the
 debugger to initiate a session when an error situation occurs (php error or
 exception) then you also need to change the [CFG:remote_mode] setting.
 Allowed values for this setting are "req" (the default) which makes the
@@ -1048,7 +1047,7 @@ session should only be initiated on an error.
 <p>
 After made all those settings Xdebug will still not start a debugging session
 automatically when a script is run. You need to activate Xdebug\'s debugger
-and you can do that in two ways:
+and you can do that in three ways:
 <ol>
 <li>When running the script from the command line you need to set an
 environment variable, like:
@@ -1067,6 +1066,37 @@ settings.</li>
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL. Refer
 to the <a href="#browser_session">next section</a> to read on how debug
 sessions work from within a browser window.</li>
+
+<li>Another way to activate the debugger while running PHP through a web server is by installing one of the following three browser extensions.
+Each of them allows you to simply enable the debugger by clicking on one button.
+
+The extensions are:
+<a name="browser-extensions"></a><a name="firefox-ext"></a>
+<dl>
+	<dt>easy Xdebug for FireFox</dt>
+	<dd>
+		This <a href="https://addons.mozilla.org/en-US/firefox/addon/58688">extension</a>
+		for Firefox was built to make debugging with an IDE easier. You can
+		find the extension at
+		<a href="https://addons.mozilla.org/en-US/firefox/addon/58688/">https://addons.mozilla.org/en-US/firefox/addon/58688/</a>.
+	</dd>
+
+	<dt>Xdebug Helper for Chrome</dt>
+	<dd>
+		This <a href="https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc">extension</a>
+		for Chrome will help you to enable/disable debugging and profiling with
+		a single click. You can find the extension at
+		<a href="https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc">https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc</a>.
+	</dd>
+
+	<dt>Xdebug Toggler for Safari</dt>
+	<dd>
+		This <a href="http://benmatselby.posterous.com/xdebug-toggler-for-safari">extension</a>
+		for Safari allows you to auto start Xdebug debugging from within Safari.
+		You can get it from Github at
+		<a href="https://github.com/benmatselby/xdebug-toggler">https://github.com/benmatselby/xdebug-toggler</a>.
+	</dd>
+</dl>
 </ol>
 </p>
 
@@ -1136,13 +1166,6 @@ XDEBUG_SESSION cookie is set, Xdebug will try to connect to a debugclient.</li>
 parameter <code>XDEBUG_SESSION_STOP</code>. Xdebug will then no longer try
 to make a connection to the debugclient.</li>
 </ul>
-</p>
-<a name="firefox-ext"></a>
-<p>
-There is also a FireFox 2 extension that allows you to trigger Xdebug\'s
-debugger or profiler without having to use XDEBUG_SESSION_START as parameter.
-You can configure which [CFG:idekey:IDE key] it uses. You can find this
-extension <a href="https://addons.mozilla.org/en-US/firefox/addon/58688/">here</a>.
 </p>
 
 
