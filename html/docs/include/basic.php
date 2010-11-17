@@ -15,8 +15,8 @@ define( 'FUNC_ALL',              0x007ffff );
 
 function add_keywords( $text )
 {
-	$text = str_replace( '[KW:last_release_version]', '2.0.5', $text );
-	$text = str_replace( '[KW:last_dev_version]', '2.1.0RC1', $text );
+	$text = str_replace( '[KW:last_release_version]', '2.1.0', $text );
+	$text = str_replace( '[KW:last_dev_version]', '2.2dev', $text );
 	return $text;
 }
 
