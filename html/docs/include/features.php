@@ -56,7 +56,7 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 <h2>Installation From Source</h2>
 
 <p>
-You can download the source of the latest <b>stable</b> release [KW:last_release_version].
+You can <a href='/download.php#releases'>download</a> the source of the latest <b>stable</b> release [KW:last_release_version].
 Alternatively you can obtain Xdebug from SVN:
 </p>
 <pre>

@@ -31,7 +31,7 @@ href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>ViewVC</a> a
 svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
 </pre>
 
-
+<a name='releases'></a>
 <h2>Releases</h2>
 
 <p>The Windows binaries generally work for every mini release for the mentioned
