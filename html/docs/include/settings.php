@@ -251,10 +251,12 @@ The possible format specifiers are:
 <tr><td class='ctr'>%u</td><td>timestamp (microseconds)</td><td>trace.%u</td><td>trace.1179434749_642382.xt</td></tr>
 <tr><td class='ctr'>%H</td><td>\$_SERVER['HTTP_HOST']</td><td>trace.%H</td><td>trace.kossu.xt</td></tr>
 <tr><td class='ctr'>%R</td><td>\$_SERVER['REQUEST_URI']</td><td>trace.%R</td><td>trace._test_xdebug_test_php_var=1_var2=2.xt</td></tr>
+<tr><td class='ctr'>%U</td><td>\$_SERVER['UNIQUE_ID'] <sup>3</sup></td><td>trace.%U</td><td>trace.TRX4n38AAAEAAB9gBFkAAAAB.xt</td></tr>
 <tr><td class='ctr'>%S</td><td>session_id (from \$_COOKIE if set)</td><td>trace.%S</td><td>trace.c70c1ec2375af58f74b390bbdd2a679d.xt</td></tr>
 <tr><td class='ctr'>%%</td><td>literal %</td><td>trace.%%</td><td>trace.%%.xt</td></tr>
 </table>
-<p><sup>2</sup></a> this one is not available for trace file names.</p>
+<p><sup>2</sup></a> This one is not available for trace file names.</p>
+<p><sup>3</sup></a> New in version 2.2. This one is set by Apache's <a href='http://httpd.apache.org/docs/2.2/en/mod/mod_unique_id.html'>mod_unique_id module</a></p>
 ",
 		FUNC_FUNCTION_TRACE
 	),
