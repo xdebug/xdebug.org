@@ -21,6 +21,8 @@ class xdebugVersion
 			$htmlData = $data;
 		}
 		$data = strip_tags( $data );
+		$data = str_replace( '&nbsp;', ' ', $data );
+		ini_set('xdebug.var_display_max_data', 633333 );
 
 		if ( preg_match( '/Zend Extension Manager/', $data ) )
 		{
@@ -37,7 +39,7 @@ class xdebugVersion
 		}
 
 		// Zend Extension check
-		if ( preg_match( '/with Xdebug v([0-9.rcdevalphabeta-]+),/', $data, $m ) )
+		if ( preg_match( '/with\sXdebug\sv([0-9.rcdevalphabeta-]+),/', $data, $m ) )
 		{
 			$this->xdebugVersion = $m[1];
 			$this->xdebugAsZendExt = true;
