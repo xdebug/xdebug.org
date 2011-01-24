@@ -1096,6 +1096,13 @@ The extensions are:
 		You can get it from Github at
 		<a href="https://github.com/benmatselby/xdebug-toggler">https://github.com/benmatselby/xdebug-toggler</a>.
 	</dd>
+
+	<dt>Xdebug launcher for Opera</dt>
+	<dd>
+		This <a
+		href="https://addons.opera.com/addons/extensions/details/xdebug-launcher/?display=en">extension</a>
+		for Opera allows you to start an Xdebug session from Opera. 
+	</dd>
 </dl>
 </ol>
 </p>
