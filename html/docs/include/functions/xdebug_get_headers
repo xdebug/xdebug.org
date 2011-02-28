@@ -1,4 +1,4 @@
-= xdebug_get_headers
+= xdebug_get_headers,2.1
 Returns all the headers as set by calls to PHP's header() function
 array
 none
@@ -22,6 +22,3 @@ array(2) {
   [1]=>
   string(33) "Set-Cookie: TestCookie=test-value"
 }
-
-TXT:
-This function is introduced with Xdebug 2.1.

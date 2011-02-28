@@ -90,7 +90,12 @@ function get_func_info()
 		}
 		$contents = file( $filename );
 		$function = trim( $contents[0], "= \n" );
+		$version = false;
 		$new_func = array();
+		if (strpos( $function, ',' ) !== false) {
+			list( $function, $version ) = explode( ',', $function );
+			$new_func['version'] = $version;
+		}
 		$new_func['short_desc'] = trim( $contents[1] );
 		$new_func['return_type'] = trim( $contents[2] );
 		$new_func['arguments'] = trim( $contents[3] );
@@ -177,13 +182,17 @@ function do_related_functions( $func )
 			$text = add_links( $function['short_desc'] );
 			if ( $function['arguments'] === 'none' )
 			{
-				$functions .= "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( )</div>\n";
+				$functions .= "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}()</div>\n";
 			}
 			else
 			{
 				$functions .= "<div class='name'><span class='type'>{$function['return_type']}</span> {$name}( <span class='type'>{$function['arguments']}</span> )</div>\n";
 			}
 			$functions .= "<div class='short-description'>{$text}</div>\n";
+			if ( isset( $function['version'] ) )
+			{
+				$functions .= "<div class='version'>Introduced in version {$function['version']}</div>\n";
+			}
 			$functions .= "<div class='description'>\n";
 			$functions .= $function['data'];
 			$functions .= "</div>\n";

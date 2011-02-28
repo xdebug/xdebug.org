@@ -76,6 +76,7 @@
 		div.settings span.type, div.functions div.name span.type { font-style: italic; }
 		div.settings span.default { font-style: italic; }
 		div.functions div.short-description { font-style: italic; }
+		div.version { font-style: italic; font-size: 80%; }
 
 		dt.main { font-weight: normal; color: #116633; }
 		dd.main { margin-left: 20px; }
