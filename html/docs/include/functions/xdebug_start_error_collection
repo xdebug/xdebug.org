@@ -1,0 +1,19 @@
+= xdebug_start_error_collection,2.1
+Starts recording all notices, warnings and errors and prevents their display
+void
+none
+FUNC_BASIC
+
+TXT:
+When this function is executed, Xdebug will cause PHP not to display any
+notices, warnings or errors. Instead, they are formatted according to Xdebug's
+normal error formatting rules (ie, the error table with the red exclamation
+mark) and then stored in a buffer. This will continue until you call
+[FUNC:xdebug_stop_error_collection].
+
+TXT:
+This buffer's contents can be retrieved by calling
+[FUNC:xdebug_get_collected_errors] and then subsequently displayed. This is
+really useful if you want to prevent Xdebug's powerful error reporting features
+from destroying your layout.
+

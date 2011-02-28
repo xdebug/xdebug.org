@@ -1,0 +1,19 @@
+= xdebug_get_collected_errors,2.1
+Returns all collected error messages
+void
+[int clean]
+FUNC_BASIC
+
+TXT:
+This function returns all errors from the collection buffer that contains all
+errors that were stored there when error collection was started with
+[FUNC:xdebug_start_error_collection].
+
+TXT:
+By default this function will not clear the error collection buffer. If you pass
+<literal>true</literal> as argument to this function then the buffer will be
+cleared as well.
+
+TXT:
+This function returns a string containing all collected errors formatted as
+an "Xdebug table".

@@ -1,0 +1,11 @@
+= xdebug_stop_error_collection,2.1
+Stops recording of all notices, warnings and errors as started by [FUNC:xdebug_start_error_collection]
+void
+none
+FUNC_BASIC
+
+TXT:
+When this function is executed, error collection as started by
+[FUNC:xdebug_start_error_collection] is aborted.  The errors stored in the
+collection buffer are not deleted and still available to be fetched through
+[FUNC:xdebug_get_collected_errors].
