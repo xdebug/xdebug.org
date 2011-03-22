@@ -1159,6 +1159,47 @@ debug server disconnects from the client and the debugclient resumes with
 waiting for a new connection.
 </p>
 
+<a name="communication"></a>
+<h2>Communication Set-up</h2>
+<h3>With a static IP/single developer</h3>
+<p>
+With remote debugging, Xdebug embedded in PHP acts like the client, and the IDE
+as the server. The following animation shows how the communication channel is
+set-up:
+</p>
+<p align="center">
+<img src="/images/docs/dbgp-setup.gif"/>
+</p>
+<p>
+<ul>
+	<li>The IP of the server is 10.0.1.2 with HTTP on port 80</li>
+	<li>The IDE is on IP 10.0.1.42, so [CFG:remote_host] is set to
+	10.0.1.42</li>
+	<li>The IDE listens on port 9000, so [CFG:remote_port] is set to 9000</li>
+	<li>The HTTP request is started on the machine running the IDE</li>
+	<li>Xdebug connects to 10.0.1.42:9000</li>
+	<li>Debugging runs, HTTP Response provided</li>
+</ul>
+</p>
+<h3>With an unknown IP/multiple developers</h3>
+<p>
+If [CFG:remote_connect_back] is used, the set-up is slightly different:
+</p>
+<p align="center">
+<img src="/images/docs/dbgp-setup2.gif"/>
+</p>
+<p>
+<ul>
+	<li>The IP of the server is 10.0.1.2 with HTTP on port 80</li>
+	<li>The IDE is on an unknown IP, so [CFG:remote_connect_back] is set to
+	1</li>
+	<li>The IDE listens on port 9000, so [CFG:remote_port] is set to 9000</li>
+	<li>The HTTP request is made, Xdebug detects the IP addres from the HTTP
+	headers</li>
+	<li>Xdebug connects to the detected IP (10.0.1.42) on port 9000</li>
+	<li>Debugging runs, HTTP Response provided</li>
+</ul>
+</p>
 
 <a name="browser_session"></a>
 <h2>HTTP Debug Sessions</h2>
@@ -1182,20 +1223,28 @@ to make a connection to the debugclient.</li>
 
 <a name="multiple-users"></a>
 <h2>Multiple Users Debugging</h2>
-
-Xdebug only allows you to specify one IP address to connect to (through
-xdebug.remote_host) while doing remote debugging. It does not
-automatically connect back to the IP address that runs the browser the request
-the PHP scripts because of security reasons. You don\'t want everybody on the
-Internet to be able to run a debugging session against your code for example.
-There is no problem if all developers are working on a different project,
-because the xdebug.remote_host setting can be made for each directory (through
-Apache\'s .htaccess functionality). However, for the case where multiple
-developers work on the same code, the .htaccess trick won\'t work as the
-directory in which the code lives is the same.  For an overview on how to
-overcome this problem, please refer to the article at <a
+<p>
+Xdebug only allows you to specify one IP address to connect to with
+[CFG:xdebug.remote_host]) while doing remote debugging. It does not
+automatically connect back to the IP address of the machine the browser 
+runs on, unless you use [CFG:xdebug.remote_connect_back].
+</p>
+<p>
+If all of your developers work on different projects on the same (development)
+server, you can make the [CFG:xdebug.remote_host] setting for each directory
+through Apache\'s .htaccess functionality by using <code>php_value
+xdebug.remote_host=10.0.0.5</code>.  However, for the case where multiple
+developers work on the same code, the .htaccess trick does not work as the
+directory in which the code lives is the same.
+</p>
+<p>
+There are two solutions to this. First of all, you can use a <b>DBGp proxy</b>.
+For an overview on how to use this proxy, please refer to the article at <a
 href="http://derickrethans.nl/debugging-with-multiple-users.html">Debugging
-with multiple users</a>.
+with multiple users</a>. And secondly you can use the
+[CFG:xdebug.remote_connect_back] <b>setting</b> that was introduced in Xdebug
+2.1.
+</p>
 		'
 	),
 	'faq' => array(

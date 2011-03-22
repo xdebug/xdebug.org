@@ -89,9 +89,9 @@
 		div.example-returns { margin-left: 30px; margin-right: 30px; background-color: #f3ffea; line-height: 1.25em; margin-bottom: 1em; }
 		div.example-returns pre { margin-left: 0px; margin-right: 0px; }
 
-		h1 { font-variant: small-caps; font-size: x-large }
-		h2 { font-variant: small-caps; font-size: large }
-		h3 { font-variant: small-caps; font-size: normal }
+		h1 { font-variant: small-caps; font-size: 150% }
+		h2 { font-variant: small-caps; font-size: 130% }
+		h3 { font-variant: small-caps; font-size: 120% }
 
 		code { background-color: #eaffeb; }
 	</style>
