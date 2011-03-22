@@ -60,7 +60,7 @@ profiler and debugger functionality. This includes the KCacheGrind <a
 href="https://bugs.kde.org/show_bug.cgi?id=256425#c10">issue</a>.  The full
 change log can be found on the <a href="/updates.php#x_2_1_1rc1">updates</a>
 page and the source code can be found on the <a
-href="/downloads.php">downloads</a> page.</p>
+href="/download.php">downloads</a> page.</p>
 <p>I would also like to point to an <a
 href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
 regarding sponsoring Xdebug.</p>
