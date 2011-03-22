@@ -47,11 +47,24 @@ Information about Xdebug in Russian is available at <a
 href='http://xdebug.ru'>http://xdebug.ru</a>.
 </p>
 
-<iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>
+<!--<iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>-->
 <a name="announcements"></a>
 <h2>Announcements</h2>
 
 <dl class="main">
+
+<dt class="main">[2011-03-22]</dt>
+<dd class="main">
+<p>I just released Xdebug 2.1.1rc1 - which addresses issues mainly in the
+profiler and debugger functionality. This includes the KCacheGrind <a
+href="https://bugs.kde.org/show_bug.cgi?id=256425#c10">issue</a>.  The full
+change log can be found on the <a href="/updates.php#x_2_1_1rc1">updates</a>
+page and the source code can be found on the <a
+href="/downloads.php">downloads</a> page.</p>
+<p>I would also like to point to an <a
+href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
+regarding sponsoring Xdebug.</p>
+</dd>
 
 <dt class="main">[2010-06-29]</dt>
 <dd class="main">
@@ -63,7 +76,8 @@ a new <a href="/docs/all_settings#remote_connect_back">setting</a> that tries to
 <a href="/docs/all_functions#xdebug_get_headers">a function</a> to return all explicitly and implicitly set headers,
 a <a href="/docs/all_settings#scream">setting</a> that makes PHP ignore the @ operator and many other smaller features. A huge amount of bugs have been addressed as well.
 For a full list, please refer to the <a href="/updates.php#x_2_1_0">updates</a> page.</p>
-<p>You can find a more thorough description of all new features at <a href="http://derickrethans.nl/xdebug-2.1-released.html">http://derickrethans.nl/xdebug-2.1-released.html</a></p>.</dd>
+<p>You can find a more thorough description of all new features at <a
+href="http://derickrethans.nl/xdebug-2.1-released.html">http://derickrethans.nl/xdebug-2.1-released.html</a>.</p></dd>
 
 <dt class="main">[2010-04-06]</dt>
 <dd class="main">

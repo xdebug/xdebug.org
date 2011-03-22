@@ -19,6 +19,35 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_1rc1'></a>[2011-03-22] &mdash; Xdebug 2.1.1rc1</dt>
+<dd><h3>Fixed bugs</h3></dd>
+
+<?php
+/*
+:'<,'>s/\#\(\d\+\)/<?php bug(\1); ?>/
+*/
+?>
+
+<dd><h4>Debugger</h4></dd>
+<dd>Fixed bug <?php bug(518); ?>: Removed CLASSNAME pseudo-property optional.</dd>
+<dd>Fixed bug <?php bug(592); ?>: Xdebug crashes with run after detach.</dd>
+<dd>Fixed bug <?php bug(596); ?>: Call breakpoint never works with instance methods, only static methods.</dd>
+<dd>Fixed JIT mode in the debugger so that it works for xdebug_break() too.</dd>
+
+<dd><h4>Profiler</h4></dd>
+<dd>Fixed bug <?php bug(631); ?>: Summary not written when script ended with "exit()".</dd>
+<dd>Fixed bug <?php bug(639); ?>: Xdebug profiling: output not correct - missing 'cfl='.</dd>
+<dd>Fixed bug <?php bug(642); ?>: Fixed line numbers for offsetGet, offsetSet, __get/__set/__isset/__unset and __call in profile files and stack traces/function traces.</dd>
+<dd>Fixed bug <?php bug(643); ?>: Profiler gets line numbers wrong.</dd>
+<dd>Fixed bug <?php bug(653); ?>: XDebug profiler crashes with %H in file name and non standard port.</dd>
+
+<dd><h4>Others</h4></dd>
+<dd>Fixed bug <?php bug(651); ?>: Incorrect code coverage after empty() in conditional.</dd>
+<dd>Fixed bug <?php bug(654); ?>: Xdebug hides error message in CLI.</dd>
+<dd>Fixed bug <?php bug(665); ?>: Xdebug does not respect display_errors=stderr. (Patch by Ben Spencer)</dd>
+<dd>Fixed bug <?php bug(670); ?>: Xdebug crashes with broken "break x" code.</dd>
+
+
 <dt><a name='x_2_1_0'></a>[2010-06-29] &mdash; Xdebug 2.1.0</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd> Fixed <?php bug(562); ?>: Incorrect coverage information for closure function headers.</dd>
