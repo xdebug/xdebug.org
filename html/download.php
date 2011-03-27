@@ -81,7 +81,8 @@ uksort( $files, 'version_compare' );
 				}
 
 				if (isset($m[5]) && $m[5] == '-nts') {
-					$namea .= " Non-thread-safe";
+				} else {
+					$namea .= " TS";
 				}
 
 				if (isset($m[7]) && $m[7] == 'x86_64') {
@@ -89,7 +90,7 @@ uksort( $files, 'version_compare' );
 				} else {
 					$namea .= " (32 bit)";
 				}
-				$links[] = "<a href='files/{$dls}'>$name$namea</a>";
+				$links[] = "<a href='files/{$dls}'>PHP $name$namea</a>";
 			}
 			echo join( ', ', $links );
 		}

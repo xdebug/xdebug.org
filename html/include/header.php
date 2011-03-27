@@ -57,6 +57,7 @@
                  { font-variant: small-caps; text-decoration: none; border-bottom: 0;}
 
 		dt       { margin-left: 20px; margin-top: 10px; font-weight: bold; }
+		dt.historical { color: #bbbbbb; }
 		dd       { margin-left: 40px; margin-bottom: 0px; }
 		dd.red   { margin-left: 40px; margin-bottom: 10px; color: #dd0000; }
 		li.red   { color: #dd0000; }

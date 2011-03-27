@@ -9,49 +9,31 @@
 
 <?php include "include/menu.php"; ?>
 
-<a name="functionality"></a>
-<h2>Functionality</h2>
-
 <div style="float: right; width: 200px; border: solid green 1px; margin-right: 20px; padding: 10px;">
 <img src="/images/xdebug-logo.png" alt="logo"/>
 <p style="text-align: center;">
 If you like Xdebug, please consider a <a href="/donate.php">donation</a>.
 </p>
 </div>
-<p>
-The Xdebug extension helps you debugging your script by providing a lot of
-valuable debug information. The debug information that Xdebug can
-provide includes the following:
-</p>
-<ul>
-<li><a href='/docs/stack_trace'>stack traces</a> and <a href='/docs/execution_trace'>function traces</a> in error messages with:
-  <ul>
-  <li>full <a href='/docs/display'>parameter display</a> for user defined functions</li> 
-  <li>function name, file name and line indications</li>
-  <li>support for member functions</li>
-  </ul>
-</li>
-<li>memory allocation</li>
-<li>protection for infinite recursions</li>
-</ul>
-<p>
-Xdebug also provides:
-</p>
-<ul>
-<li><a href='docs/profiler'>profiling</a> information for PHP scripts</li>
-<li><a href='docs/code_coverage'>code coverage analysis</a></li>
-<li>capabilities to <a href='docs/remote'>debug your scripts interactively</a> with a debug client</li>
-</ul>
-<p>
-Information about Xdebug in Russian is available at <a
-href='http://xdebug.ru'>http://xdebug.ru</a>.
-</p>
 
 <!--<iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>-->
 <a name="announcements"></a>
 <h2>Announcements</h2>
 
 <dl class="main">
+
+<dt class="main">[2011-03-28]</dt>
+<dd class="main">
+<p>Xdebug 2.1.1 is out! This is the first bug fix release of Xdebug 2.1.
+Xdebug 2.1.1 addresses issues mainly in the profiler and debugger
+functionality. This includes the KCacheGrind <a
+href="https://bugs.kde.org/show_bug.cgi?id=256425#c10">issue</a>.  The full
+change log can be found on the <a href="/updates.php#x_2_1_1">updates</a> page
+and the source code and Windows binaries can be found on the <a
+href="/download.php">downloads</a> page.</p> <p>I would also like to point to
+an <a href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
+regarding sponsoring Xdebug.</p>
+</dd>
 
 <dt class="main">[2011-03-22]</dt>
 <dd class="main">
@@ -61,9 +43,6 @@ href="https://bugs.kde.org/show_bug.cgi?id=256425#c10">issue</a>.  The full
 change log can be found on the <a href="/updates.php#x_2_1_1rc1">updates</a>
 page and the source code can be found on the <a
 href="/download.php">downloads</a> page.</p>
-<p>I would also like to point to an <a
-href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
-regarding sponsoring Xdebug.</p>
 </dd>
 
 <dt class="main">[2010-06-29]</dt>

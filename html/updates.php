@@ -17,16 +17,17 @@
 
 <h2>Updates</h2>
 
-<span class='quote'>
-<dl>
-<dt><a name='x_2_1_1rc1'></a>[2011-03-22] &mdash; Xdebug 2.1.1rc1</dt>
-<dd><h3>Fixed bugs</h3></dd>
-
 <?php
 /*
 :'<,'>s/\#\(\d\+\)/<?php bug(\1); ?>/
 */
 ?>
+
+<span class='quote'>
+<dl>
+<dt><a name='x_2_1_1'></a>[2011-03-28] &mdash; Xdebug 2.1.1</dt>
+<dt class="historical"><a name='x_2_1_1rc1'></a>[2011-03-22] &mdash; Xdebug 2.1.1rc1</dt>
+<dd><h3>Fixed bugs</h3></dd>
 
 <dd><h4>Debugger</h4></dd>
 <dd>Fixed bug <?php bug(518); ?>: Removed CLASSNAME pseudo-property optional.</dd>
