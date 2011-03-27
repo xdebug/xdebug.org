@@ -17,8 +17,7 @@ an Open Source <a href='/licence.php'>licence</a>, and this will continue into
 the far future. It has cost
 <a href='http://derickrethans.nl/contact.html'>me</a> thousands of hours to
 develop, test and support Xdebug. If you find Xdebug valuable, I would
-appreciate it if you would consider a small donation. If you require an
-invoice, I can supply one.
+appreciate it if you would consider a small donation.
 </p>
 <p>You can donate through PayPal by clicking on the Xdebug/donate logo:</p>
 
