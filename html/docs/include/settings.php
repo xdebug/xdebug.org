@@ -261,6 +261,17 @@ The possible format specifiers are:
 		FUNC_FUNCTION_TRACE
 	),
 
+	'trace_enable_trigger' => array(
+		'boolean', 0, '2.2',
+		"When this setting is set to 1, you can trigger the generation of trace
+files by using the XDEBUG_TRACE GET/POST parameter, or set a cookie with the
+name XDEBUG_TRACE. This will then write the trace data to
+[CFG:trace_output_dir:defined directory]. In order to prevent Xdebug
+to generate trace files for each request, you need to set
+[CFG:auto_trace] to 0.",
+		FUNC_FUNCTION_TRACE
+	),
+
 	
 	'idekey' => array(
 		'string', '*complex*', null,
@@ -279,6 +290,13 @@ remote debugging (see [FEAT:remote]). When
 this setting is set to 1, Xdebug will always attempt to start a remote
 debugging session and try to connect to a client, even if the GET/POST/COOKIE
 variable was not present.",
+		FUNC_REMOTE
+	),
+
+	'remote_cookie_expire_time' => array(
+		'integer', 3600, '2.1',
+		"This setting can be used to increase (or decrease) the time that the
+		remote debugging session stays alive via the session cookie.",
 		FUNC_REMOTE
 	),
 
@@ -386,7 +404,7 @@ this setting.",
 	'profiler_enable_trigger' => array(
 		'integer', 0, null,
 		"When this setting is set to 1, you can trigger the generation of profiler
-files by using the XDEBUG_PROFILE GET/POST parameter, or send a cookie with the
+files by using the XDEBUG_PROFILE GET/POST parameter, or set a cookie with the
 name XDEBUG_PROFILE. This will then write the profiler data to
 [CFG:profiler_output_dir:defined directory]. In order to prevent the profiler
 to generate profile files for each request, you need to set
@@ -509,5 +527,12 @@ Add to that one of (depending whether you have komodo or gvim):
 		"If this setting is 1, then Xdebug will disable the @ (shut-up)
 		operator so that notices, warnings and errors are no longer hidden.",
 		FUNC_BASIC
+	),
+	'coverage_enable' => array(
+		'boolean', 1, '2.2',
+		"If this setting is set to 0, then Xdebug will not set-up internal
+		structures to allow code coverage. This speeds up Xdebug quite a bit,
+		but of course, [FEAT:code_coverage] won't work.",
+		FUNC_CODE_COVERAGE
 	),
 );
