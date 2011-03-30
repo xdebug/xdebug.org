@@ -5,7 +5,7 @@ if ( php_sapi_name() != 'cli' ) {
 include 'include/basic.php';
 include 'include/settings.php';
 include 'include/features.php';
-include '/home/derick/dev/ezcomponents/trunk/Base/src/ezc_bootstrap.php';
+include '/home/derick/dev/zetacomponents/trunk/Base/src/ezc_bootstrap.php';
 
 class drDocumentDocbookToTextExternalLinkHandler extends ezcDocumentDocbookToRstBaseHandler
 {
@@ -181,7 +181,10 @@ class drDocumentDoctookToTextConvertor extends ezcDocumentDocbookToRstConverter
     }
 }
 
+$ext = new ReflectionExtension('xdebug');
 ksort( $settings );
+
+echo "; This is a generated file, do not modify by hand\n\n";
 
 foreach( $settings as $name => $info )
 {
@@ -211,3 +214,16 @@ $d = join( "\n; ", explode( "\n", $d ) );
 ENDL;
 
 }
+
+/* Check for missing settings */
+$extensionSettings = array_keys( $ext->getINIEntries() );
+foreach ( $extensionSettings as $settingName )
+{
+	$sanitizedSettingName = preg_replace( '/^xdebug\./', '', $settingName );
+	if ( !isset( $settings[$sanitizedSettingName] ) )
+	{
+		fprintf( STDERR, "$settingName is missing\n" );
+	}
+}
+
+
