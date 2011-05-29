@@ -1018,6 +1018,7 @@ authors for <b>support</b>:
 <li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (IDE: Windows, Japanese; Commercial).</li>
 <li>MP Software\'s <b><a href="http://www.mpsoftware.dk/products.php">phpDesigner</a></b> (IDE: Windows, Commercial).</li>
 <li><b><a href="http://www.phpeclipse.net/">PHPEclipse</a></b> (Editor Plugin).</li>
+<li>JetBrain\'s<b><a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a></b> (IDE; Commercial).</li>
 <li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
 <li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b> (Editor: Windows).</li>
 <li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b> (IDE; Commercial).</li>
