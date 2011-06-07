@@ -94,7 +94,7 @@ Xdebug is compiled separately, all by itself, as stated above.</li>
 
 <li>Run phpize: phpize (or /path/to/phpize if phpize is not in your path). Make
 sure you use the phpize that belongs to the PHP version that you want to use
-Xdebug with. See this <a href='http://xdebug/docs/faq#api'>FAQ entry</a> if
+Xdebug with. See this <a href='/docs/faq#api'>FAQ entry</a> if
 you're having some issues with finding which phpize to use.</li>
 
 <li>./configure --enable-xdebug
