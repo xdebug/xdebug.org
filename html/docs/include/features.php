@@ -555,14 +555,14 @@ values. In the default traces those two elements are not available.
 
 <h2>Output Formats</h2>
 <p>
-There are two output formats. One is meant as a human readable trace, the other
-one is more suited for computer programs as it is easier to parse. You can
-switch between the two different formats with the [CFG:trace_format]
-setting. There are a few settings that control which information is written to
-the trace files. There are settings for including variables
-([CFG:collect_params]) and for including return values ([CFG:collect_return])
-for example. The example below shows what effect the different settings have
-for the human readable function traces.
+There are three output formats. One is meant as a human readable trace, another
+one is more suited for computer programs as it is easier to parse, and the last
+one uses HTML for formatting the trace. You can switch between the two
+different formats with the [CFG:trace_format] setting. There are a few settings
+that control which information is written to the trace files. There are
+settings for including variables ([CFG:collect_params]) and for including
+return values ([CFG:collect_return]) for example. The example below shows what
+effect the different settings have for the human readable function traces.
 </p>
 
 <h3>The Script</h3>
@@ -682,12 +682,20 @@ TRACE END   [2007-05-06 14:37:16]
 Besides the [CFG:collect_params] settings there is another number of settings
 that affect the output of trace files. The first tab "default" shows the same
 as the default as above. The second tab "show_mem_delta=1" also shows the
-memory usage difference between two different lines in the output file. On the
-"collect_return=1" tab the return values of all the function calls are also
-visible. This you turn on with the [CFG:collect_return] setting.  The last tab
-shows a different output format that is much easier to parse, but harder to
-read. The [CFG:trace_format] setting is therefore mostly useful if there is an
-additional tool to interpret the trace files.
+memory usage difference between two different lines in the output file.
+</p>
+<p>
+On the "collect_return=1" tab the return values of all the function calls are
+also visible.  This you turn on with the [CFG:collect_return] setting.
+</p>
+<p>
+The tab called "collect_assignments=1" shows variable assigments, which can be
+turned on with the [CFG:collect_assignments] setting.
+</p>
+<p>
+The last tab shows a different output format that is much easier to parse, but
+harder to read. The [CFG:trace_format] setting is therefore mostly useful if
+there is an additional tool to interpret the trace files.
 </p>
 
 <div id="othersettings" class="yui-navset">

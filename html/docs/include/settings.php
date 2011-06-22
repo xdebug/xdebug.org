@@ -175,11 +175,14 @@ return value of function calls to the trace files.",
 href='#show_mem_delta'>xdebug.show_mem_delta</a> is enabled), <i>level</i>, <i>function name</i>,
 <i>function parameters</i> (if the setting [CFG:collect_params] is enabled),
 <i>filename</i> and <i>line number</i>.</td></tr>
+
 <tr><td class='ctr'>1</td><td>writes a computer readable format which has two
 different records. There are different records for entering a stack frame, and
 leaving a stack frame. The table below lists the fields in each type of record.
 Fields are tab separated.
 </td></tr>
+
+<tr><td class='ctr'>2</td><td>writes a trace formatted in (simple) HTML.</td></tr>
 </table>
 <p>
 Fields for the computerized format:
