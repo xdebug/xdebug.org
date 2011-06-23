@@ -117,7 +117,7 @@ else
 <p>
 	The information that you upload will not be stored. The script will only
 	use a few regular expressions to analyse the output and provide you with
-	instructions.  You can see the code <a href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/www.xdebug.org/trunk/html/include/phpinfo-scanner.php?view=markup&amp;root=xdebug'>here</a>.
+	instructions.  You can see the code <a href='https://github.com/derickr/xdebug.org/blob/master/html/include/phpinfo-scanner.php'>here</a>.
 </p>
 <p>
 	<input type='submit' name='submit' value='Analyse my phpinfo() output'/>

@@ -57,14 +57,14 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 
 <p>
 You can <a href='/download.php#releases'>download</a> the source of the latest <b>stable</b> release [KW:last_release_version].
-Alternatively you can obtain Xdebug from SVN:
+Alternatively you can obtain Xdebug from GIT:
 </p>
 <pre>
-svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
+git clone git://github.com/derickr/xdebug.git
 </pre>
 <p>
 This will checkout the latest development version which is currently [KW:last_dev_version].
-You can also browse the source at <a href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug</a>.
+You can also browse the source at <a href='https://github.com/derickr/xdebug'>https://github.com/derickr/xdebug</a>.
 </p>
 
 <a name='compile'></a>

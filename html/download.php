@@ -24,11 +24,11 @@ valuable debug information. The debug information that Xdebug can
 provide includes the following:
 </p>
 
-<p>Xdebug is hosted in SVN. The source code can be browsed through <a
-href='http://svn.xdebug.org/cgi-bin/viewvc.cgi/xdebug/?root=xdebug'>ViewVC</a> and can be checkout with:
+<p>Xdebug is hosted in GIT. The source code can be browsed through <a
+href='https://github.com/derickr/xdebug'>github</a> and can be checkout with:
 </p>
 <pre>
-svn co svn://svn.xdebug.org/svn/xdebug/xdebug/trunk xdebug
+git clone git://github.com/derickr/xdebug.git
 </pre>
 
 <a name='releases'></a>
