@@ -25,7 +25,7 @@ provide includes the following:
 </p>
 
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
-href='https://github.com/derickr/xdebug'>github</a> and can be checkout with:
+href='https://github.com/derickr/xdebug'>github</a> and can be checked out with:
 </p>
 <pre>
 git clone git://github.com/derickr/xdebug.git
