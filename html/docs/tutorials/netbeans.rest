@@ -2,6 +2,9 @@
 Netbeans
 ========
 
+This section tells you how to set-up Netbeans for debugging with Xdebug.
+
+
 Websites
 --------
 
