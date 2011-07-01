@@ -1,0 +1,13 @@
+========
+PHPStorm
+========
+
+This section tells you how to set-up PHPStorm for debugging with Xdebug.
+
+
+Websites
+--------
+
+Command line scripts
+--------------------
+

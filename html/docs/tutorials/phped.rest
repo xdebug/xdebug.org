@@ -1,0 +1,13 @@
+=====
+phpEd
+=====
+
+This section tells you how to set-up phpEd for debugging with Xdebug.
+
+
+Websites
+--------
+
+Command line scripts
+--------------------
+

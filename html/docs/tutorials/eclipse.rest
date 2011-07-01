@@ -1,0 +1,13 @@
+===========
+Eclipse/PDT
+===========
+
+This section tells you how to set-up Eclipse/PDF for debugging with Xdebug.
+
+
+Websites
+--------
+
+Command line scripts
+--------------------
+
