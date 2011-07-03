@@ -8,6 +8,55 @@ This section tells you how to set-up Netbeans for debugging with Xdebug.
 Websites
 --------
 
+- Go to *Preferences > PHP*
+
+- Adjust the options for debugging:
+
+  - Port
+	This is the post used by XDebug to send information to the IDE [default: 9000]
+	
+  - Session Id
+	This is the IDE Key used to define this session
+	
+- Make sure your project is properly configured to run on the browser, use *Run > Run Project* to check this
+
+- Click on *Debug > Debug Project*
+
+If you configured NetBeans to stop on the first line, it should now switch environments, show debugging panes and mark the first line of your index file in green.
+
+
 Command line scripts
 --------------------
 
+To debug command line scripts you need to take just a few extra steps.
+
+- Adjust your php.ini with these settings: (they are fully compatible with website testing above)
+
+  :: 
+	
+	xdebug.remote_enable=On
+	xdebug.remote_handler=dbgp
+	xdebug.remote_host=localhost
+	xdebug.remote_port=9000
+
+- Adjust your NetBeans configuration to match this port and idekey in the *Preferences > PHP* menu.
+
+- Now setup your project to run as a command line script instead of a website: 
+
+  - Go to *File > Project Properties*
+
+  - Select *Run configuration*
+
+  - Choose *Run as:* to be "Script"
+
+- Click on *Debug > Debug Project*
+
+You should now see it running inside the output panel or stopped in the first line if that option was selected.
+
+
+Advanced Debugging in NetBeans
+------------------------------
+
+If you want to debug you PHPunit tests or files outside your project inside netbeans, check this post: `Debugging PHPUnit Tests in NetBeans with XDebug`_ 
+
+.. _Debugging PHPUnit Tests in NetBeans with XDebug: http://blog.rafaeldohms.com.br/2011/05/13/debugging-phpunit-tests-in-netbeans-with-xdebug
