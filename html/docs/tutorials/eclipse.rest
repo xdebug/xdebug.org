@@ -7,7 +7,48 @@ This section tells you how to set-up Eclipse/PDF for debugging with Xdebug.
 
 Websites
 --------
+If you have debugged inside PHP IDEs before, but not with Xdebug, first thing to bare in mind is that the debug process starts from the browser and not from the IDE.
+So the workflow would be:
+- enable debugging inside your browser
+- start the request, PHP is connecting to Eclipse
+- start debugging in Eclipse, Eclipse is accepting the connection from PHP therefore you have a debug session
+
+In order to be able to enable or disable debugging from Firefox you will need to install an extension called "easy Xdebug", which can be found at https://addons.mozilla.org/en-US/firefox/addon/easy-xdebug/ .
+
+Next you will need to configure Eclipse to accept debugging sessions from Xdebug. Follow the steps below:
+- Open your project in Eclipse PDT
+- In the main menu select Project->Properties
+- On the left side of the window select "PHP Debug" and then click on "Configure Workspace Settings"
+- On the "PHP Debugger" dropdown select Xdebug and click "Apply"
+- Click "Configure" to the right of Xdebug in the same window.
+- Select Xdebug and click "Configure".
+- On the "Accept remote session(JIT)" select "any" and click "OK". This is extremely important and this is where most people get stuck.
+
+Finnaly PHP must be configured correctly so that it can connect to Eclipse. In php.in you should have:
+[xdebug]
+zend_extension=/path/to/xdebug.so(.dll)
+xdebug.remote_enable=On
+xdebug.remote_handler="dbgp"
+xdebug.remote_mode="req"
+xdebug.remote_port=9000
+xdebug.remote_host="YOUR.IP.GOES.HERE"
+xdebug.remote_log=/path/to/xdebug_remote_log
+
+The IP in the configuration is the IP of the machine that is running Eclipse.
+Now when you want to start the debug session, you go on the page where you are supposed to start debugging, then click on the green bug on the bottom left of the
+Firefox window and then start your request. At this point, move to Eclipse and if the configuration was done correctly a window should pop asking for the start script 
+or the session will just start, depending on your project. 
 
 Command line scripts
 --------------------
+When debugging from the command line the major difference from browser debugging is the fact that you don't have the Firefox extention to allow you to 
+enable/disable debugging. All other configurations must be done as in the previous section.
+Because you don't want to be debugging all the time, you will need to define xdebug-on and xdebug-off aliases in your basrc file. For that:
+- open ~/.bashrc with your favourite editor
+- add the following lines:
+	alias xdebug-off='unset XDEBUG_CONFIG'
+	alias xdebug-on='export XDEBUG_CONFIG="idekey=ECLIPSE_DBGP_111.111.111.111"; export XDEBUG_SESSION_START=ECLIPSE_DBGP_111.111.111.111'
+Of course, replace 111.111.111.111 with the IP of the machine that is running Eclipse. Also you will need to logout and login again for the aliases to be available.
+Now every time you want to enable debugging you would run *xdebug-on*. By having the debug enabled, all the command line PHP calls would start a debug session.
+Whn you want to disable debugging, run *xdebug-off*.
 
