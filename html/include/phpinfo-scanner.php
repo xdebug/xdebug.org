@@ -108,7 +108,7 @@ class xdebugVersion
 		}
 		else 
 		{
-			if (preg_match( '/extension_dir([ =>\t]*)([^ =>\t]+)/', $data, $m ) )
+			if (preg_match( '/extension_dir([ =>\t]*)([^=>\t]+)/', $data, $m ) )
 			{
 				$this->extensionDir = $m[2];
 			}
