@@ -18,8 +18,9 @@ Websites
   - Session Id
 	This is the IDE Key used to define this session
 	
-- Make sure your project is properly configured to run on the browser, use *Run
-  > Run Project* to check this
+- Visit * File > Project properties * and make sure the *Run configuration* tab is 
+  setup properly with the correct settings for you environment. i.e url and index file. 
+  You can use *Run > Run Project* to check this.
 
 - Click on *Debug > Debug Project*
 
@@ -33,13 +34,14 @@ Command line scripts
 
 To debug command line scripts you need to take just a few extra steps.
 
-- Adjust your php.ini with these settings: (they are fully compatible with
-  website testing above):: 
+- Adjust your php.ini to be compatible with these settings, some of these are the
+  default settings used by XDebug: (they are fully compatible with website testing 
+  above):: 
 	
 	xdebug.remote_enable=On
-	xdebug.remote_handler=dbgp
-	xdebug.remote_host=localhost
-	xdebug.remote_port=9000
+	xdebug.remote_handler=dbgp ; default value
+	xdebug.remote_host=localhost ; default value
+	xdebug.remote_port=9000 ; default value
 
 - Adjust your NetBeans configuration to match this port and idekey in the
   *Preferences > PHP* menu.
@@ -55,7 +57,9 @@ To debug command line scripts you need to take just a few extra steps.
 - Click on *Debug > Debug Project*
 
 You should now see it running inside the output panel or stopped in the first
-line if that option was selected.
+line if that option was selected. Inside the *Run configuration* you may also 
+choose which php runtime to use, so you can debug with different versions of
+PHP.
 
 
 Advanced Debugging in NetBeans
