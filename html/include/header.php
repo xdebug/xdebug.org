@@ -27,6 +27,7 @@
 
 		#flickr { margin: 20px; }
 
+		tt       { font-family: monospace; font-size: 1.35em; background-color: #eaffeb; }
 		img      { border: 0px; vertical-align: bottom; }
 		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
 		img.r    { margin-left: 10px; margin-top: 10px; margin-bottom: 10px; }
@@ -39,6 +40,7 @@
 		p        { line-height: 1.5em; }
 		p.intro  { font-style: italic; }
 		p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
+		p.donate { text-align: center; font-size: 80%; margin: 0; margin-top: 1em; }
 		.serif   { line-height: 1.5em; }
 		.quote   { font-family: sans-serif; }
         .mk      { color: #004411; font-weight: bold; }

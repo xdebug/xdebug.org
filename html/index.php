@@ -9,13 +9,6 @@
 
 <?php include "include/menu.php"; ?>
 
-<div style="float: right; width: 200px; border: solid green 1px; margin-right: 20px; padding: 10px;">
-<img src="/images/xdebug-logo.png" alt="logo"/>
-<p style="text-align: center;">
-If you like Xdebug, please consider a <a href="/donate.php">donation</a>.
-</p>
-</div>
-
 <!--<iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>-->
 <a name="announcements"></a>
 <h2>Announcements</h2>
