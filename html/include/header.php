@@ -27,7 +27,7 @@
 
 		#flickr { margin: 20px; }
 
-		tt       { font-family: monospace; font-size: 1.35em; background-color: #eaffeb; }
+		tt       { font-family: monospace; background-color: #eaffeb; }
 		img      { border: 0px; vertical-align: bottom; }
 		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
 		img.r    { margin-left: 10px; margin-top: 10px; margin-bottom: 10px; }
