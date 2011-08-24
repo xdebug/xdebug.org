@@ -41,7 +41,7 @@ need to following the following things.
 	<tt>git config user.name "Derick Rethans" &amp;&amp; git config user.email "derick@xdebug.org"</tt>
 </li>
 <li>Add the original repository as remote:<br/>
-	<tt>git remote add xdebug git://github.com/derickr/xdebug.git &amp;&amp; git fetch xdebug</tt>
+	<tt>git remote add upstream git://github.com/derickr/xdebug.git &amp;&amp; git fetch xdebug</tt>
 </li>
 </ol>
 
@@ -51,8 +51,8 @@ need to following the following things.
 <li>Change into the <tt>xdebug</tt> repository (if you haven't done yet):<br/>
 	<tt>cd xdebug</tt>
 </li>
-<li>Run:<br/><tt>git checkout master &amp;&amp; git pull xdebug master</tt></li>
-<li>Run:<br/><tt>git checkout xdebug_2_1 &amp;&amp; git pull xdebug xdebug_2_1</tt></li>
+<li>Run:<br/><tt>git checkout master &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/master</tt></li>
+<li>Run:<br/><tt>git checkout xdebug_2_1 &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_1</tt></li>
 </ol>
 
 <a name="bugfix"></a>
