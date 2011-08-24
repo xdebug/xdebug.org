@@ -18,23 +18,41 @@ href='https://github.com/derickr/xdebug'>github</a> and can be checked out with:
 git clone git://github.com/derickr/xdebug.git
 </pre>
 <p>
-If you think you want to fix a <b>bug</b>, then you need to following the following things.
+If you think you want to fix a bug or work on a new feature, then you
+need to following the following things.
 </p>
-<a name="setup"/>
+<a name="setup"></a>
 <h3>Initial Set-up</h3>
 <ol>
 <li>Fork Xdebug on <a href='https://github.com/derickr/xdebug/fork'>github</a>.</li>
-<li>Clone the repository: <tt>git clone git@github.com:<i>{your username}</i>/xdebug.git</tt>, for example: <tt>git clone git@github.com:derickr/xdebug.git</tt>.</li>
-<li>Change into the <tt>xdebug</tt> repository: <tt>cd xdebug</tt>.</li>
-<li>Add the original repository as remote: <tt>git remote add xdebug git://github.com/derickr/xdebug.git &amp;&amp; git fetch xdebug</tt>.</li>
+<li>Clone the repository:<br/>
+	<tt>git clone git@github.com:<i>{your&nbsp;username}</i>/xdebug.git</tt><br/>
+	for example:<br />
+	<tt>git clone git@github.com:derickr/xdebug.git</tt>
+</li>
+<li>Change into the <tt>xdebug</tt> repository:<br/>
+	<tt>cd xdebug</tt>.
+</li>
+<li>Make sure to set your git name and email:<br/>
+	<tt>git config --get user.name &amp;&amp; git config --get user.email</tt><br/>
+	If they are not correct, set them to the correct value:<br/>
+	<tt>git config user.name <i>{your&nbsp;name}</i> &amp;&amp; git config user.email <i>{your&nbsp;email}</i></tt><br/>
+	for example:<br/>
+	<tt>git config user.name "Derick Rethans" &amp;&amp; git config user.email "derick@xdebug.org"</tt>
+</li>
+<li>Add the original repository as remote:<br/>
+	<tt>git remote add xdebug git://github.com/derickr/xdebug.git &amp;&amp; git fetch xdebug</tt>
+</li>
 </ol>
 
-<a name="uptodate"/>
+<a name="uptodate"></a>
 <h3>Keeping up-to-date</h3>
 <ol>
-<li>Change into the <tt>xdebug</tt> repository (if you haven't done yet): <tt>cd xdebug</tt>.</li>
-<li>Run: <tt>git checkout master &amp;&amp; git pull xdebug master</tt>.</li>
-<li>Run: <tt>git checkout xdebug_2_1 &amp;&amp; git pull xdebug xdebug_2_1</tt>.</li>
+<li>Change into the <tt>xdebug</tt> repository (if you haven't done yet):<br/>
+	<tt>cd xdebug</tt>
+</li>
+<li>Run:<br/><tt>git checkout master &amp;&amp; git pull xdebug master</tt></li>
+<li>Run:<br/><tt>git checkout xdebug_2_1 &amp;&amp; git pull xdebug xdebug_2_1</tt></li>
 </ol>
 
 <a name="bugfix"></a>
@@ -44,10 +62,12 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 <b>master</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
-<li>Checkout the <tt>xdebug_2_1</tt> branch: <tt>git checkout xdebug_2_1</tt>.</li>
-<li>Create a feature branch: <tt>git checkout -b
-	issue<i>{issue&nbsp;number}</i></tt>, for example: <tt>git checkout -b
-	issue681</tt>. If there is no 
+<li>Checkout the <tt>xdebug_2_1</tt> branch:<br/><tt>git checkout xdebug_2_1</tt>.</li>
+<li>Create a feature branch:<br/>
+	<tt>git checkout -b issue<i>{issue&nbsp;number}</i></tt><br/>
+	for example:<br/>
+	<tt>git checkout -b issue681</tt><br/>
+	If there is no 
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
@@ -58,11 +78,12 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 <li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
-	if it took some time since you branched: <tt>git fetch xdebug &amp;&amp git
-	rebase xdebug/xdebug_2_1</tt>.</li>
-<li>Push your changes to your remote repository: <tt>git push origin
-	<i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt>, for example:
-	<tt>git push origin issue681:issue681</tt>.</li>
+	if it took some time since you branched:<br/>
+	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/xdebug_2_1</tt></li>
+<li>Push your changes to your remote repository:<br/>
+	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	for example:<br/>
+	<tt>git push origin issue681:issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
@@ -81,10 +102,12 @@ except that you make a branch of <b>master</b> instead of
 <b>xdebug_2_1</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
-<li>Checkout the <tt>master</tt> branch: <tt>git checkout master</tt>.</li>
-<li>Create a feature branch: <tt>git checkout -b
-	issue<i>{issue&nbsp;number}</i></tt>, for example: <tt>git checkout -b
-	issue681</tt>. If there is no 
+<li>Checkout the <tt>master</tt> branch:<br/><tt>git checkout master</tt>.</li>
+<li>Create a feature branch:<br/>
+	<tt>git checkout -b issue<i>{issue&nbsp;number}</i></tt><br/>
+	for example:<br/>
+	<tt>git checkout -b issue681</tt><br/>
+	If there is no 
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
@@ -95,11 +118,12 @@ except that you make a branch of <b>master</b> instead of
 <li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
-	if it took some time since you branched: <tt>git fetch xdebug &amp;&amp git
-	rebase xdebug/master</tt>.</li>
-<li>Push your changes to your remote repository: <tt>git push origin
-	<i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt>, for example:
-	<tt>git push origin issue681:issue681</tt>.</li>
+	if it took some time since you branched:<br/>
+	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/master</tt></li>
+<li>Push your changes to your remote repository:<br/>
+	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	for example:<br/>
+	<tt>git push origin issue681:issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
