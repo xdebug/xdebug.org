@@ -19,7 +19,7 @@ git clone git://github.com/derickr/xdebug.git
 </pre>
 <p>
 If you think you want to fix a bug or work on a new feature, then you
-need to following the following things.
+need to follow the instructions below.
 </p>
 <a name="setup"></a>
 <h3>Initial Set-up</h3>
