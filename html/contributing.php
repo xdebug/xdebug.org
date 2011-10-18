@@ -81,9 +81,9 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 	if it took some time since you branched:<br/>
 	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/xdebug_2_1</tt></li>
 <li>Push your changes to your remote repository:<br/>
-	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	<tt>git push upstream <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
-	<tt>git push origin issue681:issue681</tt></li>
+	<tt>git push upstream issue681:issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
