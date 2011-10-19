@@ -40,8 +40,11 @@ need to follow the instructions below.
 	for example:<br/>
 	<tt>git config user.name "Derick Rethans" &amp;&amp; git config user.email "derick@xdebug.org"</tt>
 </li>
-<li>Add the original repository as remote:<br/>
-	<tt>git remote add upstream git://github.com/derickr/xdebug.git &amp;&amp; git fetch xdebug</tt>
+<li>Add the original repository as remote (after removing the old one):<br/>
+	<tt>git remote add upstream git://github.com/derickr/xdebug.git &amp;&amp; git fetch upstream</tt>
+</li>
+<li>Add a tracking branch for xdebug 2.1:<br/>
+	<tt>git checkout --track origin/xdebug_2_1</tt>
 </li>
 </ol>
 
@@ -79,11 +82,11 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
-	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/xdebug_2_1</tt></li>
+	<tt>git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_1</tt></li>
 <li>Push your changes to your remote repository:<br/>
-	<tt>git push upstream <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
-	<tt>git push upstream issue681:issue681</tt></li>
+	<tt>git push origin issue681:issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
