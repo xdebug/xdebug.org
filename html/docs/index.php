@@ -23,7 +23,7 @@ $tabFields = array();
 
 if ( isset( $_GET['action'] ) )
 {
-	$action = preg_replace( '/[^a-z0-9_]/', '', $_GET['action'] );
+	$action = urldecode( preg_replace( '/[^a-z0-9_]/', '', $_GET['action'] ) );
 	switch ( $action )
 	{
 		case 'install':
