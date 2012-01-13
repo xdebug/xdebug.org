@@ -1250,8 +1250,11 @@ directory in which the code lives is the same.
 There are two solutions to this. First of all, you can use a <b>DBGp proxy</b>.
 For an overview on how to use this proxy, please refer to the article at <a
 href="http://derickrethans.nl/debugging-with-multiple-users.html">Debugging
-with multiple users</a>. And secondly you can use the
-[CFG:xdebug.remote_connect_back] <b>setting</b> that was introduced in Xdebug
+with multiple users</a>. You can download the proxy on
+<a href="http://code.activestate.com/komodo/remotedebugging/">ActiveState\'s web
+site</a> as part of the python remote debugging package. Secondly you can
+use the [CFG:xdebug.remote_connect_back] <b>setting</b> that was introduced in
+Xdebug
 2.1.
 </p>
 		'
