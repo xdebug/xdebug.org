@@ -39,7 +39,7 @@
 <dd>Fixed <?php bug(606); ?>/<?php bug(678); ?>/<?php bug(688); ?>/<?php bug(689); ?>/<?php bug(704); ?>: crash after using eval on an unparsable, or un-executable statement.</dd>
 <dd>Fixed <?php bug(305); ?>: xdebug exception handler doesn't properly handle special chars.</dd>
 
-<dd><h3>Fixed bugs</h3></dd>
+<dd><h3>Other changes</h3></dd>
 <dd>Changed xdebug_break() to hint to the statement execution trap instead of breaking forcefully adding an extra stackframe.</dd>
 <dd>Prevent Xdebug 2.1.x to build with PHP 5.4.</dd>
 
