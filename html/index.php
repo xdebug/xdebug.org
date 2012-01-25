@@ -15,6 +15,18 @@
 
 <dl class="main">
 
+<dt class="main">[2012-01-25]</dt>
+<dd class="main">
+<p>Xdebug 2.1.3 is out! This is the third bug fix release of Xdebug 2.1.
+Xdebug 2.1.3 addresses quite a few bugs and other issues.
+The full change log can be found on the <a
+href="/updates.php#x_2_1_3">updates</a> page and the source code and Windows
+binaries can be found on the <a href="/download.php">downloads</a> page.</p>
+<p>I would also like to point to an <a
+href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
+regarding sponsoring Xdebug.</p>
+</dd>
+
 <dt class="main">[2011-07-28]</dt>
 <dd class="main">
 <p>Xdebug 2.1.2 is out! This is the second bug fix release of Xdebug 2.1.
@@ -22,9 +34,6 @@ Xdebug 2.1.2 addresses three issues for code coverage as well as a few other
 minor issues.  functionality. The full change log can be found on the <a
 href="/updates.php#x_2_1_2">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>
-<p>I would also like to point to an <a
-href="http://drck.me/sponsor-xdebug-8ky">article on Derick's website</a>
-regarding sponsoring Xdebug.</p>
 </dd>
 
 <dt class="main">[2011-03-28]</dt>

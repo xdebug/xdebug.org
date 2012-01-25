@@ -25,14 +25,34 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_3'></a>[2012-01-25] &mdash; Xdebug 2.1.3</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed bug <?php bug(725); ?>: EG(current_execute_data) is not checked in xdebug.c, xdebug_statement_call.</dd>
+<dd>Fixed bug <?php bug(723); ?>: xdebug is stricter than PHP regarding Exception property types.</dd>
+<dd>Fixed bug <?php bug(714); ?>: Cachegrind files have huge (wrong) numbers in some lines.</dd>
+<dd>Fixed bug <?php bug(709); ?>: Xdebug doesn't understand E_USER_DEPRECATED.</dd>
+<dd>Fixed bug <?php bug(698); ?>: Allow xdebug.remote_connect_back to be set in .htaccess.</dd>
+<dd>Fixed bug <?php bug(690); ?>: Function traces are not appended to file with xdebug_start_trace() and xdebug.trace_options=1.</dd>
+<dd>Fixed bug <?php bug(623); ?>: Static properties of a class can be evaluated only with difficulty.</dd>
+<dd>Fixed bug <?php bug(614); ?>/<?php bug(619); ?>: Viewing private variables in base classes through the debugger.</dd>
+<dd>Fixed bug <?php bug(609); ?>: Xdebug and SOAP extension's error handlers conflict.</dd>
+<dd>Fixed bug <?php bug(606); ?>/<?php bug(678); ?>/<?php bug(688); ?>/<?php bug(689); ?>/<?php bug(704); ?>: crash after using eval on an unparsable, or un-executable statement.</dd>
+<dd>Fixed bug <?php bug(305); ?>: xdebug exception handler doesn't properly handle special chars.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Changed xdebug_break() to hint to the statement execution trap instead of breaking forcefully adding an extra stackframe.</dd>
+<dd>Prevent Xdebug 2.1.x to build with PHP 5.4.</dd>
+
+
+<dt><a name='x_2_1_1'></a>[2011-03-28] &mdash; Xdebug 2.1.1</dt>
 <dt><a name='x_2_1_2'></a>[2011-07-28] &mdash; Xdebug 2.1.2</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>- Fixed bug <?php bug(622); ?>: Working with eval() code is inconvenient and difficult.</dd>
-<dd>- Fixed bug <?php bug(684); ?>: xdebug_var_dump - IE does not support &amp;.</dd>
-<dd>- Fixed bug <?php bug(693); ?>: Cachegrind files not written when filename is very long.</dd>
-<dd>- Fixed bug <?php bug(697); ?>: Incorrect code coverage of function arguments when using XDEBUG_CC_UNUSED.</dd>
-<dd>- Fixed bug <?php bug(699); ?>: Xdebug gets the filename wrong for the countable interface.</dd>
-<dd>- Fixed bug <?php bug(703); ?>: Added another opcode to the list that needs to be overridden.</dd>
+<dd>Fixed bug <?php bug(622); ?>: Working with eval() code is inconvenient and difficult.</dd>
+<dd>Fixed bug <?php bug(684); ?>: xdebug_var_dump - IE does not support &amp;.</dd>
+<dd>Fixed bug <?php bug(693); ?>: Cachegrind files not written when filename is very long.</dd>
+<dd>Fixed bug <?php bug(697); ?>: Incorrect code coverage of function arguments when using XDEBUG_CC_UNUSED.</dd>
+<dd>Fixed bug <?php bug(699); ?>: Xdebug gets the filename wrong for the countable interface.</dd>
+<dd>Fixed bug <?php bug(703); ?>: Added another opcode to the list that needs to be overridden.</dd>
 
 
 <dt><a name='x_2_1_1'></a>[2011-03-28] &mdash; Xdebug 2.1.1</dt>
