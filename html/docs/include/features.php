@@ -1068,12 +1068,14 @@ environment variable, like:
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 php myscript.php
 </pre>
-You can also configure the [CFG:remote_host],
-[CFG:remote_port],
-[CFG:remote_mode] and
-[CFG:remote_handler] in this same environment variable.
-All those configurable settings can also be set with normal php.ini
-settings.</li>
+You can also configure the [CFG:remote_host], [CFG:remote_port],
+[CFG:remote_mode] and [CFG:remote_handler] in this same environment variable as
+long as you separate the values by a space:
+<pre class="example">
+export XDEBUG_CONFIG="[CFGS:idekey]=session_name [CFGS:remote_host]=localhost [CFGS:profiler_enable]=1"
+</pre>
+All settings that you can set through the XDEBUG_CONFIG setting can also be set
+with normal php.ini settings.</li>
 
 <li>If you want to debug a script started through a web browser, simply add
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL. Refer
