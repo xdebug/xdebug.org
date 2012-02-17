@@ -13,7 +13,7 @@
 
 <p>
 Xdebug is a complicated piece of software, and has always been released under
-an Open Source <a href='/licence.php'>licence</a>, and this will continue into
+an Open Source <a href='/license.php'>license</a>, and this will continue into
 the far future. It has cost
 <a href='http://derickrethans.nl/who.html'>me</a> thousands of hours to
 develop, test and support Xdebug. If you find Xdebug valuable, I would
