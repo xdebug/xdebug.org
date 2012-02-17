@@ -41,37 +41,37 @@ donation because Xdebug saves you time!</p>
                 <input name="item_option_description_1" type="hidden" value=""/>
                 <input name="item_option_quantity_1" type="hidden" value="1"/>
                 <input name="item_option_currency_1" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-1.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-1.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
                 <input name="item_option_name_2" type="hidden" value="Xdebug donation (small)"/>
                 <input name="item_option_price_2" type="hidden" value="10.0"/>
                 <input name="item_option_description_2" type="hidden" value=""/>
                 <input name="item_option_quantity_2" type="hidden" value="1"/>
                 <input name="item_option_currency_2" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-2.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-2.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
                 <input name="item_option_name_3" type="hidden" value="Xdebug donation (medium)"/>
                 <input name="item_option_price_3" type="hidden" value="25.0"/>
                 <input name="item_option_description_3" type="hidden" value=""/>
                 <input name="item_option_quantity_3" type="hidden" value="1"/>
                 <input name="item_option_currency_3" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-3.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-3.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
                 <input name="item_option_name_4" type="hidden" value="Xdebug donation (large)"/>
                 <input name="item_option_price_4" type="hidden" value="50.0"/>
                 <input name="item_option_description_4" type="hidden" value=""/>
                 <input name="item_option_quantity_4" type="hidden" value="1"/>
                 <input name="item_option_currency_4" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-4.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-4.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
                 <input name="item_option_name_5" type="hidden" value="Xdebug donation (mega)"/>
                 <input name="item_option_price_5" type="hidden" value="100.0"/>
                 <input name="item_option_description_5" type="hidden" value=""/>
                 <input name="item_option_quantity_5" type="hidden" value="1"/>
                 <input name="item_option_currency_5" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-5.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-5.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
                 <input name="item_option_name_6" type="hidden" value="Xdebug donation (über-mega)"/>
                 <input name="item_option_price_6" type="hidden" value="250.0"/>
                 <input name="item_option_description_6" type="hidden" value=""/>
                 <input name="item_option_quantity_6" type="hidden" value="1"/>
                 <input name="item_option_currency_6" type="hidden" value="GBP"/>
-                <input name="shopping-cart.item-options.items.item-6.digital-content.url" type="hidden" value="http://xdebug.org/downloads.php"/>
+                <input name="shopping-cart.item-options.items.item-6.digital-content.url" type="hidden" value="http://xdebug.org/donate-thanks.php"/>
             </td>
             <td align="left" width="1%">
                 <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=744876371445067&amp;w=117&amp;h=48&amp;style=white&amp;variant=text&amp;loc=en_US" type="image"/>
