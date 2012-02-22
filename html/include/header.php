@@ -40,7 +40,7 @@
 		p        { line-height: 1.5em; }
 		p.intro  { font-style: italic; }
 		p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
-		p.donate { text-align: center; font-size: 80%; margin: 0; margin-top: 1em; }
+		p.buy-support { text-align: center; font-size: 80%; margin: 0; }
 		.serif   { line-height: 1.5em; }
 		.quote   { font-family: sans-serif; }
         .mk      { color: #004411; font-weight: bold; }
