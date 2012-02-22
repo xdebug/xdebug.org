@@ -21,6 +21,11 @@ $no_page_selected = true;
 $load_page = '';
 $tabFields = array();
 
+$pages = array(
+	'install', 'display', 'stack_trace', 'execution_trace',
+	'profiler', 'remote', 'code_coverage', 'faq'
+);
+
 if ( isset( $_GET['action'] ) )
 {
 	$action = urldecode( preg_replace( '/[^a-z0-9_]/', '', $_GET['action'] ) );
@@ -37,18 +42,38 @@ if ( isset( $_GET['action'] ) )
 		case 'faq':
 		case 'all_settings':
 		case 'all_functions':
+		case 'all':
 			$no_page_selected = false;
 			$load_page = $action;
 	}
 
 }
 ?>
-<div id="menu">
+<div id="menu-docs">
 <?php include "include/menu-docs.php"; ?>
+</div>
 <?php
 	if ( $load_page !== '' )
 	{
-		if ( $load_page == 'all_settings' )
+		if ( $load_page == 'all' )
+		{
+			foreach ( $pages as $page )
+			{
+				$feature = $features[$page];
+				echo "<h1>", $feature[0], "</h1>\n";
+				echo "<p class='intro'>{$feature[2]}</p>\n";
+				echo "<hr class='light'/>\n";
+				echo add_links( $feature[3] ). "\n";
+				echo "<hr style='clear: both'/>\n";
+				do_related_settings( $feature[1] );
+				do_related_functions( $feature[1] );
+			}
+			echo "<hr />\n";
+			echo "<h1>Reference</h1>\n";
+			do_related_settings( FUNC_ALL );
+			do_related_functions( FUNC_ALL );
+		}
+		else if ( $load_page == 'all_settings' )
 		{
 			$feature = $features[$load_page];
 			echo "<p class='intro'>{$feature[2]}</p>\n";

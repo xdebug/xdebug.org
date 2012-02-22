@@ -8,96 +8,7 @@
 	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP." />
 	<meta name="KEYWORDS" content="derick, rethans, opensrc, php, php4, xml, xhtml, xml-rpc, soap, blog, weblog" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick @ php dot net or opensrc @ EFNet" />
-	<style type="text/css">
-		body, table, td, table.table, table.table-inner
-		         { margin: 0px; padding: 0px; }
-		table.table, table.table-inner
-                 { border: solid #777; border-width: thin; margin: 0px; padding: 0px; border-spacing: 0px; border-collapse: collapse; }
-        table.table-inner { width: 100%; margin: 10px; }
-		.hide    { visibility: hidden; display: none; }
-		body     { background-color: white; }
-		#sidebar      { font-size: 85%; }
-	    table.table th { border: solid #777; padding: 3px; border-width: thin; }
-	    table.table td { border: solid #aaa; padding: 3px; border-width: thin; }
-		td		 { text-align: left; vertical-align: top; }
-		td.head  { vertical-align: bottom; }
-		body     { font-family: sans-serif; }
-		th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
-		td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
-
-		#flickr { margin: 20px; }
-
-		tt       { font-family: monospace; background-color: #eaffeb; }
-		img      { border: 0px; vertical-align: bottom; }
-		img.l    { margin-right: 10px; margin-top: 10px; margin-bottom: 10px; }
-		img.r    { margin-left: 10px; margin-top: 10px; margin-bottom: 10px; }
-		
-		a        { text-decoration: underline; color: #116633; }
-		a:hover  { color: #004411 }
-		hr       { color: #ffffff; border: none; border-top: 1px solid #004411; height: 1px; }
-		hr.light { border-top: 1px solid #ebefec; }
-		
-		p        { line-height: 1.5em; }
-		p.intro  { font-style: italic; }
-		p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
-		p.buy-support { text-align: center; font-size: 80%; margin: 0; }
-		.serif   { line-height: 1.5em; }
-		.quote   { font-family: sans-serif; }
-        .mk      { color: #004411; font-weight: bold; }
-     	.fin	 { color: #004411; }
-        .sans	 { font-family: sans-serif; font-weight: bold; color: #003300; }
-        .date    { display: block; margin-bottom: 6px; }
-        .sc      { font-variant: small-caps; }
-        .st      { text-decoration: line-through; }
-        .copy    { font-size: 70%; line-height: 1.5em; color: #999999; }
-		p.center { text-align: center; }
-        .pause   { display: block; color: #004411;
-                   margin-top: 24px; margin-bottom: 8px; text-align: center; }
-		span.filename { font-family: sans-serif; }
-                   
-        acronym, abbr
-                 { font-variant: small-caps; text-decoration: none; border-bottom: 0;}
-
-		dt       { margin-left: 20px; margin-top: 10px; font-weight: bold; }
-		dt.historical { color: #bbbbbb; }
-		dd       { margin-left: 40px; margin-bottom: 0px; }
-		dd.red   { margin-left: 40px; margin-bottom: 10px; color: #dd0000; }
-		li.red   { color: #dd0000; }
-		dd.orange{ margin-left: 40px; margin-bottom: 10px; color: #ffc300; }
-		li.orange{ color: #ffc300; }
-		dd.green { margin-left: 40px; margin-bottom: 10px; color: #00bb00; }
-		li.green { color: #00bb00; }
-		dl.status { margin-left: -20px; padding-left: 0px; }
-		ul.status { margin-left: 25px; padding-left: 0px; }
-		dl.functionlist, dl.faq { font-family: sans-serif; font-weight: normal; }
-		dl.functionlist dt { margin-top: 3px; }
-		dl.faq dt { margin-left: 20px; margin-bottom: 5px; }
-		dl.faq dd { margin-left: 20px; margin-top: 5px; }
-		ol li { margin-bottom: 5px; }
-
-		div.settings div.name, div.functions div.name { font-size: 100%; font-weight: bold; }
-		div.settings span.type, div.functions div.name span.type { font-style: italic; }
-		div.settings span.default { font-style: italic; }
-		div.functions div.short-description { font-style: italic; }
-		div.version { font-style: italic; font-size: 80%; }
-
-		dt.main { font-weight: normal; color: #116633; }
-		dd.main { margin-left: 20px; }
-
-		pre { margin-left: 20px; line-height: 1.5em; }
-		pre.shell { margin-left: 0px; }
-		div.example, pre.example, pre.literal-block { margin-left: 30px; margin-right: 30px; background-color: #eaffeb; line-height: 1.25em; }
-		div.example { margin-top: 1em; margin-bottom: 1em; }
-
-		div.example-returns { margin-left: 30px; margin-right: 30px; background-color: #f3ffea; line-height: 1.25em; margin-bottom: 1em; }
-		div.example-returns pre { margin-left: 0px; margin-right: 0px; }
-
-		h1 { font-variant: small-caps; font-size: 150% }
-		h2 { font-variant: small-caps; font-size: 130% }
-		h3 { font-variant: small-caps; font-size: 120% }
-
-		code { background-color: #eaffeb; }
-	</style>
+	<link type="text/css" rel="stylesheet" href="/core.css"/>
 <?php
 	if ( !empty( $tabFields ) )
 	{
@@ -135,7 +46,7 @@ YAHOO.example.init();
 	<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; background: url(/images/topleft.gif);"><img align="right" src="/images/xdebug.gif" alt="Xdebug"/></td>
+			<td class="head" style="height: 64px; background: url(/images/topleft.gif);"><img id="logo" align="right" src="/images/xdebug.gif" alt="Xdebug"/></td>
 			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
 		</tr>
 <?php

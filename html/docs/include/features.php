@@ -14,6 +14,13 @@ $features = array(
 		''
 	),
 
+	'all' => array(
+		'The full documentation',
+		FUNC_ALL,
+		'',
+		''
+	),
+
 	'install' => array(
 		'Installation',
 		FUNC_INSTALL,

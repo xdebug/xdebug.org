@@ -12,7 +12,7 @@
 </div>
 <br />
 
-<div style="float: right; text-align: center; width: 200px; border: 1px solid rgba( 0, 68, 17, 0.6); margin-right: 20px; margin-left: 20px; padding: 5px;">
+<div id="support" style="float: right; text-align: center; width: 200px; border: 1px solid rgba( 0, 68, 17, 0.6); margin-right: 20px; margin-left: 20px; padding: 5px;">
 <p class="buy-support">
 If you like Xdebug, please consider buying a "<a href="/buy-support.php">support agreement</a>".
 </p>
