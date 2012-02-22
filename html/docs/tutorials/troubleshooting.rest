@@ -1,0 +1,27 @@
+=====================
+Troubleshooting Guide
+=====================
+
+Connection
+==========
+
+
+Xdebug side
+===========
+
+Can PHP/Xdebug connect to the client machine?
+---------------------------------------------
+
+Is Xdebug configured to talk to the client machine?
+---------------------------------------------------
+
+- address/remote_connect_back
+- port
+
+
+
+IDE side
+========
+
+- port
+- 
