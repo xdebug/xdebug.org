@@ -222,6 +222,10 @@ class xdebugVersion
 		{
 			return "Debug builds are not supported on Windows.";
 		}
+		if ( $this->windows && $this->winCompiler == 6 )
+		{
+			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC9.";
+		}
 		if ( $this->windows && $this->winCompiler == 8 )
 		{
 			return "The compiler (MS VC8) that this PHP was build with, is not supported.";
