@@ -19,12 +19,23 @@
 
 <?php
 /*
-:'<,'>s/\#\(\d\+\)/<?php bug(\1); ?>/
+:'<,'>s/bug \#\(\d\+\)/<?php bug(\1); ?>/
 */
 ?>
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_1_4'></a>[2012-03-12] &mdash; Xdebug 2.1.4</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(788); ?>: Collect errors eats fatal errors.</dd>
+<dd>Fixed <?php bug(787); ?>: Segmentation Fault with PHP header_remove().</dd>
+<dd>Fixed <?php bug(778); ?>: Xdebug session in Eclipse crash whenever it run into simplexml_load_string call.</dd>
+<dd>Fixed <?php bug(756); ?>: Added support for ZEND_*_*_OBJ and self::*.</dd>
+<dd>Fixed <?php bug(747); ?>: Still problem with error message and soap client / soap server.</dd>
+<dd>Fixed <?php bug(744); ?>: new lines in a PHP file from Windows are displayed with an extra white line with var_dump().</dd>
+<dd>Fixed an issue with debugging and the eval command.</dd>
+<dd>Fixed compilation with ZTS on PHP &lt; 5.3.</dd>
+
 <dt><a name='x_2_1_3'></a>[2012-01-25] &mdash; Xdebug 2.1.3</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(725); ?>: EG(current_execute_data) is not checked in xdebug.c, xdebug_statement_call.</dd>
