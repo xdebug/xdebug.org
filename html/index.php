@@ -19,7 +19,7 @@
 <dd class="main">
 <p>Xdebug 2.1.4 is out! This is the fourth bug fix release of Xdebug 2.1.
 Xdebug 2.1.4 addresses a few bugs. It is likely going to be the last release
-for the Xdebug 2.1 series as Xdebug 2.2 is coming up soon.  Please not that
+for the Xdebug 2.1 series as Xdebug 2.2 is coming up soon.  Please note that
 Xdebug 2.1 is <b>not</b> compatible with PHP 5.4.</p>
 
 <p>The full change log can be found on the <a
