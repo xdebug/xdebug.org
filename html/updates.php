@@ -20,11 +20,39 @@
 <?php
 /*
 :'<,'>s/bug \#\(\d\+\)/<?php bug(\1); ?>/
+:'<,'>s/issue \#\(\d\+\)/<?php bug(\1); ?>/
 */
 ?>
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_0rc1'></a>[2012-03-13] &mdash; Xdebug 2.2.0rc1</dt>
+<dd><h3>Added features</h3></dd>
+<dd>Support for PHP 5.4.</dd>
+<dd>Added ANSI colour output for the shell. (Including patches by Michael Maclean)</dd>
+<dd>Added var_dump() overloading on the command line (<?php bug(457); ?>).</dd>
+<dd>Added better support for closures in stack and function traces.</dd>
+<dd>Added the size of arrays to the overloaded variable output, so that you know how many elements there are.</dd>
+<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?php bug(660); ?>). (Patch by Hannes Magnusson)</dd>
+<dd>Added the method call type to xdebug_get_function_stack() (<?php bug(695); ?>). </dd>
+<dd>Added extra information to error printouts to tell that the error suppression operator has been ignored due to xdebug.scream.</dd>
+<dd>Added a error-specific CSS class to stack traces.</dd>
+
+<dd><h3>New settings</h3></dd>
+<dd>xdebug.cli_color for colouring output on the command line (Unix only).</dd>
+<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?php bug(517); ?>). (Patch by Patrick Allaert)</dd>
+<dd>Added support for the 'U' format specifier for function trace and profiler filenames.</dd>
+
+<dd><h3>Changes</h3></dd>
+<dd>Improved performance by lazy-initializing data structures.</dd>
+<dd>Improved code coverage performance. (Including some patches by Taavi Burns)</dd>
+<dd>Improved compatibility with KCacheGrind.</dd>
+<dd>Improved logging of remote debugging connections, by added connection success/failure logging to the xdebug.remote_log functionality.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>No additional bug fixes besides the ones from the 2.1 branch up til Xdebug 2.1.4.</dd>
+
+
 <dt><a name='x_2_1_4'></a>[2012-03-12] &mdash; Xdebug 2.1.4</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(788); ?>: Collect errors eats fatal errors.</dd>

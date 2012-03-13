@@ -15,6 +15,28 @@
 
 <dl class="main">
 
+<dt class="main">[2012-03-13]</dt>
+<dd class="main">
+<p>Xdebug 2.2.0RC1 is out! This is the first release candidate of Xdebug 2.2. 
+The main feature is <i>PHP 5.4</i> support, but there a lot of other
+changes as well. There are a few performance improvements, as well as some new
+functionality for developing on the command line.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_2_0rc1">updates</a> page and the source code and Windows
+binaries can be found on the <a href="/download.php">downloads</a> page.</p>
+
+<p>Please note that this is a <b>release candidate</b> and not guaranteed to be
+free of bugs. If you have issues, please file them in <a
+href="http://bugs.xdebug.org/bug_report_page.php">the issue tracker</a>. Please
+try to provide enough information so that I can reproduce the issue. See <a
+href="/support.php">here</a> for some hints.</p>
+
+<p>I've also recently added the option of <a href='/buy-support.php'>buying a
+"support" contact</a>. If you find Xdebug a valuable tool, you might want to
+look into this to support Xdebug's development.</p>
+</dd>
+
 <dt class="main">[2012-03-12]</dt>
 <dd class="main">
 <p>Xdebug 2.1.4 is out! This is the fourth bug fix release of Xdebug 2.1.
@@ -25,10 +47,6 @@ Xdebug 2.1 is <b>not</b> compatible with PHP 5.4.</p>
 <p>The full change log can be found on the <a
 href="/updates.php#x_2_1_4">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>
-
-<p>I've also recently added the option of <a href='/buy-support.php'>buying a
-"support" contact</a>. If you find Xdebug a valuable tool, you might want to
-look into this to support Xdebug's development.</p>
 </dd>
 
 <dt class="main">[2012-01-25]</dt>
