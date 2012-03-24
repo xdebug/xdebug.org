@@ -70,31 +70,34 @@ they will always show this information.",
 
 	'var_display_max_children' => array(
 		'integer', 128, null,
-		"Controls the amount of array children and object's properties are shown
+		"<p>Controls the amount of array children and object's properties are shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
-not have any influence on the number of children that is send to the client
-through the [FEAT:remote] feature.",
+[CFG:show_local_vars] or through [FEAT:execution_trace].</p>
+<p>To disable any limitation, use <i>-1</i> as value.</p>
+<p>This setting does not have any influence on the number of children that is
+send to the client through the [FEAT:remote] feature.</p>",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
 	'var_display_max_data' => array(
 		'integer', 512, null,
-		"Controls the maximum string length that is shown
+		"<p>Controls the maximum string length that is shown
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
-not have any influence on the amount of data that is send to the client through
-the [FEAT:remote] feature.",
+[CFG:show_local_vars] or through [FEAT:execution_trace].
+<p>To disable any limitation, use <i>-1</i> as value.</p>
+<p>This setting does not have any influence on the number of children that is
+send to the client through the [FEAT:remote] feature.</p>",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
 	'var_display_max_depth' => array(
 		'integer', 3, null,
-		"Controls how many nested levels of array elements and object properties are
+		"<p>Controls how many nested levels of array elements and object properties are
 when variables are displayed with either [FUNC:xdebug_var_dump],
-[CFG:show_local_vars] or through [FEAT:execution_trace]. This setting does
-not have any influence on the depth of children that is send to the client
-through the [FEAT:remote] feature.",
+[CFG:show_local_vars] or through [FEAT:execution_trace].</p>
+<p>To disable any limitation, use <i>-1</i> as value.</p>
+<p>This setting does not have any influence on the number of children that is
+send to the client through the [FEAT:remote] feature.</p>",
 		FUNC_STACK_TRACE | FUNC_FUNCTION_TRACE | FUNC_VAR_DUMP
 	),
 
