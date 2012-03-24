@@ -31,7 +31,7 @@ $features = array(
 <p>
 There are a few precompiled modules for Windows, they are all for the non-debug
 version of PHP. You can get those at the <a href='/download.php'>download</a>
-page. Follow <a href='/find-binary.php'>these instructions</a> to get Xdebug
+page. Follow <a href='/wizard.php'>these instructions</a> to get Xdebug
 installed.
 </p>
 
@@ -77,7 +77,7 @@ You can also browse the source at <a href='https://github.com/derickr/xdebug'>ht
 <a name='compile'></a>
 <h2>Compiling</h2>
 
-<p>There is a <a href='/find-binary.php'>wizard</a> available that provides you
+<p>There is a <a href='/wizard.php'>wizard</a> available that provides you
 with the correct file to download, and which paths to use.</p>
 <p>
 You compile Xdebug separately from the rest of PHP.  Note, however,
@@ -1343,7 +1343,7 @@ to load Xdebug. This is <b>not</b> correct. In order to fix this issue, please
 look for a line <code>extension=xdebug.so</code> in any of the INI files that
 are listed under "Loaded Configuration File" and "Additional .ini files parsed"
 in the top block. Remove this line, and go back to the
-<a href="/find-binary.php">Tailored Installation Instructions</a>.</p>
+<a href="/wizard.php">Tailored Installation Instructions</a>.</p>
 </dd>
 
 <dt><a name="custom-phpize"></a>

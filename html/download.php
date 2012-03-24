@@ -32,7 +32,7 @@ PHP version, although the extension is built against the most current PHP
 version at that time. The VC<i>x</i> marker tells with which compiler the
 extension was built, and Non-thread-safe whether ZTS was disabled. Those
 qualifiers need to match the PHP version you're using. If you don't know which
-one you need, please refer to the <a href='/find-binary.php'>custom
+one you need, please refer to the <a href='/wizard.php'>custom
 installation instructions</a>.</p>
 
 <?php
