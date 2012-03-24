@@ -108,9 +108,9 @@ class xdebugVersion
 		}
 		else 
 		{
-			if (preg_match( '/extension_dir([ =>\t]*)([^ =>\t]+)/', $data, $m ) )
+			if (preg_match( '/extension_dir =>(.*)=>/', $data, $m ) )
 			{
-				$this->extensionDir = $m[2];
+				$this->extensionDir = trim( $m[1] );
 			}
 		}
 
@@ -333,6 +333,7 @@ class xdebugVersion
 		}
 		$line .= ' = ';
 
+		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 		$line .= $this->extensionDir . $this->dirSep;
 
 		if ( $this->windows )
@@ -343,6 +344,7 @@ class xdebugVersion
 		{
 			$line .= 'xdebug.so';
 		}
+		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 		return $line;
 	}
 }

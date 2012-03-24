@@ -29,6 +29,9 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 		$iniFile = $x->determineIniFile();
 		$iniLine = $x->determineIniLine();
 
+		// add quotes when necessary
+		$x->extensionDir = strpos( $x->extensionDir, ' ') === false ? $x->extensionDir : "\"{$x->extensionDir}\"";
+
 		if ( $x->xdebugAsPhpExt && !$x->xdebugAsZendExt )
 		{
 			echo "<h2>Instructions</h2>\n";
