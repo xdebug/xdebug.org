@@ -112,6 +112,14 @@ class xdebugVersion
 			{
 				$this->extensionDir = trim( $m[1] );
 			}
+			else if (preg_match( '/extension_dir (.*)/', $data, $m ) )
+			{
+				// It's tricky as this is all reliant on the browser
+				$len = strlen( $m[1] );
+				if ( ( $len % 2 == 1 ) && $m[1][(int) ($len / 2) - 1] == ' ') {
+					$this->extensionDir = trim( substr( $m[1], 0, (int) ($len / 2) - 1 ) );
+				}
+			}
 		}
 
 		if ( preg_match( '/PHP Extension Build([ =>\t]+)(API.*)/', $data, $m ) )
