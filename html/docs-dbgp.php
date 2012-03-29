@@ -17,7 +17,7 @@
 <tr><th class="docinfo-name">Version:</th>
 <td>1.0</td></tr>
 <tr><th class="docinfo-name">Status:</th>
-<td>draft 16</td></tr>
+<td>draft 17</td></tr>
 <tr><th class="docinfo-name">Authors:</th>
 <td>Shane Caraveo, ActiveState &lt;<a class="reference external" href="mailto:shanec&#64;ActiveState.com">shanec&#64;ActiveState.com</a>&gt;
 <br />Derick Rethans &lt;<a class="reference external" href="mailto:derick&#64;derickrethans.nl">derick&#64;derickrethans.nl</a>&gt;</td></tr>
@@ -475,6 +475,15 @@ line arguments, and should be parseable by common code such as getopt,
 or Pythons Cmd module:</p>
 <pre class="literal-block">
 command -a value -b value ...
+</pre>
+<p>If a value for an option includes a space, the value needs to be
+encoded. You can encode values by encasing them in double quotes:</p>
+<pre class="literal-block">
+property_get -i 5 -n &quot;$x['a b']&quot; -d 0 -c 0 -p 0
+</pre>
+<p>It is also possible to use escape characters in quoted strings:</p>
+<pre class="literal-block">
+property_get -i 6 -n &quot;$x[\&quot;a b\&quot;]&quot; -d 0 -c 0 -p 0
 </pre>
 <p>All numbers in the protocol are base 10 string representations, unless
 the number is noted to be debugger engine specific (eg. the address
@@ -1186,6 +1195,10 @@ hit_value [default]</dd>
 <tr><td>exception</td>
 <td>Exception name for <em>exception</em> type breakpoints.</td>
 </tr>
+<tr><td>expression</td>
+<td>The expression used for <em>conditional</em> and <em>watch</em> type
+breakpoints</td>
+</tr>
 </tbody>
 </table>
 </blockquote>
@@ -1330,6 +1343,7 @@ breakpoint_get -i TRANSACTION_ID -d BREAKPOINT_ID
                 lineno=&quot;LINENO&quot;
                 function=&quot;FUNCTION&quot;
                 exception=&quot;EXCEPTION&quot;
+                expression=&quot;EXPRESSION&quot;
                 hit_value=&quot;HIT_VALUE&quot;
                 hit_condition=&quot;HIT_CONDITION&quot;
                 hit_count=&quot;HIT_COUNT&quot;&gt;
@@ -2139,6 +2153,22 @@ may be an expression or a code segment to be executed.  Languages, such
 as Python, which have separate statements for these, will need to handle
 both appropriately.  For implementations that need to be more explicit, use
 the expr or exec commands below.</p>
+<p>The eval and expr commands can include the following optional parameter:</p>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="97%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>-p</td>
+<td>data page: optional for arrays, hashes, objects, etc.; debugger
+engine should assume zero if not provided — similar to the -p
+parameter for property_get.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p>IDE</p>
 <pre class="literal-block">
 eval -i transaction_id -- {DATA}
@@ -2560,6 +2590,22 @@ next line of code</td>
 </div>
 <div class="section" id="a-changelog">
 <h1><a class="toc-backref" href="#id75">A. ChangeLog</a></h1>
+<p>2012-03-29</p>
+<ul class="simple">
+<li>6 Clarified what &quot;Pythons Cmd module&quot; means for quoting values that contain
+spaces.</li>
+</ul>
+<p>2010-01-20 - draft 17</p>
+<ul class="simple">
+<li>7.6 / 7.6.2 Added the missing &quot;expression&quot; argument to information that can
+be stored for breakpoints, and returned through breakpoint_get.</li>
+</ul>
+<p>2009-12-30</p>
+<ul class="simple">
+<li>8.3 Added the -p parameter to eval and expr, to control which pages are
+shown in case the returned property is an array, hash or object with more
+than &quot;pagesize&quot; children.</li>
+</ul>
 <p>2007-07-14 - draft 16</p>
 <ul class="simple">
 <li>6.3 Fixed binary encoding comments regarding data.</li>
