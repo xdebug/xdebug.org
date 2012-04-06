@@ -115,9 +115,10 @@ class xdebugVersion
 			else if (preg_match( '/extension_dir (.*)/', $data, $m ) )
 			{
 				// It's tricky as this is all reliant on the browser
+				$m[1] = trim( $m[1] );
 				$len = strlen( $m[1] );
-				if ( ( $len % 2 == 1 ) && $m[1][(int) ($len / 2) - 1] == ' ') {
-					$this->extensionDir = trim( substr( $m[1], 0, (int) ($len / 2) - 1 ) );
+				if ( ( $len % 2 == 1 ) && $m[1][(int) floor($len / 2)] == ' ') {
+					$this->extensionDir = trim( substr( $m[1], 0, (int) floor($len / 2) ) );
 				}
 			}
 		}
@@ -284,6 +285,12 @@ class xdebugVersion
 					break;
 				case '5.3':
 					if ( $this->winCompiler != 6 && $this->winCompiler != 9 )
+					{
+						return false;
+					}
+					break;
+				case '5.4':
+					if ( $this->winCompiler != 9 )
 					{
 						return false;
 					}
