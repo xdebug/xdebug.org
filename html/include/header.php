@@ -98,7 +98,7 @@ YAHOO.example.init();
 	function refer ()
 	{
 		if (isset ($_SERVER["HTTP_REFERER"]) && !empty ($_SERVER["HTTP_REFERER"])) {
-			$ref = $_SERVER["HTTP_REFERER"];
+			$ref = mysql_real_escape_string( $_SERVER["HTTP_REFERER"] );
 
 			$res = @mysql_query ("SELECT * FROM refer WHERE refer = '$ref'");
 			if (@mysql_num_rows ($res) == 0) {
