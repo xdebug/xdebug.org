@@ -26,6 +26,16 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_0rc2'></a>[2012-04-22] &mdash; Xdebug 2.2.0rc2</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
+<dd>Fixed <?php bug(794); ?>: Allow coloured output on Windows.</dd>
+<dd>Fixed <?php bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
+<dd>Fixed <?php bug(774); ?>: Apache crashes on header() calls.</dd>
+<dd>Fixed <?php bug(764); ?>: Tailored Installation instructions do not work.</dd>
+<dd>Fixed <?php bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
+<dd>Fixed <?php bug(662); ?>: idekey is set to running user.</dd>
+
 <dt><a name='x_2_2_0rc1'></a>[2012-03-13] &mdash; Xdebug 2.2.0rc1</dt>
 <dd><h3>Added features</h3></dd>
 <dd>Support for PHP 5.4.</dd>
