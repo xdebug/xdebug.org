@@ -87,6 +87,8 @@ h3 { font-variant: small-caps; font-size: 120% }
 
 code { background-color: #eaffeb; }
 
+span.md5 { font-size: 75%; color: gray }
+
 @media print {
 	div#menu { display: none; }
 	div#menu-docs { display: none; }
