@@ -112,12 +112,12 @@ class xdebugVersion
 			{
 				$this->extensionDir = trim( $m[1] );
 			}
-			else if (preg_match( '/extension_dir (.*)/', $data, $m ) )
+			else if (preg_match( '/extension_dir\s(.*)/', $data, $m ) )
 			{
 				// It's tricky as this is all reliant on the browser
 				$m[1] = trim( $m[1] );
 				$len = strlen( $m[1] );
-				if ( ( $len % 2 == 1 ) && $m[1][(int) floor($len / 2)] == ' ') {
+				if ( ( $len % 2 == 1 ) && (($m[1][(int) floor($len / 2)] == ' ') || ($m[1][(int) floor($len / 2)] == "\t")) ) {
 					$this->extensionDir = trim( substr( $m[1], 0, (int) floor($len / 2) ) );
 				}
 			}
