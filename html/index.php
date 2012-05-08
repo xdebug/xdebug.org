@@ -17,7 +17,7 @@
 
 <dt class="main">[2012-05-08]</dt>
 <dd class="main">
-<p>Xdebug 2.2.0 is out! This is the first version of Xdebug that support PHP
+<p>Xdebug 2.2.0 is out! This is the first version of Xdebug that supports PHP
 5.4. Besides PHP 5.4 support, this release introduces a few new features into
 Xdebug.  The main one is support for an overloaded var_dump() on the command
 line. For other improvements, please refer to the <a
