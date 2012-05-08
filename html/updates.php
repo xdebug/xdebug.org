@@ -132,7 +132,6 @@
 <dd>Prevent Xdebug 2.1.x to build with PHP 5.4.</dd>
 
 
-<dt><a name='x_2_1_1'></a>[2011-03-28] &mdash; Xdebug 2.1.1</dt>
 <dt><a name='x_2_1_2'></a>[2011-07-28] &mdash; Xdebug 2.1.2</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(622); ?>: Working with eval() code is inconvenient and difficult.</dd>
