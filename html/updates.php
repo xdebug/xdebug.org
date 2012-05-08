@@ -26,6 +26,45 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_0'></a>[2012-05-08] &mdash; Xdebug 2.2.0</dt>
+<dd><h3>Added features</h3></dd>
+<dd>Support for PHP 5.4.</dd>
+<dd>Added ANSI colour output for the shell. (Including patches by Michael Maclean)</dd>
+<dd>Added var_dump() overloading on the command line (<?php bug(457); ?>).</dd>
+<dd>Added better support for closures in stack and function traces.</dd>
+<dd>Added the size of arrays to the overloaded variable output, so that you know how many elements there are.</dd>
+<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?php bug(660); ?>). (Patch by Hannes Magnusson)</dd>
+<dd>Added the method call type to xdebug_get_function_stack() (<?php bug(695); ?>). </dd>
+<dd>Added extra information to error printouts to tell that the error suppression operator has been ignored due to xdebug.scream.</dd>
+<dd>Added a error-specific CSS class to stack traces.</dd>
+
+<dd><h3>New settings</h3></dd>
+<dd>xdebug.cli_color for colouring output on the command line (Unix only).</dd>
+<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?php bug(517); ?>). (Patch by Patrick Allaert)</dd>
+<dd>Added support for the 'U' format specifier for function trace and profiler filenames.</dd>
+
+<dd><h3>Changes</h3></dd>
+<dd>Improved performance by lazy-initializing data structures.</dd>
+<dd>Improved code coverage performance. (Including some patches by Taavi Burns)</dd>
+<dd>Improved compatibility with KCacheGrind.</dd>
+<dd>Improved logging of remote debugging connections, by added connection success/failure logging to the xdebug.remote_log functionality.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(827); ?>: Enabling Xdebug causes phpt tests to fail because of var_dump() formatting issues.</dd>
+<dd>Fixed <?php bug(823); ?>: Single quotes are escaped in var_dumped string output.</dd>
+<dd>Fixed <?php bug(819); ?>: Xdebug 2.2.0RC2 can't stand on a breakpoint more than 30 seconds.</dd>
+<dd>Fixed <?php bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
+<dd>Fixed <?php bug(797); ?>: Xdebug crashes when fetching static properties.
+<dd>Fixed <?php bug(794); ?>: Allow coloured output on Windows.</dd>
+<dd>Fixed <?php bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
+<dd>Fixed <?php bug(774); ?>: Apache crashes on header() calls.</dd>
+<dd>Fixed <?php bug(764); ?>: Tailored Installation instructions do not work.</dd>
+<dd>Fixed <?php bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
+<dd>Fixed <?php bug(728); ?>: Profiler reports __call() invocations confusingly/wrongly.</dd>
+<dd>Fixed <?php bug(687); ?>: Xdebug does not show dynamically defined variable.</dd>
+<dd>Fixed <?php bug(662); ?>: idekey is set to running user.</dd>
+<dd>Fixed <?php bug(627); ?>: Added the realpath check.</dd>
+
 <dt><a name='x_2_2_0rc2'></a>[2012-04-22] &mdash; Xdebug 2.2.0rc2</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
