@@ -908,9 +908,11 @@ Windows you can get precompiled binaries of KCacheGrind at
 functionality is different from KCacheGrind so the section that documents the
 use of KCacheGrind on this page doesn\'t apply to this program. There is also
 an alternative profile information presentation tool called
-<a href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a> and a web
-based front-end called
-<a href="http://code.google.com/p/webgrind/">Webgrind</a>.</p>
+<a href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a>, a web
+based front-end called <a
+href="http://code.google.com/p/webgrind/">Webgrind</a> and a Java based tool
+called <a
+href="http://sourceforge.net/projects/xcallgraph/">XCallGraph</a>.</p>
 
 <p>In case you can not use KDE (or do not want to use KDE) the kcachegrind
 package also comes with a perl script "ct_annotate" which produces ASCII output
