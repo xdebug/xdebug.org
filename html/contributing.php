@@ -76,8 +76,8 @@ features</a> except that you make a branch of <b>xdebug_2_2</b> instead of
 	feature after the <tt>issue681</tt> part, for example:
 	<tt>issue623-debug-static-properties</tt>.</li>
 <li>Work on the code, and add one or more tests in the tests directory, with as
-	name <tt>tests/issue00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
-	<tt>tests/issue00681.phpt</tt>.</li>
+	name <tt>tests/bug00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
+	<tt>tests/bug00.phpt</tt>.</li>
 <li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
@@ -116,8 +116,8 @@ except that you make a branch of <b>master</b> instead of
 	feature after the <tt>issue681</tt> part, for example:
 	<tt>issue623-debug-static-properties</tt>.</li>
 <li>Work on the code, and add one or more tests in the tests directory, with as
-	name <tt>tests/issue00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
-	<tt>tests/issue00681.phpt</tt>.</li>
+	name <tt>tests/bug00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
+	<tt>tests/bug00.phpt</tt>.</li>
 <li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
