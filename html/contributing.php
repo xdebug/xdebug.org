@@ -43,8 +43,8 @@ need to follow the instructions below.
 <li>Add the original repository as remote (after removing the old one):<br/>
 	<tt>git remote add upstream git://github.com/derickr/xdebug.git &amp;&amp; git fetch upstream</tt>
 </li>
-<li>Add a tracking branch for xdebug 2.1:<br/>
-	<tt>git checkout --track origin/xdebug_2_1</tt>
+<li>Add a tracking branch for xdebug 2.2:<br/>
+	<tt>git checkout --track origin/xdebug_2_2</tt>
 </li>
 </ol>
 
@@ -55,17 +55,17 @@ need to follow the instructions below.
 	<tt>cd xdebug</tt>
 </li>
 <li>Run:<br/><tt>git checkout master &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/master</tt></li>
-<li>Run:<br/><tt>git checkout xdebug_2_1 &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_1</tt></li>
+<li>Run:<br/><tt>git checkout xdebug_2_2 &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_2</tt></li>
 </ol>
 
 <a name="bugfix"></a>
 <h3>Working on a bug fix</h3>
 <p>The steps for this are the same as for <a href='#newfeature'>working on new
-features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
+features</a> except that you make a branch of <b>xdebug_2_2</b> instead of
 <b>master</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
-<li>Checkout the <tt>xdebug_2_1</tt> branch:<br/><tt>git checkout xdebug_2_1</tt>.</li>
+<li>Checkout the <tt>xdebug_2_2</tt> branch:<br/><tt>git checkout xdebug_2_2</tt>.</li>
 <li>Create a feature branch:<br/>
 	<tt>git checkout -b issue<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
@@ -82,7 +82,7 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
-	<tt>git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_1</tt></li>
+	<tt>git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_2</tt></li>
 <li>Push your changes to your remote repository:<br/>
 	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
@@ -102,7 +102,7 @@ features</a> except that you make a branch of <b>xdebug_2_1</b> instead of
 <h3>Working on a new feature</h3>
 <p>The steps for this are the same as for <a href='#bugfix'>fixing bugs</a>
 except that you make a branch of <b>master</b> instead of
-<b>xdebug_2_1</b>.</p>
+<b>xdebug_2_2</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
 <li>Checkout the <tt>master</tt> branch:<br/><tt>git checkout master</tt>.</li>
