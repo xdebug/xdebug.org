@@ -1,0 +1,17 @@
+Xdebug 2.2.0RC2 is out!
+<p>This is the second release candidate of Xdebug 2.2
+which addresses a few things that were found in the first release candidate.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_2_0rc2">updates</a> page and the source code and Windows
+binaries can be found on the <a href="/download.php">downloads</a> page.</p>
+
+<p>Please note that this is a <b>release candidate</b> and not guaranteed to be
+free of bugs. If you have issues, please file them in <a
+href="http://bugs.xdebug.org/bug_report_page.php">the issue tracker</a>. Please
+try to provide enough information so that I can reproduce the issue. See <a
+href="/support.php">here</a> for some hints.</p>
+
+<p>I've also recently added the option of <a href='/buy-support.php'>buying a
+"support" contact</a>. If you find Xdebug a valuable tool, you might want to
+look into this to support Xdebug's development.</p>

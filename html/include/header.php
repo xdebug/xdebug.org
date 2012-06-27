@@ -73,7 +73,24 @@ YAHOO.example.init();
 
 	@mysql_connect ('localhost', $login, $passwd);
 	@mysql_select_db ($db);
-	
+
+	function include_news()
+	{
+		$d = glob("news/*.txt");
+		sort($d);
+		$d = array_reverse( $d );
+
+		foreach ( $d as $item )
+		{
+			$date = preg_replace( '@^news/(.*).txt$@', '\1', $item );
+			$file = file( $item );
+			$title = array_shift( $file );
+			echo "<dt class='main'>[{$date}] - $title</dt>\n";
+			echo "<dd class='main'>\n";
+			echo join( '', $file );
+			echo "</dd>\n\n";
+		}
+	}
 
 	function ulink ($url)
 	{

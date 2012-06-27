@@ -1,0 +1,14 @@
+Xdebug 2.2.0 is out!
+<p>This is the first version of Xdebug that supports PHP
+5.4. Besides PHP 5.4 support, this release introduces a few new features into
+Xdebug.  The main one is support for an overloaded var_dump() on the command
+line. For other improvements, please refer to the <a
+href="/updates.php#x_2_2_0">updates</a> page.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_2_0">updates</a> page and the source code and Windows
+binaries can be found on the <a href="/download.php">downloads</a> page.</p>
+
+<p>I've also recently added the option of <a href='/buy-support.php'>buying a
+"support" contact</a>. If you find Xdebug a valuable tool, you might want to
+look into this to support Xdebug's development.</p>

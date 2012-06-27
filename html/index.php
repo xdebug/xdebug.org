@@ -15,42 +15,7 @@
 
 <dl class="main">
 
-<dt class="main">[2012-05-08]</dt>
-<dd class="main">
-<p>Xdebug 2.2.0 is out! This is the first version of Xdebug that supports PHP
-5.4. Besides PHP 5.4 support, this release introduces a few new features into
-Xdebug.  The main one is support for an overloaded var_dump() on the command
-line. For other improvements, please refer to the <a
-href="/updates.php#x_2_2_0">updates</a> page.</p>
-
-<p>The full change log can be found on the <a
-href="/updates.php#x_2_2_0">updates</a> page and the source code and Windows
-binaries can be found on the <a href="/download.php">downloads</a> page.</p>
-
-<p>I've also recently added the option of <a href='/buy-support.php'>buying a
-"support" contact</a>. If you find Xdebug a valuable tool, you might want to
-look into this to support Xdebug's development.</p>
-
-
-<dt class="main">[2012-04-22]</dt>
-<dd class="main">
-<p>Xdebug 2.2.0RC2 is out! This is the second release candidate of Xdebug 2.2
-which addresses a few things that were found in the first release candidate.</p>
-
-<p>The full change log can be found on the <a
-href="/updates.php#x_2_2_0rc2">updates</a> page and the source code and Windows
-binaries can be found on the <a href="/download.php">downloads</a> page.</p>
-
-<p>Please note that this is a <b>release candidate</b> and not guaranteed to be
-free of bugs. If you have issues, please file them in <a
-href="http://bugs.xdebug.org/bug_report_page.php">the issue tracker</a>. Please
-try to provide enough information so that I can reproduce the issue. See <a
-href="/support.php">here</a> for some hints.</p>
-
-<p>I've also recently added the option of <a href='/buy-support.php'>buying a
-"support" contact</a>. If you find Xdebug a valuable tool, you might want to
-look into this to support Xdebug's development.</p>
-</dd>
+<?php include_news(); ?>
 
 <dt class="main">[2012-03-13]</dt>
 <dd class="main">
