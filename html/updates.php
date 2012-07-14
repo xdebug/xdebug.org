@@ -26,6 +26,14 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_1'></a>[2012-07-15] &mdash; Xdebug 2.2.1</dt>
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(843); ?>: Text output depends on php locale.</dd>
+<dd>Fixed <?php bug(838); ?>/<?php bug(839); ?>/<?php bug(840); ?>: Debugging static properties crashes Xdebug.</dd>
+<dd>Fixed <?php bug(821); ?>: Variable assignments (beginning with =&gt;) should be indented one more scope.</dd>
+<dd>Fixed <?php bug(811); ?>: PHP Documentation Link.</dd>
+<dd>Fixed <?php bug(800); ?>: var_dump(get_class(new foo\bar')) add an extra "\" in class name.</dd>
+
 <dt><a name='x_2_2_0'></a>[2012-05-08] &mdash; Xdebug 2.2.0</dt>
 <dd><h3>Added features</h3></dd>
 <dd>Support for PHP 5.4.</dd>

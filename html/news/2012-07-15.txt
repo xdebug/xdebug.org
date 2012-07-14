@@ -1,0 +1,13 @@
+Xdebug 2.2.1 is out!
+<p>This is a bug-fix release for the 2.2 series. It addresses a few issues
+with debugging properties and static properties, as well as a few minor other
+things. You are strongly recommended to upgrade due to increased
+stability.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_2_1">updates</a> page and the source code and Windows
+binaries can be found on the <a href="/download.php">downloads</a> page.</p>
+
+<p>I've also recently added the option of <a href='/buy-support.php'>buying a
+"support" contact</a>. If you find Xdebug a valuable tool, you might want to
+look into this to support Xdebug's development.</p>
