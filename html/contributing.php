@@ -12,10 +12,10 @@
 <h2>Contributing</h2>
 
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
-href='https://github.com/derickr/xdebug'>github</a> and can be checked out with:
+href='https://github.com/xdebug/xdebug'>github</a> and can be checked out with:
 </p>
 <pre>
-git clone git://github.com/derickr/xdebug.git
+git clone git://github.com/xdebug/xdebug.git
 </pre>
 <p>
 If you think you want to fix a bug or work on a new feature, then you
@@ -24,11 +24,11 @@ need to follow the instructions below.
 <a name="setup"></a>
 <h3>Initial Set-up</h3>
 <ol>
-<li>Fork Xdebug on <a href='https://github.com/derickr/xdebug/fork_select'>github</a>.</li>
+<li>Fork Xdebug on <a href='https://github.com/xdebug/xdebug/fork_select'>github</a>.</li>
 <li>Clone the repository:<br/>
 	<tt>git clone git@github.com:<i>{your&nbsp;username}</i>/xdebug.git</tt><br/>
 	for example:<br />
-	<tt>git clone git@github.com:derickr/xdebug.git</tt>
+	<tt>git clone git@github.com:jamesbond/xdebug.git</tt>
 </li>
 <li>Change into the <tt>xdebug</tt> repository:<br/>
 	<tt>cd xdebug</tt>.
@@ -41,7 +41,7 @@ need to follow the instructions below.
 	<tt>git config user.name "Derick Rethans" &amp;&amp; git config user.email "derick@xdebug.org"</tt>
 </li>
 <li>Add the original repository as remote (after removing the old one):<br/>
-	<tt>git remote add upstream git://github.com/derickr/xdebug.git &amp;&amp; git fetch upstream</tt>
+	<tt>git remote add upstream git://github.com/xdebug/xdebug.git &amp;&amp; git fetch upstream</tt>
 </li>
 <li>Add a tracking branch for xdebug 2.2:<br/>
 	<tt>git checkout --track origin/xdebug_2_2</tt>
@@ -91,7 +91,7 @@ features</a> except that you make a branch of <b>xdebug_2_2</b> instead of
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
 	the branch you just created (<tt>issue681</tt>), and then select the "Pull
-	Request" button in the upper right. Select the user <tt>derickr</tt> as the
+	Request" button in the upper right. Select the user <tt>xdebug</tt> as the
 	recipient.</p>
 	<p>Alternatively you can nagivate to
 	<tt>https://github.com/<i>{username}</i>/xdebug/pull/new/issue{issue&nbsp;number}</tt>.</p>
@@ -131,7 +131,7 @@ except that you make a branch of <b>master</b> instead of
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
 	the branch you just created (<tt>issue681</tt>), and then select the "Pull
-	Request" button in the upper right. Select the user <tt>derickr</tt> as the
+	Request" button in the upper right. Select the user <tt>xdebug</tt> as the
 	recipient.</p>
 	<p>Alternatively you can nagivate to
 	<tt>https://github.com/<i>{username}</i>/xdebug/pull/new/issue{issue&nbsp;number}</tt>.</p>
