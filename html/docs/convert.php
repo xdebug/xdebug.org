@@ -195,6 +195,11 @@ $docbook = $xhtml->getAsDocbook();
 // echo $docbook->save(), "\n\n";
 $convertor = new drDocumentDoctookToTextConvertor();
 $rst = $convertor->convert( $docbook );
+/* If info[2] != NULL there are version constraints */
+$version = ";";
+if ($info[2]) {
+	$version = ";\n; Only in Xdebug versions {$info[2]}\n;";
+}
 
 $d = $rst->save();
 
@@ -203,7 +208,7 @@ $d = join( "\n; ", explode( "\n", $d ) );
 	echo <<<ENDL
 ; $w
 ; xdebug.$name
-;
+$version
 ; Type: {$info[0]}, Default value: {$info[1]}
 ;
 ; $d

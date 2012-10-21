@@ -29,7 +29,7 @@ ini_set(), but only in php.ini.",
 		FUNC_REMOTE
 	),
 	'manual_url' => array(
-		'string', 'http://www.php.net', null,
+		'string', 'http://www.php.net', "< 2.2.1",
 		"This is the base url for the links from the function traces and error
 message to the manual pages of the function from the message. It is advisable
 to set this setting to use the closest mirror.",
@@ -103,7 +103,7 @@ send to the client through the [FEAT:remote] feature.</p>",
 	),
 
 	'cli_color' => array(
-		'integer', 0, '2.2',
+		'integer', 0, '> 2.2',
 		'<p>If this setting is 1, Xdebug will color var_dumps and stack traces
 		output when in CLI mode and when the output is a tty. On Windows, the
 		<a href="http://adoxa.110mb.com/ansicon/">ANSICON</a> tool needs to be
@@ -125,7 +125,7 @@ the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-
 	),
 
 	'collect_assignments' => array(
-	    'boolean', 0, '2.1',
+	    'boolean', 0, '> 2.1',
 		"This setting, defaulting to 0, controls whether Xdebug should add
 variable assignments to function traces.",
 		FUNC_FUNCTION_TRACE
@@ -276,7 +276,7 @@ The possible format specifiers are:
 	),
 
 	'trace_enable_trigger' => array(
-		'boolean', 0, '2.2',
+		'boolean', 0, '> 2.2',
 		"When this setting is set to 1, you can trigger the generation of trace
 files by using the XDEBUG_TRACE GET/POST parameter, or set a cookie with the
 name XDEBUG_TRACE. This will then write the trace data to
@@ -309,14 +309,14 @@ variable was not present.",
 	),
 
 	'remote_cookie_expire_time' => array(
-		'integer', 3600, '2.1',
+		'integer', 3600, '> 2.1',
 		"This setting can be used to increase (or decrease) the time that the
 		remote debugging session stays alive via the session cookie.",
 		FUNC_REMOTE
 	),
 
 	'remote_connect_back' => array(
-		'boolean', 0, '2.1',
+		'boolean', 0, '> 2.1',
 		"If enabled, the [CFG:remote_host] setting is ignored and Xdebug will
 try to connect to the client that made the HTTP request. It checks
 the \$_SERVER['REMOTE_ADDR'] variable to find out which IP address to use.
@@ -485,7 +485,7 @@ this setting to 1, otherwise leave it set to 0.",
 	),
 
 	'overload_var_dump' => array(
-		'boolean', 1, '2.1',
+		'boolean', 1, '> 2.1',
 		"By default Xdebug overloads var_dump() with its own improved version
 		for displaying variables when the html_errors php.ini setting is set to
 		1. In case you do not want that, you can set this setting to 0, but
@@ -494,7 +494,7 @@ this setting to 1, otherwise leave it set to 0.",
 	),
 
 	'file_link_format' => array(
-		'string', '', '2.1',
+		'string', '', '> 2.1',
 		'<p>This setting determines the format of the links that are made in
 the display of stack traces where file names are used. This allows IDEs to set
 up a link-protocol that makes it possible to go directly to a line and file by
@@ -584,13 +584,13 @@ into the registry.</li>
 		FUNC_STACK_TRACE
 	),
 	'scream' => array(
-		'boolean', 0, '2.1',
+		'boolean', 0, '> 2.1',
 		"If this setting is 1, then Xdebug will disable the @ (shut-up)
 		operator so that notices, warnings and errors are no longer hidden.",
 		FUNC_BASIC
 	),
 	'coverage_enable' => array(
-		'boolean', 1, '2.2',
+		'boolean', 1, '> 2.2',
 		"If this setting is set to 0, then Xdebug will not set-up internal
 		structures to allow code coverage. This speeds up Xdebug quite a bit,
 		but of course, [FEAT:code_coverage] won't work.",
