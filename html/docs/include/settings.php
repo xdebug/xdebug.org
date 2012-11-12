@@ -451,14 +451,17 @@ specifiers.</p>
 
 	'dump.*' => array(
 		'string', "Empty", null,
-		"* = COOKIE, FILES, GET, POST, REQUEST, SERVER, SESSION. These seven
-settings control which data from the superglobals is shown when an error
-situation occurs. Each php.ini setting can consist of a comma seperated list of
-variables from this superglobal to dump, but make sure you do not add spaces in
-this setting. In order to dump the REMOTE_ADDR and the REQUEST_METHOD when an
-error occurs, add this setting:
+		"<p>* can be any of COOKIE, FILES, GET, POST, REQUEST, SERVER, SESSION.
+These seven settings control which data from the superglobals is shown when an
+error situation occurs.</p>
+<p>Each of those php.ini setting can consist of a comma seperated list of
+variables from this superglobal to dump, or <code>*</code> for all of them.
+Make sure you do not add spaces in this setting.</p>
+<p>In order to dump the REMOTE_ADDR and the REQUEST_METHOD when an error
+occurs, and all GET parameters, add these settings:</p>
 <pre>
 xdebug.dump.SERVER = REMOTE_ADDR,REQUEST_METHOD
+xdebug.dump.GET = *
 </pre>
 ",
 		FUNC_STACK_TRACE
