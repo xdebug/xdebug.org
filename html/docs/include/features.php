@@ -1300,10 +1300,14 @@ wrong?</dt>
 the necessary information to your URL. See the 
 <a href=\'remote#activate_debugger\'>documentation</a> for
 more information.</dd>
-<dd>A: Have you checked your firewall settings? Make sure the port Xdebug is listening on (default 9000) is not blocked.</dd>
-<dd>A: If you are running with SELinux you should make sure it is not preventing connections; 
-look for warnings about <code>name_connect</code> or anything related to the Xdebug port. You might have to allow access explicitly. 
-Visit <a href="http://sheltren.com/stop-disabling-selinux">this site</a> or search for "selinux name_connect apache" for more information about how to do this</dd>
+<dd>A: Have you checked your firewall settings? Make sure the port Xdebug is
+listening on (default 9000) is not blocked.</dd>
+<dd>A: If you are running with SELinux you should make sure it is not
+preventing connections; look for warnings about <code>name_connect</code> or
+anything related to the Xdebug port. You might have to allow access explicitly.
+Visit <a href="http://sheltren.com/stop-disabling-selinux">this site</a> or
+search for "selinux name_connect apache" for more information about how to do
+this</dd>
 </dl>
 
 <h2>Compilation and Configuration</h2>
