@@ -63,7 +63,7 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 		{
 			echo "<li>Unpack the downloaded file with <code>tar -xvzf {$dlFile}</code></li>";
 			echo "<li>Run: <code>cd {$x->tarDir}</code></li>\n";
-			echo "<li><p>Run: <code>phpize</code></p>
+			echo "<li><p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>.</p>
 <p>As part of its output it should show:<br/><pre>
 Configuring for:
 ...

@@ -1315,6 +1315,11 @@ this</dd>
 
 <h2>Compilation and Configuration</h2>
 <dl class="faq">
+<dt><a name="phpize"></a>
+Q: I don\'t have the <code>phpize</code> tool.</dt>
+<dd>A: Debian and Ubuntu users need to install the <code>php5-dev</code>
+package with <code>apt</code>.</dd>
+
 <dt><a name="api"></a>
 Q: What to do with: <i>Xdebug requires Zend Engine API version
 <i>xxxxxxxx</i>. The Zend Engine API version 2<i>xxxxxxxx</i> which is
