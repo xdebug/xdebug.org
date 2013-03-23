@@ -26,6 +26,19 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_2'></a>[2013-03-23] &mdash; Xdebug 2.2.2</dt>
+<dd><h3>Added features</h3></dd>
+<dd>Added support for PHP 5.5beta1.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(598); ?>: Use HTTP_X_FORWARDED_FOR to determine remote debugger.</dd>
+<dd>Fixed <?php bug(625); ?>: xdebug_get_headers() -&gt; Headers are reset unexpectedly.</dd>
+<dd>Fixed <?php bug(811); ?>: PHP Documentation Link.</dd>
+<dd>Fixed <?php bug(818); ?>: Require a php script in the PHP_RINIT causes Xdebug to crash.</dd>
+<dd>Fixed <?php bug(903); ?>: xdebug_get_headers() returns replaced headers.</dd>
+<dd>Fixed <?php bug(905); ?>: Support PHP 5.5 and generators.</dd>
+<dd>Fixed <?php bug(920); ?>: AM_CONFIG_HEADER is depreciated.</dd>
+
 <dt><a name='x_2_2_1'></a>[2012-07-15] &mdash; Xdebug 2.2.1</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(843); ?>: Text output depends on php locale.</dd>

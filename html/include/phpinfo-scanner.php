@@ -9,7 +9,7 @@ class xdebugVersion
 		$this->phpApi = $this->zendApi = false; $this->configFile = false;
 		$this->configPath = $this->extensionDir = $this->sapi = false;
 		$this->tarDir = $this->xdebugVersion = false;
-		$this->winCompiler= 6; $this->architecture = 'x86';
+		$this->winCompiler= 9; $this->architecture = 'x86';
 		$this->zendServer = false;
 		$this->xdebugAsZendExt = $this->xdebugAsPhpExt = false;
 	}
@@ -142,6 +142,7 @@ class xdebugVersion
 					case 'VC6':   $this->winCompiler = 6; $this->windows = true; break;
 					case 'VC8':   $this->winCompiler = 8; $this->windows = true; break;
 					case 'VC9':   $this->winCompiler = 9; $this->windows = true; break;
+					case 'VC11':  $this->winCompiler = 11; $this->windows = true; break;
 				}
 			}
 		}
@@ -283,6 +284,11 @@ class xdebugVersion
 					break;
 				case '5.4':
 					if ( $this->winCompiler != 9 )
+					{
+						return false;
+					}
+				case '5.5':
+					if ( $this->winCompiler != 11 )
 					{
 						return false;
 					}

@@ -44,7 +44,7 @@ while ( false !== ( $entry = $d->read() ) )
 	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
 		$files[strtolower($m[1])]['source'] = $entry;
 	}
-	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[456]\.[0-9](\.[0-9])?(-vc[69])?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[456]\.[0-9](\.[0-9])?(-vc(?>6|9|11))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 		$files[strtolower($m[1])]['dll'][] = $entry;
 	}
 }
@@ -66,7 +66,7 @@ uksort( $files, 'version_compare' );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
 				$md5 = md5_file( "files/$dls" );
-				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([456]\.[0-9])(\.[0-9])?(-(vc[69]))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
+				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([456]\.[0-9])(\.[0-9])?(-(vc(?>6|9|11)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
 				if (isset($m[4]) && $m[4] != '') {
