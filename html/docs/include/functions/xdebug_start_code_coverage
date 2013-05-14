@@ -8,13 +8,40 @@ TXT:
 This function starts gathering the information for code coverage. The
 information that is collected consists of an two dimensional array with as
 primary index the executed filename and as secondary key the line number. The
-value in the elements represents the total number of execution units on this
-line have been executed.
+value in the elements represents whether the line has been executed or whether
+it has unreachable lines.
 
 TXT:
-Options to this function are:
+The returned values for each line are:
+<ul>
+	<li><code>1</code>: this line was executed</li>
+	<li><code>-1</code>: this line was not executed</li>
+	<li><code>-2</code>: this line did not have executable code on it</li>
+</ul>
 
-XDEBUG_CC_UNUSED
-Enables scanning of code to figure out which line has executable code.
-XDEBUG_CC_DEAD_CODE
-Enables branch analyzes to figure out whether code can be executed.
+Value <code>-1</code> is only returned when the <code>XDEBUG_CC_UNUSED</code>
+is enabled and value <code>-2</code> is only returned when both
+<code>XDEBUG_CC_UNUSED</code> and <code>XDEBUG_CC_DEAD_CODE</code> are enabled.
+
+TXT:
+This function has two options, which act as a bitfield:
+
+<dl>
+<dt>XDEBUG_CC_UNUSED</dt>
+<dd>Enables scanning of code to figure out which line has executable code.
+Without this option you the returned array will only have lines in them that
+were actually executed.</dd>
+
+<dt>XDEBUG_CC_DEAD_CODE</dt>
+<dd>Enables branch analyzes to figure out whether code can be executed.</dd>
+</dl>
+
+Enabling those options make code coverage drastically slower.
+
+TXT:
+You can use the options as shown in the following example.
+
+EXAMPLE:
+<?php
+xdebug_start_code_coverage( XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE );
+?>

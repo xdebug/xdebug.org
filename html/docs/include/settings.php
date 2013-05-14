@@ -587,13 +587,13 @@ into the registry.</li>
 		FUNC_STACK_TRACE
 	),
 	'scream' => array(
-		'boolean', 0, '> 2.1',
+		'boolean', 0, '>= 2.1',
 		"If this setting is 1, then Xdebug will disable the @ (shut-up)
 		operator so that notices, warnings and errors are no longer hidden.",
 		FUNC_BASIC
 	),
 	'coverage_enable' => array(
-		'boolean', 1, '> 2.2',
+		'boolean', 1, '>= 2.2',
 		"If this setting is set to 0, then Xdebug will not set-up internal
 		structures to allow code coverage. This speeds up Xdebug quite a bit,
 		but of course, [FEAT:code_coverage] won't work.",
