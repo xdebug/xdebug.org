@@ -342,8 +342,7 @@ continue as if this setting was 0.",
 href='http://www.php.net/manual/en/debugger.php'>PHP 3 style debugger</a>
 output, 'gdb' which enables the GDB like debugger interface or 'dbgp' - the
 <a href='http://xdebug.org/docs-dbgp.php'>debugger protocol</a>. The DBGp protocol is
-more widely supported by clients. See more information in the introduction for
-[FEAT:remote].</p>
+the only supported protocol.</p>
 <p><b>Note</b>: Xdebug 2.1 and later only support 'dbgp' as protocol.</p>
 ",
 		FUNC_REMOTE
