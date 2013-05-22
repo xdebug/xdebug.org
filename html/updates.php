@@ -28,7 +28,7 @@
 <dl>
 <dt><a name='x_2_2_3'></a>[2013-05-22] &mdash; Xdebug 2.2.3</dt>
 <dd><h3>Added features</h3></dd>
-<dd>Added support for PHP 5.5beta1.</dd>
+<dd>Added support for PHP 5.5.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(923); ?>: Xdebug + Netbeans + ext/MongoDB crash on MongoCursor instance</dd>
@@ -38,8 +38,6 @@
 <dd>Fixed <?php bug(947); ?>: Newlines converted when html_errors = 0</dd>
 
 <dt><a name='x_2_2_2'></a>[2013-03-23] &mdash; Xdebug 2.2.2</dt>
-<dd><h3>Added features</h3></dd>
-<dd>Added support for PHP 5.5beta1.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(598); ?>: Use HTTP_X_FORWARDED_FOR to determine remote debugger.</dd>
