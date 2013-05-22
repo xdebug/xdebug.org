@@ -1,7 +1,7 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.2.2';
+	static public $latestVersion = '2.2.3';
 
 	function __construct()
 	{
