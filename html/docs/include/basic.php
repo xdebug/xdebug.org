@@ -26,7 +26,7 @@ function add_links( $text )
 	$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\2</a>', $text );
 	$text = preg_replace( '/\[CFG:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
 	$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
-	$text = preg_replace( '/\[FEAT:([^\]]*?)\]/e', "'<a href=\"/docs/\\1\">'. \$GLOBALS['features']['\\1'][0] . '</a>'", $text );
+	$text = preg_replace_callback( '/\[FEAT:([^\]]*?)\]/', function($matches) { return "<a href='/docs/{$matches[1]}'>". $GLOBALS['features'][$matches[1]][0] . '</a>'; }, $text );
 	$text = add_keywords( $text );
 	return $text;
 }
@@ -37,7 +37,7 @@ function ignore_links( $text )
 	$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '\2', $text );
 	$text = preg_replace( '/\[CFG:([^\]]*?)\]/', 'xdebug.\1', $text );
 	$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '\1', $text );
-	$text = preg_replace( '/\[FEAT:([^\]]*?)\]/e', "\$GLOBALS['features']['\\1'][0]", $text );
+	$text = preg_replace( '/\[FEAT:([^\]]*?)\]/', function( $matches ) { return $GLOBALS['features'][$matches[1]][0]; }, $text );
 	$text = add_keywords( $text );
 	return $text;
 }
