@@ -1097,12 +1097,12 @@ Each of them allows you to simply enable the debugger by clicking on one button.
 The extensions are:
 <a name="browser-extensions"></a><a name="firefox-ext"></a>
 <dl>
-	<dt>easy Xdebug for FireFox</dt>
+	<dt>The easiest Xdebug</dt>
 	<dd>
-		This <a href="https://addons.mozilla.org/en-US/firefox/addon/58688">extension</a>
+		This <a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/">extension</a>
 		for Firefox was built to make debugging with an IDE easier. You can
 		find the extension at
-		<a href="https://addons.mozilla.org/en-US/firefox/addon/58688/">https://addons.mozilla.org/en-US/firefox/addon/58688/</a>.
+		<a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/">https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/</a>.
 	</dd>
 
 	<dt>Xdebug Helper for Chrome</dt>
