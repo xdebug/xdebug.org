@@ -59,7 +59,7 @@ default.",
 		FUNC_STACK_TRACE
 	),
 
-	'show_mem_delta' => array( 
+	'show_mem_delta' => array(
 		'integer', 0, null,
 		"When this setting is set to something != 0 Xdebug's human-readable
 generated trace files will show the difference in memory usage between function
@@ -199,7 +199,7 @@ Fields are tab separated.
 Fields for the computerized format:
 </p>
 <table class='table'>
-<tr><th>Record type</th><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th></tr>
+<tr><th>Record type</th><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th><th class='ctr'>11</th><th class='ctr'>12 - ...</th></tr>
 <tr>
 	<th class='ctr'>Entry</th>
 	<td>level</td>
@@ -212,6 +212,8 @@ Fields for the computerized format:
 	<td>name of the include/require file</td>
 	<td>filename</td>
 	<td>line number</td>
+	<td>no. of parameters</td>
+	<td>parameters (as many as specified in field 11) - tab separated</td>
 </tr>
 <tr><th class='ctr'>Exit</th>
 	<td>level</td>
@@ -219,7 +221,8 @@ Fields for the computerized format:
 	<td>always&nbsp;'1'</td>
 	<td>time index</td>
 	<td>memory usage</td>
-	<td colspan='5' class='ctr'><i>empty</i></td>
+	<td>return value</td>
+	<td colspan='6' class='ctr'><i>empty</i></td>
 </tr>
 </table>
 
@@ -286,7 +289,7 @@ to generate trace files for each request, you need to set
 		FUNC_FUNCTION_TRACE
 	),
 
-	
+
 	'idekey' => array(
 		'string', '*complex*', null,
 		"Controls which IDE Key Xdebug should pass on to the DBGp debugger handler.
@@ -542,8 +545,8 @@ Add to that one of (depending whether you have komodo or gvim):
 <ul>
 <li>Create the file <code>netbeans.bat</code> and save it in your path (<code>C:\Windows</code> will work):
 <pre>
-@echo off 
-setlocal enableextensions enabledelayedexpansion 
+@echo off
+setlocal enableextensions enabledelayedexpansion
 set NETBEANS=%1
 set FILE=%~2
 %NETBEANS% --nosplash --console suppress --open "%FILE:~19%"
