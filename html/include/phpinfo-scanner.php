@@ -287,6 +287,7 @@ class xdebugVersion
 					{
 						return false;
 					}
+					break;
 				case '5.5':
 					if ( $this->winCompiler != 11 )
 					{
