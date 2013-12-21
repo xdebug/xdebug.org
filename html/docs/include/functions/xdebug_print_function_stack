@@ -1,7 +1,7 @@
 = xdebug_print_function_stack
 Displays the current function stack.
 none
-[ string message ]
+[ string message [, int options ] ]
 FUNC_STACK_TRACE
 
 TXT:
@@ -9,7 +9,8 @@ Displays the current function stack, in a similar way as what Xdebug would
 display in an error situation.
 
 TXT:
-The "message" argument was introduced in Xdebug 2.1.
+The "message" argument allows you to replace
+the message in the header with your own. <i>(Introduced in Xdebug 2.1).</i>
 
 EXAMPLE:
 <?php
@@ -30,3 +31,15 @@ RESULT:
 <tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0007</td><td bgcolor='#eeeeec' align='right'>654736</td><td bgcolor='#eeeeec'><a href='http://www.php.net/xdebug_print_function_stack' target='_new'>xdebug_print_function_stack</a>
 ( <span>&apos;Your own message&apos;</span> )</td><td title='/home/httpd/html/test/xdebug/print_function_stack.php' bgcolor='#eeeeec'>../print_function_stack.php<b>:</b>5</td></tr>
 </table></font>
+
+TXT:
+The bitmask "options" allows you to configure a few extra options.
+The following options are currently supported:
+<dl>
+<dt><code>XDEBUG_STACK_NO_DESC</code></dt>
+<dd>If this option is set, then the printed stack trace will not have a
+header. This is useful if you want to print a stack trace from your own error
+handler, as otherwise the printed location is where
+<code>xdebug_print_function_stack()</code> was called from. <i>(Introduced in
+Xdebug 2.3).</i></dd>
+</dl>
