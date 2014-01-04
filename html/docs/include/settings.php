@@ -244,6 +244,13 @@ Fields for the computerized format:
 	<td>always&nbsp;'1'</td>
 	<td>time index</td>
 	<td>memory usage</td>
+	<td colspan='7' class='ctr'><i>empty</i></td>
+</tr>
+<tr><th class='ctr'>Return</th>
+	<td>level</td>
+	<td>function&nbsp;#</td>
+	<td>always&nbsp;'R'</td>
+	<td colspan='2' class='ctr'><i>empty</i></td>
 	<td>return value</td>
 	<td colspan='6' class='ctr'><i>empty</i></td>
 </tr>
