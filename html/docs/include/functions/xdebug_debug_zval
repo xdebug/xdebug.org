@@ -17,6 +17,10 @@ variable to a function. The result is that the information that this function
 returns is much more accurate than PHP's own function for showing zval
 information.
 
+TXT:
+Support for anything but simple variable names (such as <i>"a[2]"</i> below)
+is supported since Xdebug 2.3.
+
 EXAMPLE:
 <?php
     $a = array(1, 2, 3);
@@ -24,6 +28,7 @@ EXAMPLE:
     $c =& $a[2];
 
     xdebug_debug_zval('a');
+    xdebug_debug_zval("a[2]");
 ?>
 
 RESULT:
@@ -31,4 +36,4 @@ a: (refcount=2, is_ref=1)=array (
 	0 =&gt; (refcount=1, is_ref=0)=1, 
 	1 =&gt; (refcount=1, is_ref=0)=2, 
 	2 =&gt; (refcount=2, is_ref=1)=3)
-
+a[2]: (refcount=2, is_ref=1)=3

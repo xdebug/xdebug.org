@@ -522,10 +522,14 @@ this setting to 1, otherwise leave it set to 0.",
 
 	'overload_var_dump' => array(
 		'boolean', 1, '> 2.1',
-		"By default Xdebug overloads var_dump() with its own improved version
+		"<p>By default Xdebug overloads var_dump() with its own improved version
 		for displaying variables when the html_errors php.ini setting is set to
 		1. In case you do not want that, you can set this setting to 0, but
-		check first if it's not smarter to turn off html_errors.",
+		check first if it's not smarter to turn off html_errors.</p>
+		<p>You can also use <code>2</code> as value for this setting. Besides
+		formatting the var_dump() output nicely, it will also add filename and 
+		line number to the output. The [CFG:file_link_format] setting is also
+		respected. <i>(New in Xdebug 2.3)</i></p>",
 		FUNC_VAR_DUMP
 	),
 
