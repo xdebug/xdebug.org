@@ -1,0 +1,22 @@
+= xdebug_code_coverage_started
+Returns whether code coverage is active.
+boolean
+none
+FUNC_CODE_COVERAGE
+
+TXT:
+Returns whether code coverage has been started.
+
+EXAMPLE:
+<?php
+    var_dump(xdebug_code_coverage_started());
+
+    xdebug_start_code_coverage();
+
+    var_dump(xdebug_code_coverage_started());
+?>  
+
+RESULT:
+bool(false)
+bool(true)
+
