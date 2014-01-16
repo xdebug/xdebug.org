@@ -522,7 +522,7 @@ xdebug.dump.GET = *
 
 	'dump_globals' => array(
 		'boolean', 1, null,
-		'Controls whether the values of the superglobals as defined by the [CFG:dump.*] settings whould be shown or not.',
+		'Controls whether the values of the superglobals as defined by the [CFG:dump.*] settings should be shown or not.',
 		FUNC_STACK_TRACE
 	),
 
