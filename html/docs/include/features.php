@@ -67,7 +67,7 @@ You can <a href='/download.php#releases'>download</a> the source of the latest <
 Alternatively you can obtain Xdebug from GIT:
 </p>
 <pre>
-git clone git://github.com/derickr/xdebug.git
+git clone git://github.com/xdebug/xdebug.git
 </pre>
 <p>
 This will checkout the latest development version which is currently [KW:last_dev_version].

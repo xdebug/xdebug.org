@@ -21,7 +21,7 @@ provide includes the following:
 href='https://github.com/derickr/xdebug'>github</a> and can be checked out with:
 </p>
 <pre>
-git clone git://github.com/derickr/xdebug.git
+git clone git://github.com/xdebug/xdebug.git
 </pre>
 
 <a name='releases'></a>
