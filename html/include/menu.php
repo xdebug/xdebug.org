@@ -14,7 +14,7 @@
 
 <div id="support" style="float: right; text-align: center; width: 200px; border: 1px solid rgba( 0, 68, 17, 0.6); margin-right: 20px; margin-left: 20px; padding: 5px;">
 <p class="buy-support">
-If you like Xdebug, please consider buying a<br/>"<a href="/buy-support.php">support agreement</a>".
+If you like Xdebug, please consider giving a<br/>"<a href="/donate.php">donation</a>".
 <br/>
 <br/>
 </p>
