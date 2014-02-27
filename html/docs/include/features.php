@@ -1247,7 +1247,7 @@ to make a connection to the debugclient.</li>
 Xdebug only allows you to specify one IP address to connect to with
 [CFG:xdebug.remote_host]) while doing remote debugging. It does not
 automatically connect back to the IP address of the machine the browser 
-runs on, unless you use [CFG:xdebug.remote_connect_back].
+runs on, unless you use [CFG:remote_connect_back].
 </p>
 <p>
 If all of your developers work on different projects on the same (development)
@@ -1269,7 +1269,7 @@ more documentation in the
 </p>
 <p>
 Secondly you can
-use the [CFG:xdebug.remote_connect_back] <b>setting</b> that was introduced in
+use the [CFG:remote_connect_back] <b>setting</b> that was introduced in
 Xdebug
 2.1.
 </p>
