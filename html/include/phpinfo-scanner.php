@@ -1,7 +1,8 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.2.3';
+	static public $latestVersion = '2.2.4';
+	static public $latestWindowsVersion = '2.2.3';
 
 	function __construct()
 	{
@@ -252,16 +253,17 @@ class xdebugVersion
 	function determineFile()
 	{
 		$majorPhpVersion = substr( $this->version, 0, 3 );
-		$version = self::$latestVersion;
 
 		if ( !$this->windows )
 		{
+			$version = self::$latestVersion;
 			$this->xdebugVersionToInstall = $version;
 			$this->tarDir = "xdebug-{$version}";
 			return "xdebug-{$version}.tgz";
 		}
 		else
 		{
+			$version = self::$latestWindowsVersion;
 			$base = 'php_xdebug';
 
 			if ( $this->debug )

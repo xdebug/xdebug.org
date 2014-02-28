@@ -26,7 +26,19 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_4'></a>[2014-02-28] &mdash; Xdebug 2.2.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(785); ?>: Profiler does not handle closures and call_user_func_array well.</dd>
+<dd>Fixed <?php bug(963); ?>: Xdebug waits too long for response from remote client</dd>
+<dd>Fixed <?php bug(976); ?>: XDebug crashes if current varibles scope contains COM object.</dd>
+<dd>Fixed <?php bug(978); ?>: Inspection of array with negative keys fails</dd>
+<dd>Fixed <?php bug(979); ?>: property_value -m 0 should mean all bytes, not 0 bytes</dd>
+<dd>Fixed <?php bug(987); ?>: Hidden property names not shown.</dd>
+
+
 <dt><a name='x_2_2_3'></a>[2013-05-22] &mdash; Xdebug 2.2.3</dt>
+
 <dd><h3>Added features</h3></dd>
 <dd>Added support for PHP 5.5.</dd>
 
@@ -36,6 +48,7 @@
 <dd>Fixed <?php bug(931); ?>: xdebug_str_add does not check for NULL str before calling strlen on it</dd>
 <dd>Fixed <?php bug(935); ?>: Document the return value from xdebug_get_code_coverage()</dd>
 <dd>Fixed <?php bug(947); ?>: Newlines converted when html_errors = 0</dd>
+
 
 <dt><a name='x_2_2_2'></a>[2013-03-23] &mdash; Xdebug 2.2.2</dt>
 
