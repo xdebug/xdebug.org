@@ -2,7 +2,7 @@
 class xdebugVersion
 {
 	static public $latestVersion = '2.2.4';
-	static public $latestWindowsVersion = '2.2.3';
+	static public $latestWindowsVersion = '2.2.4';
 
 	function __construct()
 	{
