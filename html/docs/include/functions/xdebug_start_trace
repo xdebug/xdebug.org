@@ -34,7 +34,7 @@ the format as described under <i>1</i> "[CFG:trace_format]".</dd>
 <dd>Normally, Xdebug always adds ".xt" to the end of the filename that you
 pass in as first argument to this function. With the
 <i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added. (New in Xdebug
-2.3).</dd>
+2.2.4).</dd>
 </dl>
 
 Unlike Xdebug 1,
