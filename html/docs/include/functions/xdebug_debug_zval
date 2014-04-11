@@ -19,7 +19,7 @@ information.
 
 TXT:
 Support for anything but simple variable names (such as <i>"a[2]"</i> below)
-is supported since Xdebug 2.3.
+is supported since Xdebug 2.2.4.
 
 EXAMPLE:
 <?php
@@ -33,7 +33,7 @@ EXAMPLE:
 
 RESULT:
 a: (refcount=2, is_ref=1)=array (
-	0 =&gt; (refcount=1, is_ref=0)=1, 
-	1 =&gt; (refcount=1, is_ref=0)=2, 
+	0 =&gt; (refcount=1, is_ref=0)=1,
+	1 =&gt; (refcount=1, is_ref=0)=2,
 	2 =&gt; (refcount=2, is_ref=1)=3)
 a[2]: (refcount=2, is_ref=1)=3
