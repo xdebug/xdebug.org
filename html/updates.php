@@ -26,6 +26,13 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_5'></a>[2014-04-29] &mdash; Xdebug 2.2.5</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1040); ?>: Fixed uninitialized sa value.</dd>
+<dd>Fixed building on hurd-i386.</dd>
+
+
 <dt><a name='x_2_2_4'></a>[2014-02-28] &mdash; Xdebug 2.2.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
