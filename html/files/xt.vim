@@ -23,9 +23,9 @@ syn match level         "->"
 syn match lineno        ":\d\+$"
 
 
-syn match methodcall      "\k\+->"
-syn match staticcall      "\k\+::"
-syn match functionb       "\k\+("
+syn match methodcall      "[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff\\]\+->"
+syn match staticcall      "[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff\\]\+::"
+syn match functionb       "[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]\+("
 syn match functione       ") "
 
 syn match main            "{main}()"
@@ -55,7 +55,7 @@ if version >= 508 || !exists("did_diff_syntax_inits")
   HiLink main       Structure
   HiLink include    Structure
   
-  HiLink lineno Delimiter
+  HiLink lineno     Delimiter
   HiLink methodcall Function
   HiLink staticcall Function
   HiLink functionb  Function
