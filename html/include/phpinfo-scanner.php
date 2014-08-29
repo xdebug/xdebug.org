@@ -273,17 +273,7 @@ class xdebugVersion
 			switch ( $majorPhpVersion ) 
 			{
 				case '5.2':
-					if ( $this->winCompiler != 9 )
-					{
-						return false;
-					}
-					break;
 				case '5.3':
-					if ( $this->winCompiler != 9 )
-					{
-						return false;
-					}
-					break;
 				case '5.4':
 					if ( $this->winCompiler != 9 )
 					{
@@ -291,6 +281,7 @@ class xdebugVersion
 					}
 					break;
 				case '5.5':
+				case '5.6':
 					if ( $this->winCompiler != 11 )
 					{
 						return false;
