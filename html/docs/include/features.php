@@ -114,10 +114,9 @@ you're having some issues with finding which phpize to use.</li>
 
 <ol>
 <li>add the following line to php.ini:
-zend_extension=\"/wherever/you/put/it/xdebug.so\" (for non-threaded use of PHP,
-for example the CLI, CGI or Apache 1.3 module) or:
-zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" (for threaded usage of PHP,
-for example the Apache 2 work MPM or the the ISAPI module).
+zend_extension=\"/wherever/you/put/it/xdebug.so\". For PHP versions earlier
+than 5.3 <b>and</b> threaded usage of PHP (Apache 2 worker MPM or the
+ISAPI module), add: zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" instead.
 <strong>Note:</strong> In case you compiled PHP yourself and used
 --enable-debug you would have to use zend_extension_debug=.
 <strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini

@@ -17,7 +17,7 @@
 <tr><th class="docinfo-name">Version:</th>
 <td>1.0</td></tr>
 <tr><th class="docinfo-name">Status:</th>
-<td>draft 17</td></tr>
+<td>draft 18</td></tr>
 <tr><th class="docinfo-name">Authors:</th>
 <td>Shane Caraveo, ActiveState &lt;<a class="reference external" href="mailto:shanec&#64;ActiveState.com">shanec&#64;ActiveState.com</a>&gt;
 <br />Derick Rethans &lt;<a class="reference external" href="mailto:derick&#64;derickrethans.nl">derick&#64;derickrethans.nl</a>&gt;</td></tr>
@@ -840,10 +840,6 @@ See <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for a 
 <td>get|set</td>
 <td>{0|1}</td>
 </tr>
-<tr><td>encoding</td>
-<td>get|set</td>
-<td>{ISO8859-15, UTF-8, etc.}</td>
-</tr>
 <tr><td>max_children</td>
 <td>get|set</td>
 <td>max number of array or object
@@ -860,6 +856,15 @@ initially retrieve.</td>
 <td>maximum depth that the debugger
 engine may return when sending arrays,
 hashs or object structures to the IDE.</td>
+</tr>
+<tr><td>extended_properties</td>
+<td>get|set</td>
+<td>{0|1} Extended properties are required if
+there are property names (name, fullname
+or classname) that can not be represented
+as valid XML attribute values (such as
+<tt class="docutils literal">&amp;#0;</tt>). See also
+<a class="reference internal" href="#properties-variables-and-values">7.11 Properties, variables and values</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1442,6 +1447,9 @@ breakpoint_list -i TRANSACTION_ID
 </div>
 <div class="section" id="stack-depth">
 <h2><a class="toc-backref" href="#id49">7.7 stack_depth</a></h2>
+<p>Returns the maximum stack depth that can be returned by the
+debugger. The optional -d argument of the <em>stack_get</em> command
+must be less than this number.</p>
 <p>IDE</p>
 <pre class="literal-block">
 stack-depth -i transaction_id
@@ -1676,7 +1684,9 @@ class:$v; // short name 'v'</td>
 <tr><td>fullname</td>
 <td>variable name.  This is the long form of the name
 which can be eval'd by the language to retrieve
-the value of the variable.
+the value of the variable. IDEs SHOULD NOT use the eval
+command to retrieve nested properties with this, but
+instead use property_get.
 $v = 0; // long name 'v'
 class::$v; // short name 'v', long 'class::$v'
 $this-&gt;v; // short name 'v', long '$this-&gt;v'</td>
@@ -1734,6 +1744,31 @@ with this attribute set</td>
 </tbody>
 </table>
 </blockquote>
+<p>If the name attribute is <em>not set</em>, then the property element structure is
+required to provide name, fullname (optional), classname (optional) and value
+as sub elements of the &lt;property&gt; element:</p>
+<pre class="literal-block">
+&lt;property
+    type=&quot;data_type&quot;
+    constant=&quot;0|1&quot;
+    children=&quot;0|1&quot;
+    size=&quot;{NUM}&quot;
+    page=&quot;{NUM}&quot;
+    pagesize=&quot;{NUM}&quot;
+    address=&quot;{NUM}&quot;
+    key=&quot;language_dependent_key&quot;
+    encoding=&quot;base64|none&quot;
+    numchildren=&quot;{NUM}&quot;&gt;
+    &lt;name encoding=&quot;base64&quot;&gt;...&lt;/name&gt;
+    &lt;fullname encoding=&quot;base64&quot;&gt;...&lt;/name&gt;
+    &lt;classname encoding=&quot;base64&quot;&gt;...&lt;/name&gt;
+    &lt;value encoding=&quot;base64&quot;&gt;...&lt;/name&gt;
+&lt;/property&gt;
+</pre>
+<p>The debugger engine MAY only pick this format if the extended_properties feature
+has been negotiated and SHOUD only pick this format if one of the attribute values
+for <tt class="docutils literal">name</tt>, <tt class="docutils literal">fullname</tt>, <tt class="docutils literal">classname</tt> or <tt class="docutils literal">value</tt> contain information that
+can not be represented as valid XML within attributes (such as <tt class="docutils literal">&amp;#0;</tt>).</p>
 </div>
 <div class="section" id="data-types">
 <h2><a class="toc-backref" href="#id54">7.12 Data Types</a></h2>
@@ -1905,7 +1940,7 @@ support for this:</p>
 <p>Gets/sets a property value.  When retrieving a property with the
 get method, the maximum data that should be returned is a default
 defined by the debugger engine unless it has been negotiated using
-feature_set with max_data.  If the size of the properties data is
+feature_set with max_data.  If the size of the property's data is
 larger than that, the debugger engine only returns the configured
 amount, and the IDE should call property_value to get the entire
 data.  This is to prevent large data from slowing down debugger
@@ -1935,7 +1970,9 @@ debugger engine should assume zero if not provided)</td>
 <td>property long name (required)</td>
 </tr>
 <tr><td>-m</td>
-<td>max data size to retrieve (optional)</td>
+<td>max data size to retrieve (optional, defaults to the length as
+negotiated through feature_set with max_data). <strong>0</strong> means
+unlimited data.</td>
 </tr>
 <tr><td>-t</td>
 <td>data type (property_set only, optional)</td>
@@ -2590,6 +2627,15 @@ next line of code</td>
 </div>
 <div class="section" id="a-changelog">
 <h1><a class="toc-backref" href="#id75">A. ChangeLog</a></h1>
+<p>2013-10-01</p>
+<ul class="simple">
+<li>7.13 Clarified use of the -m option.</li>
+</ul>
+<p>2013-06-22</p>
+<ul class="simple">
+<li>7.2.2 / 7.11 Added the extended property format and extended_property feature
+negotiation.</li>
+</ul>
 <p>2012-03-29</p>
 <ul class="simple">
 <li>6 Clarified what &quot;Pythons Cmd module&quot; means for quoting values that contain

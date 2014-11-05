@@ -577,7 +577,7 @@ For various IDEs/OSses there are some instructions listed on how to make this wo
 <h4>Firefox on Linux</h4>
 <ul>
 <li>Open <a href="about:config">about:config</a></li>
-<li>Add a new boolean setting "network.protocol-handler.expose.xdebug"</li>
+<li>Add a new boolean setting "network.protocol-handler.expose.xdebug" and set it to "false"</li>
 <li>Add the following into a shell script <code>~/bin/ff-xdebug.sh</code>:
 <pre>
 #! /bin/sh
