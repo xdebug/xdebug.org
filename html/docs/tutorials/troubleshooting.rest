@@ -11,9 +11,14 @@ Xdebug side
 
 Can PHP/Xdebug connect to the client machine?
 ---------------------------------------------
+#. Is the client listening?
+ #. Try `telnet 127.0.0.1 9000` or requivalent to see if you can locally establish a connection.
+ #. If xdebug is expected to connect from a remote machine, make sure that the client is bound to your external IP and not just localhost.
 
 Is Xdebug configured to talk to the client machine?
 ---------------------------------------------------
+#. Is xdebug installed?
+  #. Run `phpinfo()` on a webpage. Check that xdebug is configured correctly. Make sure that this is a webpage coming through your webserver. Running `phpinfo()` from CLI could give you different extensions loaded with different settings.
 
 - address/remote_connect_back
 - port
@@ -24,4 +29,3 @@ IDE side
 ========
 
 - port
-- 
