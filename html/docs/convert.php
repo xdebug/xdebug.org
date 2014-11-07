@@ -204,6 +204,16 @@ if ($info[2]) {
 $d = $rst->save();
 
 $d = join( "\n; ", explode( "\n", $d ) );
+$desc = '';
+foreach( explode( "\n", trim( $d ) ) as $s )
+{
+	$trimmed = trim( $s );
+	if ( $trimmed !== '' )
+	{
+		$desc .= trim( $s ) . "\n";
+	}
+}
+$desc = trim( $desc );
 
 	echo <<<ENDL
 ; $w
@@ -211,7 +221,7 @@ $d = join( "\n; ", explode( "\n", $d ) );
 $version
 ; Type: {$info[0]}, Default value: {$info[1]}
 ;
-; $d
+; $desc
 ;
 ;xdebug.$name = {$info[1]}
 
