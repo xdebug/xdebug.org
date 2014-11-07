@@ -585,10 +585,11 @@ For various IDEs/OSses there are some instructions listed on how to make this wo
 f=`echo $1 | cut -d @ -f 1 | sed \'s/xdebug:\/\///\'`
 l=`echo $1 | cut -d @ -f 2`
 </pre>
-Add to that one of (depending whether you have komodo or gvim):
+Add to that one of (depending whether you have komodo, gvim or netbeans):
 <ul>
 	<li><code>komodo $f -l $l</code></li>
 	<li><code>gvim --remote-tab +$l $f</code></li>
+	<li><code>netbeans "$f:$l"</code></li>
 </ul>
 </pre>
 </li>
