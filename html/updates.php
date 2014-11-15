@@ -26,6 +26,15 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_6'></a>[2014-11-14] &mdash; Xdebug 2.2.6</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1048); ?>: Can not get $GLOBAL variable by property_value on function context.</dd>
+<dd>Fixed <?php bug(1073); ?> and <?php bug(1075); ?>: Segmentation fault with internal functions calling internal functions.</dd>
+<dd>Fixed <?php bug(1085); ?>: Fixed the tracefile analyser as the format version had been bumbed.</dd>
+<dd>Fixed memory leaks.</dd>
+
+
 <dt><a name='x_2_2_5'></a>[2014-04-29] &mdash; Xdebug 2.2.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
