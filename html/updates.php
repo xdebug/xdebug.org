@@ -26,6 +26,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_2_7'></a>[2015-02-22] &mdash; Xdebug 2.2.7</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1083); ?>: Segfault when requesting a variable for a context that did not have them.</dd>
+<dd>Fixed <?php bug(1087); ?>: zend_execute_script or zend_eval_string in RINIT segfaults.</dd>
+<dd>Fixed <?php bug(1088); ?>: Xdebug won't show dead and not executed lines at the second time.</dd>
+<dd>Fixed <?php bug(1098); ?>: Xdebug doesn't make use of __debugInfo.</dd>
+<dd>Fixed segfaults with ZTS on PHP 5.6.</dd>
+
+
+
 <dt><a name='x_2_2_6'></a>[2014-11-14] &mdash; Xdebug 2.2.6</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
