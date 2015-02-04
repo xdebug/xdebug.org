@@ -26,7 +26,7 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_2_7'></a>[2015-02-22] &mdash; Xdebug 2.2.7</dt>
+<dt><a name='x_2_2_7'></a>[2015-01-22] &mdash; Xdebug 2.2.7</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(1083); ?>: Segfault when requesting a variable for a context that did not have them.</dd>
