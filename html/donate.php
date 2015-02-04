@@ -1,7 +1,7 @@
 <?php $title = "Xdebug: Donate"; include "include/header.php"; hits ('xdebug-buy-support'); ?>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="serif">
+			<td>
 			
 <!-- MAIN FEATURE START -->
 
