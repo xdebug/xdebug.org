@@ -20,9 +20,7 @@ If you like Xdebug, please consider giving a<br/>"<a href="/donate.php">donation
 </p>
 <p class="buy-support">
 Or <a href='https://flattr.com/about'>Flattr</a> this website:
-<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://xdebug.org"></a>
-<noscript><a href="http://flattr.com/thing/565889/Xdebugs-website" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+<a href="http://flattr.com/thing/565889/Xdebugs-website" target="_blank"><img src="http://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 </p>
 </div>
 

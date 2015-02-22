@@ -10,19 +10,6 @@
 	<meta name="AUTHOR" content="Derick Rethans, as in derick @ php dot net or opensrc @ EFNet" />
 	<link type="text/css" rel="stylesheet" href="/core.css"/>
 
-<!-- flattr -->
-<script type="text/javascript">
-/* <![CDATA[ */
-    (function() {
-        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-        t.parentNode.insertBefore(s, t);
-    })();
-/* ]]> */</script>
-<!-- flattr -->
-
 <?php
 	if ( !empty( $tabFields ) )
 	{
