@@ -1,6 +1,7 @@
 Xdebug 2.3.0 is out!
 <p>This release adds a whole lot of new features to Xdebug. The main new
-features are support for <a href='/path-branch-coverage.html'>path and branch
+features are support for <a
+href='http://derickrethans.nl/path-branch-coverage.html'>path and branch
 coverage</a> for code coverage, improvements for remote debugging with
 exceptions, shared-secret triggers for profiling and tracing, a new variable
 formatting option (serialized), and improvements in the size of profiling
