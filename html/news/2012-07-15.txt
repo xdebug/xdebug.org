@@ -7,7 +7,3 @@ stability.</p>
 <p>The full change log can be found on the <a
 href="/updates.php#x_2_2_1">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>
-
-<p>I've also recently added the option of <a href='/buy-support.php'>buying a
-"support" contact</a>. If you find Xdebug a valuable tool, you might want to
-look into this to support Xdebug's development.</p>
