@@ -24,7 +24,7 @@ need to follow the instructions below.
 <a name="setup"></a>
 <h3>Initial Set-up</h3>
 <ol>
-<li>Fork Xdebug on <a href='https://github.com/xdebug/xdebug/fork_select'>github</a>.</li>
+<li>Fork Xdebug on <a href='https://github.com/xdebug/xdebug/fork'>github</a>.</li>
 <li>Clone the repository:<br/>
 	<tt>git clone git@github.com:<i>{your&nbsp;username}</i>/xdebug.git</tt><br/>
 	for example:<br />
