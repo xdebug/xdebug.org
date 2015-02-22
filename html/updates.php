@@ -26,6 +26,72 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_3_0'></a>[2015-02-22] &mdash; Xdebug 2.3.0</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(932); ?>: Added an error message in case the remote debug log couldn't be opened</dd>
+<dd>Fixed <?php bug(982); ?>: Incorrect file paths in exception stack trace</dd>
+<dd>Fixed <?php bug(1094); ?>: Segmentation fault when attempting to use branch/path coverage</dd>
+<dd>Fixed <?php bug(1101); ?>: Debugger is not triggered on xdebug_break() in JIT mode</dd>
+<dd>Fixed <?php bug(1102); ?>: Stop Xdebug from crashing when debugging PHP Code with "php -r".</dd>
+<dd>Fixed <?php bug(1103); ?>: XDEBUG_SESSION_STOP_NO_EXEC only stops first script executed with auto_prepend|append_files</dd>
+<dd>Fixed <?php bug(1104); ?>: One character non-public properties cause issues with debugging</dd>
+<dd>Fixed <?php bug(1105); ?>: Setting properties without specifying a type only works in topmost frame (Dominik del Bondio)</dd>
+<dd>Fixed <?php bug(1095); ?>: Crash when using a non-associate array key in GLOBALS</dd>
+<dd>Fixed <?php bug(1111); ?>: eval does not work when debugger is stopped in xdebug_throw_exception_hook (Dominik del Bondio)</dd>
+
+<dd><h3>Added features</h3></dd>
+
+<dd><h4>General</h4></dd>
+
+<dd>Implemented <?php bug(304); ?>: File name and line number info for overloaded var_dump()</dd>
+<dd>Implemented <?php bug(310); ?>: Allow class vars and array keys with xdebug_debug_zval()</dd>
+<dd>Implemented <?php bug(722); ?>: Add stack trace limit setting.</dd>
+<dd>Implemented <?php bug(1003); ?>: Add option to xdebug_print_function_stack() to suppress filename and line number</dd>
+<dd>Implemented <?php bug(1004); ?>: Ability to halt on warning/notice</dd>
+<dd>Implemented <?php bug(1023); ?>: Add support for PHP 5.6 variadics</dd>
+<dd>Implemented <?php bug(1024); ?>: Add support for PHP 5.6's ASSIGN_POW</dd>
+
+<dd><h4>Debugging</h4></dd>
+
+<dd>Implemented <?php bug(406); ?>: Added support for remote debugging user-defined constants</dd>
+<dd>Implemented <?php bug(495); ?>: Added support for the wildcard exception name '*'</dd>
+<dd>Implemented <?php bug(1066); ?>: Better error message for SELinux preventing debugging connections</dd>
+<dd>Implemented <?php bug(1084); ?>: Added support for extended classes to trigger exception breakpoints</dd>
+<dd>Implemented <?php bug(1084); ?>: Added exception code as extra element to debugger XML</dd>
+
+<dd><h4>Tracing</h4></dd>
+
+<dd>Implemented <?php bug(341); ?>: Added the time index and memory usage for function returns in normal tracefiles</dd>
+<dd>Implemented <?php bug(644); ?>: Shared secret for profiler_enable_trigger and trace_enable_trigger with *_value option</dd>
+<dd>Implemented <?php bug(971); ?>: Added the trace file option "XDEBUG_TRACE_NAKED_FILENAME" to xdebug_start_trace() to prevent the ".xt" extension from being added</dd>
+<dd>Implemented <?php bug(1021); ?>: Added support for return values to computerized trace files</dd>
+<dd>Implemented <?php bug(1022); ?>: Added support for serialized variables as format in trace files in the form of option "5" for "xdebug.collect_params"</dd>
+
+<dd><h4>Code Coverage</h4></dd>
+
+<dd>Implemented <?php bug(380); ?>: Added xdebug_code_coverage_started()</dd>
+<dd>Implemented <?php bug(1034); ?>: Add collected path and branch information to xdebug_get_code_coverage() output</dd>
+
+<dd><h4>Profiling</h4></dd>
+
+<dd>Implement <?php bug(1054); ?>: Support for filename and function name compression in cachegrind files</dd>
+
+<dd><h3>Changes</h3></dd>
+
+<dd>Implemented <?php bug(863); ?>: Support xdebug.overload_var_dump through ini_set()</dd>
+<dd>Implemented <?php bug(973); ?>: Use case-insensitive filename comparison on all systems (Galen Wright-Watson)</dd>
+<dd>Implemented <?php bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
+<dd>Implemented <?php bug(1057); ?>: Removed trailing whitespace from example xdebug.ini</dd>
+<dd>Implemented <?php bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Danief Sloof)</dd>
+<dd>Implemented <?php bug(1100); ?>: Raise default max_nesting_level to 256</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Support for PHP versions lower than PHP 5.4 have been dropped.</dd>
+
+
 <dt><a name='x_2_2_7'></a>[2015-01-22] &mdash; Xdebug 2.2.7</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
