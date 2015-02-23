@@ -84,7 +84,7 @@
 <dd>Implemented <?php bug(973); ?>: Use case-insensitive filename comparison on all systems (Galen Wright-Watson)</dd>
 <dd>Implemented <?php bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
 <dd>Implemented <?php bug(1057); ?>: Removed trailing whitespace from example xdebug.ini</dd>
-<dd>Implemented <?php bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Danief Sloof)</dd>
+<dd>Implemented <?php bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Daniel Sloof)</dd>
 <dd>Implemented <?php bug(1100); ?>: Raise default max_nesting_level to 256</dd>
 
 <dd><h3>Removed features</h3></dd>
