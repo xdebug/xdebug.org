@@ -26,6 +26,13 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_3_1'></a>[2015-02-24] &mdash; Xdebug 2.3.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+Fixed <?php bug(1112); ?>: Setting an invalid xdebug.trace_format causes Xdebug to crash
+Fixed <?php bug(1113); ?>: xdebug.*_trigger do no longer work, due to NULL not being an empty string
+
+
 <dt><a name='x_2_3_0'></a>[2015-02-22] &mdash; Xdebug 2.3.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

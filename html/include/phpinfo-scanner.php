@@ -1,8 +1,8 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.3.0';
-	static public $latestWindowsVersion = '2.3.0';
+	static public $latestVersion = '2.3.1';
+	static public $latestWindowsVersion = '2.3.1';
 
 	function __construct()
 	{
