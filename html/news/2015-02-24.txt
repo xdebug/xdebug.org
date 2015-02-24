@@ -1,7 +1,6 @@
 Xdebug 2.3.1 is out!
 <p>This is a minor bug-fix release for the 2.3 series, and addresses a crash
 and broken triggers for profiling and tracing.</p>
-crashes.</p>
 
 <p>The full change log can be found on the <a
 href="/updates.php#x_2_3_1">updates</a> page and the source code and Windows
