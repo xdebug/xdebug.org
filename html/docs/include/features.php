@@ -1002,7 +1002,7 @@ current selected one, both directly and indirectly with other functions
 inbetween them on the stack. The "Distance" column shows how many function
 calls are between the listed and the current selected one (-1). If there are
 different distances between two functions, it is shown as a range (for example
-"5-24". The number in parentheses is the median distance. The lower pane is
+"5-24"). The number in parentheses is the median distance. The lower pane is
 similar except that it shows information on functions called from the current
 selected one, again either direct or indirect.</p>
 		'
