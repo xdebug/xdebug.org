@@ -897,19 +897,29 @@ your PHP code and determine bottlenecks or generally see which parts of your
 code are slow and could use a speed boost. The profiler in Xdebug 2 outputs
 profiling information in the form of a cachegrind compatible file.  This allows
 you to use the excellent <a href="http://kcachegrind.sf.net">KCacheGrind</a>
-tool (Linux/Windows, KDE) to analyse your profiling data. If you are on Linux
-you can install KCacheGrind with your favourite package manager; if you are on
-Windows you can get precompiled binaries of KCacheGrind at 
-<a href="http://sourceforge.net/projects/precompiledbin/">SourceForge</a>.</p>
+tool (Linux, KDE) to analyse your profiling data. If you are on Linux
+you can install KCacheGrind with your favourite package manager.</p>
 
-<p>Users of Windows can also use 
-<a href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>, the
+<p>If you are on Windows, there are precompiled <a
+href="http://sourceforge.net/projects/qcachegrindwin/">QCacheGrind</a>
+binaries available. (QCacheGrind is KCacheGrind without KDE bindings).</p>
+
+<p>If you are on Mac OSX, there are <a
+href="http://www.tekkie.ro/computer-setup/how-to-install-kcachegrind-qcachegrind-on-mac-osx/">instructions</a>
+on how to build QCacheGrind too.</p>
+
+<p>Users of Windows can alternatively use
+<a href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>. The
 functionality is different from KCacheGrind so the section that documents the
-use of KCacheGrind on this page doesn\'t apply to this program. There is also
+use of KCacheGrind on this page doesn\'t apply to this program. WinCacheGrind
+currently does not support the file and function compression for cachegrind
+files that Xdebug 2.3 introduces yet.</p>
+
+<p>There is also
 an alternative profile information presentation tool called
 <a href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a>, a web
 based front-end called <a
-href="http://code.google.com/p/webgrind/">Webgrind</a> and a Java based tool
+href="http://code.google.com/p/webgrind/">Webgrind</a>, and a Java based tool
 called <a
 href="http://sourceforge.net/projects/xcallgraph/">XCallGraph</a>.</p>
 
