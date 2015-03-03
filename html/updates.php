@@ -57,6 +57,7 @@
 <dd>Implemented <?php bug(722); ?>: Add stack trace limit setting.</dd>
 <dd>Implemented <?php bug(1003); ?>: Add option to xdebug_print_function_stack() to suppress filename and line number</dd>
 <dd>Implemented <?php bug(1004); ?>: Ability to halt on warning/notice</dd>
+<dd>Implemented <?php bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
 <dd>Implemented <?php bug(1023); ?>: Add support for PHP 5.6 variadics</dd>
 <dd>Implemented <?php bug(1024); ?>: Add support for PHP 5.6's ASSIGN_POW</dd>
 
@@ -89,7 +90,6 @@
 
 <dd>Implemented <?php bug(863); ?>: Support xdebug.overload_var_dump through ini_set()</dd>
 <dd>Implemented <?php bug(973); ?>: Use case-insensitive filename comparison on all systems (Galen Wright-Watson)</dd>
-<dd>Implemented <?php bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
 <dd>Implemented <?php bug(1057); ?>: Removed trailing whitespace from example xdebug.ini</dd>
 <dd>Implemented <?php bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Daniel Sloof)</dd>
 <dd>Implemented <?php bug(1100); ?>: Raise default max_nesting_level to 256</dd>
