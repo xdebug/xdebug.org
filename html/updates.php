@@ -26,6 +26,13 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_3_2'></a>[2015-03-22] &mdash; Xdebug 2.3.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1117); ?>: Path/branch coverage sometimes crashes</dd>
+<dd>Fixed <?php bug(1121); ?>: Segfaults with path/branch coverage</dd>
+
+
 <dt><a name='x_2_3_1'></a>[2015-02-24] &mdash; Xdebug 2.3.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
