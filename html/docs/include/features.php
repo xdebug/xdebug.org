@@ -1052,6 +1052,7 @@ authors for <b>support</b>:
 <li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1929">plugin</a></b> (<a href="http://tech.blog.box.net/2007/06/20/how-to-debug-php-with-vim-and-xdebug-on-linux/">Tutorial</a>) (Editor Plugin).</li>
 <li>jcx software\'s <b><a href="http://www.jcxsoftware.com/vs.php">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
+<li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB" target="_blank">Xdebug Chrome App</a></b> - just add it to your Chrome browser (also on <a href="https://github.com/artbek/chrome-xdebug-client" target="_blank">GitHub</a>)</li>
 </ul>
 </p>
 <p>
