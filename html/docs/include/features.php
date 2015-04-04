@@ -1041,18 +1041,14 @@ authors for <b>support</b>:
 <li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris.</li>
 <li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
-<li>Anchor System\'s <b><a href="http://www.anchorsystems.co.jp/anchor/ashp/peggy/pegindex.html">Peggy</a></b> (IDE: Windows, Japanese; Commercial).</li>
-<li>MP Software\'s <b><a href="http://www.mpsoftware.dk/products.php">phpDesigner</a></b> (IDE: Windows, Commercial).</li>
 <li><b><a href="http://www.phpeclipse.com/">PHPEclipse</a></b> (Editor Plugin).</li>
 <li>Devsense\'s <b><a href="http://www.devsense.com/products/php-tools">PHP Tools for Visual Studio</a></b> (MS Visual Studio Plugin; Commercial).</li>
-<li>JetBrain\'s<b><a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a></b> (IDE; Commercial).</li>
+<li>JetBrain\'s <b><a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a></b> (IDE; Commercial).</li>
 <li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
-<li><b><a href="http://tswebeditor.net.tc/">tsWebeditor</a></b> (Editor: Windows).</li>
-<li>Xored\'s <b><a href="http://www.xored.com/trustudio">TrueStudio IDE</a></b> (IDE; Commercial).</li>
-<li><b>VIM <a href="http://www.vim.org/scripts/script.php?script_id=1929">plugin</a></b> (<a href="http://tech.blog.box.net/2007/06/20/how-to-debug-php-with-vim-and-xdebug-on-linux/">Tutorial</a>) (Editor Plugin).</li>
-<li>jcx software\'s <b><a href="http://www.jcxsoftware.com/vs.php">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
+<li><b>VIM <a href="https://github.com/joonty/vdebug">plugin</a></b> (Editor Plugin).</li>
+<li>jcx software\'s <b><a href="http://www.vsphp.com/">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
+<li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB">Xdebug Chrome App</a></b> (Chrome Application; <a href="https://github.com/artbek/chrome-xdebug-client">Open Source</a>)</li>
 <li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
-<li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB" target="_blank">Xdebug Chrome App</a></b> - just add it to your Chrome browser (also on <a href="https://github.com/artbek/chrome-xdebug-client" target="_blank">GitHub</a>)</li>
 </ul>
 </p>
 <p>
