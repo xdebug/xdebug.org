@@ -499,7 +499,7 @@ XDEBUG_PROFILE functionality as outlined in [CFG:profiler_enable_trigger]. When
 changed from its default value of an empty string, the value of the cookie,
 GET or POST argument needs to match the shared secret set with this setting in order
 for the profiler to start.",
-		FUNC_FUNCTION_TRACE
+		FUNC_PROFILER
 	),
 
 	'profiler_output_dir' => array(
