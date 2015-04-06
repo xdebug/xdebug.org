@@ -336,7 +336,18 @@ files by using the XDEBUG_TRACE GET/POST parameter, or set a cookie with the
 name XDEBUG_TRACE. This will then write the trace data to
 [CFG:trace_output_dir:defined directory]. In order to prevent Xdebug
 to generate trace files for each request, you need to set
-[CFG:auto_trace] to 0.",
+[CFG:auto_trace] to 0. Access to the trigger itself can be configured through
+[CFG:trace_enable_trigger_value].",
+		FUNC_FUNCTION_TRACE
+	),
+
+	'trace_enable_trigger_value' => array(
+		'string', '""', '> 2.3',
+		"This setting can be used to restrict who can make use of the
+XDEBUG_TRACE functionality as outlined in [CFG:trace_enable_trigger]. When
+changed from its default value of an empty string, the value of the cookie,
+GET or POST argument needs to match the shared secret set with this setting in
+order for the trace file to be generated.",
 		FUNC_FUNCTION_TRACE
 	),
 
@@ -476,8 +487,19 @@ files by using the XDEBUG_PROFILE GET/POST parameter, or set a cookie with the
 name XDEBUG_PROFILE. This will then write the profiler data to
 [CFG:profiler_output_dir:defined directory]. In order to prevent the profiler
 to generate profile files for each request, you need to set
-[CFG:profiler_enable] to 0.",
+[CFG:profiler_enable] to 0. Access to the trigger itself can be configured
+through [CFG:profiler_enable_trigger_value].",
 		FUNC_PROFILER
+	),
+
+	'profiler_enable_trigger_value' => array(
+		'string', '""', '> 2.3',
+		"This setting can be used to restrict who can make use of the
+XDEBUG_PROFILE functionality as outlined in [CFG:profiler_enable_trigger]. When
+changed from its default value of an empty string, the value of the cookie,
+GET or POST argument needs to match the shared secret set with this setting in order
+for the profiler to start.",
+		FUNC_FUNCTION_TRACE
 	),
 
 	'profiler_output_dir' => array(
