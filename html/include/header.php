@@ -72,6 +72,7 @@ YAHOO.example.init();
 			$date = preg_replace( '@^news/(.*).txt$@', '\1', $item );
 			$file = file( $item );
 			$title = array_shift( $file );
+			echo "<a name='" . preg_replace('/-/', '_', $date) ."'></a>\n";
 			echo "<dt class='main'>[{$date}] - $title</dt>\n";
 			echo "<dd class='main'>\n";
 			echo join( '', $file );
