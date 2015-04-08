@@ -58,6 +58,7 @@ to convert the warning of strlen() (without arguments) to an error, you would
 do:</p>
 <pre>
 ini_set('xdebug.halt_level', E_WARNING);
+strlen();
 echo \"Hi!\\n\";
 </pre>
 <p>Which will then result in the showing of the error message, and the abortion
