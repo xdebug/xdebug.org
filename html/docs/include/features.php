@@ -1037,8 +1037,8 @@ authors for <b>support</b>:
 <li><b>Eclipse <a href="https://wiki.eclipse.org/Debugging_using_XDebug">plugin</a></b> (IDE).</li>
 <li><b>Emacs <a href="http://code.google.com/p/geben-on-emacs/">plugin</a></b> (Editor Plugin).</li>
 <li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
-<li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> - Standalone Mac client.</li>
-<li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris.</li>
+<li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> (Standalone client for Mac OS X; Free)</li>
+<li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris).</li>
 <li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
 <li><b><a href="http://www.phpeclipse.com/">PHPEclipse</a></b> (Editor Plugin).</li>
@@ -1049,7 +1049,7 @@ authors for <b>support</b>:
 <li><b>VIM <a href="https://github.com/joonty/vdebug">plugin</a></b> (Editor Plugin).</li>
 <li>jcx software\'s <b><a href="http://www.vsphp.com/">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB">Xdebug Chrome App</a></b> (Chrome Application; <a href="https://github.com/artbek/chrome-xdebug-client">Open Source</a>)</li>
-<li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> - Standalone Windows client.</li>
+<li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> (Standalone client for Windows).</li>
 </ul>
 </p>
 <p>
