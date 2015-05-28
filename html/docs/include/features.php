@@ -1045,7 +1045,7 @@ authors for <b>support</b>:
 <li>Devsense\'s <b><a href="http://www.devsense.com/products/php-tools">PHP Tools for Visual Studio</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li>JetBrain\'s <b><a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a></b> (IDE; Commercial).</li>
 <li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
-<li><b><a href="https://github.com/robertbasic/pugdebug">pugdebug</a></b> free, open source, standalone client for Linux, Windows and Mac OS X.</li>
+<li><b><a href="https://github.com/robertbasic/pugdebug">pugdebug</a></b> (Standalone client for Linux, Windows and Mac OS X; Open Source).</li>
 <li><b>VIM <a href="https://github.com/joonty/vdebug">plugin</a></b> (Editor Plugin).</li>
 <li>jcx software\'s <b><a href="http://www.vsphp.com/">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB">Xdebug Chrome App</a></b> (Chrome Application; <a href="https://github.com/artbek/chrome-xdebug-client">Open Source</a>)</li>
