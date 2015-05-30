@@ -26,7 +26,13 @@ function add_links( $text )
 	$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\2</a>', $text );
 	$text = preg_replace( '/\[CFG:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
 	$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
-	$text = preg_replace_callback( '/\[FEAT:([^\]]*?)\]/', function($matches) { return "<a href='/docs/{$matches[1]}'>". $GLOBALS['features'][$matches[1]][0] . '</a>'; }, $text );
+	$text = preg_replace_callback(
+		'/\[FEAT:([^\]]*?)(#.*)?\]/',
+		function($matches) {
+			return "<a href='/docs/{$matches[1]}{$matches[2]}'>". $GLOBALS['features'][$matches[1]][0] . '</a>';
+		},
+		$text
+	);
 	$text = add_keywords( $text );
 	return $text;
 }
