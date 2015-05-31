@@ -1017,11 +1017,11 @@ selected one, again either direct or indirect.</p>
 <a name="introduction"></a>
 <h2>Introduction</h2>
 
-<p>Xdebug\'s (remote) debugger allows you to examine data structure, 
-interactively walk through your and debug your code. There are two different
-protocols to communicate with the debugger: the old GDB-like command protocol
-(GDB) which is implemented in Xdebug 1.3 and 2; and the <a
-href="/docs-dbgp.php">DBGp</a> protocol which is implemented in Xdebug 2.
+<p>Xdebug\'s (remote) debugger allows you to examine data structure,
+interactively walk through your and debug your code. The protocol that is being
+used is open, and is called <a href="/docs-dbgp.php">DBGp</a>. This protocol is
+implemented in Xdebug 2, and replaces an older GDB-like protocol that is no
+longer supported.
 </p>
 
 <a name="clients"></a>
@@ -1053,9 +1053,8 @@ authors for <b>support</b>:
 </ul>
 </p>
 <p>
-A simple command line client for the GDB protocol is bundled with Xdebug 1.3. A
-client implementation of the deprecated GDB protocol can also be found in the
-free editor <a href="http://weaverslave.ws">WeaverSlave</a>.
+A simple command line client for debugging is bundled with Xdebug in the
+<code>debugclient</code> directory.
 </p>
 
 <a name="starting"></a>
@@ -1144,10 +1143,7 @@ Before you start your script you will need to tell your client that it can
 receive debug connections, please refer to the documentation of the specific
 client on how to do this. To use the bundled client simply start it after
 <a href=install#debugclient>compiling and installing</a> it. You can
-start it by running "debugclient". If you want to use the GDB commandset
-to debug your scripts, make sure you use a debugclient as bundled with 
-Xdebug 1.3 as the one bundled with Xdebug 2 only works with the DBGp
-commandset.
+start it by running "debugclient".
 </p>
 <p>
 When the debugclient starts it will show the following information and then
