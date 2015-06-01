@@ -1062,14 +1062,16 @@ A simple command line client for debugging is bundled with Xdebug in the
 
 <p>In order to enable Xdebug\'s debugger you need to make some configuration
 settings in php.ini. These settings are [CFG:remote_enable] to enable the
-debugger, [CFG:remote_host] and
-[CFG:remote_port] to configure the IP address
-and port where the debugger should connect to. If you want the
-debugger to initiate a session when an error situation occurs (php error or
-exception) then you also need to change the [CFG:remote_mode] setting.
-Allowed values for this setting are "req" (the default) which makes the
-debugger initiate a session as soon as a script is started, or "jit" when a
-session should only be initiated on an error.
+debugger, [CFG:remote_host] and [CFG:remote_port] to configure the IP address
+and port where the debugger should connect to. There is also a
+[CFG:remote_connect_back] setting that can be used if your development server
+is shared with multiple developers.</p>
+
+<p>If you want the debugger to initiate a session when an error situation
+occurs (PHP error or exception) then you also need to change the
+[CFG:remote_mode] setting. Allowed values for this setting are "req" (the
+default) which makes the debugger initiate a session as soon as a script is
+started, or "jit" when a session should only be initiated on an error.
 </p>
 
 <a name="activate_debugger"></a>
