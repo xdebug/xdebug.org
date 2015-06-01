@@ -29,6 +29,9 @@ function add_links( $text )
 	$text = preg_replace_callback(
 		'/\[FEAT:([^\]]*?)(#.*)?\]/',
 		function($matches) {
+			if (!array_key_exists(2, $matches)) {
+				$matches[2] = '';
+			}
 			return "<a href='/docs/{$matches[1]}{$matches[2]}'>". $GLOBALS['features'][$matches[1]][0] . '</a>';
 		},
 		$text
