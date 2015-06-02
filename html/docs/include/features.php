@@ -1096,12 +1096,18 @@ All settings that you can set through the XDEBUG_CONFIG setting can also be set
 with normal php.ini settings.</li>
 
 <li>If you want to debug a script started through a web browser, simply add
-<code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL. Refer
-to the <a href="#browser_session">next section</a> to read on how debug
-sessions work from within a browser window.</li>
+<code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL.
+Instead of using a GET parameter, you can also set XDEBUG_SESSION_START as a
+POST parameter, or through a cookie. Refer to the <a
+href="#browser_session">next section</a> to read on how debug sessions work
+from within a browser window.</li>
 
-<li>Another way to activate the debugger while running PHP through a web server is by installing one of the following three browser extensions.
-Each of them allows you to simply enable the debugger by clicking on one button.
+<li>An alternative way to activate the debugger while running PHP through a web
+server is by installing one of the following four browser extensions. Each of
+them allows you to simply enable the debugger by clicking on one button. When
+these extensions are active, they set the XDEBUG_SESSION cookie directly,
+instead of going through XDEBUG_SESSION_START as described in
+<a href="#browser_session">HTTP Debug Sessions</a> further on.
 
 The extensions are:
 <a name="browser-extensions"></a><a name="firefox-ext"></a>
@@ -1233,11 +1239,12 @@ If [CFG:remote_connect_back] is used, the set-up is slightly different:
 Xdebug contains functionality to keep track of a debug session when started
 through a browser: cookies. This works like this:
 <ul>
-<li>When the URL variable <code>XDEBUG_SESSION_START=name</code> is appended to
-an URL Xdebug emits a cookie with the name "XDEBUG_SESSION" and as value the
-value of the XDEBUG_SESSION_START URL parameter. The expiry of the cookie is
-one hour. The DBGp protocol also passes this same value to the init packet
-when connecting to the debugclient in the "idekey" attribute.</li>
+<li>When the URL variable <code>XDEBUG_SESSION_START=name</code> is appended
+to an URL—or through a POST variable with the same name—Xdebug emits a cookie
+with the name "XDEBUG_SESSION" and as value the value of the
+XDEBUG_SESSION_START URL parameter. The expiry of the cookie is one hour. The
+DBGp protocol also passes this same value to the init packet when connecting
+to the debugclient in the "idekey" attribute.</li>
 <li>When there is a GET (or POST) variable XDEBUG_SESSION_START or the
 XDEBUG_SESSION cookie is set, Xdebug will try to connect to a debugclient.</li>
 <li>To stop a debug session (and to destroy the cookie) simply add the URL
