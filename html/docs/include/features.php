@@ -1050,6 +1050,7 @@ authors for <b>support</b>:
 <li>jcx software\'s <b><a href="http://www.vsphp.com/">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB">Xdebug Chrome App</a></b> (Chrome Application; <a href="https://github.com/artbek/chrome-xdebug-client">Open Source</a>)</li>
 <li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> (Standalone client for Windows).</li>
+<li><b><a href="https://www.kdevelop.org/">KDevelop</a></b> (IDE: Linux (KDE)).</li>
 </ul>
 </p>
 <p>
