@@ -26,6 +26,27 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_3_3'></a>[2015-06-19] &mdash; Xdebug 2.3.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1130); ?>: Escaping issues with docrefs and HTML characters in error messages
+<dd>Fixed <?php bug(1133); ?>: PDO exception code value type is changed
+<dd>Fixed <?php bug(1137); ?>: Windows does not support %zu formatting for sprintf
+<dd>Fixed <?php bug(1140); ?>: Tracing with __debugInfo() crashes Xdebug due to a stack overflow
+<dd>Fixed <?php bug(1148); ?>: Can't disable max_nesting_function
+<dd>Fixed <?php bug(1151); ?>: Crash when another extension calls call_user_function() during RINIT
+<dd>Fixed crash with code coverage (Antony Dovgal)
+<dd>Fixed usage of virtual_file_ex and STR_FREE (Remi Collet)
+<dd>Reset overloaded opcodes at the end of each request (Eran Ifrah)
+
+<dd><h3>Improvements</h3></dd>
+<dd>Fixed <?php bug(686); ?>: Not possible to inspect SplObjectStorage instances with Xdebug
+<dd>Fixed <?php bug(864); ?>: No attributes are shown if an object extends ArrayIterator
+<dd>Fixed <?php bug(996); ?>: Can't evaluate property of class that extends ArrayObject
+<dd>Fixed <?php bug(1134); ?>: Allow introspection of ArrayObject implementation's internal storage
+<dd>Get rid of setlocale hack, by using %F instead of %f (and speed up tracing by 15-20%)
+
+
 <dt><a name='x_2_3_2'></a>[2015-03-22] &mdash; Xdebug 2.3.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
