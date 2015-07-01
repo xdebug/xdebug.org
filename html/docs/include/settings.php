@@ -79,7 +79,7 @@ to set this setting to use the closest mirror.",
 		FUNC_STACK_TRACE
 	),
 	'max_nesting_level' => array(
-		'integer', 100, null,
+		'integer', 256, null,
 		"Controls the protection mechanism for infinite recursion protection.
 The value of this setting is the maximum level of nested functions that are
 allowed before the script will be aborted.",
