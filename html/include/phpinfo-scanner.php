@@ -1,7 +1,7 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.3.3';
+	static public $latestVersion = '2.4.0beta1';
 	static public $latestWindowsVersion = '2.3.3';
 
 	function __construct()
@@ -280,6 +280,7 @@ class xdebugVersion
 					break;
 				case '5.5':
 				case '5.6':
+				case '7.0':
 					if ( $this->winCompiler != 11 )
 					{
 						return false;
