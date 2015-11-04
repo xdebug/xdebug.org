@@ -1,7 +1,7 @@
 = xdebug_stop_code_coverage
 Stops code coverage
 void
-[int cleanup=true]
+[boolean cleanup=true]
 FUNC_CODE_COVERAGE
 
 TXT:
