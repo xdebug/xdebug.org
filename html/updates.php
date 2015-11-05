@@ -26,6 +26,22 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_0beta1'></a>[2015-11-05] &mdash; Xdebug 2.4.0beta1</dt>
+
+<dd><h3>Improvements</h3></dd>
+<dd>Implemented <?php bug(1109); ?>: Added support for PHP 7.</dd>
+<dd>Implemented <?php bug(1153); ?>: Add function monitor functionality.</dd>
+<dd>Implemented <?php bug(1183); ?>: Add xdebug.show_error_trace setting to allow/disallow to show a stack trace for every Error (throwable)</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1070); ?>: Too many open files error with php-fpm: connections not closed. (Patch by Sean Dubois)</dd>
+<dd>Fixed <?php bug(1123); ?>: With Xdebug 2.3.1, PHPUnit with coverage is exponentially slower than without</dd>
+<dd>Fixed <?php bug(1166); ?>: Using $this in __debugInfo() causes infinite recursion</dd>
+<dd>Fixed <?php bug(1173); ?>: Segmentation fault in xdebug_get_monitored_functions()</dd>
+<dd>Fixed <?php bug(1182); ?>: Using PHPStorm with PHP 7 RC1 and xdebug 2.4-dev break points are passed by including setting break point at start of script</dd>
+<dd>Fixed <?php bug(1192); ?>: Dead code analysis does not work for generators with 'return;'</dd>
+
+
 <dt><a name='x_2_3_3'></a>[2015-06-19] &mdash; Xdebug 2.3.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
