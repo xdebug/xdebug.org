@@ -896,7 +896,7 @@ parts of the trace files.
 your PHP code and determine bottlenecks or generally see which parts of your
 code are slow and could use a speed boost. The profiler in Xdebug 2 outputs
 profiling information in the form of a cachegrind compatible file.  This allows
-you to use the excellent <a href="http://kcachegrind.sf.net">KCacheGrind</a>
+you to use the excellent <a href="https://kcachegrind.github.io">KCacheGrind</a>
 tool (Linux, KDE) to analyse your profiling data. If you are on Linux
 you can install KCacheGrind with your favourite package manager.</p>
 
@@ -909,7 +909,7 @@ href="http://www.tekkie.ro/computer-setup/how-to-install-kcachegrind-qcachegrind
 on how to build QCacheGrind too.</p>
 
 <p>Users of Windows can alternatively use
-<a href="http://sourceforge.net/projects/wincachegrind">WinCacheGrind</a>. The
+<a href="http://ceefour.github.io/wincachegrind/">WinCacheGrind</a>. The
 functionality is different from KCacheGrind so the section that documents the
 use of KCacheGrind on this page doesn\'t apply to this program. WinCacheGrind
 currently does not support the file and function compression for cachegrind
@@ -917,9 +917,9 @@ files that Xdebug 2.3 introduces yet.</p>
 
 <p>There is also
 an alternative profile information presentation tool called
-<a href="http://code.google.com/p/xdebugtoolkit/">xdebugtoolkit</a>, a web
+<a href="https://github.com/alexeykupershtokh/xdebugtoolkit">xdebugtoolkit</a>, a web
 based front-end called <a
-href="http://code.google.com/p/webgrind/">Webgrind</a>, and a Java based tool
+href="https://github.com/jokkedk/webgrind">Webgrind</a>, and a Java based tool
 called <a
 href="http://sourceforge.net/projects/xcallgraph/">XCallGraph</a>.</p>
 
@@ -955,12 +955,12 @@ used with this setting. In order for the trigger to work properly,
 <h2>Analysing Profiles</h2>
 
 <p>After a profile information file has been generated you can open it with
-<a href="http://kcachegrind.sf.net">KCacheGrind</a>:</p>
+<a href="https://kcachegrind.github.io">KCacheGrind</a>:</p>
 
 <p><img src="/images/docs/kc-open.png"/></p>
 
 <p>Once the file is opened you have plenty of information available in the 
-different panes of <a href="http://kcachegrind.sf.net">KCacheGrind</a>. On the left side you find the "Flat Profile"
+different panes of <a href="https://kcachegrind.github.io">KCacheGrind</a>. On the left side you find the "Flat Profile"
 pane showing all functions in your script sorted by time spend in this function,
 and all its children.
 <img class="l" src="/images/docs/kc-profile.png" align="left"/>
@@ -1040,7 +1040,7 @@ authors for <b>support</b>:
 <li>ActiveState\'s <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
 <li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> (Standalone client for Mac OS X; Free)</li>
 <li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris).</li>
-<li><b><a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
+<li><b><a href="https://notepad-plus-plus.org/">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
 <li>WaterProof\'s <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
 <li><b><a href="http://www.phpeclipse.com/">PHPEclipse</a></b> (Editor Plugin).</li>
 <li>Devsense\'s <b><a href="http://www.devsense.com/products/php-tools">PHP Tools for Visual Studio</a></b> (MS Visual Studio Plugin; Commercial).</li>
@@ -1323,7 +1323,7 @@ do that with [CFG:xdebug.remote_port].</dd>
 <dd>A: If you are running with SELinux you should make sure it is not
 preventing connections; look for warnings about <code>name_connect</code> or
 anything related to the Xdebug port. You might have to allow access explicitly.
-Visit <a href="http://sheltren.com/stop-disabling-selinux">this site</a> or
+Visit <a href="http://tag1consulting.com/blog/stop-disabling-selinux">this site</a> or
 search for "selinux name_connect apache" for more information about how to do
 this</dd>
 </dl>

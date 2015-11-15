@@ -164,7 +164,7 @@ send to the client through the [FEAT:remote] feature.</p>",
 		'boolean', 0, null,
 		"When this setting is set to on, the tracing of function calls will be
 enabled just before the script is run. This makes it possible to trace code in
-the <a href='http://www.php.net/manual/en/configuration.directives.php#ini.auto-prepend-file'>auto_prepend_file</a>.",
+the <a href='http://php.net/manual/en/ini.core.php#ini.auto-prepend-file'>auto_prepend_file</a>.",
 		FUNC_FUNCTION_TRACE
 	),
 
