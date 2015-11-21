@@ -1,0 +1,14 @@
+Xdebug 2.4.0rc1 is out!
+<p>This is the first release candidate of the 2.4 series. The 2.4 series adds
+support for PHP 7 and is in large parts a rewrite of the earlier code base to
+support PHP 5.4 through PHP 7.0. This release candidate fixes a few bugs found
+in the 2.4.0beta1 release. Among others problems with code coverage, tracing
+and remote debugging. It also adds support for Windows.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_4_0rc1">updates</a> page. The source code can be found
+on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>If you find Xdebug a valuable tool, you might want to look at my Amazon <a
+href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>

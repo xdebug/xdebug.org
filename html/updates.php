@@ -26,6 +26,16 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_0rc1'></a>[2015-11-21] &mdash; Xdebug 2.4.0rc1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1195); ?>: Segfault with code coverage and foreach</dd>
+<dd>Fixed <?php bug(1200); ?>: Additional opcodes need to be overloaded for PHP 7</dd>
+<dd>Fixed <?php bug(1202); ?>: Anonymous classes are not handled properly while remote debugging</dd>
+<dd>Fixed <?php bug(1203); ?>: Accessing static property of a class that has no static properties crashes while remote debugging</dd>
+<dd>Fixed <?php bug(1209); ?>: Segfault with building a function name for create_function</dd>
+
+
 <dt><a name='x_2_4_0beta1'></a>[2015-11-05] &mdash; Xdebug 2.4.0beta1</dt>
 
 <dd><h3>Improvements</h3></dd>
