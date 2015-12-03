@@ -26,7 +26,21 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_4_0rc1'></a>[2015-11-21] &mdash; Xdebug 2.4.0rc1</dt>
+<dt><a name='x_2_4_0RC2'></a>[2015-12-02] &mdash; Xdebug 2.4.0RC2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1181); ?>: Remote debugging does not handle exceptions after using zend_read_property</dd>
+<dd>Fixed <?php bug(1189); ?>: Remove address attribute from remote debugging responses</dd>
+<dd>Fixed <?php bug(1194); ?>: The error message is doubly HTML-encoded with assert()</dd>
+<dd>Fixed <?php bug(1210); ?>: Segfault with code coverage dead code analysis and foreach on PHP 7</dd>
+<dd>Fixed <?php bug(1215); ?>: SIGSEGV if xdebug.trace_output_dir directory does not exist</dd>
+<dd>Fixed <?php bug(1217); ?>: xdebug.show_error_trace should not be enabled by default</dd>
+<dd>Fixed <?php bug(1218); ?>: Xdebug messes with the exception code, by casting it to int</dd>
+<dd>Fixed <?php bug(1219); ?>: Set default value for xdebug.overload_var_dump to 2 to include file / line numbers by default</dd>
+<dd>Use long for PHP 5, and zend_long for PHP 7 for ini settings in the globals</dd>
+
+
+<dt><a name='x_2_4_0rc1'></a>[2015-11-21] &mdash; Xdebug 2.4.0RC1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(1195); ?>: Segfault with code coverage and foreach</dd>
