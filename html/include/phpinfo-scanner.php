@@ -36,7 +36,7 @@ class xdebugVersion
 			$this->sapi = trim( $m[2] );
 		}
 
-		if ( preg_match( '/PHP Version([^45]+)([45][0-9.dev-]+)/', $data, $m ) )
+		if ( preg_match( '/PHP Version([^457]+)([457][0-9.dev-]+)/', $data, $m ) )
 		{
 			$this->version = $m[2];
 		}
