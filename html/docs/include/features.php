@@ -1259,13 +1259,13 @@ to make a connection to the debugclient.</li>
 <h2>Multiple Users Debugging</h2>
 <p>
 Xdebug only allows you to specify one IP address to connect to with
-[CFG:xdebug.remote_host]) while doing remote debugging. It does not
+[CFG:remote_host]) while doing remote debugging. It does not
 automatically connect back to the IP address of the machine the browser 
 runs on, unless you use [CFG:remote_connect_back].
 </p>
 <p>
 If all of your developers work on different projects on the same (development)
-server, you can make the [CFG:xdebug.remote_host] setting for each directory
+server, you can make the [CFG:remote_host] setting for each directory
 through Apache\'s .htaccess functionality by using <code>php_value
 xdebug.remote_host=10.0.0.5</code>.  However, for the case where multiple
 developers work on the same code, the .htaccess trick does not work as the
@@ -1319,7 +1319,7 @@ listening on (default 9000) is not blocked.</dd>
 <dd>A: Are you using FastCGI, maybe via FPM (FastCGI Process Manager)? 
   It uses the same port by default as Xdebug (9000)
 so you will need to change one of them to a different number. In Xdebug you can
-do that with [CFG:xdebug.remote_port].</dd>
+do that with [CFG:remote_port].</dd>
 <dd>A: If you are running with SELinux you should make sure it is not
 preventing connections; look for warnings about <code>name_connect</code> or
 anything related to the Xdebug port. You might have to allow access explicitly.
