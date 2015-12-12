@@ -26,6 +26,14 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_0RC3'></a>[2015-12-12] &mdash; Xdebug 2.4.0RC3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1221); ?>: Sort out Windows x64 PHP 7 support</dd>
+<dd>Fixed <?php bug(1229); ?>: Detect GCC 4.8 and disable optimisations when it is found</dd>
+<dd>Made the test suite work for Windows too. Finally, after 13 years.</dd>
+
+
 <dt><a name='x_2_4_0RC2'></a>[2015-12-02] &mdash; Xdebug 2.4.0RC2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

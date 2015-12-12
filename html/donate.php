@@ -20,7 +20,8 @@ appreciate it if you would consider having a look at my Amazon <a
 href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>Wishlist</a>. If
 you want to donate something smaller, than an <a
 href="https://www.amazon.co.uk/gp/product/B006AUF6X0/gcrnsts">Amazon Gift
-Certificate from the UK store</a> is also very welcome.</p>
+Certificate from the UK store</a> <i>(to derick@xdebug.org)</i> is also very
+welcome.</p>
 
 <br /><br />
 
