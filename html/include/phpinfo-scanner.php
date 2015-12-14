@@ -42,7 +42,7 @@ class xdebugVersion
 		}
 
 		// Zend Extension check
-		if ( preg_match( '/with\sXdebug\sv([0-9.rcdevalphabeta-]+),/', $data, $m ) )
+		if ( preg_match( '/with\sXdebug\sv([0-9.RCrcdevalphabeta-]+),/', $data, $m ) )
 		{
 			$this->xdebugVersion = $m[1];
 			$this->xdebugAsZendExt = true;
