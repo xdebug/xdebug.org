@@ -26,6 +26,21 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_0RC4'></a>[2016-01-25] &mdash; Xdebug 2.4.0RC4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1220); ?>: Segmentation fault if var_dump() output is too large.</dd>
+<dd>Fixed <?php bug(1223); ?>: Xdebug crashes on PHP 7 when doing a DBGp eval command.</dd>
+<dd>Fixed <?php bug(1229); ?>: Issues with GCC 4.8, which in -O2 move removes some required code.</dd>
+<dd>Fixed <?php bug(1235); ?>: Xdebug does not compile against PHP 7.1-dev due to ZEND_FETCH_STATIC_PROP*.</dd>
+<dd>Fixed <?php bug(1236); ?>: Can't remove breakpoints with negative IDs.</dd>
+<dd>Fixed <?php bug(1238); ?>: Xdebug crashes with SIGSEGV while enumerating references in variables.</dd>
+<dd>Fixed <?php bug(1239); ?>: Crash due to changes with the CATCH opcode's jump mechanism in 7.1</dd>
+<dd>Fixed <?php bug(1241); ?>: Xdebug doesn't handle FAST_RET and FAST_CALL opcodes for branch/dead code analysis, and path coverage.</dd>
+<dd>Fixed <?php bug(1245); ?>: xdebug_dump_superglobals dumps *uninitialized* with PHP 7.</dd>
+<dd>Fixed <?php bug(1250); ?>: Add PHP version descriptors to debugging log and profile files.</dd>
+
+
 <dt><a name='x_2_4_0RC3'></a>[2015-12-12] &mdash; Xdebug 2.4.0RC3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
