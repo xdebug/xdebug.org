@@ -20,7 +20,7 @@ If you like Xdebug, please consider giving a<br/><a href="/donate.php">donation<
 </p>
 <p class="buy-support">
 Or <a href='https://flattr.com/about'>Flattr</a> this website:
-<a href="http://flattr.com/thing/565889" target="_blank"><img src="http://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+<a href="https://flattr.com/thing/565889" target="_blank"><img src="https://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 </p>
 </div>
 
