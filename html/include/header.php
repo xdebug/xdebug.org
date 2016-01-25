@@ -58,9 +58,6 @@ YAHOO.example.init();
 
 	include 'include/links.php';
 
-	@mysql_connect ('localhost', $login, $passwd);
-	@mysql_select_db ($db);
-
 	function include_news()
 	{
 		$d = glob("news/*.txt");
@@ -88,60 +85,5 @@ YAHOO.example.init();
 	function url ($key, $text)
 	{
 		echo "<a href='/link.php?url=$key'>$text</a>";
-	}
-
-	function hits ($key)
-	{
-		$res = @mysql_query ("SELECT * FROM hits WHERE idkey = '$key'");
-		if (@mysql_num_rows ($res) == 0) {
-			@mysql_query ("INSERT INTO hits (idkey, hits) VALUES ('$key', 1)");
-		} else {
-			@mysql_query ("UPDATE hits SET hits = hits + 1 WHERE idkey = '$key'");
-		}
-	}
-
-	function refer ()
-	{
-		if (isset ($_SERVER["HTTP_REFERER"]) && !empty ($_SERVER["HTTP_REFERER"])) {
-			$ref = mysql_real_escape_string( $_SERVER["HTTP_REFERER"] );
-
-			$res = @mysql_query ("SELECT * FROM refer WHERE refer = '$ref'");
-			if (@mysql_num_rows ($res) == 0) {
-				@mysql_query ("INSERT INTO refer (refer, hits) VALUES ('$ref', 1)");
-			} else {
-				@mysql_query ("UPDATE refer SET hits = hits + 1 WHERE refer = '$ref'");
-			}
-		}
-	}
-
-	function comments ($key)
-	{
-		/* Select all comments */
-		$res = mysql_query ("SELECT * FROM comments WHERE idkey = '$key' ORDER BY date DESC");
-?>
-<p><span class="serif">
-<strong>Comments</strong><br />
-</span></p>
-<?php
-		while ($row = mysql_fetch_assoc ($res)) {
-?>
-<p>
-<strong><span class="sans"><?php echo $row['name']. ' - '. date("l, jS of F, Y; H:i:s", $row['date']); ?></strong>
-<br />
-<?php echo stripslashes ($row['comment']); ?>
-</span>
-</p>
-<?php
-		}
-?>
-<p>
-<span class="sans"><a target="new" href="add_comment.php?key=<?php echo $key; ?>">Add comment</a></span>
-</p>
-<br />
-<br />
-<?php
-
-	refer();
-
 	}
 ?>

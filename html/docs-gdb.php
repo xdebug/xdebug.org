@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Documentation - Protocol - GDB"; include "include/header.php"; hits ('xdebug-docs-protocol-gdb'); ?>
+<?php $title = "Xdebug: Documentation - Protocol - GDB"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

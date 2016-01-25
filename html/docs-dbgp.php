@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Documentation - Protocol - DBGp"; include "include/header.php"; hits ('xdebug-docs-protocol'); ?>
+<?php $title = "Xdebug: Documentation - Protocol - DBGp"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td>

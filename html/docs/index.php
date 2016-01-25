@@ -137,7 +137,6 @@ END;
 	ob_end_clean();
 	include "include/header.php";
 
-	hits('xdebug-docs');
 	echo $text;
 ?>
 			</td>

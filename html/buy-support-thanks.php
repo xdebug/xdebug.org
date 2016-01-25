@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Buy Support - Thanks"; include "include/header.php"; hits ('xdebug-buy-support-thanks'); ?>
+<?php $title = "Xdebug: Buy Support - Thanks"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

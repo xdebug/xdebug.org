@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: License"; include "include/header.php"; hits ('xdebug-license'); ?>
+<?php $title = "Xdebug: License"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

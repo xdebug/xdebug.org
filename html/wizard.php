@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Support; Tailored Installation Instructions"; include "include/header.php"; hits ('xdebug-findbinary'); ?>
+<?php $title = "Xdebug: Support; Tailored Installation Instructions"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">
