@@ -23,16 +23,49 @@ sections. <b>Versions before 2.3 are no longer supported</b>.
 <a name='remote'></a>
 <h3>Remote Debugger Bugs</h3>
 <p>
-To provide sufficient it is important to provide both a short reproducable
-script (that means a self-contained script without external requirements such
-as a database and/or other files) and a remote debugging log. This log will be
-created automatically for each debug session when the
-<a href="/docs/all_settings#remote_log">xdebug.remote_log</a> setting is not
-empty. The setting configures the filename where Xdebug will try to write all
-incoming commands and outgoing response to. Make sure that the user under which
-Xdebug runs (either the user with CLI, or the Apache/Webserver user when Xdebug
-runs as extension in a web server environment) has write permissions to this
-file.
+To make it possible for me to find and fix bugs for the remote debugging
+feature, I need several bits of information. Without this information, I can
+not fix your bug.
+</p>
+
+<p>
+First of all, I need a <strong>short</strong> and
+<strong>self-contained</strong> script that exhibits the issue. Short means
+about 10-20 lines maximum, and self-contained means that it can
+<strong>not</strong> not depend on any other libraries, or databases.
+</p>
+
+<p>
+If you <strong>really</strong> can't make a short script after trying for
+several hours ;-), then please prepare something that I can: clone from
+GitHub, use something like composer to install dependecies, and then can
+run. The script can still not have dependecies on things like databases, as
+I won't have them installed. Please <a href='/support.php#email'>contact
+me</a> first if you are not sure.
+</p>
+
+<p>
+Secondly, I need a remote debugging log. This debugging log contains all the
+interactions between Xdebug and an IDE and is vital to track down where the
+error occurs, and due to which protocol command.
+</p>
+
+<p>
+You can make a remote debugging log by using the <a
+href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini setting.
+I suggest you set its value to something in the <code>/tmp</code> directory
+(or your operating system's equivalent). I have it set as follows:
+<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the user that
+runs the script (yourself for CLI, or your web server's user ID if you're
+debugging through a web server) can write to the file that you have
+specified.
+</p>
+
+<p>
+With the short script prepared, and the remote logging enabled, now step
+through your code in the IDE (or do whatever you need to do to reproduce
+it). When you are done, add both the script as well as the remote debugging
+log to the bug report at <a href='//bugs.xdebug.org'>bugs.xdebug.org</a>.
 </p>
 
 <br />
@@ -57,6 +90,7 @@ href="http://xdebug.org/archives/xdebug-dev/">here</a>.
 
 <br />
 
+<a name="email"></a>
 <h2>E-mail</h2>
 
 <p>
