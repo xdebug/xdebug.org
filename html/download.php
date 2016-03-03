@@ -54,18 +54,18 @@ uksort( $files, 'version_compare' );
 	foreach( array_reverse( $files ) as $version => $tar ) {
 		echo "<strong>Xdebug {$version}";
 		$f = stat( "files/{$tar['source']}" );
-		$md5 = md5_file( "files/{$tar['source']}" );
+		$sha1 = sha1_file( "files/{$tar['source']}" );
 		$d = date( 'Y-m-d', $f['mtime'] );
 		echo "<div class='copy'>Release date: $d</div></strong>\n";
 		echo "<ul>";
-		echo "<li><a href='files/{$tar['source']}'>source</a> <span class='md5'>(MD5: $md5)</span></li>";
+		echo "<li><a href='files/{$tar['source']}'>source</a> <span class='md5'>(SHA1: $sha1)</span></li>";
 		if (isset( $tar['dll'] )) {
 			echo "<li>Windows binaries:<br/>";
 			$links = array();
 			natsort( $tar['dll'] );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
-				$md5 = md5_file( "files/$dls" );
+				$sha1 = sha1_file( "files/$dls" );
 				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([4567]\.[0-9])(\.[0-9])?(-(vc(?>6|9|11|14)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
@@ -85,7 +85,7 @@ uksort( $files, 'version_compare' );
 				} else {
 					$namea .= " (32 bit)";
 				}
-				$links[] = "<a href='files/{$dls}'>PHP $name$namea</a> <span class='md5'>(MD5: $md5)</span>";
+				$links[] = "<a href='files/{$dls}'>PHP $name$namea</a> <span class='md5'>(SHA1: $sha1)</span>";
 			}
 			echo join( '<br /> ', $links );
 		}

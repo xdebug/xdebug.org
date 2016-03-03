@@ -26,6 +26,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_0'></a>[2016-03-03] &mdash; Xdebug 2.4.0</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1258); ?>: Case in PHP 7.0 and code coverage</dd>
+<dd>Fixed <?php bug(1261); ?>: segmentation fault in xdebug.so with PHP 7.0 version of 'pkgtools' due to spl_autoload()</dd>
+<dd>Fixed <?php bug(1262); ?>: overload_var_dump=0 messes with xdebug_var_dump()</dd>
+<dd>Fixed <?php bug(1266); ?>: xdebug_dump_superglobals() always dumps empty  stack on PHP 7</dd>
+<dd>Fixed <?php bug(1267); ?>: AIX build issues</dd>
+<dd>Fixed <?php bug(1270); ?>: String parsing marked not covered with PHP 7</dd>
+
+
 <dt><a name='x_2_4_0RC4'></a>[2016-01-25] &mdash; Xdebug 2.4.0RC4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
