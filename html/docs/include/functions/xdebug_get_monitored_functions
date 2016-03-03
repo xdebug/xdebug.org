@@ -1,0 +1,47 @@
+= xdebug_get_monitored_functions,2.4
+Returns information about monitored functions
+array
+none
+FUNC_STACK_TRACE
+
+TXT:
+Returns a structure which contains information about where the monitored
+functions were executed in your script. The following example shows how to use
+this, and the returned information:
+
+EXAMPLE:
+<?php
+/* Start the function monitor for strrev and array_push: */
+xdebug_start_function_monitor( [ 'strrev', 'array_push' ] );
+
+/* Run some code: */
+echo strrev("yes!"), "\n";
+
+echo strrev("yes!"), "\n";
+
+var_dump(xdebug_get_monitored_functions());
+xdebug_stop_function_monitor();
+?>  
+
+RESULT:
+/tmp/monitor-example.php:10:
+array(2) {
+  [0] =>
+  array(3) {
+    'function' =>
+    string(6) "strrev"
+    'filename' =>
+    string(24) "/tmp/monitor-example.php"
+    'lineno' =>
+    int(6)
+  }
+  [1] =>
+  array(3) {
+    'function' =>
+    string(6) "strrev"
+    'filename' =>
+    string(24) "/tmp/monitor-example.php"
+    'lineno' =>
+    int(8)
+  }
+}
