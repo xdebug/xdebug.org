@@ -59,6 +59,29 @@ zend_extension=\"/usr/local/php/modules/xdebug.so\"
 <p><b>Note:</b> You should ignore any prompts to add \"extension=xdebug.so\" to
 php.ini &mdash; this <b>will</b> cause problems.</p>
 
+<a name='mac'></a>
+<h2>Installation on Mac OS X via Homebrew</h2>
+
+<p>
+Xdebug is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. You install Xdebug via brew install:
+</p>
+<pre class='example'>
+# brew install &lt;php-version&gt;-xdebug
+</pre>
+<p>
+eg
+</p>
+<pre class='example'>
+# brew install php56-xdebug
+</pre>
+<p>
+You can also use brew search to locate the specific package you need:
+</p>
+<pre class='example'>
+# brew search xdebug
+</pre>
+<p>The Xdebug extension will be enabled per default after the installation, additional configuration of the extension should be done by adding a custom ini-file to /usr/local/etc/php/&lt;php-version&gt;/conf.d/ . See the Caveats output at the end of the installation for more details.</p>
+
 <a name='source'></a>
 <h2>Installation From Source</h2>
 
