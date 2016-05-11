@@ -21,7 +21,8 @@ href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>Wishlist</a>. If
 you want to donate something smaller, than an <a
 href="https://www.amazon.co.uk/gp/product/B006AUF6X0/gcrnsts">Amazon Gift
 Certificate from the UK store</a> <i>(to derick@xdebug.org)</i> is also very
-welcome.</p>
+welcome. I can sadly not use gift cards from other amazon stores (.de, .fr,
+.com) as they don't work in the UK store.</p>
 
 <br /><br />
 
