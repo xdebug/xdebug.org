@@ -63,7 +63,7 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 <h2>Installation on Mac OS X via Homebrew</h2>
 
 <p>
-PHP and Xdebug is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. If you use PHP installed via Homebrew (see <a href=\"https://github.com/Homebrew/homebrew-php#installation\">this installation guide</a> for details on how to do that)  Xdebug can be installed via brew install:
+PHP and Xdebug are available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. If you use PHP installed via Homebrew (see <a href=\"https://github.com/Homebrew/homebrew-php#installation\">this installation guide</a> for details on how to do that)  Xdebug can be installed via brew install:
 </p>
 <pre class='example'>
 # brew install &lt;php-version&gt;-xdebug
