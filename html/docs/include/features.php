@@ -45,7 +45,7 @@ with with PEAR version 0.9.1-dev or higher and some UNIX.
 <p>
 Installing with PEAR/PECL is as easy as:
 </p>
-<pre>
+<pre class='example'>
 # pecl install xdebug
 </pre>
 <p>
@@ -53,7 +53,7 @@ but you still need to add the correct line to your php.ini: (don't forget to
 change the path and filename to the correct one &mdash; but make sure you use
 the <b>full path</b>)
 </p>
-<pre>
+<pre class='example'>
 zend_extension=\"/usr/local/php/modules/xdebug.so\"
 </pre>
 <p><b>Note:</b> You should ignore any prompts to add \"extension=xdebug.so\" to
@@ -63,13 +63,13 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 <h2>Installation on Mac OS X via Homebrew</h2>
 
 <p>
-Xdebug is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. You install Xdebug via brew install:
+PHP and Xdebug are available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. If you use PHP installed via Homebrew (see <a href=\"https://github.com/Homebrew/homebrew-php#installation\">this installation guide</a> for details on how to do that)  Xdebug can be installed via brew install:
 </p>
 <pre class='example'>
 # brew install &lt;php-version&gt;-xdebug
 </pre>
 <p>
-eg
+eg.
 </p>
 <pre class='example'>
 # brew install php56-xdebug
@@ -89,7 +89,7 @@ You can also use brew search to locate the specific package you need:
 You can <a href='/download.php#releases'>download</a> the source of the latest <b>stable</b> release [KW:last_release_version].
 Alternatively you can obtain Xdebug from GIT:
 </p>
-<pre>
+<pre class='example'>
 git clone git://github.com/xdebug/xdebug.git
 </pre>
 <p>
