@@ -1,6 +1,6 @@
 = xdebug_get_collected_errors,2.1
 Returns all collected error messages
-void
+string
 [int clean]
 FUNC_BASIC
 
