@@ -26,6 +26,21 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_4_1'></a>[2016-08-02] &mdash; Xdebug 2.4.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1106); ?>: A thrown Exception after a class with __debugInfo gives 2 errors</dd>
+<dd>Fixed <?php bug(1241); ?>: FAST_CALL/FAST_RET take #2</dd>
+<dd>Fixed <?php bug(1246); ?>: Path and branch coverage should be initialised per request, not globally</dd>
+<dd>Fixed <?php bug(1263); ?>: Code coverage segmentation fault with opcache enabled</dd>
+<dd>Fixed <?php bug(1277); ?>: Crash when using a userland function from RSHUTDOWN with profiling enabled</dd>
+<dd>Fixed <?php bug(1282); ?>: var_dump() of integers &gt; 32 bit is broken on Windows</dd>
+<dd>Fixed <?php bug(1288); ?>: Segfault when uncaught exception message does not contain " in "</dd>
+<dd>Fixed <?php bug(1291); ?>: Debugclient installation fails on Mac OS X</dd>
+<dd>Fixed <?php bug(1326); ?>: Tracing and generators crashes with PHP 7.x.</dd>
+<dd>Fixed <?php bug(1333); ?>: Profiler accesses memory structures after freeing</dd>
+
+
 <dt><a name='x_2_4_0'></a>[2016-03-03] &mdash; Xdebug 2.4.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
