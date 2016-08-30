@@ -1310,6 +1310,16 @@ use the [CFG:remote_connect_back] <b>setting</b> that was introduced in
 Xdebug
 2.1.
 </p>
+
+
+<a name="implementation-details"></a>
+<h2>Implementation Details</h2>
+<p>
+Xdebug\'s implementation of the
+<a href="/docs-dbgp.php#context-names">DBGp protocol\'s <code>context_names</code></a>
+command does not depend on the stack level. The returned value is always the
+same during each debugger session, and hence, can be safely cached.
+</p>
 		'
 	),
 	'faq' => array(
