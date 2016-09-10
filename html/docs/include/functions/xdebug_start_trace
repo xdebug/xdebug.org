@@ -1,14 +1,16 @@
 = xdebug_start_trace
 Starts a new function trace
-void
-string trace_file [, integer options]
+string
+[ string trace_file [, integer options] ]
 FUNC_FUNCTION_TRACE
 
 TXT:
-Start tracing function calls from this point to the file in the <i>trace_file</i> parameter.
-If no filename is given, then the trace file will be placed in the directory as
-configured by the [CFG:trace_output_dir]
-setting. In case a file name is given as first parameter, the name is relative
+Start tracing function calls from this point to the file in the
+<i>trace_file</i> parameter. If no filename is given, then the trace file will
+be placed in the directory as configured by the [CFG:trace_output_dir] setting.
+
+TXT:
+In case a file name is given as first parameter, the name is relative
 to the current working directory. This current working directory might be
 different than you expect it to be, so please use an absolute path in case you
 specify a file name. Use the PHP function <a
@@ -43,3 +45,8 @@ to relieve the pressure on used memory. The settings [CFG:collect_includes],
 [CFG:collect_params] and [CFG:collect_return] influence what information is
 logged to the trace file and the setting [CFG:trace_format] influences the
 format of the trace file.
+
+TXT:
+The full path and filename to which Xdebug traces is returned from this
+function. This will be either the filename you pass in (potentially with ".xt"
+added), or the auto generated filename if no filename has been passed in.
