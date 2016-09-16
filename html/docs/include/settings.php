@@ -365,6 +365,16 @@ the environment variables.",
 		FUNC_REMOTE
 	),
 
+	'remote_addr_header' => array(
+		'string', '""', '> 2.4',
+		"If [CFG:remote_addr_header] is configured to be a non-empty string, then
+the value is used as key in the \$SERVER superglobal array to determine which
+header to use to find the IP address or hostname to use for 'connecting back
+to'. This setting is only used in combination with [CFG:remote_connect_back]
+and is otherwise ignored.</p>",
+		FUNC_REMOTE
+	),
+
 	'remote_autostart' => array(
 		'boolean', 0, null,
 		"Normally you need to use a specific HTTP GET/POST variable to start
@@ -384,12 +394,19 @@ variable was not present.",
 
 	'remote_connect_back' => array(
 		'boolean', 0, '> 2.1',
-		"If enabled, the [CFG:remote_host] setting is ignored and Xdebug will
-try to connect to the client that made the HTTP request. It checks
-the \$_SERVER['REMOTE_ADDR'] variable to find out which IP address to use.
-Please note that there is <b>no</b> filter available, and anybody who can
-connect to the webserver will then be able to start a debugging session,
-even if their address does not match [CFG:remote_host].",
+		"<p>If enabled, the [CFG:remote_host] setting is ignored and Xdebug will
+try to connect to the client that made the HTTP request. It checks the
+\$_SERVER['HTTP_X_FORWARDED_FOR'] and \$_SERVER['REMOTE_ADDR'] variables to
+find out which IP address to use.</p>
+<p>If [CFG:remote_addr_header] is configured, then the \$SERVER variable with
+the configured name will be checked before the
+\$_SERVER['HTTP_X_FORWARDED_FOR'] and \$_SERVER['REMOTE_ADDR'] variables.</p>
+<p>This setting does not apply for debugging through the CLI, as the \$SERVER
+header variables are not available there.</p>
+<p>Please note that there is <b>no</b> filter
+available, and anybody who can connect to the webserver will then be able to
+start a debugging session, even if their address does not match
+[CFG:remote_host].</p>",
 		FUNC_REMOTE
 	),
 
