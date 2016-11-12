@@ -5,9 +5,8 @@
 	<title><?php echo $title; ?></title>
 	<meta name="ROBOTS" content="ALL" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP." />
-	<meta name="KEYWORDS" content="derick, rethans, opensrc, php, php4, xml, xhtml, xml-rpc, soap, blog, weblog" />
-	<meta name="AUTHOR" content="Derick Rethans, as in derick @ php dot net or opensrc @ EFNet" />
+	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP" />
+	<meta name="AUTHOR" content="Derick Rethans, as in derick@xdebug.org" />
 	<link type="text/css" rel="stylesheet" href="/core.css"/>
 
 <?php
