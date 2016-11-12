@@ -26,8 +26,23 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_4_1'></a>[2016-08-02] &mdash; Xdebug 2.4.1</dt>
+<dt><a name='x_2_5_0RC1'></a>[2016-11-12] &mdash; Xdebug 2.5.0RC1</dt>
 
+<dd><h3>Improvements</h3></dd>
+<dd>Implemented <?php bug(998); ?>: Added support for IPv6 (Thomas Vanhaniemi)</dd>
+<dd>Implemented <?php bug(1297); ?>: Initial PHP 7.1 support</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1295); ?>: Apache crashes (SIGSEGV) when trying to establish connection when sockfd is large</dd>
+<dd>Fixed <?php bug(1303); ?>: POLLRDHUP is not supported outside of Gnu/Linux</dd>
+<dd>Fixed <?php bug(1331); ?>: Segfault in code coverage</dd>
+
+<dd><h3>Removed features</h3></dd>
+<dd>Support for PHP versions lower than PHP 5.5 has been dropped</dd>
+
+
+<dt><a name='x_2_4_1'></a>[2016-08-02] &mdash; Xdebug 2.4.1</dt>
+ 
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(1106); ?>: A thrown Exception after a class with __debugInfo gives 2 errors</dd>
 <dd>Fixed <?php bug(1241); ?>: FAST_CALL/FAST_RET take #2</dd>

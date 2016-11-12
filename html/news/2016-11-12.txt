@@ -1,0 +1,11 @@
+Xdebug 2.5.0RC1 is out!
+<p>This is the first released candidate for the Xdebug 2.5 series. This series
+adds support for PHP 7.1, and IPv6.</p>
+
+<p>The full change log can be found on the <a
+href="/updates.php#x_2_5_0RC1">updates</a> page. The source code can be found
+on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>If you find Xdebug a valuable tool, you might want to look at my Amazon <a
+href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>

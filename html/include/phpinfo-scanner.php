@@ -1,8 +1,8 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.4.1';
-	static public $latestWindowsVersion = '2.4.1';
+	static public $latestVersion = '2.5.0rc1';
+	static public $latestWindowsVersion = '2.5.0rc1';
 
 	function __construct()
 	{
@@ -244,9 +244,9 @@ class xdebugVersion
 		{
 			return "The compiler (MS VC8) that this PHP was build with, is not supported.";
 		}
-		if ( version_compare( $this->version, '5.4.0', '<' ) )
+		if ( version_compare( $this->version, '5.5.0', '<' ) )
 		{
-			return "PHP versions below 5.4 are not supported.";
+			return "PHP versions below 5.5 are not supported.";
 		}
 		return true;
 	}
@@ -273,12 +273,6 @@ class xdebugVersion
 			}
 			switch ( $majorPhpVersion ) 
 			{
-				case '5.4':
-					if ( $this->winCompiler != 9 )
-					{
-						return false;
-					}
-					break;
 				case '5.5':
 				case '5.6':
 					if ( $this->winCompiler != 11 )
@@ -287,6 +281,7 @@ class xdebugVersion
 					}
 					break;
 				case '7.0':
+				case '7.1':
 					if ( $this->winCompiler != 14 )
 					{
 						return false;
