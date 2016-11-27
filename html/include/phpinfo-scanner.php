@@ -125,6 +125,7 @@ class xdebugVersion
 				}
 			}
 		}
+		$this->extensionDir = str_replace( '&nbsp;', ' ', $this->extensionDir );
 
 		if ( preg_match( '/PHP Extension Build([ =>\t]+)(API.*)/', $data, $m ) )
 		{
@@ -238,11 +239,15 @@ class xdebugVersion
 		}
 		if ( $this->windows && $this->winCompiler == 6 )
 		{
-			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC9.";
+			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or VC14.";
 		}
 		if ( $this->windows && $this->winCompiler == 8 )
 		{
 			return "The compiler (MS VC8) that this PHP was build with, is not supported.";
+		}
+		if ( $this->windows && $this->winCompiler == 9 )
+		{
+			return "The compiler (MS VC9) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
 		}
 		if ( version_compare( $this->version, '5.5.0', '<' ) )
 		{
@@ -339,7 +344,7 @@ class xdebugVersion
 			}
 		}
 		$line .= ' = ';
-
+var_dump($this);
 		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 		$line .= $this->extensionDir . $this->dirSep;
 
