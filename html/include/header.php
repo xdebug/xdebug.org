@@ -8,6 +8,7 @@
 	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick@xdebug.org" />
 	<link type="text/css" rel="stylesheet" href="/core.css"/>
+	<link type="application/rss+xml" rel="alternate" href="/rss.php" />
 
 <?php
 	if ( !empty( $tabFields ) )
