@@ -483,8 +483,18 @@ unchanged.",
 	'profiler_append' => array(
 		'integer', 0, null,
 		"When this setting is set to 1, profiler files will not be overwritten when
-a new request would map to the same file (depnding on the [CFG:profiler_output_name] setting.
+a new request would map to the same file (depending on the [CFG:profiler_output_name] setting.
 Instead the file will be appended to with the new profile.",
+		FUNC_PROFILER
+	),
+
+	'profiler_aggregate' => array(
+		'integer', 0, null,
+		"When this setting is set to 1, a single profiler file will be written
+for multiple requests. One can surf to multiple pages or reload a page
+to get an <strong>average</strong> across all requests. The file will be named
+<code>.cachegrind.aggregate</code>. You will need to move this file to get
+another round of aggregate data.",
 		FUNC_PROFILER
 	),
 
