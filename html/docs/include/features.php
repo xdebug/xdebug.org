@@ -142,6 +142,8 @@ than 5.3 <b>and</b> threaded usage of PHP (Apache 2 worker MPM or the
 ISAPI module), add: zend_extension_ts=\"/wherever/you/put/it/xdebug.so\" instead.
 <strong>Note:</strong> In case you compiled PHP yourself and used
 --enable-debug you would have to use zend_extension_debug=.
+<strong>Note:</strong> If you want to use Xdebug and OPCache together, you
+must load Xdebug after OPCache. Otherwise, they won't work properly.
 <strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini
 setting name, and not zend_extension_ts, nor zend_extension_debug. However,
 your compile options (ZTS/normal build; debug/non-debug) still need to match
