@@ -1367,8 +1367,9 @@ this</dd>
 <dl class="faq">
 <dt><a name="phpize"></a>
 Q: I don\'t have the <code>phpize</code> tool.</dt>
-<dd>A: Debian and Ubuntu users need to install the <code>php5-dev</code>
-package with <code>apt</code>.</dd>
+<dd>A: Debian and Ubuntu users need to install the PHP development package with
+<code>apt install php5-dev</code>, or <code>apt install php7.0-dev</code> for
+PHP 7.</dd>
 
 <dt><a name="api"></a>
 Q: What to do with: <i>Xdebug requires Zend Engine API version
