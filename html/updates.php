@@ -26,6 +26,21 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_0'></a>[2016-12-04] &mdash; Xdebug 2.5.0</dt>
+
+<dd><h3>Improvements</h3></dd>
+<dd>Implemented <?php bug(1232); ?>: add memory delta to HTML traces</dd>
+<dd>Implemented <?php bug(1365); ?>: Allow remote_connect_back to be set through XDEBUG_CONFIG</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1168); ?>: Added defensive check to prevent infinite loop</dd>
+<dd>Fixed <?php bug(1242); ?>: Xdebug on Windows with Eclipse has issues with breakpoint IDs</dd>
+<dd>Fixed <?php bug(1343); ?>: Wrong values of numerical keys outside 32bit range</dd>
+<dd>Fixed <?php bug(1357); ?>: Function signature using variadics is reported as being not executed</dd>
+<dd>Fixed <?php bug(1361); ?>: Remote debugging connection issues with Windows (Anatol Belski)</dd>
+<dd>Fixed <?php bug(1373); ?>: Crash in zend_hash_apply_with_arguments when debugging, due to unset symbol table</dd>
+
+
 <dt><a name='x_2_5_0RC1'></a>[2016-11-12] &mdash; Xdebug 2.5.0RC1</dt>
 
 <dd><h3>Improvements</h3></dd>
