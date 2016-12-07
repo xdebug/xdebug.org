@@ -344,7 +344,7 @@ class xdebugVersion
 			}
 		}
 		$line .= ' = ';
-var_dump($this);
+
 		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 		$line .= $this->extensionDir . $this->dirSep;
 
