@@ -94,10 +94,18 @@ browser for HTML traces.</p>",
 		FUNC_BASIC
 	),
 
+	'show_error_trace' => array(
+		'integer', 0, ">= 2.4",
+		"When this setting is set to 1, Xdebug will show a stack trace whenever
+an Error is raised - even if this Error is actually caught.",
+		FUNC_STACK_TRACE
+	),
+
 	'show_exception_trace' => array(
 		'integer', 0, null,
-		"When this setting is set to 1, Xdebug will show a stack trace whenever
-an exception is raised - even if this exception is actually caught.",
+		"<p>When this setting is set to 1, Xdebug will show a stack trace whenever
+an Exception or Error is raised - even if this Exception or Error is actually caught.</p>
+<p>Error 'exceptions' were introduced in PHP 7.</p>",
 		FUNC_STACK_TRACE
 	),
 
