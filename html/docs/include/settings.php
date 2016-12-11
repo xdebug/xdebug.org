@@ -86,6 +86,13 @@ allowed before the script will be aborted.</p>
 <p>Before Xdebug 2.3, the default value was <code>100</code>.</p>",
 		FUNC_BASIC
 	),
+	'max_stack_frames' => array(
+		'integer', -1, ">= 2.3",
+		"<p>Controls how many stack frames are shown in stack traces, both on
+the command line during PHP error stack traces, as well as in the
+browser for HTML traces.</p>",
+		FUNC_BASIC
+	),
 
 	'show_exception_trace' => array(
 		'integer', 0, null,
