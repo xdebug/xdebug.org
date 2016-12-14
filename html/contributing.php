@@ -74,19 +74,20 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
-	<tt>issue623-debug-static-properties</tt>.</li>
+	<tt>issue1623-debug-static-properties</tt>.</li>
 <li>Work on the code, and add one or more tests in the tests directory, with as
-	name <tt>tests/bug00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
-	<tt>tests/bug00623.phpt</tt>.</li>
-<li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
+	name <tt>tests/bug0<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
+	<tt>tests/bug01623.phpt</tt>.</li>
+<li>Commit it to your local repository: <tt>git commit ..</tt>, with your main
+	commit message's format as <tt>Fixed issue #1623: <i>{issue report title}</i></tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
 	<tt>git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_5</tt></li>
 <li>Push your changes to your remote repository:<br/>
-	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	<tt>git push origin <i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
-	<tt>git push origin issue681:issue681</tt></li>
+	<tt>git push origin issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
@@ -114,19 +115,20 @@ except that you make a branch of <b>master</b> instead of
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
-	<tt>issue623-debug-static-properties</tt>.</li>
+	<tt>issue1623-debug-static-properties</tt>.</li>
 <li>Work on the code, and add one or more tests in the tests directory, with as
-	name <tt>tests/bug00<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
-	<tt>tests/bug00623.phpt</tt>.</li>
-<li>Commit it to your local repository: <tt>git commit ..</tt>.</li>
+	name <tt>tests/bug0<i>{issue&nbsp;number}</i>.phpt</tt>, for example:
+	<tt>tests/bug01623.phpt</tt>.</li>
+<li>Commit it to your local repository: <tt>git commit ..</tt>, with your main
+	commit message's format as <tt>Fixed issue #1623: <i>{issue report title}</i></tt>.</li>
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
 	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/master</tt></li>
 <li>Push your changes to your remote repository:<br/>
-	<tt>git push origin <i>{issue&nbsp;number}</i>:<i>{issue&nbsp;number}</i></tt><br/>
+	<tt>git push origin <i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
-	<tt>git push origin issue681:issue681</tt></li>
+	<tt>git push origin issue681</tt></li>
 <li>
 	<p>Once you're satisfied, generate a pull request, by navigating to your
 	repository (<tt>https://github.com/<i>{username}</i>/xdebug</tt>), select
