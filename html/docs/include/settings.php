@@ -450,8 +450,8 @@ the only supported protocol.</p>
 	'remote_host' => array(
 		'string', 'localhost', null,
 		"Selects the host where the debug client is running, you can either use a
-host name or an IP address. This setting is ignored if
-[CFG:remote_connect_back] is enabled.",
+host name, IP address, or 'unix:///path/to/sock' for a Unix domain socket.
+This setting is ignored if [CFG:remote_connect_back] is enabled.",
 		FUNC_REMOTE
 	),
 
