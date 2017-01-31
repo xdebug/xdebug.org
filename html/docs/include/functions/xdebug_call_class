@@ -1,27 +1,130 @@
 = xdebug_call_class
-Returns the calling class
+Returns the calling class, <code>NULL</code> if the stack frame does not exist, or <code>FALSE</code> if the stack frame has no class information
 string
-none
+[int $depth = 1]
 FUNC_BASIC
 
 TXT:
-This function returns the name of the class from which the current
-function/method was called from.
+This function returns the name of the class that defined the current method, or
+<code>FALSE</code> if no class is associated with this call.
 
 EXAMPLE:
 <?php
-    function fix_string($a)
-    {
-        echo "Called @ ".
-            xdebug_call_file().
-            ":".
-            xdebug_call_line().
-            " from ".
-            xdebug_call_function();
-    }
+class Strings
+{
+	static function fix_string($a)
+	{
+		echo
+			xdebug_call_class().
+			"::".
+			xdebug_call_function().
+			" is called at ".
+			xdebug_call_file().
+			":".
+			xdebug_call_line();
+	}
+}
 
-    $ret = fix_string(array('Derick'));
+$ret = Strings::fix_string( 'Derick' );
 ?>
 
 RESULT:
-Called @ /home/httpd/html/test/xdebug_caller.php:12 from {main}
+Called @ /home/httpd/html/test/xdebug_caller.php:17 from ::{main}
+
+TXT:
+To retrieve information from earlier stack frames, use the optional
+<code>$depth</code> argument. A value of <code>1</code> returns
+the call information of the method that executed [FUNC:xdebug_call_class]:
+
+EXAMPLE:
+<?php
+class Strings
+{
+	static function fix_string( $a )
+	{
+		echo
+			xdebug_call_class( 1 ).
+			"::".
+			xdebug_call_function( 1 ).
+			" is called at ".
+			xdebug_call_file( 1 ).
+			":".
+			xdebug_call_line( 1 );
+	}
+}
+
+$ret = Strings::fix_string( 'Derick' );
+?>
+
+RESULT:
+Strings::fix_string is called at /home/httpd/html/test/xdebug_caller:17
+
+TXT:
+A value of <code>2</code> (the default) returns the call information of the
+"grand parent" of the current method:
+
+EXAMPLE:
+<?php
+class Strings
+{
+	static function fix_string( $a )
+	{
+		echo
+			xdebug_call_class( 2 ).
+			"::".
+			xdebug_call_function( 2 ).
+			" is called at ".
+			xdebug_call_file( 2 ).
+			":".
+			xdebug_call_line( 2 );
+	}
+
+	static function fix_strings( array $a )
+	{
+		foreach ( $a as $element )
+		{
+			self::fix_string( $a );
+		}
+	}
+}
+
+$ret = Strings::fix_strings( [ 'Derick' ] );
+?>
+
+RESULT:
+Strings::fix_strings is called at /home/httpd/html/test/xdebug_caller:25
+
+TXT:
+A value of <code>0</code> returns the call information of the call to
+corresponding <code>xdebug_call_<i>*</i></code> method:
+
+EXAMPLE:
+<?php
+class Strings
+{
+	static function fix_string( $a )
+	{
+		echo
+			xdebug_call_class( 0 ).
+			"::".
+			xdebug_call_function( 0 ).
+			" is called at ".
+			xdebug_call_file( 0 ).
+			":".
+			xdebug_call_line( 0 );
+	}
+
+	static function fix_strings( array $a )
+	{
+		foreach ( $a as $element )
+		{
+			self::fix_string( $a );
+		}
+	}
+}
+
+$ret = Strings::fix_strings( [ 'Derick' ] );
+?>
+
+RESULT:
+::xdebug_call_function is called at /home/httpd/html/test/xdebug_caller:13

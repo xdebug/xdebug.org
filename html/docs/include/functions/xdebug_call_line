@@ -1,12 +1,16 @@
 = xdebug_call_line
-Returns the calling line
+Returns the calling line number, or <code>NULL</code> if the stack frame does not exist
 int
-none
+[int $depth = 1]
 FUNC_BASIC
 
 TXT:
-This function returns the line number that contains the function/method that
-called the current function/method.
+This function returns the line number from where the current function/method was
+called from.
 
 TXT:
-For an example see [FUNC:xdebug_call_class].
+To retrieve information from earlier stack frames, use the optional
+<code>$depth</code> argument.
+
+TXT:
+For examples and more extensive information, see [FUNC:xdebug_call_class].

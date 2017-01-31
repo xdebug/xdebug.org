@@ -1,12 +1,16 @@
 = xdebug_call_file
-Returns the calling file
+Returns the calling file, or <code>NULL</code> if the stack frame does not exist
 string
-none
+[int $depth = 1]
 FUNC_BASIC
 
 TXT:
-This function returns the filename that contains the function/method that
-called the current function/method.
+This function returns the filename from where the current function/method
+was executed from.
 
 TXT:
-For an example see [FUNC:xdebug_call_class].
+To retrieve information from earlier stack frames, use the optional
+<code>$depth</code> argument.
+
+TXT:
+For examples and more extensive information, see [FUNC:xdebug_call_class].
