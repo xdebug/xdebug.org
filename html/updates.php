@@ -26,6 +26,23 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_1'></a>[2017-02-26] &mdash; Xdebug 2.5.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1057); ?>: Add xdebug.ini of all settings to package</dd>
+<dd>Fixed <?php bug(1165); ?>: DBGp: step_out skips subsequent function calls</dd>
+<dd>Fixed <?php bug(1180); ?>: Code coverage crashes with non-standard start/stops</dd>
+<dd>Fixed <?php bug(1278); ?>: Xdebug with PHP 7 does not handle prefill-from-oparray for XDEBUG_CC_UNUSED</dd>
+<dd>Fixed <?php bug(1300); ?>: Xdebug functions are not exposing their signature to Reflection</dd>
+<dd>Fixed <?php bug(1313); ?>: Arguments to __call() trampoline picked from the wrong memory location</dd>
+<dd>Fixed <?php bug(1329); ?>: While printing out a stack with and function parameters, XDebug reads uninitialized zvals or free()d memory</dd>
+<dd>Fixed <?php bug(1381); ?>: Code Coverage misses line due to missing FETCH_DIM_W overload</dd>
+<dd>Fixed <?php bug(1385); ?>: can not fetch IS_INDIRECT properties</dd>
+<dd>Fixed <?php bug(1386); ?>: Executable code not shown as executed/executable</dd>
+<dd>Fixed <?php bug(1392); ?>: Unable to compile on FreeBSD due to missing struct definition</dd>
+<dd>Fixed <?php bug(1394); ?>: Code coverage does not cover instanceof (in elseif)</dd>
+
+
 <dt><a name='x_2_5_0'></a>[2016-12-04] &mdash; Xdebug 2.5.0</dt>
 
 <dd><h3>Improvements</h3></dd>
