@@ -124,7 +124,7 @@ except that you make a branch of <b>master</b> instead of
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
-	<tt>git fetch xdebug &amp;&amp; git rebase xdebug/master</tt></li>
+	<tt>git fetch upstream &amp;&amp; git rebase upstream/master</tt></li>
 <li>Push your changes to your remote repository:<br/>
 	<tt>git push origin <i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
