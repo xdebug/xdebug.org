@@ -29,8 +29,8 @@ This function has two options, which act as a bitfield:
 <dl>
 <dt>XDEBUG_CC_UNUSED</dt>
 <dd>Enables scanning of code to figure out which line has executable code.
-Without this option you the returned array will only have lines in them that
-were actually executed.</dd>
+Without this option the returned array will only have lines in them that were
+actually executed.</dd>
 
 <dt>XDEBUG_CC_DEAD_CODE</dt>
 <dd>Enables branch analyzes to figure out whether code can be executed.</dd>
