@@ -26,6 +26,20 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_2'></a>[2017-04-17] &mdash; Xdebug 2.5.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(701); ?>: Functions as array indexes show ??? in trace</dd>
+<dd>Fixed <?php bug(1403); ?>: Code coverage does not cover BIND_STATIC</dd>
+<dd>Fixed <?php bug(1404); ?>: Execution time is calculated incorrectly</dd>
+<dd>Fixed <?php bug(1413); ?>: Code coverage mishap with PHP 7.1.3</dd>
+<dd>Fixed <?php bug(1414); ?>: Missing variable assignment in traces with OPcache loaded</dd>
+<dd>Fixed <?php bug(1415); ?>: Crash with multiple catch constructs with OPcache loaded</dd>
+<dd>Fixed <?php bug(1416); ?>: Trace files should not include the first result of a generator if it hasn't started yet</dd>
+<dd>Fixed <?php bug(1417); ?>: Fetching properties of static class contexts fails due to incorrect fetch mode</dd>
+<dd>Fixed <?php bug(1419); ?>: Summary not written when script ended with "pcntl_exec()"</dd>
+
+
 <dt><a name='x_2_5_1'></a>[2017-02-26] &mdash; Xdebug 2.5.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
