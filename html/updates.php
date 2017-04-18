@@ -26,6 +26,12 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_3'></a>[2017-04-18] &mdash; Xdebug 2.5.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1421); ?>: Xdebug crashes when it is loaded without pcntl being present</dd>
+
+
 <dt><a name='x_2_5_2'></a>[2017-04-17] &mdash; Xdebug 2.5.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
