@@ -26,6 +26,15 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_4'></a>[2017-05-15] &mdash; Xdebug 2.5.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(799); ?>: Function traces report base class instead of object name</dd>
+<dd>Fixed <?php bug(1421); ?>: Fix set_time_limit hanging on PHP 5.6 when pcntl_exec does not exist (Frode E. Moe)</dd>
+<dd>Fixed <?php bug(1429); ?>: Code coverage does not cover null coalesce</dd>
+<dd>Fixed <?php bug(1434); ?>: Code coverage segfaults on 32-bit arch</dd>
+
+
 <dt><a name='x_2_5_3'></a>[2017-04-18] &mdash; Xdebug 2.5.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
