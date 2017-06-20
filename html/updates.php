@@ -26,6 +26,14 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_5_5'></a>[2017-06-21] &mdash; Xdebug 2.5.5</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1439); ?>: TYPE_CHECK needs overloading due to smart branches</dd>
+<dd>Fixed <?php bug(1444); ?>: Code Coverage misses a variable in a multi-line function call</dd>
+<dd>Fixed <?php bug(1446); ?>: Code Coverage misses elseif if it uses an isset with a property</dd>
+
+
 <dt><a name='x_2_5_4'></a>[2017-05-15] &mdash; Xdebug 2.5.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
