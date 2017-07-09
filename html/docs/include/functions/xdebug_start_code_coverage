@@ -34,6 +34,9 @@ actually executed.</dd>
 
 <dt>XDEBUG_CC_DEAD_CODE</dt>
 <dd>Enables branch analyzes to figure out whether code can be executed.</dd>
+
+<dt>XDEBUG_CC_BRANCH_CHECK</dt>
+<dd>Enables path execution analysis.</dd>
 </dl>
 
 Enabling those options make code coverage drastically slower.
