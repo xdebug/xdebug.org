@@ -17,7 +17,7 @@
 <tr><th class="docinfo-name">Version:</th>
 <td>1.0</td></tr>
 <tr><th class="docinfo-name">Status:</th>
-<td>draft 19</td></tr>
+<td>draft 20</td></tr>
 <tr><th class="docinfo-name">Authors:</th>
 <td>Shane Caraveo, ActiveState &lt;<a class="reference external" href="mailto:shanec&#64;ActiveState.com">shanec&#64;ActiveState.com</a>&gt;
 <br />Derick Rethans &lt;<a class="reference external" href="mailto:derick&#64;derickrethans.nl">derick&#64;derickrethans.nl</a>&gt;</td></tr>
@@ -313,13 +313,13 @@ engine would have to know this key value in advance and provide it to the proxy
 in the init packet (see IDE_KEY in section 5.2).  The proxy would know if the
 IDE is running, since the IDE should have communicated with the proxy already,
 if it has not, the proxy could execute the IDE directly.</p>
-<p>To support proxies and jit deamons, the IDE should be configured with
-and ip:port pointing to the proxy/jit.  The IDE then makes a
+<p>To support proxies and JIT daemons, the IDE should be configured with
+a port pointing to the proxy/JIT.  The IDE then makes a
 connection to the proxy when it starts and sends the following command:</p>
 <blockquote>
 <p>IDE command</p>
 <pre class="literal-block">
-proxyinit -a ip:port -k ide_key -m [0|1]
+proxyinit -p port -k ide_key -m [0|1]
 </pre>
 <table border="1" class="docutils">
 <colgroup>
@@ -2769,6 +2769,11 @@ next line of code</td>
 </div>
 <div class="section" id="a-changelog">
 <h1><a class="toc-backref" href="#id79">A. ChangeLog</a></h1>
+<p>2017-07-10 - draft 20</p>
+<ul class="simple">
+<li>5.3 Fixed the text and example for proxyinit. It doesn't accept &quot;-a ip:port&quot;
+but just &quot;-p port&quot;.</li>
+</ul>
 <p>2017-02-14</p>
 <ul class="simple">
 <li>7.2.1 Add the undocumented 'supported_encodings' feature</li>
@@ -2883,11 +2888,10 @@ paging of arrays/objects/hashes is 0 based.</li>
 ide by the proxy.</li>
 </ul>
 <p>2004-05-12</p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>7.2 reorganize the feature names, add a couple missing names</dt>
-<dd><p class="first last">(supports_postmortem, show_hidden, notify_ok).</p>
-</dd>
+<dd>(supports_postmortem, show_hidden, notify_ok).</dd>
 </dl>
 </li>
 </ul>
