@@ -9,7 +9,26 @@
 
 <?php include "include/menu.php"; ?>
 
-<!--<iframe id="flickr" align="right" src="http://www.flickr.com/slideShow/index.gne?user_id=36163802@N00&set_id=72157601485462007" frameBorder=0 width=300 scrolling=no height=300></iframe>-->
+<a name="about"></a>
+<h2>About</h2>
+
+<p>
+Xdebug is an extension for <a href="https://php.net">PHP</a> to assist with
+debugging and development. It contains a <a href='/docs/remote'>single step
+debugger</a> to use with IDEs; it upgrades PHP's <a
+href='/docs/display'>var_dump()</a> function; it adds <a
+href='/docs/stack_trace'>stack traces</a> for Notices, Warnings, Errors and
+Exceptions; it features functionality for <a
+href=/docs/execute_trace'>recordig every function call and variable
+assignment</a> to disk; it contains a <a href='/docs/profiler'>profiler</a>;
+and it provides <a href='/docs/code_coverage'>code coverage</a> functionality
+for use with <a href='https://phpunit.de'>PHPUnit</a>.
+</p>
+<p>
+The <a href='/docs'>documentation</a> contains <a
+href='/docs/install'>installation instructions</a>.
+</p>
+
 <a name="announcements"></a>
 <h2>Announcements</h2>
 
