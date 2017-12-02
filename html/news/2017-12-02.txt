@@ -23,7 +23,7 @@ additional features such as <a href="https://bugs.xdebug.org/view.php?id=1059">f
 coverage. </a>
 
 <p>Windows DLLs are not yet available, but will be added once <a
-href="https://ci.appveyor.com/project/derickr/xdebug>AppVeyor</a> starts
+href="https://ci.appveyor.com/project/derickr/xdebug">AppVeyor</a> starts
 working again.</p>
 
 <p>The source code can be found on the
