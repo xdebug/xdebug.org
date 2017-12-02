@@ -1,0 +1,35 @@
+Xdebug 2.6.0alpha is out!
+<p>This is the first release with support for PHP 7.2, which came out last
+week. This is not a <b>final</b/> release, and it does have known issues,
+including a crash bug.</p>
+
+<p>With this release, PHP 5 is no longer supported. In order to benefit from
+bug fixes and new features in Xdebug, you will also have to upgrade to PHP 7,
+preferably PHP 7.2.</p>
+
+<p>Besides support for PHP 7.2, it also adds a significant set of new
+features, as you can see on the <a href="/updates.php#x_2_6_0alpha1">updates</a>
+page. A few highlights are: <b>support for profiling memory usage</b>,
+<b>configurable formatting of filenames</b>, and for the "remote" debugger:
+"Notice" and "Warning" notifications are sent to the IDE, support for
+low-ASCII characters in property names and array keys, and configurable
+connection timeouts. You can follow the progress on the <a
+href="https://bugs.xdebug.org/roadmap_page.php?version_id=51">roadmap</a>
+page.</p>
+
+<p>This release does come with several unresolved issues, and not all features
+have been implemented yet. Xdebug 2.6.0 will be released in due course, with
+additional features such as <a href="https://bugs.xdebug.org/view.php?id=1059">filters for tracing, stack traces, and code
+coverage. </a>
+
+<p>Windows DLLs are not yet available, but will be added once <a
+href="https://ci.appveyor.com/project/derickr/xdebug>AppVeyor</a> starts
+working again.</p>
+
+<p>The source code can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>If you find Xdebug a valuable tool, you might want to look at my Amazon <a
+href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+

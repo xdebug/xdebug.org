@@ -1,8 +1,8 @@
 <?php
 class xdebugVersion
 {
-	static public $latestVersion = '2.5.4';
-	static public $latestWindowsVersion = '2.5.4';
+	static public $latestVersion = '2.6.0alpha1';
+	static public $latestWindowsVersion = '2.5.5';
 
 	function __construct()
 	{
@@ -146,6 +146,7 @@ class xdebugVersion
 					case 'VC9':   $this->winCompiler = 9; $this->windows = true; break;
 					case 'VC11':  $this->winCompiler = 11; $this->windows = true; break;
 					case 'VC14':  $this->winCompiler = 14; $this->windows = true; break;
+					case 'VC15':  $this->winCompiler = 15; $this->windows = true; break;
 				}
 			}
 		}
@@ -239,7 +240,7 @@ class xdebugVersion
 		}
 		if ( $this->windows && $this->winCompiler == 6 )
 		{
-			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or VC14.";
+			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
 		}
 		if ( $this->windows && $this->winCompiler == 8 )
 		{
@@ -249,7 +250,7 @@ class xdebugVersion
 		{
 			return "The compiler (MS VC9) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
 		}
-		if ( version_compare( $this->version, '5.5.0', '<' ) )
+		if ( version_compare( $this->version, '7.0.0', '<' ) )
 		{
 			return "PHP versions below 5.5 are not supported.";
 		}
@@ -288,6 +289,12 @@ class xdebugVersion
 				case '7.0':
 				case '7.1':
 					if ( $this->winCompiler != 14 )
+					{
+						return false;
+					}
+					break;
+				case '7.2':
+					if ( $this->winCompiler != 15 )
 					{
 						return false;
 					}

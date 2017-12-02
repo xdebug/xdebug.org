@@ -26,6 +26,59 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_6_0alpha1'></a>[2017-12-02] &mdash; Xdebug 2.6.0alpha1</dt>
+
+<dd><h3>Added features</h3></dd>
+
+<dd>Implemented <?php bug(474); ?>: Added "memory" output to profiling files, to find out where memory is allocated.</dd>
+<dd>Implemented <?php bug(575); ?>: Dump super globals contents to error log upon errors, just like when this would happen for stack traces.</dd>
+<dd>Implemented <?php bug(964); ?>: Parse X-Forwarded-For for the first IP address when selecting the remote_connect_back host (Steve Easley).</dd>
+<dd>Implemented <?php bug(990); ?>: Add DBGp: notifications for notices and warnings to be shown in IDEs.</dd>
+<dd>Implemented <?php bug(1312); ?>: Implement extended_properties feature to remote debugging to support names and values with low ASCII values.</dd>
+<dd>Implemented <?php bug(1323); ?>: Added xdebug.filename_format setting to configure the formatting of filenames when tracing.</dd>
+<dd>Implemented <?php bug(1379); ?>: Added support for Unix domain sockets to xdebug.remote_host (Sara Golemon).</dd>
+<dd>Implemented <?php bug(1380); ?>: Added xdebug_is_debugger_active() that returns true when debugger is connected.</dd>
+<dd>Implemented <?php bug(1391); ?>: Added support for earlier stack frames through new argument for xdebug_call_* functions.</dd>
+<dd>Implemented <?php bug(1420); ?>: Handle PHP 7.2's new methods for switch/case</dd>
+<dd>Implemented <?php bug(1470); ?>: Added xdebug.remote_timeout to make connect timeout configurable.</dd>
+<dd>Implemented <?php bug(1495); ?>: Make var_dump() also use the new xdebug.filename_format when formatting filenames.</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Implemented <?php bug(847); ?>: Added support for "%s" specifier for xdebug.trace_output_name.</dd>
+<dd>Implemented <?php bug(1384); ?>: Compile warning on Ubuntu 16.04 with GCC 5.4.x.</dd>
+<dd>Implemented <?php bug(1401); ?>: Improved error message in case the connection breaks.</dd>
+<dd>Implemented <?php bug(1430); ?>: Change DBGp tests to use TEST_PHP_EXECUTABLE instead of hard coded 'php'</dd>
+<dd>Implemented <?php bug(1484); ?>: Use FD_CLOEXEC with debugging sockets to prevent FDs from leaking to forked processes (Chris Wright).</dd>
+<dd>Improve the foldexpr in xt.vim to fold lines correctly (Donie Leigh).</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1272); ?>: property_get doesn't return @attributes for SimpleXMLElement.</dd>
+<dd>Fixed <?php bug(1305); ?>: Property names with quotes can not be fetch while debugging.</dd>
+<dd>Fixed <?php bug(1431); ?>: Fix "use after free" with in add_name_attribute_or_element.</dd>
+<dd>Fixed <?php bug(1432); ?>: Fixed memory leak with xdebug_path_info_dtor.</dd>
+<dd>Fixed <?php bug(1449); ?>: Debugging breaks with array element keys containing low-ASCII variables.</dd>
+<dd>Fixed <?php bug(1471); ?>: Tracing crashes with return_assignments and ternairy operator.</dd>
+<dd>Fixed <?php bug(1474); ?>: Crashes due to variable resolving/reading mechanism not taking care of temporary hash tables correctly (Nikita Popov, Derick).</dd>
+<dd>Fixed <?php bug(1481); ?>: Fixed s390x and ppc64 builds (Remi Collet).</dd>
+<dd>Fixed <?php bug(1486); ?>: Crash on ZEND_SWITCH_LONG / ZEND_SWITCH_STRING with more than 32 cases.</dd>
+<dd>Fixed <?php bug(1496); ?>: Rewrite README.rst to be more clear on how to install and build Xdebug.</dd>
+
+<dd><h3>Changes</h3></dd>
+
+Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when maximum nesting level is reached.
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Implemented <?php bug(1377); ?>: Drop support for PHP 5.5 and 5.6, only PHP 7 is now supported</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?php bug(1439); ?>: TYPE_CHECK needs overloading due to smart branches</dd>
+<dd>Fixed <?php bug(1444); ?>: Code Coverage misses a variable in a multi-line function call</dd>
+<dd>Fixed <?php bug(1446); ?>: Code Coverage misses elseif if it uses an isset with a property</dd>
+
+
 <dt><a name='x_2_5_5'></a>[2017-06-21] &mdash; Xdebug 2.5.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
