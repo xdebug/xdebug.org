@@ -74,6 +74,7 @@ YAHOO.example.init();
 			echo "<dd class='main'>\n";
 			echo join( '', $file );
 			echo "</dd>\n\n";
+			echo "<hr/>\n";
 		}
 	}
 
