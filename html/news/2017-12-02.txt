@@ -30,6 +30,9 @@ working again.</p>
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
-<p>If you find Xdebug a valuable tool, you might want to look at my Amazon <a
-href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+<p><b>I have also just launched my
+<a href="https://www.patreon.com/bePatron?u=7864328">Patreon page</a></b>, in
+case, you want to reward me for working countless hours on Xdebug.
+Alternatively, you might want to look at my Amazon
+<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
 
