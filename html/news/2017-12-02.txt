@@ -31,7 +31,7 @@ working again.</p>
 installable through PECL.</p>
 
 <p><b>I have also just launched my
-<a href="https://www.patreon.com/bePatron?u=7864328">Patreon page</a></b>, in
+<a href="https://www.patreon.com/derickr">Patreon page</a></b>, in
 case, you want to reward me for working countless hours on Xdebug.
 Alternatively, you might want to look at my Amazon
 <a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
