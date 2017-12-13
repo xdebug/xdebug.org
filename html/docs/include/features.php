@@ -1125,7 +1125,7 @@ with normal php.ini settings.</li>
 <li>If you want to debug a script started through a web browser, simply add
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL.
 Instead of using a GET parameter, you can also set XDEBUG_SESSION_START as a
-POST parameter, or through a cookie. Refer to the <a
+POST parameter, or through a cookie named XDEBUG_SESSION. Refer to the <a
 href="#browser_session">next section</a> to read on how debug sessions work
 from within a browser window.</li>
 
