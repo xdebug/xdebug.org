@@ -1139,12 +1139,13 @@ instead of going through XDEBUG_SESSION_START as described in
 The extensions are:
 <a name="browser-extensions"></a><a name="firefox-ext"></a>
 <dl>
-	<dt>The easiest Xdebug</dt>
+	<dt>Xdebug Helper for Firefox</dt>
 	<dd>
-		This <a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/">extension</a>
+		This <a href="https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/">extension</a>
 		for Firefox was built to make debugging with an IDE easier. You can
 		find the extension at
-		<a href="https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/">https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/</a>.
+		<a href="https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/">https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/</a>.
+		The source code for this extension is on <a href="https://github.com/BrianGilbert/xdebug-helper-for-firefox">GitHub</a>.
 	</dd>
 
 	<dt>Xdebug Helper for Chrome</dt>
