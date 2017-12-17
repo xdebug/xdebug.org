@@ -9,6 +9,9 @@
 
 <?php include "include/menu.php"; ?>
 
+<img src='https://travis-ci.org/xdebug/xdebug.svg?branch=master'/>
+<img src='https://ci.appveyor.com/api/projects/status/glp9xfsmt1p25nkn?svg=true'/>
+
 <a name="about"></a>
 <h2>About</h2>
 
