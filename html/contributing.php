@@ -94,7 +94,7 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 	the branch you just created (<tt>issue681</tt>), and then select the "Pull
 	Request" button in the upper right. Select the user <tt>xdebug</tt> as the
 	recipient.</p>
-	<p>Alternatively you can nagivate to
+	<p>Alternatively you can navigate to
 	<tt>https://github.com/<i>{username}</i>/xdebug/pull/new/issue{issue&nbsp;number}</tt>.</p>
 </li>
 </ol>
@@ -135,7 +135,7 @@ except that you make a branch of <b>master</b> instead of
 	the branch you just created (<tt>issue681</tt>), and then select the "Pull
 	Request" button in the upper right. Select the user <tt>xdebug</tt> as the
 	recipient.</p>
-	<p>Alternatively you can nagivate to
+	<p>Alternatively you can navigate to
 	<tt>https://github.com/<i>{username}</i>/xdebug/pull/new/issue{issue&nbsp;number}</tt>.</p>
 </li>
 </ol>
