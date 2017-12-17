@@ -22,7 +22,7 @@ debugger</a> to use with IDEs; it upgrades PHP's <a
 href='/docs/display'>var_dump()</a> function; it adds <a
 href='/docs/stack_trace'>stack traces</a> for Notices, Warnings, Errors and
 Exceptions; it features functionality for <a
-href=/docs/execute_trace'>recordig every function call and variable
+href=/docs/execute_trace'>recording every function call and variable
 assignment</a> to disk; it contains a <a href='/docs/profiler'>profiler</a>;
 and it provides <a href='/docs/code_coverage'>code coverage</a> functionality
 for use with <a href='https://phpunit.de'>PHPUnit</a>.

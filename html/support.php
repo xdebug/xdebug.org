@@ -38,8 +38,8 @@ about 10-20 lines maximum, and self-contained means that it can
 <p>
 If you <strong>really</strong> can't make a short script after trying for
 several hours ;-), then please prepare something that I can: clone from
-GitHub, use something like composer to install dependecies, and then can
-run. The script can still not have dependecies on things like databases, as
+GitHub, use something like composer to install dependencies, and then can
+run. The script can still not have dependencies on things like databases, as
 I won't have them installed. Please <a href='/support.php#email'>contact
 me</a> first if you are not sure.
 </p>
