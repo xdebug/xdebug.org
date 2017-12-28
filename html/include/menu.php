@@ -19,7 +19,7 @@ If you like Xdebug, please consider giving a<br/><a href="/donate.php">donation<
 <br/>
 <p class="buy-support">
 I am also on Patreon:<br/>
-<a href="https://www.patreon.com/derickr" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+<a href="https://www.patreon.com/bePatron?u=7864328" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 </p>
 <br/>
 <!--
