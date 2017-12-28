@@ -26,6 +26,25 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_6_0beta1'></a>[2017-12-28] &mdash; Xdebug 2.6.0beta1</dt>
+
+<dd><h3>Added features</h3></dd>
+
+<dd>Fixed <?php bug(1059); ?>: Add filter capabilities to tracing, stack traces, and code coverage.</dd>
+<dd>Fixed <?php bug(1437); ?>: Add X-Profile-File-Name header when a profile file has been generated.</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?php bug(1493); ?>: Run test suite in AppVeyor for Windows CI.</dd>
+<dd>Fixed <?php bug(1498); ?>: Use new ZEND_EXTENSION API in config.w32 build scripts. (Kalle)</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(702); ?>: Check whether variables tracing also works with =&amp;.</dd>
+<dd>Fixed <?php bug(1501); ?>: Xdebug var dump tries casting properties.</dd>
+<dd>Fixed <?php bug(1502); ?>: SEND_REF lines are not marked as covered.</dd>
+
+
 <dt><a name='x_2_6_0alpha1'></a>[2017-12-02] &mdash; Xdebug 2.6.0alpha1</dt>
 
 <dd><h3>Added features</h3></dd>
@@ -72,11 +91,6 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd><h3>Removed features</h3></dd>
 
 <dd>Implemented <?php bug(1377); ?>: Drop support for PHP 5.5 and 5.6, only PHP 7 is now supported</dd>
-
-<dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1439); ?>: TYPE_CHECK needs overloading due to smart branches</dd>
-<dd>Fixed <?php bug(1444); ?>: Code Coverage misses a variable in a multi-line function call</dd>
-<dd>Fixed <?php bug(1446); ?>: Code Coverage misses elseif if it uses an isset with a property</dd>
 
 
 <dt><a name='x_2_5_5'></a>[2017-06-21] &mdash; Xdebug 2.5.5</dt>

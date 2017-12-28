@@ -1,0 +1,29 @@
+Xdebug 2.6.0beta1 is out!
+<p>This is the first beta release with support for PHP 7.2, which came out
+last month. This is not a <b>final</b/> release, and it does have known
+issues, including a crash bug.</p>
+
+<p>In addition to the changes in Xdebug 2.6.0alpha1, this beta release adds
+filter support for tracing, stack traces and code coverage. Preliminary tests
+shows that with the right filter this should speed up code coverage generated
+through PHPUnit/PHP Code Coverage significantly. This release also fixes a few
+bugs, and it includes configuration to run Xdebug's test suite automatically
+on Windows through AppVeyor. Please note, that Xdebug 2.6 does no longer
+support PHP 5.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_6_0beta1">updates</a> page.</p>
+
+<p>This release does come with several unresolved issues, and not all features
+have been implemented yet. Xdebug 2.6.0 will be released in due course.</p>
+
+<p>The source code can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p><b>I have also just launched my
+<a href="https://www.patreon.com/derickr">Patreon page</a></b>, in
+case, you want to reward me for working countless hours on Xdebug.
+Alternatively, you might want to look at my Amazon
+<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+
