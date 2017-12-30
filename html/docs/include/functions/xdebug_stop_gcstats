@@ -1,0 +1,11 @@
+= xdebug_stop_gcstats
+Stops the current garbage collection statistics collection
+string
+none
+FUNC_GARBAGE_COLLECTION
+
+TXT:
+Stop garbage collection statistics collection and closes the output file.
+
+TXT:
+The function returns the filename of the file where the statistics was written to.
