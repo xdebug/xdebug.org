@@ -1,0 +1,8 @@
+= xdebug_get_gcstats_filename
+Returns the garbage collection statistics filename
+string
+none
+FUNC_GARBAGE_COLLECTION
+
+TXT:
+Returns the name of the file which is used to save garbage collection information to.

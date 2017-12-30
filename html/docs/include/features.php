@@ -907,6 +907,14 @@ parts of the trace files.
 		example find out how good your unit tests are.',
 		""
 	),
+    'garbage_collection' => array(
+        'Garbage Collection',
+        FUNC_GARBAGE_COLLECTION,
+        'Xdebug\'s built-in garbage collection statistics profiler allows you to
+        find out when the PHP internal garbage collector triggers, how many variables
+        it was able to clean up, how long it took and how how much memory was actually freed.',
+        ""
+    ),
 	'profiler' => array(
 		'Profiling PHP Scripts',
 		FUNC_PROFILER,

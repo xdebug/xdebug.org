@@ -568,6 +568,35 @@ specifiers.</p>
 		FUNC_PROFILER
 	),
 
+    'gc_stats_enable' => array(
+        'bool', 'false', null,
+        "<p>If this setting is enabled, then statistics for garbage collection runs
+are automatically collected into the given directory set with [CFG:gc_stats_output_dir]
+and with an automatically generated name configured by [CFG:gc_stats_output_name].
+",
+        FUNC_GARBAGE_COLLECTION
+    ),
+
+    'gc_stats_output_dir' => array(
+        'string', '/tmp', null,
+        "The directory where the garbage collection statistics output will be written to, make sure that
+the user who the PHP will be running as has write permissions to that
+directory. This setting can not be set in your script with ini_set().",
+        FUNC_GARBAGE_COLLECTION
+    ),
+
+    'gc_stats_output_name' => array(
+        'string', 'gcstats.%p', null,
+        "<p>This setting determines the name of the file that is used to dump
+garbage collection statistics into. The setting specifies the format with format specifiers, very
+similar to sprintf() and strftime(). There are several format specifiers
+that can be used to format the file name.</p>
+
+<p>See the [CFG:trace_output_name] documentation for the supported
+specifiers.</p>
+",
+        FUNC_GARBAGE_COLLECTION
+    ),
 
 	'dump.*' => array(
 		'string', "Empty", null,
