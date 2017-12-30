@@ -252,7 +252,7 @@ class xdebugVersion
 		}
 		if ( version_compare( $this->version, '7.0.0', '<' ) )
 		{
-			return "PHP versions below 5.5 are not supported.";
+			return "PHP versions below 7.0 are not supported.";
 		}
 		return true;
 	}
