@@ -10,6 +10,7 @@ define( 'FUNC_FUNCTION_TRACE',   0x0008000 ); // affects function traces
 define( 'FUNC_VAR_DUMP',         0x0010000 ); // affects overloaded var_dump function
 define( 'FUNC_PROFILER',         0x0020000 ); // affects overloaded var_dump function
 define( 'FUNC_CODE_COVERAGE',    0x0040000 );
+define( 'FUNC_GARBAGE_COLLECTION', 0x0080000 );
 
 define( 'FUNC_ALL',              0x007ffff );
 
