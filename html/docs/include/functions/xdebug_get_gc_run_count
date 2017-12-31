@@ -1,0 +1,12 @@
+= xdebug_get_gc_run_count,2.6
+Returns the number of garbage collection runs that have been triggered so far.
+string
+none
+FUNC_GARBAGE_COLLECTION
+
+TXT:
+The function returns the number of times the garbage collection has
+been triggered in the currently running script.
+
+TXT:
+This number is available even if the [CFG:gc_stats_enable] INI setting is set to false.

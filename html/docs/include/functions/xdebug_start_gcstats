@@ -1,0 +1,26 @@
+= xdebug_start_gcstats,2.6
+Start the collection of garbage collection statistics
+[ string gcstats_file ]
+FUNC_GARBAGE_COLLECTION
+
+TXT:
+Start tracing garbage collection attempts from this point to the file in the
+<i>gcstats_file</i> parameter. If no filename is given, then garbage collection stats file
+will be placed in the directory as configured by the [CFG:gc_stats_output_dir] setting.
+
+TXT:
+In case a file name is given as first parameter, the name is relative
+to the current working directory. This current working directory might be
+different than you expect it to be, so please use an absolute path in case you
+specify a file name. Use the PHP function <a
+href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
+working directory is.
+
+TXT:
+If [CFG:gc_stats_enable] is
+enabled, then filename depends on the [CFG:gc_stats_output_name] setting.
+
+TXT:
+The full path and filename to which Xdebug collects statistics into is returned from this
+function. This will be either the filename you pass in, or the auto generated filename if no
+filename has been passed in.
