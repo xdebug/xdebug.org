@@ -912,14 +912,14 @@ parts of the trace files.
 		FUNC_GARBAGE_COLLECTION,
 		'Xdebug\'s built-in garbage collection statistics profiler allows you to
 		find out when the PHP internal garbage collector triggers, how many variables
-		it was able to clean up, how long it took and how how much memory was actually freed.',
+		it was able to clean up, how long it took, and how how much memory was actually freed.',
 		'
 <h2 name="introduction">Introduction</h2>
 
 <p>Garbage Collection (GC) in PHP can have a serious impact on memory and performance,
-so understanding when it is triggered and how efficient each run is allows
+so understanding when it is triggered and how efficient each run is, allows
 you to optimise your programs. The PHP Engine does not provide a mechanism to
-gather statistics about garbage collection, but xdebug now provides access
+gather statistics about garbage collection, but Xdebug now provides access
 to these statistics since version 2.6.
 </p>
 
@@ -943,11 +943,11 @@ an output file for *every* executed script, even if the garbage collector didn\'
 run.</p>
 
 <p>The second approach to starting collection is to call the function
-<code>xdebug_start_gcstats</code> directly in your PHP script. This gives you
-more control over when collection is started.</p>
+[FUNC:xdebug_start_gcstats] directly in your PHP script. This gives you
+more control over when statistics collection is started.</p>
 
 <p>You can stop collection for both INI and function based approaches by
-calling <code>xdebug_stop_gcstats</code>.</p>
+calling [FUNC:xdebug_stop_gcstats].</p>
 
 <h2 name="output-tabular-text">Tabular Text (Human Readable)</h2>
 
@@ -957,28 +957,30 @@ is a tabular human readable text output.</p>
 <p><code><pre>
 Garbage Collection Report
 version: 1
-creator: xdebug 2.6.0beta2-dev (PHP 7.2.0RC5)
+creator: xdebug 2.6.0 (PHP 7.2.0)
 
 Collected | Efficiency% | Duration | Memory Before | Memory After | Reduction% | Function
 ----------+-------------+----------+---------------+--------------+------------+---------
-    10000 |    100.00 % |  0.00 ms |       5539880 |       579880 |   -10.47 % | bar
-	10000 |    100.00 % |  0.00 ms |       5540040 |       580040 |   -10.47 % | Garbage::produce
-	 4001 |     40.01 % |  0.00 ms |       2563048 |       578968 |   -22.59 % | gc_collect_cycles
+    10000 |    100.00 % |  0.00 ms |       5539880 |       579880 |    10.47 % | bar
+    10000 |    100.00 % |  0.00 ms |       5540040 |       580040 |    10.47 % | Garbage::produce
+     4001 |     40.01 % |  0.00 ms |       2563048 |       578968 |    22.59 % | gc_collect_cycles
 </pre></code></p>
 
-<p>The header contains the version of the report and the version of XDebug that generated it.</p>
+<p>The header contains the version of the report and the version of Xdebug that generated it.</p>
 
 <p>The table itself then contains one row for each garbage collection run each with 7 reported variables:</p>
 
 <ul>
-	<li><strong>Collected</strong> - The number of so called "roots" that have been garbage collected during this run. A "root" is either an PHP object (instance) or an array that is under observation by the Garbage Collector for potential cleanup.</li>
-	<li><strong>Efficiency%</strong> - Is the number of cleared roots divided by 10.000 - a magic number of "roots" when reached triggers PHPs internal garbage collector to run automatically.</li>
-	<li><strong>Duration</strong> - Denotes the duration in milliseconds that this garbage collection run took.</li>
-	<li><strong>Memory Before</strong> - Contains the memory as measured by <code>memory_get_usage()</code> before this GC run was activated.</li>
-	<li><strong>Memory After</strong> - Contains the memory as measured by <code>memory_get_usage()</code> after the GC run was finished.</li>
-	<li><strong>Reduction%</strong> - The percent reduction in memory due to this GC run.</li>
-	<li><strong>Function</strong> - The name of the function or method the GC run was triggered in. If its <code>gc_collect_cycles()</code> then this means the Garbage Collector was triggered explicitly. All other values indicate the GC was triggered implicitly due to the 10.000 "roots" reached metric of the PHP engine.</li>
+	<li><strong>Collected</strong> &mdash; The number of so called "roots" that have been garbage collected during this run. A "root" is either an PHP object (instance) or an array that is under observation by the Garbage Collector for potential cleanup.</li>
+	<li><strong>Efficiency%</strong> &mdash; Is the number of cleared roots divided by 10 000 - a magic number of "roots" when reached triggers PHPs internal garbage collector to run automatically.</li>
+	<li><strong>Duration</strong> &mdash; Denotes the duration in milliseconds that this garbage collection run took.</li>
+	<li><strong>Memory Before</strong> &mdash; Contains the memory as measured by <code>memory_get_usage()</code> before this GC run was activated.</li>
+	<li><strong>Memory After</strong> &mdash; Contains the memory as measured by <code>memory_get_usage()</code> after the GC run was finished.</li>
+	<li><strong>Reduction%</strong> &mdash; The percent reduction in memory due to this GC run.</li>
+	<li><strong>Function</strong> &mdash; The name of the function or method the GC run was triggered in. If it is <code>gc_collect_cycles()</code> then this means the Garbage Collector was triggered explicitly. All other values indicate the GC was triggered implicitly due to the 10 000 "roots" reached metric of the PHP engine.</li>
 </ul>
+
+<p>For details on how PHPs garbage collection works see the <a href="http://php.net/manual/en/features.gc.php">PHP manuals chapter on Garbage Collection</a>.</p>
 '
 	),
 	'profiler' => array(

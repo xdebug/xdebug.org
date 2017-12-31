@@ -8,4 +8,4 @@ TXT:
 Stop garbage collection statistics collection and closes the output file.
 
 TXT:
-The function returns the filename of the file where the statistics was written to.
+The function returns the filename of the file where the statistics were written to.
