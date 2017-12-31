@@ -1,4 +1,4 @@
-= xdebug_get_gcstats_filename
+= xdebug_get_gcstats_filename,2.6
 Returns the garbage collection statistics filename
 string
 none

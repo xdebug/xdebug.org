@@ -1,4 +1,4 @@
-= xdebug_stop_gcstats
+= xdebug_stop_gcstats,2.6
 Stops the current garbage collection statistics collection
 string
 none
