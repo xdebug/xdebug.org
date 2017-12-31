@@ -1,6 +1,7 @@
 = xdebug_start_gcstats,2.6
 Start the collection of garbage collection statistics
-[ string gcstats_file ]
+string
+[ string $gcstats_file ]
 FUNC_GARBAGE_COLLECTION
 
 TXT:

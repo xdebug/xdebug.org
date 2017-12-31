@@ -1,6 +1,6 @@
-= xdebug_get_gc_run_count,2.6
+= xdebug_get_gc_total_collected_roots,2.6
 Returns the number of variable roots that have been collected so far.
-string
+int
 none
 FUNC_GARBAGE_COLLECTION
 

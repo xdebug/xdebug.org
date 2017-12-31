@@ -39,6 +39,7 @@ if ( isset( $_GET['action'] ) )
 		case 'profiler':
 		case 'remote':
 		case 'code_coverage':
+		case 'garbage_collection':
 		case 'faq':
 		case 'all_settings':
 		case 'all_functions':
