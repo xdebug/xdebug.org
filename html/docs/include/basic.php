@@ -2,15 +2,15 @@
 define( 'ONE', 1 );
 define( 'TWO', 2 );
 
-define( 'FUNC_INSTALL',          0x0000800 );
-define( 'FUNC_BASIC',            0x0001000 );
-define( 'FUNC_STACK_TRACE',      0x0002000 ); // affects stack traces
-define( 'FUNC_REMOTE',           0x0004000 ); // affects remote debugging
-define( 'FUNC_FUNCTION_TRACE',   0x0008000 ); // affects function traces
-define( 'FUNC_VAR_DUMP',         0x0010000 ); // affects overloaded var_dump function
-define( 'FUNC_PROFILER',         0x0020000 ); // affects overloaded var_dump function
-define( 'FUNC_CODE_COVERAGE',    0x0040000 );
-define( 'FUNC_GARBAGE_COLLECTION', 0x0080000 );
+define( 'FUNC_INSTALL',             0x0000800 );
+define( 'FUNC_BASIC',               0x0001000 );
+define( 'FUNC_STACK_TRACE',         0x0002000 ); // affects stack traces
+define( 'FUNC_REMOTE',              0x0004000 ); // affects remote debugging
+define( 'FUNC_FUNCTION_TRACE',      0x0008000 ); // affects function traces
+define( 'FUNC_VAR_DUMP',            0x0010000 ); // affects overloaded var_dump function
+define( 'FUNC_PROFILER',            0x0020000 ); // affects overloaded var_dump function
+define( 'FUNC_CODE_COVERAGE',       0x0040000 );
+define( 'FUNC_GARBAGE_COLLECTION',  0x0080000 );
 
 define( 'FUNC_ALL',              0x007ffff );
 
