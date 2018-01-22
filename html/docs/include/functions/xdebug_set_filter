@@ -1,0 +1,116 @@
+= xdebug_set_filter,2.6
+Starts code coverage
+void
+int $group, int $list_type, array $configuration
+FUNC_CODE_COVERAGE
+
+TXT:
+This function configures a filter that Xdebug employs when displaying stack
+traces or recording function traces, or when gathering code coverage. Filter
+configurations are applied to each execution unit (function, method, script
+body) independently.
+
+TXT:
+The first argument, <code>$group</code> selects for which feature you want to
+set up a filter. Currently there are two groups:
+
+<dl>
+<dt>XDEBUG_FILTER_TRACING</dt>
+<dd>The filter group used for filtering [FEAT:stack_trace] upon errors, as well
+as [FEAT:execution_trace].</dd>
+
+<dt>XDEBUG_FILTER_CODE_COVERAGE</dt>
+<dd>The filter group used for restricting the file paths which Xdebug would use
+for [FEAT:code_coverage].</dd>
+</dl>
+
+Each group can be configured independently.
+
+TXT:
+There are different kinds of filters that you can set. There is a white list
+and a black list option for either file paths or fully qualified class names.
+The <code>XDEBUG_FILTER_CODE_COVERAGE</code> group only supports
+<code>XDEBUG_PATH_WHITELIST</code>, <code>XDEBUG_PATH_BLACKLIST</code>, and
+<code>XDEBUG_FILTER_NONE</code>. All matches are done in a case-insensitive
+way.
+
+TXT:
+The constants to use as second "<code>$list_type</code>" argument are:
+
+<dl>
+<dt>XDEBUG_PATH_WHITELIST</dt>
+<dd><p>Sets up a white list for file paths. An execution unit is included in the
+output if its file path is prefixed by any of the prefixes in the array passed
+as third <code>$configuration</code> argument.</p><p>Please note that a prefix
+of <code>"/home/derick"</code> would also match files in
+<code>"/home/derickrethans"</code>, so it is recommended that you add the
+trailing slash to the prefix in order to prevent this.</p></dd>
+
+<dt>XDEBUG_PATH_BLACKLIST</dt>
+<dd>Sets up a black list for file paths. An execution unit will be excluded
+from the output if its file path is prefixed by any of the prefixes from the
+<code>$configuration</code> array.</dd>
+
+<dt>XDEBUG_NAMESPACE_WHITELIST</dt>
+<dd><p>Sets up a white list for class prefixes. An execution unit is included in
+the output if the class name, after namespace expansion, matches one of the
+prefixes in the <code>$configuration</code> array. The value <code>""</code> is
+special, and means functions that do not belong to a class. These are either
+user-defined, or built-in PHP functions (e.g. <code>strlen()</code>).</p>
+<p>Name space expansion happens automatically in PHP, and its engine will
+always see the full qualified class name. In the code below, the
+fully qualified class name <code>DramIO\Whisky</code>:
+
+EXAMPLE:
+<?php
+namespace DramIO;
+
+class Whisky {
+}
+
+TXT:
+<p>
+In order to match for all clases within a namespace, it is recommended to specify the prefix with the namespace separator
+</p></dd>
+
+<dt>XDEBUG_NAMESPACE_BLACKLIST</dt>
+<dd>The opposite of the white list. Execution units are excluded only if their
+prefix matches one of the prefixes in the <code>$configuration</code>
+array.</dd>
+
+<dt>XDEBUG_FILTER_NONE</dt>
+<dd>Turns off the filter for the selected <code>$group</code>.</dd>
+</dl>
+
+TXT:
+It is not possible to configure both a black list and a white list, or a
+black-/white-list for paths and namespaces at the same time. Only one of the
+four list types can be active at any one time.
+
+It is possible however, to turn off the filter altogether by using
+<code>XDEBUG_FILTER_NONE</code>.
+
+TXT:
+To exclude all files in the <code>vendor</code> sub-directory in traces:
+
+EXAMPLE:
+<?php
+xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_PATH_BLACKLIST, [ __DIR__ . "/vendor/" ] );
+?>
+
+TXT:
+To include only function calls (without class name), and methods calls for the
+<code>ezc</code> and <code>DramIO\</code> classes in traces:
+
+EXAMPLE:
+<?php
+xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_NAMESPACE_WHITELIST, [ "", "ezc", "DramIO\" ] );
+?>
+
+TXT:
+To only perform code-coverage analysis for files in the <code>src</code> sub-directory:
+
+EXAMPLE:
+<?php
+xdebug_set_filter( XDEBUG_FILTER_CODE_COVERAGE, XDEBUG_PATH_WHITELIST, [ __DIR__ . "/src/" ] );
+?>

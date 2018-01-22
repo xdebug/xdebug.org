@@ -17,11 +17,10 @@
 If you like Xdebug, please consider giving a<br/><a href="/donate.php">donation</a>.
 </p>
 <br/>
-<p class="buy-support">
-I am also on Patreon:<br/>
-<a href="https://www.patreon.com/bePatron?u=7864328" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
-</p>
 <br/>
+<p class="buy-support">
+<a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
+</p>
 <!--
 <p class="buy-support">
 Or <a href='https://flattr.com/about'>Flattr</a> this website:

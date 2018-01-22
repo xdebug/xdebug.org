@@ -29,7 +29,7 @@ hr.light { border-top: 1px solid #ebefec; }
 p        { line-height: 1.5em; }
 p.intro  { font-style: italic; }
 p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
-p.buy-support { text-align: center; font-size: 80%; margin: 0; }
+p.buy-support { text-align: center; font-size: 80%; margin: 0; width: 200px; height: 47px; }
 .serif   { line-height: 1.5em; }
 .quote   { font-family: sans-serif; }
 .mk      { color: #004411; font-weight: bold; }

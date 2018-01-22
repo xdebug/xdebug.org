@@ -83,6 +83,9 @@ to set this setting to use the closest mirror.",
 		"<p>Controls the protection mechanism for infinite recursion protection.
 The value of this setting is the maximum level of nested functions that are
 allowed before the script will be aborted.</p>
+<p>Before Xdebug 2.6, this would create a fatal exception if exceeded. From
+Xdebug 2.6 and later, an \"<a href='http://php.net/manual/en/class.error.php'>Error</a>\" exception is thrown
+instead.</p>
 <p>Before Xdebug 2.3, the default value was <code>100</code>.</p>",
 		FUNC_BASIC
 	),
@@ -185,8 +188,10 @@ the <a href='http://php.net/manual/en/ini.core.php#ini.auto-prepend-file'>auto_p
 
 	'collect_assignments' => array(
 	    'boolean', 0, '>= 2.1',
-		"This setting, defaulting to 0, controls whether Xdebug should add
-variable assignments to function traces.",
+		"<p>This setting, defaulting to 0, controls whether Xdebug should add
+variable assignments to function traces.</p>
+<p>From Xdebug 2.6, assign-by-var (<code>=&amp;</code>) assignments are
+included too.</p>",
 		FUNC_FUNCTION_TRACE
 	),
 
@@ -340,7 +345,7 @@ The possible format specifiers are:
 <tr><td class='ctr'>%S</td><td>session_id (from \$_COOKIE if set)</td><td>trace.%S</td><td>trace.c70c1ec2375af58f74b390bbdd2a679d.xt</td></tr>
 <tr><td class='ctr'>%%</td><td>literal %</td><td>trace.%%</td><td>trace.%%.xt</td></tr>
 </table>
-<p><sup>2</sup></a> This one is not available for trace file names.</p>
+<p><sup>2</sup></a> This one is only available for trace file names since Xdebug 2.6.</p>
 <p><sup>3</sup></a> New in version 2.2. This one is set by Apache's <a href='http://httpd.apache.org/docs/2.2/en/mod/mod_unique_id.html'>mod_unique_id module</a></p>
 ",
 		FUNC_FUNCTION_TRACE
@@ -496,6 +501,20 @@ unchanged.",
 		FUNC_REMOTE
 	),
 
+	'remote_timeout' => array(
+		'integer', 200, '>= 2.6',
+		"<p>The amount of time in milliseconds that Xdebug will wait for on an
+IDE to acknowledge an incoming debugging connection. The default value of 200
+ms should in most cases be enough. In case you often get dropped debugging
+requests, perhaps because you have a high latency network, or a development box
+far away from your IDE, or have a slow firewall, then you can should increase
+this value.</p>
+<p>Please note that increasing this value might mean that your requests seem to
+'hang' in case Xdebug tries to establish a connection, but your IDE is not
+listening.</p>",
+		FUNC_REMOTE
+	),
+
 	'profiler_append' => array(
 		'integer', 0, null,
 		"When this setting is set to 1, profiler files will not be overwritten when
@@ -618,7 +637,9 @@ xdebug.dump.GET = *
 
 	'dump_globals' => array(
 		'boolean', 1, null,
-		'Controls whether the values of the superglobals as defined by the [CFG:dump.*] settings should be shown or not.',
+		'When this setting is set to <code>true</code>, Xdebug adds the values
+of the super globals as configured through the [CFG:dump.*] to on-screen stack
+traces and the error log (if enabled).',
 		FUNC_STACK_TRACE
 	),
 
@@ -743,6 +764,32 @@ into the registry.</li>
 ',
 		FUNC_STACK_TRACE
 	),
+
+	'filename_format' => array(
+		'string', '...%s%n', '>= 2.6',
+		"<p>This setting determines the format with which Xdebug renders
+filenames in HTML stack traces (default: <code>...%s%n</code>) and location
+information through the overloaded [FUNC:xdebug_var_dump] (default:
+<code>%f</code>).
+</p>
+
+<p>
+The possible format specifiers are listed in this table. The example output is
+rendered according to the full path
+<code>/var/www/vendor/mail/transport/mta.php</code>.
+</p>
+<table class='table'>
+<tr><th>Specifier</th><th>Meaning</th><th>Example Output</th></tr>
+<tr><td class='ctr'>%a</td><td>Ancester: Two directory elements and filename</td><td><code>mail/transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%f</td><td>Full path</td><td><code>/var/www/vendor/mail/transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%n</td><td>Name: Only the file name</td><td><code>mta.php</code></td></tr>
+<tr><td class='ctr'>%p</td><td>Parent: One directory element and the filename</td><td><code>transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%s</td><td>Directory separator</td><td><code>\</code> on Linux, OSX and other Unix-like systems, <code>/</code> on Windows</td></tr>
+</table>
+",
+		FUNC_STACK_TRACE
+	),
+
 	'scream' => array(
 		'boolean', 0, '>= 2.1',
 		"If this setting is 1, then Xdebug will disable the @ (shut-up)

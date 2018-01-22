@@ -567,7 +567,43 @@ ini_set(\'xdebug.show_local_vars\', \'on\');
 </table></font>
             </div>
         </div>
-    </div>',
+    </div>
+<a name="trace-filter"></a>
+<h2>Filtering</h2>
+<p>
+Xdebug 2.6 introduces filtering capabilities for stack traces. A filter either
+includes through a white list, or excludes through a black list, paths or
+class name prefixes. You can use a filter to prevent anything from a vendor
+directory to appear in a stack trace, or to only include classes from specific
+name spaces.
+</p>
+<p>
+To set-up a filter that shows only functions and methods that either have no
+class name, or are prefixed with "Xdebug", you would call
+[FUNC:xdebug_set_filter] with:
+</p>
+<div class=\'example\'><strong>Example:</strong><br />
+<code><pre>
+xdebug_set_filter(
+	XDEBUG_FILTER_TRACING,
+	XDEBUG_NAMESPACE_WHITELIST,
+	[ \'\', \'Xdebug\' ]
+);
+</pre></code>
+</div>
+<p>
+With this filter set-up, you will only see functions (without class) and all
+method calls of classes that start with "Xdebug". This includes built-in PHP
+functions (such as <code>strlen()</code>) and calls to
+<code>XdebugTest::bar()</code>. The filter does not enforce that "Xdebug" is
+the name of a namespace, and only does a strict character comparison from the
+start of the fully qualified class name. Add a <code>\</code> to the prefix to
+make sure only classes in the <code>Xdebug\</code> namespace are included.
+</p>
+<p>
+The full documentation for the arguments to [FUNC:xdebug_set_filter] are
+described on its own documentation page.
+</p>',
 		array( 'tabfields' => array( 'collectparams', 'othersettings' ) )
 	),
 	'execution_trace' => array(
@@ -905,7 +941,87 @@ parts of the trace files.
 		'Code coverage tells you which lines of script (or set of scripts) have
 		been executed during a request. With this information you can for
 		example find out how good your unit tests are.',
-		""
+'<p>
+Xdebug\'s code coverage functionality is often used in combination with
+<a href="https://github.com/sebastianbergmann/php-code-coverage">PHP_CodeCoverage</a>
+as part of <a href="https://phpunit.de/">PHPUnit</a> runs. PHPUnit delegates
+the code coverage collection to Xdebug. It starts and stops code coverage
+through [FUNC:xdebug_start_code_coverage] and [FUNC:xdebug_stop_code_coverage]
+for every test, and uses [FUNC:xdebug_get_code_coverage] to retrieve the
+results.
+</p>
+<p>
+Code coverage\'s main output is an array detailing which lines in which files
+have been "hit" while running the code with code coverage collection active.
+But the code coverage functionality can also, with an additional performance
+impact, analyse which lines of code have executable code on it, which lines of
+code can actually be hit (dead code analysis), and also can it do
+instrumentation to find out which branches and paths in functions and methods
+have been followed. The various options are documented with the
+[FUNC:xdebug_start_code_coverage] function.
+</p>
+<a name="coverage-filter"></a>
+<h2>Filtering</h2>
+<p>
+Xdebug 2.6 introduces filtering capabilities for code coverage. With a filter
+you can include through a white list, or exclude through a black list, paths or
+class name prefixes from being analysed during code coverage collection. A
+typyical use case would be to configure the filter to only include your
+<code>src/</code> folder, so that Xdebug\'s code coverage analysis does not try
+to analyse tests, Composer dependencies, or PHPUnit/PHP_CodeCoverage itself. If
+you configure the filter correctly, you can expect a 2-fold speed increase for
+code coverage runs
+<sup>[<a href="https://twitter.com/jrf_nl/status/955017446674616320">1</a>,
+<a href="https://twitter.com/hollodotme/status/953719914686242816">2</a>,
+<a href="https://twitter.com/WyriHaximus/status/953667730003001344">3</a>]</sup>.
+</p>
+<p>
+The filter works by tagging each executable unit (function, method, file)
+according to the configured filter. Xdebug can only do that the first time a
+specific executable unit is included/required, as the filtering happens when
+PHP parses and compiles a file for the first time. Xdebug needs to do it as this point, as this is also when
+it analyses which paths can run, and which lines of an executable unit can not
+be executed. Tagging executable units at this point, also means that the
+filter does not have to run every time Xdebug wants to count a line to be
+included in code coverage for example. It is therefore <b>important</b> to
+set-up the filter <b>before</b> the code is included/required. This currently
+can be best done through an auto-prepended file through PHP\'s
+<a href="http://php.net/manual/en/ini.core.php#ini.auto-prepend-file">auto_prepend_file</a> setting.
+</p>
+<p>
+To set-up a filter that only does code coverage analysis for the
+<code>src/</code> folder, you would call [FUNC:xdebug_set_filter] with:
+</p>
+<div class=\'example\'><strong>Example:</strong><br />
+<code><pre>
+&lt;?php
+xdebug_set_filter(
+	XDEBUG_FILTER_CODE_COVERAGE,
+	XDEBUG_NAMESPACE_WHITELIST,
+	[ __DIR__ . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR ]
+);
+?>
+</pre></code>
+</div>
+<p>
+With this filter set up, the code coverage information will only include
+functions, methods and files which are located in the <code>src/</code>
+sub-directory of the file in which this file resides. You can tell PHP to add
+this prepend file by calling:
+</p>
+<pre>
+php -dauto_prepend_file=xdebug_filter.php yourscript.php
+</pre>
+<p>
+Or in combination with PHPUnit, when installed through Composer, with:
+</p>
+<pre>
+php -dauto_prepend_file=xdebug_filter.php vendor/bin/phpunit
+</pre>
+<p>
+The full documentation for the arguments to [FUNC:xdebug_set_filter] are
+described on its own documentation page.
+</p>',
 	),
 	'garbage_collection' => array(
 		'Garbage Collection Statistics',
@@ -995,8 +1111,12 @@ Collected | Efficiency% | Duration | Memory Before | Memory After | Reduction% |
 
 <p>Xdebug\'s Profiler is a powerful tool that gives you the ability to analyze
 your PHP code and determine bottlenecks or generally see which parts of your
-code are slow and could use a speed boost. The profiler in Xdebug 2 outputs
-profiling information in the form of a cachegrind compatible file.  This allows
+code are slow and could use a speed boost. Since Xdebug 2.6, the profiler also
+collects information about how much memory is being used, and which functions
+aGnd methods increased memory usage.</p>
+
+<p>The profiler in Xdebug outputs
+profiling information in the form of a Cachegrind compatible file.  This allows
 you to use the excellent <a href="https://kcachegrind.github.io">KCacheGrind</a>
 tool (Linux, KDE) to analyse your profiling data. If you are on Linux
 you can install KCacheGrind with your favourite package manager.</p>
@@ -1051,6 +1171,11 @@ XDEBUG_PROFILE. The FireFox 2 extension that can be used to enable the debugger
 (see <a href="/docs/remote#firefox-ext">HTTP Debug Sessions</a>) can also be
 used with this setting. In order for the trigger to work properly,
 [CFG:profiler_enable] needs to be set to 0.</p>
+
+<p>From Xdebug 2.6 onwards, Xdebug adds the HTTP header
+<code>X-Xdebug-Profile-Filename</code> to a request that is being profiled.
+This header contains the name of the file that holds the profiling information
+for that request.</p>
 
 <a name="misc"></a>
 <h2>Analysing Profiles</h2>
