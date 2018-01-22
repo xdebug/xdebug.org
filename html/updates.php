@@ -26,6 +26,31 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_6_0RC1'></a>[2018-01-22] &mdash; Xdebug 2.6.0RC1</dt>
+
+<dd><h3>Added features</h3></dd>
+
+<dd>Fixed <?php bug(1506); ?>: Add <a href="/docs/garbage_collection">garbage collection</a> statistics feature (Benjamin Eberlei).</dd>
+<dd>Fixed <?php bug(1507); ?>: Add functions to access Zend Engine garbage collection metrics (Benjamin Eberlei).</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?php bug(1510); ?>: Change switch/case "break intentionally missing" comments to use GCC 7's new "fallthrough" attribute.</dd>
+<dd>Fixed <?php bug(1511); ?>: Detect and use compiler flags through new configure option.</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1335); ?>: Debugging with PhpStorm sometimes gives "can not get property".</dd>
+<dd>Fixed <?php bug(1454); ?>: Invalid memory read or segfaults from a __call() method.</dd>
+<dd>Fixed <?php bug(1508); ?>: Code coverage filter not checked in xdebug_common_assign_dim handler.</dd>
+<dd>Fixed <?php bug(1509); ?>: Code coverage missing for case inside switch with PHP 7.2.</dd>
+<dd>Fixed <?php bug(1512); ?>: Xdebug does not properly encode and escape properties with quotes and \0 characters.</dd>
+<dd>Fixed <?php bug(1514); ?>: Variable names with a NULL char are cut off at NULL char.</dd>
+<dd>Fixed <?php bug(1515); ?>: Object property names with a NULL char are cut off at NULL char.</dd>
+<dd>Fixed <?php bug(1516); ?>: Can't fetch variables or object properties which have \0 characters in them.</dd>
+<dd>Fixed <?php bug(1517); ?>: Notifications incorrectly specify the error type in "type_string" instead of "type".</dd>
+
+
 <dt><a name='x_2_6_0beta1'></a>[2017-12-28] &mdash; Xdebug 2.6.0beta1</dt>
 
 <dd><h3>Added features</h3></dd>
