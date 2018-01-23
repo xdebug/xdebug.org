@@ -26,6 +26,13 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_6_0RC2'></a>[2018-01-23] &mdash; Xdebug 2.6.0RC2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1521); ?>: xdebug_gc_stats.* missing from 2.6.0RC1 tarball.</dd>
+
+
 <dt><a name='x_2_6_0RC1'></a>[2018-01-22] &mdash; Xdebug 2.6.0RC1</dt>
 
 <dd><h3>Added features</h3></dd>
