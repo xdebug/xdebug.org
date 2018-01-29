@@ -1,0 +1,42 @@
+Xdebug 2.6.0 is out!
+<p>This is the first release of the Xdebug 2.6 series.</p>
+
+<p>With this release, PHP 5 is no longer supported. In order to benefit from
+bug fixes and new features in Xdebug, you will also have to upgrade to PHP 7,
+preferably PHP 7.2.</p>
+
+<p>Besides support for PHP 7.2, Xdebug 2.6 adds a significant set of new
+features, as you can see on the <a href="/updates.php#x_2_6_0">updates</a>
+page. A few highlights are: <b>support for profiling memory usage</b>,
+<a href="https://xdebug.org/docs/stack_trace#filename_format">configurable
+formatting of filenames</a>, statistics of PHP's <a
+href="https://xdebug.org/docs/garbage_collection">Garbage Collector</a>, and
+for the "remote" debugger:
+"Notice" and "Warning" notifications are sent to the IDE, support for
+low-ASCII characters in property names and array keys, support for NULL
+characters in variable and property names, and <a href="https://xdebug.org/docs/remote#remote_timeout">configurable
+connection timeouts</a>.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_6_0">updates</a> page, and a blog post detailing many
+of the new additions and changes will appear on <a
+href="https://derickrethans.nl/">Derick's website</a> in the next day or
+so.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains contributions by: <i>Arnaud Gendre, Benjamin
+Eberlei, Chris Wright, Emir Beganović, Frode E. Moe, Kalle Sommer Nielsen,
+Nikita Popov, Sara Golemon, Remi Collet, and Zaid Al Khishman</i> — Thanks!</p>
+
+<p>With this new release out, perhaps now it is the time to contribute to
+Xdebug's development by becoming a patron on
+<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless ours
+on Xdebug in my spare time, and if Xdebug has saved you loads of time, perhaps
+you can spare a few Quid?</p>
+
+<p>Alternatively, you might want to look at my Amazon
+<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+
