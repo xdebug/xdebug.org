@@ -31,6 +31,10 @@ installable through PECL.</p>
 Eberlei, Chris Wright, Emir Beganović, Frode E. Moe, Kalle Sommer Nielsen,
 Nikita Popov, Sara Golemon, Remi Collet, and Zaid Al Khishman</i> — Thanks!</p>
 
+<div style="float: left; margin-right: 0.4em; margin-bottom: 0.1em;">
+<a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
+</div>
+
 <p>With this new release out, perhaps now it is the time to contribute to
 Xdebug's development by becoming a patron on
 <a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless ours
