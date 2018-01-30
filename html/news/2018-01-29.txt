@@ -18,10 +18,9 @@ characters in variable and property names, and <a href="https://xdebug.org/docs/
 connection timeouts</a>.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_6_0">updates</a> page, and a blog post detailing many
-of the new additions and changes will appear on <a
-href="https://derickrethans.nl/">Derick's website</a> in the next day or
-so.</p>
+href="/updates.php#x_2_6_0">updates</a> page, and I have written a
+<a href="https://derickrethans.nl/xdebug-26.html">blog post</a> detailing many
+of the new additions.</p>
 
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
