@@ -36,7 +36,7 @@ Nikita Popov, Sara Golemon, Remi Collet, and Zaid Al Khishman</i> — Thanks!</p
 
 <p>With this new release out, perhaps now it is the time to contribute to
 Xdebug's development by becoming a patron on
-<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless ours
+<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless hours
 on Xdebug in my spare time, and if Xdebug has saved you loads of time, perhaps
 you can spare a few Quid?</p>
 
