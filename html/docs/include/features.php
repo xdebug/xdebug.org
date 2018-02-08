@@ -997,7 +997,7 @@ To set-up a filter that only does code coverage analysis for the
 &lt;?php
 xdebug_set_filter(
 	XDEBUG_FILTER_CODE_COVERAGE,
-	XDEBUG_NAMESPACE_WHITELIST,
+	XDEBUG_PATH_WHITELIST,
 	[ __DIR__ . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR ]
 );
 ?>
