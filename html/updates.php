@@ -26,6 +26,21 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_0alpha1'></a>[2018-04-01] &mdash; Xdebug 2.7.0alpha1</dt>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?php bug(938); ?>: Support remote debugging for PHP scripts that fork. (Sponsored by Brad Wilson)</dd>
+<dd>Fixed <?php bug(1487); ?>: Re-enable IPv6 test on Travis.</dd>
+
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1526); ?>: Namespace filter does equality match instead of prefix match.</dd>
+<dd>Fixed <?php bug(1532); ?>: SIGABRT when using remote debugging and an error is thrown in eval().</dd>
+<dd>Fixed <?php bug(1543); ?>: Various memory leaks due to changes in (internal) string handling.</dd>
+
+
 <dt><a name='x_2_6_0'></a>[2018-01-29] &mdash; Xdebug 2.6.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

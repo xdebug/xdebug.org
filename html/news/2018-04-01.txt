@@ -1,0 +1,33 @@
+Xdebug 2.7.0alpha1 is out!
+<p>This is an alpha release of the Xdebug 2.7 series.</p>
+
+<p>The main reason for this release is the introduction of a resolution to an
+<a href='http://bugs.xdebug.org/938'>issue</a>, in which Xdebug now allows for
+working remote debugging of scripts that fork processes. Previously, Xdebug got
+confused when an already existing debugging connection was shared among parent
+and child processes. This releases addresses this by attempting to create a
+separate connection for each child process. The resolution of this issue was
+sponsored by Brad Wilson.</p>
+
+<p>This release also contains some fixes made on the 2.6 branch.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_7_0alpha1">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<div style="float: left; margin-right: 0.4em; margin-bottom: 0.1em;">
+<a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
+</div>
+
+<p>With this new release out, perhaps now it is the time to contribute to
+Xdebug's development by becoming a patron on
+<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless hours
+on Xdebug in my spare time, and if Xdebug has saved you loads of time, perhaps
+you can spare a few Quid?</p>
+
+<p>Alternatively, you might want to look at my Amazon
+<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+
