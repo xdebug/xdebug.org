@@ -63,7 +63,7 @@ php.ini &mdash; this <b>will</b> cause problems.</p>
 <h2>Installation on Mac OS X</h2>
 
 <p>
-PHP is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. Homebrew recommend using PECL to install Xdebug, so please follow the instructions above for <a href="#pecl">installing via PECL</a>.
+PHP is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. Homebrew recommend using PECL to install Xdebug, so please follow the instructions above for <a href=\"#pecl\">installing via PECL</a>.
 </p>
 
 <a name='source'></a>
