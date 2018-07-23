@@ -1455,7 +1455,9 @@ through a browser: cookies. This works like this:
 <li>When the URL variable <code>XDEBUG_SESSION_START=name</code> is appended
 to an URL—or through a POST variable with the same name—Xdebug emits a cookie
 with the name "XDEBUG_SESSION" and as value the value of the
-XDEBUG_SESSION_START URL parameter. The expiry of the cookie is one hour. The
+XDEBUG_SESSION_START URL parameter. The default expiry time of the cookie is
+one hour, but this can be configured through the
+[CFG:remote_cookie_expire_time] setting. The
 DBGp protocol also passes this same value to the init packet when connecting
 to the debugclient in the "idekey" attribute.</li>
 <li>When there is a GET (or POST) variable XDEBUG_SESSION_START or the
