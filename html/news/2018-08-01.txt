@@ -1,7 +1,9 @@
 Xdebug 2.6.1 released!
 <p>This is the first bug fix release of the 2.6 series.</p>
 
-<p></p>
+<p>This release fixes several crash bugs, a memory leak, and an issue with
+step debugging where object properties with numerical names could not be
+inspected.</p>
 
 <p>The full list of changes can be found on the <a
 href="/updates.php#x_2_6_1">updates</a> page.</p>
@@ -10,7 +12,15 @@ href="/updates.php#x_2_6_1">updates</a> page.</p>
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
-<div style="float: left; margin-right: 0.4em; margin-bottom: 0.1em;">
+<p>This release features community contributions by:
+<ul>
+	<li><a href="https://github.com/pilif">Philip Hofstetter</a></li>
+</ul>
+</p>
+
+<hr/>
+
+<div style="float: right; margin-right: 0.4em; margin-bottom: 0.1em;">
 <a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
 </div>
 
