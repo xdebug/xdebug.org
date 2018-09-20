@@ -1,0 +1,39 @@
+Xdebug 2.7.0beta1 released!
+<p>This is the first release with PHP 7.3 support.</p>
+
+<p>This release only updates Xdebug to support PHP 7.3. There are a few known
+issues that still need to be addressed, such as a problem with Code Coverage
+and multiple catches. These will be addressed in a future beta or Release
+Candidate.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_7_0beta1">updates</a> page.</p>
+
+<p>Please test this release with PHP 7.3, and if you find problems, please
+report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release features community contributions by:
+<ul>
+	<li><a href="https://github.com/cmb69">Christoph M. Becker</a></li>
+</ul>
+</p>
+
+<hr/>
+
+<div style="float: right; margin-right: 0.4em; margin-bottom: 0.1em;">
+<a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
+</div>
+
+<p>With this new release out, perhaps now it is the time to contribute to
+Xdebug's development by becoming a patron on
+<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless hours
+on Xdebug in my spare time, and if Xdebug has saved you loads of time, perhaps
+you can spare a few Quid?</p>
+
+<p>Alternatively, you might want to look at my Amazon
+<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
+

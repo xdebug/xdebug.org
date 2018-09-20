@@ -26,6 +26,13 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_0beta1'></a>[2018-09-20] &mdash; Xdebug 2.7.0beta1</dt>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?php bug(1519); ?>: PHP 7.3 support (with a contribution by Christoph M. Becker)</dd>
+
+
 <dt><a name='x_2_6_1'></a>[2018-08-01] &mdash; Xdebug 2.6.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

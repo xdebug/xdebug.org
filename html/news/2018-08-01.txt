@@ -17,19 +17,3 @@ installable through PECL.</p>
 	<li><a href="https://github.com/pilif">Philip Hofstetter</a></li>
 </ul>
 </p>
-
-<hr/>
-
-<div style="float: right; margin-right: 0.4em; margin-bottom: 0.1em;">
-<a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a>
-</div>
-
-<p>With this new release out, perhaps now it is the time to contribute to
-Xdebug's development by becoming a patron on
-<a href="https://www.patreon.com/derickr">Patreon</a>. I spend countless hours
-on Xdebug in my spare time, and if Xdebug has saved you loads of time, perhaps
-you can spare a few Quid?</p>
-
-<p>Alternatively, you might want to look at my Amazon
-<a href='http://www.amazon.co.uk/registry/wishlist/SLCB276UZU8B'>wishlist</a>.</p>
-
