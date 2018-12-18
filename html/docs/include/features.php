@@ -1510,6 +1510,49 @@ Xdebug\'s implementation of the
 command does not depend on the stack level. The returned value is always the
 same during each debugger session, and hence, can be safely cached.
 </p>
+
+<h2>Custom DBGp commands</h2>
+<p>
+The DBGp protocol allows for debugger engine specific commands, prefixed with
+the <code>xcmd_</code> prefix. Xdebug includes a few of these, and they\'re
+documented here.
+</p>
+
+<a name="xcmd_profiler_get_name"></a>
+<h3>DBGp: xcmd_profiler_name_get</h3>
+<p>
+If Xdebug\'s profiler is currently active (See: [FEAT:profiler]), this command
+returns the name of the file that is being used to write the profiling
+information to.
+</p>
+
+<a name="xcmd_get_executable_lines"></a>
+<h3>DBGp: xcmd_get_executable_lines</h3>
+<p>
+This command returns which lines in an active stack frame can have a working
+breakpoint. These are the lines which have an <code>EXT_STMT</code>
+opcode on them. This commands accepts a <code>-d</code> option, which
+indicates the stack depth, with <code>0</code> being the top leve stack frame.
+</p>
+<p>
+The command returns the information in the following XML format:
+</p>
+<pre class="example">
+&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;response
+  xmlns="urn:debugger_protocol_v1"
+  xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
+  command="xcmd_get_executable_lines"
+  transaction_id="10"&gt;
+	&lt;xdebug:lines&gt;
+		&lt;xdebug:line lineno="2"&gt;&lt;/xdebug:line&gt;
+		&lt;xdebug:line lineno="3"&gt;&lt;/xdebug:line&gt;
+		&lt;xdebug:line lineno="4"&gt;&lt;/xdebug:line&gt;
+		&lt;xdebug:line lineno="6"&gt;&lt;/xdebug:line&gt;
+		&lt;xdebug:line lineno="8"&gt;&lt;/xdebug:line&gt;
+	&lt;/xdebug:lines&gt;
+&lt;/response&gt;
+</pre>
 		'
 	),
 	'faq' => array(
