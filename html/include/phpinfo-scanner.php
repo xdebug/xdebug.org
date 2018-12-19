@@ -176,7 +176,7 @@ class xdebugVersion
 			$this->zendServerInstallPath = join( $this->dirSep, array_slice( $parts, 0, -2 ) );
 		}
 
-		echo "<h2>Summary</h2\n<ul>\n";
+		echo "<h2>Summary</h2>\n<ul>\n";
 		if ( $this->xdebugAsZendExt && $this->xdebugAsPhpExt )
 		{
 			echo "<li><b>Xdebug installed:</b> ", $this->xdebugVersion, "</li>\n";
