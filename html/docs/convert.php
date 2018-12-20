@@ -113,7 +113,7 @@ class drDocumentDocbookToTextTableHandler extends ezcDocumentDocbookToRstTableHa
 }
 
 
-class drDocumentDoctookToTextConvertor extends ezcDocumentDocbookToRstConverter
+class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
 {
 	public $storage;
 
@@ -193,7 +193,7 @@ $xhtml = new ezcDocumentXhtml();
 $xhtml->loadString( ignore_links( $info[3] ) );
 $docbook = $xhtml->getAsDocbook();
 // echo $docbook->save(), "\n\n";
-$convertor = new drDocumentDoctookToTextConvertor();
+$convertor = new drDocumentDocbookToTextConvertor();
 $rst = $convertor->convert( $docbook );
 /* If info[2] != NULL there are version constraints */
 $version = ";";
