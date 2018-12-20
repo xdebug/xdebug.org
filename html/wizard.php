@@ -22,6 +22,15 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 	if ( ( $reason = $x->determineSupported() ) !== true )
 	{
 		echo "<h2>{$reason}</h2>\n";
+		echo <<<END
+<p>
+The wizard could not help in your situation, so please read the installation
+<a href="/docs/install">documentation</a>. If the wizard indicated that your
+current PHP version is not supported, please see whether there is a file
+available for download or compilation on the <a href="/download">download</a>
+page.
+</p>
+END;
 	}
 	else
 	{
