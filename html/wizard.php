@@ -114,8 +114,7 @@ else
 </p>
 <form method='POST'>
 <p>
-	<textarea name='data' cols="80" rows="25">
-	</textarea>
+	<textarea name='data' cols="80" rows="25"></textarea>
 </p>
 <p>
 	The information that you upload will not be stored. The script will only
