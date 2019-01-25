@@ -1,5 +1,5 @@
 = xdebug_set_filter,2.6
-Starts code coverage
+Set filter
 void
 int $group, int $list_type, array $configuration
 FUNC_CODE_COVERAGE
