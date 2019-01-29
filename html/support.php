@@ -1,4 +1,4 @@
-<?php $title = "Xdebug: Support"; include "include/header.php"; ?>
+<?php $title = "Xdebug: Support"; include "include/header.php"; require 'include/phpinfo-scanner.php'; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">

@@ -1,6 +1,7 @@
 <?php
 class xdebugVersion
 {
+	static public $notSupportedBefore = '2.6';
 	static public $latestVersion = '2.6.1';
 	static public $latestWindowsVersion = '2.6.1';
 

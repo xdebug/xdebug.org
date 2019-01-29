@@ -83,7 +83,8 @@ div.example-returns pre { margin-left: 0px; margin-right: 0px; }
 
 h1 { font-variant: small-caps; font-size: 150% }
 h2 { font-variant: small-caps; font-size: 130% }
-h3 { font-variant: small-caps; font-size: 120% }
+h3 { font-variant: small-caps; font-size: 110% }
+h4 { font-weight: bold; font-size: 100% }
 
 code { background-color: #eaffeb; }
 
