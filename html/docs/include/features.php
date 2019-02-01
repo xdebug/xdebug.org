@@ -1297,6 +1297,10 @@ environment variable, like:
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 php myscript.php
 </pre>
+On Windows, setting an environment variable is done with <code>set</code>:
+<pre class="example">
+set XDEBUG_CONFIG="[CFGS:idekey]=session_name"
+</pre>
 You can also configure the [CFG:remote_host], [CFG:remote_port],
 [CFG:remote_mode] and [CFG:remote_handler] in this same environment variable as
 long as you separate the values by a space:
