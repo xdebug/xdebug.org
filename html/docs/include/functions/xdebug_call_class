@@ -1,7 +1,7 @@
 = xdebug_call_class
 Returns the calling class, <code>NULL</code> if the stack frame does not exist, or <code>FALSE</code> if the stack frame has no class information
 string
-[int $depth = 1]
+[int $depth = 2]
 FUNC_BASIC
 
 TXT:
