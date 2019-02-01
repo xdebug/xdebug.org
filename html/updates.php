@@ -26,6 +26,18 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_0rc1'></a>[2019-02-01] &mdash; Xdebug 2.7.0rc1</dt>
+
+<dd><h3>Fixed Bugs</h3></dd>
+
+<dd>Fixed <?php bug(1571); ?>: File/line information is not shown for closures in namespaces.</dd>
+<dd>Fixed <?php bug(1578); ?>: Compile error due to redefinition of "zif_handler" with old GCCs.</dd>
+<dd>Fixed <?php bug(1583); ?>: Xdebug crashes when OPcache's compact literals optimisation is on.</dd>
+<dd>Fixed <?php bug(1598); ?>: Make path/branch coverage work with OPcache loaded for PHP 7.3 and later.</dd>
+<dd>Fixed <?php bug(1620); ?>: Division by zero when GC Stats Collection runs with memory manager disabled.</dd>
+
+
+
 <dt><a name='x_2_7_0beta1'></a>[2018-09-20] &mdash; Xdebug 2.7.0beta1</dt>
 
 <dd><h3>Improvements</h3></dd>

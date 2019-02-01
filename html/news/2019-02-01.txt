@@ -1,13 +1,12 @@
-Xdebug 2.7.0beta1 released!
-<p>This is the first release with PHP 7.3 support.</p>
+Xdebug 2.7.0rc1 released!
+<p>This is the first (and hopefully last) release candidate for Xdebug 2.7.</p>
 
-<p>This release only updates Xdebug to support PHP 7.3. There are a few known
-issues that still need to be addressed, such as a problem with Code Coverage
-and multiple catches. These will be addressed in a future beta or Release
-Candidate.</p>
+<p>This release addresses a number of issues, with the most notable one being
+an issue where Xdebug causes crashes due to a bug in OPcache in PHP 7.3.0 and
+PHP 7.3.1. Xdebug now works around the issue when it is needed.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_7_0beta1">updates</a> page.</p>
+href="/updates.php#x_2_7_0rc1">updates</a> page.</p>
 
 <p>Please test this release with PHP 7.3, and if you find problems, please
 report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.
@@ -16,8 +15,10 @@ report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
+<!--
 <p>This release features community contributions by:
 <ul>
 	<li><a href="https://github.com/cmb69">Christoph M. Becker</a></li>
 </ul>
 </p>
+-->
