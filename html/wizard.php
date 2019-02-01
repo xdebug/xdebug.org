@@ -70,6 +70,24 @@ END;
 		echo "<li>Download <a href='http://xdebug.org/files/{$dlFile}'>{$dlFile}</a></li>\n";
 		if ( !$x->windows )
 		{
+			echo "<li>Install the pre-requisites for compiling PHP extensions.";
+			if ( $x->distribution == 'Debian' || $x->distribution == 'Ubuntu' )
+			{
+				echo "<br />On your {$x->distribution} system, install them with: <code>apt-get install php-dev autoconf automake</code>";
+			}
+			else if ( $x->distribution == 'RedHat' || $x->distribution == 'Fedora' )
+			{
+				echo "<br />On your {$x->distribution} system, install them with: <code>yum groupinstall \"Development tools\" && yum install php-devel autoconf automake</code>";
+			}
+			else if ( $x->distribution == 'Darwin' )
+			{
+				echo "<br />On your Mac, we only support installations with 'homebrew', and <code>brew install php && brew install autoconf</code> should pull in the right packages.";
+			}
+			else
+			{
+				echo " These packages are often called 'php-dev', or 'php-devel', 'automake' and 'autoconf'.";
+			}
+			echo "</li>";
 			echo "<li>Unpack the downloaded file with <code>tar -xvzf {$dlFile}</code></li>";
 			echo "<li>Run: <code>cd {$x->tarDir}</code></li>\n";
 			echo "<li><p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>.</p>

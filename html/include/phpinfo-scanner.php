@@ -14,6 +14,7 @@ class xdebugVersion
 		$this->winCompiler= 9; $this->architecture = 'x86';
 		$this->zendServer = false;
 		$this->xdebugAsZendExt = $this->xdebugAsPhpExt = false;
+		$this->distribution = false;
 	}
 
 	function analyse( $data )
@@ -67,6 +68,26 @@ class xdebugVersion
 		if ( preg_match( '/System([ =>\t]+)Windows/', $data, $m ) )
 		{
 			$this->windows = true;
+		}
+		if ( preg_match( '/System(.+)Debian/', $data, $m ) )
+		{
+			$this->distribution = "Debian";
+		}
+		if ( preg_match( '/System(.+)Ubuntu/', $data, $m ) )
+		{
+			$this->distribution = "Ubuntu";
+		}
+		if ( preg_match( '/System(.+)el[5678]/', $data, $m ) )
+		{
+			$this->distribution = "RedHat";
+		}
+		if ( preg_match( '/System(.+)\.fc\d+\./', $data, $m ) )
+		{
+			$this->distribution = "Fedora";
+		}
+		if ( preg_match( '/System(.+)Darwin\./', $data, $m ) )
+		{
+			$this->distribution = "Darwin";
 		}
 		// windows 32/64 bit
 		if ( preg_match( '/Architecture([ =>\t]*)(x[0-9]*)/', $data, $m ) )
