@@ -90,7 +90,7 @@ END;
 			echo "</li>";
 			echo "<li>Unpack the downloaded file with <code>tar -xvzf {$dlFile}</code></li>";
 			echo "<li>Run: <code>cd {$x->tarDir}</code></li>\n";
-			echo "<li><p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>.</p>
+			echo "<li><p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>).</p>
 <p>As part of its output it should show:<br/><pre>
 Configuring for:
 ...
@@ -119,7 +119,12 @@ Zend Extension Api No:   {$x->zendApi}
 		}
 		echo "<li>{$iniFile} and ";
 		echo $x->xdebugVersion ? "change " : ( $x->zendServer ? "add at the begining of the file " : "add " );
-		echo "the line<br/><code>{$iniLine}</code></li>\n";
+		echo "the line<br/><code>{$iniLine}</code>";
+		if ( $x->opcacheLoaded )
+		{
+			echo "<br/>Make sure that <code>{$iniLine}</code> is <b>below</b> the line for OPcache.\n";
+		}
+		echo "\n</li>\n";
 		if ( $x->sapi !== 'Command Line Interface' )
 		{
 			echo "<li>Restart the webserver</li>\n";

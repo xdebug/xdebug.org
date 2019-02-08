@@ -2,8 +2,18 @@
 class xdebugVersion
 {
 	static public $notSupportedBefore = '2.6';
-	static public $latestVersion = '2.6.1';
-	static public $latestWindowsVersion = '2.6.1';
+	static public $latestVersion = '2.7.1RC1';
+	static public $latestWindowsVersion = '2.7.1RC1';
+
+	static function getVersions()
+	{
+		return [
+			'7.0' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
+			'7.1' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
+			'7.2' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
+			'7.3' => [ 'src' => '2.7.0RC1', 'win' => '2.7.0RC1' ]
+		];
+	}
 
 	function __construct()
 	{
@@ -13,8 +23,11 @@ class xdebugVersion
 		$this->tarDir = $this->xdebugVersion = false;
 		$this->winCompiler= 9; $this->architecture = 'x86';
 		$this->zendServer = false;
+		$this->opcacheLoaded = false;
 		$this->xdebugAsZendExt = $this->xdebugAsPhpExt = false;
 		$this->distribution = false;
+
+		$this->xdebugVersions = self::getVersions();
 	}
 
 	function analyse( $data )
@@ -38,7 +51,7 @@ class xdebugVersion
 			$this->sapi = trim( $m[2] );
 		}
 
-		if ( preg_match( '/PHP Version([^457]+)([457][0-9.dev-]+)/', $data, $m ) )
+		if ( preg_match( '/PHP Version([^4567]+)([4567][0-9.dev-]+)/', $data, $m ) )
 		{
 			$this->version = $m[2];
 		}
@@ -48,6 +61,12 @@ class xdebugVersion
 		{
 			$this->xdebugVersion = $m[1];
 			$this->xdebugAsZendExt = true;
+		}
+		// OPcache Extension check
+		if ( preg_match( '/with\sZend\sOPcache\sv([0-9.RCrcdevalphabeta-]+),/', $data, $m ) )
+		{
+			$this->opcacheVersion = $m[1];
+			$this->opcacheLoaded = true;
 		}
 		// Xdebug as normal php ext
 		if ( preg_match( '/xdebug support/', $data, $m ) )
@@ -199,7 +218,7 @@ class xdebugVersion
 		}
 
 		echo "<h2>Summary</h2>\n<ul>\n";
-		if ( $this->xdebugAsZendExt && $this->xdebugAsPhpExt )
+		if ( $this->xdebugAsZendExt )
 		{
 			echo "<li><b>Xdebug installed:</b> ", $this->xdebugVersion, "</li>\n";
 		}
@@ -228,6 +247,7 @@ class xdebugVersion
 		echo "<li><b>PHP API nr:</b> $this->phpApi</li>\n";
 		echo "<li><b>Debug Build:</b> ", $this->debug ? 'yes' : 'no', "</li>\n";
 		echo "<li><b>Thread Safe Build:</b> ", $this->ts ? 'yes' : 'no', "</li>\n";
+		echo "<li><b>OPcache Loaded:</b> ", $this->opcacheLoaded ? 'yes' : 'no', "</li>\n";
 		if ( $this->configFile )
 		{
 			echo "<li><b>Configuration File Path:</b> $this->configPath</li>\n";
@@ -256,25 +276,41 @@ class xdebugVersion
 		{
 			return "Could not find any useful information.";
 		}
-		if ( $this->windows && $this->debug )
+		
+		$majorPhpVersion = substr( $this->version, 0, 3 );
+
+		if ( !array_key_exists( $majorPhpVersion, $this->xdebugVersions ) )
 		{
-			return "Debug builds are not supported on Windows.";
+			return "PHP version {$majorPhpVersion} is not supported.";
 		}
-		if ( $this->windows && $this->winCompiler == 6 )
+
+		if ( $this->windows )
 		{
-			return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
-		}
-		if ( $this->windows && $this->winCompiler == 8 )
-		{
-			return "The compiler (MS VC8) that this PHP was build with, is not supported.";
-		}
-		if ( $this->windows && $this->winCompiler == 9 )
-		{
-			return "The compiler (MS VC9) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
-		}
-		if ( version_compare( $this->version, '7.0.0', '<' ) )
-		{
-			return "PHP versions below 7.0 are not supported.";
+			if ( $this->debug )
+			{
+				return "Debug builds are not supported on Windows.";
+			}
+			if ( $this->winCompiler == 6 )
+			{
+				return "The compiler (MS VC6) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
+			}
+			if ( $this->winCompiler == 8 )
+			{
+				return "The compiler (MS VC8) that this PHP was build with, is not supported.";
+			}
+			if ( $this->winCompiler == 9 )
+			{
+				return "The compiler (MS VC9) that this PHP was build with, is no longer supported. Please upgrade to a version that was built with MS VC11 or MS VC14.";
+			}
+
+			if ( $this->winCompiler != 14 && ( $majorPhpVersion == '7.0' || $majorPhpVersion == '7.1' ) )
+			{
+				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
+			}
+			if ( $this->winCompiler != 15 && ( $majorPhpVersion == '7.2' || $majorPhpVersion == '7.3' ) )
+			{
+				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
+			}
 		}
 		return true;
 	}
@@ -285,49 +321,24 @@ class xdebugVersion
 
 		if ( !$this->windows )
 		{
-			$version = self::$latestVersion;
+			$version = $this->xdebugVersions[$majorPhpVersion]['src'];
 			$this->xdebugVersionToInstall = $version;
 			$this->tarDir = "xdebug-{$version}";
 			return "xdebug-{$version}.tgz";
 		}
 		else
 		{
-			$version = self::$latestWindowsVersion;
+			$version = $this->xdebugVersions[$majorPhpVersion]['win'];
 			$base = 'php_xdebug';
 
 			if ( $this->debug )
 			{
 				return false;
 			}
-			switch ( $majorPhpVersion ) 
-			{
-				case '5.5':
-				case '5.6':
-					if ( $this->winCompiler != 11 )
-					{
-						return false;
-					}
-					break;
-				case '7.0':
-				case '7.1':
-					if ( $this->winCompiler != 14 )
-					{
-						return false;
-					}
-					break;
-				case '7.2':
-				case '7.3':
-					if ( $this->winCompiler != 15 )
-					{
-						return false;
-					}
-					break;
-				default:
-					return false;
-			}
 
 			$this->xdebugVersionToInstall = $version;
 			$filename = "{$base}-{$version}-{$majorPhpVersion}-vc{$this->winCompiler}" . ( $this->ts ? '' : '-nts' ) . ( $this->architecture == 'x64' ? '-x86_64' : '' ) . ".dll";
+
 			return $filename;
 		}
 	}
@@ -375,8 +386,11 @@ class xdebugVersion
 		}
 		$line .= ' = ';
 
-		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
-		$line .= $this->extensionDir . $this->dirSep;
+		if ( $this->extensionDir !== '' )
+		{
+			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
+			$line .= $this->extensionDir . $this->dirSep;
+		}
 
 		if ( $this->windows )
 		{
@@ -386,7 +400,12 @@ class xdebugVersion
 		{
 			$line .= 'xdebug.so';
 		}
-		$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
+
+		if ( $this->extensionDir !== '' )
+		{
+			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
+		}
+
 		return $line;
 	}
 }
