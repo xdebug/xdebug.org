@@ -26,6 +26,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_0RC2'></a>[2019-02-15] &mdash; Xdebug 2.7.0RC2</dt>
+
+<dd><h3>Fixed Bugs</h3></dd>
+
+<dd>Fixed <?php bug(1551); ?>: Property with value null is not represented well</dd>
+<dd>Fixed <?php bug(1621); ?>: Xdebug fails to compile cleanly on 32-bit platforms</dd>
+<dd>Fixed <?php bug(1625); ?>: Work around ABI conflicts in PHP 7.3.0/PHP 7.3.1</dd>
+<dd>Fixed <?php bug(1628); ?>: The PHP function name being constructed to record when GC Collection runs, is not freed</dd>
+<dd>Fixed <?php bug(1629); ?>: SOAP Client/Server detection code does not handle inherited classes</dd>
+
+
 <dt><a name='x_2_7_0rc1'></a>[2019-02-01] &mdash; Xdebug 2.7.0rc1</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
