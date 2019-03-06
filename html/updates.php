@@ -26,6 +26,16 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_0'></a>[2019-03-06] &mdash; Xdebug 2.7.0</dt>
+
+<dd><h3>Fixed Bugs</h3></dd>
+
+<dd>Fixed <?php bug(1520); ?>: Xdebug does not handle variables and properties with "-" in their name</dd>
+<dd>Fixed <?php bug(1577); ?>: Code coverage path analysis with chained catch fails in PHP 7.3</dd>
+<dd>Fixed <?php bug(1639); ?>: Compile warning/error on GCC 8 or Clang due to "break intentionally missing"</dd>
+<dd>Fixed <?php bug(1642); ?>: Debugger gives: "Warning: Header may not contain NUL bytes"</dd>
+
+
 <dt><a name='x_2_7_0RC2'></a>[2019-02-15] &mdash; Xdebug 2.7.0RC2</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>

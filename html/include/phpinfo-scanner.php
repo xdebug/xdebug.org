@@ -1,17 +1,17 @@
 <?php
 class xdebugVersion
 {
-	static public $notSupportedBefore = '2.6';
-	static public $latestVersion = '2.7.1RC2';
-	static public $latestWindowsVersion = '2.7.1RC2';
+	static public $notSupportedBefore = '2.7';
+	static public $latestVersion = '2.7.0';
+	static public $latestWindowsVersion = '2.7.0';
 
 	static function getVersions()
 	{
 		return [
-			'7.0' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
-			'7.1' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
-			'7.2' => [ 'src' => '2.6.1',    'win' => '2.6.1'    ],
-			'7.3' => [ 'src' => '2.7.0RC2', 'win' => '2.7.0RC2' ]
+			'7.0' => [ 'src' => '2.7.0',    'win' => '2.7.0'    ],
+			'7.1' => [ 'src' => '2.7.0',    'win' => '2.7.0'    ],
+			'7.2' => [ 'src' => '2.7.0',    'win' => '2.7.0'    ],
+			'7.3' => [ 'src' => '2.7.0'     'win' => '2.7.0'    ]
 		];
 	}
 

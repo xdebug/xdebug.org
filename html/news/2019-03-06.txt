@@ -1,0 +1,25 @@
+Xdebug 2.7.0 is out!
+<p>This is the first release of the Xdebug 2.7 series.</p>
+
+<p>This version of Xdebug primarily adds support for PHP 7.3. It also adds
+support for single step debugging of forked PHP worker processes.</p>
+
+<p>Beyond this meagre set of features, this release also fixes numerous memory
+leaks, bugs, and incompatibilities with Zend Opcache. Everybody is encouraged
+to upgrade to this new version.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_7_0">updates</a> page.</p>
+
+<p>I have written a
+<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
+Xdebug Experience"</a> about the future of Xdebug, and how you can help
+through becoming a supporter on
+<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains contributions by: <i>Christoph Becker, Peter
+Kokot, Philip Hofstetter, Remi Collet, and Thomas Vanhaniemi</i> — Thanks!</p>
