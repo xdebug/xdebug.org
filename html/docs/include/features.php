@@ -144,11 +144,41 @@ twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
 </ol>
 </p>
 
+<a name='versions'></a>
+<h2>PHP Version Support</h2>
+<p>
+This table lists which version of Xdebug is still supported, and which ones to
+use for older PHP versions. In general, at any point when an Xdebug version is
+released, it will support the currently supported <a
+href='http://php.net/supported-versions.php'>PHP versions</a>.
+</p>
+<table class='versions'>
+<thead>
+<tr><th rowspan='2'>PHP<br/>Version</td><th colspan=\"6\">Xdebug Version</th>
+<tr class='xdebugversion'><th class='supported'>2.7</th><th class='legacy'>2.6</th><th>2.5</th><th>2.4</th><th>2.3</th><th>2.2</th></tr>
+</thead>
+<tbody>
+<tr><th class='supported'>PHP 7.3</th>     <td class='supported'>✔</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><th class='supported'>PHP 7.2</th>     <td class='supported'>✔</td><td>✔</td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><th class='supported'>PHP 7.1</th>     <td class='supported'>✔</td><td>✔</td><td>✔</td><td> </td><td> </td><td> </td></tr>
+<tr><th class='legacy'>PHP 7.0</th>        <td class='supported'>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td><td> </td></tr>
+<tr><th>PHP 5.6</th>                       <td> </td><td> </td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><th>PHP 5.5</th>                       <td> </td><td> </td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><th>PHP 5.4</th>                       <td> </td><td> </td><td> </td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><th>PHP 5.3</th>                       <td> </td><td> </td><td> </td><td> </td><td> </td><td>✔</td></tr>
+<tr><th>PHP 5.2</th>                       <td> </td><td> </td><td> </td><td> </td><td> </td><td>✔</td></tr>
+</tbody>
+</table>
+
 <a name='compat'></a>
 <h2>Compatibility</h2>
 <p>
-Xdebug does not work together with the Zend Optimizer or any other extension
-that deals with PHP's internals (DBG, APD, ioncube etc).  This is due to
+Xdebug does work together with the Zend Opcache, albeit with reducued or
+crippled functionality, as Opcache optimises out information that Xdebug could
+use.
+</p>
+<p>Xdebug does <b>not</b> work together with other extensions
+that deals with PHP's internals (DBG, APD, ioncube etc). This is due to
 compatibility problems with those modules.
 </p>
 

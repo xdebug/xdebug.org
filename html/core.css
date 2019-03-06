@@ -90,6 +90,18 @@ code { background-color: #eaffeb; }
 
 span.md5 { font-size: 75%; color: gray }
 
+table.versions { width: 100%; border: 1px solid black; border-collapse: collapse; }
+table.versions thead th { text-align: center; }
+table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }
+table.versions thead tr.xdebugversion th.legacy { background-color: #ffbc42; }
+table.versions thead tr.xdebugversion th.supported { background-color: green; color: white; }
+table.versions th { text-align: center; border: 1px solid grey; }
+table.versions tbody tr th { background-color: #ff7f7f; }
+table.versions tbody tr th.legacy { background-color: #ffbc42; }
+table.versions tbody tr th.supported { background-color: green; color: white; }
+table.versions td { text-align: center; border: 1px solid grey; color: #ff7f7f; }
+table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
+
 @media print {
 	div#menu { display: none; }
 	div#menu-docs { display: none; }
