@@ -14,6 +14,27 @@ body     { font-family: sans-serif; }
 th.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
 td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical-align: top; }
 
+table.ci { width: 100%; border-collapse: collapse; }
+table.ci tr.version th { white-space: nowrap; padding: 0; text-align: center; }
+table.ci tr.version th div.time { font-size: 66%; line-height: 1em; font-weight: normal; }
+table.ci tr th { border: 1px solid black; padding-left: 0.5em;}
+table.ci tr td { text-align: center; border: 1px solid black; font-size: 1.5em; padding: 0.25em; }
+table.ci tr td.bf              { color: #c1e; background-color: #eee; }
+table.ci tr td.bf a            { color: #c1e; background-color: #eee; text-decoration: none; }
+table.ci tr td.bf a:hover      { background-color: #ddd; }
+table.ci tr td.err             { color: #e44; background-color: #eee; }
+table.ci tr td.err a           { color: #e44; background-color: #eee; text-decoration: none; }
+table.ci tr td.err a:hover     { background-color: #ddd; }
+table.ci tr td.missing         { color: #ccc; }
+table.ci tr td.success         { color: #0b0; background-color: #eee; }
+table.ci tr td.success a       { color: #0b0; background-color: #eee; text-decoration: none; }
+table.ci tr td.success a:hover { background-color: #ddd; }
+table.ci tr td pre.log         { font-size: 0.66em; text-align: left; }
+h2.bf      { color: #c1e; }
+h2.err     { color: #e44; }
+h2.success { color: #0b0; }
+pre.log { white-space: pre-wrap; }
+
 #flickr { margin: 20px; }
 
 tt       { font-family: monospace; background-color: #eaffeb; }
