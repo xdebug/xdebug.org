@@ -120,7 +120,10 @@ ENDFAILURE;
 				$phpVersions[ $version->cfg->config ] = true;
 				$latestAbbrev = trim( $version->abbrev );
 				$abbrevs[ $latestAbbrev ] = $version;
-				$matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] = $version;
+				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] ) )
+				{
+					$matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] = $version;
+				}
 			}
 		}
 
