@@ -27,7 +27,7 @@ if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpi
 The wizard could not help in your situation, so please read the installation
 <a href="/docs/install">documentation</a>. If the wizard indicated that your
 current PHP version is not supported, please see whether there is a file
-available for download or compilation on the <a href="/download">download</a>
+available for download or compilation on the <a href="/download.php">download</a>
 page.
 </p>
 END;
@@ -141,8 +141,7 @@ else
 	PHP to get Xdebug running.  Please paste the <b>full</b> output of
 	phpinfo() (either a copy &amp; paste of the HTML version, the HTML source
 	or <code>php -i</code> output) and submit the form to receive tailored
-	download and installation instructions. Do <b>not</b> paste the raw HTML (from
-	view-source) into the form.
+	download and installation instructions.
 </p>
 <form method='POST'>
 <p>
