@@ -98,7 +98,7 @@ ENDFAILURE;
 			'pipeline' => [
 				[ '$group' => [ '_id' => '$run', 'docs' => [ '$push' => '$$ROOT' ] ] ],
 				[ '$sort' => [ '_id' => -1 ] ],
-				[ '$limit' => 10 ],
+				[ '$limit' => 100 ],
 			],
 			'cursor' => (object) [],
 		] );
@@ -118,7 +118,7 @@ ENDFAILURE;
 			foreach ( $info as $key => $version )
 			{
 				$phpVersions[ $version->cfg->config ] = true;
-				$latestAbbrev = trim( $version->abbrev );
+				$latestAbbrev = trim( $version->run );
 				$abbrevs[ $latestAbbrev ] = $version;
 				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] ) )
 				{
@@ -134,6 +134,7 @@ ENDFAILURE;
 			return $abbrevs[$aIndex]->ts <=> $abbrevs[$bIndex]->ts;
 		} );
 		$abbrevs = array_reverse( $abbrevs );
+		$abbrevs = array_slice( $abbrevs, 0, 8 );
 
 		uksort( $phpVersions, function($aIndex, $bIndex) use ( $phpVersions ) {
 			$a = $phpVersions[ $aIndex ];
@@ -158,7 +159,7 @@ ENDFAILURE;
 		foreach ( $abbrevs as $abbrev => $version )
 		{
 			$time = (new \DateTime( "@{$version->ts}" ))->format( 'Y-m-d<\b\r/>H:i:s' );
-			if ( preg_match('@(.*)-g([0-9a-f]+)$@', $abbrev, $m) )
+			if ( preg_match('@(.*)-g([0-9a-f]+)$@', $version->abbrev, $m) )
 			{
 				echo "\t\t<th><div><a href='https://github.com/xdebug/xdebug/commit/{$m[2]}'>{$m[1]}</a><br/><div class='time'>{$time}</div></th>\n";
 				continue;
