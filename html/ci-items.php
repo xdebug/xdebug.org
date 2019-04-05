@@ -141,15 +141,33 @@ ENDFAILURE;
 			$b = $phpVersions[ $bIndex ];
 			preg_match( '@([^-]+)(-(32bit|zts))?$@', $a, $aMatch );
 			preg_match( '@([^-]+)(-(32bit|zts))?$@', $b, $bMatch );
-			
-			$c = version_compare( $aMatch[1], $bMatch[1] );
+
+			if ( $aMatch[1] == 'master' || $bMatch[1] == 'master' )
+			{
+				if ( $aMatch[1] == $bMatch[1] )
+				{
+					$c = 0;
+				}
+				else if ( $aMatch[1] == 'master' )
+				{
+					$c = 1;
+				}
+				else
+				{
+					$c = -1;
+				}
+			}
+			else
+			{
+				$c = version_compare( $aMatch[1], $bMatch[1] );
+			}
 
 			if ( $c != 0 )
 			{
 				return -$c;
 			}
 
-			return - strcmp( $aMatch[3], $bMatch[3] );
+			return strcmp( $aMatch[3], $bMatch[3] );
 		} );
 
 		$phpVersions = array_values( $phpVersions );
