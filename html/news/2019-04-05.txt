@@ -1,0 +1,24 @@
+Xdebug 2.7.1 is out!
+<p>This is the first bug fix release of the Xdebug 2.7 series.</p>
+
+<p>This release addresses memory leaks, a segfault with
+conditional breakpoints, and a performance degradation due to excessive
+getpid() calls.</p>
+
+<p>Everybody is encouraged to upgrade to this new version.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_7_1">updates</a> page.</p>
+
+<p>I have written a
+<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
+Xdebug Experience"</a> about the future of Xdebug, and how you can help
+through becoming a supporter on
+<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains a contribution by: <i>Kees Hoekzema</i> —
+Thanks!</p>

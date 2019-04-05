@@ -26,6 +26,15 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_1'></a>[2019-04-05] &mdash; Xdebug 2.7.1</dt>
+
+<dd><h3>Fixed Bugs</h3></dd>
+
+<dd>Fixed <?php bug(1646); ?>: Missing newline in error message</dd>
+<dd>Fixed <?php bug(1647); ?>: Memory corruption when a conditional breakpoint is used</dd>
+<dd>Fixed <?php bug(1641); ?>: Perfomance degradation with getpid syscall (Kees Hoekzema)</dd>
+
+
 <dt><a name='x_2_7_0'></a>[2019-03-06] &mdash; Xdebug 2.7.0</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
