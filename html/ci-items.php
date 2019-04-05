@@ -189,6 +189,20 @@ ENDFAILURE;
 
 		foreach ( $phpVersions as $version )
 		{
+			/* Check whether there are any non-missing items */
+			$found = false;
+			foreach ( $abbrevs as $abbrev => $ref )
+			{
+				if ( isset( $matrix[$abbrev][$version] ) ) {
+					$found = true;
+					break;
+				}
+			}
+			if ( ! $found )
+			{
+				continue;
+			}
+
 			echo "\t\t<tr><th>{$version}</div></th>\n";
 
 			foreach ( $abbrevs as $abbrev => $ref )
