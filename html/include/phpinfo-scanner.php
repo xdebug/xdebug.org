@@ -8,7 +8,7 @@ class xdebugVersion
 	static function getVersions()
 	{
 		return [
-			'7.0' => [ 'src' => '2.7.1',    'win' => '2.7.1'    ],
+			'7.0' => [ 'src' => '2.7.1',                        ],
 			'7.1' => [ 'src' => '2.7.1',    'win' => '2.7.1'    ],
 			'7.2' => [ 'src' => '2.7.1',    'win' => '2.7.1'    ],
 			'7.3' => [ 'src' => '2.7.1',    'win' => '2.7.1'    ]
@@ -286,6 +286,10 @@ class xdebugVersion
 
 		if ( $this->windows )
 		{
+			if ( !array_key_exists( 'win', $this->xdebugVersions[$majorPhpVersion] ) )
+			{
+				return "Windows binaries for PHP version {$majorPhpVersion} are not available, because this PHP version is no longer supported by the PHP project.";
+			}
 			if ( $this->debug )
 			{
 				return "Debug builds are not supported on Windows.";
