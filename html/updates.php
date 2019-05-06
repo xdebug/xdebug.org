@@ -26,6 +26,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_7_2'></a>[2019-05-06] &mdash; Xdebug 2.7.2</dt>
+
+<dd><h3>Fixed Bugs</h3></dd>
+
+<dd>Fixed <?php bug(1488); ?>: Rewrite DBGp 'property_set' to always use eval</dd>
+<dd>Fixed <?php bug(1586); ?>: error_reporting()'s return value is incorrect during debugger's 'eval' command</dd>
+<dd>Fixed <?php bug(1615); ?>: Turn off Zend OPcache when remote debugger is turned on</dd>
+<dd>Fixed <?php bug(1656); ?>: remote_connect_back alters header if multiple values are present</dd>
+<dd>Fixed <?php bug(1662); ?>: __debugInfo should not be used for user-defined classes</dd>
+
+
 <dt><a name='x_2_7_1'></a>[2019-04-05] &mdash; Xdebug 2.7.1</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>

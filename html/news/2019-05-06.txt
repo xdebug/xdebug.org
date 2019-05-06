@@ -1,0 +1,27 @@
+Xdebug 2.7.2 is out!
+<p>This is the second (and likely last) bug fix release of the Xdebug 2.7
+series.</p>
+
+<p>This release disables Zend OPCache when the step debugger is active, and
+fixes debugging issues with 'property_set' (for setting values),
+remote_connect_back's IP address detection, and variable display for user
+defined classes that have <code>__debugInfo()</code>.</p>
+
+<p>Everybody is encouraged to upgrade to this new version.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_7_2">updates</a> page.</p>
+
+<p>I have written a
+<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
+Xdebug Experience"</a> about the future of Xdebug, and how you can help
+through becoming a supporter on
+<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+<!--
+<p>This release also contains a contribution by: <i></i> —
+Thanks!</p>
+-->
