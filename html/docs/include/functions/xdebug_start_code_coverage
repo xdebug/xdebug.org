@@ -24,7 +24,7 @@ is enabled and value <code>-2</code> is only returned when both
 <code>XDEBUG_CC_UNUSED</code> and <code>XDEBUG_CC_DEAD_CODE</code> are enabled.
 
 TXT:
-This function has two options, which act as a bitfield:
+This function has three options, which act as a bitfield:
 
 <dl>
 <dt>XDEBUG_CC_UNUSED</dt>
