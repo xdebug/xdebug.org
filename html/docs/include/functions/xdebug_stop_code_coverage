@@ -1,11 +1,11 @@
 = xdebug_stop_code_coverage
 Stops code coverage
 void
-[int cleanup=true]
+[int cleanup=1]
 FUNC_CODE_COVERAGE
 
 TXT:
 This function stops collecting information, the information in memory will
-be destroyed. If you pass "false" as argument, then the code coverage
+be destroyed. If you pass 0 as an argument, then the code coverage
 information will not be destroyed so that you can resume the gathering of
 information with the <i>xdebug_start_code_coverage()</i> function again.
