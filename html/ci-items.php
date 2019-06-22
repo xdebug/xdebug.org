@@ -82,7 +82,7 @@ TESTFAILURE;
 	<td>{$f->desc}</td>
 </tr>
 <tr>
-	<td><pre class='log'>{$log}</pre></td>
+	<td class='log'><pre class='log'>{$log}</pre></td>
 </tr>
 </table>
 ENDFAILURE;
@@ -96,9 +96,14 @@ ENDFAILURE;
 		$query = new \MongoDB\Driver\Command( [
 			'aggregate' => 'run',
 			'pipeline' => [
+				[ '$sort' => [ '_id' => -1 ] ],
+				[ '$project' => [
+					'failures' => 0,
+				] ],
+				[ '$limit' => 10000 ],
 				[ '$group' => [ '_id' => '$run', 'docs' => [ '$push' => '$$ROOT' ] ] ],
 				[ '$sort' => [ '_id' => -1 ] ],
-				[ '$limit' => 100 ],
+				[ '$limit' => 200 ],
 			],
 			'cursor' => (object) [],
 		] );
@@ -117,12 +122,12 @@ ENDFAILURE;
 		{
 			foreach ( $info as $key => $version )
 			{
-				$phpVersions[ $version->cfg->config ] = true;
+				$phpVersions[ $version->cfg->version ] = true;
 				$latestAbbrev = trim( $version->run );
 				$abbrevs[ $latestAbbrev ] = $version;
-				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] ) )
+				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->version )][ trim( $version->cfg->config ) ] ) )
 				{
-					$matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->config ) ] = $version;
+					$matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->version )][ trim( $version->cfg->config ) ] = $version;
 				}
 			}
 		}
@@ -187,6 +192,14 @@ ENDFAILURE;
 		}
 		echo "\t</tr>\n";
 
+		$filteredVersions = array_filter( $phpVersions, function( $version ) {
+			if ( strchr( $version, '-' ) )
+			{
+				return false;
+			}
+			return true;
+		} );
+
 		foreach ( $phpVersions as $version )
 		{
 			/* Check whether there are any non-missing items */
@@ -214,19 +227,22 @@ ENDFAILURE;
 				}
 				$v = $matrix[$abbrev][$version];
 
-				if ( $v->buildSuccess != true )
+				echo "<td>";
+				foreach ( $v as $variant )
 				{
-					echo "<td class='bf'><a href='/ci.php?r={$v->_id}'>✖</a></td>\n";
-					continue;
-				}
+					if ($variant->buildSuccess != true) {
+						echo "<a class='bf' label={$variant->_id}' href='/ci.php?r={$variant->_id}'>✖</a>";
+						continue;
+					}
 
-				if ( $v->stats->errors != 0 || $v->stats->failures != 0 )
-				{
-					echo "<td class='err'><a href='/ci.php?r={$v->_id}'>✖</a></td>\n";
-					continue;
-				}
+					if ($variant->stats->errors != 0 || $variant->stats->failures != 0) {
+						echo "<a class='err' label={$variant->_id}' href='/ci.php?r={$variant->_id}'>✖</a>";
+						continue;
+					}
 
-				echo "<td class='success'><a href='/ci.php?r={$v->_id}'>✔</a></td>\n";
+					echo "<a class='success' alt='{$variant->_id}' href='/ci.php?r={$variant->_id}'>✔</a>";
+				}
+				echo "</td>";
 			}
 			echo "</tr>\n";
 		}

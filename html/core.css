@@ -17,18 +17,16 @@ td.ctr   { text-align: center; padding-left: 10px; padding-right: 10px; vertical
 table.ci { width: 100%; border-collapse: collapse; }
 table.ci tr.version th { white-space: nowrap; padding: 0; text-align: center; }
 table.ci tr.version th div.time { font-size: 66%; line-height: 1em; font-weight: normal; }
-table.ci tr th { border: 1px solid black; padding-left: 0.5em;}
+table.ci tr th { border: 1px solid black; padding-left: 0.5em; text-align: center; }
 table.ci tr td { text-align: center; border: 1px solid black; font-size: 1.5em; padding: 0.25em; }
-table.ci tr td.bf              { color: #c1e; background-color: #eee; }
-table.ci tr td.bf a            { color: #c1e; background-color: #eee; text-decoration: none; }
-table.ci tr td.bf a:hover      { background-color: #ddd; }
-table.ci tr td.err             { color: #e44; background-color: #eee; }
-table.ci tr td.err a           { color: #e44; background-color: #eee; text-decoration: none; }
-table.ci tr td.err a:hover     { background-color: #ddd; }
+table tr td.log { text-align: left; overflow-wrap: anywhere; }
+table.ci tr td a.bf            { color: #c1e; text-decoration: none; }
+table.ci tr td a.bf:hover      { background-color: #ddd; }
+table.ci tr td a.err           { color: #e44; text-decoration: none; }
+table.ci tr td a.err:hover     { background-color: #ddd; }
 table.ci tr td.missing         { color: #ccc; }
-table.ci tr td.success         { color: #0b0; background-color: #eee; }
-table.ci tr td.success a       { color: #0b0; background-color: #eee; text-decoration: none; }
-table.ci tr td.success a:hover { background-color: #ddd; }
+table.ci tr td a.success       { color: #0b0; text-decoration: none; }
+table.ci tr td a.success:hover { background-color: #ddd; }
 table.ci tr td pre.log         { font-size: 0.66em; text-align: left; }
 h2.bf      { color: #c1e; }
 h2.err     { color: #e44; }
