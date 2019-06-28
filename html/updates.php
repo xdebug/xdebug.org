@@ -31,7 +31,7 @@
 
 <span class='quote'>
 <dl>
-<dt><a name='x_2_8_0alpha1'></a>[2019-06-28] &mdash; Xdebug 2.7.0alpha1</dt>
+<dt><a name='x_2_8_0alpha1'></a>[2019-06-28] &mdash; Xdebug 2.8.0alpha1</dt>
 
 <dd><h3>Added features</h3></dd>
 
