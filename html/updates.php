@@ -13,6 +13,11 @@
 		echo "bug <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
 			sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 	}
+
+	function issue($nr) {
+		echo "issue <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+			sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
+	}
 ?>
 
 <h2>Updates</h2>
@@ -26,6 +31,26 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_8_0alpha1'></a>[2019-06-28] &mdash; Xdebug 2.7.0alpha1</dt>
+
+<dd><h3>Added features</h3></dd>
+
+<dd>Implemented <?php issue(1599); ?>: Add support for PHP 7.4</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Implemented <?php issue(1388); ?>: Support 'resolved' flag for breakpoints</dd>
+<dd>Implemented <?php issue(1664); ?>: Run breakpoint resolver when after a new breakpoint is added as well</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1660); ?>: Return breakpoints for methods don't break immediately</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Fixed <?php bug(1666); ?>: Remove xdebug.extended_info setting</dd>
+
+
 <dt><a name='x_2_7_2'></a>[2019-05-06] &mdash; Xdebug 2.7.2</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>

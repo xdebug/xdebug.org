@@ -12,12 +12,6 @@ defined classes that have <code>__debugInfo()</code>.</p>
 <p>The full list of changes can be found on the <a
 href="/updates.php#x_2_7_2">updates</a> page.</p>
 
-<p>I have written a
-<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
-Xdebug Experience"</a> about the future of Xdebug, and how you can help
-through becoming a supporter on
-<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.</p>
-
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
