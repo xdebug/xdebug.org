@@ -334,9 +334,9 @@ Support through e-mail is give on a best-effort basis only.
 	Xdebug's author, <a href='https://derickrethans.nl'>Derick Rethans</a>,
 	often hangs out in the <code>#xdebug</code> channel on the <a
 	href='https://freenode.net/'>freenode</a> IRC network. Feel free to drop in
-	with your questions! If you don't have an IRC client, then you can also use freenode's <a href='http://webchat.freenode.net?channels=#xdebug'>webchat</a> to access the #xdebug channel:
+	with your questions! If you don't have an IRC client, then you can also use freenode's <a href='https://webchat.freenode.net?channels=#xdebug'>webchat</a> to access the #xdebug channel:
 </p>
-<iframe style="width: 100%" src="http://webchat.freenode.net?channels=%23xdebug&uio=d4" height="450"></iframe>
+<iframe style="width: 100%" src="https://webchat.freenode.net?channels=%23xdebug&uio=d4" height="450"></iframe>
 
 <br /><br />
 
