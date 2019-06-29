@@ -29,7 +29,7 @@ git clone git://github.com/xdebug/xdebug.git
 
 <p>The Windows binaries generally work for every mini release for the mentioned
 PHP version, although the extension is built against the most current PHP
-version at that time. The VC<i>x</i> marker tells with which compiler the
+version at that time. The VC<i>x</i>/VS<i>x</i> marker tells with which compiler the
 extension was built, and Non-thread-safe whether ZTS was disabled. Those
 qualifiers need to match the PHP version you're using. If you don't know which
 one you need, please refer to the <a href='/wizard.php'>custom
@@ -44,7 +44,7 @@ while ( false !== ( $entry = $d->read() ) )
 	if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
 		$files[$m[1]]['source'] = $entry;
 	}
-	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[4567]\.[0-9](\.[0-9])?(-vc(?>6|9|11|14|15))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+	if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[4567]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 		$files[$m[1]]['dll'][] = $entry;
 	}
 }
@@ -66,7 +66,7 @@ uksort( $files, 'version_compare' );
 			foreach( $tar['dll'] as $dls ) {
 				$s = stat( "files/$dls" );
 				$hash = hash_file( 'sha256', "files/$dls" );
-				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([4567]\.[0-9])(\.[0-9])?(-(vc(?>6|9|11|14|15)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
+				preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([4567]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 				$name = $m[1];
 				$namea = '';
 				if (isset($m[4]) && $m[4] != '') {
