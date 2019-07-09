@@ -188,7 +188,7 @@ ENDFAILURE;
 				continue;
 			}
 				
-			echo "\t\t<th><div><a href='https://github.com/xdebug/xdebug/commit/{$version->ref}'>{$abbrev}</a><br/><div class='time'>{$time}</div></th>\n";
+			echo "\t\t<th><div><a href='https://github.com/xdebug/xdebug/commit/{$version->ref}'>{$version->abbrev}</a><br/><div class='time'>{$time}</div></th>\n";
 		}
 		echo "\t</tr>\n";
 
