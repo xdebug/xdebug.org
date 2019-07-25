@@ -1,0 +1,33 @@
+Xdebug 2.8.0beta1 is out!
+<p>This is the first beta release in the Xdebug 2.8 series.</p>
+
+<p>The 2.8 series primarily adds support for PHP 7.4, but also improves
+Xdebug's breakpoint functionality by adding support for the
+'resolved_breakpoint' flag.</p>
+
+<p>This first beta release makes Xdebug compile with the PHP 7.4beta1 release,
+and also fixes a handful of other bugs.</p>
+
+<p>Everybody is encouraged to try out this new version, but please be aware
+that Xdebug 2.8.0beta1 <b>is not fully ready</b>. Which means that crashes
+can still occur. If you find any problems, please report them to the <a
+href="https://bugs.xdebug.org">issue tracker</a>.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_8_0beta1">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains contributions by: <i>Joe Watkins, and
+GCth</i> — Thanks!</p>
+
+<p>I have written a
+<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
+Xdebug Experience"</a> about the future of Xdebug, and how you can help
+through becoming a supporter on
+<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.
+I also write monthly reports on Xdebug's progress on <a
+href="https://derickrethans.nl/">my website</a>.</p>
+

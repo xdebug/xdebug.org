@@ -2,8 +2,8 @@
 class xdebugVersion
 {
 	static public $notSupportedBefore = '2.7';
-	static public $latestVersion = '2.8.0alpha1';
-	static public $latestWindowsVersion = '2.8.0alpha1';
+	static public $latestVersion = '2.8.0beta1';
+	static public $latestWindowsVersion = '2.8.0beta1';
 
 	static function getVersions()
 	{
@@ -12,7 +12,7 @@ class xdebugVersion
 			'7.1' => [ 'src' => '2.7.2',       'win' => '2.7.2'       ],
 			'7.2' => [ 'src' => '2.7.2',       'win' => '2.7.2'       ],
 			'7.3' => [ 'src' => '2.7.2',       'win' => '2.7.2'       ],
-			'7.4' => [ 'src' => '2.8.0alpha1', 'win' => '2.8.0alpha1' ]
+			'7.4' => [ 'src' => '2.8.0beta1',  'win' => '2.8.0beta1'  ]
 		];
 	}
 

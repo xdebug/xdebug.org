@@ -31,6 +31,17 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_8_0beta1'></a>[2019-07-25] &mdash; Xdebug 2.8.0beta1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1679); ?>: Code Coverage misses static property as function argument</dd>
+<dd>Fixed <?php bug(1682); ?>: Invalid NULL byte in debugger XML with anonymous classes</dd>
+<dd>Fixed <?php bug(1683); ?>: Xdebug does not compile due to changes to ASSIGN_ADD and friends operations in PHP 7.4alpha3</dd>
+<dd>Fixed <?php bug(1687); ?>: Use appropriate process ID for logging and "right process" tracking</dd>
+<dd>Fixed <?php bug(1688); ?>: Improve performance by using getpid() only when step debugger is active</dd>
+
+
 <dt><a name='x_2_8_0alpha1'></a>[2019-06-28] &mdash; Xdebug 2.8.0alpha1</dt>
 
 <dd><h3>Added features</h3></dd>
