@@ -22,12 +22,3 @@ installable through PECL.</p>
 
 <p>This release also contains contributions by: <i>Joe Watkins, and
 GCth</i> — Thanks!</p>
-
-<p>I have written a
-<a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
-Xdebug Experience"</a> about the future of Xdebug, and how you can help
-through becoming a supporter on
-<a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>.
-I also write monthly reports on Xdebug's progress on <a
-href="https://derickrethans.nl/">my website</a>.</p>
-

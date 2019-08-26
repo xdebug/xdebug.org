@@ -31,6 +31,22 @@
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_8_0beta2'></a>[2019-08-26] &mdash; Xdebug 2.8.0beta2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?php bug(1540); ?>: Code coverage should not run when turned off in php.ini</dd>
+<dd>Fixed <?php bug(1573); ?>: Using an exception_handler creates an extra broken profiler file</dd>
+<dd>Fixed <?php bug(1589); ?>: function names used in auto_prepend_file missing from profile file</dd>
+<dd>Fixed <?php bug(1613); ?>: Wrong name displayed for Recoverable fatal error</dd>
+<dd>Fixed <?php bug(1652); ?>: Problems with detach in debugger init stage</dd>
+<dd>Fixed <?php bug(1676); ?>: Xdebug doesn't write trace footer for shutdown functions</dd>
+<dd>Fixed <?php bug(1689); ?>: Traces show return values and exit information for functions without entry information</dd>
+<dd>Fixed <?php bug(1691); ?>: Code Coverage misses fluent interface function call</dd>
+<dd>Fixed <?php bug(1698); ?>: Switch PHP 7.4 Windows builds back to VS17</dd>
+<dd>Fixed <?php bug(1700); ?>: Xdebug abuses possibilty immutable class flags</dd>
+
+
 <dt><a name='x_2_8_0beta1'></a>[2019-07-25] &mdash; Xdebug 2.8.0beta1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
