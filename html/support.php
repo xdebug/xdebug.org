@@ -43,7 +43,7 @@
 	<li>✔ Invoice</li>
 </ul>
 <hr/>
-<div class="contact"><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>E-mail billing+basic@xdebug.org to sign up</a></div>
+<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>billing+basic@xdebug.org</a><br/>to sign up</div>
 </div>
 </div>
 
@@ -62,7 +62,7 @@
 	<li>✔ Invoice</li>
 </ul>
 <hr/>
-<div class="contact"><a href='mailto:billing@xdebug.org?subject=Company Subscription'>E-mail billing+company@xdebug.org to sign up</a></div>
+<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Company Subscription'>billing+company@xdebug.org</a><br/>to sign up</div>
 </div>
 </div>
 
