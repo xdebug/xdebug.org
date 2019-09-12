@@ -24,6 +24,8 @@
 	<li>✖ Access to Commercial Add-ons</li>
 	<li>✔ Monthly News Post</li>
 </ul>
+<hr/>
+<div style="text-align: center; padding: 1em;"><a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a></div>
 </div>
 </div>
 
@@ -37,10 +39,12 @@
 <ul>
 	<li>✔ Support: E-mail</li>
 	<li>✔ Issue Priority: Medium</li>
-	<li>✔ Access to Commercial Add-ons</li>
-	<li>✔ Monthly E-mail Newsletter <sup>(opt-in)</sup></li>
+	<li>✔ Access to Commercial Add-ons&nbsp;<sup>(soon)</sup></li>
+	<li>✔ Monthly E-mail Newsletter&nbsp;<sup>(opt-in)</sup></li>
 	<li>✔ Invoice</li>
 </ul>
+<hr/>
+<div class="contact"><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>E-mail to sign up</a></div>
 </div>
 </div>
 
@@ -54,13 +58,23 @@
 <ul>
 	<li>✔ Support: E-mail</li>
 	<li>✔ Issue Priority: High</li>
-	<li>✔ Access to Commercial Add-ons</li>
-	<li>✔ Monthly E-mail Newsletter <sup>(opt-in)</sup></li>
+	<li>✔ Access to Commercial Add-ons&nbsp;<sup>(soon)</sup></li>
+	<li>✔ Monthly E-mail Newsletter&nbsp;<sup>(opt-in)</sup></li>
 	<li>✔ Invoice</li>
 </ul>
+<hr/>
+<div class="contact"><a href='mailto:billing@xdebug.org?subject=Company Subscription'>E-mail to sign up</a></div>
 </div>
 </div>
 
+</div>
+
+<div class="terms">
+<ul>
+	<li>Subscriptions are yearly, and can be cancelled two weeks before renewal by e-mail.</li>
+	<li>Invoices have a default 14 day payment term.</li>
+	<li>Price excluding VAT. (VAT currently not charged)</li>
+</ul>
 </div>
 
 <br /><br />

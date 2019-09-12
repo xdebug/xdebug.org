@@ -97,13 +97,15 @@ div#support div.text { line-height: 47px; padding-left: 1em; float: left; color:
 div#support div.text a { font-weight: bold; color: white; }
 
 div.options { display: table; width: 100%; }
-div.option { display: table-cell; width: 33%; }
+div.option { display: table-cell; width: 33%; font-size: 0.9em; }
 div.option h2 { text-align: center; margin-bottom: 0;  }
 div.option h3 { text-align: center; }
 div.option h4 { text-align: center; margin: 0; }
 div.option-content { border-radius: 5px; margin: 20px; border: 1px solid black; }
-div.option-content ul { list-style-type: none; margin: 0; padding-left: 1em; padding-bottom: 1em; }
+div.option-content ul { list-style-type: none; margin: 0; padding-left: 1em; padding-bottom: 1em; padding-right: 1em; }
 div.option-content sup { font-size: 50%; }
+div.terms { font-size: 0.75em; line-height: 1; border-radius: 5px; margin: 20px; border: 1px solid black; }
+div.option div.contact { text-align: center; padding-bottom: 1em; }
 
 dt.main { font-weight: normal; color: #116633; }
 dd.main { margin-left: 20px; }
