@@ -1,3 +1,3 @@
 <?php
-header( "Location: http://xdebug.org/docs/install" );
+header( "Location: https://xdebug.org/docs/install" );
 ?>

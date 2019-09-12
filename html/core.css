@@ -48,7 +48,6 @@ hr.light { border-top: 1px solid #ebefec; }
 p        { line-height: 1.5em; }
 p.intro  { font-style: italic; }
 p.shortdesc { margin-left: 11px; color: #444444; font-size: 90%; line-height: 1em; margin-top: 1px; margin-bottom: 1px; }
-p.buy-support { text-align: center; font-size: 80%; margin: 0; width: 200px; height: 47px; }
 .serif   { line-height: 1.5em; }
 .quote   { font-family: sans-serif; }
 .mk      { color: #004411; font-weight: bold; }
@@ -89,6 +88,23 @@ div.settings span.default { font-style: italic; }
 div.functions div.short-description { font-style: italic; }
 div.version { font-style: italic; font-size: 80%; }
 
+div#main-menu { font-size: 80%; }
+
+div#support { text-align: center; clear: both; vertical-align: middle; background: #f96854; font-size: 80%; margin: 0; padding: 0; width: 100%; border: 1px solid rgba( 0, 68, 17, 0.6); margin-bottom: 1em; }
+div#support p { padding: 0; margin: 0; vertical-align: middle; }
+div#support div.button { float: right; }
+div#support div.text { line-height: 47px; padding-left: 1em; float: left; color: white; }
+div#support div.text a { font-weight: bold; color: white; }
+
+div.options { display: table; width: 100%; }
+div.option { display: table-cell; width: 33%; }
+div.option h2 { text-align: center; margin-bottom: 0;  }
+div.option h3 { text-align: center; }
+div.option h4 { text-align: center; margin: 0; }
+div.option-content { border-radius: 5px; margin: 20px; border: 1px solid black; }
+div.option-content ul { list-style-type: none; margin: 0; padding-left: 1em; padding-bottom: 1em; }
+div.option-content sup { font-size: 50%; }
+
 dt.main { font-weight: normal; color: #116633; }
 dd.main { margin-left: 20px; }
 
@@ -100,10 +116,10 @@ div.example { margin-top: 1em; margin-bottom: 1em; }
 div.example-returns { margin-left: 30px; margin-right: 30px; background-color: #f3ffea; line-height: 1.25em; margin-bottom: 1em; }
 div.example-returns pre { margin-left: 0px; margin-right: 0px; }
 
-h1 { font-variant: small-caps; font-size: 150% }
-h2 { font-variant: small-caps; font-size: 130% }
-h3 { font-variant: small-caps; font-size: 110% }
-h4 { font-weight: bold; font-size: 100% }
+h1 { font-variant: small-caps; font-size: 150%; font-family: "Old Standard TT"; }
+h2 { font-variant: small-caps; font-size: 130%; font-family: "Old Standard TT";  }
+h3 { font-variant: small-caps; font-size: 110%; font-family: "Old Standard TT";  }
+h4 { font-weight: bold; font-size: 100%; font-family: "Old Standard TT";  }
 
 code { background-color: #eaffeb; }
 
@@ -114,18 +130,23 @@ table.versions thead th { text-align: center; }
 table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }
 table.versions thead tr.xdebugversion th.legacy { background-color: #ffbc42; }
 table.versions thead tr.xdebugversion th.supported { background-color: green; color: white; }
+table.versions thead tr.xdebugversion th.future { background-color: lightblue; color: black; }
 table.versions th { text-align: center; border: 1px solid grey; }
 table.versions tbody tr th { background-color: #ff7f7f; }
 table.versions tbody tr th.legacy { background-color: #ffbc42; }
 table.versions tbody tr th.supported { background-color: green; color: white; }
+table.versions tbody tr th.future { background-color: lightblue; color: black; }
 table.versions td { text-align: center; border: 1px solid grey; color: #ff7f7f; }
 table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
+table.versions td.future { text-align: center; border: 1px solid grey; color: lightblue; }
+table.legend th { width: 25%; }
 
 @media print {
 	div#menu { display: none; }
 	div#menu-docs { display: none; }
+	div#main-menu { display: none; }
 	div#support { display: none; }
 	img#logo { display: none; }
 	h1 { font-size: 40px; }
-	a, a:hover, mk, fin, hr { color: #333; text-decoration: none; }
+	a, hr { color: #333; text-decoration: none; }
 }

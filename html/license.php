@@ -5,11 +5,10 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | LICENSE</span><br />
+<h1>License</h1>
+
 
 <?php include "include/menu.php"; ?>
-
-<h2>License</h2>
 
 <hr />
 <p class="center">

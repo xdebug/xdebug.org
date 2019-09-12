@@ -5,12 +5,12 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | CONTRIBUTING</span><br />
+<h1>Contributing</h1>
 
 <?php include "include/menu.php"; ?>
 
-<h2>Contributing</h2>
-
+<a name="git"></a>
+<h2>GIT</h2>
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
 href='https://github.com/xdebug/xdebug'>github</a> and can be checked out with:
 </p>
@@ -22,7 +22,7 @@ If you think you want to fix a bug or work on a new feature, then you
 need to follow the instructions below.
 </p>
 <a name="setup"></a>
-<h3>Initial Set-up</h3>
+<h2>Initial Set-up</h2>
 <ol>
 <li>Fork Xdebug on <a href='https://github.com/xdebug/xdebug/fork'>github</a>.</li>
 <li>Clone the repository:<br/>
@@ -49,7 +49,7 @@ need to follow the instructions below.
 </ol>
 
 <a name="uptodate"></a>
-<h3>Keeping up-to-date</h3>
+<h2>Keeping up-to-date</h2>
 <ol>
 <li>Change into the <tt>xdebug</tt> repository (if you haven't done yet):<br/>
 	<tt>cd xdebug</tt>
@@ -59,7 +59,7 @@ need to follow the instructions below.
 </ol>
 
 <a name="bugfix"></a>
-<h3>Working on a bug fix</h3>
+<h2>Working on a bug fix</h2>
 <p>The steps for this are the same as for <a href='#newfeature'>working on new
 features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 <b>master</b>.</p>
@@ -100,7 +100,7 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 </ol>
 
 <a name="newfeature"></a>
-<h3>Working on a new feature</h3>
+<h2>Working on a new feature</h2>
 <p>The steps for this are the same as for <a href='#bugfix'>fixing bugs</a>
 except that you make a branch of <b>master</b> instead of
 <b>xdebug_2_5</b>.</p>

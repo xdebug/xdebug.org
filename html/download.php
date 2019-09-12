@@ -5,7 +5,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | DOWNLOADS</span><br />
+<h1>Downloads</h1>
 
 <?php include "include/menu.php"; ?>
 

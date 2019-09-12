@@ -5,7 +5,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | SCREENSHOTS</span><br />
+<h1>Screenshots</h1>
 
 <?php include "include/menu.php"; ?>
 

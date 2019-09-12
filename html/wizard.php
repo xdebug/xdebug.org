@@ -1,15 +1,13 @@
-<?php $title = "Xdebug: Support; Tailored Installation Instructions"; include "include/header.php"; ?>
+<?php $title = "Xdebug: Support — Tailored Installation Instructions"; include "include/header.php"; ?>
 		<tr>
 			<td>&nbsp;</td>
 			<td><span class="serif">
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION | INSTALLATION</span><br />
+<h1>Installation Wizard</h1>
 
 <?php include "include/menu.php"; ?>
-
-<h2>Tailored Installation Instructions</h2>
 
 <?php
 if ( $_POST && isset( $_POST['submit'] ) && $_POST['submit'] == 'Analyse my phpinfo() output' && isset( $_POST['data'] ) )

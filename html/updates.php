@@ -5,7 +5,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | UPDATES</span><br />
+<h1>Updates</h1>
 
 <?php include "include/menu.php"; ?>
 <?php
@@ -19,8 +19,6 @@
 			sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 	}
 ?>
-
-<h2>Updates</h2>
 
 <?php
 /*

@@ -14,7 +14,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP | DOCUMENTATION</span><br />
+<h1>Documentation</h1>
 
 <?php
 $no_page_selected = true;
@@ -23,7 +23,7 @@ $tabFields = array();
 
 $pages = array(
 	'install', 'display', 'stack_trace', 'execution_trace',
-	'profiler', 'remote', 'code_coverage', 'faq'
+	'profiler', 'remote', 'code_coverage', 'compat', 'faq'
 );
 
 if ( isset( $_GET['action'] ) )
@@ -34,6 +34,7 @@ if ( isset( $_GET['action'] ) )
 		case 'install':
 		case 'basic':
 		case 'display':
+		case 'compat':
 		case 'stack_trace':
 		case 'execution_trace':
 		case 'profiler':

@@ -16,6 +16,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/tabview.css"/>
 <link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/border_tabs.css"/>
+<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
 <script type="text/javascript" src="/yui/build/event/event.js"></script>
 <script type="text/javascript" src="/yui/build/dom/dom.js"></script>

@@ -5,7 +5,7 @@
 			
 <!-- MAIN FEATURE START -->
 
-<span class="sans">XDEBUG EXTENSION FOR PHP</span><br />
+<h1>Xdebug</h1>
 
 <?php include "include/menu.php"; ?>
 
