@@ -21,7 +21,6 @@
 <ul>
 	<li>✖ Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
 	<li>✖ Issue Priority: Low</li>
-	<li>✖ Access to Commercial Add-ons</li>
 	<li>✔ Monthly News Post</li>
 </ul>
 <hr/>
@@ -44,7 +43,7 @@
 	<li>✔ Invoice</li>
 </ul>
 <hr/>
-<div class="contact"><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>E-mail to sign up</a></div>
+<div class="contact"><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>E-mail billing+basic@xdebug.org to sign up</a></div>
 </div>
 </div>
 
@@ -63,7 +62,7 @@
 	<li>✔ Invoice</li>
 </ul>
 <hr/>
-<div class="contact"><a href='mailto:billing@xdebug.org?subject=Company Subscription'>E-mail to sign up</a></div>
+<div class="contact"><a href='mailto:billing@xdebug.org?subject=Company Subscription'>E-mail billing+company@xdebug.org to sign up</a></div>
 </div>
 </div>
 
