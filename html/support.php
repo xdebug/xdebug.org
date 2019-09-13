@@ -33,7 +33,7 @@
 <h2>Basic</h2>
 <h4>1 developer</h4>
 <hr/>
-<h3>£ 299/year</h3>
+<h3>£ 199/year</h3>
 <hr/>
 <ul>
 	<li>✔ Support: E-mail</li>
@@ -60,6 +60,7 @@
 	<li>✔ Access to Commercial Add-ons&nbsp;<sup>(soon)</sup></li>
 	<li>✔ Monthly E-mail Newsletter&nbsp;<sup>(opt-in)</sup></li>
 	<li>✔ Invoice</li>
+	<li>✔ "Thank You" with link on site</li>
 </ul>
 <hr/>
 <div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Company Subscription'>billing+company@xdebug.org</a><br/>to sign up</div>
