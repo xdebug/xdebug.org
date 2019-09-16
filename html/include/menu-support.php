@@ -11,6 +11,7 @@
 <div>
 <span class="sans">
 <a href="/support.php">support</a> |
+<a href="/log.php">log</a> |
 <a href="/reporting-bugs.php">reporting bugs</a> |
 <a href="http://bugs.xdebug.org">issue tracker</a>
 </span>

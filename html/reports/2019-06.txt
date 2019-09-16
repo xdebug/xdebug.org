@@ -1,0 +1,13 @@
+8.62	0.00	0.00	3.71
+2019-06-03	test	3.5	Working on making the test suite easier to maintain wrt to versions
+2019-06-04	test	3.5	Working on making the test suite easier to maintain wrt to versions
+2019-06-07	test	1	Working on making the test suite easier to maintain wrt to versions
+2019-06-10		2.5	Solving ArrayObject test, and additional test splits due to PHP 7.4 changes
+2019-06-12	php	2	PHP 7.4 support with removal of DELAYED_CLASS_INIT
+2019-06-12		0.75	Checking out Svetlana’s email with issues regarding resolved breakpoints
+2019-06-13		0.5	Checking out Svetlana’s email with issues regarding resolved breakpoints
+2019-06-14		0.5	PHP 7.4 on Windows compat
+2019-06-15		1	PHP 7.4 on Windows compat; triaging bug reports
+2019-06-28	bug	1.5	Triage reports in preparation for alpha1
+2019-06-28	release	2	Release Xdebug 2.8.0alpha1
+2019-06-29	bug	1	Looking at shutdown/trace issue (#1676)

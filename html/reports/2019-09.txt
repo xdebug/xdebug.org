@@ -1,0 +1,5 @@
+13.11	0.17	0.83	3.71
+2019-09-03		1.5	Writing Xdebug August 2019 update
+2019-09-03	bug	1	Investigate Pull Request #474 for issue #1534 and #1665
+2019-09-05	bug	3	Fixed issue #1665: Segfault with garbage collection and complex function arguments
+2019-09-06	bug	1	Investigating #1699: Crash during debugging Phalcon project
