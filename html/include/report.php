@@ -20,7 +20,7 @@ function show_report( string $file )
 	<div class='company' style='width: {$company}%'></div>
 	<div class='basic' style='width: {$basic}%'></div>
 	<div class='patreon' style='width: {$patreon}%'></div>
-	<div class='comment'>Funding</div>
+	<div class='comment'>Time Funded</div>
 </div>
 
 ENDDIV;
@@ -55,6 +55,7 @@ ENDDIV;
 	{
 		$spendBar .= "<div class='type-{$type}' style='width: {$value}%'></div>\n";
 	}
+	$spendBar .= "<div class='comment'>Time Spent</div>\n";
 	$spendBar .= "</div>\n";
 
 	echo $spendBar;
