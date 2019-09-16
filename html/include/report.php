@@ -60,6 +60,14 @@ ENDDIV;
 
 	echo $spendBar;
 	echo $logTable;
+
+	$url = strtolower( $d->format( 'F-Y' ) );
+
+	$from = $d->modify( '+40 days' );
+	if (new \DateTimeImmutable() > $from )
+	{
+		echo "<p>For additional information, please see the <a href='https://derickrethans.nl/xdebug-update-{$url}.html'>monthly</a> report.</p>\n";
+	}
 }
 
 function show_supporters()
