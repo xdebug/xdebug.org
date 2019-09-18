@@ -2,9 +2,7 @@
 if ( php_sapi_name() != 'cli' ) {
 	die();
 }
-include 'include/basic.php';
-include 'include/settings.php';
-include 'include/features.php';
+
 include '/home/derick/dev/zetacomponents/trunk/Base/src/ezc_bootstrap.php';
 
 class drDocumentDocbookToTextExternalLinkHandler extends ezcDocumentDocbookToRstBaseHandler
@@ -180,6 +178,27 @@ class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
         return $root . ( $appended ? "\n" : '' );
     }
 }
+
+function ignore_links( $text )
+{
+    $text = preg_replace( '/\[FUNC:([^\]]*?)\]/', '\1()', $text );
+    $text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '\2', $text );
+    $text = preg_replace( '/\[CFG:([^\]]*?)\]/', 'xdebug.\1', $text );
+    $text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '\1', $text );
+    $text = preg_replace_callback(
+        '/\[FEAT:([^\]]*?)(#.*)?\]/',
+        function($matches) {
+            if (!array_key_exists(2, $matches)) {
+                $matches[2] = '';
+            }
+            return $GLOBALS['features'][$matches[1]][0];
+        },
+        $text
+    );
+    $text = add_keywords( $text );
+    return $text;
+}
+
 
 $ext = new ReflectionExtension('xdebug');
 ksort( $settings );

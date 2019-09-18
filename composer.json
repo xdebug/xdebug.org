@@ -1,0 +1,12 @@
+{
+    "name": "xdebug/xdebug.org",
+    "type": "project",
+    "require-dev": {
+        "vimeo/psalm": "^3.5"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"XdebugDotOrg\\": "src"
+    	}
+    }
+}

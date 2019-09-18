@@ -1,0 +1,3 @@
+When this setting is set to <code>true</code>, Xdebug adds the values
+of the super globals as configured through the [CFG:dump.*] to on-screen stack
+traces and the error log (if enabled).

@@ -1,0 +1,32 @@
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^buy-support\.php donate.php [R]
+RewriteRule ^docs\.php docs [R]
+RewriteRule ^docs-debugger\.php docs/remote [R]
+RewriteRule ^docs-faq\.php docs/faq [R]
+RewriteRule ^docs-functions\.php docs [R]
+RewriteRule ^docs-profiling\.php docs/profiler [R]
+RewriteRule ^docs-profiling2\.php docs/profiler [R]
+RewriteRule ^docs-settings\.php docs [R]
+RewriteRule ^donate\.php support [R]
+RewriteRule ^find-binary\.php wizard [R]
+RewriteRule ^install\.php docs/install [R]
+
+RewriteRule ^updates\.php updates [R]
+RewriteRule ^download\.php download [R]
+RewriteRule ^contributing\.php contributing [R]
+RewriteRule ^support\.php support [R]
+
+RewriteRule ^$ router.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .*$ router.php [NC,L]
+
+php_value default_charset utf-8
+
+php_value display_errors 1
+
+

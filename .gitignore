@@ -2,3 +2,5 @@ html/archives/
 html/files/xdebug-latest.tgz
 html/files/xdebug-vc11-latest.tgz
 html/files/xdebug-vc9-latest.tgz
+
+vendor/

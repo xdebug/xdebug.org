@@ -1,0 +1,81 @@
+<p>
+Xdebug's code coverage functionality is often used in combination with
+<a href="https://github.com/sebastianbergmann/php-code-coverage">PHP_CodeCoverage</a>
+as part of <a href="https://phpunit.de/">PHPUnit</a> runs. PHPUnit delegates
+the code coverage collection to Xdebug. It starts and stops code coverage
+through [FUNC:xdebug_start_code_coverage] and [FUNC:xdebug_stop_code_coverage]
+for every test, and uses [FUNC:xdebug_get_code_coverage] to retrieve the
+results.
+</p>
+<p>
+Code coverage's main output is an array detailing which lines in which files
+have been "hit" while running the code with code coverage collection active.
+But the code coverage functionality can also, with an additional performance
+impact, analyse which lines of code have executable code on it, which lines of
+code can actually be hit (dead code analysis), and also can it do
+instrumentation to find out which branches and paths in functions and methods
+have been followed. The various options are documented with the
+[FUNC:xdebug_start_code_coverage] function.
+</p>
+<a name="coverage-filter"></a>
+<h2>Filtering</h2>
+<p>
+Xdebug 2.6 introduces filtering capabilities for code coverage. With a filter
+you can include through a white list, or exclude through a black list, paths or
+class name prefixes from being analysed during code coverage collection. A
+typyical use case would be to configure the filter to only include your
+<code>src/</code> folder, so that Xdebug's code coverage analysis does not try
+to analyse tests, Composer dependencies, or PHPUnit/PHP_CodeCoverage itself. If
+you configure the filter correctly, you can expect a 2-fold speed increase for
+code coverage runs
+<sup>[<a href="https://twitter.com/jrf_nl/status/955017446674616320">1</a>,
+<a href="https://twitter.com/hollodotme/status/953719914686242816">2</a>,
+<a href="https://twitter.com/WyriHaximus/status/953667730003001344">3</a>]</sup>.
+</p>
+<p>
+The filter works by tagging each executable unit (function, method, file)
+according to the configured filter. Xdebug can only do that the first time a
+specific executable unit is included/required, as the filtering happens when
+PHP parses and compiles a file for the first time. Xdebug needs to do it as this point, as this is also when
+it analyses which paths can run, and which lines of an executable unit can not
+be executed. Tagging executable units at this point, also means that the
+filter does not have to run every time Xdebug wants to count a line to be
+included in code coverage for example. It is therefore <b>important</b> to
+set-up the filter <b>before</b> the code is included/required. This currently
+can be best done through an auto-prepended file through PHP's
+<a href="http://php.net/manual/en/ini.core.php#ini.auto-prepend-file">auto_prepend_file</a> setting.
+</p>
+<p>
+To set-up a filter that only does code coverage analysis for the
+<code>src/</code> folder, you would call [FUNC:xdebug_set_filter] with:
+</p>
+<div class='example'><strong>Example:</strong><br />
+<code><pre>
+&lt;?php
+xdebug_set_filter(
+	XDEBUG_FILTER_CODE_COVERAGE,
+	XDEBUG_PATH_WHITELIST,
+	[ __DIR__ . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR ]
+);
+?>
+</pre></code>
+</div>
+<p>
+With this filter set up, the code coverage information will only include
+functions, methods and files which are located in the <code>src/</code>
+sub-directory of the file in which this file resides. You can tell PHP to add
+this prepend file by calling:
+</p>
+<pre>
+php -dauto_prepend_file=xdebug_filter.php yourscript.php
+</pre>
+<p>
+Or in combination with PHPUnit, when installed through Composer, with:
+</p>
+<pre>
+php -dauto_prepend_file=xdebug_filter.php vendor/bin/phpunit
+</pre>
+<p>
+The full documentation for the arguments to [FUNC:xdebug_set_filter] are
+described on its own documentation page.
+</p>

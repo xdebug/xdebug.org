@@ -1,0 +1,3 @@
+The directory where the tracing files will be written to, make sure that
+the user who the PHP will be running as has write permissions to that
+directory.
