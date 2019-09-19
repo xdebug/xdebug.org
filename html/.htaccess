@@ -28,5 +28,3 @@ RewriteRule .*$ router.php [NC,L]
 php_value default_charset utf-8
 
 php_value display_errors 1
-
-
