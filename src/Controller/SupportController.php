@@ -1,5 +1,4 @@
 <?php
-
 namespace XdebugDotOrg\Controller;
 
 use XdebugDotOrg\Core\HtmlResponse;
@@ -111,7 +110,7 @@ class SupportController
 		return $html;
 	}
 
-	/** 
+	/**
 	 * @return array<int, array{0: string, 1: string}>
 	 */
 	private static function get_supporters() : array
@@ -137,7 +136,7 @@ class SupportController
 
 			$supporters[] = [$link, $name];
 		}
-		
+
 		return $supporters;
 	}
 }

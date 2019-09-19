@@ -1,5 +1,4 @@
 <?php
-
 namespace XdebugDotOrg\Controller\Docs;
 
 use XdebugDotOrg\Core\HtmlResponse;
@@ -46,7 +45,7 @@ class FunctionsController
 			$contents = file( $filename );
 			$function = trim( $contents[0], "= \n" );
 			$version = null;
-		
+
 			if (strpos( $function, ',' ) !== false) {
 				list( $function, $version ) = explode( ',', $function );
 			}

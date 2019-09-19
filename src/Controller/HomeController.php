@@ -1,5 +1,4 @@
 <?php
-
 namespace XdebugDotOrg\Controller;
 
 use XdebugDotOrg\Core\HtmlResponse;
@@ -25,7 +24,7 @@ class HomeController
 		$d = dir(dirname(__DIR__, 2) . '/html/files' );
 
 		$files = [];
-		
+
 		while (false !== ($entry = $d->read())) {
 			if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
 				$files[$m[1]]['source'] = $entry;

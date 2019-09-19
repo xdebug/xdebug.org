@@ -1,5 +1,4 @@
 <?php
-
 namespace XdebugDotOrg\Controller;
 
 class LinksController
@@ -124,7 +123,7 @@ class LinksController
 		'xdebugclient-0.7.0-lnx' => 'http://files.derickrethans.nl/debugclient-0.7.0-lnx',
 		'xdebugclient-0.7.0-f46' => 'http://files.derickrethans.nl/debugclient-0.7.0-fbsd46',
 		'xdebugclient-0.7.0-win' => 'http://files.derickrethans.nl/debugclient-0.7.0-win.exe',
-		
+
 		'xdebugclient-0.7.3-lnx' => 'http://xdebug.org/files/debugclient-0.7.3',
 		'xdebugclient-0.7.3-win' => 'http://xdebug.org/files/debugclient-0.7.3.exe',
 		'xdebugclient-0.8.0-win' => 'http://xdebug.org/files/debugclient08.exe',
