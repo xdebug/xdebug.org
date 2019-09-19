@@ -7,14 +7,14 @@ namespace XdebugDotOrg\Model;
  */
 class Settings
 {
-    public $settings;
+	public $settings;
 
-    /**
-     * @param Setting[] $settings
-     */
-    public function __construct(
-        array $settings
-    ) {
-        $this->settings = $settings;
-    }
+	/**
+	 * @param Setting[] $settings
+	 */
+	public function __construct(
+		array $settings
+	) {
+		$this->settings = $settings;
+	}
 }

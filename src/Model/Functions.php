@@ -7,14 +7,14 @@ namespace XdebugDotOrg\Model;
  */
 class Functions
 {
-    public $functions;
+	public $functions;
 
-    /**
-     * @param FunctionDescription[] $functions
-     */
-    public function __construct(
-        array $functions
-    ) {
-        $this->functions = $functions;
-    }
+	/**
+	 * @param FunctionDescription[] $functions
+	 */
+	public function __construct(
+		array $functions
+	) {
+		$this->functions = $functions;
+	}
 }

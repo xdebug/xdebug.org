@@ -7,15 +7,15 @@ namespace XdebugDotOrg\Model;
  */
 class Page
 {
-    public $title;
-    public $contents;
-    public $tabFields = [];
+	public $title;
+	public $contents;
+	public $tabFields = [];
 
-    public function __construct(
-        string $title,
-        string $contents
-    ) {
-        $this->title = $title;
-        $this->contents = $contents;
-    }
+	public function __construct(
+		string $title,
+		string $contents
+	) {
+		$this->title = $title;
+		$this->contents = $contents;
+	}
 }

@@ -7,14 +7,14 @@ namespace XdebugDotOrg\Model;
  */
 class DocsSections
 {
-    public $sections;
+	public $sections;
 
-    /**
-     * @param array<DocsSection> $sections
-     */
-    public function __construct(
-        array $sections
-    ) {
-        $this->sections = $sections;
-    }
+	/**
+	 * @param array<DocsSection> $sections
+	 */
+	public function __construct(
+		array $sections
+	) {
+		$this->sections = $sections;
+	}
 }

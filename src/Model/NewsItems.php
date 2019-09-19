@@ -7,13 +7,13 @@ namespace XdebugDotOrg\Model;
  */
 class NewsItems
 {
-    public $items;
+	public $items;
 
-    /**
-     * @param NewsItem[] $items
-     */
-    public function __construct(array $items)
-    {
-        $this->items = $items;
-    }
+	/**
+	 * @param NewsItem[] $items
+	 */
+	public function __construct(array $items)
+	{
+		$this->items = $items;
+	}
 }

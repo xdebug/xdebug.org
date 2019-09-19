@@ -7,13 +7,13 @@ namespace XdebugDotOrg\Model;
  */
 class Downloads
 {
-    public $downloads;
+	public $downloads;
 
-    /**
-     * @param Download[] $downloads
-     */
-    public function __construct(array $downloads)
-    {
-        $this->downloads = $downloads;
-    }
+	/**
+	 * @param Download[] $downloads
+	 */
+	public function __construct(array $downloads)
+	{
+		$this->downloads = $downloads;
+	}
 }
