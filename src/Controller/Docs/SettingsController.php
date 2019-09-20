@@ -302,9 +302,6 @@ class SettingsController
 		return new HtmlResponse($setting, 'docs/setting.php');
 	}
 
-	/**
-	 * @return Setting[]
-	 */
 	public static function all() : HtmlResponse
 	{
 		$functions = self::getRelatedSettings(null);
@@ -321,7 +318,7 @@ class SettingsController
 			$settings = array_filter(
 				self::SETTINGS,
 				function (array $setting) use ($func) {
-					return $func & $setting[3];
+					return (bool)($func & $setting[3]);
 				}
 			);
 		} else {

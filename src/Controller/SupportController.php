@@ -52,7 +52,7 @@ class SupportController
 	//	var_dump( $summary, $f );
 
 		list( $patreon, $basic, $company, $others ) = explode( "\t", trim( $summary) );
-		$total = $patreon + $basic + $company + $others;
+		$total = (int) $patreon + (int) $basic + (int) $company + (int) $others;
 
 		$html .= "
 			<div class='funding'>

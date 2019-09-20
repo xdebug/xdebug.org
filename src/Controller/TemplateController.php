@@ -9,7 +9,7 @@ class TemplateController
 	/** @var string */
 	public static $title = '';
 
-	public static function setTitle(string $title)
+	public static function setTitle(string $title) : void
 	{
 		self::$title = $title;
 	}

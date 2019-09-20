@@ -136,7 +136,7 @@ class DocsController
 		$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
 		$text = preg_replace_callback(
 			'/\[FEAT:([^\]]*?)(#.*)?\]/',
-			function($matches) {
+			function (array $matches) {
 				if (!array_key_exists(2, $matches)) {
 					$matches[2] = '';
 				}

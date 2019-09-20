@@ -8,6 +8,9 @@ class Page
 {
 	public $title;
 	public $contents;
+	/**
+	 * @var array
+	 */
 	public $tabFields = [];
 
 	public function __construct(

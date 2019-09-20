@@ -9,7 +9,7 @@ use XdebugDotOrg\Controller\DocsController;
 class FunctionsController
 {
 	/**
-	 * @var array
+	 * @var ?array<int, FunctionDescription>
 	 */
 	private static $functions = null;
 
@@ -19,7 +19,7 @@ class FunctionsController
 	}
 
 	/**
-	 * @return array<string, FunctionDescription>
+	 * @return array<int, FunctionDescription>
 	 */
 	private static function getFunctions() : array
 	{
@@ -67,7 +67,7 @@ class FunctionsController
 	}
 
 	/**
-	 * @return Setting[]
+	 * @return FunctionDescription[]
 	 */
 	public static function getRelatedFunctions(int $func) : array
 	{
@@ -83,10 +83,6 @@ class FunctionsController
 		return $functions;
 	}
 
-
-	/**
-	 * @return Setting[]
-	 */
 	public static function all() : HtmlResponse
 	{
 		$functions = self::getFunctions();
@@ -96,17 +92,17 @@ class FunctionsController
 		return new HtmlResponse(new Functions($functions), 'docs/all_functions.php');
 	}
 
-	private static function do_format_data_TXT(array $data)
+	private static function do_format_data_TXT(array $data) : string
 	{
 		return "<p>\n". DocsController::add_links( implode( ' ', $data ) ). "\n</p>";
 	}
 
-	private static function do_format_data_RESULT(array $data)
+	private static function do_format_data_RESULT(array $data) : string
 	{
 		return "<div class='example-returns'><strong>Returns:</strong><br /><br /><pre>\n" . implode( '', $data ) . "</pre></div>\n";
 	}
 
-	private static function do_format_data_EXAMPLE(array $data)
+	private static function do_format_data_EXAMPLE(array $data) : string
 	{
 		return "<div class='example'><strong>Example:</strong><br /><br />\n" . highlight_string( implode( '', $data ), true ) . "</div>\n";
 	}
@@ -127,7 +123,7 @@ class FunctionsController
 		throw new \Exception('bad');
 	}
 
-	private static function do_format_data(array $contents)
+	private static function do_format_data(array $contents) : string
 	{
 		$state = null;
 		$data = [];

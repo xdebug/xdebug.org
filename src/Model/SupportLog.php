@@ -6,7 +6,7 @@ namespace XdebugDotOrg\Model;
  */
 class SupportLog
 {
-	public $functions;
+	public $files;
 	public $supporters;
 
 	/**

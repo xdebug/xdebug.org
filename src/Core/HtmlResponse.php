@@ -1,9 +1,6 @@
 <?php
 namespace XdebugDotOrg\Core;
 
-/**
- * @psalm-immutable
- */
 class HtmlResponse
 {
 	public $model;
