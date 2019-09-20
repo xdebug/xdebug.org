@@ -21,3 +21,4 @@ class Page
 		$this->contents = $contents;
 	}
 }
+?>

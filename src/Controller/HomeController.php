@@ -97,3 +97,4 @@ class HomeController
 		return new HtmlResponse(null, 'home/contributing.php');
 	}
 }
+?>

@@ -17,3 +17,4 @@ class DocsSections
 		$this->sections = $sections;
 	}
 }
+?>

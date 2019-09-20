@@ -155,3 +155,4 @@ class DocsController
 		return $text;
 	}
 }
+?>

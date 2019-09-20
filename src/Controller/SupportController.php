@@ -49,7 +49,7 @@ class SupportController
 
 		$html = "<h2>" . $d->format( "F Y" ) . "</h2>\n";
 
-	//	var_dump( $summary, $f );
+// var_dump( $summary, $f );
 
 		list( $patreon, $basic, $company, $others ) = explode( "\t", trim( $summary) );
 		$total = (int) $patreon + (int) $basic + (int) $company + (int) $others;
@@ -140,3 +140,4 @@ class SupportController
 		return $supporters;
 	}
 }
+?>

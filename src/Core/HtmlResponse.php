@@ -44,3 +44,4 @@ class HtmlResponse
 		   return ob_get_clean();
 	}
 }
+?>

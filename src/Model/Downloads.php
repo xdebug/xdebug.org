@@ -16,3 +16,4 @@ class Downloads
 		$this->downloads = $downloads;
 	}
 }
+?>

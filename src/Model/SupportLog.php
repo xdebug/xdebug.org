@@ -21,3 +21,4 @@ class SupportLog
 		$this->supporters = $supporters;
 	}
 }
+?>
