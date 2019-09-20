@@ -32,3 +32,4 @@ class FunctionDescription
 		$this->version = $version;
 	}
 }
+?>

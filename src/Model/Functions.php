@@ -17,3 +17,4 @@ class Functions
 		$this->functions = $functions;
 	}
 }
+?>

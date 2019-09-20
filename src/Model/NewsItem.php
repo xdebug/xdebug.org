@@ -20,3 +20,4 @@ class NewsItem
 		$this->contents = $contents;
 	}
 }
+?>

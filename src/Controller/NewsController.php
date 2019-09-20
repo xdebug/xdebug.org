@@ -35,3 +35,4 @@ class NewsController
 		return new HtmlResponse(new NewsItems(self::getNewsItems()), 'news/items.php');
 	}
 }
+?>

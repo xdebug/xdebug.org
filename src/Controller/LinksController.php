@@ -40,7 +40,7 @@ class LinksController
 
 		'xdebug120rc1' => 'http://files.derickrethans.nl/xdebug-1.2.0rc1.tgz',
 		'xdebug120rc2' => 'http://files.derickrethans.nl/xdebug-1.2.0rc2.tgz',
-		'xdebug120'	=> 'http://files.derickrethans.nl/xdebug-1.2.0.tgz',
+		'xdebug120'    => 'http://files.derickrethans.nl/xdebug-1.2.0.tgz',
 		'xdebug120-43-lnx' => 'http://files.derickrethans.nl/xdebug-4.3.2-1.2.0-lnx.so',
 		'xdebug120-43-win' => 'http://files.derickrethans.nl/xdebug-4.3.2-1.2.0-win32.dll',
 		'xdebug120-43-mac' => 'http://files.derickrethans.nl/xdebug-4.3.2-1.2.0-macosx.so',

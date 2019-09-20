@@ -17,3 +17,4 @@ class Settings
 		$this->settings = $settings;
 	}
 }
+?>

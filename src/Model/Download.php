@@ -29,3 +29,4 @@ class Download
 		$this->dlls = $dlls;
 	}
 }
+?>

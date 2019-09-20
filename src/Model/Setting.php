@@ -26,3 +26,4 @@ class Setting
 		$this->text = $text;
 	}
 }
+?>

@@ -354,3 +354,4 @@ class SettingsController
 		return $models;
 	}
 }
+?>

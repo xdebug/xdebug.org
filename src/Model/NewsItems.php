@@ -16,3 +16,4 @@ class NewsItems
 		$this->items = $items;
 	}
 }
+?>

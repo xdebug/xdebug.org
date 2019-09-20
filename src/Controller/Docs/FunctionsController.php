@@ -166,3 +166,4 @@ class FunctionsController
 		return $formatted_data;
 	}
 }
+?>

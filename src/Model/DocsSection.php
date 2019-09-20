@@ -33,3 +33,4 @@ class DocsSection
 		$this->related_functions = $related_functions;
 	}
 }
+?>

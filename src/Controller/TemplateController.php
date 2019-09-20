@@ -29,3 +29,4 @@ class TemplateController
 		return new HtmlResponse(null, 'templates/support_menu.php');
 	}
 }
+?>
