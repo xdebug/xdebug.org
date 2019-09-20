@@ -4,3 +4,15 @@ html/files/xdebug-vc11-latest.tgz
 html/files/xdebug-vc9-latest.tgz
 
 vendor/
+
+/vendor/
+.DS_Store
+/.php_cs.cache
+/.php_cs
+/.phpunit.result.cache
+.*.swp
+.*.swo
+/composer.lock
+
+.idea/inspectionProfiles/Project_Default.xml
+.idea/workspace.xml
