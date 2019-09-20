@@ -7,34 +7,22 @@ use XdebugDotOrg\Model\DocsSections;
 
 class DocsController
 {
-	const FUNC_INSTALL			= 0x0000800;
-	const FUNC_BASIC			  = 0x0001000;
-	const FUNC_STACK_TRACE		= 0x0002000; // affects stack traces
-	const FUNC_REMOTE			 = 0x0004000; // affects remote debugging
-	const FUNC_FUNCTION_TRACE	 = 0x0008000; // affects function traces
-	const FUNC_VAR_DUMP		   = 0x0010000; // affects overloaded var_dump function
-	const FUNC_PROFILER		   = 0x0020000; // affects overloaded var_dump function
-	const FUNC_CODE_COVERAGE	  = 0x0040000;
-	const FUNC_GARBAGE_COLLECTION = 0x0080000;
-
-	const FUNC_ALL				= 0x007ffff;
-
 	private const SECTIONS = [
 		'install' => [
 			'Installation',
-			self::FUNC_INSTALL,
+			\FUNC_INSTALL,
 			'This section describes on how to install Xdebug.',
 		],
 		'basic' => [
 			'Basic Features',
-			self::FUNC_BASIC,
+			\FUNC_BASIC,
 			'Xdebug\'s basic functions include the display of stack traces on error
 			conditions, maximum nesting level protection and time tracking.',
 			''
 		],
 		'display' => [
 			'Variable Display Features',
-			self::FUNC_VAR_DUMP,
+			\FUNC_VAR_DUMP,
 			'Xdebug replaces PHP\'s var_dump() function for displaying variables.
 			Xdebug\'s version includes different colors for different types and
 			places limits on the amount of array elements/object properties,
@@ -44,7 +32,7 @@ class DocsController
 		],
 		'stack_trace' => [
 			'Stack Traces',
-			self::FUNC_STACK_TRACE,
+			\FUNC_STACK_TRACE,
 			'When Xdebug is activated it will show a stack trace whenever PHP
 			decides to show a notice, warning, error etc. The information that
 			stack traces display, and the way how they are presented, can be
@@ -53,35 +41,35 @@ class DocsController
 		],
 		'execution_trace' => [
 			'Function Traces',
-			self::FUNC_FUNCTION_TRACE,
+			\FUNC_FUNCTION_TRACE,
 			'Xdebug allows you to log all function calls, including parameters and
 			return values to a file in different formats.',
 			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
 		],
 		'code_coverage' => [
 			'Code Coverage Analysis',
-			self::FUNC_CODE_COVERAGE,
+			\FUNC_CODE_COVERAGE,
 			'Code coverage tells you which lines of script (or set of scripts) have
 			been executed during a request. With this information you can for
 			example find out how good your unit tests are.',
 		],
 		'garbage_collection' => [
 			'Garbage Collection Statistics',
-			self::FUNC_GARBAGE_COLLECTION,
+			\FUNC_GARBAGE_COLLECTION,
 			'Xdebug\'s built-in garbage collection statistics profiler allows you to
 			find out when the PHP internal garbage collector triggers, how many variables
 			it was able to clean up, how long it took, and how how much memory was actually freed.',
 		],
 		'profiler' => [
 			'Profiling PHP Scripts',
-			self::FUNC_PROFILER,
+			\FUNC_PROFILER,
 			'Xdebug\'s built-in profiler allows you to find bottlenecks in your
 			script and visualize those with an external tool such as KCacheGrind or
 			WinCacheGrind.',
 		],
 		'remote' => [
 			'Remote Debugging',
-			self::FUNC_REMOTE,
+			\FUNC_REMOTE,
 			'Xdebug provides an interface for debugger clients that interact with
 			running PHP scripts. This section explains how to set-up PHP and Xdebug
 			to allow this, and introduces a few clients.',

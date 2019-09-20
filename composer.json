@@ -5,6 +5,9 @@
         "vimeo/psalm": "^3.5"
     },
     "autoload": {
+        "files": [
+            "src/constants.php"
+        ],
     	"psr-4": {
     		"XdebugDotOrg\\": "src"
     	}

@@ -59,7 +59,7 @@ class FunctionsController
 				$version,
 				trim( $contents[2] ),
 				$arguments && $arguments !== 'none' ? $arguments : null,
-				constant( DocsController::class . '::' . trim( $contents[4] ) )
+				constant( trim( $contents[4] ) )
 			);
 		}
 
