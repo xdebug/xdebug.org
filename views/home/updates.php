@@ -12,6 +12,12 @@ function issue($nr) {
 }
 ?>
 
+<?php
+/*
+:'<,'>s/bug \#\(\d\+\)/<?php bug(\1); ?>/
+:'<,'>s/issue \#\(\d\+\)/<?php bug(\1); ?>/
+*/
+?>
 <h1>Updates</h1>
 
 <?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
@@ -347,7 +353,7 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 
 
 <dt><a name='x_2_4_1'></a>[2016-08-02] &mdash; Xdebug 2.4.1</dt>
- 
+
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?php bug(1106); ?>: A thrown Exception after a class with __debugInfo gives 2 errors</dd>
 <dd>Fixed <?php bug(1241); ?>: FAST_CALL/FAST_RET take #2</dd>
@@ -1135,10 +1141,10 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 
 <dd><h3>Added new features</h3></dd>
 <dd>DBGP: Added error messages to returned errors (in most cases)</dd>
-  
+
 <dd><h3>Added new functions</h3></dd>
 <dd>xdebug_debug_zval() to debug zvals by printing its refcounts and is_ref values.</dd>
-  
+
 <dd><h3>Changed features</h3></dd>
 <dd>xdebug_code_coverage_stop() will now clean up the code coverage array, unless you specify FALSE as parameter.</dd>
 <dd>The proper Xdebug type is "hash" for associative arrays.</dd>
