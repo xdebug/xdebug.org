@@ -1,3 +1,9 @@
+<?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\CiMatrix
+ */
+?>
+
 <table class='ci'>
 	<tr class='version'>
 		<th></th>

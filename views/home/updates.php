@@ -1,21 +1,21 @@
 <?php
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Updates');
 
-function bug($nr) {
-	echo "bug <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+function bug(int $nr) : string {
+	return "bug <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
 		sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 }
 
-function issue($nr) {
-	echo "issue <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+function issue(int $nr) : string {
+	return "issue <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
 		sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 }
 ?>
 
 <?php
 /*
-:'<,'>s/bug \#\(\d\+\)/<?php bug(\1); ?>/
-:'<,'>s/issue \#\(\d\+\)/<?php bug(\1); ?>/
+:'<,'>s/bug \#\(\d\+\)/<?= bug(\1); ?>/
+:'<,'>s/issue \#\(\d\+\)/<?= bug(\1); ?>/
 */
 ?>
 <h1>Updates</h1>
@@ -28,99 +28,99 @@ function issue($nr) {
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1540); ?>: Code coverage should not run when turned off in php.ini</dd>
-<dd>Fixed <?php bug(1573); ?>: Using an exception_handler creates an extra broken profiler file</dd>
-<dd>Fixed <?php bug(1589); ?>: function names used in auto_prepend_file missing from profile file</dd>
-<dd>Fixed <?php bug(1613); ?>: Wrong name displayed for Recoverable fatal error</dd>
-<dd>Fixed <?php bug(1652); ?>: Problems with detach in debugger init stage</dd>
-<dd>Fixed <?php bug(1676); ?>: Xdebug doesn't write trace footer for shutdown functions</dd>
-<dd>Fixed <?php bug(1689); ?>: Traces show return values and exit information for functions without entry information</dd>
-<dd>Fixed <?php bug(1691); ?>: Code Coverage misses fluent interface function call</dd>
-<dd>Fixed <?php bug(1698); ?>: Switch PHP 7.4 Windows builds back to VS17</dd>
-<dd>Fixed <?php bug(1700); ?>: Xdebug abuses possibilty immutable class flags</dd>
+<dd>Fixed <?= bug(1540); ?>: Code coverage should not run when turned off in php.ini</dd>
+<dd>Fixed <?= bug(1573); ?>: Using an exception_handler creates an extra broken profiler file</dd>
+<dd>Fixed <?= bug(1589); ?>: function names used in auto_prepend_file missing from profile file</dd>
+<dd>Fixed <?= bug(1613); ?>: Wrong name displayed for Recoverable fatal error</dd>
+<dd>Fixed <?= bug(1652); ?>: Problems with detach in debugger init stage</dd>
+<dd>Fixed <?= bug(1676); ?>: Xdebug doesn't write trace footer for shutdown functions</dd>
+<dd>Fixed <?= bug(1689); ?>: Traces show return values and exit information for functions without entry information</dd>
+<dd>Fixed <?= bug(1691); ?>: Code Coverage misses fluent interface function call</dd>
+<dd>Fixed <?= bug(1698); ?>: Switch PHP 7.4 Windows builds back to VS17</dd>
+<dd>Fixed <?= bug(1700); ?>: Xdebug abuses possibilty immutable class flags</dd>
 
 
 <dt><a name='x_2_8_0beta1'></a>[2019-07-25] &mdash; Xdebug 2.8.0beta1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1679); ?>: Code Coverage misses static property as function argument</dd>
-<dd>Fixed <?php bug(1682); ?>: Invalid NULL byte in debugger XML with anonymous classes</dd>
-<dd>Fixed <?php bug(1683); ?>: Xdebug does not compile due to changes to ASSIGN_ADD and friends operations in PHP 7.4alpha3</dd>
-<dd>Fixed <?php bug(1687); ?>: Use appropriate process ID for logging and "right process" tracking</dd>
-<dd>Fixed <?php bug(1688); ?>: Improve performance by using getpid() only when step debugger is active</dd>
+<dd>Fixed <?= bug(1679); ?>: Code Coverage misses static property as function argument</dd>
+<dd>Fixed <?= bug(1682); ?>: Invalid NULL byte in debugger XML with anonymous classes</dd>
+<dd>Fixed <?= bug(1683); ?>: Xdebug does not compile due to changes to ASSIGN_ADD and friends operations in PHP 7.4alpha3</dd>
+<dd>Fixed <?= bug(1687); ?>: Use appropriate process ID for logging and "right process" tracking</dd>
+<dd>Fixed <?= bug(1688); ?>: Improve performance by using getpid() only when step debugger is active</dd>
 
 
 <dt><a name='x_2_8_0alpha1'></a>[2019-06-28] &mdash; Xdebug 2.8.0alpha1</dt>
 
 <dd><h3>Added features</h3></dd>
 
-<dd>Implemented <?php issue(1599); ?>: Add support for PHP 7.4</dd>
+<dd>Implemented <?= issue(1599); ?>: Add support for PHP 7.4</dd>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Implemented <?php issue(1388); ?>: Support 'resolved' flag for breakpoints</dd>
-<dd>Implemented <?php issue(1664); ?>: Run breakpoint resolver when after a new breakpoint is added as well</dd>
+<dd>Implemented <?= issue(1388); ?>: Support 'resolved' flag for breakpoints</dd>
+<dd>Implemented <?= issue(1664); ?>: Run breakpoint resolver when after a new breakpoint is added as well</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1660); ?>: Return breakpoints for methods don't break immediately</dd>
+<dd>Fixed <?= bug(1660); ?>: Return breakpoints for methods don't break immediately</dd>
 
 <dd><h3>Removed features</h3></dd>
 
-<dd>Fixed <?php bug(1666); ?>: Remove xdebug.extended_info setting</dd>
+<dd>Fixed <?= bug(1666); ?>: Remove xdebug.extended_info setting</dd>
 
 
 <dt><a name='x_2_7_2'></a>[2019-05-06] &mdash; Xdebug 2.7.2</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
 
-<dd>Fixed <?php bug(1488); ?>: Rewrite DBGp 'property_set' to always use eval</dd>
-<dd>Fixed <?php bug(1586); ?>: error_reporting()'s return value is incorrect during debugger's 'eval' command</dd>
-<dd>Fixed <?php bug(1615); ?>: Turn off Zend OPcache when remote debugger is turned on</dd>
-<dd>Fixed <?php bug(1656); ?>: remote_connect_back alters header if multiple values are present</dd>
-<dd>Fixed <?php bug(1662); ?>: __debugInfo should not be used for user-defined classes</dd>
+<dd>Fixed <?= bug(1488); ?>: Rewrite DBGp 'property_set' to always use eval</dd>
+<dd>Fixed <?= bug(1586); ?>: error_reporting()'s return value is incorrect during debugger's 'eval' command</dd>
+<dd>Fixed <?= bug(1615); ?>: Turn off Zend OPcache when remote debugger is turned on</dd>
+<dd>Fixed <?= bug(1656); ?>: remote_connect_back alters header if multiple values are present</dd>
+<dd>Fixed <?= bug(1662); ?>: __debugInfo should not be used for user-defined classes</dd>
 
 
 <dt><a name='x_2_7_1'></a>[2019-04-05] &mdash; Xdebug 2.7.1</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
 
-<dd>Fixed <?php bug(1646); ?>: Missing newline in error message</dd>
-<dd>Fixed <?php bug(1647); ?>: Memory corruption when a conditional breakpoint is used</dd>
-<dd>Fixed <?php bug(1641); ?>: Perfomance degradation with getpid syscall (Kees Hoekzema)</dd>
+<dd>Fixed <?= bug(1646); ?>: Missing newline in error message</dd>
+<dd>Fixed <?= bug(1647); ?>: Memory corruption when a conditional breakpoint is used</dd>
+<dd>Fixed <?= bug(1641); ?>: Perfomance degradation with getpid syscall (Kees Hoekzema)</dd>
 
 
 <dt><a name='x_2_7_0'></a>[2019-03-06] &mdash; Xdebug 2.7.0</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
 
-<dd>Fixed <?php bug(1520); ?>: Xdebug does not handle variables and properties with "-" in their name</dd>
-<dd>Fixed <?php bug(1577); ?>: Code coverage path analysis with chained catch fails in PHP 7.3</dd>
-<dd>Fixed <?php bug(1639); ?>: Compile warning/error on GCC 8 or Clang due to "break intentionally missing"</dd>
-<dd>Fixed <?php bug(1642); ?>: Debugger gives: "Warning: Header may not contain NUL bytes"</dd>
+<dd>Fixed <?= bug(1520); ?>: Xdebug does not handle variables and properties with "-" in their name</dd>
+<dd>Fixed <?= bug(1577); ?>: Code coverage path analysis with chained catch fails in PHP 7.3</dd>
+<dd>Fixed <?= bug(1639); ?>: Compile warning/error on GCC 8 or Clang due to "break intentionally missing"</dd>
+<dd>Fixed <?= bug(1642); ?>: Debugger gives: "Warning: Header may not contain NUL bytes"</dd>
 
 
 <dt><a name='x_2_7_0RC2'></a>[2019-02-15] &mdash; Xdebug 2.7.0RC2</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
 
-<dd>Fixed <?php bug(1551); ?>: Property with value null is not represented well</dd>
-<dd>Fixed <?php bug(1621); ?>: Xdebug fails to compile cleanly on 32-bit platforms</dd>
-<dd>Fixed <?php bug(1625); ?>: Work around ABI conflicts in PHP 7.3.0/PHP 7.3.1</dd>
-<dd>Fixed <?php bug(1628); ?>: The PHP function name being constructed to record when GC Collection runs, is not freed</dd>
-<dd>Fixed <?php bug(1629); ?>: SOAP Client/Server detection code does not handle inherited classes</dd>
+<dd>Fixed <?= bug(1551); ?>: Property with value null is not represented well</dd>
+<dd>Fixed <?= bug(1621); ?>: Xdebug fails to compile cleanly on 32-bit platforms</dd>
+<dd>Fixed <?= bug(1625); ?>: Work around ABI conflicts in PHP 7.3.0/PHP 7.3.1</dd>
+<dd>Fixed <?= bug(1628); ?>: The PHP function name being constructed to record when GC Collection runs, is not freed</dd>
+<dd>Fixed <?= bug(1629); ?>: SOAP Client/Server detection code does not handle inherited classes</dd>
 
 
 <dt><a name='x_2_7_0rc1'></a>[2019-02-01] &mdash; Xdebug 2.7.0rc1</dt>
 
 <dd><h3>Fixed Bugs</h3></dd>
 
-<dd>Fixed <?php bug(1571); ?>: File/line information is not shown for closures in namespaces.</dd>
-<dd>Fixed <?php bug(1578); ?>: Compile error due to redefinition of "zif_handler" with old GCCs.</dd>
-<dd>Fixed <?php bug(1583); ?>: Xdebug crashes when OPcache's compact literals optimisation is on.</dd>
-<dd>Fixed <?php bug(1598); ?>: Make path/branch coverage work with OPcache loaded for PHP 7.3 and later.</dd>
-<dd>Fixed <?php bug(1620); ?>: Division by zero when GC Stats Collection runs with memory manager disabled.</dd>
+<dd>Fixed <?= bug(1571); ?>: File/line information is not shown for closures in namespaces.</dd>
+<dd>Fixed <?= bug(1578); ?>: Compile error due to redefinition of "zif_handler" with old GCCs.</dd>
+<dd>Fixed <?= bug(1583); ?>: Xdebug crashes when OPcache's compact literals optimisation is on.</dd>
+<dd>Fixed <?= bug(1598); ?>: Make path/branch coverage work with OPcache loaded for PHP 7.3 and later.</dd>
+<dd>Fixed <?= bug(1620); ?>: Division by zero when GC Stats Collection runs with memory manager disabled.</dd>
 
 
 
@@ -128,225 +128,225 @@ function issue($nr) {
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Fixed <?php bug(1519); ?>: PHP 7.3 support (with a contribution by Christoph M. Becker)</dd>
+<dd>Fixed <?= bug(1519); ?>: PHP 7.3 support (with a contribution by Christoph M. Becker)</dd>
 
 
 <dt><a name='x_2_6_1'></a>[2018-08-01] &mdash; Xdebug 2.6.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1525); ?>: Namespace filter does equality match instead of prefix match</dd>
-<dd>Fixed <?php bug(1532); ?>: SIGABRT when using remote debugging and an error is thrown in eval() (Philip Hofstetter)</dd>
-<dd>Fixed <?php bug(1543); ?>: Various memory leaks due to changes in (internal) string handling</dd>
-<dd>Fixed <?php bug(1556); ?>: Crash when register_shutdown_function() is called with a function named call_user_func*</dd>
-<dd>Fixed <?php bug(1557); ?>: Remove 'return' in void xdebug_build_fname</dd>
-<dd>Fixed <?php bug(1568); ?>: Can't debug object properties that have numeric keys</dd>
+<dd>Fixed <?= bug(1525); ?>: Namespace filter does equality match instead of prefix match</dd>
+<dd>Fixed <?= bug(1532); ?>: SIGABRT when using remote debugging and an error is thrown in eval() (Philip Hofstetter)</dd>
+<dd>Fixed <?= bug(1543); ?>: Various memory leaks due to changes in (internal) string handling</dd>
+<dd>Fixed <?= bug(1556); ?>: Crash when register_shutdown_function() is called with a function named call_user_func*</dd>
+<dd>Fixed <?= bug(1557); ?>: Remove 'return' in void xdebug_build_fname</dd>
+<dd>Fixed <?= bug(1568); ?>: Can't debug object properties that have numeric keys</dd>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Fixed <?php bug(1487); ?>: Re-enable IPv6 test on Travis</dd>
+<dd>Fixed <?= bug(1487); ?>: Re-enable IPv6 test on Travis</dd>
 
 
 <dt><a name='x_2_7_0alpha1'></a>[2018-04-01] &mdash; Xdebug 2.7.0alpha1</dt>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Fixed <?php bug(938); ?>: Support remote debugging for PHP scripts that fork. (Sponsored by Brad Wilson)</dd>
-<dd>Fixed <?php bug(1487); ?>: Re-enable IPv6 test on Travis.</dd>
+<dd>Fixed <?= bug(938); ?>: Support remote debugging for PHP scripts that fork. (Sponsored by Brad Wilson)</dd>
+<dd>Fixed <?= bug(1487); ?>: Re-enable IPv6 test on Travis.</dd>
 
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1526); ?>: Namespace filter does equality match instead of prefix match.</dd>
-<dd>Fixed <?php bug(1532); ?>: SIGABRT when using remote debugging and an error is thrown in eval().</dd>
-<dd>Fixed <?php bug(1543); ?>: Various memory leaks due to changes in (internal) string handling.</dd>
+<dd>Fixed <?= bug(1526); ?>: Namespace filter does equality match instead of prefix match.</dd>
+<dd>Fixed <?= bug(1532); ?>: SIGABRT when using remote debugging and an error is thrown in eval().</dd>
+<dd>Fixed <?= bug(1543); ?>: Various memory leaks due to changes in (internal) string handling.</dd>
 
 
 <dt><a name='x_2_6_0'></a>[2018-01-29] &mdash; Xdebug 2.6.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1522); ?>: Remote debugging test failures on s390 (Big Endian).</dd>
+<dd>Fixed <?= bug(1522); ?>: Remote debugging test failures on s390 (Big Endian).</dd>
 
 
 <dt><a name='x_2_6_0RC2'></a>[2018-01-23] &mdash; Xdebug 2.6.0RC2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1521); ?>: xdebug_gc_stats.* missing from 2.6.0RC1 tarball.</dd>
+<dd>Fixed <?= bug(1521); ?>: xdebug_gc_stats.* missing from 2.6.0RC1 tarball.</dd>
 
 
 <dt><a name='x_2_6_0RC1'></a>[2018-01-22] &mdash; Xdebug 2.6.0RC1</dt>
 
 <dd><h3>Added features</h3></dd>
 
-<dd>Fixed <?php bug(1506); ?>: Add <a href="/docs/garbage_collection">garbage collection</a> statistics feature (Benjamin Eberlei).</dd>
-<dd>Fixed <?php bug(1507); ?>: Add functions to access Zend Engine garbage collection metrics (Benjamin Eberlei).</dd>
+<dd>Fixed <?= bug(1506); ?>: Add <a href="/docs/garbage_collection">garbage collection</a> statistics feature (Benjamin Eberlei).</dd>
+<dd>Fixed <?= bug(1507); ?>: Add functions to access Zend Engine garbage collection metrics (Benjamin Eberlei).</dd>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Fixed <?php bug(1510); ?>: Change switch/case "break intentionally missing" comments to use GCC 7's new "fallthrough" attribute.</dd>
-<dd>Fixed <?php bug(1511); ?>: Detect and use compiler flags through new configure option.</dd>
+<dd>Fixed <?= bug(1510); ?>: Change switch/case "break intentionally missing" comments to use GCC 7's new "fallthrough" attribute.</dd>
+<dd>Fixed <?= bug(1511); ?>: Detect and use compiler flags through new configure option.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1335); ?>: Debugging with PhpStorm sometimes gives "can not get property".</dd>
-<dd>Fixed <?php bug(1454); ?>: Invalid memory read or segfaults from a __call() method.</dd>
-<dd>Fixed <?php bug(1508); ?>: Code coverage filter not checked in xdebug_common_assign_dim handler.</dd>
-<dd>Fixed <?php bug(1509); ?>: Code coverage missing for case inside switch with PHP 7.2.</dd>
-<dd>Fixed <?php bug(1512); ?>: Xdebug does not properly encode and escape properties with quotes and \0 characters.</dd>
-<dd>Fixed <?php bug(1514); ?>: Variable names with a NULL char are cut off at NULL char.</dd>
-<dd>Fixed <?php bug(1515); ?>: Object property names with a NULL char are cut off at NULL char.</dd>
-<dd>Fixed <?php bug(1516); ?>: Can't fetch variables or object properties which have \0 characters in them.</dd>
-<dd>Fixed <?php bug(1517); ?>: Notifications incorrectly specify the error type in "type_string" instead of "type".</dd>
+<dd>Fixed <?= bug(1335); ?>: Debugging with PhpStorm sometimes gives "can not get property".</dd>
+<dd>Fixed <?= bug(1454); ?>: Invalid memory read or segfaults from a __call() method.</dd>
+<dd>Fixed <?= bug(1508); ?>: Code coverage filter not checked in xdebug_common_assign_dim handler.</dd>
+<dd>Fixed <?= bug(1509); ?>: Code coverage missing for case inside switch with PHP 7.2.</dd>
+<dd>Fixed <?= bug(1512); ?>: Xdebug does not properly encode and escape properties with quotes and \0 characters.</dd>
+<dd>Fixed <?= bug(1514); ?>: Variable names with a NULL char are cut off at NULL char.</dd>
+<dd>Fixed <?= bug(1515); ?>: Object property names with a NULL char are cut off at NULL char.</dd>
+<dd>Fixed <?= bug(1516); ?>: Can't fetch variables or object properties which have \0 characters in them.</dd>
+<dd>Fixed <?= bug(1517); ?>: Notifications incorrectly specify the error type in "type_string" instead of "type".</dd>
 
 
 <dt><a name='x_2_6_0beta1'></a>[2017-12-28] &mdash; Xdebug 2.6.0beta1</dt>
 
 <dd><h3>Added features</h3></dd>
 
-<dd>Fixed <?php bug(1059); ?>: Add filter capabilities to tracing, stack traces, and code coverage.</dd>
-<dd>Fixed <?php bug(1437); ?>: Add X-Profile-File-Name header when a profile file has been generated.</dd>
+<dd>Fixed <?= bug(1059); ?>: Add filter capabilities to tracing, stack traces, and code coverage.</dd>
+<dd>Fixed <?= bug(1437); ?>: Add X-Profile-File-Name header when a profile file has been generated.</dd>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Fixed <?php bug(1493); ?>: Run test suite in AppVeyor for Windows CI.</dd>
-<dd>Fixed <?php bug(1498); ?>: Use new ZEND_EXTENSION API in config.w32 build scripts. (Kalle)</dd>
+<dd>Fixed <?= bug(1493); ?>: Run test suite in AppVeyor for Windows CI.</dd>
+<dd>Fixed <?= bug(1498); ?>: Use new ZEND_EXTENSION API in config.w32 build scripts. (Kalle)</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(702); ?>: Check whether variables tracing also works with =&amp;.</dd>
-<dd>Fixed <?php bug(1501); ?>: Xdebug var dump tries casting properties.</dd>
-<dd>Fixed <?php bug(1502); ?>: SEND_REF lines are not marked as covered.</dd>
+<dd>Fixed <?= bug(702); ?>: Check whether variables tracing also works with =&amp;.</dd>
+<dd>Fixed <?= bug(1501); ?>: Xdebug var dump tries casting properties.</dd>
+<dd>Fixed <?= bug(1502); ?>: SEND_REF lines are not marked as covered.</dd>
 
 
 <dt><a name='x_2_6_0alpha1'></a>[2017-12-02] &mdash; Xdebug 2.6.0alpha1</dt>
 
 <dd><h3>Added features</h3></dd>
 
-<dd>Implemented <?php bug(474); ?>: Added "memory" output to profiling files, to find out where memory is allocated.</dd>
-<dd>Implemented <?php bug(575); ?>: Dump super globals contents to error log upon errors, just like when this would happen for stack traces.</dd>
-<dd>Implemented <?php bug(964); ?>: Parse X-Forwarded-For for the first IP address when selecting the remote_connect_back host (Steve Easley).</dd>
-<dd>Implemented <?php bug(990); ?>: Add DBGp: notifications for notices and warnings to be shown in IDEs.</dd>
-<dd>Implemented <?php bug(1312); ?>: Implement extended_properties feature to remote debugging to support names and values with low ASCII values.</dd>
-<dd>Implemented <?php bug(1323); ?>: Added xdebug.filename_format setting to configure the formatting of filenames when tracing.</dd>
-<dd>Implemented <?php bug(1379); ?>: Added support for Unix domain sockets to xdebug.remote_host (Sara Golemon).</dd>
-<dd>Implemented <?php bug(1380); ?>: Added xdebug_is_debugger_active() that returns true when debugger is connected.</dd>
-<dd>Implemented <?php bug(1391); ?>: Added support for earlier stack frames through new argument for xdebug_call_* functions.</dd>
-<dd>Implemented <?php bug(1420); ?>: Handle PHP 7.2's new methods for switch/case</dd>
-<dd>Implemented <?php bug(1470); ?>: Added xdebug.remote_timeout to make connect timeout configurable.</dd>
-<dd>Implemented <?php bug(1495); ?>: Make var_dump() also use the new xdebug.filename_format when formatting filenames.</dd>
+<dd>Implemented <?= bug(474); ?>: Added "memory" output to profiling files, to find out where memory is allocated.</dd>
+<dd>Implemented <?= bug(575); ?>: Dump super globals contents to error log upon errors, just like when this would happen for stack traces.</dd>
+<dd>Implemented <?= bug(964); ?>: Parse X-Forwarded-For for the first IP address when selecting the remote_connect_back host (Steve Easley).</dd>
+<dd>Implemented <?= bug(990); ?>: Add DBGp: notifications for notices and warnings to be shown in IDEs.</dd>
+<dd>Implemented <?= bug(1312); ?>: Implement extended_properties feature to remote debugging to support names and values with low ASCII values.</dd>
+<dd>Implemented <?= bug(1323); ?>: Added xdebug.filename_format setting to configure the formatting of filenames when tracing.</dd>
+<dd>Implemented <?= bug(1379); ?>: Added support for Unix domain sockets to xdebug.remote_host (Sara Golemon).</dd>
+<dd>Implemented <?= bug(1380); ?>: Added xdebug_is_debugger_active() that returns true when debugger is connected.</dd>
+<dd>Implemented <?= bug(1391); ?>: Added support for earlier stack frames through new argument for xdebug_call_* functions.</dd>
+<dd>Implemented <?= bug(1420); ?>: Handle PHP 7.2's new methods for switch/case</dd>
+<dd>Implemented <?= bug(1470); ?>: Added xdebug.remote_timeout to make connect timeout configurable.</dd>
+<dd>Implemented <?= bug(1495); ?>: Make var_dump() also use the new xdebug.filename_format when formatting filenames.</dd>
 
 <dd><h3>Improvements</h3></dd>
 
-<dd>Implemented <?php bug(847); ?>: Added support for "%s" specifier for xdebug.trace_output_name.</dd>
-<dd>Implemented <?php bug(1384); ?>: Compile warning on Ubuntu 16.04 with GCC 5.4.x.</dd>
-<dd>Implemented <?php bug(1401); ?>: Improved error message in case the connection breaks.</dd>
-<dd>Implemented <?php bug(1430); ?>: Change DBGp tests to use TEST_PHP_EXECUTABLE instead of hard coded 'php'</dd>
-<dd>Implemented <?php bug(1484); ?>: Use FD_CLOEXEC with debugging sockets to prevent FDs from leaking to forked processes (Chris Wright).</dd>
+<dd>Implemented <?= bug(847); ?>: Added support for "%s" specifier for xdebug.trace_output_name.</dd>
+<dd>Implemented <?= bug(1384); ?>: Compile warning on Ubuntu 16.04 with GCC 5.4.x.</dd>
+<dd>Implemented <?= bug(1401); ?>: Improved error message in case the connection breaks.</dd>
+<dd>Implemented <?= bug(1430); ?>: Change DBGp tests to use TEST_PHP_EXECUTABLE instead of hard coded 'php'</dd>
+<dd>Implemented <?= bug(1484); ?>: Use FD_CLOEXEC with debugging sockets to prevent FDs from leaking to forked processes (Chris Wright).</dd>
 <dd>Improve the foldexpr in xt.vim to fold lines correctly (Donie Leigh).</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(1272); ?>: property_get doesn't return @attributes for SimpleXMLElement.</dd>
-<dd>Fixed <?php bug(1305); ?>: Property names with quotes can not be fetch while debugging.</dd>
-<dd>Fixed <?php bug(1431); ?>: Fix "use after free" with in add_name_attribute_or_element.</dd>
-<dd>Fixed <?php bug(1432); ?>: Fixed memory leak with xdebug_path_info_dtor.</dd>
-<dd>Fixed <?php bug(1449); ?>: Debugging breaks with array element keys containing low-ASCII variables.</dd>
-<dd>Fixed <?php bug(1471); ?>: Tracing crashes with return_assignments and ternairy operator.</dd>
-<dd>Fixed <?php bug(1474); ?>: Crashes due to variable resolving/reading mechanism not taking care of temporary hash tables correctly (Nikita Popov, Derick).</dd>
-<dd>Fixed <?php bug(1481); ?>: Fixed s390x and ppc64 builds (Remi Collet).</dd>
-<dd>Fixed <?php bug(1486); ?>: Crash on ZEND_SWITCH_LONG / ZEND_SWITCH_STRING with more than 32 cases.</dd>
-<dd>Fixed <?php bug(1496); ?>: Rewrite README.rst to be more clear on how to install and build Xdebug.</dd>
+<dd>Fixed <?= bug(1272); ?>: property_get doesn't return @attributes for SimpleXMLElement.</dd>
+<dd>Fixed <?= bug(1305); ?>: Property names with quotes can not be fetch while debugging.</dd>
+<dd>Fixed <?= bug(1431); ?>: Fix "use after free" with in add_name_attribute_or_element.</dd>
+<dd>Fixed <?= bug(1432); ?>: Fixed memory leak with xdebug_path_info_dtor.</dd>
+<dd>Fixed <?= bug(1449); ?>: Debugging breaks with array element keys containing low-ASCII variables.</dd>
+<dd>Fixed <?= bug(1471); ?>: Tracing crashes with return_assignments and ternairy operator.</dd>
+<dd>Fixed <?= bug(1474); ?>: Crashes due to variable resolving/reading mechanism not taking care of temporary hash tables correctly (Nikita Popov, Derick).</dd>
+<dd>Fixed <?= bug(1481); ?>: Fixed s390x and ppc64 builds (Remi Collet).</dd>
+<dd>Fixed <?= bug(1486); ?>: Crash on ZEND_SWITCH_LONG / ZEND_SWITCH_STRING with more than 32 cases.</dd>
+<dd>Fixed <?= bug(1496); ?>: Rewrite README.rst to be more clear on how to install and build Xdebug.</dd>
 
 <dd><h3>Changes</h3></dd>
 
-Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when maximum nesting level is reached.
+Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maximum nesting level is reached.
 
 <dd><h3>Removed features</h3></dd>
 
-<dd>Implemented <?php bug(1377); ?>: Drop support for PHP 5.5 and 5.6, only PHP 7 is now supported</dd>
+<dd>Implemented <?= bug(1377); ?>: Drop support for PHP 5.5 and 5.6, only PHP 7 is now supported</dd>
 
 
 <dt><a name='x_2_5_5'></a>[2017-06-21] &mdash; Xdebug 2.5.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1439); ?>: TYPE_CHECK needs overloading due to smart branches</dd>
-<dd>Fixed <?php bug(1444); ?>: Code Coverage misses a variable in a multi-line function call</dd>
-<dd>Fixed <?php bug(1446); ?>: Code Coverage misses elseif if it uses an isset with a property</dd>
+<dd>Fixed <?= bug(1439); ?>: TYPE_CHECK needs overloading due to smart branches</dd>
+<dd>Fixed <?= bug(1444); ?>: Code Coverage misses a variable in a multi-line function call</dd>
+<dd>Fixed <?= bug(1446); ?>: Code Coverage misses elseif if it uses an isset with a property</dd>
 
 
 <dt><a name='x_2_5_4'></a>[2017-05-15] &mdash; Xdebug 2.5.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(799); ?>: Function traces report base class instead of object name</dd>
-<dd>Fixed <?php bug(1421); ?>: Fix set_time_limit hanging on PHP 5.6 when pcntl_exec does not exist (Frode E. Moe)</dd>
-<dd>Fixed <?php bug(1429); ?>: Code coverage does not cover null coalesce</dd>
-<dd>Fixed <?php bug(1434); ?>: Code coverage segfaults on 32-bit arch</dd>
+<dd>Fixed <?= bug(799); ?>: Function traces report base class instead of object name</dd>
+<dd>Fixed <?= bug(1421); ?>: Fix set_time_limit hanging on PHP 5.6 when pcntl_exec does not exist (Frode E. Moe)</dd>
+<dd>Fixed <?= bug(1429); ?>: Code coverage does not cover null coalesce</dd>
+<dd>Fixed <?= bug(1434); ?>: Code coverage segfaults on 32-bit arch</dd>
 
 
 <dt><a name='x_2_5_3'></a>[2017-04-18] &mdash; Xdebug 2.5.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1421); ?>: Xdebug crashes when it is loaded without pcntl being present</dd>
+<dd>Fixed <?= bug(1421); ?>: Xdebug crashes when it is loaded without pcntl being present</dd>
 
 
 <dt><a name='x_2_5_2'></a>[2017-04-17] &mdash; Xdebug 2.5.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(701); ?>: Functions as array indexes show ??? in trace</dd>
-<dd>Fixed <?php bug(1403); ?>: Code coverage does not cover BIND_STATIC</dd>
-<dd>Fixed <?php bug(1404); ?>: Execution time is calculated incorrectly</dd>
-<dd>Fixed <?php bug(1413); ?>: Code coverage mishap with PHP 7.1.3</dd>
-<dd>Fixed <?php bug(1414); ?>: Missing variable assignment in traces with OPcache loaded</dd>
-<dd>Fixed <?php bug(1415); ?>: Crash with multiple catch constructs with OPcache loaded</dd>
-<dd>Fixed <?php bug(1416); ?>: Trace files should not include the first result of a generator if it hasn't started yet</dd>
-<dd>Fixed <?php bug(1417); ?>: Fetching properties of static class contexts fails due to incorrect fetch mode</dd>
-<dd>Fixed <?php bug(1419); ?>: Summary not written when script ended with "pcntl_exec()"</dd>
+<dd>Fixed <?= bug(701); ?>: Functions as array indexes show ??? in trace</dd>
+<dd>Fixed <?= bug(1403); ?>: Code coverage does not cover BIND_STATIC</dd>
+<dd>Fixed <?= bug(1404); ?>: Execution time is calculated incorrectly</dd>
+<dd>Fixed <?= bug(1413); ?>: Code coverage mishap with PHP 7.1.3</dd>
+<dd>Fixed <?= bug(1414); ?>: Missing variable assignment in traces with OPcache loaded</dd>
+<dd>Fixed <?= bug(1415); ?>: Crash with multiple catch constructs with OPcache loaded</dd>
+<dd>Fixed <?= bug(1416); ?>: Trace files should not include the first result of a generator if it hasn't started yet</dd>
+<dd>Fixed <?= bug(1417); ?>: Fetching properties of static class contexts fails due to incorrect fetch mode</dd>
+<dd>Fixed <?= bug(1419); ?>: Summary not written when script ended with "pcntl_exec()"</dd>
 
 
 <dt><a name='x_2_5_1'></a>[2017-02-26] &mdash; Xdebug 2.5.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1057); ?>: Add xdebug.ini of all settings to package</dd>
-<dd>Fixed <?php bug(1165); ?>: DBGp: step_out skips subsequent function calls</dd>
-<dd>Fixed <?php bug(1180); ?>: Code coverage crashes with non-standard start/stops</dd>
-<dd>Fixed <?php bug(1278); ?>: Xdebug with PHP 7 does not handle prefill-from-oparray for XDEBUG_CC_UNUSED</dd>
-<dd>Fixed <?php bug(1300); ?>: Xdebug functions are not exposing their signature to Reflection</dd>
-<dd>Fixed <?php bug(1313); ?>: Arguments to __call() trampoline picked from the wrong memory location</dd>
-<dd>Fixed <?php bug(1329); ?>: While printing out a stack with and function parameters, XDebug reads uninitialized zvals or free()d memory</dd>
-<dd>Fixed <?php bug(1381); ?>: Code Coverage misses line due to missing FETCH_DIM_W overload</dd>
-<dd>Fixed <?php bug(1385); ?>: can not fetch IS_INDIRECT properties</dd>
-<dd>Fixed <?php bug(1386); ?>: Executable code not shown as executed/executable</dd>
-<dd>Fixed <?php bug(1392); ?>: Unable to compile on FreeBSD due to missing struct definition</dd>
-<dd>Fixed <?php bug(1394); ?>: Code coverage does not cover instanceof (in elseif)</dd>
+<dd>Fixed <?= bug(1057); ?>: Add xdebug.ini of all settings to package</dd>
+<dd>Fixed <?= bug(1165); ?>: DBGp: step_out skips subsequent function calls</dd>
+<dd>Fixed <?= bug(1180); ?>: Code coverage crashes with non-standard start/stops</dd>
+<dd>Fixed <?= bug(1278); ?>: Xdebug with PHP 7 does not handle prefill-from-oparray for XDEBUG_CC_UNUSED</dd>
+<dd>Fixed <?= bug(1300); ?>: Xdebug functions are not exposing their signature to Reflection</dd>
+<dd>Fixed <?= bug(1313); ?>: Arguments to __call() trampoline picked from the wrong memory location</dd>
+<dd>Fixed <?= bug(1329); ?>: While printing out a stack with and function parameters, XDebug reads uninitialized zvals or free()d memory</dd>
+<dd>Fixed <?= bug(1381); ?>: Code Coverage misses line due to missing FETCH_DIM_W overload</dd>
+<dd>Fixed <?= bug(1385); ?>: can not fetch IS_INDIRECT properties</dd>
+<dd>Fixed <?= bug(1386); ?>: Executable code not shown as executed/executable</dd>
+<dd>Fixed <?= bug(1392); ?>: Unable to compile on FreeBSD due to missing struct definition</dd>
+<dd>Fixed <?= bug(1394); ?>: Code coverage does not cover instanceof (in elseif)</dd>
 
 
 <dt><a name='x_2_5_0'></a>[2016-12-04] &mdash; Xdebug 2.5.0</dt>
 
 <dd><h3>Improvements</h3></dd>
-<dd>Implemented <?php bug(1232); ?>: add memory delta to HTML traces</dd>
-<dd>Implemented <?php bug(1365); ?>: Allow remote_connect_back to be set through XDEBUG_CONFIG</dd>
+<dd>Implemented <?= bug(1232); ?>: add memory delta to HTML traces</dd>
+<dd>Implemented <?= bug(1365); ?>: Allow remote_connect_back to be set through XDEBUG_CONFIG</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1168); ?>: Added defensive check to prevent infinite loop</dd>
-<dd>Fixed <?php bug(1242); ?>: Xdebug on Windows with Eclipse has issues with breakpoint IDs</dd>
-<dd>Fixed <?php bug(1343); ?>: Wrong values of numerical keys outside 32bit range</dd>
-<dd>Fixed <?php bug(1357); ?>: Function signature using variadics is reported as being not executed</dd>
-<dd>Fixed <?php bug(1361); ?>: Remote debugging connection issues with Windows (Anatol Belski)</dd>
-<dd>Fixed <?php bug(1373); ?>: Crash in zend_hash_apply_with_arguments when debugging, due to unset symbol table</dd>
+<dd>Fixed <?= bug(1168); ?>: Added defensive check to prevent infinite loop</dd>
+<dd>Fixed <?= bug(1242); ?>: Xdebug on Windows with Eclipse has issues with breakpoint IDs</dd>
+<dd>Fixed <?= bug(1343); ?>: Wrong values of numerical keys outside 32bit range</dd>
+<dd>Fixed <?= bug(1357); ?>: Function signature using variadics is reported as being not executed</dd>
+<dd>Fixed <?= bug(1361); ?>: Remote debugging connection issues with Windows (Anatol Belski)</dd>
+<dd>Fixed <?= bug(1373); ?>: Crash in zend_hash_apply_with_arguments when debugging, due to unset symbol table</dd>
 
 
 <dt><a name='x_2_5_0RC1'></a>[2016-11-12] &mdash; Xdebug 2.5.0RC1</dt>
 
 <dd><h3>Improvements</h3></dd>
-<dd>Implemented <?php bug(998); ?>: Added support for IPv6 (Thomas Vanhaniemi)</dd>
-<dd>Implemented <?php bug(1297); ?>: Initial PHP 7.1 support</dd>
+<dd>Implemented <?= bug(998); ?>: Added support for IPv6 (Thomas Vanhaniemi)</dd>
+<dd>Implemented <?= bug(1297); ?>: Initial PHP 7.1 support</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1295); ?>: Apache crashes (SIGSEGV) when trying to establish connection when sockfd is large</dd>
-<dd>Fixed <?php bug(1303); ?>: POLLRDHUP is not supported outside of Gnu/Linux</dd>
-<dd>Fixed <?php bug(1331); ?>: Segfault in code coverage</dd>
+<dd>Fixed <?= bug(1295); ?>: Apache crashes (SIGSEGV) when trying to establish connection when sockfd is large</dd>
+<dd>Fixed <?= bug(1303); ?>: POLLRDHUP is not supported outside of Gnu/Linux</dd>
+<dd>Fixed <?= bug(1331); ?>: Segfault in code coverage</dd>
 
 <dd><h3>Removed features</h3></dd>
 <dd>Support for PHP versions lower than PHP 5.5 has been dropped</dd>
@@ -355,187 +355,187 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dt><a name='x_2_4_1'></a>[2016-08-02] &mdash; Xdebug 2.4.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1106); ?>: A thrown Exception after a class with __debugInfo gives 2 errors</dd>
-<dd>Fixed <?php bug(1241); ?>: FAST_CALL/FAST_RET take #2</dd>
-<dd>Fixed <?php bug(1246); ?>: Path and branch coverage should be initialised per request, not globally</dd>
-<dd>Fixed <?php bug(1263); ?>: Code coverage segmentation fault with opcache enabled</dd>
-<dd>Fixed <?php bug(1277); ?>: Crash when using a userland function from RSHUTDOWN with profiling enabled</dd>
-<dd>Fixed <?php bug(1282); ?>: var_dump() of integers &gt; 32 bit is broken on Windows</dd>
-<dd>Fixed <?php bug(1288); ?>: Segfault when uncaught exception message does not contain " in "</dd>
-<dd>Fixed <?php bug(1291); ?>: Debugclient installation fails on Mac OS X</dd>
-<dd>Fixed <?php bug(1326); ?>: Tracing and generators crashes with PHP 7.x.</dd>
-<dd>Fixed <?php bug(1333); ?>: Profiler accesses memory structures after freeing</dd>
+<dd>Fixed <?= bug(1106); ?>: A thrown Exception after a class with __debugInfo gives 2 errors</dd>
+<dd>Fixed <?= bug(1241); ?>: FAST_CALL/FAST_RET take #2</dd>
+<dd>Fixed <?= bug(1246); ?>: Path and branch coverage should be initialised per request, not globally</dd>
+<dd>Fixed <?= bug(1263); ?>: Code coverage segmentation fault with opcache enabled</dd>
+<dd>Fixed <?= bug(1277); ?>: Crash when using a userland function from RSHUTDOWN with profiling enabled</dd>
+<dd>Fixed <?= bug(1282); ?>: var_dump() of integers &gt; 32 bit is broken on Windows</dd>
+<dd>Fixed <?= bug(1288); ?>: Segfault when uncaught exception message does not contain " in "</dd>
+<dd>Fixed <?= bug(1291); ?>: Debugclient installation fails on Mac OS X</dd>
+<dd>Fixed <?= bug(1326); ?>: Tracing and generators crashes with PHP 7.x.</dd>
+<dd>Fixed <?= bug(1333); ?>: Profiler accesses memory structures after freeing</dd>
 
 
 <dt><a name='x_2_4_0'></a>[2016-03-03] &mdash; Xdebug 2.4.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1258); ?>: Case in PHP 7.0 and code coverage</dd>
-<dd>Fixed <?php bug(1261); ?>: segmentation fault in xdebug.so with PHP 7.0 version of 'pkgtools' due to spl_autoload()</dd>
-<dd>Fixed <?php bug(1262); ?>: overload_var_dump=0 messes with xdebug_var_dump()</dd>
-<dd>Fixed <?php bug(1266); ?>: xdebug_dump_superglobals() always dumps empty  stack on PHP 7</dd>
-<dd>Fixed <?php bug(1267); ?>: AIX build issues</dd>
-<dd>Fixed <?php bug(1270); ?>: String parsing marked not covered with PHP 7</dd>
+<dd>Fixed <?= bug(1258); ?>: Case in PHP 7.0 and code coverage</dd>
+<dd>Fixed <?= bug(1261); ?>: segmentation fault in xdebug.so with PHP 7.0 version of 'pkgtools' due to spl_autoload()</dd>
+<dd>Fixed <?= bug(1262); ?>: overload_var_dump=0 messes with xdebug_var_dump()</dd>
+<dd>Fixed <?= bug(1266); ?>: xdebug_dump_superglobals() always dumps empty  stack on PHP 7</dd>
+<dd>Fixed <?= bug(1267); ?>: AIX build issues</dd>
+<dd>Fixed <?= bug(1270); ?>: String parsing marked not covered with PHP 7</dd>
 
 
 <dt><a name='x_2_4_0RC4'></a>[2016-01-25] &mdash; Xdebug 2.4.0RC4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1220); ?>: Segmentation fault if var_dump() output is too large.</dd>
-<dd>Fixed <?php bug(1223); ?>: Xdebug crashes on PHP 7 when doing a DBGp eval command.</dd>
-<dd>Fixed <?php bug(1229); ?>: Issues with GCC 4.8, which in -O2 move removes some required code.</dd>
-<dd>Fixed <?php bug(1235); ?>: Xdebug does not compile against PHP 7.1-dev due to ZEND_FETCH_STATIC_PROP*.</dd>
-<dd>Fixed <?php bug(1236); ?>: Can't remove breakpoints with negative IDs.</dd>
-<dd>Fixed <?php bug(1238); ?>: Xdebug crashes with SIGSEGV while enumerating references in variables.</dd>
-<dd>Fixed <?php bug(1239); ?>: Crash due to changes with the CATCH opcode's jump mechanism in 7.1</dd>
-<dd>Fixed <?php bug(1241); ?>: Xdebug doesn't handle FAST_RET and FAST_CALL opcodes for branch/dead code analysis, and path coverage.</dd>
-<dd>Fixed <?php bug(1245); ?>: xdebug_dump_superglobals dumps *uninitialized* with PHP 7.</dd>
-<dd>Fixed <?php bug(1250); ?>: Add PHP version descriptors to debugging log and profile files.</dd>
+<dd>Fixed <?= bug(1220); ?>: Segmentation fault if var_dump() output is too large.</dd>
+<dd>Fixed <?= bug(1223); ?>: Xdebug crashes on PHP 7 when doing a DBGp eval command.</dd>
+<dd>Fixed <?= bug(1229); ?>: Issues with GCC 4.8, which in -O2 move removes some required code.</dd>
+<dd>Fixed <?= bug(1235); ?>: Xdebug does not compile against PHP 7.1-dev due to ZEND_FETCH_STATIC_PROP*.</dd>
+<dd>Fixed <?= bug(1236); ?>: Can't remove breakpoints with negative IDs.</dd>
+<dd>Fixed <?= bug(1238); ?>: Xdebug crashes with SIGSEGV while enumerating references in variables.</dd>
+<dd>Fixed <?= bug(1239); ?>: Crash due to changes with the CATCH opcode's jump mechanism in 7.1</dd>
+<dd>Fixed <?= bug(1241); ?>: Xdebug doesn't handle FAST_RET and FAST_CALL opcodes for branch/dead code analysis, and path coverage.</dd>
+<dd>Fixed <?= bug(1245); ?>: xdebug_dump_superglobals dumps *uninitialized* with PHP 7.</dd>
+<dd>Fixed <?= bug(1250); ?>: Add PHP version descriptors to debugging log and profile files.</dd>
 
 
 <dt><a name='x_2_4_0RC3'></a>[2015-12-12] &mdash; Xdebug 2.4.0RC3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1221); ?>: Sort out Windows x64 PHP 7 support</dd>
-<dd>Fixed <?php bug(1229); ?>: Detect GCC 4.8 and disable optimisations when it is found</dd>
+<dd>Fixed <?= bug(1221); ?>: Sort out Windows x64 PHP 7 support</dd>
+<dd>Fixed <?= bug(1229); ?>: Detect GCC 4.8 and disable optimisations when it is found</dd>
 <dd>Made the test suite work for Windows too. Finally, after 13 years.</dd>
 
 
 <dt><a name='x_2_4_0RC2'></a>[2015-12-02] &mdash; Xdebug 2.4.0RC2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1181); ?>: Remote debugging does not handle exceptions after using zend_read_property</dd>
-<dd>Fixed <?php bug(1189); ?>: Remove address attribute from remote debugging responses</dd>
-<dd>Fixed <?php bug(1194); ?>: The error message is doubly HTML-encoded with assert()</dd>
-<dd>Fixed <?php bug(1210); ?>: Segfault with code coverage dead code analysis and foreach on PHP 7</dd>
-<dd>Fixed <?php bug(1215); ?>: SIGSEGV if xdebug.trace_output_dir directory does not exist</dd>
-<dd>Fixed <?php bug(1217); ?>: xdebug.show_error_trace should not be enabled by default</dd>
-<dd>Fixed <?php bug(1218); ?>: Xdebug messes with the exception code, by casting it to int</dd>
-<dd>Fixed <?php bug(1219); ?>: Set default value for xdebug.overload_var_dump to 2 to include file / line numbers by default</dd>
+<dd>Fixed <?= bug(1181); ?>: Remote debugging does not handle exceptions after using zend_read_property</dd>
+<dd>Fixed <?= bug(1189); ?>: Remove address attribute from remote debugging responses</dd>
+<dd>Fixed <?= bug(1194); ?>: The error message is doubly HTML-encoded with assert()</dd>
+<dd>Fixed <?= bug(1210); ?>: Segfault with code coverage dead code analysis and foreach on PHP 7</dd>
+<dd>Fixed <?= bug(1215); ?>: SIGSEGV if xdebug.trace_output_dir directory does not exist</dd>
+<dd>Fixed <?= bug(1217); ?>: xdebug.show_error_trace should not be enabled by default</dd>
+<dd>Fixed <?= bug(1218); ?>: Xdebug messes with the exception code, by casting it to int</dd>
+<dd>Fixed <?= bug(1219); ?>: Set default value for xdebug.overload_var_dump to 2 to include file / line numbers by default</dd>
 <dd>Use long for PHP 5, and zend_long for PHP 7 for ini settings in the globals</dd>
 
 
 <dt><a name='x_2_4_0rc1'></a>[2015-11-21] &mdash; Xdebug 2.4.0RC1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1195); ?>: Segfault with code coverage and foreach</dd>
-<dd>Fixed <?php bug(1200); ?>: Additional opcodes need to be overloaded for PHP 7</dd>
-<dd>Fixed <?php bug(1202); ?>: Anonymous classes are not handled properly while remote debugging</dd>
-<dd>Fixed <?php bug(1203); ?>: Accessing static property of a class that has no static properties crashes while remote debugging</dd>
-<dd>Fixed <?php bug(1209); ?>: Segfault with building a function name for create_function</dd>
+<dd>Fixed <?= bug(1195); ?>: Segfault with code coverage and foreach</dd>
+<dd>Fixed <?= bug(1200); ?>: Additional opcodes need to be overloaded for PHP 7</dd>
+<dd>Fixed <?= bug(1202); ?>: Anonymous classes are not handled properly while remote debugging</dd>
+<dd>Fixed <?= bug(1203); ?>: Accessing static property of a class that has no static properties crashes while remote debugging</dd>
+<dd>Fixed <?= bug(1209); ?>: Segfault with building a function name for create_function</dd>
 
 
 <dt><a name='x_2_4_0beta1'></a>[2015-11-05] &mdash; Xdebug 2.4.0beta1</dt>
 
 <dd><h3>Improvements</h3></dd>
-<dd>Implemented <?php bug(1109); ?>: Added support for PHP 7.</dd>
-<dd>Implemented <?php bug(1153); ?>: Add function monitor functionality.</dd>
-<dd>Implemented <?php bug(1183); ?>: Add xdebug.show_error_trace setting to allow/disallow to show a stack trace for every Error (throwable)</dd>
+<dd>Implemented <?= bug(1109); ?>: Added support for PHP 7.</dd>
+<dd>Implemented <?= bug(1153); ?>: Add function monitor functionality.</dd>
+<dd>Implemented <?= bug(1183); ?>: Add xdebug.show_error_trace setting to allow/disallow to show a stack trace for every Error (throwable)</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1070); ?>: Too many open files error with php-fpm: connections not closed. (Patch by Sean Dubois)</dd>
-<dd>Fixed <?php bug(1123); ?>: With Xdebug 2.3.1, PHPUnit with coverage is exponentially slower than without</dd>
-<dd>Fixed <?php bug(1166); ?>: Using $this in __debugInfo() causes infinite recursion</dd>
-<dd>Fixed <?php bug(1173); ?>: Segmentation fault in xdebug_get_monitored_functions()</dd>
-<dd>Fixed <?php bug(1182); ?>: Using PHPStorm with PHP 7 RC1 and xdebug 2.4-dev break points are passed by including setting break point at start of script</dd>
-<dd>Fixed <?php bug(1192); ?>: Dead code analysis does not work for generators with 'return;'</dd>
+<dd>Fixed <?= bug(1070); ?>: Too many open files error with php-fpm: connections not closed. (Patch by Sean Dubois)</dd>
+<dd>Fixed <?= bug(1123); ?>: With Xdebug 2.3.1, PHPUnit with coverage is exponentially slower than without</dd>
+<dd>Fixed <?= bug(1166); ?>: Using $this in __debugInfo() causes infinite recursion</dd>
+<dd>Fixed <?= bug(1173); ?>: Segmentation fault in xdebug_get_monitored_functions()</dd>
+<dd>Fixed <?= bug(1182); ?>: Using PHPStorm with PHP 7 RC1 and xdebug 2.4-dev break points are passed by including setting break point at start of script</dd>
+<dd>Fixed <?= bug(1192); ?>: Dead code analysis does not work for generators with 'return;'</dd>
 
 
 <dt><a name='x_2_3_3'></a>[2015-06-19] &mdash; Xdebug 2.3.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1130); ?>: Escaping issues with docrefs and HTML characters in error messages
-<dd>Fixed <?php bug(1133); ?>: PDO exception code value type is changed
-<dd>Fixed <?php bug(1137); ?>: Windows does not support %zu formatting for sprintf
-<dd>Fixed <?php bug(1140); ?>: Tracing with __debugInfo() crashes Xdebug due to a stack overflow
-<dd>Fixed <?php bug(1148); ?>: Can't disable max_nesting_function
-<dd>Fixed <?php bug(1151); ?>: Crash when another extension calls call_user_function() during RINIT
+<dd>Fixed <?= bug(1130); ?>: Escaping issues with docrefs and HTML characters in error messages
+<dd>Fixed <?= bug(1133); ?>: PDO exception code value type is changed
+<dd>Fixed <?= bug(1137); ?>: Windows does not support %zu formatting for sprintf
+<dd>Fixed <?= bug(1140); ?>: Tracing with __debugInfo() crashes Xdebug due to a stack overflow
+<dd>Fixed <?= bug(1148); ?>: Can't disable max_nesting_function
+<dd>Fixed <?= bug(1151); ?>: Crash when another extension calls call_user_function() during RINIT
 <dd>Fixed crash with code coverage (Antony Dovgal)
 <dd>Fixed usage of virtual_file_ex and STR_FREE (Remi Collet)
 <dd>Reset overloaded opcodes at the end of each request (Eran Ifrah)
 
 <dd><h3>Improvements</h3></dd>
-<dd>Fixed <?php bug(686); ?>: Not possible to inspect SplObjectStorage instances with Xdebug
-<dd>Fixed <?php bug(864); ?>: No attributes are shown if an object extends ArrayIterator
-<dd>Fixed <?php bug(996); ?>: Can't evaluate property of class that extends ArrayObject
-<dd>Fixed <?php bug(1134); ?>: Allow introspection of ArrayObject implementation's internal storage
+<dd>Fixed <?= bug(686); ?>: Not possible to inspect SplObjectStorage instances with Xdebug
+<dd>Fixed <?= bug(864); ?>: No attributes are shown if an object extends ArrayIterator
+<dd>Fixed <?= bug(996); ?>: Can't evaluate property of class that extends ArrayObject
+<dd>Fixed <?= bug(1134); ?>: Allow introspection of ArrayObject implementation's internal storage
 <dd>Get rid of setlocale hack, by using %F instead of %f (and speed up tracing by 15-20%)
 
 
 <dt><a name='x_2_3_2'></a>[2015-03-22] &mdash; Xdebug 2.3.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1117); ?>: Path/branch coverage sometimes crashes</dd>
-<dd>Fixed <?php bug(1121); ?>: Segfaults with path/branch coverage</dd>
+<dd>Fixed <?= bug(1117); ?>: Path/branch coverage sometimes crashes</dd>
+<dd>Fixed <?= bug(1121); ?>: Segfaults with path/branch coverage</dd>
 
 
 <dt><a name='x_2_3_1'></a>[2015-02-24] &mdash; Xdebug 2.3.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1112); ?>: Setting an invalid xdebug.trace_format causes Xdebug to crash</dd>
-<dd>Fixed <?php bug(1113); ?>: xdebug.*_trigger do no longer work, due to NULL not being an empty string</dd>
+<dd>Fixed <?= bug(1112); ?>: Setting an invalid xdebug.trace_format causes Xdebug to crash</dd>
+<dd>Fixed <?= bug(1113); ?>: xdebug.*_trigger do no longer work, due to NULL not being an empty string</dd>
 
 
 <dt><a name='x_2_3_0'></a>[2015-02-22] &mdash; Xdebug 2.3.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
 
-<dd>Fixed <?php bug(932); ?>: Added an error message in case the remote debug log couldn't be opened</dd>
-<dd>Fixed <?php bug(982); ?>: Incorrect file paths in exception stack trace</dd>
-<dd>Fixed <?php bug(1094); ?>: Segmentation fault when attempting to use branch/path coverage</dd>
-<dd>Fixed <?php bug(1101); ?>: Debugger is not triggered on xdebug_break() in JIT mode</dd>
-<dd>Fixed <?php bug(1102); ?>: Stop Xdebug from crashing when debugging PHP Code with "php -r".</dd>
-<dd>Fixed <?php bug(1103); ?>: XDEBUG_SESSION_STOP_NO_EXEC only stops first script executed with auto_prepend|append_files</dd>
-<dd>Fixed <?php bug(1104); ?>: One character non-public properties cause issues with debugging</dd>
-<dd>Fixed <?php bug(1105); ?>: Setting properties without specifying a type only works in topmost frame (Dominik del Bondio)</dd>
-<dd>Fixed <?php bug(1095); ?>: Crash when using a non-associate array key in GLOBALS</dd>
-<dd>Fixed <?php bug(1111); ?>: eval does not work when debugger is stopped in xdebug_throw_exception_hook (Dominik del Bondio)</dd>
+<dd>Fixed <?= bug(932); ?>: Added an error message in case the remote debug log couldn't be opened</dd>
+<dd>Fixed <?= bug(982); ?>: Incorrect file paths in exception stack trace</dd>
+<dd>Fixed <?= bug(1094); ?>: Segmentation fault when attempting to use branch/path coverage</dd>
+<dd>Fixed <?= bug(1101); ?>: Debugger is not triggered on xdebug_break() in JIT mode</dd>
+<dd>Fixed <?= bug(1102); ?>: Stop Xdebug from crashing when debugging PHP Code with "php -r".</dd>
+<dd>Fixed <?= bug(1103); ?>: XDEBUG_SESSION_STOP_NO_EXEC only stops first script executed with auto_prepend|append_files</dd>
+<dd>Fixed <?= bug(1104); ?>: One character non-public properties cause issues with debugging</dd>
+<dd>Fixed <?= bug(1105); ?>: Setting properties without specifying a type only works in topmost frame (Dominik del Bondio)</dd>
+<dd>Fixed <?= bug(1095); ?>: Crash when using a non-associate array key in GLOBALS</dd>
+<dd>Fixed <?= bug(1111); ?>: eval does not work when debugger is stopped in xdebug_throw_exception_hook (Dominik del Bondio)</dd>
 
 <dd><h3>Added features</h3></dd>
 
 <dd><h4>General</h4></dd>
 
-<dd>Implemented <?php bug(304); ?>: File name and line number info for overloaded var_dump()</dd>
-<dd>Implemented <?php bug(310); ?>: Allow class vars and array keys with xdebug_debug_zval()</dd>
-<dd>Implemented <?php bug(722); ?>: Add stack trace limit setting.</dd>
-<dd>Implemented <?php bug(1003); ?>: Add option to xdebug_print_function_stack() to suppress filename and line number</dd>
-<dd>Implemented <?php bug(1004); ?>: Ability to halt on warning/notice</dd>
-<dd>Implemented <?php bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
-<dd>Implemented <?php bug(1023); ?>: Add support for PHP 5.6 variadics</dd>
-<dd>Implemented <?php bug(1024); ?>: Add support for PHP 5.6's ASSIGN_POW</dd>
+<dd>Implemented <?= bug(304); ?>: File name and line number info for overloaded var_dump()</dd>
+<dd>Implemented <?= bug(310); ?>: Allow class vars and array keys with xdebug_debug_zval()</dd>
+<dd>Implemented <?= bug(722); ?>: Add stack trace limit setting.</dd>
+<dd>Implemented <?= bug(1003); ?>: Add option to xdebug_print_function_stack() to suppress filename and line number</dd>
+<dd>Implemented <?= bug(1004); ?>: Ability to halt on warning/notice</dd>
+<dd>Implemented <?= bug(1015); ?>: Added the xdebug.force_display_errors and xdebug.force_error_reporting php.ini-only settings to always override PHP's settings for display_errors and error_reporting</dd>
+<dd>Implemented <?= bug(1023); ?>: Add support for PHP 5.6 variadics</dd>
+<dd>Implemented <?= bug(1024); ?>: Add support for PHP 5.6's ASSIGN_POW</dd>
 
 <dd><h4>Debugging</h4></dd>
 
-<dd>Implemented <?php bug(406); ?>: Added support for remote debugging user-defined constants</dd>
-<dd>Implemented <?php bug(495); ?>: Added support for the wildcard exception name '*'</dd>
-<dd>Implemented <?php bug(1066); ?>: Better error message for SELinux preventing debugging connections</dd>
-<dd>Implemented <?php bug(1084); ?>: Added support for extended classes to trigger exception breakpoints</dd>
-<dd>Implemented <?php bug(1084); ?>: Added exception code as extra element to debugger XML</dd>
+<dd>Implemented <?= bug(406); ?>: Added support for remote debugging user-defined constants</dd>
+<dd>Implemented <?= bug(495); ?>: Added support for the wildcard exception name '*'</dd>
+<dd>Implemented <?= bug(1066); ?>: Better error message for SELinux preventing debugging connections</dd>
+<dd>Implemented <?= bug(1084); ?>: Added support for extended classes to trigger exception breakpoints</dd>
+<dd>Implemented <?= bug(1084); ?>: Added exception code as extra element to debugger XML</dd>
 
 <dd><h4>Tracing</h4></dd>
 
-<dd>Implemented <?php bug(341); ?>: Added the time index and memory usage for function returns in normal tracefiles</dd>
-<dd>Implemented <?php bug(644); ?>: Shared secret for profiler_enable_trigger and trace_enable_trigger with *_value option</dd>
-<dd>Implemented <?php bug(971); ?>: Added the trace file option "XDEBUG_TRACE_NAKED_FILENAME" to xdebug_start_trace() to prevent the ".xt" extension from being added</dd>
-<dd>Implemented <?php bug(1021); ?>: Added support for return values to computerized trace files</dd>
-<dd>Implemented <?php bug(1022); ?>: Added support for serialized variables as format in trace files in the form of option "5" for "xdebug.collect_params"</dd>
+<dd>Implemented <?= bug(341); ?>: Added the time index and memory usage for function returns in normal tracefiles</dd>
+<dd>Implemented <?= bug(644); ?>: Shared secret for profiler_enable_trigger and trace_enable_trigger with *_value option</dd>
+<dd>Implemented <?= bug(971); ?>: Added the trace file option "XDEBUG_TRACE_NAKED_FILENAME" to xdebug_start_trace() to prevent the ".xt" extension from being added</dd>
+<dd>Implemented <?= bug(1021); ?>: Added support for return values to computerized trace files</dd>
+<dd>Implemented <?= bug(1022); ?>: Added support for serialized variables as format in trace files in the form of option "5" for "xdebug.collect_params"</dd>
 
 <dd><h4>Code Coverage</h4></dd>
 
-<dd>Implemented <?php bug(380); ?>: Added xdebug_code_coverage_started()</dd>
-<dd>Implemented <?php bug(1034); ?>: Add collected path and branch information to xdebug_get_code_coverage() output</dd>
+<dd>Implemented <?= bug(380); ?>: Added xdebug_code_coverage_started()</dd>
+<dd>Implemented <?= bug(1034); ?>: Add collected path and branch information to xdebug_get_code_coverage() output</dd>
 
 <dd><h4>Profiling</h4></dd>
 
-<dd>Implement <?php bug(1054); ?>: Support for filename and function name compression in cachegrind files</dd>
+<dd>Implement <?= bug(1054); ?>: Support for filename and function name compression in cachegrind files</dd>
 
 <dd><h3>Changes</h3></dd>
 
-<dd>Implemented <?php bug(863); ?>: Support xdebug.overload_var_dump through ini_set()</dd>
-<dd>Implemented <?php bug(973); ?>: Use case-insensitive filename comparison on all systems (Galen Wright-Watson)</dd>
-<dd>Implemented <?php bug(1057); ?>: Removed trailing whitespace from example xdebug.ini</dd>
-<dd>Implemented <?php bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Daniel Sloof)</dd>
-<dd>Implemented <?php bug(1100); ?>: Raise default max_nesting_level to 256</dd>
+<dd>Implemented <?= bug(863); ?>: Support xdebug.overload_var_dump through ini_set()</dd>
+<dd>Implemented <?= bug(973); ?>: Use case-insensitive filename comparison on all systems (Galen Wright-Watson)</dd>
+<dd>Implemented <?= bug(1057); ?>: Removed trailing whitespace from example xdebug.ini</dd>
+<dd>Implemented <?= bug(1096); ?>: Improve performance improvement for handling breakpoints by ignoring locales (Daniel Sloof)</dd>
+<dd>Implemented <?= bug(1100); ?>: Raise default max_nesting_level to 256</dd>
 
 <dd><h3>Removed features</h3></dd>
 
@@ -545,10 +545,10 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dt><a name='x_2_2_7'></a>[2015-01-22] &mdash; Xdebug 2.2.7</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1083); ?>: Segfault when requesting a variable for a context that did not have them.</dd>
-<dd>Fixed <?php bug(1087); ?>: zend_execute_script or zend_eval_string in RINIT segfaults.</dd>
-<dd>Fixed <?php bug(1088); ?>: Xdebug won't show dead and not executed lines at the second time.</dd>
-<dd>Fixed <?php bug(1098); ?>: Xdebug doesn't make use of __debugInfo.</dd>
+<dd>Fixed <?= bug(1083); ?>: Segfault when requesting a variable for a context that did not have them.</dd>
+<dd>Fixed <?= bug(1087); ?>: zend_execute_script or zend_eval_string in RINIT segfaults.</dd>
+<dd>Fixed <?= bug(1088); ?>: Xdebug won't show dead and not executed lines at the second time.</dd>
+<dd>Fixed <?= bug(1098); ?>: Xdebug doesn't make use of __debugInfo.</dd>
 <dd>Fixed segfaults with ZTS on PHP 5.6.</dd>
 
 
@@ -556,28 +556,28 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dt><a name='x_2_2_6'></a>[2014-11-14] &mdash; Xdebug 2.2.6</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1048); ?>: Can not get $GLOBAL variable by property_value on function context.</dd>
-<dd>Fixed <?php bug(1073); ?> and <?php bug(1075); ?>: Segmentation fault with internal functions calling internal functions.</dd>
-<dd>Fixed <?php bug(1085); ?>: Fixed the tracefile analyser as the format version had been bumbed.</dd>
+<dd>Fixed <?= bug(1048); ?>: Can not get $GLOBAL variable by property_value on function context.</dd>
+<dd>Fixed <?= bug(1073); ?> and <?= bug(1075); ?>: Segmentation fault with internal functions calling internal functions.</dd>
+<dd>Fixed <?= bug(1085); ?>: Fixed the tracefile analyser as the format version had been bumbed.</dd>
 <dd>Fixed memory leaks.</dd>
 
 
 <dt><a name='x_2_2_5'></a>[2014-04-29] &mdash; Xdebug 2.2.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(1040); ?>: Fixed uninitialized sa value.</dd>
+<dd>Fixed <?= bug(1040); ?>: Fixed uninitialized sa value.</dd>
 <dd>Fixed building on hurd-i386.</dd>
 
 
 <dt><a name='x_2_2_4'></a>[2014-02-28] &mdash; Xdebug 2.2.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(785); ?>: Profiler does not handle closures and call_user_func_array well.</dd>
-<dd>Fixed <?php bug(963); ?>: Xdebug waits too long for response from remote client</dd>
-<dd>Fixed <?php bug(976); ?>: XDebug crashes if current varibles scope contains COM object.</dd>
-<dd>Fixed <?php bug(978); ?>: Inspection of array with negative keys fails</dd>
-<dd>Fixed <?php bug(979); ?>: property_value -m 0 should mean all bytes, not 0 bytes</dd>
-<dd>Fixed <?php bug(987); ?>: Hidden property names not shown.</dd>
+<dd>Fixed <?= bug(785); ?>: Profiler does not handle closures and call_user_func_array well.</dd>
+<dd>Fixed <?= bug(963); ?>: Xdebug waits too long for response from remote client</dd>
+<dd>Fixed <?= bug(976); ?>: XDebug crashes if current varibles scope contains COM object.</dd>
+<dd>Fixed <?= bug(978); ?>: Inspection of array with negative keys fails</dd>
+<dd>Fixed <?= bug(979); ?>: property_value -m 0 should mean all bytes, not 0 bytes</dd>
+<dd>Fixed <?= bug(987); ?>: Hidden property names not shown.</dd>
 
 
 <dt><a name='x_2_2_3'></a>[2013-05-22] &mdash; Xdebug 2.2.3</dt>
@@ -586,47 +586,47 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd>Added support for PHP 5.5.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(923); ?>: Xdebug + Netbeans + ext/MongoDB crash on MongoCursor instance</dd>
-<dd>Fixed <?php bug(929); ?>: Directory name management in xdebug.profiler_output_dir</dd>
-<dd>Fixed <?php bug(931); ?>: xdebug_str_add does not check for NULL str before calling strlen on it</dd>
-<dd>Fixed <?php bug(935); ?>: Document the return value from xdebug_get_code_coverage()</dd>
-<dd>Fixed <?php bug(947); ?>: Newlines converted when html_errors = 0</dd>
+<dd>Fixed <?= bug(923); ?>: Xdebug + Netbeans + ext/MongoDB crash on MongoCursor instance</dd>
+<dd>Fixed <?= bug(929); ?>: Directory name management in xdebug.profiler_output_dir</dd>
+<dd>Fixed <?= bug(931); ?>: xdebug_str_add does not check for NULL str before calling strlen on it</dd>
+<dd>Fixed <?= bug(935); ?>: Document the return value from xdebug_get_code_coverage()</dd>
+<dd>Fixed <?= bug(947); ?>: Newlines converted when html_errors = 0</dd>
 
 
 <dt><a name='x_2_2_2'></a>[2013-03-23] &mdash; Xdebug 2.2.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(598); ?>: Use HTTP_X_FORWARDED_FOR to determine remote debugger.</dd>
-<dd>Fixed <?php bug(625); ?>: xdebug_get_headers() -&gt; Headers are reset unexpectedly.</dd>
-<dd>Fixed <?php bug(811); ?>: PHP Documentation Link.</dd>
-<dd>Fixed <?php bug(818); ?>: Require a php script in the PHP_RINIT causes Xdebug to crash.</dd>
-<dd>Fixed <?php bug(903); ?>: xdebug_get_headers() returns replaced headers.</dd>
-<dd>Fixed <?php bug(905); ?>: Support PHP 5.5 and generators.</dd>
-<dd>Fixed <?php bug(920); ?>: AM_CONFIG_HEADER is depreciated.</dd>
+<dd>Fixed <?= bug(598); ?>: Use HTTP_X_FORWARDED_FOR to determine remote debugger.</dd>
+<dd>Fixed <?= bug(625); ?>: xdebug_get_headers() -&gt; Headers are reset unexpectedly.</dd>
+<dd>Fixed <?= bug(811); ?>: PHP Documentation Link.</dd>
+<dd>Fixed <?= bug(818); ?>: Require a php script in the PHP_RINIT causes Xdebug to crash.</dd>
+<dd>Fixed <?= bug(903); ?>: xdebug_get_headers() returns replaced headers.</dd>
+<dd>Fixed <?= bug(905); ?>: Support PHP 5.5 and generators.</dd>
+<dd>Fixed <?= bug(920); ?>: AM_CONFIG_HEADER is depreciated.</dd>
 
 <dt><a name='x_2_2_1'></a>[2012-07-15] &mdash; Xdebug 2.2.1</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(843); ?>: Text output depends on php locale.</dd>
-<dd>Fixed <?php bug(838); ?>/<?php bug(839); ?>/<?php bug(840); ?>: Debugging static properties crashes Xdebug.</dd>
-<dd>Fixed <?php bug(821); ?>: Variable assignments (beginning with =&gt;) should be indented one more scope.</dd>
-<dd>Fixed <?php bug(811); ?>: PHP Documentation Link.</dd>
-<dd>Fixed <?php bug(800); ?>: var_dump(get_class(new foo\bar')) add an extra "\" in class name.</dd>
+<dd>Fixed <?= bug(843); ?>: Text output depends on php locale.</dd>
+<dd>Fixed <?= bug(838); ?>/<?= bug(839); ?>/<?= bug(840); ?>: Debugging static properties crashes Xdebug.</dd>
+<dd>Fixed <?= bug(821); ?>: Variable assignments (beginning with =&gt;) should be indented one more scope.</dd>
+<dd>Fixed <?= bug(811); ?>: PHP Documentation Link.</dd>
+<dd>Fixed <?= bug(800); ?>: var_dump(get_class(new foo\bar')) add an extra "\" in class name.</dd>
 
 <dt><a name='x_2_2_0'></a>[2012-05-08] &mdash; Xdebug 2.2.0</dt>
 <dd><h3>Added features</h3></dd>
 <dd>Support for PHP 5.4.</dd>
 <dd>Added ANSI colour output for the shell. (Including patches by Michael Maclean)</dd>
-<dd>Added var_dump() overloading on the command line (<?php bug(457); ?>).</dd>
+<dd>Added var_dump() overloading on the command line (<?= bug(457); ?>).</dd>
 <dd>Added better support for closures in stack and function traces.</dd>
 <dd>Added the size of arrays to the overloaded variable output, so that you know how many elements there are.</dd>
-<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?php bug(660); ?>). (Patch by Hannes Magnusson)</dd>
-<dd>Added the method call type to xdebug_get_function_stack() (<?php bug(695); ?>). </dd>
+<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?= bug(660); ?>). (Patch by Hannes Magnusson)</dd>
+<dd>Added the method call type to xdebug_get_function_stack() (<?= bug(695); ?>). </dd>
 <dd>Added extra information to error printouts to tell that the error suppression operator has been ignored due to xdebug.scream.</dd>
 <dd>Added a error-specific CSS class to stack traces.</dd>
 
 <dd><h3>New settings</h3></dd>
 <dd>xdebug.cli_color for colouring output on the command line (Unix only).</dd>
-<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?php bug(517); ?>). (Patch by Patrick Allaert)</dd>
+<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?= bug(517); ?>). (Patch by Patrick Allaert)</dd>
 <dd>Added support for the 'U' format specifier for function trace and profiler filenames.</dd>
 
 <dd><h3>Changes</h3></dd>
@@ -636,46 +636,46 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd>Improved logging of remote debugging connections, by added connection success/failure logging to the xdebug.remote_log functionality.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(827); ?>: Enabling Xdebug causes phpt tests to fail because of var_dump() formatting issues.</dd>
-<dd>Fixed <?php bug(823); ?>: Single quotes are escaped in var_dumped string output.</dd>
-<dd>Fixed <?php bug(819); ?>: Xdebug 2.2.0RC2 can't stand on a breakpoint more than 30 seconds.</dd>
-<dd>Fixed <?php bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
-<dd>Fixed <?php bug(797); ?>: Xdebug crashes when fetching static properties.
-<dd>Fixed <?php bug(794); ?>: Allow coloured output on Windows.</dd>
-<dd>Fixed <?php bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
-<dd>Fixed <?php bug(774); ?>: Apache crashes on header() calls.</dd>
-<dd>Fixed <?php bug(764); ?>: Tailored Installation instructions do not work.</dd>
-<dd>Fixed <?php bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
-<dd>Fixed <?php bug(728); ?>: Profiler reports __call() invocations confusingly/wrongly.</dd>
-<dd>Fixed <?php bug(687); ?>: Xdebug does not show dynamically defined variable.</dd>
-<dd>Fixed <?php bug(662); ?>: idekey is set to running user.</dd>
-<dd>Fixed <?php bug(627); ?>: Added the realpath check.</dd>
+<dd>Fixed <?= bug(827); ?>: Enabling Xdebug causes phpt tests to fail because of var_dump() formatting issues.</dd>
+<dd>Fixed <?= bug(823); ?>: Single quotes are escaped in var_dumped string output.</dd>
+<dd>Fixed <?= bug(819); ?>: Xdebug 2.2.0RC2 can't stand on a breakpoint more than 30 seconds.</dd>
+<dd>Fixed <?= bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
+<dd>Fixed <?= bug(797); ?>: Xdebug crashes when fetching static properties.
+<dd>Fixed <?= bug(794); ?>: Allow coloured output on Windows.</dd>
+<dd>Fixed <?= bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
+<dd>Fixed <?= bug(774); ?>: Apache crashes on header() calls.</dd>
+<dd>Fixed <?= bug(764); ?>: Tailored Installation instructions do not work.</dd>
+<dd>Fixed <?= bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
+<dd>Fixed <?= bug(728); ?>: Profiler reports __call() invocations confusingly/wrongly.</dd>
+<dd>Fixed <?= bug(687); ?>: Xdebug does not show dynamically defined variable.</dd>
+<dd>Fixed <?= bug(662); ?>: idekey is set to running user.</dd>
+<dd>Fixed <?= bug(627); ?>: Added the realpath check.</dd>
 
 <dt><a name='x_2_2_0rc2'></a>[2012-04-22] &mdash; Xdebug 2.2.0rc2</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
-<dd>Fixed <?php bug(794); ?>: Allow coloured output on Windows.</dd>
-<dd>Fixed <?php bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
-<dd>Fixed <?php bug(774); ?>: Apache crashes on header() calls.</dd>
-<dd>Fixed <?php bug(764); ?>: Tailored Installation instructions do not work.</dd>
-<dd>Fixed <?php bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
-<dd>Fixed <?php bug(662); ?>: idekey is set to running user.</dd>
+<dd>Fixed <?= bug(801); ?>: Segfault with streamwrapper and unclosed $fp on destruction.</dd>
+<dd>Fixed <?= bug(794); ?>: Allow coloured output on Windows.</dd>
+<dd>Fixed <?= bug(784); ?>: Unlimited feature for var_display_max_data and var_display_max_depth is undocumented.</dd>
+<dd>Fixed <?= bug(774); ?>: Apache crashes on header() calls.</dd>
+<dd>Fixed <?= bug(764); ?>: Tailored Installation instructions do not work.</dd>
+<dd>Fixed <?= bug(758); ?>: php_value xdebug.idekey is ignored in .htaccess files</dd>
+<dd>Fixed <?= bug(662); ?>: idekey is set to running user.</dd>
 
 <dt><a name='x_2_2_0rc1'></a>[2012-03-13] &mdash; Xdebug 2.2.0rc1</dt>
 <dd><h3>Added features</h3></dd>
 <dd>Support for PHP 5.4.</dd>
 <dd>Added ANSI colour output for the shell. (Including patches by Michael Maclean)</dd>
-<dd>Added var_dump() overloading on the command line (<?php bug(457); ?>).</dd>
+<dd>Added var_dump() overloading on the command line (<?= bug(457); ?>).</dd>
 <dd>Added better support for closures in stack and function traces.</dd>
 <dd>Added the size of arrays to the overloaded variable output, so that you know how many elements there are.</dd>
-<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?php bug(660); ?>). (Patch by Hannes Magnusson)</dd>
-<dd>Added the method call type to xdebug_get_function_stack() (<?php bug(695); ?>). </dd>
+<dd>Added support for X-HTTP-FORWARDED-FOR before falling back to REMOTE_ADDR (<?= bug(660); ?>). (Patch by Hannes Magnusson)</dd>
+<dd>Added the method call type to xdebug_get_function_stack() (<?= bug(695); ?>). </dd>
 <dd>Added extra information to error printouts to tell that the error suppression operator has been ignored due to xdebug.scream.</dd>
 <dd>Added a error-specific CSS class to stack traces.</dd>
 
 <dd><h3>New settings</h3></dd>
 <dd>xdebug.cli_color for colouring output on the command line (Unix only).</dd>
-<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?php bug(517); ?>). (Patch by Patrick Allaert)</dd>
+<dd>Added xdebug.trace_enable_trigger to triger function traces through a GET/POST/COOKIE parameter (<?= bug(517); ?>). (Patch by Patrick Allaert)</dd>
 <dd>Added support for the 'U' format specifier for function trace and profiler filenames.</dd>
 
 <dd><h3>Changes</h3></dd>
@@ -690,28 +690,28 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 
 <dt><a name='x_2_1_4'></a>[2012-03-12] &mdash; Xdebug 2.1.4</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(788); ?>: Collect errors eats fatal errors.</dd>
-<dd>Fixed <?php bug(787); ?>: Segmentation Fault with PHP header_remove().</dd>
-<dd>Fixed <?php bug(778); ?>: Xdebug session in Eclipse crash whenever it run into simplexml_load_string call.</dd>
-<dd>Fixed <?php bug(756); ?>: Added support for ZEND_*_*_OBJ and self::*.</dd>
-<dd>Fixed <?php bug(747); ?>: Still problem with error message and soap client / soap server.</dd>
-<dd>Fixed <?php bug(744); ?>: new lines in a PHP file from Windows are displayed with an extra white line with var_dump().</dd>
+<dd>Fixed <?= bug(788); ?>: Collect errors eats fatal errors.</dd>
+<dd>Fixed <?= bug(787); ?>: Segmentation Fault with PHP header_remove().</dd>
+<dd>Fixed <?= bug(778); ?>: Xdebug session in Eclipse crash whenever it run into simplexml_load_string call.</dd>
+<dd>Fixed <?= bug(756); ?>: Added support for ZEND_*_*_OBJ and self::*.</dd>
+<dd>Fixed <?= bug(747); ?>: Still problem with error message and soap client / soap server.</dd>
+<dd>Fixed <?= bug(744); ?>: new lines in a PHP file from Windows are displayed with an extra white line with var_dump().</dd>
 <dd>Fixed an issue with debugging and the eval command.</dd>
 <dd>Fixed compilation with ZTS on PHP &lt; 5.3.</dd>
 
 <dt><a name='x_2_1_3'></a>[2012-01-25] &mdash; Xdebug 2.1.3</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(725); ?>: EG(current_execute_data) is not checked in xdebug.c, xdebug_statement_call.</dd>
-<dd>Fixed <?php bug(723); ?>: xdebug is stricter than PHP regarding Exception property types.</dd>
-<dd>Fixed <?php bug(714); ?>: Cachegrind files have huge (wrong) numbers in some lines.</dd>
-<dd>Fixed <?php bug(709); ?>: Xdebug doesn't understand E_USER_DEPRECATED.</dd>
-<dd>Fixed <?php bug(698); ?>: Allow xdebug.remote_connect_back to be set in .htaccess.</dd>
-<dd>Fixed <?php bug(690); ?>: Function traces are not appended to file with xdebug_start_trace() and xdebug.trace_options=1.</dd>
-<dd>Fixed <?php bug(623); ?>: Static properties of a class can be evaluated only with difficulty.</dd>
-<dd>Fixed <?php bug(614); ?>/<?php bug(619); ?>: Viewing private variables in base classes through the debugger.</dd>
-<dd>Fixed <?php bug(609); ?>: Xdebug and SOAP extension's error handlers conflict.</dd>
-<dd>Fixed <?php bug(606); ?>/<?php bug(678); ?>/<?php bug(688); ?>/<?php bug(689); ?>/<?php bug(704); ?>: crash after using eval on an unparsable, or un-executable statement.</dd>
-<dd>Fixed <?php bug(305); ?>: xdebug exception handler doesn't properly handle special chars.</dd>
+<dd>Fixed <?= bug(725); ?>: EG(current_execute_data) is not checked in xdebug.c, xdebug_statement_call.</dd>
+<dd>Fixed <?= bug(723); ?>: xdebug is stricter than PHP regarding Exception property types.</dd>
+<dd>Fixed <?= bug(714); ?>: Cachegrind files have huge (wrong) numbers in some lines.</dd>
+<dd>Fixed <?= bug(709); ?>: Xdebug doesn't understand E_USER_DEPRECATED.</dd>
+<dd>Fixed <?= bug(698); ?>: Allow xdebug.remote_connect_back to be set in .htaccess.</dd>
+<dd>Fixed <?= bug(690); ?>: Function traces are not appended to file with xdebug_start_trace() and xdebug.trace_options=1.</dd>
+<dd>Fixed <?= bug(623); ?>: Static properties of a class can be evaluated only with difficulty.</dd>
+<dd>Fixed <?= bug(614); ?>/<?= bug(619); ?>: Viewing private variables in base classes through the debugger.</dd>
+<dd>Fixed <?= bug(609); ?>: Xdebug and SOAP extension's error handlers conflict.</dd>
+<dd>Fixed <?= bug(606); ?>/<?= bug(678); ?>/<?= bug(688); ?>/<?= bug(689); ?>/<?= bug(704); ?>: crash after using eval on an unparsable, or un-executable statement.</dd>
+<dd>Fixed <?= bug(305); ?>: xdebug exception handler doesn't properly handle special chars.</dd>
 
 <dd><h3>Other changes</h3></dd>
 <dd>Changed xdebug_break() to hint to the statement execution trap instead of breaking forcefully adding an extra stackframe.</dd>
@@ -720,12 +720,12 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 
 <dt><a name='x_2_1_2'></a>[2011-07-28] &mdash; Xdebug 2.1.2</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(622); ?>: Working with eval() code is inconvenient and difficult.</dd>
-<dd>Fixed <?php bug(684); ?>: xdebug_var_dump - IE does not support &amp;.</dd>
-<dd>Fixed <?php bug(693); ?>: Cachegrind files not written when filename is very long.</dd>
-<dd>Fixed <?php bug(697); ?>: Incorrect code coverage of function arguments when using XDEBUG_CC_UNUSED.</dd>
-<dd>Fixed <?php bug(699); ?>: Xdebug gets the filename wrong for the countable interface.</dd>
-<dd>Fixed <?php bug(703); ?>: Added another opcode to the list that needs to be overridden.</dd>
+<dd>Fixed <?= bug(622); ?>: Working with eval() code is inconvenient and difficult.</dd>
+<dd>Fixed <?= bug(684); ?>: xdebug_var_dump - IE does not support &amp;.</dd>
+<dd>Fixed <?= bug(693); ?>: Cachegrind files not written when filename is very long.</dd>
+<dd>Fixed <?= bug(697); ?>: Incorrect code coverage of function arguments when using XDEBUG_CC_UNUSED.</dd>
+<dd>Fixed <?= bug(699); ?>: Xdebug gets the filename wrong for the countable interface.</dd>
+<dd>Fixed <?= bug(703); ?>: Added another opcode to the list that needs to be overridden.</dd>
 
 
 <dt><a name='x_2_1_1'></a>[2011-03-28] &mdash; Xdebug 2.1.1</dt>
@@ -733,42 +733,42 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd><h3>Fixed bugs</h3></dd>
 
 <dd><h4>Debugger</h4></dd>
-<dd>Fixed <?php bug(518); ?>: Removed CLASSNAME pseudo-property optional.</dd>
-<dd>Fixed <?php bug(592); ?>: Xdebug crashes with run after detach.</dd>
-<dd>Fixed <?php bug(596); ?>: Call breakpoint never works with instance methods, only static methods.</dd>
+<dd>Fixed <?= bug(518); ?>: Removed CLASSNAME pseudo-property optional.</dd>
+<dd>Fixed <?= bug(592); ?>: Xdebug crashes with run after detach.</dd>
+<dd>Fixed <?= bug(596); ?>: Call breakpoint never works with instance methods, only static methods.</dd>
 <dd>Fixed JIT mode in the debugger so that it works for xdebug_break() too.</dd>
 
 <dd><h4>Profiler</h4></dd>
-<dd>Fixed <?php bug(631); ?>: Summary not written when script ended with "exit()".</dd>
-<dd>Fixed <?php bug(639); ?>: Xdebug profiling: output not correct - missing 'cfl='.</dd>
-<dd>Fixed <?php bug(642); ?>: Fixed line numbers for offsetGet, offsetSet, __get/__set/__isset/__unset and __call in profile files and stack traces/function traces.</dd>
-<dd>Fixed <?php bug(643); ?>: Profiler gets line numbers wrong.</dd>
-<dd>Fixed <?php bug(653); ?>: XDebug profiler crashes with %H in file name and non standard port.</dd>
+<dd>Fixed <?= bug(631); ?>: Summary not written when script ended with "exit()".</dd>
+<dd>Fixed <?= bug(639); ?>: Xdebug profiling: output not correct - missing 'cfl='.</dd>
+<dd>Fixed <?= bug(642); ?>: Fixed line numbers for offsetGet, offsetSet, __get/__set/__isset/__unset and __call in profile files and stack traces/function traces.</dd>
+<dd>Fixed <?= bug(643); ?>: Profiler gets line numbers wrong.</dd>
+<dd>Fixed <?= bug(653); ?>: XDebug profiler crashes with %H in file name and non standard port.</dd>
 
 <dd><h4>Others</h4></dd>
-<dd>Fixed <?php bug(651); ?>: Incorrect code coverage after empty() in conditional.</dd>
-<dd>Fixed <?php bug(654); ?>: Xdebug hides error message in CLI.</dd>
-<dd>Fixed <?php bug(665); ?>: Xdebug does not respect display_errors=stderr. (Patch by Ben Spencer)</dd>
-<dd>Fixed <?php bug(670); ?>: Xdebug crashes with broken "break x" code.</dd>
+<dd>Fixed <?= bug(651); ?>: Incorrect code coverage after empty() in conditional.</dd>
+<dd>Fixed <?= bug(654); ?>: Xdebug hides error message in CLI.</dd>
+<dd>Fixed <?= bug(665); ?>: Xdebug does not respect display_errors=stderr. (Patch by Ben Spencer)</dd>
+<dd>Fixed <?= bug(670); ?>: Xdebug crashes with broken "break x" code.</dd>
 
 
 <dt><a name='x_2_1_0'></a>[2010-06-29] &mdash; Xdebug 2.1.0</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd> Fixed <?php bug(562); ?>: Incorrect coverage information for closure function headers.</dd>
-<dd> Fixed <?php bug(566); ?>: Xdebug crashes when using conditional breakpoints.</dd>
-<dd> Fixed <?php bug(567); ?>: xdebug_debug_zval and xdebug_debug_zval_stdout don't work with PHP 5.3. (Patch by Endo Hiroaki).</dd>
-<dd> Fixed <?php bug(570); ?>: undefined symbol: zend_memrchr.</dd>
+<dd> Fixed <?= bug(562); ?>: Incorrect coverage information for closure function headers.</dd>
+<dd> Fixed <?= bug(566); ?>: Xdebug crashes when using conditional breakpoints.</dd>
+<dd> Fixed <?= bug(567); ?>: xdebug_debug_zval and xdebug_debug_zval_stdout don't work with PHP 5.3. (Patch by Endo Hiroaki).</dd>
+<dd> Fixed <?= bug(570); ?>: undefined symbol: zend_memrchr.</dd>
 
 
 
 <dt><a name='x_2_1_0rc1'></a>[2010-04-07] &mdash; Xdebug 2.1.0rc1</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd> Fixed <?php bug(400); ?>: Xdebug shows errors, even when PHP is request startup mode.</dd>
-<dd> Fixed <?php bug(421); ?>: xdebug sends back invalid characters in xml sometimes.</dd>
-<dd> Fixed <?php bug(475); ?>: Property names with null chars are not sent fully to the client.</dd>
-<dd> Fixed <?php bug(480); ?>: Issues with the reserved resource in multi threaded environments (Patch by Francis.Grolemund@netapp.com).</dd>
-<dd> Fixed <?php bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
-<dd> Fixed <?php bug(558); ?>: PHP segfaults when running a nested eval.</dd>
+<dd> Fixed <?= bug(400); ?>: Xdebug shows errors, even when PHP is request startup mode.</dd>
+<dd> Fixed <?= bug(421); ?>: xdebug sends back invalid characters in xml sometimes.</dd>
+<dd> Fixed <?= bug(475); ?>: Property names with null chars are not sent fully to the client.</dd>
+<dd> Fixed <?= bug(480); ?>: Issues with the reserved resource in multi threaded environments (Patch by Francis.Grolemund@netapp.com).</dd>
+<dd> Fixed <?= bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
+<dd> Fixed <?= bug(558); ?>: PHP segfaults when running a nested eval.</dd>
 
 
 
@@ -776,7 +776,7 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed memory corruption issues.</dd>
 <dd>Fixed a threading related issue for code-coverage.</dd>
-<dd>Fixed <?php bug(532); ?>: XDebug breaks header() function.</dd>
+<dd>Fixed <?= bug(532); ?>: XDebug breaks header() function.</dd>
 <dd>DBGP: Prevent Xdebug from returning properties when a too high page number has been requested.</dd>
 
 
@@ -784,11 +784,11 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dt><a name='x_2_1_0beta2'></a>[2010-02-03] &mdash; Xdebug 2.1.0beta2</dt>
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed memory leak in breakpoint handling.</dd>
-<dd>Fixed <?php bug(528); ?>: Core dump generated with remote_connect_back option set and CLI usage.</dd>
-<dd>Fixed <?php bug(515); ?>: declare(ticks) statement confuses code coverage.</dd>
-<dd>Fixed <?php bug(512); ?>: DBGP: breakpoint_get doesn't return conditions in its response.</dd>
-<dd>Possible fix for <?php bug(507); ?>/#517: Crashes because of uninitalised header globals.</dd>
-<dd>Fixed <?php bug(501); ?>: Xdebug's variable tracing misses POST_INC and variants.</dd>
+<dd>Fixed <?= bug(528); ?>: Core dump generated with remote_connect_back option set and CLI usage.</dd>
+<dd>Fixed <?= bug(515); ?>: declare(ticks) statement confuses code coverage.</dd>
+<dd>Fixed <?= bug(512); ?>: DBGP: breakpoint_get doesn't return conditions in its response.</dd>
+<dd>Possible fix for <?= bug(507); ?>/#517: Crashes because of uninitalised header globals.</dd>
+<dd>Fixed <?= bug(501); ?>: Xdebug's variable tracing misses POST_INC and variants.</dd>
 
 
 <dt><a name='x_2_1_0beta1'></a>[2010-01-03] &mdash; Xdebug 2.1.0beta1</dt>
@@ -832,31 +832,31 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd>Possible fix for a threading issue where the headers gathering function would create stack overflows.</dd>
 <dd>Possible fix for bug #324: xdebug_dump_superglobals() only dumps superglobals that were accessed before, and #478: XDebug 2.0.x can't use %R in xdebug.profiler_output_name if register_long_arrays is off.</dd>
 
-<dd>Fixed <?php bug(505); ?>: %s in xdebug.trace_output_name breaks functions traces.</dd>
-<dd>Fixed <?php bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
-<dd>Fixed <?php bug(486); ?>: feature_get -n breakpoint_types returns out of date list.</dd>
-<dd>Fixed <?php bug(476); ?>: Xdebug doesn't support PHP 5.3's exception chaining.</dd>
-<dd>Fixed <?php bug(472); ?>: Dead Code Analysis for code coverage messed up after goto.</dd>
-<dd>Fixed <?php bug(470); ?>: Catch blocks marked as dead code unless executed.</dd>
-<dd>Fixed <?php bug(469); ?>: context_get for function variables always appear as "uninitialized".</dd>
-<dd>Fixed <?php bug(468); ?>: Property_get on $GLOBALS works only at top-level, by adding GLOBALS to the super globals context.</dd>
-<dd>Fixed <?php bug(453); ?>: Memory leaks.</dd>
-<dd>Fixed <?php bug(445); ?>: error_prepend_string and error_append_string are ignored by xdebug_error_cb. (Patch by Kent Davidson &lt;kent@marketruler.com>)</dd>
-<dd>Fixed <?php bug(442); ?>: configure: error: "you have strange libedit".</dd>
-<dd>Fixed <?php bug(439); ?>: Xdebug crash in xdebug_header_handler.</dd>
-<dd>Fixed <?php bug(423); ?>: Conflicts with funcall.</dd>
-<dd>Fixed <?php bug(419); ?>: Make use of P_tmpdir if defined instead of hard coded '/tmp'.</dd>
-<dd>Fixed <?php bug(417); ?>: Response of context_get may lack page and pagesize attributes.</dd>
-<dd>Fixed <?php bug(411); ?>: Class/function breakpoint setting does not follow the specs.</dd>
-<dd>Fixed <?php bug(393); ?>: eval returns array data at the previous page request.</dd>
-<dd>Fixed <?php bug(391); ?>: Xdebug doesn't stop executing script on catchable fatal errors.</dd>
-<dd>Fixed <?php bug(389); ?>: Destructors called on fatal error.</dd>
-<dd>Fixed <?php bug(368); ?>: Xdebug's debugger bails out on a parse error with the eval command.</dd>
-<dd>Fixed <?php bug(356); ?>: Temporary breakpoints persist.</dd>
-<dd>Fixed <?php bug(355); ?>: Function numbers in trace files weren't unique.</dd>
-<dd>Fixed <?php bug(340); ?>: Segfault while throwing an Exception.</dd>
-<dd>Fixed <?php bug(328); ?>: Private properties are incorrectly enumerated in case of extended classes.</dd>
-<dd>Fixed <?php bug(249); ?>: Xdebug's error handler messes up with the SOAP extension's error handler.</dd>
+<dd>Fixed <?= bug(505); ?>: %s in xdebug.trace_output_name breaks functions traces.</dd>
+<dd>Fixed <?= bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
+<dd>Fixed <?= bug(486); ?>: feature_get -n breakpoint_types returns out of date list.</dd>
+<dd>Fixed <?= bug(476); ?>: Xdebug doesn't support PHP 5.3's exception chaining.</dd>
+<dd>Fixed <?= bug(472); ?>: Dead Code Analysis for code coverage messed up after goto.</dd>
+<dd>Fixed <?= bug(470); ?>: Catch blocks marked as dead code unless executed.</dd>
+<dd>Fixed <?= bug(469); ?>: context_get for function variables always appear as "uninitialized".</dd>
+<dd>Fixed <?= bug(468); ?>: Property_get on $GLOBALS works only at top-level, by adding GLOBALS to the super globals context.</dd>
+<dd>Fixed <?= bug(453); ?>: Memory leaks.</dd>
+<dd>Fixed <?= bug(445); ?>: error_prepend_string and error_append_string are ignored by xdebug_error_cb. (Patch by Kent Davidson &lt;kent@marketruler.com>)</dd>
+<dd>Fixed <?= bug(442); ?>: configure: error: "you have strange libedit".</dd>
+<dd>Fixed <?= bug(439); ?>: Xdebug crash in xdebug_header_handler.</dd>
+<dd>Fixed <?= bug(423); ?>: Conflicts with funcall.</dd>
+<dd>Fixed <?= bug(419); ?>: Make use of P_tmpdir if defined instead of hard coded '/tmp'.</dd>
+<dd>Fixed <?= bug(417); ?>: Response of context_get may lack page and pagesize attributes.</dd>
+<dd>Fixed <?= bug(411); ?>: Class/function breakpoint setting does not follow the specs.</dd>
+<dd>Fixed <?= bug(393); ?>: eval returns array data at the previous page request.</dd>
+<dd>Fixed <?= bug(391); ?>: Xdebug doesn't stop executing script on catchable fatal errors.</dd>
+<dd>Fixed <?= bug(389); ?>: Destructors called on fatal error.</dd>
+<dd>Fixed <?= bug(368); ?>: Xdebug's debugger bails out on a parse error with the eval command.</dd>
+<dd>Fixed <?= bug(356); ?>: Temporary breakpoints persist.</dd>
+<dd>Fixed <?= bug(355); ?>: Function numbers in trace files weren't unique.</dd>
+<dd>Fixed <?= bug(340); ?>: Segfault while throwing an Exception.</dd>
+<dd>Fixed <?= bug(328); ?>: Private properties are incorrectly enumerated in case of extended classes.</dd>
+<dd>Fixed <?= bug(249); ?>: Xdebug's error handler messes up with the SOAP extension's error handler.</dd>
 
 <dd><h3>DBGP</h3></dd>
 <dd>Fixed cases where private properties where shown for objects, but not accessible.</dd>
@@ -1155,14 +1155,14 @@ Fixed <?php bug(1411); ?>: Use Error (Throwable) instead of fatal error when max
 <dd>DBGP: Fix eval'ed $varnames in property_get.</dd>
 <dd>DBGP: Support the -d option for property_get.</dd>
 <dd>Fixed the exit handler hook to use the new "5.1" way of handling it; which fortunately also works with PHP 5.0.</dd>
-<dd>Fixed <?php bug(102); ?>: Problems with configure for automake 1.8.</dd>
-<dd>Fixed <?php bug(101); ?>: crash with set_exeception_handler() and uncatched exceptions.</dd>
-<dd>Fixed <?php bug(99); ?>: unset variables return the name as a string with property_get.</dd>
-<dd>Fixed <?php bug(98); ?>: 'longname' attribute not returned for unintialized property in context_get request.</dd>
-<dd>Fixed <?php bug(94); ?>: xdebug_sprintf misbehaves with x86_64/glibc-2.3.3</dd>
-<dd>Fixed <?php bug(93); ?>: Crash in lookup_hostname on x86_64</dd>
-<dd>Fixed <?php bug(92); ?>: xdebug_disable() doesn't disable the exception handler.</dd>
-<dd>Fixed <?php bug(68); ?>: Summary not written when script ended with "exit()".</dd>
+<dd>Fixed <?= bug(102); ?>: Problems with configure for automake 1.8.</dd>
+<dd>Fixed <?= bug(101); ?>: crash with set_exeception_handler() and uncatched exceptions.</dd>
+<dd>Fixed <?= bug(99); ?>: unset variables return the name as a string with property_get.</dd>
+<dd>Fixed <?= bug(98); ?>: 'longname' attribute not returned for unintialized property in context_get request.</dd>
+<dd>Fixed <?= bug(94); ?>: xdebug_sprintf misbehaves with x86_64/glibc-2.3.3</dd>
+<dd>Fixed <?= bug(93); ?>: Crash in lookup_hostname on x86_64</dd>
+<dd>Fixed <?= bug(92); ?>: xdebug_disable() doesn't disable the exception handler.</dd>
+<dd>Fixed <?= bug(68); ?>: Summary not written when script ended with "exit()".</dd>
 
 
 <dt>[2004-09-15]</dt>
@@ -1220,35 +1220,35 @@ the previous command when pressing just enter.</dd>
 <dd>xdebug_get_function_trace/xdebug_dump_function_trace() because of the new idea of tracing.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed <?php bug(89); ?>: var_dump shows empty strings garbled.  </dd>
-<dd>Fixed <?php bug(85); ?>: Xdebug segfaults when no idekey is set.  </dd>
-<dd>Fixed <?php bug(83); ?>: More than 32 parameters functions make xdebug crash.  </dd>
-<dd>Fixed <?php bug(75); ?>: xdebug's var_dump implementation is not binary safe.  </dd>
-<dd>Fixed <?php bug(73); ?>: komodo beta 4.3.7 crash.  </dd>
-<dd>Fixed <?php bug(72); ?>: breakpoint_get returns wrong structure.  </dd>
-<dd>Fixed <?php bug(69); ?>: Integer overflow in cachegrind summary.  </dd>
-<dd>Fixed <?php bug(67); ?>: Filenames in Xdebug break URI RFC with spaces.  </dd>
-<dd>Fixed <?php bug(64); ?>: Missing include of xdebug_compat.h.  </dd>
-<dd>Fixed <?php bug(57); ?>: Crash with overloading functions.  </dd>
-<dd>Fixed <?php bug(54); ?>: source command did not except missing -f parameter.  </dd>
-<dd>Fixed <?php bug(53); ?>: Feature get misusing the supported attribute.  </dd>
-<dd>Fixed <?php bug(51); ?>: Only start a debug session if XDEBUG_SESSION_START is passed as GET or POST parameter, or the DBGP_COOKIE is send to the server.  Passing XDEBUG_SESSION_STOP as GET/POST parameter will end the debug session and removes the cookie again. The cookie is also passed to the remote handler backends; for DBGp it is added to the <init> packet.  </dd>
-<dd>Fixed <?php bug(49); ?>: Included file's names should not be stored by address.  </dd>
-<dd>Fixed <?php bug(44); ?>: Script time-outs should be disabled when debugging.  </dd>
-<dd>Fixed <?php bug(36); ?>: GDB handler using print causes segfault with wrong syntax </dd>
-<dd>Fixed <?php bug(33); ?>: Implemented the use of the ZEND_POST_DEACTIVATE hook. Now we can handle destructors safely too.  </dd>
-<dd>Fixed <?php bug(32); ?>: Unusual dynamic variables cause xdebug to crash.  </dd>
+<dd>Fixed <?= bug(89); ?>: var_dump shows empty strings garbled.  </dd>
+<dd>Fixed <?= bug(85); ?>: Xdebug segfaults when no idekey is set.  </dd>
+<dd>Fixed <?= bug(83); ?>: More than 32 parameters functions make xdebug crash.  </dd>
+<dd>Fixed <?= bug(75); ?>: xdebug's var_dump implementation is not binary safe.  </dd>
+<dd>Fixed <?= bug(73); ?>: komodo beta 4.3.7 crash.  </dd>
+<dd>Fixed <?= bug(72); ?>: breakpoint_get returns wrong structure.  </dd>
+<dd>Fixed <?= bug(69); ?>: Integer overflow in cachegrind summary.  </dd>
+<dd>Fixed <?= bug(67); ?>: Filenames in Xdebug break URI RFC with spaces.  </dd>
+<dd>Fixed <?= bug(64); ?>: Missing include of xdebug_compat.h.  </dd>
+<dd>Fixed <?= bug(57); ?>: Crash with overloading functions.  </dd>
+<dd>Fixed <?= bug(54); ?>: source command did not except missing -f parameter.  </dd>
+<dd>Fixed <?= bug(53); ?>: Feature get misusing the supported attribute.  </dd>
+<dd>Fixed <?= bug(51); ?>: Only start a debug session if XDEBUG_SESSION_START is passed as GET or POST parameter, or the DBGP_COOKIE is send to the server.  Passing XDEBUG_SESSION_STOP as GET/POST parameter will end the debug session and removes the cookie again. The cookie is also passed to the remote handler backends; for DBGp it is added to the <init> packet.  </dd>
+<dd>Fixed <?= bug(49); ?>: Included file's names should not be stored by address.  </dd>
+<dd>Fixed <?= bug(44); ?>: Script time-outs should be disabled when debugging.  </dd>
+<dd>Fixed <?= bug(36); ?>: GDB handler using print causes segfault with wrong syntax </dd>
+<dd>Fixed <?= bug(33); ?>: Implemented the use of the ZEND_POST_DEACTIVATE hook. Now we can handle destructors safely too.  </dd>
+<dd>Fixed <?= bug(32); ?>: Unusual dynamic variables cause xdebug to crash.  </dd>
 
 
 <dt>[2003-12-26]</dt>
 
 <dd>GDB: Added file/line to signals.</dd>
 <dd>Fixed logging to adhere to the error_reporting setting.</dd>
-<dd>Fixed <?php bug(32); ?>: Unusual dynamic variables cause xdebug to
+<dd>Fixed <?= bug(32); ?>: Unusual dynamic variables cause xdebug to
 crash.</dd>
-<dd>Fixed <?php bug(31); ?>: &amp; entity replaced after others, wrong HTML
+<dd>Fixed <?= bug(31); ?>: &amp; entity replaced after others, wrong HTML
 output.</dd>
-<dd>Fixed <?php bug(22); ?>: Segmentation fault with
+<dd>Fixed <?= bug(22); ?>: Segmentation fault with
 <i><a href='docs.php#xdebug_get_function_stack'>xdebug_get_function_stack()</a></i>
 and collect_params=1.</dd>
 
@@ -1258,11 +1258,11 @@ and collect_params=1.</dd>
 <dd>GDB: Fixed bug with continuing after breakpoint where only 'cont'
 worked.</dd>
 <dd>GDB: Fixed bug in deleting absolute breakpoints on Windows.</dd>
-<dd>Fixed <?php bug(27); ?>: Repeated connect attempts when no debugger is
+<dd>Fixed <?= bug(27); ?>: Repeated connect attempts when no debugger is
 listening.</dd>
-<dd>Fixed <?php bug(19); ?>: The value of xdebug.output_dir in a .htaccess
+<dd>Fixed <?= bug(19); ?>: The value of xdebug.output_dir in a .htaccess
 never takes effect.</dd>
-<dd>Fixed <?php bug(18); ?>: Mistyped sizeof()'s for array indexes in profiler
+<dd>Fixed <?= bug(18); ?>: Mistyped sizeof()'s for array indexes in profiler
 output.</dd>
 <dd>Fixed handling stack traces for when display_errors was set to Off.</dd>
 <dd>Fixed segfault where a function name didn't exist in case of a

@@ -11,14 +11,14 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Installation instr
 
 <h2>Summary</h2>
 <ul>
-	<?php if ( $this->x->xdebugAsZendExt ) : ?>
+	<?php if ( $this->x->xdebugAsZendExt && $this->x->xdebugVersion) : ?>
 		<li><b>Xdebug installed:</b> <?= $this->x->xdebugVersion ?></li>
 	<?php elseif ( $this->x->xdebugAsPhpExt ) : ?>
 		<li><b>Xdebug installed:</b> <span style='color: #f00'>Only as PHP extension!</span></li>
 	<?php else : ?>
 		<li><b>Xdebug installed:</b> no</li>
 	<?php endif ?>
-	<li><b>Server API:</b> <?= $this->x->sapi ?></li>
+	<li><b>Server API:</b> <?= $this->x->sapi ?: 'not found' ?></li>
 	<li><b>Windows:</b> <?= $this->x->windows ? 'yes' : 'no' ?>
 	<?php if ( $this->x->windows ) : ?>
 		 - Compiler: MS VC <?= $this->x->winCompiler ?>
@@ -31,21 +31,23 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Installation instr
 	<?php endif ?>
 	</li>
 	<li><b>PHP Version:</b> <?= $this->x->version ?></li>
-	<li><b>Zend API nr:</b> <?= $this->x->zendApi ?></li>
-	<li><b>PHP API nr:</b> <?= $this->x->phpApi ?></li>
+	<li><b>Zend API nr:</b> <?= $this->x->zendApi ?: 'not found' ?></li>
+	<li><b>PHP API nr:</b> <?= $this->x->phpApi ?: 'not found' ?></li>
 	<li><b>Debug Build:</b> <?= $this->x->debug ? 'yes' : 'no' ?></li>
 	<li><b>Thread Safe Build:</b> <?= $this->x->ts ? 'yes' : 'no' ?></li>
 	<li><b>OPcache Loaded:</b> <?= $this->x->opcacheLoaded ? 'yes' : 'no' ?></li>
-	<?php if ( $this->x->configFile ) : ?>
-		<li><b>Configuration File Path:</b> <?= $this->x->configPath ?></li>
-		<li><b>Configuration File:</b> <?= $this->x->configFile ?></li>
-	<?php else : ?>
-		<?php if ( $this->x->windows ) : ?>
-			<li><b>Configuration File Path:</b> unknown</li>
-			<li><b>Configuration File:</b> unknown</li>
-		<?php else : ?>
+	<?php if ( $this->x->configPath ) : ?>
+		<?php if ( $this->x->configFile ) : ?>
 			<li><b>Configuration File Path:</b> <?= $this->x->configPath ?></li>
-			<li><b>Configuration File:</b> <?= $this->x->configPath ?>/php.ini</li>
+			<li><b>Configuration File:</b> <?= $this->x->configFile ?></li>
+		<?php else : ?>
+			<?php if ( $this->x->windows ) : ?>
+				<li><b>Configuration File Path:</b> unknown</li>
+				<li><b>Configuration File:</b> unknown</li>
+			<?php else : ?>
+				<li><b>Configuration File Path:</b> <?= $this->x->configPath ?></li>
+				<li><b>Configuration File:</b> <?= $this->x->configPath ?>/php.ini</li>
+			<?php endif ?>
 		<?php endif ?>
 	<?php endif ?>
 	<li><b>Extensions directory:</b> <?= $this->x->extensionDir ?></li>
@@ -64,7 +66,7 @@ $this->x->extensionDir = strpos( $this->x->extensionDir, ' ') === false ? $this-
 
 	<p><span style='color: #f00'><b>Warning:</b></span> You seem to have Xdebug loaded as a normal
 		PHP extension only. This will cause odd issues, please see <a href='/docs/faq#php-ext'>the FAQ entry on it</a>.</p>
-<?php elseif ( $this->x->xdebugVersion && version_compare( $this->x->xdebugVersion, $this->x->xdebugVersionToInstall, '>=' ) ) : ?>
+<?php elseif ( $this->x->xdebugVersion && $this->x->xdebugVersionToInstall && version_compare( $this->x->xdebugVersion, $this->x->xdebugVersionToInstall, '>=' ) ) : ?>
 	<h2>You're already running the latest Xdebug version</h2>
 	<p>But here are the instructions anyway:</p>
 <?php else : ?>
@@ -95,22 +97,24 @@ $this->x->extensionDir = strpos( $this->x->extensionDir, ' ') === false ? $this-
 		<?php endif ?>
 		</li>
 		<li>Unpack the downloaded file with <code>tar -xvzf <?= $dlFile ?></code></li>
-		<li>Run: <code>cd <?= $this->x->tarDir ?></code></li>
-		<li>
-			<p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>).</p>
-			<p>As part of its output it should show:<br/><pre>
+		<?php if ($this->x->tarDir && $this->x->phpApi && $this->x->zendApi ) : ?>
+			<li>Run: <code>cd <?= $this->x->tarDir ?></code></li>
+			<li>
+				<p>Run: <code>phpize</code> (See the <a href='/docs/faq#phpize'>FAQ</a> if you don't have <code>phpize</code>).</p>
+				<p>As part of its output it should show:<br/><pre>
 Configuring for:
 ...
 Zend Module Api No:      <?= $this->x->phpApi . "\n" ?>
 Zend Extension Api No:   <?= $this->x->zendApi ?>
 </pre>
-			</p>
-			<p>If it does not, you are using the wrong <code>phpize</code>. Please follow
-				<a href='/docs/faq#custom-phpize'>this FAQ entry</a> and skip the next step.
-			</p>
-			<li>Run: <code>./configure</code></li>
-			<li>Run: <code>make</code></li>
-			<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?></code></li>
+				</p>
+				<p>If it does not, you are using the wrong <code>phpize</code>. Please follow
+					<a href='/docs/faq#custom-phpize'>this FAQ entry</a> and skip the next step.
+				</p>
+				<li>Run: <code>./configure</code></li>
+				<li>Run: <code>make</code></li>
+				<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?></code></li>
+		<?php endif ?>
 	<?php else : ?>
 		<li>Move the downloaded file to <?= $this->x->extensionDir ?></li>
 	<?php endif ?>
@@ -125,27 +129,29 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		</li>
 	<?php endif ?>
 
-	<li>
-	<?php if ($this->x->configFile) : ?>
-		<?php if ($this->x->xdebugVersion) : ?>
-			Update <code><?= $this->x->configFile ?></code>
-		<?php else : ?>
-			Edit <code><?= $this->x->configFile ?></code> <?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
-		<?php endif ?>
-	<?php else : ?>
-		<?php if ($this->x->windows) : ?>
-			Create <code>php.ini</code> in the same folder as where <code>php.exe</code> is
-		<?php else : ?>
-			Create <code><?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
-		<?php endif ?>
-	<?php endif ?>
-	 and <?= $this->x->xdebugVersion ? "change " : ( $this->x->zendServer ? "add at the begining of the file " : "add " ) ?>
-	the line<br/><code><?= $iniLine ?></code>
+	<?php if ( $this->x->configPath ) : ?>
+		<li>
+			<?php if ($this->x->configFile) : ?>
+				<?php if ($this->x->xdebugVersion) : ?>
+					Update <code><?= $this->x->configFile ?></code>
+				<?php else : ?>
+					Edit <code><?= $this->x->configFile ?></code> <?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
+				<?php endif ?>
+			<?php else : ?>
+				<?php if ($this->x->windows) : ?>
+					Create <code>php.ini</code> in the same folder as where <code>php.exe</code> is
+				<?php else : ?>
+					Create <code><?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
+				<?php endif ?>
+			<?php endif ?>
+		 and <?= $this->x->xdebugVersion ? "change " : ( $this->x->zendServer ? "add at the begining of the file " : "add " ) ?>
+		the line<br/><code><?= $iniLine ?></code>
 
-	<?php if ($this->x->opcacheLoaded) : ?>
-		<br/>Make sure that <code><?= $iniLine ?></code> is <b>below</b> the line for OPcache.
+		<?php if ($this->x->opcacheLoaded) : ?>
+			<br/>Make sure that <code><?= $iniLine ?></code> is <b>below</b> the line for OPcache.
+		<?php endif ?>
+		</li>
 	<?php endif ?>
-	</li>
 
 	<?php if ($this->x->sapi !== 'Command Line Interface') : ?>
 		<li>Restart the webserver</li>

@@ -32,7 +32,7 @@ class CiController
 
 		$r = $result[0];
 
-		return new HtmlResponse(new CiRun($r), 'ci/run.php');
+		return new HtmlResponse(new CiRun($r, $runId), 'ci/run.php');
 	}
 
 	private static function matrix() : HtmlResponse

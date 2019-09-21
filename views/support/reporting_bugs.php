@@ -14,7 +14,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Report
 	because this prevents abuse by spammers and other abusing parties. Try to give
 	as much possible information to reproduce the bug, this will greatly help in
 	fixing them. For some hints on what information is useful, see the following
-	sections. <b>Versions before <?php echo xdebugVersion::$notSupportedBefore; ?>
+	sections. <b>Versions before <?php echo \XdebugDotOrg\XdebugVersion::NOT_SUPPORTED_BEFORE; ?>
 	are not supported</b>.
 </p>
 

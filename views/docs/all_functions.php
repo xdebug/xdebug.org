@@ -13,7 +13,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » A
 » All functions<br />
 <hr />
 
-<p class='intro'><?= $this->description ?></p>
 <hr class='light'/>
 This section describes all available functions available in Xdebug.
 <hr style='clear: both'>

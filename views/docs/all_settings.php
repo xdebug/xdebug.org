@@ -13,7 +13,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » A
 » All settings<br />
 <hr />
 
-<p class='intro'><?= $this->description ?></p>
 <hr class='light'/>
 This section describes all available configuration settings available in Xdebug.
 <hr style='clear: both'>

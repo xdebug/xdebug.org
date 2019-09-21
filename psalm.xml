@@ -8,6 +8,7 @@
 >
     <projectFiles>
         <directory name="src" />
+        <directory name="views" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>

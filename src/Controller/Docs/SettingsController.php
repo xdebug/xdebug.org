@@ -297,7 +297,7 @@ class SettingsController
 		],
 	];
 
-	public function single(Setting $setting) : HtmlResponse
+	public static function single(Setting $setting) : HtmlResponse
 	{
 		return new HtmlResponse($setting, 'docs/setting.php');
 	}

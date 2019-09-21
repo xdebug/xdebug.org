@@ -6,11 +6,13 @@ namespace XdebugDotOrg\Model;
  */
 class CiRun
 {
-	public $result;
+	public $run;
+	public $runId;
 
-	public function __construct(\stdClass $result)
+	public function __construct(\stdClass $run, string $runId)
 	{
-		$this->result = $result;
+		$this->run = $run;
+		$this->runId = $runId;
 	}
 }
 ?>

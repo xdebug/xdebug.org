@@ -1,6 +1,6 @@
 <?php
 /**
- * @psalm-scope-this XdebugDotOrg\Model\DocSections
+ * @psalm-scope-this XdebugDotOrg\Model\DocsSections
  */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation');
 ?>

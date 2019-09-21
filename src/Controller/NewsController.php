@@ -30,7 +30,7 @@ class NewsController
 		return $news_items;
 	}
 
-	public function items() : HtmlResponse
+	public static function items() : HtmlResponse
 	{
 		return new HtmlResponse(new NewsItems(self::getNewsItems()), 'news/items.php');
 	}

@@ -13,7 +13,7 @@ class FunctionsController
 	 */
 	private static $functions = null;
 
-	public function single(FunctionDescription $function) : HtmlResponse
+	public static function single(FunctionDescription $function) : HtmlResponse
 	{
 		return new HtmlResponse($function, 'docs/function.php');
 	}

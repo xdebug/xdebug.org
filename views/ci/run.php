@@ -1,3 +1,9 @@
+<?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\CiRun
+ */
+?>
+
 <h2>CI Run '<?= $this->runId ?>'</h2>
 
 <table class='ci'>

@@ -4,6 +4,6 @@
  */
 ?>
 <a name='<?= $this->date->format("Y-m-d") ?>'></a>
-<dt class='main'>[<?= $this->date ?>] - <?= $this->title ?></dt>
+<dt class='main'>[<?= $this->date->format("Y-m-d") ?>] - <?= $this->title ?></dt>
 <dd class='main'><?= $this->contents ?></dd>
 <hr>
