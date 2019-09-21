@@ -46,6 +46,8 @@ if ($requested_uri === '/') {
 	$contents = XdebugDotOrg\Controller\SupportController::log()->render();
 } elseif ($requested_uri === '/wizard') {
 	$contents = XdebugDotOrg\Controller\WizardController::index()->render();
+} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
+	$contents = XdebugDotOrg\Controller\CiController::index()->render();
 }
 
 echo XdebugDotOrg\Controller\TemplateController::default($contents)->render();

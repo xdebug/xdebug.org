@@ -2,7 +2,8 @@
     "name": "xdebug/xdebug.org",
     "type": "project",
     "require-dev": {
-        "vimeo/psalm": "^3.5"
+        "vimeo/psalm": "^3.5",
+        "mongodb/mongodb": "^1.5"
     },
     "autoload": {
         "files": [
