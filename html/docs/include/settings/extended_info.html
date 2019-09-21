@@ -1,0 +1,6 @@
+Controls whether Xdebug should enforce 'extended_info' mode for the PHP
+parser; this allows Xdebug to do file/line breakpoints with the remote
+debugger. When tracing or profiling scripts you generally want to turn off this
+option as PHP's generated oparrays will increase with about a third of the size
+slowing down your scripts. This setting can not be set in your scripts with
+ini_set(), but only in php.ini.

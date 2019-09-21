@@ -1,0 +1,129 @@
+<h2>Using Xdebug</h2>
+<dl class="faq">
+<dt>Q: phpinfo() reports that Xdebug is installed and enabled, yet I
+still don't get any stacktraces when an error happens.
+</dt>
+<dd>A1: You have to search through all your PHP libraries and include files for any
+"set_error_handler" calls. If there are any, you have to either comment it out,
+or change the body of the handler function to call xdebug_* api functions.
+</dd>
+<dd>A2: You do not have set <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a> to 1 in php.ini</dd>
+
+<dt><a name="format"></a>Q: Xdebug doesn't format output.</dt>
+<dd>A: Make sure you have PHP's <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.html-errors">html_errors</a> set to 1 in php.ini</dd>
+
+<dt>Q: The debug client doesn't receive any connections, what do I do
+wrong?</dt>
+<dd>A: You probably forgot to set the environment variable or to add 
+the necessary information to your URL. See the 
+<a href='remote#activate_debugger'>documentation</a> for
+more information.</dd>
+<dd>A: Have you checked your firewall settings? Make sure the port Xdebug is
+listening on (default 9000) is not blocked.</dd>
+<dd>A: Are you using FastCGI, maybe via FPM (FastCGI Process Manager)? 
+  It uses the same port by default as Xdebug (9000)
+so you will need to change one of them to a different number. In Xdebug you can
+do that with [CFG:remote_port].</dd>
+<dd>A: If you are running with SELinux you should make sure it is not
+preventing connections; look for warnings about <code>name_connect</code> or
+anything related to the Xdebug port. You might have to allow access explicitly.
+Visit <a href="http://tag1consulting.com/blog/stop-disabling-selinux">this site</a> or
+search for "selinux name_connect apache" for more information about how to do
+this</dd>
+</dl>
+
+<h2>Compilation and Configuration</h2>
+<dl class="faq">
+<dt><a name="phpize"></a>
+Q: I don't have the <code>phpize</code> tool.</dt>
+<dd>A: Debian and Ubuntu users need to install the PHP development package with
+<code>apt install php5-dev</code>, or <code>apt install php7.0-dev</code> for
+PHP 7.</dd>
+
+<dt><a name="api"></a>
+Q: What to do with: <i>Xdebug requires Zend Engine API version
+<i>xxxxxxxx</i>. The Zend Engine API version 2<i>xxxxxxxx</i> which is
+installed, is newer.</i></dt>
+<dd>A:
+
+This message means that you are trying to load Xdebug with a PHP version for
+which it wasn't built. If you compiled PHP yourself, it is most likely because
+you compiled Xdebug against PHP headers that belong to a different PHP version
+that you're running. For example, you're using PHP 5.3 and the headers
+you're using are still PHP 5.2. If you are using a pre-compiled binary, then
+you're using the wrong one.</dd>
+
+<dd>To diagnose if this is your problem, make the following steps:
+<ul>
+<li>Check what the "Zend Extension" API number is of the PHP version that you
+are running by looking at phpinfo() (or "php -i") output. You can find it in
+the top part of the output, in the same block as the PHP logo and the PHP
+version. As examples, for PHP 5.2, the number is "220060519" and for PHP 5.3 it
+is "220090626".</li>
+<li>Check what the output of "phpize" is when you're completing the
+compilation steps. The number that you're looking for is on the line that says
+"Zend Extension Api No".
+</ul>
+<p>
+If the two numbers from above do <b>not</b> match, you're compiling with the
+wrong PHP headers. Refer to the next <a href="/docs/faq#custom-phpize">FAQ
+entry</a> to figure out which phpize to use.
+</p>
+</dd>
+
+<dt><a name="php-ext"></a>Q: Xdebug is only loaded as PHP extension and not as a Zend Extension.</dt>
+<dd>
+<p>The tailored installation intstructions might have you pointed to this entry.</p>
+<p>In order for Xdebug to work properly, including breakpoints etc. it is required that it is loaded
+as a Zend extension, and not just as a normal PHP extension. Some installation
+tools (PEAR/PECL) sometimes advice you to use <code>extension=xdebug.so</code>
+to load Xdebug. This is <b>not</b> correct. In order to fix this issue, please
+look for a line <code>extension=xdebug.so</code> in any of the INI files that
+are listed under "Loaded Configuration File" and "Additional .ini files parsed"
+in the top block. Remove this line, and go back to the
+<a href="/wizard.php">Tailored Installation Instructions</a>.</p>
+</dd>
+
+<dt><a name="custom-phpize"></a>
+<dt>Q: How do I find which phpize to use?</dt>
+<dd>A:
+
+Run: "phpize --help". This shows you the full path to
+phpize. This path should be the same as where you have the CLI binary,
+"php-config" and the "pear" and "pecl" binaries <b>installed</b>. If you
+run "php-config --version" it should show the same version of PHP that
+you're running. If it doesn't match up, and perhaps the wrong "phpize"
+binary is found on the path, you can run configure as follows:
+<ol>
+<li>/full/path/to/php/bin/phpize</li>
+<li>./configure --with-php-config=/full/path/to/php/bin/php-config</li>
+</ol>
+</dd>
+
+<dt>Q: I'm using XAMPP, but I can't seem to get the packaged xdebug extension
+to work properly.</dt>
+<dd>A: If you uncommented the "extension=php_xdebug.dll" line, that is to be
+expected. Xdebug <b>needs</b> to be loaded with the zend_extension_ts=
+"C:\path\to\php_xdebug.dll" directive. You'll also likely have to disable the
+loading of the Zend Optimizer, since it's enabled by default, and doesn't work
+well with Xdebug. So look for the related entry in php.ini, and comment it out.
+<strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini
+setting name, and not zend_extension_ts.</strong>
+</dd>
+
+<dt>Q: On Debian, I am seeing the following problem with the build of
+Xdebug.... any fixes?
+<pre>
+/usr/lib/libc_nonshared.a(stat.oS)(.text.__i686.get_pc_thunk.bx+0x0):
+In function `__i686.get_pc_thunk.bx':
+: multiple definition of `__i686.get_pc_thunk.bx'
+/usr/lib/gcc-lib/i486-linux/3.3.5/crtbeginS.o
+(.gnu.linkonce.t.__i686.get_pc_thunk.bx+0x0): first defined here
+collect2: ld returned 1 exit status
+make: *** [xdebug.la] Error 1 </pre>
+</dt>
+<dd>A: This is an issue with Debian itself, see for more information
+<a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a> 
+and <a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a>.
+</dd>
+</dl>

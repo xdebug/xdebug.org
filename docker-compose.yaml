@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  php-lighttpd:
+    container_name: xdebug-php
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: xdebug-php
+    init: true
+    ports:
+      - "8123:80"
+    volumes:
+      - type: "bind"
+        source: "${PWD}/html"
+        target: "/var/www/html"
+      - type: "bind"
+        source: "${PWD}/vendor"
+        target: "/var/www/vendor"
+      - type: "bind"
+        source: "${PWD}/src"
+        target: "/var/www/src"
+      - type: "bind"
+        source: "${PWD}/views"
+        target: "/var/www/views"
