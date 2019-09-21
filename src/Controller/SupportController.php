@@ -7,17 +7,22 @@ use XdebugDotOrg\Model\SupportLog;
 
 class SupportController
 {
-	public function index() : HtmlResponse
+	public static function index() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'support/index.php');
 	}
 
-	public function reporting_bugs() : HtmlResponse
+	public static function reporting_bugs() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'support/reporting_bugs.php');
 	}
 
-	public function log() : HtmlResponse
+	public static function thanks() : HtmlResponse
+	{
+		return new HtmlResponse(null, 'support/thanks.php');
+	}
+
+	public static function log() : HtmlResponse
 	{
 		$d = Dir( 'reports' );
 

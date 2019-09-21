@@ -1,5 +1,8 @@
 FROM php:7.3-fpm
 
+RUN pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
+RUN pecl install mongodb
+
 RUN apt-get update && apt-get install -y lighttpd
 
 COPY docker/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf

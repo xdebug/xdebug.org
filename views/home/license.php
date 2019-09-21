@@ -1,14 +1,10 @@
-<?php $title = "Xdebug: License"; include "include/header.php"; ?>
-		<tr>
-			<td>&nbsp;</td>
-			<td><span class="serif">
-			
-<!-- MAIN FEATURE START -->
+<?php
+XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: License');
+?>
 
 <h1>License</h1>
 
-
-<?php include "include/menu.php"; ?>
+<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
 
 <hr />
 <p class="center">
@@ -26,20 +22,20 @@ are met:
 <ol>
  <li>Redistributions of source code must retain the above copyright
      notice, this list of conditions and the following disclaimer.</li>
- 
+
  <li>Redistributions in binary form must reproduce the above copyright
      notice, this list of conditions and the following disclaimer in
      the documentation and/or other materials provided with the
      distribution.</li>
- 
+
  <li>The name "Xdebug" must not be used to endorse or promote products
      derived from this software without prior written permission. For
      written permission, please contact derick@xdebug.org.</li>
-  
+
  <li>Products derived from this software may not be called "Xdebug", nor
      may "Xdebug" appear in their name, without prior written permission
      from derick@xdebug.org.</li>
- 
+
  <li>Derick Rethans may publish revised and/or new versions of the
      license from time to time. Each version will be given a
      distinguishing version number.  Once covered code has been
@@ -85,10 +81,3 @@ For more information Xdebug, please see
 </p>
 
 <br /><br />
-
-<!-- MAIN FEATURE END -->
-
-			</td>
-			<td>&nbsp;</td>
-		</tr>
-<?php include "include/footer.php"; ?>

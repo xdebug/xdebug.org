@@ -8,7 +8,7 @@ use XdebugDotOrg\Model\WizardResult;
 
 class WizardController
 {
-	public function index() : HtmlResponse
+	public static function index() : HtmlResponse
 	{
 		if ($_POST
 			&& isset( $_POST['submit'] )
@@ -21,7 +21,7 @@ class WizardController
 		return new HtmlResponse(null, 'wizard/index.php');
 	}
 
-	public function getResults(string $data) : HtmlResponse
+	public static function getResults(string $data) : HtmlResponse
 	{
 		$x = new \XdebugDotOrg\XdebugVersion( $data );
 

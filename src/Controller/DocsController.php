@@ -92,7 +92,7 @@ class DocsController
 	];
 
 
-	public function index() : HtmlResponse
+	public static function index() : HtmlResponse
 	{
 		$models = [];
 
@@ -107,7 +107,7 @@ class DocsController
 		return new HtmlResponse(new DocsSections($models), 'docs/index.php');
 	}
 
-	public function section(string $section) : HtmlResponse
+	public static function section(string $section) : HtmlResponse
 	{
 		if (!isset(self::SECTIONS[$section])) {
 			throw new \Exception('bad');

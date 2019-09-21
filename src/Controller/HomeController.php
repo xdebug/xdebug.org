@@ -8,17 +8,22 @@ use XdebugDotOrg\Model\Downloads;
 
 class HomeController
 {
-	public function index() : HtmlResponse
+	public static function index() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'home/index.php');
 	}
 
-	public function updates() : HtmlResponse
+	public static function updates() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'home/updates.php');
 	}
 
-	public function download() : HtmlResponse
+	public static function license() : HtmlResponse
+	{
+		return new HtmlResponse(null, 'home/license.php');
+	}
+
+	public static function download() : HtmlResponse
 	{
 		// open the files dir, and scan
 		$d = dir(dirname(__DIR__, 2) . '/html/files' );
@@ -92,7 +97,7 @@ class HomeController
 		return new HtmlResponse(new Downloads($downloads), 'home/download.php');
 	}
 
-	public function contributing() : HtmlResponse
+	public static function contributing() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'home/contributing.php');
 	}
