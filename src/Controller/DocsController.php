@@ -83,7 +83,12 @@ class DocsController
 			'FAQ',
 			0,
 			'Frequently Asked Questions',
-		]
+		],
+		'dbgp' => [
+			'DBGP - A common debugger protocol for languages and debugger UI communication',
+			0,
+			''
+		],
 	];
 
 
