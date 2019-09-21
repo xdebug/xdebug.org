@@ -44,6 +44,8 @@ if ($requested_uri === '/') {
 	$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 } elseif ($requested_uri === '/log') {
 	$contents = XdebugDotOrg\Controller\SupportController::log()->render();
+} elseif ($requested_uri === '/wizard') {
+	$contents = XdebugDotOrg\Controller\WizardController::index()->render();
 }
 
 echo XdebugDotOrg\Controller\TemplateController::default($contents)->render();
