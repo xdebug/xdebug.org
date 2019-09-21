@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  php-apache:
+  php-lighttpd:
     container_name: xdebug-php
     build:
       context: .

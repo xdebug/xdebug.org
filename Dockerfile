@@ -1,5 +1,18 @@
-FROM php:7.3-apache
+FROM php:7.3-fpm
 
-COPY docker/php/vhost.conf /etc/apache2/sites-available/000-default.conf
+RUN apt-get update && apt-get install -y lighttpd
 
-RUN a2enmod rewrite && a2enmod headers
+COPY docker/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY docker/lighttpd/vhost.conf /etc/lighttpd/conf-enabled/10-simple-vhost.conf
+
+RUN lighty-enable-mod fastcgi
+RUN lighty-enable-mod fastcgi-php
+
+COPY docker/lighttpd/fastcgi.conf /etc/lighttpd/conf-enabled/15-fastcgi-php.conf
+
+RUN mkdir -p /run/lighttpd/
+RUN chown www-data. /run/lighttpd/
+
+EXPOSE 80
+
+CMD php-fpm -D && lighttpd -D -f /etc/lighttpd/lighttpd.conf
