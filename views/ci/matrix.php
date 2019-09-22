@@ -37,16 +37,16 @@
 				<td>
 					<?php foreach ($this->matrix[$abbrev][$version] as $variant ) : ?>
 						<?php if ($variant->buildSuccess != true) : ?>
-							<a class='bf' label='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✖</a>";
+							<a class='bf' label='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✖</a>
 							<?php continue; ?>
 						<?php endif ?>
 
 						<?php if ($variant->stats->errors != 0 || $variant->stats->failures != 0) : ?>
-							<a class='err' label='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✖</a>";
+							<a class='err' label='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✖</a>
 							<?php continue; ?>
 						<?php endif ?>
 
-						<a class='success' alt='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✔</a>";
+						<a class='success' alt='<?= $variant->_id ?>' href='/ci?r=<?= $variant->_id ?>'>✔</a>
 					<?php endforeach ?>
 				</td>
 			<?php endforeach ?>
