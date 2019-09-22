@@ -17,11 +17,6 @@ class SupportController
 		return new HtmlResponse(null, 'support/reporting_bugs.php');
 	}
 
-	public static function thanks() : HtmlResponse
-	{
-		return new HtmlResponse(null, 'support/thanks.php');
-	}
-
 	public static function log() : HtmlResponse
 	{
 		$d = Dir( 'reports' );

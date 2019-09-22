@@ -42,8 +42,6 @@ if ($requested_uri === '/') {
 	$contents = XdebugDotOrg\Controller\HomeController::license()->render();
 } elseif ($requested_uri === '/support') {
 	$contents = XdebugDotOrg\Controller\SupportController::index()->render();
-} elseif ($requested_uri === '/support/thanks') {
-	$contents = XdebugDotOrg\Controller\SupportController::thanks()->render();
 } elseif ($requested_uri === '/reporting-bugs') {
 	$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 } elseif ($requested_uri === '/log') {
