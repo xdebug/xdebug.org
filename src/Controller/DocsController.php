@@ -145,7 +145,7 @@ class DocsController
 				if (!array_key_exists(2, $matches)) {
 					$matches[2] = '';
 				}
-				return "<a href='/docs/{$matches[1]}{$matches[2]}'>". $GLOBALS['features'][$matches[1]][0] . '</a>';
+				return "<a href='/docs/{$matches[1]}{$matches[2]}'>". self::SECTIONS[$matches[1]][0] . '</a>';
 			},
 			$text
 		);

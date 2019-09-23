@@ -81,7 +81,7 @@ class HomeController
 						$namea .= " (32 bit)";
 					}
 
-					$dlls[] = ['href' => 'file/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
+					$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
 				}
 			}
 
