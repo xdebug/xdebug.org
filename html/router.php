@@ -15,7 +15,12 @@ if ($requested_uri === '/') {
 } elseif ($requested_uri === '/updates') {
 	$contents = XdebugDotOrg\Controller\HomeController::updates()->render();
 } elseif ($requested_uri === '/download') {
-	$contents = XdebugDotOrg\Controller\HomeController::download()->render();
+	$contents = XdebugDotOrg\Core\ContentsCache::fetch(
+		function() {
+			return XdebugDotOrg\Controller\HomeController::download()->render();
+		},
+		'download'
+	);
 } elseif (preg_match('/^\/docs(\/([a-z_]+))?/', $requested_uri, $matches)) {
 	$pages = [
 		'install', 'basic', 'display', 'stack_trace', 'execution_trace',
@@ -45,7 +50,12 @@ if ($requested_uri === '/') {
 } elseif ($requested_uri === '/reporting-bugs') {
 	$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 } elseif ($requested_uri === '/log') {
-	$contents = XdebugDotOrg\Controller\SupportController::log()->render();
+	$contents = XdebugDotOrg\Core\ContentsCache::fetch(
+		function() {
+			return XdebugDotOrg\Controller\SupportController::log()->render();
+		},
+		'log'
+	);
 } elseif ($requested_uri === '/wizard') {
 	$contents = XdebugDotOrg\Controller\WizardController::index()->render();
 } elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
