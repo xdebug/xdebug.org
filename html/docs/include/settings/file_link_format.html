@@ -1,0 +1,86 @@
+<p>This setting determines the format of the links that are made in
+the display of stack traces where file names are used. This allows IDEs to set
+up a link-protocol that makes it possible to go directly to a line and file by
+clicking on the filenames that Xdebug shows in stack traces. An example format might look like:
+</p>
+<pre>
+myide://%f@%l
+</pre>
+<p>
+The possible format specifiers are:
+</p>
+<table class="table">
+<tr><th>Specifier</th><th>Meaning</th></tr>
+<tr><td class="ctr">%f</td><td>the filename</td></tr>
+<tr><td class="ctr">%l</td><td>the line number</td></tr>
+</table>
+<p>
+For various IDEs/OSses there are some instructions listed on how to make this work:
+</p>
+<h4>Firefox on Linux</h4>
+<ul>
+<li>Open <a href="about:config">about:config</a></li>
+<li>Add a new boolean setting "network.protocol-handler.expose.xdebug" and set it to "false"</li>
+<li>Add the following into a shell script <code>~/bin/ff-xdebug.sh</code>:
+<pre>
+#! /bin/sh
+
+f=`echo $1 | cut -d @ -f 1 | sed 's/xdebug:\/\///'`
+l=`echo $1 | cut -d @ -f 2`
+</pre>
+Add to that one of (depending whether you have komodo, gvim or netbeans):
+<ul>
+	<li><code>komodo $f -l $l</code></li>
+	<li><code>gvim --remote-tab +$l $f</code></li>
+	<li><code>netbeans "$f:$l"</code></li>
+</ul>
+</pre>
+</li>
+<li>Make the script executable with <code>chmod +x ~/bin/ff-xdebug.sh</code></li>
+<li>Set the [CFG:file_link_format] setting to <code>xdebug://%f@%l</code></li>
+</ul>
+
+<h4>Windows and netbeans</h4>
+<ul>
+<li>Create the file <code>netbeans.bat</code> and save it in your path (<code>C:\Windows</code> will work):
+<pre>
+@echo off
+setlocal enableextensions enabledelayedexpansion
+set NETBEANS=%1
+set FILE=%~2
+%NETBEANS% --nosplash --console suppress --open "%FILE:~19%"
+nircmd win activate process netbeans.exe
+</pre>
+<p>
+	<b>Note:</b> Remove the last line if you don't have <code>nircmd</code>.
+</p>
+</li>
+<li>Save the following code as <code>netbeans_protocol.reg</code>:
+<pre>
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\netbeans]
+"URL Protocol"=""
+@="URL:Netbeans Protocol"
+
+[HKEY_CLASSES_ROOT\netbeans\DefaultIcon]
+@="\"C:\\Program Files\\NetBeans 7.1.1\\bin\\netbeans.exe,1\""
+
+[HKEY_CLASSES_ROOT\netbeans\shell]
+
+[HKEY_CLASSES_ROOT\netbeans\shell\open]
+
+[HKEY_CLASSES_ROOT\netbeans\shell\open\command]
+@="\"C:\\Windows\\netbeans.bat\" \"C:\\Program Files\\NetBeans 7.1.1\\bin\\netbeans.exe\" \"%1\""
+</pre>
+<p>
+	<b>Note:</b> Make sure to change the path to Netbeans (twice), as well as
+	the <code>netbeans.bat</code> batch file if you saved it somewhere else
+	than <code>C:\Windows\</code>.
+</p>
+</li>
+<li>Double click on the <code>netbeans_protocol.reg</code> file to import it
+into the registry.</li>
+<li>Set the [CFG:file_link_format] setting to <code>xdebug.file_link_format =
+"netbeans://open/?f=%f:%l"</code></li>
+</ul>

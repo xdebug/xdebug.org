@@ -1,0 +1,5 @@
+Normally you need to use a specific HTTP GET/POST variable to start
+remote debugging (see [FEAT:remote#browser_session]). When
+this setting is set to 1, Xdebug will always attempt to start a remote
+debugging session and try to connect to a client, even if the GET/POST/COOKIE
+variable was not present.

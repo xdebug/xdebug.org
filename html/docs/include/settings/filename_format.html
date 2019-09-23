@@ -1,0 +1,19 @@
+<p>This setting determines the format with which Xdebug renders
+filenames in HTML stack traces (default: <code>...%s%n</code>) and location
+information through the overloaded [FUNC:xdebug_var_dump] (default:
+<code>%f</code>).
+</p>
+
+<p>
+The possible format specifiers are listed in this table. The example output is
+rendered according to the full path
+<code>/var/www/vendor/mail/transport/mta.php</code>.
+</p>
+<table class='table'>
+<tr><th>Specifier</th><th>Meaning</th><th>Example Output</th></tr>
+<tr><td class='ctr'>%a</td><td>Ancester: Two directory elements and filename</td><td><code>mail/transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%f</td><td>Full path</td><td><code>/var/www/vendor/mail/transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%n</td><td>Name: Only the file name</td><td><code>mta.php</code></td></tr>
+<tr><td class='ctr'>%p</td><td>Parent: One directory element and the filename</td><td><code>transport/mta.php</code></td></tr>
+<tr><td class='ctr'>%s</td><td>Directory separator</td><td><code>\</code> on Linux, OSX and other Unix-like systems, <code>/</code> on Windows</td></tr>
+</table>
