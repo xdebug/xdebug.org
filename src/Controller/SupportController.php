@@ -4,6 +4,8 @@ namespace XdebugDotOrg\Controller;
 use XdebugDotOrg\Core\HtmlResponse;
 
 use XdebugDotOrg\Model\SupportLog;
+use XdebugDotOrg\Model\SupportLogDayReport;
+use XdebugDotOrg\Model\SupportLogMonthReport;
 
 class SupportController
 {
@@ -19,27 +21,44 @@ class SupportController
 
 	public static function log() : HtmlResponse
 	{
-		$d = Dir( 'reports' );
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				SupportLog::class,
+				function() : SupportLog {
+					return self::getLogModel();
+				},
+				'log'
+			),
+			'support/log.php'
+		);
+	}
 
-		$files = array();
-		while ( false !== ( $entry = $d->read() ) )
-		{
+	public static function getLogModel() : SupportLog
+	{
+		$d = \dir( 'reports' );
+
+		$files = [];
+
+		while ( false !== ( $entry = $d->read() ) ) {
 			if (preg_match( '@^20[0-9][0-9]-[01][0-9]\.txt$@', $entry, $m)) {
 				$files[] = $entry;
 			}
 		}
 
-		rsort($files);
+		\rsort($files);
 
-
-
-		return new HtmlResponse(
-			new SupportLog($files, self::get_supporters()),
-			'support/log.php'
+		return new SupportLog(
+			array_map(
+				function($file) {
+					return self::getMonthReport($file);
+				},
+				$files
+			),
+			self::get_supporters()
 		);
 	}
 
-	public static function get_report( string $file ) : string
+	private static function getMonthReport(string $file) : SupportLogMonthReport
 	{
 		$f = file( 'reports/'. $file );
 		$summary = array_shift($f);
@@ -47,27 +66,14 @@ class SupportController
 		preg_match( '/[0-9]{4}-[0-9]{2}/', $file, $matches );
 		$d = new \DateTimeImmutable( "{$matches[0]}-01" );
 
-		$html = "<h2>" . $d->format( "F Y" ) . "</h2>\n";
-
-// var_dump( $summary, $f );
-
-		list( $patreon, $basic, $company, $others ) = explode( "\t", trim( $summary) );
+		list($patreon, $basic, $company, $others) = explode("\t", trim($summary));
 		$total = (int) $patreon + (int) $basic + (int) $company + (int) $others;
 
-		$html .= "
-			<div class='funding'>
-				<div class='others' style='width: {$others}%'></div>
-				<div class='company' style='width: {$company}%'></div>
-				<div class='basic' style='width: {$basic}%'></div>
-				<div class='patreon' style='width: {$patreon}%'></div>
-				<div class='comment'>Time Funded</div>
-			</div>";
-
 		$totalHours = [];
-		$logTable = "<table class='log'>\n";
-		$logTable .= "<tr><th class='day'>Day</th><th class='type'>Type</th><th class='description'>Description</th><th class='hours'>Hours</th></tr>\n";
-		foreach( $f as $line )
-		{
+
+		$days = [];
+
+		foreach ($f as $line) {
 			$line = trim( $line );
 			if ( $line == '' ) {
 				continue;
@@ -81,33 +87,28 @@ class SupportController
 				$type = 'generic';
 			};
 
-			$logTable .= "<tr><td class='day'>{$day}</td><td class='type'><div class='type-{$type}'>{$type}</div></td><td>{$description}</td><td class='hours'>{$hours}</td></tr>\n";
+			$days[] = new SupportLogDayReport(
+				$day,
+				$type,
+				$description,
+				$hours
+			);
 
 			$totalHours[$type] += $hours;
-		}
-		$logTable .= "</table>\n";
+		};
 
-		krsort( $totalHours );
-		$spendBar = "<div class='spend'>\n";
-		foreach( $totalHours as $type => $value )
-		{
-			$spendBar .= "<div class='type-{$type}' style='width: {$value}%'></div>\n";
-		}
-		$spendBar .= "<div class='comment'>Time Spent</div>\n";
-		$spendBar .= "</div>\n";
+		krsort($totalHours);
 
-		$html .= $spendBar;
-		$html .= $logTable;
-
-		$url = strtolower( $d->format( 'F-Y' ) );
-
-		$from = $d->modify( '+40 days' );
-		if (new \DateTimeImmutable() > $from )
-		{
-			$html .="<p>For additional information, please see the <a href='https://derickrethans.nl/xdebug-update-{$url}.html'>monthly</a> report.</p>\n";
-		}
-
-		return $html;
+		return new SupportLogMonthReport(
+			$d,
+			$others,
+			$company,
+			$basic,
+			$patreon,
+			$days,
+			$totalHours,
+			new \DateTimeImmutable() > $d->modify( '+40 days' ) ? strtolower($d->format( 'F-Y' )) : null
+		);
 	}
 
 	/**

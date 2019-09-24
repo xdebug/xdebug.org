@@ -23,7 +23,7 @@ class HomeController
 		return new HtmlResponse(null, 'home/license.php');
 	}
 
-	public static function download() : HtmlResponse
+	public static function getDownloadsModel() : Downloads
 	{
 		// open the files dir, and scan
 		$d = dir(dirname(__DIR__, 2) . '/html/files' );
@@ -81,7 +81,7 @@ class HomeController
 						$namea .= " (32 bit)";
 					}
 
-					$dlls[] = ['href' => 'file/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
+					$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
 				}
 			}
 
@@ -94,7 +94,21 @@ class HomeController
 			);
 		}
 
-		return new HtmlResponse(new Downloads($downloads), 'home/download.php');
+		return new Downloads($downloads);
+	}
+
+	public static function download() : HtmlResponse
+	{
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				Downloads::class,
+				function() : Downloads {
+					return self::getDownloadsModel();
+				},
+				'downloads'
+			),
+			'home/download.php'
+		);
 	}
 
 	public static function contributing() : HtmlResponse

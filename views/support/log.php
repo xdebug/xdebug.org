@@ -10,12 +10,47 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 <?= XdebugDotOrg\Controller\TemplateController::support_menu()->render() ?>
 
 <div class="left">
+	<?php foreach ($this->reports as $report) : ?>
+		<h2><?= $report->start->format( "F Y" ) ?></h2>
+		<div class='funding'>
+			<div class='others' style='width: <?= $report->others ?>%'></div>
+			<div class='company' style='width: <?= $report->company ?>%'></div>
+			<div class='basic' style='width: <?= $report->basic ?>%'></div>
+			<div class='patreon' style='width: <?= $report->patreon ?>%'></div>
+			<div class='comment'>Time Funded</div>
+		</div>
 
-<?php // this is lazy of me ?>
-<?php foreach ($this->files as $file) : ?>
-	<?= XdebugDotOrg\Controller\SupportController::get_report( $file ) ?>
-	<br/>
-<?php endforeach ?>
+		<div class='spend'>
+			<?php foreach ($report->totalHours as $type => $value) : ?>
+				<div class='type-<?= $type ?>' style='width: <?= $value ?>%'></div>
+			<?php endforeach ?>
+			<div class='comment'>Time Spent</div>
+		</div>
+
+		<table class='log'>
+			<tr>
+				<th class='day'>Day</th>
+				<th class='type'>Type</th>
+				<th class='description'>Description</th>
+				<th class='hours'>Hours</th>
+			</tr>
+			<?php foreach ($report->days as $day_report) : ?>
+				<tr>
+					<td class='day'><?= $day_report->day ?></td>
+					<td class='type'>
+						<div class='type-<?= $day_report->type ?>'><?= $day_report->type ?></div>
+					</td>
+					<td><?= $day_report->description ?></td>
+					<td class='hours'><?= $day_report->hours ?></td>
+				</tr>
+			<?php endforeach ?>
+		</table>
+
+		<?php if ($report->url) : ?>
+			<p>For additional information, please see the <a href='https://derickrethans.nl/xdebug-update-<?= $report->url ?>.html'>monthly</a> report.</p>
+		<?php endif ?>
+		<br/>
+	<?php endforeach ?>
 </div>
 
 <div class="right">
