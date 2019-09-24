@@ -7,6 +7,7 @@ namespace XdebugDotOrg\Model;
 class Page
 {
 	public $title;
+	public $headExtra;
 	public $contents;
 	/**
 	 * @var array
@@ -15,9 +16,11 @@ class Page
 
 	public function __construct(
 		string $title,
+		string $headExtra,
 		string $contents
 	) {
 		$this->title = $title;
+		$this->headExtra = $headExtra;
 		$this->contents = $contents;
 	}
 }

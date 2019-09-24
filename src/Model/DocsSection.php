@@ -12,10 +12,12 @@ class DocsSection
 	public $text;
 	public $related_settings;
 	public $related_functions;
+	public $tabFields;
 
 	/**
 	 * @param array<Setting> $related_settings
 	 * @param array<FunctionDescription> $related_functions
+	 * @param string[] $tabFields
 	 */
 	public function __construct(
 		string $title,
@@ -23,7 +25,8 @@ class DocsSection
 		string $href,
 		?string $text = null,
 		array $related_settings = [],
-		array $related_functions = []
+		array $related_functions = [],
+		array $tabFields = []
 	) {
 		$this->title = $title;
 		$this->description = $description;
@@ -31,6 +34,7 @@ class DocsSection
 		$this->text = $text;
 		$this->related_settings = $related_settings;
 		$this->related_functions = $related_functions;
+		$this->tabFields = $tabFields;
 	}
 }
 ?>

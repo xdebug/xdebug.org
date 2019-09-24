@@ -3,6 +3,10 @@
  * @psalm-scope-this XdebugDotOrg\Model\DocsSection
  */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » ' . $this->title);
+
+XdebugDotOrg\Controller\TemplateController::setHeadExtra(
+	XdebugDotOrg\Controller\DocsController::sectionHead($this->model)->render()
+);
 ?>
 
 <h1>Documentation</h1>

@@ -18,7 +18,6 @@ class DocsController
 			\FUNC_BASIC,
 			'Xdebug\'s basic functions include the display of stack traces on error
 			conditions, maximum nesting level protection and time tracking.',
-			''
 		],
 		'display' => [
 			'Variable Display Features',
@@ -127,10 +126,16 @@ class DocsController
 			'/docs/' . $section,
 			self::add_links(file_get_contents( $section_file )),
 			Docs\SettingsController::getRelatedSettings($data[1]),
-			Docs\FunctionsController::getRelatedFunctions($data[1])
+			Docs\FunctionsController::getRelatedFunctions($data[1]),
+			$data[3]['tabfields'] ?? []
 		);
 
 		return new HtmlResponse($model, 'docs/section.php');
+	}
+
+	public static function sectionHead(object $model) : HtmlResponse
+	{
+		return new HtmlResponse($model, 'docs/section_head.php');
 	}
 
 	public static function add_links(string $text) : string

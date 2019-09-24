@@ -9,14 +9,22 @@ class TemplateController
 	/** @var string */
 	public static $title = '';
 
+	/** @var string */
+	public static $headExtra = '';
+
 	public static function setTitle(string $title) : void
 	{
 		self::$title = $title;
 	}
 
+	public static function setHeadExtra(string $headExtra) : void
+	{
+		self::$headExtra = $headExtra;
+	}
+
 	public static function default(string $contents) : HtmlResponse
 	{
-		return new HtmlResponse(new Page(self::$title, $contents), 'templates/default.php');
+		return new HtmlResponse(new Page(self::$title, self::$headExtra, $contents), 'templates/default.php');
 	}
 
 	public static function default_menu() : HtmlResponse
