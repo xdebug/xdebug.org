@@ -6,18 +6,18 @@ namespace XdebugDotOrg\Model;
  */
 class SupportLog
 {
-	public $files;
+	public $reports;
 	public $supporters;
 
 	/**
-	 * @param string[] $files
+	 * @param SupportLogMonthReport[] $reports
 	 * @param array<int, array{0: string, 1: string}> $supporters
 	 */
 	public function __construct(
-		array $files,
+		array $reports,
 		array $supporters
 	) {
-		$this->files = $files;
+		$this->reports = $reports;
 		$this->supporters = $supporters;
 	}
 }
