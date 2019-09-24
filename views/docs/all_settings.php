@@ -7,8 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » A
 
 <h1>Documentation</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 » Documentation for: <b>Xdebug 2</b><br />
 » All settings<br />
 <hr />

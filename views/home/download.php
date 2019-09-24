@@ -7,8 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Downloads');
 
 <h1>Downloads</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <h2>Source</h2>
 
 <p>

@@ -20,8 +20,6 @@ function issue(int $nr) : string {
 ?>
 <h1>Updates</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <span class='quote'>
 <dl>
 <dt><a name='x_2_8_0'></a>[2019-10-31] &mdash; Xdebug 2.8.0</dt>

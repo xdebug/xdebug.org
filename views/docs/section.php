@@ -11,8 +11,6 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 
 <h1>Documentation</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 » Documentation for: <b>Xdebug 2</b><br />
 » Feature: <b><?= $this->title ?></b><br />
 <hr />

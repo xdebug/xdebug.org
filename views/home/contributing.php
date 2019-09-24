@@ -4,8 +4,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Contributing');
 
 <h1>Contributing</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <a name="git"></a>
 <h2>GIT</h2>
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
@@ -67,7 +65,7 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 	<tt>git checkout -b issue<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
 	<tt>git checkout -b issue681</tt><br/>
-	If there is no 
+	If there is no
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
@@ -108,7 +106,7 @@ except that you make a branch of <b>master</b> instead of
 	<tt>git checkout -b issue<i>{issue&nbsp;number}</i></tt><br/>
 	for example:<br/>
 	<tt>git checkout -b issue681</tt><br/>
-	If there is no 
+	If there is no
 	<a href='http://bugs.xdebug.org/view_all_bug_page.php'>bug report</a> yet,
 	then you need to create one. If you want, you can add a description of the
 	feature after the <tt>issue681</tt> part, for example:
