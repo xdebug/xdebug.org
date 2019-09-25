@@ -9,7 +9,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <div class="option">
 <h2>Community</h2>
 <h4>&nbsp;</h4>
-<h3>Support via <a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a></h3>
+<h3><a href='https://www.patreon.com/bePatron?u=7864328'>Support Xdebug via Patreon</a></h3>
 <ul>
 	<li class="notick">Tech Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
 	<li class="notick">Issue Priority: Low</li>
