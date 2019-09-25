@@ -12,7 +12,13 @@ class NewsController
 	 */
 	private static function getNewsItems() : array
 	{
-		$d = glob("../data/news/*.txt");
+		$newsDataDir = self::getNewsDataDir();
+
+		if (!is_dir($newsDataDir)) {
+			throw new \Exception('Directory ' . $newsDataDir . ' should exist');
+		}
+
+		$d = glob($newsDataDir . '*.txt');
 		sort($d);
 		$d = array_reverse( $d );
 
@@ -30,9 +36,30 @@ class NewsController
 		return $news_items;
 	}
 
+	private static function getNewsDataDir() : string
+	{
+		return dirname(__DIR__, 2) . '/data/news/';
+	}
+
 	public static function items() : HtmlResponse
 	{
 		return new HtmlResponse(new NewsItems(self::getNewsItems()), 'news/items.php');
+	}
+
+	public static function item(string $date) : HtmlResponse
+	{
+		$newsFile = self::getNewsDataDir() . $date . '.txt';
+
+		if (!is_file($newsFile)) {
+			throw new \XdebugDotOrg\PageNotFoundException('News item ' . $date . ' not found');
+		}
+
+		$file = file( $newsFile );
+		$title = array_shift( $file );
+		$date = new \DateTimeImmutable($date);
+		$contents = join( '', $file );
+
+		return new HtmlResponse(new NewsItem($title, $date, $contents), 'news/item.php');
 	}
 
 	public static function front_page() : HtmlResponse

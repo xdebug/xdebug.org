@@ -5,15 +5,11 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » All functions');
 ?>
 
-<h1>Documentation</h1>
+<h1>Documentation - all functions</h1>
 
-» Documentation for: <b>Xdebug 2</b><br />
-» All functions<br />
-<hr />
-
-<hr class='light'/>
+<p>
 This section describes all available functions available in Xdebug.
-<hr style='clear: both'>
+</p>
 
 <div class='functions'>
 	<?php foreach ($this->functions as $function) : ?>

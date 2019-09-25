@@ -20,5 +20,9 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<h3>Announcements</h3>
 
 	<?= XdebugDotOrg\Controller\NewsController::front_page()->render() ?>
+
+	<hr>
+
+	<p><a href="/announcements">See all announcements</a></p>
 </div>
 

@@ -7,8 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 
 <h1>Log and Supporters Xdebug</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::support_menu()->render() ?>
-
 <div class="left">
 	<?php foreach ($this->reports as $report) : ?>
 		<h2><?= $report->start->format( "F Y" ) ?></h2>

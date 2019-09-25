@@ -21,6 +21,10 @@ body {
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
+p, ol, ul {
+    line-height: 1.5em;
+}
+
 a {
 	color: #317E1E;
 	text-decoration: none;
@@ -36,6 +40,7 @@ a:hover {
 
 nav {
 	background-color: #A5D471;
+	margin-bottom: 40px;
 }
 
 nav > div {
@@ -48,7 +53,7 @@ nav > div:before {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	left: -85px;
+	left: -65px;
 
 	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4ODUiIGhlaWdodD0iMzE5IiB2aWV3Qm94PSIwIDAgODg1IDMxOSI+PGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNNTY0LjE3LjVMNzI0IDE2MS40OSA1NjQuMTcgMzE4LjVILjQ2TDE2NyAxNTguODcuNDYuNXoiIG9wYWNpdHk9Ii40NCIvPjxwYXRoIGQ9Ik04ODQuOC41TDcyNCAxNjEuNDkgNTY0LjE3LjV6TTg4NC45IDMxOC41TDcyNCAxNjEuNWwtMTU5Ljk1IDE1N3oiIG9wYWNpdHk9Ii4yNSIvPjwvZz48L3N2Zz4=");
 	background-repeat: no-repeat;
@@ -83,23 +88,63 @@ nav ul li {
 
 nav ul li a {
 	text-decoration: none;
-	font-weight: bold;
-	color: #16450A;
-	font-size: 18px;
+    font-weight: bold;
+    color: #2c611f;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .content_width {
 	margin: 0 auto;
 	max-width: 1024px;
+	padding: 0 20px;
+	box-sizing: border-box;
 }
 
 #support {
 	text-align: center;
-	padding: 40px 20px 60px;
+	padding: 0 20px 40px;
 }
 
 main {
 	overflow: hidden;
+}
+
+main h1 {
+	margin: 1em 0;
+}
+
+main h2, main h3 {
+	font-weight: 600;
+}
+
+pre, .example > code {
+	padding: 20px;
+    background: #eee;
+    display: block;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+h3 + p {
+	margin-top: 0;
+}
+
+h3 + code {
+	margin-top: 1em;
+}
+
+main p, main ul, main ol {
+	max-width: 600px;
+}
+
+main p code, main li code {
+	font-size: 16px;
+}
+
+footer {
+	text-align: center;
+	padding: 40px 20px !important;
 }
 
 .front_intro {
@@ -136,9 +181,86 @@ main {
 	padding: 0;
 }
 
-footer {
+.functions, .settings {
+	margin: 3em 0;
+}
+
+.doc_function, .doc_setting {
+	margin: 2em 0;
+}
+
+.doc_setting h3,
+.doc_function h3 {
+	margin-bottom: 0;
+}
+
+.support_options {
+	overflow: hidden;
+	margin: 3em 0;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.support_options .option {
+    width: 30%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.support_options h2 {
+	background: #BBDE94;
+	padding: 1em;
+	margin: 0;
+	border-top: 3px solid #317E1E;
 	text-align: center;
-	padding: 40px 20px;
+}
+
+.support_options .option:first-child h2 {
+	background-color: #e8e8e8;
+    border-top-color: #a9a9a9;
+}
+
+.support_options h3, .support_options h4 {
+	text-align: center;
+
+	padding: 1em;
+	margin: 0;
+	border-bottom: 1px solid #CCC;
+}
+
+.support_options li {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 20px;
+	position: relative;
+}
+
+.support_options li:not(.notick):before {
+	content: '✔';
+	display: block;
+	position: absolute;
+	left: 0;
+	color: #317E1E;
+}
+
+.support_options ul {
+	list-style: none;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.support_options .contact {
+	border-top: 2px solid #CCC;
+	margin-top: auto;
+	text-align: center;
+	padding: 1em;
+	min-height: 90px;
+}
+
+.terms p {
+	max-width: 100%;
 }
 </style>
 
@@ -150,8 +272,10 @@ footer {
 
 
 	<footer class="content_width">
+		<p>
 		This site and all of its contents are Copyright &copy; 2002-<?php echo date("Y"); ?> by Derick Rethans.<br />
 		All rights reserved.
+		</p>
 	</footer>
 </body>
 </html>
