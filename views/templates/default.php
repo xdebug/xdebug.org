@@ -245,6 +245,10 @@ footer {
 	color: #317E1E;
 }
 
+.support_options hr {
+	border: 1px solid #CCC;
+}
+
 .support_options ul {
 	list-style: none;
 	margin: 1em 0;
@@ -261,6 +265,7 @@ footer {
 
 .terms p {
 	max-width: 100%;
+	color: #555;
 }
 </style>
 

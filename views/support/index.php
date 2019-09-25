@@ -11,9 +11,9 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <h4>&nbsp;</h4>
 <h3>Support via <a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a></h3>
 <ul>
-	<li class="notick">Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
+	<li class="notick">Tech Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
 	<li class="notick">Issue Priority: Low</li>
-	<li>Monthly News Post</li>
+	<li>Monthly News Post via Patreon</li>
 </ul>
 <div class="contact"><a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a></div>
 </div>
@@ -23,7 +23,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <h4>1 developer</h4>
 <h3>£ 199/year *</h3>
 <ul>
-	<li>Support: E-mail</li>
+	<li>Tech Support: E-mail</li>
 	<li>Issue Priority: Medium</li>
 	<li>Access to Commercial Add-ons&nbsp;(soon)</li>
 	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
@@ -37,7 +37,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <h4>2-20 developers</h4>
 <h3>£ 999/year *</h3>
 <ul>
-	<li>Support: E-mail</li>
+	<li>Tech Support: E-mail</li>
 	<li>Issue Priority: High</li>
 	<li>Access to Commercial Add-ons&nbsp;(soon)</li>
 	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
