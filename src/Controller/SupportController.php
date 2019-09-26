@@ -35,7 +35,7 @@ class SupportController
 
 	public static function getLogModel() : SupportLog
 	{
-		$d = \dir( 'reports' );
+		$d = \dir( '../data/reports' );
 
 		$files = [];
 
@@ -60,7 +60,7 @@ class SupportController
 
 	private static function getMonthReport(string $file) : SupportLogMonthReport
 	{
-		$f = file( 'reports/'. $file );
+		$f = file( '../data/reports/'. $file );
 		$summary = array_shift($f);
 
 		preg_match( '/[0-9]{4}-[0-9]{2}/', $file, $matches );
@@ -116,7 +116,7 @@ class SupportController
 	 */
 	private static function get_supporters() : array
 	{
-		$f = file( 'reports/supporters.txt' );
+		$f = file( '../data/reports/supporters.txt' );
 
 		$lines = [];
 

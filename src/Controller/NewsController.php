@@ -12,7 +12,7 @@ class NewsController
 	 */
 	private static function getNewsItems() : array
 	{
-		$d = glob("news/*.txt");
+		$d = glob("../data/news/*.txt");
 		sort($d);
 		$d = array_reverse( $d );
 
@@ -21,7 +21,7 @@ class NewsController
 		foreach ($d as $item) {
 			$file = file( $item );
 			$title = array_shift( $file );
-			$date = new \DateTimeImmutable(preg_replace( '@^news/(.*).txt$@', '\1', $item ));
+			$date = new \DateTimeImmutable(preg_replace( '@.+news/(.*).txt$@', '\1', $item ));
 			$contents = join( '', $file );
 
 			$news_items[] = new NewsItem($title, $date, $contents);
