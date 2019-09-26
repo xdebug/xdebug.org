@@ -62,6 +62,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 <?php endforeach ?>
 </ul>
 
-<p>You can also be listed as a supporter by <a href='/support'>signing up</a> for a <i>Company</i> package.</p>
+<p>You can also be listed as a supporter by <a href='/support'>signing up</a> for a <i>Business</i> package.</p>
 
 </div>

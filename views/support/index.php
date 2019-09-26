@@ -27,7 +27,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 
 <div class="option">
 <div class="option-content">
-<h2>Basic</h2>
+<h2>Pro</h2>
 <h4>1 developer</h4>
 <hr/>
 <h3>£ 199/year</h3>
@@ -40,13 +40,13 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 	<li>✔ Invoice</li>
 </ul>
 <hr/>
-<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Basic Subscription'>billing+basic@xdebug.org</a><br/>to sign up</div>
+<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Pro Subscription'>billing+pro@xdebug.org</a><br/>to sign up</div>
 </div>
 </div>
 
 <div class="option">
 <div class="option-content">
-<h2>Company</h2>
+<h2>Business</h2>
 <h4>2-20 developers</h4>
 <hr/>
 <h3>£ 999/year</h3>
@@ -60,7 +60,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 	<li>✔ "Thank You" with link on site</li>
 </ul>
 <hr/>
-<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Company Subscription'>billing+company@xdebug.org</a><br/>to sign up</div>
+<div class="contact">E-mail</br><a href='mailto:billing@xdebug.org?subject=Business Subscription'>billing+business@xdebug.org</a><br/>to sign up</div>
 </div>
 </div>
 
