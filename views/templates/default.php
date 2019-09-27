@@ -121,6 +121,7 @@ main h1 {
 
 main h2, main h3 {
 	font-weight: 600;
+	margin: 2em 0 1em;
 }
 
 pre, .example > code {
