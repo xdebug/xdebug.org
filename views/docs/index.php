@@ -7,11 +7,11 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation');
 
 <h1>Documentation</h1>
 
-<div class="doc_list">
+<ul class="doc_list">
 	<?php foreach ($this->sections as $section) : ?>
-		<h3><a href='<?= $section->href ?>'><?= $section->title ?></a></h3>
+		<li><a href='<?= $section->href ?>'><?= $section->title ?></a></li>
 	<?php endforeach ?>
 
-	<h3><a href='/docs/all_settings'>All Configuration Settings</a></h3>
-	<h3><a href='/docs/all_functions'>All Functions</a></h3>
-</div>
+	<li><a href='/docs/all_settings'>All Configuration Settings</a></li>
+	<li><a href='/docs/all_functions'>All Functions</a></li>
+</ul>
