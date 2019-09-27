@@ -260,7 +260,22 @@ footer {
 	margin-top: auto;
 	text-align: center;
 	padding: 1em;
-	min-height: 90px;
+	min-height: 40px;
+}
+
+.support_options .contact {
+	background: #e5f5d3;
+    padding: 1em;
+    border: 2px solid #307e1e;
+    text-align: center;
+    border-left: 0;
+    border-right: 0;
+}
+
+.support_options .option:first-child .contact {
+	background-color: #e8e8e8;
+    border-color: #a9a9a9;
+    font-weight: bold;
 }
 
 .terms p {

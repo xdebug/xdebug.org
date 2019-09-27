@@ -4,18 +4,20 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 
 <h1>Support Xdebug</h1>
 
+<p><a href="/log">Where does this money go?</a></p>
+
 <div class="support_options">
 
 <div class="option">
 <h2>Community</h2>
 <h4>&nbsp;</h4>
-<h3><a href='https://www.patreon.com/bePatron?u=7864328'>Support Xdebug via Patreon</a></h3>
+<h3>Choose amount on <a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a></h3>
 <ul>
 	<li class="notick">Tech Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
 	<li class="notick">Issue Priority: Low</li>
 	<li>Monthly News Post via Patreon</li>
 </ul>
-<div class="contact"><a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a></div>
+<div class="contact"><a href='https://www.patreon.com/bePatron?u=7864328'>Support Xdebug via Patreon</a></div>
 </div>
 
 <div class="option">
@@ -29,7 +31,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
 	<li>Invoice †</li>
 </ul>
-<div class="contact">E-mail<br> <a href='mailto:billing@xdebug.org?subject=Pro Subscription'>billing+pro@xdebug.org</a><br/>to sign up</div>
+<div class="contact">Email <a href='mailto:pro@xdebug.org?subject=Pro Subscription'>pro@xdebug.org</a><br>to sign up</div>
 </div>
 
 <div class="option">
@@ -44,7 +46,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 	<li>Invoice †</li>
 	<li>"Thank You" with link on site</li>
 </ul>
-<div class="contact">E-mail<br> <a href='mailto:billing@xdebug.org?subject=Business Subscription'>billing+business@xdebug.org</a><br/>to sign up</div>
+<div class="contact">Email <a href='mailto:business@xdebug.org?subject=Business Subscription'>business@xdebug.org</a><br>to sign up</div>
 </div>
 
 </div>
