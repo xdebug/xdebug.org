@@ -12,6 +12,7 @@
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick@xdebug.org" />
+	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<?= $this->headExtra ?>
 <style>
 
@@ -104,6 +105,10 @@ nav ul li a {
 #support {
 	text-align: center;
 	padding: 0 20px 40px;
+}
+
+#support a {
+	font-weight: bold;
 }
 
 main {
