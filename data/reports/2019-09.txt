@@ -1,4 +1,4 @@
-15.22	0.17	1.67	3.96
+15.42	0.17	1.67	3.96
 2019-09-03		1.5	Writing Xdebug August 2019 update
 2019-09-03	bug	1	Investigate Pull Request #474 for issue #1534 and #1665
 2019-09-05	bug	3	Fixed issue #1665: Segfault with garbage collection and complex function arguments
@@ -13,3 +13,10 @@
 2019-09-22	xdebug3	0.5	Refactoring Xdebug globlas into constituent parts
 2019-09-23	website	1	Merging Matt’s website re-architecture PR, added caching for download and log
 2019-09-23	xdebug3	3	Windows part of moving files, and fixing the “core” issue/directory.
+2019-09-26	xdebug3	1.5	Moving and renaming the files again
+2019-09-27	xdebug3	2.5	Moving and renaming the files
+2019-09-28	xdebug3	2	Moving and renaming the files
+2019-09-29	bug	1.5	Triaging and fixing bug #1705: Crash while debugging with ionCube being used
+2019-09-29	xdebug3	1	Refactoring initialisation (part 1 of n)
+2019-09-30		1	Writing Xdebug September 2019 update
+2019-09-30	xdebug3	0.5	Streaming the fix for the crash that I had introduced during refactoring (part 1)
