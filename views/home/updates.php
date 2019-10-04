@@ -180,7 +180,7 @@ function issue(int $nr) : string {
 
 <dd><h3>Added features</h3></dd>
 
-<dd>Fixed <?= bug(1506); ?>: Add <a href="/docs/garbage_collection">garbage collection</a> statistics feature (Benjamin Eberlei).</dd>
+<dd>Fixed <?= bug(1506); ?>: Add <a href="/docs/garbage_collection_statistics">garbage collection</a> statistics feature (Benjamin Eberlei).</dd>
 <dd>Fixed <?= bug(1507); ?>: Add functions to access Zend Engine garbage collection metrics (Benjamin Eberlei).</dd>
 
 <dd><h3>Improvements</h3></dd>

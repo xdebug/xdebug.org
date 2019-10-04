@@ -1,7 +1,7 @@
 Xdebug 2.6.0RC1 is out!
 <p>This is the first, and likely last, release candidate of Xdebug 2.6.0. The
 major change in this release is the addition of
-<a href="/docs/garbage_collection">Garbage Collection</a> statistics
+<a href="/docs/garbage_collection_statistics">Garbage Collection</a> statistics
 functionality, contributed by Benjamin Eberlei.</p>
 
 <p>Besides this addition, several bug fixes to Xdebug's remote debugging and
