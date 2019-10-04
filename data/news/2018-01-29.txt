@@ -10,7 +10,7 @@ features, as you can see on the <a href="/updates.php#x_2_6_0">updates</a>
 page. A few highlights are: <b>support for profiling memory usage</b>,
 <a href="https://xdebug.org/docs/stack_trace#filename_format">configurable
 formatting of filenames</a>, statistics of PHP's <a
-href="https://xdebug.org/docs/garbage_collection">Garbage Collector</a>, and
+href="https://xdebug.org/docs/garbage_collection_statistics">Garbage Collector</a>, and
 for the "remote" debugger:
 "Notice" and "Warning" notifications are sent to the IDE, support for
 low-ASCII characters in property names and array keys, support for NULL
