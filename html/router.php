@@ -32,7 +32,7 @@ if ($requested_uri === '/') {
 			$contents = XdebugDotOrg\Controller\DocsController::section($matches[2])->render();
 		} else {
 			header("HTTP/1.0 404 Not Found");
-			exit();
+			$contents = XdebugDotOrg\Controller\FourOhFourController::error()->render();
 		}
 	} else {
 		$contents = XdebugDotOrg\Controller\DocsController::index()->render();
@@ -51,6 +51,9 @@ if ($requested_uri === '/') {
 	$contents = XdebugDotOrg\Controller\WizardController::index()->render();
 } elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
 	$contents = XdebugDotOrg\Controller\CiController::index()->render();
+} else {
+	header("HTTP/1.0 404 Not Found");
+	$contents = XdebugDotOrg\Controller\FourOhFourController::error()->render();
 }
 
 echo XdebugDotOrg\Controller\TemplateController::default($contents)->render();
