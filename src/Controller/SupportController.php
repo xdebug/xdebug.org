@@ -66,8 +66,8 @@ class SupportController
 		preg_match( '/[0-9]{4}-[0-9]{2}/', $file, $matches );
 		$d = new \DateTimeImmutable( "{$matches[0]}-01" );
 
-		list($patreon, $basic, $company, $others) = explode("\t", trim($summary));
-		$total = (int) $patreon + (int) $basic + (int) $company + (int) $others;
+		list($patreon, $github, $pro, $business, $others) = explode("\t", trim($summary));
+		$total = (int) $patreon + (int) $github  + (int) $pro + (int) $business + (int) $others;
 
 		$totalHours = [];
 
@@ -102,9 +102,10 @@ class SupportController
 		return new SupportLogMonthReport(
 			$d,
 			$others,
-			$company,
-			$basic,
+			$business,
+			$pro,
 			$patreon,
+			$github,
 			$days,
 			$totalHours,
 			new \DateTimeImmutable() > $d->modify( '+40 days' ) ? strtolower($d->format( 'F-Y' )) : null

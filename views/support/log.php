@@ -14,9 +14,10 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 		<h2><?= $report->start->format( "F Y" ) ?></h2>
 		<div class='funding'>
 			<div class='others' style='width: <?= $report->others ?>%'></div>
-			<div class='company' style='width: <?= $report->company ?>%'></div>
-			<div class='basic' style='width: <?= $report->basic ?>%'></div>
+			<div class='business' style='width: <?= $report->business ?>%'></div>
+			<div class='pro' style='width: <?= $report->pro ?>%'></div>
 			<div class='patreon' style='width: <?= $report->patreon ?>%'></div>
+			<div class='github' style='width: <?= $report->github ?>%'></div>
 			<div class='comment'>Time Funded</div>
 		</div>
 

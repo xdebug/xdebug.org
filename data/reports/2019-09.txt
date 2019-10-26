@@ -1,4 +1,4 @@
-15.42	0.17	1.67	3.96
+15.42	0.00	0.17	1.67	3.96
 2019-09-03		1.5	Writing Xdebug August 2019 update
 2019-09-03	bug	1	Investigate Pull Request #474 for issue #1534 and #1665
 2019-09-05	bug	3	Fixed issue #1665: Segfault with garbage collection and complex function arguments

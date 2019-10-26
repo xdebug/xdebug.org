@@ -8,9 +8,10 @@ class SupportLogMonthReport
 {
 	public $start;
 	public $others;
-	public $company;
-	public $basic;
+	public $business;
+	public $pro;
 	public $patreon;
+	public $github;
 	public $days;
 	public $totalHours;
 	public $url;
@@ -22,18 +23,20 @@ class SupportLogMonthReport
 	public function __construct(
 		\DateTimeImmutable $start,
 		string $others,
-		string $company,
-		string $basic,
+		string $business,
+		string $pro,
 		string $patreon,
+		string $github,
 		array $days,
 		array $totalHours,
 		?string $url
 	) {
 		$this->start = $start;
 		$this->others = $others;
-		$this->company = $company;
-		$this->basic = $basic;
+		$this->business = $business;
+		$this->pro = $pro;
 		$this->patreon = $patreon;
+		$this->github = $github;
 		$this->days = $days;
 		$this->totalHours = $totalHours;
 		$this->url = $url;
