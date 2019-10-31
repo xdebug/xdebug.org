@@ -1,0 +1,24 @@
+12.76	0.00	0.17	1.67	15.63
+2019-10-02	talk	5	Preparing Dresden UG talk and workshop
+2019-10-03	talk	1	Preparing Dresden UG talk and workshop
+2019-10-03	talk	1.25	Giving Xdebug 3.0 UG talk
+2019-10-04	talk	6	Giving Xdebug workshop
+2019-10-07	bug	1	Triage and fix #1708: Crash on evaluating object with properties
+2019-10-07		1	Finding out that tests for #778 and #987-006 are failing due to change in PHP 7.4
+2019-10-07	bug	0.25	Creating tickets discovered at PHP UG Dresden talk/workshop
+2019-10-07	bug	0.5	Triaging #1701 – slow gettimeofday() with docker on resumed Mac
+2019-10-08	support	0.75	Answering Stackoverflow questions
+2019-10-09	support	0.25	Answering Stackoverflow questions
+2019-10-10	xdebug3	3	Modularizing the gcstats functionality
+2019-10-11	support	0.25	Triaging #1714: mysqli_options with xdebug.collect_params=3 and above creates Warning: Property access is not allowed yet
+2019-10-11	support	0.25	Answering Stackoverflow questions
+2019-10-12	bug	1	Triaging and fixing bug #1713: INIT_FCALL is not overloaded in code coverage
+2019-10-14	xdebug3	3.5	Modularizing the code coverage mode
+2019-10-14	ci	1.5	Debugging test framework anomalies
+2019-10-15	support	0.5	Answering Stackoverflow questions
+2019-10-21	support	1	Answering Stackoverflow questions
+2019-10-21	xdebug3	1	Modularizing the code coverage mode
+2019-10-22	support	0.25	Answering Stackoverflow questions
+2019-10-28	xdebug3	1.5	Resolve outstanding issues with code coverage modularization
+2019-10-28	xdebug3	3	Modularizing the profiler mode
+2019-10-31	release	4	Releasing 2.8.0
