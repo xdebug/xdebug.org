@@ -131,6 +131,10 @@ class SupportController
 			$d = new \DateTimeImmutable( $date );
 			$diff = $now->diff( $d );
 
+			if ( $diff->invert == 0 )
+			{
+				continue;
+			}
 			if ( $diff->days > 365 )
 			{
 				continue;

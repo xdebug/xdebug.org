@@ -162,6 +162,15 @@ div.type-test    { height: 100%; float: left; color: white; background-color: #4
 div.type-website { height: 100%; float: left; color: black; background-color: #99A6DF;}
 div.type-xdebug3 { height: 100%; float: left; color: black; background-color: #8090D7;}
 
+div.type-talk    { height: 100%; float: left; color: white; background-color: #0121AF;}
+div.type-support { height: 100%; float: left; color: white; background-color: #3447BF;}
+div.type-ci      { height: 100%; float: left; color: white; background-color: #1A3DB7;}
+/*
+div.type-release { height: 100%; float: left; color: white; background-color: #677ACF;}
+div.type-test    { height: 100%; float: left; color: white; background-color: #4D64C7;}
+div.type-website { height: 100%; float: left; color: black; background-color: #99A6DF;}
+div.type-xdebug3 { height: 100%; float: left; color: black; background-color: #8090D7;}
+*/
 table.log { width: 100%; margin: 1em; line-height: 1; }
 table.log td { vertical-align: middle; padding: 2px; }
 table.log tr { font-size: 75%; }
