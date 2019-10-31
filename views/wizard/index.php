@@ -20,7 +20,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Tailor
 <p>
 	The information that you upload will not be stored. The script will only
 	use a few regular expressions to analyse the output and provide you with
-	instructions.  You can see the code <a href='https://github.com/derickr/xdebug.org/blob/master/html/include/phpinfo-scanner.php'>here</a>.
+	instructions.  You can see the code <a href='https://github.com/xdebug/xdebug.org/blob/master/src/XdebugVersion.php'>here</a>.
 </p>
 <p>
 	<input type='submit' name='submit' value='Analyse my phpinfo() output'/>

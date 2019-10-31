@@ -24,6 +24,18 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_8_0'></a>[2019-10-31] &mdash; Xdebug 2.8.0</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1664); ?>: Segfault with garbage collection and complex function arguments</dd>
+<dd>Fixed <?= bug(1699); ?>: Crash during debugging Phalcon project</dd>
+<dd>Fixed <?= bug(1705); ?>: Crash while debugging with ionCube being used</dd>
+<dd>Fixed <?= bug(1708); ?>: Crash on evaluating object with properties</dd>
+<dd>Fixed <?= bug(1709); ?>: Wrong data type breaks tests on Big Endian build</dd>
+<dd>Fixed <?= bug(1713); ?>: INIT_FCALL is not overloaded in code coverage</dd>
+
+
 <dt><a name='x_2_8_0beta2'></a>[2019-08-26] &mdash; Xdebug 2.8.0beta2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

@@ -1,0 +1,21 @@
+Xdebug 2.8.0 is out!
+<p>This is the first release of the Xdebug 2.8 series.</p>
+
+<p>This version of Xdebug primarily adds support for PHP 7.4. It also
+improves the reliability of honouring breakpoints when PHP's
+internals generate code with different line numbers than you would expect.
+This feature requires support in your IDE.</p>
+
+<p>Beyond this, this release also fixes numerous memory leaks, bugs, and
+incompatibilities with Zend Opcache. Everybody is encouraged to upgrade to
+this new version.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates.php#x_2_8_0">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download.php">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains contributions by: <i>Arnold Daniels, Christoph
+Becker, GCth, Joe Watkins, Remi Collet, and Vincent Monier</i> — Thanks!</p>
