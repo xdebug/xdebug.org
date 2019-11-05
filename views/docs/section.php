@@ -20,6 +20,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 			<h2>Related Settings</h2>
 
 			<?php foreach ($this->related_settings as $setting) : ?>
+				<hr>
 				<?= XdebugDotOrg\Controller\Docs\SettingsController::single($setting)->render() ?>
 			<?php endforeach ?>
 		</div>
@@ -30,6 +31,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 			<h2>Related Functions</h2>
 
 			<?php foreach ($this->related_functions as $function) : ?>
+				<hr>
 				<?= XdebugDotOrg\Controller\Docs\FunctionsController::single($function)->render() ?>
 			<?php endforeach ?>
 		</div>

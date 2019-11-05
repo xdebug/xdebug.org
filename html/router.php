@@ -21,7 +21,7 @@ try {
 		$pages = [
 			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
 			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgp',
-			'garbage_collection',
+			'garbage_collection', 'contributing',
 		];
 
 		if (isset($matches[2])) {
@@ -42,8 +42,6 @@ try {
 		$contents = XdebugDotOrg\Controller\NewsController::item($matches[1])->render();
 	} elseif ($requested_uri === '/announcements') {
 		$contents = XdebugDotOrg\Controller\NewsController::items()->render();
-	} elseif ($requested_uri === '/contributing') {
-		$contents = XdebugDotOrg\Controller\HomeController::contributing()->render();
 	} elseif ($requested_uri === '/license') {
 		$contents = XdebugDotOrg\Controller\HomeController::license()->render();
 	} elseif ($requested_uri === '/support') {

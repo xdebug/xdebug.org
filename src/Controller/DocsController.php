@@ -83,6 +83,11 @@ class DocsController
 			0,
 			'Frequently Asked Questions',
 		],
+		'contributing' => [
+			'Contributing',
+			0,
+			'',
+		],
 		'dbgp' => [
 			'DBGP - A common debugger protocol specification',
 			0,

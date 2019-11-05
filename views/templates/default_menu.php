@@ -4,7 +4,6 @@
 		<ul id="menu">
 			<li><a href="/docs/install">Install</a></li>
 			<li><a href="/docs/">Documentation</a></li>
-			<li><a href="/contributing">Contribute</a></li>
 			<li><a href="/reporting-bugs">Report bugs</a></li>
 			<li><a href="https://github.com/xdebug/xdebug">GitHub</a></li>
 		</ul>
