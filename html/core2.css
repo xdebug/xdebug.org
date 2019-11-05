@@ -24,6 +24,7 @@ a:hover {
 nav {
 	background-color: #A5D471;
 	margin-bottom: 40px;
+	box-shadow: 0 -4px 0 inset #00000029;
 }
 
 nav > div {
