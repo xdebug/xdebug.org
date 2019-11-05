@@ -288,6 +288,44 @@ footer {
 	max-width: 100%;
 	color: #555;
 }
+
+div.report {}
+
+div.funding { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
+div.patreon { height: 100%; float: left; color: #44AF56; background-color: #44AF56;}
+div.github  { height: 100%; float: left; color: #44AF56; background-color: #69BF78;}
+div.pro     { height: 100%; float: left; color: #69BF78; background-color: #8FCF9A;}
+div.business{ height: 100%; float: left; color: #8FCF9A; background-color: #69BF78;}
+div.others  { height: 100%; float: left; color: #B4DFBB; background-color: #B4DFBB;}
+div.comment { height: 100%; float: right; font-size: 66%; margin-right: 2px;}
+
+div.spend { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
+div.type-bug     { height: 100%; float: left; color: white; background-color: #0121AF;}
+div.type-generic { height: 100%; float: left; color: white; background-color: #3447BF;}
+div.type-php     { height: 100%; float: left; color: white; background-color: #1A3DB7;}
+div.type-release { height: 100%; float: left; color: white; background-color: #677ACF;}
+div.type-test    { height: 100%; float: left; color: white; background-color: #4D64C7;}
+div.type-website { height: 100%; float: left; color: black; background-color: #99A6DF;}
+div.type-xdebug3 { height: 100%; float: left; color: black; background-color: #8090D7;}
+
+div.type-talk    { height: 100%; float: left; color: white; background-color: #0121AF;}
+div.type-support { height: 100%; float: left; color: white; background-color: #3447BF;}
+div.type-ci      { height: 100%; float: left; color: white; background-color: #1A3DB7;}
+/*
+div.type-release { height: 100%; float: left; color: white; background-color: #677ACF;}
+div.type-test    { height: 100%; float: left; color: white; background-color: #4D64C7;}
+div.type-website { height: 100%; float: left; color: black; background-color: #99A6DF;}
+div.type-xdebug3 { height: 100%; float: left; color: black; background-color: #8090D7;}
+*/
+table.log { width: 100%; margin: 1em; line-height: 1; }
+table.log td { vertical-align: middle; padding: 2px; }
+table.log tr { font-size: 75%; }
+table.log tr td.day, table.log tr th.day { text-align: center; margin-right: 0.5em; }
+table.log tr td.type, table.log tr th.type { text-align: center; }
+table.log tr td.type div { border-radius: 5px; padding: 0.25em; text-align: center; float: none; }
+table.log tr td.description, table.log tr th.description { width: 100%; }
+table.log tr td.hours, table.log tr th.hours { text-align: right; }
+
 </style>
 
 </head>
