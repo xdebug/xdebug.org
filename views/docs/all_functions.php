@@ -13,6 +13,7 @@ This section describes all available functions available in Xdebug.
 
 <div class='functions'>
 	<?php foreach ($this->functions as $function) : ?>
+		<hr>
 		<?= XdebugDotOrg\Controller\Docs\FunctionsController::single($function)->render() ?>
 	<?php endforeach ?>
 </div>

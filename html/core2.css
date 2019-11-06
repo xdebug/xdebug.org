@@ -1,7 +1,70 @@
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/IBMPlexSans-Regular-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/IBMPlexSans-Medium-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/IBMPlexSans-SemiBold-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/IBMPlexSans-Bold-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/IBMPlexSans-RegularItalic-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/IBMPlexSans-MediumItalic-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/IBMPlexSans-SemiBoldItalic-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: url('/fonts/IBMPlexSans-BoldItalic-Latin1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/IBMPlexMono-Regular-Latin1.woff2') format('woff2');
+}
+
 body {
 	margin: 0;
 	padding: 0;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+	font-family: /*-apple-system,BlinkMacSystemFont,Segoe UI,*/ 'IBM Plex Sans',sans-serif;
 }
 
 p, ol, ul {
@@ -99,12 +162,17 @@ main {
 }
 
 main h1 {
-	margin: 1em 0;
+	margin: 0 0 1em 0;
 }
 
 main h2, main h3 {
 	font-weight: 600;
-	margin: 2em 0 1em;
+	margin: 1em 0 1em;
+}
+
+pre, code {
+	line-height: 1.5em;
+    font-family: 'IBM Plex Mono';
 }
 
 pre, .example > code {
@@ -112,7 +180,18 @@ pre, .example > code {
     background: #eee;
     display: block;
     font-size: 14px;
-    line-height: 1.5em;
+    overflow: auto;
+}
+
+.example > code pre, pre pre {
+	padding: 0;
+	margin: 0;
+}
+
+p code {
+	background: #eee;
+	display: inline-block;
+	padding: 0 0.3em;
 }
 
 h3 + p {
@@ -123,17 +202,32 @@ h3 + code {
 	margin-top: 1em;
 }
 
+dt {
+	margin-left: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+dd {
+	margin-left: 40px;
+	margin-bottom: 0px;
+}
+
 main p, main ul, main ol {
 	max-width: 600px;
 }
 
-main p code, main li code {
-	font-size: 16px;
+main ul.yui-nav {
+	max-width: initial;
+}
+
+main p code, main li code, main td code {
+	font-size: 15px;
 }
 
 footer {
 	text-align: center;
 	padding: 40px 20px !important;
+	color: #666;
 }
 
 .front_intro {
@@ -157,6 +251,10 @@ footer {
 	margin-left: 5%;
 	width: 35%;
 	float: left;
+}
+
+.front_announcements h3 {
+	margin-top: 1em;
 }
 
 .front_announcements ul {
@@ -250,6 +348,7 @@ footer {
 	text-align: center;
 	padding: 1em;
 	min-height: 40px;
+	font-weight: bold;
 }
 
 .support_options .contact {
@@ -272,6 +371,25 @@ footer {
 	color: #555;
 }
 
+.supporters {
+	max-width: initial;
+	margin: 1em 0;
+	padding: 0 1em;
+}
+
+.supporters li {
+    list-style: none;
+    display: inline-block;
+    border: 3px outset #9fc596;
+    margin: 0 1em 1em 0;
+}
+
+.supporters li a {
+    display: inline-block;
+    padding: .5em 1em;
+    background-color: #e5f5d5;
+}
+
 div.report {}
 
 div.funding { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
@@ -280,7 +398,7 @@ div.github  { height: 100%; float: left; color: #44AF56; background-color: #69BF
 div.pro     { height: 100%; float: left; color: #69BF78; background-color: #8FCF9A;}
 div.business{ height: 100%; float: left; color: #8FCF9A; background-color: #69BF78;}
 div.others  { height: 100%; float: left; color: #B4DFBB; background-color: #B4DFBB;}
-div.comment { height: 100%; float: right; font-size: 66%; margin-right: 2px;}
+div.comment { height: 100%; float: right; margin-right: 2px;}
 
 div.spend { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
 div.type-bug     { height: 100%; float: left; color: white; background-color: #0121AF;}
@@ -302,9 +420,36 @@ div.type-xdebug3 { height: 100%; float: left; color: black; background-color: #8
 */
 table.log { width: 100%; margin: 1em; line-height: 1; }
 table.log td { vertical-align: middle; padding: 2px; }
-table.log tr { font-size: 75%; }
 table.log tr td.day, table.log tr th.day { text-align: center; margin-right: 0.5em; }
 table.log tr td.type, table.log tr th.type { text-align: center; }
 table.log tr td.type div { border-radius: 5px; padding: 0.25em; text-align: center; float: none; }
 table.log tr td.description, table.log tr th.description { width: 100%; }
 table.log tr td.hours, table.log tr th.hours { text-align: right; }
+
+table.table, table.table-inner {
+	margin: 0px;
+	padding: 0px;
+}
+table.table, table.table-inner {
+	border: solid #777;
+	border-width: thin;
+	margin: 0px;
+	padding: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.table-inner {
+	width: 100%;
+	margin: 10px;
+}
+table.table th {
+	border: solid #777;
+	padding: 3px;
+	border-width: thin;
+	text-align: left;
+}
+table.table td {
+	border: solid #aaa;
+	padding: 3px;
+	border-width: thin;
+}

@@ -13,6 +13,7 @@ This section describes all available configuration settings available in Xdebug.
 
 <div class='settings'>
 	<?php foreach ($this->settings as $setting) : ?>
+		<hr>
 		<?= XdebugDotOrg\Controller\Docs\SettingsController::single($setting)->render() ?>
 	<?php endforeach ?>
 </div>

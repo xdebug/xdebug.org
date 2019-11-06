@@ -8,6 +8,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Announcements');
 
 <ul>
 <?php foreach ($this->items as $item) : ?>
-	<li><a href="/announcements/<?= $item->date->format("Y-m-d") ?>">[<?= $item->date->format("Y-m-d") ?>] - <?= $item->title ?></a></li>
+	<li><?= $item->date->format("Y-m-d") ?> - <a href="/announcements/<?= $item->date->format("Y-m-d") ?>"><?= $item->title ?></a></li>
 <?php endforeach ?>
 </ul>
