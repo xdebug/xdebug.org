@@ -7,7 +7,7 @@ this well be addressed in PHP 7.3.3 and later, Xdebug includes a work
 around.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_7_0RC2">updates</a> page.</p>
+href="/updates#x_2_7_0RC2">updates</a> page.</p>
 
 <p>Please test this release with PHP 7.3, and if you find problems, please
 report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.

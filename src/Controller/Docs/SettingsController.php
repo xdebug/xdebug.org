@@ -10,11 +10,11 @@ class SettingsController
 {
 	private const SETTINGS = [
 		'collect_vars' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_STACK_TRACE
 		],
 		'default_enable' => [
-			'boolean', 1, null,
+			'boolean', 'true', null,
 			\FUNC_BASIC
 		],
 		'extended_info' => [
@@ -22,15 +22,15 @@ class SettingsController
 			\FUNC_REMOTE
 		],
 		'force_display_errors' => [
-			'int', 0, ">= 2.3",
+			'integer', 0, ">= 2.3",
 			\FUNC_BASIC
 		],
 		'force_error_reporting' => [
-			'int', 0, ">= 2.3",
+			'integer', 0, ">= 2.3",
 			\FUNC_BASIC
 		],
 		'halt_level' => [
-			'int', 0, ">= 2.3",
+			'integer', 0, ">= 2.3",
 			\FUNC_BASIC
 		],
 		'manual_url' => [
@@ -87,17 +87,17 @@ class SettingsController
 		],
 
 		'auto_trace' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE
 		],
 
 		'collect_assignments' => [
-			'boolean', 0, '>= 2.1',
+			'boolean', 'false', '>= 2.1',
 			\FUNC_FUNCTION_TRACE
 		],
 
 		'collect_includes' => [
-			'boolean', 1, null,
+			'boolean', 'true', null,
 			\FUNC_FUNCTION_TRACE | \FUNC_STACK_TRACE
 		],
 
@@ -107,7 +107,7 @@ class SettingsController
 		],
 
 		'collect_return' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE,
 		],
 
@@ -132,7 +132,7 @@ class SettingsController
 		],
 
 		'trace_enable_trigger' => [
-			'boolean', 0, '>= 2.2',
+			'boolean', 'false', '>= 2.2',
 			\FUNC_FUNCTION_TRACE
 		],
 
@@ -153,7 +153,7 @@ class SettingsController
 		],
 
 		'remote_autostart' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_REMOTE
 		],
 
@@ -163,12 +163,12 @@ class SettingsController
 		],
 
 		'remote_connect_back' => [
-			'boolean', 0, '>= 2.1',
+			'boolean', 'false', '>= 2.1',
 			\FUNC_REMOTE
 		],
 
 		'remote_enable' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_REMOTE
 		],
 
@@ -258,22 +258,22 @@ class SettingsController
 		],
 
 		'dump_globals' => [
-			'boolean', 1, null,
+			'boolean', 'true', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'dump_once' => [
-			'boolean', 1, null,
+			'boolean', 'true', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'dump_undefined' => [
-			'boolean', 0, null,
+			'boolean', 'false', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'overload_var_dump' => [
-			'boolean', 2, '> 2.1',
+			'integer', 2, '> 2.1',
 			\FUNC_VAR_DUMP
 		],
 
@@ -288,11 +288,11 @@ class SettingsController
 		],
 
 		'scream' => [
-			'boolean', 0, '>= 2.1',
+			'boolean', 'false', '>= 2.1',
 			\FUNC_BASIC
 		],
 		'coverage_enable' => [
-			'boolean', 1, '>= 2.2',
+			'boolean', 'true', '>= 2.2',
 			\FUNC_CODE_COVERAGE
 		],
 	];

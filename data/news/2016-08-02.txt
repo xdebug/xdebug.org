@@ -3,6 +3,6 @@ Xdebug 2.4.1 is out!
 other issues that were introduced by supporting PHP 7.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_4_1">updates</a> page. The source code can be found
+href="/updates#x_2_4_1">updates</a> page. The source code can be found
 on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>

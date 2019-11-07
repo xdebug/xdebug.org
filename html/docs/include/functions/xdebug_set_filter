@@ -47,9 +47,9 @@ of <code>"/home/derick"</code> would also match files in
 trailing slash to the prefix in order to prevent this.</p></dd>
 
 <dt>XDEBUG_PATH_BLACKLIST</dt>
-<dd>Sets up a black list for file paths. An execution unit will be excluded
+<dd><p>Sets up a black list for file paths. An execution unit will be excluded
 from the output if its file path is prefixed by any of the prefixes from the
-<code>$configuration</code> array.</dd>
+<code>$configuration</code> array.</p></dd>
 
 <dt>XDEBUG_NAMESPACE_WHITELIST</dt>
 <dd><p>Sets up a white list for class prefixes. An execution unit is included in

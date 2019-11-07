@@ -1,6 +1,6 @@
 Xdebug 2.6.0beta1 is out!
 <p>This is the first beta release with support for PHP 7.2, which came out
-last month. This is not a <b>final</b/> release, and it does have known
+last month. This is not a <strong>final</b/> release, and it does have known
 issues, including a crash bug.</p>
 
 <p>In addition to the changes in Xdebug 2.6.0alpha1, this beta release adds
@@ -12,7 +12,7 @@ on Windows through AppVeyor. Please note, that Xdebug 2.6 does no longer
 support PHP 5.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_6_0beta1">updates</a> page.</p>
+href="/updates#x_2_6_0beta1">updates</a> page.</p>
 
 <p>This release does come with several unresolved issues, and not all features
 have been implemented yet. Xdebug 2.6.0 will be released in due course.</p>
