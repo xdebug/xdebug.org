@@ -1,13 +1,13 @@
 <?php
 date_default_timezone_set( 'UTC' );
-require '/home/derick/dev/zetacomponents/trunk/Base/src/ezc_bootstrap.php';
+require_once(__DIR__ . '/../vendor/autoload.php');
 
 /* Find files */
-$d = glob( "news/*txt" );
+$d = glob( "../data/news/*txt" );
 sort($d);
 $d = array_reverse( $d );
 
-$latest = preg_replace( '@^news/(.*).txt$@', '\1', $d[0] );
+$latest = preg_replace( '@^../data/news/(.*).txt$@', '\1', $d[0] );
 
 
 $feed = new ezcFeed();
@@ -22,7 +22,7 @@ $link->href = 'http://xdebug.org';
 
 foreach ( $d as $item )
 {
-	$date = preg_replace( '@^news/(.*).txt$@', '\1', $item );
+	$date = preg_replace( '@^../data/news/(.*).txt$@', '\1', $item );
 	$file = file( $item );
 	$title = array_shift( $file );
 
