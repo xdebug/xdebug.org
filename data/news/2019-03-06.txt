@@ -9,7 +9,7 @@ leaks, bugs, and incompatibilities with Zend Opcache. Everybody is encouraged
 to upgrade to this new version.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_7_0">updates</a> page.</p>
+href="/updates#x_2_7_0">updates</a> page.</p>
 
 <p>I have written a
 <a href="https://derickrethans.nl/xdebug-experience.html">blog post "The
@@ -21,5 +21,5 @@ through becoming a supporter on
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
-<p>This release also contains contributions by: <i>Christoph Becker, Peter
-Kokot, Philip Hofstetter, Remi Collet, and Thomas Vanhaniemi</i> — Thanks!</p>
+<p>This release also contains contributions by: <em>Christoph Becker, Peter
+Kokot, Philip Hofstetter, Remi Collet, and Thomas Vanhaniemi</em> — Thanks!</p>

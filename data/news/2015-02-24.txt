@@ -3,5 +3,5 @@ Xdebug 2.3.1 is out!
 and broken triggers for profiling and tracing.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_3_1">updates</a> page and the source code and Windows
+href="/updates#x_2_3_1">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>

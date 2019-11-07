@@ -12,7 +12,7 @@ max nesting level to 256. It also fixes a bunch of issues as found in Xdebug
 2.2.7.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_3_0">updates</a> page and the source code and Windows
+href="/updates#x_2_3_0">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page. A
 series of blog posts on the new features will soon follow on <a
 href='http://derickrethans.nl/'>http://derickrethans.nl</a>, as well as

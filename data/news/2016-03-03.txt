@@ -7,6 +7,6 @@ xdebug.show_error_trace setting allows you to show a stack trace for every
 Error (throwable).</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_4_0">updates</a> page. The source code can be found
+href="/updates#x_2_4_0">updates</a> page. The source code can be found
 on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>

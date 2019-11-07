@@ -3,7 +3,7 @@ Xdebug 2.5.3 is out!
 not statically loaded.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_5_3">updates</a> page. The source code can be found
+href="/updates#x_2_5_3">updates</a> page. The source code can be found
 on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 

@@ -4,5 +4,5 @@ with path and branch coverage, debugging issues with SPL classes, and other
 stability issues. It also provides a 15-20% speed up for tracing.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_3_3">updates</a> page and the source code and Windows
+href="/updates#x_2_3_3">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>

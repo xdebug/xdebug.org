@@ -6,7 +6,7 @@ an issue where Xdebug causes crashes due to a bug in OPcache in PHP 7.3.0 and
 PHP 7.3.1. Xdebug now works around the issue when it is needed.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_7_0rc1">updates</a> page.</p>
+href="/updates#x_2_7_0rc1">updates</a> page.</p>
 
 <p>Please test this release with PHP 7.3, and if you find problems, please
 report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.

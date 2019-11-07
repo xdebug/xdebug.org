@@ -7,7 +7,7 @@ and multiple catches. These will be addressed in a future beta or Release
 Candidate.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_7_0beta1">updates</a> page.</p>
+href="/updates#x_2_7_0beta1">updates</a> page.</p>
 
 <p>Please test this release with PHP 7.3, and if you find problems, please
 report them through the <a href="https://bugs.xdebug.org">issue tracker</a>.

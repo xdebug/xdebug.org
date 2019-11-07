@@ -11,7 +11,7 @@ incompatibilities with Zend Opcache. Everybody is encouraged to upgrade to
 this new version.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_8_0">updates</a> page.</p>
+href="/updates#x_2_8_0">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is

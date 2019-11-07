@@ -20,12 +20,12 @@ effect the different settings have for the human readable function traces.
 
 <h3>The Script</h3>
 <div class="example">
-<p>
+
 <code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Xdebug"</span><span style="color: #007700">;<br />function&nbsp;</span><span style="color: #0000BB">ret_ord</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">ord</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">);<br />}<br /><br />foreach&nbsp;(&nbsp;</span><span style="color: #0000BB">str_split</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$char&nbsp;</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$char</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">":&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ret_ord</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$char&nbsp;</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;<br /></span>
 </span>
 </code>
-</p>
+
 </div>
 
 <h3>The Results</h3>
