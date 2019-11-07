@@ -12,7 +12,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 		<li>it adds <a href='/docs/stack_trace'>stack traces</a> for Notices, Warnings, Errors and Exceptions</li>
 		<li>it features functionality for <a href='/docs/execute_trace'>recording every function call and variable assignment</a> to disk</li>
 		<li>it contains a <a href='/docs/profiler'>profiler</a></li>
-		<li>it provides <a href='/docs/code_coverage'>code coverage</a> functionality for use with <a href='https://phpunit.de'>PHPUnit</a></li>.
+		<li>it provides <a href='/docs/code_coverage'>code coverage</a> functionality for use with <a href='https://phpunit.de'>PHPUnit</a></li>
 	</ul>
 </div>
 
