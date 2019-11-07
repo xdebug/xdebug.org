@@ -430,7 +430,7 @@ table.table, table.table-inner {
 	margin: 0px;
 	padding: 0px;
 }
-table.table, table.table-inner {
+table.table, table.table-inner, table.ci {
 	border: solid #777;
 	border-width: thin;
 	margin: 0px;
@@ -442,14 +442,42 @@ table.table-inner {
 	width: 100%;
 	margin: 10px;
 }
-table.table th {
+table.table th, table.ci th {
 	border: solid #777;
 	padding: 3px;
 	border-width: thin;
 	text-align: left;
 }
-table.table td {
+table.table td, table.ci td {
 	border: solid #aaa;
 	padding: 3px;
 	border-width: thin;
+}
+
+table.ci {
+	width: 100%;
+}
+
+table.ci th, table.ci td {
+	text-align: center;
+}
+
+table.ci td a.err {
+	color: red;
+}
+
+table.ci td a.bf {
+	color: purple;
+}
+
+table.ci tr td.log {
+	text-align: left; overflow-wrap: anywhere;
+}
+
+table.ci tr td pre.log {
+	font-size: 0.66em; text-align: left;
+}
+
+pre.log {
+	white-space: pre-wrap;
 }
