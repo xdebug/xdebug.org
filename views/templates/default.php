@@ -15,6 +15,7 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<?= $this->headExtra ?>
 	<link rel="stylesheet" type="text/css" href="/core2.css" />
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 </head>
 <body>
 	<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
