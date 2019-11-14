@@ -481,3 +481,18 @@ table.ci tr td pre.log {
 pre.log {
 	white-space: pre-wrap;
 }
+
+table.versions { width: 100%; border: 1px solid black; border-collapse: collapse; }
+table.versions thead th { text-align: center; }
+table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }
+table.versions thead tr.xdebugversion th.legacy { background-color: #ffbc42; }
+table.versions thead tr.xdebugversion th.supported { background-color: green; color: white; }
+table.versions thead tr.xdebugversion th.future { background-color: lightblue; color: black; }
+table.versions th { text-align: center; border: 1px solid grey; }
+table.versions tbody tr th { background-color: #ff7f7f; }
+table.versions tbody tr th.legacy { background-color: #ffbc42; }
+table.versions tbody tr th.supported { background-color: green; color: white; }
+table.versions tbody tr th.future { background-color: lightblue; color: black; }
+table.versions td { text-align: center; border: 1px solid grey; color: #ff7f7f; }
+table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
+table.versions td.future { text-align: center; border: 1px solid grey; color: lightblue; }
