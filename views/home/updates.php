@@ -20,8 +20,6 @@ function issue(int $nr) : string {
 ?>
 <h1>Updates</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <span class='quote'>
 <dl>
 <dt><a name='x_2_8_0'></a>[2019-10-31] &mdash; Xdebug 2.8.0</dt>
@@ -326,7 +324,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed <?= bug(1278); ?>: Xdebug with PHP 7 does not handle prefill-from-oparray for XDEBUG_CC_UNUSED</dd>
 <dd>Fixed <?= bug(1300); ?>: Xdebug functions are not exposing their signature to Reflection</dd>
 <dd>Fixed <?= bug(1313); ?>: Arguments to __call() trampoline picked from the wrong memory location</dd>
-<dd>Fixed <?= bug(1329); ?>: While printing out a stack with and function parameters, XDebug reads uninitialized zvals or free()d memory</dd>
+<dd>Fixed <?= bug(1329); ?>: While printing out a stack with and function parameters, Xdebug reads uninitialized zvals or free()d memory</dd>
 <dd>Fixed <?= bug(1381); ?>: Code Coverage misses line due to missing FETCH_DIM_W overload</dd>
 <dd>Fixed <?= bug(1385); ?>: can not fetch IS_INDIRECT properties</dd>
 <dd>Fixed <?= bug(1386); ?>: Executable code not shown as executed/executable</dd>
@@ -586,7 +584,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed <?= bug(785); ?>: Profiler does not handle closures and call_user_func_array well.</dd>
 <dd>Fixed <?= bug(963); ?>: Xdebug waits too long for response from remote client</dd>
-<dd>Fixed <?= bug(976); ?>: XDebug crashes if current varibles scope contains COM object.</dd>
+<dd>Fixed <?= bug(976); ?>: Xdebug crashes if current varibles scope contains COM object.</dd>
 <dd>Fixed <?= bug(978); ?>: Inspection of array with negative keys fails</dd>
 <dd>Fixed <?= bug(979); ?>: property_value -m 0 should mean all bytes, not 0 bytes</dd>
 <dd>Fixed <?= bug(987); ?>: Hidden property names not shown.</dd>
@@ -755,7 +753,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed <?= bug(639); ?>: Xdebug profiling: output not correct - missing 'cfl='.</dd>
 <dd>Fixed <?= bug(642); ?>: Fixed line numbers for offsetGet, offsetSet, __get/__set/__isset/__unset and __call in profile files and stack traces/function traces.</dd>
 <dd>Fixed <?= bug(643); ?>: Profiler gets line numbers wrong.</dd>
-<dd>Fixed <?= bug(653); ?>: XDebug profiler crashes with %H in file name and non standard port.</dd>
+<dd>Fixed <?= bug(653); ?>: Xdebug profiler crashes with %H in file name and non standard port.</dd>
 
 <dd><h4>Others</h4></dd>
 <dd>Fixed <?= bug(651); ?>: Incorrect code coverage after empty() in conditional.</dd>
@@ -788,7 +786,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed memory corruption issues.</dd>
 <dd>Fixed a threading related issue for code-coverage.</dd>
-<dd>Fixed <?= bug(532); ?>: XDebug breaks header() function.</dd>
+<dd>Fixed <?= bug(532); ?>: Xdebug breaks header() function.</dd>
 <dd>DBGP: Prevent Xdebug from returning properties when a too high page number has been requested.</dd>
 
 
@@ -842,7 +840,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed support for showing $this in remote debugging sessions.</dd>
 <dd>Fixed bug in formatting the display of "Variables in the local scope".</dd>
 <dd>Possible fix for a threading issue where the headers gathering function would create stack overflows.</dd>
-<dd>Possible fix for bug #324: xdebug_dump_superglobals() only dumps superglobals that were accessed before, and #478: XDebug 2.0.x can't use %R in xdebug.profiler_output_name if register_long_arrays is off.</dd>
+<dd>Possible fix for bug #324: xdebug_dump_superglobals() only dumps superglobals that were accessed before, and #478: Xdebug 2.0.x can't use %R in xdebug.profiler_output_name if register_long_arrays is off.</dd>
 
 <dd>Fixed <?= bug(505); ?>: %s in xdebug.trace_output_name breaks functions traces.</dd>
 <dd>Fixed <?= bug(494); ?>: Private attributes of parent class unavailable when inheriting.</dd>
@@ -934,7 +932,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=321'>#321</a>: Code coverage crashes on empty PHP files.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=318'>#318</a>: Segmentation Fault in code coverage analysis.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=315'>#315</a>: Xdebug crashes when including a file that doesn't exist.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=314'>#314</a>: PHP CLI Error Logging thwarted when XDebug Loaded.</dd>
+<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=314'>#314</a>: PHP CLI Error Logging thwarted when Xdebug Loaded.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=300'>#300</a>: Direction of var_dump().</dd>
 <dd>Always set the transaction_id and command. (Related to bug #313).</dd>
 
@@ -969,7 +967,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=278'>#278</a>: Code Coverage Issue.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=273'>#273</a>: Remote debugging: context_get does not return context id.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=270'>#270</a>: Debugger aborts when PHP's eval() is encountered. </dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=265'>#265</a>: XDebug breaks error_get_last() .</dd>
+<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=265'>#265</a>: Xdebug breaks error_get_last() .</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=261'>#261</a>: Code coverage issues by overloading zend_assign_dim.</dd>
 
 <dd><h3>DBGP</h3></dd>
@@ -1101,7 +1099,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 
 <dd><h3>Added new features</h3></dd>
 <dd>Implemented FR #137: feature_get for general commands doesn't have a text field.</dd>
-<dd>Implemented FR #131: XDebug needs to implement paged child object requests.</dd>
+<dd>Implemented FR #131: Xdebug needs to implement paged child object requests.</dd>
 <dd>Implemented FR #124: Add backtrace dumping information when exception thrown.</dd>
 <dd>Implemented FR #70: Add feature_get breakpoint_types.</dd>
 <dd>Added profiling aggregation functions (patch by Andrei Zmievski)</dd>
@@ -1130,7 +1128,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=121'>#121</a>: property_get -n $r[2] returns the whole hash.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=111'>#111</a>: xdebug does not ignore set_time_limit() function during debug session.</dd>
 <dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=87'>#87</a>: Warning about headers when "register_shutdown_function" used.</dd>
-<dd>Fixed PECL bug #6940 (XDebug ignores set_time_limit)</dd>
+<dd>Fixed PECL bug #6940 (Xdebug ignores set_time_limit)</dd>
 <dd>Fixed Komodo bug 45484: no member data for objects in PHP debugger.</dd>
 <dd>Suppress NOP/EXT_NOP from being marked as executable code with Code Coverage.</dd>
 

@@ -1,19 +1,15 @@
-<div id="menu">
-<span class="sans">
-<a href="/">home</a> |
-<a href="/updates">updates</a> |
-<a href="/download">download</a> |
-<a href="/docs/">documentation</a> |
-<a href="/contributing">contributing</a> |
-<a href="/support">support</a>
-</span>
-</div>
-<br />
+<nav>
+	<div class="content_width">
+		<h1><a href="/"><?= file_get_contents('../html/images/logo.svg') ?></a></h1>
+		<ul id="menu">
+			<li><a href="/docs/install">Install</a></li>
+			<li><a href="/docs/">Documentation</a></li>
+			<li><a href="/reporting-bugs">Report bugs</a></li>
+			<li><a href="https://github.com/xdebug/xdebug">GitHub</a></li>
+		</ul>
+	</div>
+</nav>
 
-<div id="support">
-<div class='button'><a href="https://www.patreon.com/bePatron?u=7864328"><img src='/images/become_a_patron_button.png' alt="Become a Patron!"/></a></div>
-<div class='text'>
-If Xdebug saves you time, please consider <a href='/support.php'>supporting the project</a>.
-</div>
-<div style="clear: both;"></div>
-</div>
+<?php if (!in_array($_SERVER['REQUEST_URI'], ['/support', '/log'])) : ?>
+	<div class="content_width" id="support">If you find Xdebug useful, please consider <a href='/support'>supporting the project</a>.</div>
+<?php endif ?>

@@ -4,8 +4,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Report
 
 <h1>Reporting Bugs</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::support_menu()->render() ?>
-
 <h2>Bugs</h2>
 
 <p>

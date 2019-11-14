@@ -4,8 +4,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: License');
 
 <h1>License</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <hr />
 <p class="center">
                   The Xdebug License, version 1.01<br />

@@ -90,7 +90,7 @@ class CiController
 		);
 
 		$abbrevs = array_reverse( $abbrevs );
-		$abbrevs = array_slice( $abbrevs, 0, 8 );
+		$abbrevs = array_slice( $abbrevs, 0, 7 );
 
 		uksort(
 			$phpVersions,
