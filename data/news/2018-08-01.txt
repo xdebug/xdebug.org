@@ -6,7 +6,7 @@ step debugging where object properties with numerical names could not be
 inspected.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_6_1">updates</a> page.</p>
+href="/updates#x_2_6_1">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is

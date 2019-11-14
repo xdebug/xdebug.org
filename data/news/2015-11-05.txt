@@ -7,7 +7,7 @@ support PHP 5.4 through PHP 7.0.</p>
 have been included as well.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_4_0beta1">updates</a> page. Windows binaries will be
+href="/updates#x_2_4_0beta1">updates</a> page. Windows binaries will be
 added in 2.4.0beta2, which will be available in the near future. The source
 code can be found on the <a href="/download.php">downloads</a> page, and as
 usual, Xdebug is installable through PECL.</p>

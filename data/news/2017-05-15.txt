@@ -4,7 +4,7 @@ not statically loaded and set_time_limit is used, as well as crash on 32 bit
 platforms, and another issue with code coverage.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_5_4">updates</a> page. The source code can be found
+href="/updates#x_2_5_4">updates</a> page. The source code can be found
 on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 

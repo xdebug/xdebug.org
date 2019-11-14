@@ -10,16 +10,16 @@ engine doesn't think there is any code. Expect an article on my <a
 href="https://derickrethans.nl/">website</a> soon.</p>
 
 <p>Everybody is encouraged to try out this new version, but please be aware
-that Xdebug 2.8.0alpha1 <b>is not fully ready</b>. Which means that crashes
+that Xdebug 2.8.0alpha1 <strong>is not fully ready</strong>. Which means that crashes
 can still occur. If you find any problems, please report them to the <a
 href="https://bugs.xdebug.org">issue tracker</a>.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_8_0alpha1">updates</a> page.</p>
+href="/updates#x_2_8_0alpha1">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
-<p>This release also contains contributions by: <i>Arnold Daniels, and
-Christoph M. Becker</i> — Thanks!</p>
+<p>This release also contains contributions by: <em>Arnold Daniels, and
+Christoph M. Becker</em> — Thanks!</p>

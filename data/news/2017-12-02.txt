@@ -1,6 +1,6 @@
 Xdebug 2.6.0alpha1 is out!
 <p>This is the first release with support for PHP 7.2, which came out last
-week. This is not a <b>final</b/> release, and it does have known issues,
+week. This is not a <strong>final</b/> release, and it does have known issues,
 including a crash bug.</p>
 
 <p>With this release, PHP 5 is no longer supported. In order to benefit from
@@ -8,9 +8,9 @@ bug fixes and new features in Xdebug, you will also have to upgrade to PHP 7,
 preferably PHP 7.2.</p>
 
 <p>Besides support for PHP 7.2, it also adds a significant set of new
-features, as you can see on the <a href="/updates.php#x_2_6_0alpha1">updates</a>
-page. A few highlights are: <b>support for profiling memory usage</b>,
-<b>configurable formatting of filenames</b>, and for the "remote" debugger:
+features, as you can see on the <a href="/updates#x_2_6_0alpha1">updates</a>
+page. A few highlights are: <strong>support for profiling memory usage</strong>,
+<strong>configurable formatting of filenames</strong>, and for the "remote" debugger:
 "Notice" and "Warning" notifications are sent to the IDE, support for
 low-ASCII characters in property names and array keys, and configurable
 connection timeouts. You can follow the progress on the <a

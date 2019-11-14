@@ -3,5 +3,5 @@ Xdebug 2.2.3 is out!
 for PHP 5.5 but it also addresses a few minor other issues.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_2_3">updates</a> page and the source code and Windows
+href="/updates#x_2_2_3">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>

@@ -6,6 +6,6 @@ in the 2.4.0beta1 release. Among others problems with code coverage, tracing
 and remote debugging. It also adds support for Windows.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_4_0rc1">updates</a> page. The source code can be found
+href="/updates#x_2_4_0rc1">updates</a> page. The source code can be found
 on the <a href="/download.php">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>

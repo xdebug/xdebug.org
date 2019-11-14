@@ -1,21 +1,8 @@
-<h2>Precompiled Windows Modules</h2>
-
-<p>
-There are a few precompiled modules for Windows, they are all for the non-debug
-version of PHP. You can get those at the <a href='/download.php'>download</a>
-page. Follow <a href='/wizard.php'>these instructions</a> to get Xdebug
-installed.
-</p>
-
 <a name='pecl'></a>
-<h2>PECL Installation</h2>
+<h2>Installing on Linux & Macs</h2>
 
 <p>
-As of Xdebug 0.9.0 you can install Xdebug through PEAR/PECL. This only works
-with with PEAR version 0.9.1-dev or higher and some UNIX.
-</p>
-<p>
-Installing with PEAR/PECL is as easy as:
+You can install Xdebug through PECL on Linux & Macs. Installing with PECL is as easy as:
 </p>
 <pre class='example'>
 # pecl install xdebug
@@ -31,11 +18,13 @@ zend_extension="/usr/local/php/modules/xdebug.so"
 <p><b>Note:</b> You should ignore any prompts to add "extension=xdebug.so" to
 php.ini &mdash; this <b>will</b> cause problems.</p>
 
-<a name='mac'></a>
-<h2>Installation on Mac OS X</h2>
+<h2>Installing on Windows</h2>
 
 <p>
-PHP is available from the unofficial Mac OS X package manager <a href='http://brew.sh/'>Homebrew</a>. Homebrew recommends using PECL to install Xdebug, so please follow the instructions above for <a href="#pecl">installing via PECL</a>.
+There are a few precompiled modules for Windows, they are all for the non-debug
+version of PHP. You can get those at the <a href='/download'>download</a>
+page. Follow <a href='/wizard'>these instructions</a> to get Xdebug
+installed.
 </p>
 
 <a name='source'></a>
@@ -54,7 +43,7 @@ You can also browse the source at <a href='https://github.com/derickr/xdebug'>ht
 </p>
 
 <a name='compile'></a>
-<h2>Compiling</h2>
+<h3>Compiling</h3>
 
 <p>There is a <a href='/wizard.php'>wizard</a> available that provides you
 with the correct file to download, and which paths to use.</p>
@@ -64,7 +53,7 @@ that you need access to the scripts 'phpize' and 'php-config'.  If
 your system does not have 'phpize' and 'php-config', you will need to
 compile and install PHP from a source tarball first, as these script
 are by-products of the PHP compilation and installation processes. (Debian users
-can install the required tools with 
+can install the required tools with
 <code>apt-get install php5-dev</code>). It is important that the source version
 matches the installed version as there are slight, but important, differences
 between PHP versions.  Once you have access to 'phpize' and
@@ -89,21 +78,15 @@ you're having some issues with finding which phpize to use.</li>
 </ol>
 
 <a name='configure-php'></a>
-<h2>Configure PHP to Use Xdebug</h2>
+<h3>Configure PHP to Use Xdebug</h3>
 
 <ol>
 <li>add the following line to php.ini:
-zend_extension="/wherever/you/put/it/xdebug.so". For PHP versions earlier
-than 5.3 <b>and</b> threaded usage of PHP (Apache 2 worker MPM or the
-ISAPI module), add: zend_extension_ts="/wherever/you/put/it/xdebug.so" instead.
+<pre>zend_extension="/wherever/you/put/it/xdebug.so"</pre>
 <strong>Note:</strong> In case you compiled PHP yourself and used
---enable-debug you would have to use zend_extension_debug=.
+--enable-debug you would have to use <code>zend_extension_debug=</code>.
 <strong>Note:</strong> If you want to use Xdebug and OPCache together, you
 must load Xdebug after OPCache. Otherwise, they won't work properly.
-<strong>From PHP 5.3 onwards, you always need to use the zend_extension PHP.ini
-setting name, and not zend_extension_ts, nor zend_extension_debug. However,
-your compile options (ZTS/normal build; debug/non-debug) still need to match
-with what PHP is using.</strong>
 </li>
 
 <li>Restart your webserver.</li>
@@ -117,7 +100,7 @@ twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
 </p>
 
 <a name='debugclient'></a>
-<h2>Debugclient Installation</h2>
+<h3>Debugclient Installation</h3>
 
 <p>
 Unpack the Xdebug source tarball and issue the following commands:
@@ -129,7 +112,7 @@ $ make
 # make install
 </pre>
 <p>
-This will install the debugclient binary in /usr/local/bin unless you don't 
+This will install the debugclient binary in /usr/local/bin unless you don't
 have libedit installed on your system. You can either install it, or leave
 out the '--with-libedit' option to configure. Debian 'unstable' users can
 install the library with <code>apt-get install libedit-dev libedit2</code>.

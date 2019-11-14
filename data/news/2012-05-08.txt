@@ -3,8 +3,8 @@ Xdebug 2.2.0 is out!
 5.4. Besides PHP 5.4 support, this release introduces a few new features into
 Xdebug.  The main one is support for an overloaded var_dump() on the command
 line. For other improvements, please refer to the <a
-href="/updates.php#x_2_2_0">updates</a> page.</p>
+href="/updates#x_2_2_0">updates</a> page.</p>
 
 <p>The full change log can be found on the <a
-href="/updates.php#x_2_2_0">updates</a> page and the source code and Windows
+href="/updates#x_2_2_0">updates</a> page and the source code and Windows
 binaries can be found on the <a href="/download.php">downloads</a> page.</p>

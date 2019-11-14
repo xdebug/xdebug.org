@@ -5,13 +5,13 @@ major change in this release is the addition of
 functionality, contributed by Benjamin Eberlei.</p>
 
 <p>Besides this addition, several bug fixes to Xdebug's remote debugging and
-code coverage have been addressed. This is not a <b>final</b/> release, but if
+code coverage have been addressed. This is not a <strong>final</b/> release, but if
 no problems are found it will be released as Xdebug 2.6.0 in about a week's
 time. Please test Xdebug 2.6.0RC1 thoroughly, and report any issues through
 the <a href="https://bugs.xdebug.org">issue tracker</a>.</p>
 
 <p>The full list of changes can be found on the <a
-href="/updates.php#x_2_6_0RC1">updates</a> page.</p>
+href="/updates#x_2_6_0RC1">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
 <a href="/download.php">downloads</a> page, and as usual, Xdebug is
