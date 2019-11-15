@@ -8,7 +8,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Report
 
 <p>
 	If you think that you found a bug in Xdebug, please file a bugreport at the <a
-	href="http://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
+	href="https://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
 	because this prevents abuse by spammers and other abusing parties. Try to give
 	as much possible information to reproduce the bug, this will greatly help in
 	fixing them. For some hints on what information is useful, see the following

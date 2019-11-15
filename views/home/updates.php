@@ -2,12 +2,12 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Updates');
 
 function bug(int $nr) : string {
-	return "bug <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+	return "bug <a href='https://bugs.xdebug.org/bug_view_page.php?bug_id=".
 		sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 }
 
 function issue(int $nr) : string {
-	return "issue <a href='http://bugs.xdebug.org/bug_view_page.php?bug_id=".
+	return "issue <a href='https://bugs.xdebug.org/bug_view_page.php?bug_id=".
 		sprintf("%08d", $nr). "' target='_blank'>#$nr</a>";
 }
 ?>
@@ -878,10 +878,10 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 
 <dt><a name='x_2_0_5'></a>[2009-07-03] &mdash; Xdebug 2.0.5</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=425'>#425</a>: memory leak (around 40MB for each request) when using xdebug_start_trace.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=422'>#422</a>: Segfaults when using code coverage with a parse error in the script.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=418'>#418</a>: compilation breaks with CodeWarrior for NetWare.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=403'>#403</a>: 'call' and 'return' breakpoints triggers both on call and return for class method breakpoints.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=425'>#425</a>: memory leak (around 40MB for each request) when using xdebug_start_trace.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=422'>#422</a>: Segfaults when using code coverage with a parse error in the script.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=418'>#418</a>: compilation breaks with CodeWarrior for NetWare.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=403'>#403</a>: 'call' and 'return' breakpoints triggers both on call and return for class method breakpoints.</dd>
 <dd>Fixed TSRM issues for PHP 5.2 and PHP 5.3. (Original patch by Elizabeth M. Smith).</dd>
 <dd>Fixed odd crash bugs, due to GCC 4 sensitivity.</dd>
 
@@ -915,8 +915,8 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 
 <dt><a name='x_2_0_3'></a>[2008-04-09] &mdash; Xdebug 2.0.3</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=338'>#338</a>: Crash with: xdebug.remote_handler=req.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=334'>#334</a>: Code Coverage Regressions.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=338'>#338</a>: Crash with: xdebug.remote_handler=req.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=334'>#334</a>: Code Coverage Regressions.</dd>
 <dd>Fixed abstract method detection for PHP 5.3.</dd>
 <dd>Fixed code coverage dead-code detection.</dd>
 <dd>Ignore ZEND_ADD_INTERFACE, which is on a different line in PHP &gt;= 5.3 for some weird reason.</dd>
@@ -928,12 +928,12 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 
 <dt><a name='x_2_0_2'></a>[2007-11-11] &mdash; Xdebug 2.0.2</dt>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=325'>#325</a>: DBGP: "detach" stops further sessions being established from Apache.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=321'>#321</a>: Code coverage crashes on empty PHP files.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=318'>#318</a>: Segmentation Fault in code coverage analysis.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=315'>#315</a>: Xdebug crashes when including a file that doesn't exist.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=314'>#314</a>: PHP CLI Error Logging thwarted when Xdebug Loaded.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=300'>#300</a>: Direction of var_dump().</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=325'>#325</a>: DBGP: "detach" stops further sessions being established from Apache.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=321'>#321</a>: Code coverage crashes on empty PHP files.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=318'>#318</a>: Segmentation Fault in code coverage analysis.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=315'>#315</a>: Xdebug crashes when including a file that doesn't exist.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=314'>#314</a>: PHP CLI Error Logging thwarted when Xdebug Loaded.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=300'>#300</a>: Direction of var_dump().</dd>
 <dd>Always set the transaction_id and command. (Related to bug #313).</dd>
 
 
@@ -943,10 +943,10 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>PHP 5.3 compatibility (no namespaces yet though).</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=301'>#301</a>: Loading would cause SIGBUS on Solaris 10 SPARC. (Patch by Sean Chalmers)</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=300'>#300</a>: Xdebug does not force LTR rendering for its tables.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=299'>#299</a>: Computerized traces don't have a newline for return entries if memory limit is not enabled.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=298'>#298</a>: xdebug_var_dump() doesn't handle entity replacements correctly concerning string length.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=301'>#301</a>: Loading would cause SIGBUS on Solaris 10 SPARC. (Patch by Sean Chalmers)</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=300'>#300</a>: Xdebug does not force LTR rendering for its tables.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=299'>#299</a>: Computerized traces don't have a newline for return entries if memory limit is not enabled.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=298'>#298</a>: xdebug_var_dump() doesn't handle entity replacements correctly concerning string length.</dd>
 <dd>Fixed a memory free error related to remote debugging conditions.  (Related to bug #297).</dd>
 
 
@@ -957,18 +957,18 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Fixed the Xdebug version of raw_url_encode to not encode : and \. This is not necessary according to the RFCs and it makes debug breakpoints work on Windows.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=291'>#291</a>: Tests that use SPL do not skip when SPL is not available.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=290'>#290</a>: Function calls leak memory.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=289'>#289</a>: Xdebug terminates connection when eval() is run in the init stage.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=284'>#284</a>: Step_over on breakpointed line made Xdebug break twice.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=283'>#283</a>: Xdebug always returns $this with the value of last stack frame.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=282'>#282</a>: %s is not usable for xdebug.profiler_output_name on Windows in all stack frames.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=280'>#280</a>: var_dump() doesn't display key of array as expected.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=278'>#278</a>: Code Coverage Issue.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=273'>#273</a>: Remote debugging: context_get does not return context id.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=270'>#270</a>: Debugger aborts when PHP's eval() is encountered. </dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=265'>#265</a>: Xdebug breaks error_get_last() .</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=261'>#261</a>: Code coverage issues by overloading zend_assign_dim.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=291'>#291</a>: Tests that use SPL do not skip when SPL is not available.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=290'>#290</a>: Function calls leak memory.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=289'>#289</a>: Xdebug terminates connection when eval() is run in the init stage.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=284'>#284</a>: Step_over on breakpointed line made Xdebug break twice.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=283'>#283</a>: Xdebug always returns $this with the value of last stack frame.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=282'>#282</a>: %s is not usable for xdebug.profiler_output_name on Windows in all stack frames.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=280'>#280</a>: var_dump() doesn't display key of array as expected.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=278'>#278</a>: Code Coverage Issue.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=273'>#273</a>: Remote debugging: context_get does not return context id.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=270'>#270</a>: Debugger aborts when PHP's eval() is encountered. </dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=265'>#265</a>: Xdebug breaks error_get_last() .</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=261'>#261</a>: Code coverage issues by overloading zend_assign_dim.</dd>
 
 <dd><h3>DBGP</h3></dd>
 <dd>Added support for "breakpoint_languages".</dd>
@@ -993,11 +993,11 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 </dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=255'>#255</a>: Call Stack Table doesn't show Location on Windows.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=251'>#251</a>: Using the source command with an invalid filename returns unexpected result.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=243'>#243</a>: show_exception_trace="0" ignored.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=241'>#241</a>: Crash in xdebug_get_function_stack().</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=240'>#240</a>: Crash with xdebug.remote_log on Windows.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=255'>#255</a>: Call Stack Table doesn't show Location on Windows.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=251'>#251</a>: Using the source command with an invalid filename returns unexpected result.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=243'>#243</a>: show_exception_trace="0" ignored.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=241'>#241</a>: Crash in xdebug_get_function_stack().</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=240'>#240</a>: Crash with xdebug.remote_log on Windows.</dd>
 <dd>Fixed a segfault in rendering stack traces to error logs.</dd>
 <dd>Fixed a bug that prevented variable names from being recorded for remote debug session while xdebug.collect_vars was turned off.</dd>
 <dd>Fixed xdebug_dump_superglobals() in case no super globals were configured.</dd>
@@ -1022,7 +1022,7 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Optimized used variable collection by switching to a linked list instead of a hash. This is about 30% faster, but it needed a quick conversion to hash in the case the information had to be shown to remove duplicate variable names.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=232'>#232</a>: PHP log_errors functionality lost after enabling xdebug error handler when CLI is used.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=232'>#232</a>: PHP log_errors functionality lost after enabling xdebug error handler when CLI is used.</dd>
 <dd>Fixed problems with opening files - the filename could cause double free issues.</dd>
 <dd>Fixed memory tracking as memory_limit is always enabled in PHP 5.2.1 and later.</dd>
 <dd>Fixed a segfault that occurred when creating printable stack traces and collect_params was turned off.</dd>
@@ -1052,17 +1052,17 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>DBGP: Reimplemented property_set to use the same symbol fetching function as property_get. We now only use eval in case no type (-t) argument was given.</dd>
 <dd>DBGP: Fixed some issues with finding out the classname, which is important for fetching private properties.</dd>
 <dd>DBGP: Fixed usage of uninitialized memory that prevented looking up numerical array keys while fetching array elements not work properly.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=228'>#228</a>: Binary safety for stream output and property fetches.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=227'>#227</a>: The SESSION super global does not show up in the Globals scope.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=225'>#225</a>: xdebug dumps core when protocol is GDB.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=224'>#224</a>: Compile failure on Solaris.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=219'>#219</a>: Memory usage delta in traces don't work on PHP 5.2.0.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=215'>#215</a>: Cannot retrieve nested arrays when the array key is a numeric index.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=214'>#214</a>: The depth level of arrays was incorrectly checked so it would show the first page of a level too deep as well.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=213'>#213</a>: Dead code analysis doesn't take catches for throws into account.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=211'>#211</a>: When starting a new session with a different idekey, the cookie is not updated.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=209'>#209</a>: Additional remote debugging session started when triggering shutdown function.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=208'>#208</a>: Socket connection attempted when XDEBUG_SESSION_STOP.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=228'>#228</a>: Binary safety for stream output and property fetches.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=227'>#227</a>: The SESSION super global does not show up in the Globals scope.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=225'>#225</a>: xdebug dumps core when protocol is GDB.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=224'>#224</a>: Compile failure on Solaris.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=219'>#219</a>: Memory usage delta in traces don't work on PHP 5.2.0.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=215'>#215</a>: Cannot retrieve nested arrays when the array key is a numeric index.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=214'>#214</a>: The depth level of arrays was incorrectly checked so it would show the first page of a level too deep as well.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=213'>#213</a>: Dead code analysis doesn't take catches for throws into account.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=211'>#211</a>: When starting a new session with a different idekey, the cookie is not updated.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=209'>#209</a>: Additional remote debugging session started when triggering shutdown function.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=208'>#208</a>: Socket connection attempted when XDEBUG_SESSION_STOP.</dd>
 <dd>Fixed PECL bug #8989: Compile error with PHP 5 and GCC 2.95.</dd>
 
 
@@ -1084,15 +1084,15 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Use PG(html_errors) instead of checking whether we run with CLI when deciding when to use HTML messages or plain text messages.</dd>
 
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=203'>#203</a>: PHP errors with HTML content processed incorrectly. This patch backs out the change that was made to fix bug #182.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=198'>#198</a>: Segfault when trying to use a non-existing debug handler.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=197'>#197</a>: Race condition fixes created too many files.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=196'>#196</a>: Profile timing on Windows does not work.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=195'>#195</a>: CLI Error after debugging session.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=193'>#193</a>: Compile problems with PHP 5.2.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=191'>#191</a>: File/line breakpoints are case-sensitive on Windows.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=181'>#181</a>: Xdebug doesn't handle uncaught exception output correctly.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=173'>#173</a>: Coverage produces wrong coverage.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=203'>#203</a>: PHP errors with HTML content processed incorrectly. This patch backs out the change that was made to fix bug #182.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=198'>#198</a>: Segfault when trying to use a non-existing debug handler.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=197'>#197</a>: Race condition fixes created too many files.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=196'>#196</a>: Profile timing on Windows does not work.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=195'>#195</a>: CLI Error after debugging session.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=193'>#193</a>: Compile problems with PHP 5.2.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=191'>#191</a>: File/line breakpoints are case-sensitive on Windows.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=181'>#181</a>: Xdebug doesn't handle uncaught exception output correctly.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=173'>#173</a>: Coverage produces wrong coverage.</dd>
 <dd>Fixed a typo that prevented the XDEBUG_CONFIG option "profiler_enable" from working.</dd>
 
 <dt>[2006-06-30] &mdash; Xdebug 2.0.0beta6</dt>
@@ -1114,20 +1114,20 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd>Added a cache that prevents the code coverage functionality from running a "which code is executable check" on every function call, even if they were executed multiple times. This should speed up code coverage a lot.</dd>
 <dd>Speedup Xdebug but only gathering information about variables in scopes when either remote debugging is used, or show_local_vars is enabled.</dd>
 <dd><h3>Fixed bugs</h3></dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=184'>#184</a>: problem with control chars in code traces</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=183'>#183</a>: property_get -n $this->somethingnonexistent crashes the debugger.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=182'>#182</a>: Errors are not html escaped when being displayed.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=180'>#180</a>: collected includes not shown in trace files. (Patch by Cristian Rodriguez)</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=178'>#178</a>: $php_errormsg and Track errors unavailable.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=177'>#177</a>: debugclient fails to compile due to Bison.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=176'>#176</a>: Segfault using SplTempFileObject.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=173'>#173</a>: Xdebug segfaults using SPL ArrayIterator.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=171'>#171</a>: set_time_limit stack overflow on 2nd request.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=168'>#168</a>: Xdebug's DBGp crashes on an eval command where the result is an array.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=125'>#125</a>: show_mem_delta does not calculate correct negative values on 64bit machines.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=121'>#121</a>: property_get -n $r[2] returns the whole hash.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=111'>#111</a>: xdebug does not ignore set_time_limit() function during debug session.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=87'>#87</a>: Warning about headers when "register_shutdown_function" used.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=184'>#184</a>: problem with control chars in code traces</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=183'>#183</a>: property_get -n $this->somethingnonexistent crashes the debugger.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=182'>#182</a>: Errors are not html escaped when being displayed.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=180'>#180</a>: collected includes not shown in trace files. (Patch by Cristian Rodriguez)</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=178'>#178</a>: $php_errormsg and Track errors unavailable.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=177'>#177</a>: debugclient fails to compile due to Bison.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=176'>#176</a>: Segfault using SplTempFileObject.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=173'>#173</a>: Xdebug segfaults using SPL ArrayIterator.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=171'>#171</a>: set_time_limit stack overflow on 2nd request.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=168'>#168</a>: Xdebug's DBGp crashes on an eval command where the result is an array.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=125'>#125</a>: show_mem_delta does not calculate correct negative values on 64bit machines.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=121'>#121</a>: property_get -n $r[2] returns the whole hash.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=111'>#111</a>: xdebug does not ignore set_time_limit() function during debug session.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=87'>#87</a>: Warning about headers when "register_shutdown_function" used.</dd>
 <dd>Fixed PECL bug #6940 (Xdebug ignores set_time_limit)</dd>
 <dd>Fixed Komodo bug 45484: no member data for objects in PHP debugger.</dd>
 <dd>Suppress NOP/EXT_NOP from being marked as executable code with Code Coverage.</dd>
@@ -1143,8 +1143,8 @@ Fixed <?= bug(1411); ?>: Use Error (Throwable) instead of fatal error when maxim
 <dd><h3>Fixed bugs</h3></dd>
 <dd>Fixed shutdown crash with ZTS on Win32</dd>
 <dd>Fixed bad memory leak when a E_ERROR of exceeding memory_limit was thrown.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=154'>#154</a>: GCC 4.0.2 optimizes too much out with -O2.</dd>
-<dd>Fixed bug <a href='http://bugs.xdebug.org/view.php?id=141'>#141</a>: Remote context_get causes segfault.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=154'>#154</a>: GCC 4.0.2 optimizes too much out with -O2.</dd>
+<dd>Fixed bug <a href='https://bugs.xdebug.org/view.php?id=141'>#141</a>: Remote context_get causes segfault.</dd>
 
 
 <dt>[2004-11-29]</dt>
@@ -1290,7 +1290,7 @@ from superglobals anymore.</dd>
 
 <dt>[2003-08-30]</dt>
 <dd>Fixed bug <a
-href='http://bugs.xdebug.org/bug_view_page.php?bug_id=0000002'>#2</a>: "pear
+href='https://bugs.xdebug.org/bug_view_page.php?bug_id=0000002'>#2</a>: "pear
 package" triggers a segfault.</dd> <dd>Fixed crash bug when a function had
 sprintf style parameters (ie.  strftime()).</dd>
 
