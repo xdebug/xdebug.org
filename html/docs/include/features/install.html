@@ -2,21 +2,24 @@
 <h2>Installing on Linux & Macs</h2>
 
 <p>
-You can install Xdebug through PECL on Linux & Macs. Installing with PECL is as easy as:
+You can install Xdebug through PECL on Linux &amp; macOS<sup><a href='#1'>1</a></sup>.
+You can install
+Xdebug with PECL with:
 </p>
 <pre class='example'>
-# pecl install xdebug
+pecl install xdebug
 </pre>
 <p>
-but you still need to add the correct line to your php.ini: (don't forget to
+When that is done, you still need to add the correct line to your <code>php.ini</code>: (don't forget to
 change the path and filename to the correct one &mdash; but make sure you use
-the <b>full path</b>)
+the <strong>full path</strong>):
 </p>
 <pre class='example'>
 zend_extension="/usr/local/php/modules/xdebug.so"
 </pre>
-<p><b>Note:</b> You should ignore any prompts to add "extension=xdebug.so" to
-php.ini &mdash; this <b>will</b> cause problems.</p>
+<p><strong>Note:</strong> You should ignore any prompts to add
+<code>"extension=xdebug.so"</code> to
+<code>php.ini</code> &mdash; this <strong>will</strong> cause problems.</p>
 
 <h2>Installing on Windows</h2>
 
@@ -30,8 +33,13 @@ installed.
 <a name='source'></a>
 <h2>Installation From Source</h2>
 
+<a name='obtain'></a>
+<h3>Obtain</h3>
+
 <p>
-You can <a href='/download.php#releases'>download</a> the source of the latest <b>stable</b> release [KW:last_release_version].
+You can <a href='/download#releases'>download</a> the source of the latest <b>stable</b> release [KW:last_release_version].
+</p>
+<p>
 Alternatively you can obtain Xdebug from GIT:
 </p>
 <pre class='example'>
@@ -39,101 +47,85 @@ git clone git://github.com/xdebug/xdebug.git
 </pre>
 <p>
 This will checkout the latest development version which is currently [KW:last_dev_version].
-You can also browse the source at <a href='https://github.com/derickr/xdebug'>https://github.com/derickr/xdebug</a>.
+You can also browse the source at <a href='https://github.com/xdebug/xdebug'>https://github.com/xdebug/xdebug</a>.
 </p>
 
 <a name='compile'></a>
-<h3>Compiling</h3>
+<h3>Compile</h3>
 
 <p>There is a <a href='/wizard.php'>wizard</a> available that provides you
 with the correct file to download, and which paths to use.</p>
 <p>
-You compile Xdebug separately from the rest of PHP.  Note, however,
-that you need access to the scripts 'phpize' and 'php-config'.  If
-your system does not have 'phpize' and 'php-config', you will need to
-compile and install PHP from a source tarball first, as these script
-are by-products of the PHP compilation and installation processes. (Debian users
-can install the required tools with
-<code>apt-get install php5-dev</code>). It is important that the source version
-matches the installed version as there are slight, but important, differences
-between PHP versions.  Once you have access to 'phpize' and
-'php-config', do the following:
+You compile Xdebug separately from the rest of PHP. You need access to the
+scripts <code>phpize</code> and <code>php-config</code>. If your system
+does not have <code>phpize</code> and <code>php-config</code>, you will
+need to install the PHP development headers.</p>
+<p>
+Debian users can do that with:
+</p>
+<pre class="example">
+apt-get install php-dev
+</pre>
+<p>
+And RedHat and Fedora users with:
+</p>
+<pre>
+yum install php-devel
+</pre>
+
+<p>
+It is important that the source version matches the installed version as there
+are slight, but important, differences between PHP versions.  Once you have
+access to <code>phpize</code> and <code>php-config</code>, take the
+following steps:
 </p>
 <p>
 <ol>
-<li>Unpack the tarball: tar -xzf xdebug-[KW:last_release_version].tgz.  Note that you do
-not need to unpack the tarball inside the PHP source code tree.
-Xdebug is compiled separately, all by itself, as stated above.</li>
+<li><p>Unpack the tarball:</p>
+<p><code>tar -xzf xdebug-[KW:last_release_version].tgz</code></p>
+<p>You should <strong>not</strong>
+unpack the tarball inside the PHP source code tree.
+Xdebug is compiled separately, all by itself, as stated above.</p></li>
 
-<li>cd xdebug-[KW:last_release_version]</li>
+<li><p><code>cd xdebug-[KW:last_release_version]</code></p></li>
 
-<li>Run phpize: phpize (or /path/to/phpize if phpize is not in your path). Make
-sure you use the phpize that belongs to the PHP version that you want to use
-Xdebug with. See this <a href='/docs/faq#api'>FAQ entry</a> if
-you're having some issues with finding which phpize to use.</li>
+<li><p><code>phpize</code></p>
+<p>If phpize is not in your path, please make sure
+that it is by expanding the <code>PATH</code> environment variable. Make sure
+you use the phpize that belongs to the PHP version that you want to use Xdebug
+with. See <a href='/docs/faq#api'>this FAQ entry</a> if you're having some
+issues with finding which phpize to use.</p></li>
 
-<li>./configure --enable-xdebug
-<li>make</li>
-<li>make install</li>
+<li><p><code>./configure --enable-xdebug</code></p></li>
+<li><p><code>make</code></p></li>
+<li><p><code>make install</code></p></li>
 </ol>
 
 <a name='configure-php'></a>
-<h3>Configure PHP to Use Xdebug</h3>
+<h3>Configure PHP</h3>
 
 <ol>
-<li>add the following line to php.ini:
-<pre>zend_extension="/wherever/you/put/it/xdebug.so"</pre>
-<strong>Note:</strong> In case you compiled PHP yourself and used
---enable-debug you would have to use <code>zend_extension_debug=</code>.
-<strong>Note:</strong> If you want to use Xdebug and OPCache together, you
-must load Xdebug after OPCache. Otherwise, they won't work properly.
+<li><p>Add the following line to <code>php.ini</code>:</p>
+<p><code>zend_extension="/wherever/you/put/it/xdebug.so"</code></p>
+<p><strong>Note:</strong> If you want to use Xdebug and OPCache together, you
+must have the <code>zend_extension</code> line for Xdebug after the line for
+OPCache. Otherwise, they won't work properly.</p>
 </li>
 
-<li>Restart your webserver.</li>
+<li><p>Restart your webserver.</p></li>
 
-<li>Write a PHP page that calls '<i>phpinfo()</i>' Load it in a browser and
+<li><p>Create a PHP page that has <code>phpinfo()</code>. Load it in a browser and
 look for the info on the Xdebug module.  If you see it next to the Zend logo,
-you have been successful! You can also use 'php -m' if you have a command
-line version of PHP, it lists all loaded modules. Xdebug should appear
-twice there (once under 'PHP Modules' and once under 'Zend Modules').</li>
+you have been successful!</p>
+<p>On the command line, you can also <code>php -m</code>. This lists all loaded
+modules. Xdebug should appear twice there (once under 'PHP Modules' and once
+under 'Zend Modules').</p></li>
 </ol>
-</p>
 
-<a name='debugclient'></a>
-<h3>Debugclient Installation</h3>
+<p>With Xdebug loaded, you can now enable individual features, such as
+[FEAT:remote], or [FEAT:profiler].</p>
 
-<p>
-Unpack the Xdebug source tarball and issue the following commands:
-</p>
-<pre class='example'>
-$ cd debugclient
-$ ./configure --with-libedit
-$ make
-# make install
-</pre>
-<p>
-This will install the debugclient binary in /usr/local/bin unless you don't
-have libedit installed on your system. You can either install it, or leave
-out the '--with-libedit' option to configure. Debian 'unstable' users can
-install the library with <code>apt-get install libedit-dev libedit2</code>.
-</p>
-<p>
-If the configure script can not find libedit and you are sure you have (and
-it's headers) installed correctly and you get link errors like the
-following in your configure.log:
-</p>
-<pre class='example'>
-/usr/lib64/libedit.so: undefined reference to `tgetnum'
-/usr/lib64/libedit.so: undefined reference to `tgoto'
-/usr/lib64/libedit.so: undefined reference to `tgetflag'
-/usr/lib64/libedit.so: undefined reference to `tputs'
-/usr/lib64/libedit.so: undefined reference to `tgetent'
-/usr/lib64/libedit.so: undefined reference to `tgetstr'
-collect2: ld returned 1 exit status
-</pre>
-<p>
-you need to change your configure command to:
-</p>
-<pre class='example'>
-$ LDFLAGS=-lncurses ./configure --with-libedit
-</pre>
+<hr/>
+
+<a name='1'></a>
+<p><sup>1</sup> On macOS, you should have PHP installed with <a href='https://formulae.brew.sh/formula/php'>Homebrew</a>.</p>
