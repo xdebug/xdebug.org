@@ -65,6 +65,9 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI, 'IBM Plex Sans',sans-serif;
+	text-rendering: optimizeLegibility;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
 }
 
 p, ol, ul {
@@ -107,11 +110,26 @@ nav > div:before {
 	background-size: contain;
 }
 
+@media all and (max-device-width: 640px) {
+	nav > div:before {
+		display: none;
+	}
+}
+
 nav h1 {
 	position: relative;
 	z-index: 2;
 	display: inline-block;
 	margin: 25px 0;
+}
+
+@media all and (max-device-width: 640px) {
+	nav h1 {
+		margin: 0 -20px;
+	    display: block;
+	    padding: 20px 30px 20px;
+	    background: #cde7b1;
+	}
 }
 
 nav h1 svg {
@@ -141,6 +159,22 @@ nav ul li a {
     -webkit-font-smoothing: antialiased;
 }
 
+@media all and (max-device-width: 640px) {
+	nav ul {
+		margin: 10px 0;
+	}
+
+	nav ul li {
+		display: block;
+		padding: 5px;
+	}
+
+	nav ul li a {
+		display: block;
+		padding: 10px;
+	}
+}
+
 .content_width {
 	margin: 0 auto;
 	max-width: 1024px;
@@ -151,6 +185,7 @@ nav ul li a {
 #support {
 	text-align: center;
 	padding: 0 20px 40px;
+	line-height: 1.5em;
 }
 
 #support a {
@@ -268,6 +303,13 @@ footer {
 	padding: 0;
 }
 
+@media all and (max-device-width: 640px) {
+	.front_intro, .front_announcements {
+		float: none;
+		width: auto;
+	}
+}
+
 .functions, .settings {
 	margin: 3em 0;
 }
@@ -294,6 +336,17 @@ footer {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+}
+
+@media all and (max-device-width: 640px) {
+	.support_options {
+		display: block;
+	}
+	.support_options .option {
+		width: 100%;
+		display: block;
+		margin-bottom: 2em;
+	}
 }
 
 .support_options h2 {
@@ -481,3 +534,18 @@ table.ci tr td pre.log {
 pre.log {
 	white-space: pre-wrap;
 }
+
+table.versions { width: 100%; border: 1px solid black; border-collapse: collapse; }
+table.versions thead th { text-align: center; }
+table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }
+table.versions thead tr.xdebugversion th.legacy { background-color: #ffbc42; }
+table.versions thead tr.xdebugversion th.supported { background-color: green; color: white; }
+table.versions thead tr.xdebugversion th.future { background-color: lightblue; color: black; }
+table.versions th { text-align: center; border: 1px solid grey; }
+table.versions tbody tr th { background-color: #ff7f7f; }
+table.versions tbody tr th.legacy { background-color: #ffbc42; }
+table.versions tbody tr th.supported { background-color: green; color: white; }
+table.versions tbody tr th.future { background-color: lightblue; color: black; }
+table.versions td { text-align: center; border: 1px solid grey; color: #ff7f7f; }
+table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
+table.versions td.future { text-align: center; border: 1px solid grey; color: lightblue; }
