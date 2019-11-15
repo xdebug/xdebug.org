@@ -67,7 +67,7 @@ class DocsController
 			WinCacheGrind.',
 		],
 		'remote' => [
-			'Remote Debugging',
+			'Step Debugging',
 			\FUNC_REMOTE,
 			'Xdebug provides an interface for debugger clients that interact with
 			running PHP scripts. This section explains how to set-up PHP and Xdebug

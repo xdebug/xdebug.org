@@ -4,7 +4,7 @@
 		<ul id="menu">
 			<li><a href="/docs/install">Install</a></li>
 			<li><a href="/docs/">Documentation</a></li>
-			<li><a href="/reporting-bugs">Report bugs</a></li>
+			<li><a href="/reporting-bugs">Report Issues</a></li>
 			<li><a href="https://github.com/xdebug/xdebug" target="_blank">GitHub</a></li>
 		</ul>
 	</div>

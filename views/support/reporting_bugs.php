@@ -108,7 +108,7 @@ settings.
 <p>
 In addition to the above information, I might need some more information
 depending on what type of bug that you encountered. There is different
-information useful for <a href='#remote'>Remote Debugger Bugs</a> and <a
+information useful for <a href='#step-debugger'>Step Debugger Bugs</a> and <a
 href='#crash'>Crash Bugs</a>. If you are unsure as to what is useful, feel free
 to only provide information from the <a href='#required-info'>Required
 Information</a> section from above. In which case I will then point you to the
@@ -116,7 +116,8 @@ right section on this page for further information if necessary.
 </p>
 
 <a name='remote'></a>
-<h3>Remote Debugger Bugs</h3>
+<a name='step-debugger'></a>
+<h3>Step Debugger Bugs</h3>
 <p>
 	To make it possible for me to find and fix bugs for the remote debugging
 	feature, I need several bits of information. Without this information, I
