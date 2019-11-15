@@ -53,41 +53,55 @@ started, or "jit" when a session should only be initiated on an error.
 After made all those settings Xdebug will still not start a debugging session
 automatically when a script is run. You need to activate Xdebug's debugger
 and you can do that in three ways:
-<ol>
-<li>When running the script from the command line you need to set an
+
+<h3>Using an environment variable</h3>
+
+<p>
+When running the script from the command line you need to set an
 environment variable, like:
+</p>
 <pre class="example">
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 php myscript.php
 </pre>
+<p>
 On Windows, setting an environment variable is done with <code>set</code>:
+</p>
 <pre class="example">
 set XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 </pre>
+<p>
 You can also configure the [CFG:remote_host], [CFG:remote_port],
 [CFG:remote_mode] and [CFG:remote_handler] in this same environment variable as
 long as you separate the values by a space:
+</p>
 <pre class="example">
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name [CFGS:remote_host]=localhost [CFGS:profiler_enable]=1"
 </pre>
+<p>
 All settings that you can set through the XDEBUG_CONFIG setting can also be set
-with normal php.ini settings.</li>
+with normal php.ini settings.</p>
 
-<li>If you want to debug a script started through a web browser, simply add
+<h3>Using a GET parameter</h3>
+
+<p>If you want to debug a script started through a web browser, simply add
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL.
 Instead of using a GET parameter, you can also set XDEBUG_SESSION_START as a
 POST parameter, or through a cookie named XDEBUG_SESSION. Refer to the <a
 href="#browser_session">next section</a> to read on how debug sessions work
-from within a browser window.</li>
+from within a browser window.</p>
 
-<li>An alternative way to activate the debugger while running PHP through a web
+<h3>Using a browser extension</h3>
+<p>An alternative way to activate the debugger while running PHP through a web
 server is by installing one of the following four browser extensions. Each of
 them allows you to simply enable the debugger by clicking on one button. When
 these extensions are active, they set the XDEBUG_SESSION cookie directly,
 instead of going through XDEBUG_SESSION_START as described in
-<a href="#browser_session">HTTP Debug Sessions</a> further on.
+<a href="#browser_session">HTTP Debug Sessions</a> further on.</p>
 
+<p>
 The extensions are:
+</p>
 <a name="browser-extensions"></a><a name="firefox-ext"></a>
 <dl>
 	<dt>Xdebug Helper for Firefox</dt>
@@ -122,8 +136,6 @@ The extensions are:
 		for Opera allows you to start an Xdebug session from Opera. 
 	</dd>
 </dl>
-</ol>
-</p>
 
 <p>
 Before you start your script you will need to tell your client that it can
