@@ -155,7 +155,7 @@ right section on this page for further information if necessary.
 	step through your code in the IDE (or do whatever you need to do to
 	reproduce it). When you are done, add both the script as well as
 	the remote debugging log to the bug report at <a
-	href='//bugs.xdebug.org'>bugs.xdebug.org</a>.
+	href='https://bugs.xdebug.org'>bugs.xdebug.org</a>.
 </p>
 
 <p>
