@@ -5,20 +5,15 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » All settings');
 ?>
 
-<h1>Documentation</h1>
+<h1>Documentation - all settings</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
-» Documentation for: <b>Xdebug 2</b><br />
-» All settings<br />
-<hr />
-
-<hr class='light'/>
+<p>
 This section describes all available configuration settings available in Xdebug.
-<hr style='clear: both'>
+</p>
 
 <div class='settings'>
 	<?php foreach ($this->settings as $setting) : ?>
+		<hr>
 		<?= XdebugDotOrg\Controller\Docs\SettingsController::single($setting)->render() ?>
 	<?php endforeach ?>
 </div>

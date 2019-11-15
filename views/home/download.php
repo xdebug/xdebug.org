@@ -7,8 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Downloads');
 
 <h1>Downloads</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <h2>Source</h2>
 
 <p>
@@ -39,13 +37,13 @@ installation instructions</a>.</p>
 	<strong>Xdebug <?= $download->version ?></strong>
 	<div class='copy'>Release date: <?=$download->date->format('Y-m-d') ?></div>
 	<ul>
-		<li><a href='<?= $download->href ?>'>source</a> <span class='md5'>(SHA256: <?=$download->hash ?>)</span></li>
+		<li><a href='<?= $download->href ?>'>source</a> <span class='md5'>(SHA256:&nbsp;<?=$download->hash ?>)</span></li>
 		<?php if ($download->dlls) : ?>
 			<li>Windows binaries:<br/>
 
 			<?php foreach ($download->dlls as $i => $dll) : ?>
 				<?php if ($i !== 0) : ?><br /><?php endif ?>
-				<a href='<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a> <span class='md5'>(SHA256: <?= $dll['hash'] ?>)</span>
+				<a href='<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a> <span class='md5'>(SHA256:&nbsp;<?= $dll['hash'] ?>)</span>
 			<?php endforeach ?>
 
 			</li>

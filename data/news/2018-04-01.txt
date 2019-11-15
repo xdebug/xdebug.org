@@ -2,7 +2,7 @@ Xdebug 2.7.0alpha1 is out!
 <p>This is an alpha release of the Xdebug 2.7 series.</p>
 
 <p>The main reason for this release is the introduction of a resolution to an
-<a href='http://bugs.xdebug.org/938'>issue</a>, in which Xdebug now allows for
+<a href='https://bugs.xdebug.org/938'>issue</a>, in which Xdebug now allows for
 working remote debugging of scripts that fork processes. Previously, Xdebug got
 confused when an already existing debugging connection was shared among parent
 and child processes. This releases addresses this by attempting to create a

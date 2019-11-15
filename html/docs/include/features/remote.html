@@ -11,30 +11,19 @@ longer supported.
 <a name="clients"></a>
 <h2>Clients</h2>
 <p>
-Xdebug 2 is bundled with a <b>simple command line client</b> for the
-<a href="/docs-dbgp.php">DBGp</a> protocol.
-There are a few other client implementations (both free and commercial) as
-well. I am not the author of any of those, so please refer to the original
-authors for <b>support</b>:
+There are many client implementations (both free and commercial). There are all
+third party tools, so please refer to the original authors for <b>support</b>:
 <ul>
-<li><b><a href="http://devphp.sf.net/">Dev-PHP</a></b> (IDE: Windows)</li>
 <li><b>Eclipse <a href="https://wiki.eclipse.org/Debugging_using_XDebug">plugin</a></b> (IDE).</li>
-<li><b>Emacs <a href="http://code.google.com/p/geben-on-emacs/">plugin</a></b> (Editor Plugin).</li>
 <li><b><a href="https://www.kdevelop.org/">KDevelop</a></b> (IDE: Linux (KDE); Open Source).</li>
-<li>ActiveState's <b><a href="http://activestate.com/products/komodo_ide/?src=AScom&type=bn&X=HP&campaign=KMD">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
-<li><b><a href="http://www.bluestatic.org/software/macgdbp/index.php">MacGDBP</a></b> (Standalone client for Mac OS X; Free)</li>
+<li>ActiveState's <b><a href="https://www.activestate.com/products/komodo-ide/">Komodo</a></b> (IDE: Windows, Linux, Mac; Commercial).</li>
 <li><b><a href="http://php.netbeans.org">NetBeans</a></b> (IDE: Windows, Linux, Mac OS X and Solaris).</li>
 <li><b><a href="https://notepad-plus-plus.org/">Notepad++</a></b> <a href="http://sourceforge.net/project/showfiles.php?group_id=189927&package_id=236520">plugin</a> (Editor: Windows).</li>
-<li>WaterProof's <b><a href="http://www.waterproof.fr/products/PHPEdit/">PHPEdit</a></b> (IDE, from version 2.10: Windows; Commercial).</li>
 <li>Devsense's <b><a href="http://www.devsense.com/products/php-tools">PHP Tools for Visual Studio</a></b> (MS Visual Studio Plugin; Commercial).</li>
 <li>JetBrain's <b><a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a></b> (IDE; Commercial).</li>
-<li><b><a href="http://protoeditor.sourceforge.net/">Protoeditor</a></b> (Editor: Linux).</li>
-<li><b><a href="https://github.com/robertbasic/pugdebug">pugdebug</a></b> (Standalone client for Linux, Windows and Mac OS X; Open Source).</li>
+<li><b><a href="https://github.com/mte90/pugdebug">pugdebug</a></b> (Standalone client for Linux, Windows and Mac OS X; Open Source).</li>
 <li><b><a href="https://packagecontrol.io/packages/Xdebug%20Client">SublimeTextXdebug</a></b> (Plugin for Sublime Text 2 and 3, Open Source).</li>
 <li><b>VIM <a href="https://github.com/joonty/vdebug">plugin</a></b> (Editor Plugin).</li>
-<li>jcx software's <b><a href="http://www.vsphp.com/">VS.Php</a></b> (MS Visual Studio Plugin; Commercial).</li>
-<li><b><a href="https://chrome.google.com/webstore/detail/xdebug/nhodjblplijafdpjjfhhanfmchplpfgl?hl=en-GB&gl=GB">Xdebug Chrome App</a></b> (Chrome Application; <a href="https://github.com/artbek/chrome-xdebug-client">Open Source</a>)</li>
-<li><b><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a></b> (Standalone client for Windows).</li>
 </ul>
 </p>
 <p>
@@ -64,41 +53,55 @@ started, or "jit" when a session should only be initiated on an error.
 After made all those settings Xdebug will still not start a debugging session
 automatically when a script is run. You need to activate Xdebug's debugger
 and you can do that in three ways:
-<ol>
-<li>When running the script from the command line you need to set an
+
+<h3>Using an environment variable</h3>
+
+<p>
+When running the script from the command line you need to set an
 environment variable, like:
+</p>
 <pre class="example">
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 php myscript.php
 </pre>
+<p>
 On Windows, setting an environment variable is done with <code>set</code>:
+</p>
 <pre class="example">
 set XDEBUG_CONFIG="[CFGS:idekey]=session_name"
 </pre>
+<p>
 You can also configure the [CFG:remote_host], [CFG:remote_port],
 [CFG:remote_mode] and [CFG:remote_handler] in this same environment variable as
 long as you separate the values by a space:
+</p>
 <pre class="example">
 export XDEBUG_CONFIG="[CFGS:idekey]=session_name [CFGS:remote_host]=localhost [CFGS:profiler_enable]=1"
 </pre>
+<p>
 All settings that you can set through the XDEBUG_CONFIG setting can also be set
-with normal php.ini settings.</li>
+with normal php.ini settings.</p>
 
-<li>If you want to debug a script started through a web browser, simply add
+<h3>Using a GET parameter</h3>
+
+<p>If you want to debug a script started through a web browser, simply add
 <code>XDEBUG_SESSION_START=session_name</code> as parameter to the URL.
 Instead of using a GET parameter, you can also set XDEBUG_SESSION_START as a
 POST parameter, or through a cookie named XDEBUG_SESSION. Refer to the <a
 href="#browser_session">next section</a> to read on how debug sessions work
-from within a browser window.</li>
+from within a browser window.</p>
 
-<li>An alternative way to activate the debugger while running PHP through a web
+<h3>Using a browser extension</h3>
+<p>An alternative way to activate the debugger while running PHP through a web
 server is by installing one of the following four browser extensions. Each of
 them allows you to simply enable the debugger by clicking on one button. When
 these extensions are active, they set the XDEBUG_SESSION cookie directly,
 instead of going through XDEBUG_SESSION_START as described in
-<a href="#browser_session">HTTP Debug Sessions</a> further on.
+<a href="#browser_session">HTTP Debug Sessions</a> further on.</p>
 
+<p>
 The extensions are:
+</p>
 <a name="browser-extensions"></a><a name="firefox-ext"></a>
 <dl>
 	<dt>Xdebug Helper for Firefox</dt>
@@ -133,8 +136,6 @@ The extensions are:
 		for Opera allows you to start an Xdebug session from Opera. 
 	</dd>
 </dl>
-</ol>
-</p>
 
 <p>
 Before you start your script you will need to tell your client that it can

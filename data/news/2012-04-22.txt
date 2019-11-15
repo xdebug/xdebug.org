@@ -8,6 +8,6 @@ binaries can be found on the <a href="/download.php">downloads</a> page.</p>
 
 <p>Please note that this is a <strong>release candidate</strong> and not guaranteed to be
 free of bugs. If you have issues, please file them in <a
-href="http://bugs.xdebug.org/bug_report_page.php">the issue tracker</a>. Please
+href="https://bugs.xdebug.org/bug_report_page.php">the issue tracker</a>. Please
 try to provide enough information so that I can reproduce the issue. See <a
 href="/support.php">here</a> for some hints.</p>

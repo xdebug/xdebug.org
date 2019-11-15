@@ -4,8 +4,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Tailor
 
 <h1>Installation Wizard</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <p>
 	This page helps you finding which file to download, and how to configure
 	PHP to get Xdebug running.  Please paste the <b>full</b> output of

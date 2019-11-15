@@ -99,12 +99,12 @@ class FunctionsController
 
 	private static function do_format_data_RESULT(array $data) : string
 	{
-		return "<div class='example-returns'><strong>Returns:</strong><br /><br /><pre>\n" . implode( '', $data ) . "</pre></div>\n";
+		return "<div class='example-returns'><h4>Returns:</h4><pre>\n" . trim(implode( '', $data )) . "</pre></div>\n";
 	}
 
 	private static function do_format_data_EXAMPLE(array $data) : string
 	{
-		return "<div class='example'><strong>Example:</strong><br /><br />\n" . highlight_string( implode( '', $data ), true ) . "</div>\n";
+		return "<div class='example'><h4>Example:</h4>\n" . highlight_string( trim(implode( '', $data )), true ) . "</div>\n";
 	}
 
 	private static function formatDataByState(array $data, string $state) : string {

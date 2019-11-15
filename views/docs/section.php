@@ -9,37 +9,33 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 );
 ?>
 
-<h1>Documentation</h1>
+<h1><?= $this->title ?></h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
+<div class="doc_section">
+	<p class='intro'><?= $this->description ?></p>
+	<?= $this->text ?>
 
-» Documentation for: <b>Xdebug 2</b><br />
-» Feature: <b><?= $this->title ?></b><br />
-<hr />
+	<?php if ($this->related_settings) : ?>
+		<div class='settings'>
+			<h2>Related Settings</h2>
 
-<p class='intro'><?= $this->description ?></p>
-<hr class='light'/>
-<?= $this->text ?>
-<hr style='clear: both'>
+			<?php foreach ($this->related_settings as $setting) : ?>
+				<hr>
+				<?= XdebugDotOrg\Controller\Docs\SettingsController::single($setting)->render() ?>
+			<?php endforeach ?>
+		</div>
+	<?php endif ?>
 
-<?php if ($this->related_settings) : ?>
-	<h2>Related Settings</h2>
-	<div class='settings'>
-		<?php foreach ($this->related_settings as $setting) : ?>
-			<?= XdebugDotOrg\Controller\Docs\SettingsController::single($setting)->render() ?>
-		<?php endforeach ?>
-	</div>
-	<hr />
-<?php endif ?>
+	<?php if ($this->related_functions) : ?>
+		<div class='functions'>
+			<h2>Related Functions</h2>
 
-<?php if ($this->related_functions) : ?>
-	<h2>Related Functions</h2>
-	<div class='functions'>
-		<?php foreach ($this->related_functions as $function) : ?>
-			<?= XdebugDotOrg\Controller\Docs\FunctionsController::single($function)->render() ?>
-		<?php endforeach ?>
-	</div>
-	<hr />
-<?php endif ?>
+			<?php foreach ($this->related_functions as $function) : ?>
+				<hr>
+				<?= XdebugDotOrg\Controller\Docs\FunctionsController::single($function)->render() ?>
+			<?php endforeach ?>
+		</div>
+	<?php endif ?>
+</div>
 
 

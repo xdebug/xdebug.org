@@ -12,36 +12,22 @@
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick@xdebug.org" />
-	<link type="text/css" rel="stylesheet" href="/core.css"/>
-	<link type="application/rss+xml" rel="alternate" href="/rss.php" />
+	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<?= $this->headExtra ?>
+	<link rel="stylesheet" type="text/css" href="/core2.css" />
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 </head>
 <body>
-	<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
-			<td class="head" style="height: 64px; background: url(/images/topleft.gif);"><img id="logo" align="right" src="/images/xdebug.gif" alt="Xdebug"/></td>
-			<td style="height: 64px; width: 18%; background: url(/images/topleft.gif);">&nbsp;</td>
-		</tr>
+	<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
 
-		<tr>
-			<td>&nbsp;</td>
-			<td class="serif"><?= $this->contents ?></td>
-			<td>&nbsp;</td>
-		</tr>
+	<main class="content_width"><?= $this->contents ?></main>
 
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-<div class="copy">
-This site and all of its contents are
-Copyright &copy; 2002-<?php echo date("Y"); ?> by Derick Rethans.<br />
-All rights reserved.
-</div>
-			</td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
 
+	<footer class="content_width">
+		<p>
+		This site and all of its contents are Copyright &copy; 2002-<?php echo date("Y"); ?> by Derick Rethans.<br />
+		All rights reserved.
+		</p>
+	</footer>
 </body>
 </html>

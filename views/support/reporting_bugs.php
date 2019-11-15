@@ -4,13 +4,11 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Report
 
 <h1>Reporting Bugs</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::support_menu()->render() ?>
-
 <h2>Bugs</h2>
 
 <p>
 	If you think that you found a bug in Xdebug, please file a bugreport at the <a
-	href="http://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
+	href="https://bugs.xdebug.org">Bug Tracking</a> page. You will need to register
 	because this prevents abuse by spammers and other abusing parties. Try to give
 	as much possible information to reproduce the bug, this will greatly help in
 	fixing them. For some hints on what information is useful, see the following
@@ -110,7 +108,7 @@ settings.
 <p>
 In addition to the above information, I might need some more information
 depending on what type of bug that you encountered. There is different
-information useful for <a href='#remote'>Remote Debugger Bugs</a> and <a
+information useful for <a href='#step-debugger'>Step Debugger Bugs</a> and <a
 href='#crash'>Crash Bugs</a>. If you are unsure as to what is useful, feel free
 to only provide information from the <a href='#required-info'>Required
 Information</a> section from above. In which case I will then point you to the
@@ -118,7 +116,8 @@ right section on this page for further information if necessary.
 </p>
 
 <a name='remote'></a>
-<h3>Remote Debugger Bugs</h3>
+<a name='step-debugger'></a>
+<h3>Step Debugger Bugs</h3>
 <p>
 	To make it possible for me to find and fix bugs for the remote debugging
 	feature, I need several bits of information. Without this information, I
@@ -130,47 +129,45 @@ right section on this page for further information if necessary.
 		The items needed for every bug report (script, Xdebug version, PHP
 		version, distribution, etc, <a href='#required-info'>see above</a>).
 	</li>
-	<li>
-		<p>
-			A remote debugging log.
-		</p>
-		<p>
-			This debugging log contains all the interactions between Xdebug and
-			an IDE and is vital to track down where the error occurs, and due
-			to which protocol command.
-		</p>
+	<li>A remote debugging log.</li>
+</ol>
 
-		<p>
-			You can make a remote debugging log by using the <a
-			href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini
-			setting. I suggest you set its value to something in the
-			<code>/tmp</code> directory (or your operating system's
-			equivalent). I have it set as follows:
-			<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the
-			user that runs the script (yourself for CLI, or your web server's
-			user ID if you're debugging through a web server) can write to the
-			file that you have specified.
-		</p>
+<p>
+	The debugging log contains all the interactions between Xdebug and
+	an IDE and is vital to track down where the error occurs, and due
+	to which protocol command.
+</p>
 
-		<p>
-			With the short script prepared, and the remote logging enabled, now
-			step through your code in the IDE (or do whatever you need to do to
-			reproduce it). When you are done, add both the script as well as
-			the remote debugging log to the bug report at <a
-			href='//bugs.xdebug.org'>bugs.xdebug.org</a>.
-		</p>
-		<p>
-			The contents of the log should start with something like:
-		</p>
-		<pre class="example">
+<p>
+	You can make a remote debugging log by using the <a
+	href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini
+	setting. I suggest you set its value to something in the
+	<code>/tmp</code> directory (or your operating system's
+	equivalent). I have it set as follows:
+	<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the
+	user that runs the script (yourself for CLI, or your web server's
+	user ID if you're debugging through a web server) can write to the
+	file that you have specified.
+</p>
+
+<p>
+	With the short script prepared, and the remote logging enabled, now
+	step through your code in the IDE (or do whatever you need to do to
+	reproduce it). When you are done, add both the script as well as
+	the remote debugging log to the bug report at <a
+	href='https://bugs.xdebug.org'>bugs.xdebug.org</a>.
+</p>
+
+<p>
+	The contents of the log should start with something like:
+</p>
+<pre class="example">
 Log opened at 2019-01-29 15:17:50
 I: Connecting to configured address/port: localhost:9000.
 W: Creating socket for 'localhost:9000', poll success, but error: Operation now in progress (29).
 I: Connected to client. :-)
 -> &lt;init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///home/derick/media/movie/TheTube.php
-		</pre>
-	</li>
-</ol>
+</pre>
 
 <a name='crash'></a>
 <h3>Crash Bugs</h3>

@@ -5,11 +5,19 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 ?>
 
-<h1>Log and Supporters Xdebug</h1>
+<h1>Xdebug Log</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::support_menu()->render() ?>
+<p>This work is made possible through the generous support of Xdebug's business-tier sponsors:
 
-<div class="left">
+<ul class='supporters'>
+<?php foreach ($this->supporters as list($link, $name)) : ?>
+	<li><a href="<?= $link ?>"><?= $name ?></a></li>
+<?php endforeach ?>
+</ul>
+
+<p>You can also be listed as a supporter by <a href='/support'>signing up</a> for a <i>Business</i> package.</p>
+
+<div class="log_left">
 	<?php foreach ($this->reports as $report) : ?>
 		<h2><?= $report->start->format( "F Y" ) ?></h2>
 		<div class='funding'>
@@ -52,17 +60,4 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 		<?php endif ?>
 		<br/>
 	<?php endforeach ?>
-</div>
-
-<div class="right">
-<h2>Current Supporters</h2>
-
-<ul class='supporters'>
-<?php foreach ($this->supporters as list($link, $name)) : ?>
-	<li><a href="<?= $link ?>"><?= $name ?></a></li>
-<?php endforeach ?>
-</ul>
-
-<p>You can also be listed as a supporter by <a href='/support'>signing up</a> for a <i>Business</i> package.</p>
-
 </div>

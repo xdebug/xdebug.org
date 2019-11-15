@@ -22,3 +22,6 @@ services:
       - type: "bind"
         source: "${PWD}/views"
         target: "/var/www/views"
+      - type: "bind"
+        source: "${PWD}/data"
+        target: "/var/www/data"
