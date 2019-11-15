@@ -128,47 +128,45 @@ right section on this page for further information if necessary.
 		The items needed for every bug report (script, Xdebug version, PHP
 		version, distribution, etc, <a href='#required-info'>see above</a>).
 	</li>
-	<li>
-		<p>
-			A remote debugging log.
-		</p>
-		<p>
-			This debugging log contains all the interactions between Xdebug and
-			an IDE and is vital to track down where the error occurs, and due
-			to which protocol command.
-		</p>
+	<li>A remote debugging log.</li>
+</ol>
 
-		<p>
-			You can make a remote debugging log by using the <a
-			href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini
-			setting. I suggest you set its value to something in the
-			<code>/tmp</code> directory (or your operating system's
-			equivalent). I have it set as follows:
-			<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the
-			user that runs the script (yourself for CLI, or your web server's
-			user ID if you're debugging through a web server) can write to the
-			file that you have specified.
-		</p>
+<p>
+	The debugging log contains all the interactions between Xdebug and
+	an IDE and is vital to track down where the error occurs, and due
+	to which protocol command.
+</p>
 
-		<p>
-			With the short script prepared, and the remote logging enabled, now
-			step through your code in the IDE (or do whatever you need to do to
-			reproduce it). When you are done, add both the script as well as
-			the remote debugging log to the bug report at <a
-			href='//bugs.xdebug.org'>bugs.xdebug.org</a>.
-		</p>
-		<p>
-			The contents of the log should start with something like:
-		</p>
-		<pre class="example">
+<p>
+	You can make a remote debugging log by using the <a
+	href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini
+	setting. I suggest you set its value to something in the
+	<code>/tmp</code> directory (or your operating system's
+	equivalent). I have it set as follows:
+	<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the
+	user that runs the script (yourself for CLI, or your web server's
+	user ID if you're debugging through a web server) can write to the
+	file that you have specified.
+</p>
+
+<p>
+	With the short script prepared, and the remote logging enabled, now
+	step through your code in the IDE (or do whatever you need to do to
+	reproduce it). When you are done, add both the script as well as
+	the remote debugging log to the bug report at <a
+	href='//bugs.xdebug.org'>bugs.xdebug.org</a>.
+</p>
+
+<p>
+	The contents of the log should start with something like:
+</p>
+<pre class="example">
 Log opened at 2019-01-29 15:17:50
 I: Connecting to configured address/port: localhost:9000.
 W: Creating socket for 'localhost:9000', poll success, but error: Operation now in progress (29).
 I: Connected to client. :-)
 -> &lt;init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///home/derick/media/movie/TheTube.php
-		</pre>
-	</li>
-</ol>
+</pre>
 
 <a name='crash'></a>
 <h3>Crash Bugs</h3>
