@@ -547,5 +547,6 @@ table.versions tbody tr th.legacy { background-color: #ffbc42; }
 table.versions tbody tr th.supported { background-color: green; color: white; }
 table.versions tbody tr th.future { background-color: lightblue; color: black; }
 table.versions td { text-align: center; border: 1px solid grey; color: #ff7f7f; }
+table.versions td.legacy { text-align: center; border: 1px solid grey; color: #ffbc42; }
 table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
 table.versions td.future { text-align: center; border: 1px solid grey; color: lightblue; }
