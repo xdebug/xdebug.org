@@ -1,0 +1,12 @@
+Xdebug 2.8.1 is out!
+<p>This is the first bug fix release of the Xdebug 2.8 series.</p>
+
+<p>This bug fix release only addresses a slow down with code coverage that was
+introduced in Xdebug 2.8.0.</p>
+
+<p>The full list of changes can be found on the <a
+href="/updates#x_2_8_1">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="/download">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>

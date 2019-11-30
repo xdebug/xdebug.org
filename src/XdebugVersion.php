@@ -4,15 +4,15 @@ namespace XdebugDotOrg;
 class XdebugVersion
 {
 	public const NOT_SUPPORTED_BEFORE = '2.8';
-	public const LATEST_VERSION = '2.8.0';
-	public const LATEST_WINDOWS_VERSION = '2.8.0';
+	public const LATEST_VERSION = '2.8.1';
+	public const LATEST_WINDOWS_VERSION = '2.8.1';
 
 	private const VERSIONS =  [
-		'7.0' => [ 'src' => '2.8.0',                              ],
-		'7.1' => [ 'src' => '2.8.0',       'win' => '2.8.0'       ],
-		'7.2' => [ 'src' => '2.8.0',       'win' => '2.8.0'       ],
-		'7.3' => [ 'src' => '2.8.0',       'win' => '2.8.0'       ],
-		'7.4' => [ 'src' => '2.8.0',        'win' => '2.8.0'       ]
+		'7.0' => [ 'src' => '2.8.1',                              ],
+		'7.1' => [ 'src' => '2.8.1',       'win' => '2.8.1'       ],
+		'7.2' => [ 'src' => '2.8.1',       'win' => '2.8.1'       ],
+		'7.3' => [ 'src' => '2.8.1',       'win' => '2.8.1'       ],
+		'7.4' => [ 'src' => '2.8.1',       'win' => '2.8.1'       ]
 	];
 
 	/** @var string|null */
