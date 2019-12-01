@@ -1,0 +1,16 @@
+13.44	0.00	0.50	2.50	34.62
+2019-11-03	xdebug3	2.5	Modularizing the debugger mode
+2019-11-04	support	0.5	Answering Stackoverflow questions
+2019-11-06	xdebug3	1	Modularizing the debugger mode
+2019-11-06		1	Checking out new website design, and making some tweaks
+2019-11-07	xdebug3	3	Modularizing the tracing mode
+2019-11-10	xdebug3	3.5	Making things static, splitting up the variable rendering code
+2019-11-14		1	Website redesign
+2019-11-15		2.5	Website redesign
+2019-11-24	bug	4	Investigating #1717: Code coverage turned slow after update from 2.7.2 to 2.8.0
+2019-11-18	support	1.5	StackOverflow, and triading bugs
+2019-11-29	bug	6	Fixing #1717, and improving speed related to the bug; preparing 2.8.1 release
+2019-11-30	xdebug3	1	Removing TSRMLS macros
+2019-11-30	xdebug3	2	Splitting up the variable rendering code
+2019-11-30	xdebug3	1	Integrating, rebasing, and adjusting patch for #1717 2.8.1 release
+2019-11-30	xdebug3	0.5	Implemented #1301: Removed aggregated profiler feature
