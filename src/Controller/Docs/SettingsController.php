@@ -312,7 +312,7 @@ class SettingsController
 	/**
 	 * @return Setting[]
 	 */
-	public static function getRelatedSettings(?int $func) : array
+	public static function getRelatedSettings(?int $func, ?bool $addLinks = true) : array
 	{
 		if ($func !== null) {
 			$settings = array_filter(
@@ -339,7 +339,10 @@ class SettingsController
 				throw new \Exception($setting_file . ' should exist');
 			}
 
-			$text = DocsController::add_links(file_get_contents($setting_file));
+			$text = file_get_contents($setting_file);
+			if ($addLinks) {
+				$text = DocsController::add_links($text);
+			}
 			$version = $setting[2];
 
 			$models[] = new Setting(

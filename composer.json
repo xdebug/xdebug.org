@@ -13,5 +13,8 @@
     	"psr-4": {
     		"XdebugDotOrg\\": "src"
     	}
+    },
+    "require": {
+        "zetacomponents/document": "^1.3"
     }
 }

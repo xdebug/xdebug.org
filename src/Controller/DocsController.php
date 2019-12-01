@@ -163,6 +163,26 @@ class DocsController
 		return $text;
 	}
 
+	public static function process_macros_without_links(string $text) : string
+	{
+		$text = preg_replace( '/\[FUNC:([^\]]*?)\]/', '\1()', $text );
+		$text = preg_replace( '/\[CFG:([^\]]*?):([^\]]*?)\]/', '\2', $text );
+		$text = preg_replace( '/\[CFG:([^\]]*?)\]/', 'xdebug.\1', $text );
+		$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '\1', $text );
+		$text = preg_replace_callback(
+			'/\[FEAT:([^\]]*?)(#.*)?\]/',
+			function (array $matches) {
+				if (!array_key_exists(2, $matches)) {
+					$matches[2] = '';
+				}
+				return self::SECTIONS[$matches[1]][0];
+			},
+			$text
+		);
+		$text = self::add_keywords( $text );
+		return $text;
+	}
+
 	public static function add_keywords(string $text) : string
 	{
 		$text = str_replace( '[KW:last_release_version]', '2.8.1', $text );
