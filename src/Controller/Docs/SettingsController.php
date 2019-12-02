@@ -18,7 +18,7 @@ class SettingsController
 			\FUNC_BASIC
 		],
 		'extended_info' => [
-			'integer', 1, null,
+			'integer', 1, "< 2.8",
 			\FUNC_REMOTE
 		],
 		'force_display_errors' => [
@@ -173,7 +173,7 @@ class SettingsController
 		],
 
 		'remote_handler' => [
-			'string', 'dbgp', null,
+			'string', 'dbgp', '< 3.0',
 			\FUNC_REMOTE
 		],
 
@@ -184,6 +184,11 @@ class SettingsController
 
 		'remote_log' => [
 			'string', '', null,
+			\FUNC_REMOTE
+		],
+
+		'remote_log_level' => [
+			'integer', '7', '>= 2.8',
 			\FUNC_REMOTE
 		],
 
@@ -208,7 +213,7 @@ class SettingsController
 		],
 
 		'profiler_aggregate' => [
-			'integer', 0, null,
+			'integer', 0, '< 3.0',
 			\FUNC_PROFILER
 		],
 
@@ -243,12 +248,12 @@ class SettingsController
 		],
 
 		'gc_stats_output_dir' => [
-			'string', '/tmp', null,
+			'string', '/tmp', '>= 2.6',
 			\FUNC_GARBAGE_COLLECTION
 		],
 
 		'gc_stats_output_name' => [
-			'string', 'gcstats.%p', null,
+			'string', 'gcstats.%p', '>= 2.6',
 			\FUNC_GARBAGE_COLLECTION
 		],
 
