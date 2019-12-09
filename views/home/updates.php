@@ -22,6 +22,23 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_0'></a>[2019-12-09] &mdash; Xdebug 2.9.0</dt>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(1723); ?>: Class/function pre-analysis for code coverage speed improvements</dd>
+
+<dd><h3>Removed Features</h3></dd>
+
+<dd>Fixed <?= bug(1301); ?>: Removed aggregated profiler feature</dd>
+<dd>Fixed <?= bug(1720); ?>: Remove superfluous xdebug.remote_handler setting</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1722); ?>: Build warning issues on FreeBSD</dd>
+<dd>Fixed <?= bug(1724); ?>: Missing property types and uninitialised values in variable dumping routines</dd>
+
+
 <dt><a name='x_2_8_1'></a>[2019-12-02] &mdash; Xdebug 2.8.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

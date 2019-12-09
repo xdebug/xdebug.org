@@ -1,0 +1,22 @@
+Xdebug 2.9.0 is out!
+<p>This release of Xdebug is an end-of-year present that speeds up code
+coverage by 250% (as compared to Xdebug <b>2.7</b>). See
+<a href='https://derickrethans.nl/crafty-code-coverage.html'>this
+article</a> for the full story.</p>
+
+<p>This release adds support to the <a
+href='https://xdebug.org/docs/display'>variable display</a> functionality of
+Xdebug to include PHP 7.4's new typed properties, and <b>removes</b> the
+superfluous
+<a href='https://xdebug.org/docs/all_settings#remote_handler'>xdebug.remote_handler</a>
+setting, and the undocumented profiler aggregate feature.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2_9_0">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2_9_0">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<p>This release also contains a contribution by: <i>David Carlier</i> —
+Thanks!</p>
