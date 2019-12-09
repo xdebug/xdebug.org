@@ -173,7 +173,7 @@ class SettingsController
 		],
 
 		'remote_handler' => [
-			'string', 'dbgp', '< 3.0',
+			'string', 'dbgp', '< 2.9',
 			\FUNC_REMOTE
 		],
 
@@ -213,7 +213,7 @@ class SettingsController
 		],
 
 		'profiler_aggregate' => [
-			'integer', 0, '< 3.0',
+			'integer', 0, '< 2.9',
 			\FUNC_PROFILER
 		],
 
