@@ -1,3 +1,4 @@
+2020-01-02	Strategery	https://strategery.io/
 2019-11-24	e3N GmbH & Co.	https://e3n.de/
 2019-11-01	Automattic	https://automattic.com
 2019-10-07	JetBrains	https://jetbrains.com

@@ -1,0 +1,30 @@
+13.16	0.00	0.50	2.50	53.25
+2019-12-02	bug	1	Releasing 2.8.1
+2019-12-02	website	0.5	Pull requests and issues for xdebug/xdebug.org
+2019-12-02	support	0.25	Triaging StackOverflow questions
+2019-12-02		3	xdebug.ini documentation updates, and fixing up the script for it
+2019-12-02	xdebug3	0.5	Removing xdebug.remote_handler setting, as it is superfluous
+2019-12-02		1	Sorting out the GIT mess that I created :-(
+2019-12-03	bug	1	Fixing #1717: Code coverage slow down
+2019-12-04	bug	2	Improving on fix for #1717: Code coverage slow down
+2019-12-05		0.25	Reviewing PR #527: https://github.com/xdebug/xdebug/pull/527
+2019-12-05	bug	5	Trying to squeeze even more performance out of code coverage (without luck)
+2019-12-05	support	0.25	Triaging StackOverflow questions
+2019-12-06		3	Merging #1723: Class/function pre-analysis for code coverage speed improvements
+2019-12-06	bug	2	Issue #1724: Missing property types and uninitialised variables in variable dumping routines
+2019-12-06		2	Making 2.9.0RC1 release, and preparing 2.9.0 release
+2019-12-07	bug	2	Issue #1724: Missing property types and uninitialised variables in variable dumping routines
+2019-12-07	support	0.25	Reviewing PR #527: https://github.com/xdebug/xdebug/pull/527 again, and merging it
+2019-12-08	bug	0.75	Reviewing PR #529: https://github.com/xdebug/xdebug/pull/531
+2019-12-08	bug	0.25	Triaging issues in feedback
+2019-12-09	bug	1.25	Triaging, fixing, and testing issue #1728: INIT_STATIC_METHOD_CALL is not overloaded
+2019-12-09		2	Testing and releasing 2.9.0
+2019-12-09	docs	2	Writing article to describe code coverage in 2.9 speedup
+2019-12-12	bug	1	Investigating #1727: Resolved breakpoints make things stop too often
+2019-12-13	bug	1	Discussing resolving breakpoints with Nikita on video chat
+2019-12-16	bug	3	Working on issue #1727: Resolved breakpoints make things stop too often
+2019-12-18	xdebug3	3	Rewriting ‘debugclient’ in Go
+2019-12-19	bug	3	Working on issue #1727: Resolved breakpoints make things stop too often
+2019-12-20	bug	1	Working on issue #1727: Resolved breakpoints make things stop too often
+2019-12-20	bug	0.25	Triaging bug with var_dump() and DateTime* classes
+2019-12-31	xdebug3	6	Rewriting ‘debugclient’, and writing `dbgpProxy` in Go
