@@ -125,7 +125,7 @@ class CiController
 					return -$c;
 				}
 
-				return strcmp( $aMatch[3], $bMatch[3] );
+				return strcmp( isset( $aMatch[3] ) ? $aMatch[3] : '', isset( $bMatch[3] ) ? $bMatch[3] : '' );
 			}
 		);
 
