@@ -94,6 +94,10 @@ class SupportController
 				$hours
 			);
 
+			if ( ! isset( $totalHours[$type] ) )
+			{
+				$totalHours[$type] = 0;
+			}
 			$totalHours[$type] += $hours;
 		};
 
