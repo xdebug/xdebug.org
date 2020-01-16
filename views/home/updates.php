@@ -22,6 +22,18 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_1'></a>[2020-01-16] &mdash; Xdebug 2.9.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1721); ?>: Header may not contain NUL bytes in Unknown on line 0</dd>
+<dd>Fixed <?= bug(1727); ?>: Debugger stops more often than expected due to resolving breakpoints</dd>
+<dd>Fixed <?= bug(1728); ?>: INIT_STATIC_METHOD_CALL is not overloaded</dd>
+<dd>Fixed <?= bug(1731); ?>: var_dump with DateTime does not output properties</dd>
+<dd>Fixed <?= bug(1733); ?>: SEND_VAR_NO_REF_EX opcode, used for require(), is not overloaded</dd>
+<dd>Fixed <?= bug(1734); ?>: Segfault with DBGp "source" with a out-of-range start line number</dd>
+
+
 <dt><a name='x_2_9_0'></a>[2019-12-09] &mdash; Xdebug 2.9.0</dt>
 
 <dd><h3>Improvements</h3></dd>

@@ -185,7 +185,7 @@ class DocsController
 
 	public static function add_keywords(string $text) : string
 	{
-		$text = str_replace( '[KW:last_release_version]', '2.9.0', $text );
+		$text = str_replace( '[KW:last_release_version]', '2.9.1', $text );
 		$text = str_replace( '[KW:last_dev_version]',     '3.0.0dev', $text );
 		return $text;
 	}
