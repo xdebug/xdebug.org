@@ -282,6 +282,16 @@ footer {
 	margin: 20px 0;
 }
 
+.front_supporters {
+	width: 100%;
+	float: left;
+	margin-top: 1em;
+}
+
+.front_supporters p {
+    max-width: 100%;
+}
+
 .front_announcements {
 	margin-left: 5%;
 	width: 35%;
@@ -304,7 +314,7 @@ footer {
 }
 
 @media all and (max-device-width: 640px) {
-	.front_intro, .front_announcements {
+	.front_intro, .front_announcements, .front_supporters {
 		float: none;
 		width: auto;
 	}
@@ -439,7 +449,7 @@ footer {
 
 .supporters li a {
     display: inline-block;
-    padding: .5em 1em;
+    padding: .25em .5em;
     background-color: #e5f5d5;
 }
 

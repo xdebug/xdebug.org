@@ -7,16 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 
 <h1>Xdebug Log</h1>
 
-<p>This work is made possible through the generous support of Xdebug's business-tier sponsors:
-
-<ul class='supporters'>
-<?php foreach ($this->supporters as list($link, $name)) : ?>
-	<li><a href="<?= $link ?>"><?= $name ?></a></li>
-<?php endforeach ?>
-</ul>
-
-<p>You can also be listed as a supporter by <a href='/support'>signing up</a> for a <i>Business</i> package.</p>
-
 <div class="log_left">
 	<?php foreach ($this->reports as $report) : ?>
 		<h2><?= $report->start->format( "F Y" ) ?></h2>
