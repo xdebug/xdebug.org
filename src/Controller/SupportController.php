@@ -98,7 +98,7 @@ class SupportController
 			{
 				$totalHours[$type] = 0;
 			}
-			$totalHours[$type] += $hours;
+			$totalHours[$type] += (float) $hours;
 		};
 
 		krsort($totalHours);

@@ -14,4 +14,12 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+
+    <issueHandlers>
+        <InvalidScope>
+            <errorLevel type="suppress">
+                <file name="views/fourohfour/404.php" />
+            </errorLevel>
+        </InvalidScope>
+    </issueHandlers>
 </psalm>

@@ -18,7 +18,7 @@ class SupportLogMonthReport
 
 	/**
 	 * @param array<SupportLogDayReport>  $days
-	 * @param array<string, string>  $totalHours
+	 * @param array<string, float>  $totalHours
 	 */
 	public function __construct(
 		\DateTimeImmutable $start,
