@@ -5,12 +5,41 @@ use XdebugDotOrg\Core\HtmlResponse;
 
 use XdebugDotOrg\Model\Download;
 use XdebugDotOrg\Model\Downloads;
+use XdebugDotOrg\Model\Supporters;
 
 class HomeController
 {
+	public static function getSupportersModel() : Supporters
+	{
+		$d = \dir( '../data/reports' );
+
+		$files = [];
+
+		while ( false !== ( $entry = $d->read() ) ) {
+			if (preg_match( '@^20[0-9][0-9]-[01][0-9]\.txt$@', $entry, $m)) {
+				$files[] = $entry;
+			}
+		}
+
+		\rsort($files);
+
+		return new Supporters(
+			self::get_supporters()
+		);
+	}
+
 	public static function index() : HtmlResponse
 	{
-		return new HtmlResponse(null, 'home/index.php');
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				Supporters::class,
+				function() : Supporters {
+					return self::getSupportersModel();
+				},
+				'log'
+			),
+			'home/index.php'
+		);
 	}
 
 	public static function updates() : HtmlResponse
@@ -114,6 +143,40 @@ class HomeController
 	public static function contributing() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'home/contributing.php');
+	}
+
+	/**
+	 * @return array<int, array{0: string, 1: string}>
+	 */
+	private static function get_supporters() : array
+	{
+		$f = file( '../data/reports/supporters.txt' );
+
+		$lines = [];
+
+		$supporters = [];
+
+		foreach ($f as $line) {
+			$line = trim( $line );
+			list( $date, $name, $link ) = explode( "\t", $line );
+
+			$now = new \DateTimeImmutable();
+			$d = new \DateTimeImmutable( $date );
+			$diff = $now->diff( $d );
+
+			if ( $diff->invert == 0 )
+			{
+				continue;
+			}
+			if ( $diff->days > 365 )
+			{
+				continue;
+			}
+
+			$supporters[] = [$link, $name];
+		}
+
+		return $supporters;
 	}
 }
 ?>

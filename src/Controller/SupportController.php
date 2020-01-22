@@ -53,8 +53,7 @@ class SupportController
 					return self::getMonthReport($file);
 				},
 				$files
-			),
-			self::get_supporters()
+			)
 		);
 	}
 
@@ -114,40 +113,6 @@ class SupportController
 			$totalHours,
 			new \DateTimeImmutable() > $d->modify( '+40 days' ) ? strtolower($d->format( 'F-Y' )) : null
 		);
-	}
-
-	/**
-	 * @return array<int, array{0: string, 1: string}>
-	 */
-	private static function get_supporters() : array
-	{
-		$f = file( '../data/reports/supporters.txt' );
-
-		$lines = [];
-
-		$supporters = [];
-
-		foreach ($f as $line) {
-			$line = trim( $line );
-			list( $date, $name, $link ) = explode( "\t", $line );
-
-			$now = new \DateTimeImmutable();
-			$d = new \DateTimeImmutable( $date );
-			$diff = $now->diff( $d );
-
-			if ( $diff->invert == 0 )
-			{
-				continue;
-			}
-			if ( $diff->days > 365 )
-			{
-				continue;
-			}
-
-			$supporters[] = [$link, $name];
-		}
-
-		return $supporters;
 	}
 }
 ?>
