@@ -4,6 +4,7 @@
  */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » ' . $this->title);
 
+/** @psalm-suppress UndefinedThisPropertyFetch because of slight cheats */
 XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	XdebugDotOrg\Controller\DocsController::sectionHead($this->model)->render()
 );
