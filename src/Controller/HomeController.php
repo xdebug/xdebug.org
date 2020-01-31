@@ -52,7 +52,7 @@ class HomeController
 		return new HtmlResponse(null, 'home/license.php');
 	}
 
-	public static function getDownloadsModel() : Downloads
+	public static function getAllDownloadsModel() : Downloads
 	{
 		// open the files dir, and scan
 		$d = dir(dirname(__DIR__, 2) . '/html/files' );
@@ -61,9 +61,11 @@ class HomeController
 
 		while (false !== ($entry = $d->read())) {
 			if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
+				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['source'] = $entry;
 			}
 			if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[4567]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['dll'][] = $entry;
 			}
 		}
@@ -76,7 +78,15 @@ class HomeController
 
 		foreach ($files as $version => $tar) {
 			$f = stat( "files/{$tar['source']}" );
-			$hash = hash_file( "sha256", "files/{$tar['source']}" );
+			$hashFile = "files/{$tar['source']}.sha256.txt";
+			if ( file_exists( $hashFile ) )
+			{
+				$hash = trim( file_get_contents( $hashFile ) );
+			}
+			else
+			{
+				$hash = hash_file( "sha256", "files/{$tar['source']}" );
+			}
 			$date = (new \DateTimeImmutable)->setTimestamp($f['mtime']);
 			$href = 'files/' . $tar['source'];
 
@@ -89,7 +99,15 @@ class HomeController
 
 				foreach ($tar['dll'] as $dls) {
 					$s = stat( "files/$dls" );
-					$dll_hash = hash_file( 'sha256', "files/$dls" );
+					$hashFile = "files/{$dls}.sha256.txt";
+					if ( file_exists( $hashFile ) )
+					{
+						$dll_hash = trim( file_get_contents( $hashFile ) );
+					}
+					else
+					{
+						$dll_hash = hash_file( 'sha256', "files/$dls" );
+					}
 					preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([4567]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 					$name = $m[1];
 					$namea = '';
@@ -125,6 +143,13 @@ class HomeController
 
 		return new Downloads($downloads);
 	}
+	
+	public static function getLatestDownloadsModel() : Downloads
+	{
+		$allDownloads = self::getAllDownloadsModel();
+
+		return new Downloads( [ $allDownloads->downloads[0] ] );
+	}
 
 	public static function download() : HtmlResponse
 	{
@@ -132,11 +157,25 @@ class HomeController
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
 				Downloads::class,
 				function() : Downloads {
-					return self::getDownloadsModel();
+					return self::getLatestDownloadsModel();
 				},
-				'downloads'
+				'download'
 			),
 			'home/download.php'
+		);
+	}
+
+	public static function historicalReleases() : HtmlResponse
+	{
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				Downloads::class,
+				function() : Downloads {
+					return self::getAllDownloadsModel();
+				},
+				'historical-releases'
+			),
+			'home/historical-releases.php'
 		);
 	}
 

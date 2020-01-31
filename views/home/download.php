@@ -7,47 +7,51 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Downloads');
 
 <h1>Downloads</h1>
 
-<h2>Source</h2>
+<p>Please refer to the <a href="/docs/install">installation</a> instructions on
+how to install Xdebug.</p>
 
-<p>
-The Xdebug extension helps you debugging your script by providing a lot of
-valuable debug information. The debug information that Xdebug can
-provide includes the following:
-</p>
+<h2>Source</h2>
 
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
 href='https://github.com/xdebug/xdebug'>github</a> and can be checked out with:
 </p>
 <pre>
-git clone git://github.com/xdebug/xdebug.git
+git clone https://github.com/xdebug/xdebug.git
 </pre>
 
 <a name='releases'></a>
-<h2>Releases</h2>
+<a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', $this->downloads[0]->version) ?>'></a>
+<h2>Latest Release</h2>
+<strong>Xdebug <?= $this->downloads[0]->version ?></strong>
+<div class='copy'>Release date: <?= $this->downloads[0]->date->format('Y-m-d') ?></div>
 
-<p>The Windows binaries generally work for every mini release for the mentioned
-PHP version, although the extension is built against the most current PHP
-version at that time. The VC<i>x</i>/VS<i>x</i> marker tells with which compiler the
-extension was built, and Non-thread-safe whether ZTS was disabled. Those
-qualifiers need to match the PHP version you're using. If you don't know which
-one you need, please refer to the <a href='/wizard.php'>custom
-installation instructions</a>.</p>
-
+<div class="front_releases">
 <?php foreach ($this->downloads as $download) : ?>
-	<a name='<?=preg_replace('/[^0-9A-Za-z]/', '_', $download->version) ?>'></a>
-	<strong>Xdebug <?= $download->version ?></strong>
-	<div class='copy'>Release date: <?=$download->date->format('Y-m-d') ?></div>
 	<ul>
-		<li><a href='<?= $download->href ?>'>source</a> <span class='md5'>(SHA256:&nbsp;<?=$download->hash ?>)</span></li>
+		<li>Linux, macOS:
+			<ul class="releases">
+				<li><a title="SHA256:&nbsp;<?= $download->hash ?>" href='<?= $download->href ?>'>source</a></li>
+			</ul>
+		</li>
 		<?php if ($download->dlls) : ?>
 			<li>Windows binaries:<br/>
 
-			<?php foreach ($download->dlls as $i => $dll) : ?>
-				<?php if ($i !== 0) : ?><br /><?php endif ?>
-				<a href='<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a> <span class='md5'>(SHA256:&nbsp;<?= $dll['hash'] ?>)</span>
-			<?php endforeach ?>
+				<ul class="releases">
+					<?php foreach ($download->dlls as $i => $dll) : ?>
+						<li><a title="SHA256:&nbsp;<?= $dll['hash'] ?>" href='<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a></li>
+					<?php endforeach ?>
+				</ul>
 
 			</li>
 		<?php endif ?>
 	</ul>
 <?php endforeach ?>
+</div>
+
+<a name='historical'></a>
+<h2>Historical Releases</h2>
+
+<p>Previous releases can be found on the <a
+href='/download/historical'>historical releases</a> page. Please refer to the
+<a href="/docs/compat#versions">compatibility matrix</a> to find out which one are still
+supported.</p>

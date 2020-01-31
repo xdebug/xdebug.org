@@ -17,6 +17,8 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::updates()->render();
 	} elseif ($requested_uri === '/download') {
 		$contents = XdebugDotOrg\Controller\HomeController::download()->render();
+	} elseif ($requested_uri === '/download/historical') {
+		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
 	} elseif (preg_match('/^\/docs(\/([a-z_]+))?/', $requested_uri, $matches)) {
 		$pages = [
 			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
