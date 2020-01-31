@@ -48,6 +48,19 @@ git clone https://github.com/xdebug/xdebug.git
 <?php endforeach ?>
 </div>
 
+<a name='debugclient'></a>
+<h2>Command Line Debug Client</h2>
+
+<div class="front_releases">
+	<ul class="releases">
+		<li><a title="Linux" href="/files/binaries/linux/debugclient">Linux (x86_64)</a></title>
+		<li><a title="macOS" href="/files/binaries/macos/debugclient">macOS (x86_64)</a></title>
+		<li><a title="Windows" href="/files/binaries/windows/debugclient.exe">Windows (x86_64)</a></title>
+	</ul>
+</div>
+<p>Please refer to the <a href="/docs/debugclient">documentation</a> to learn
+about how to use the debug client.</p>
+
 <a name='historical'></a>
 <h2>Historical Releases</h2>
 

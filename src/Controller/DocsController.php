@@ -73,6 +73,12 @@ class DocsController
 			running PHP scripts. This section explains how to set-up PHP and Xdebug
 			to allow this, and introduces a few clients.',
 		],
+		'debugclient' => [
+			'Command Line Debug Client',
+			0,
+			'The command line debug client allows you to debug PHP scripts
+			without having to set up an IDE.',
+		],
 		'compat' => [
 			'Compatibility',
 			0,

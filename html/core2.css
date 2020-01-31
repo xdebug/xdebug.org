@@ -575,6 +575,11 @@ pre.log {
 	white-space: pre-wrap;
 }
 
+pre.shell {
+    color: lightgrey;
+    background-color: black;
+}
+
 table.versions { width: 100%; border: 1px solid black; border-collapse: collapse; }
 table.versions thead th { text-align: center; }
 table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }

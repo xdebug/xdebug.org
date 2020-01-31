@@ -23,7 +23,7 @@ try {
 		$pages = [
 			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
 			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgp',
-			'garbage_collection', 'contributing',
+			'garbage_collection', 'contributing', 'debugclient',
 		];
 
 		if (isset($matches[2])) {
