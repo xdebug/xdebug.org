@@ -1,0 +1,50 @@
+13.26	0.00	0.99	2.50	76.95
+2020-01-01	xdebug3	1.5	Rewriting ‘debugclient’, and writing `dbgpProxy` in Go
+2020-01-02	xdebug3	3.25	Rewriting ‘debugclient’, and writing `dbgpProxy` in Go
+2020-01-02	website	1.25	Writing “monthly report” for December
+2020-01-02	bug	0.5	Looking at upcoming debugInfo visibility bug PR
+2020-01-02	bug	1	Working on issue #1727: Resolved breakpoints make things stop too often
+2020-01-03	xdebug3	3	Added breakpoint visualisation to debugclient
+2020-01-05	bug	1	Look at PRs and merge fixes
+2020-01-05	xdebug3	1	Add `feature_get` and `feature_set` visibility to debugclient
+2020-01-06	bug	0.5	Testing DateTime debug visibility PR, and figuring out the memleak
+2020-01-06	bug	5	Working on issue #1727: Resolved breakpoints make things stop too often
+2020-01-06	xdebug3	1	Added stream and notify packet visualisation to debugclient to add 1727 work
+2020-01-07	bug	5	Working on issue #1727: Resolved breakpoints make things stop too often
+2020-01-07	xdebug3	1	Tweaking debugclient in Go as we go along fixing #1727
+2020-01-10	bug	1.5	Issue #1733: SEND_VAR_NO_REF_EX opcode, used for require(), is not overloaded
+2020-01-10	bug	0.5	Reviewing PR #536: DateTime debug visibility
+2020-01-10	bug	5	Working on issue #1727: Resolved breakpoints make things stop too often
+2020-01-11	bug	5	Finalising issue #1727: Resolved breakpoints make things stop too often
+2029-01-12	bug	0.25	Testing and merging PR #536: DateTime debug visibility
+2020-01-12	ci	0.5	Re-work script that builds nightly PHP versions, which stopped working after /tmp got cleared
+2020-01-12	bug	0.75	Investigating #1721: Unable to stop debug session - XDEBUG_SESSION cookie not deleted
+2020-01-12	bug	0.5	Triaging #1729: Upgrading to newer version of Xdebug using PECL when older version is enabled results in segmentation fault.
+2020-01-12	bug	0.5	Finalising and merging issue #1727: Resolved breakpoints make things stop too often
+2020-01-13	xdebug3	1	Reviewing PR #477: Issue #1016: Support for pause-execution
+2020-01-14	xdebug3	3	Refactoring formatting logic, including storing “source” begin counter
+2020-01-15	bug	1	Fixing bug #1727: Segfault with DBGp "source" with a out-of-range start line number
+2020-01-16	release	2	Releasing 2.9.1
+2020-01-16	ci	3.5	Re-do AppVeyor builds to make it 3 times as fast
+2020-01-17	ci	1	Fix AppVeyor warning due to duplicated directory name in “move”
+2020-01-17	bug	1	Researching and fixing bug #1735: DBGp eval warning promoted to Exception can cause out-of-sync responses
+2020-01-17	xdebug3	1	Make a start with dbgpProxy implementation in Go
+2020-01-19	xdebug3	2.5	dbgpProxy implementation (server set-up)
+2020-01-20	xdebug3	7	dbgpProxy implementation (IDE registration side)
+2020-01-21	xdebug3	1.5	Removing unmaintained PHP 7 code and tests
+2020-01-22	xdebug3	2	Removing unmaintained PHP 7 code and tests
+2020-01-22	bug	1	Testing and merging PR #544: Fix segmentation fault when other extensions run PHP in RINIT
+2020-01-22	xdebug3	2	debug client registering with proxy
+2020-01-27	support	1.5	Triaging and answering StackOverflow questions
+2020-01-27	bug	1	Triaging and fixing bug #1739: Tracing footer not written
+2020-01-27	xdebug3	0.75	Investigating #1738: Ability to send text over stream (Feature Request)
+2020-01-28	bug	0.5	Triaging bug reports, and StackOverflow questions
+2020-01-29	bug	0.5	Triaging and answering StackOverflow questions
+2020-01-30	xdebug3	2.5	Test debug client on Windows and macOS, and use the right ansicon on Windows
+2020-01-30	website	4	Set-up separate download, and historical download pages
+2020-01-30	bug	2	Checking out issue of extra memory usage in Xdebug 2.9.1
+2020-01-31	support	0.5	Triaging and answering StackOverflow questions
+2020-01-31	release	2	Releasing 2.9.2
+2020-01-31	xdebug3	4	More testing of debugclient, packaging it up, and releasing it
+2020-01-31	website	1	Finishing up separate download, and historical download pages
+2020-01-31	website	1	Writing “monthly report” for January
