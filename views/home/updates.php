@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_2'></a>[2020-01-31] &mdash; Xdebug 2.9.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1735); ?>: DBGp eval warning promoted to Exception can cause out-of-sync responses</dd>
+<dd>Fixed <?= bug(1736); ?>: Segmentation fault when other extensions run PHP in RINIT</dd>
+<dd>Fixed <?= bug(1739); ?>: Tracing footer not written</dd>
+
+
 <dt><a name='x_2_9_1'></a>[2020-01-16] &mdash; Xdebug 2.9.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
