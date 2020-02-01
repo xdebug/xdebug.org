@@ -38,7 +38,7 @@ git clone https://github.com/xdebug/xdebug.git
 
 				<ul class="releases">
 					<?php foreach ($download->dlls as $i => $dll) : ?>
-						<li><a title="SHA256:&nbsp;<?= $dll['hash'] ?>" href='<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a></li>
+						<li><a title="SHA256:&nbsp;<?= $dll['hash'] ?>" href='/<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a></li>
 					<?php endforeach ?>
 				</ul>
 
