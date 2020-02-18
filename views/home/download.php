@@ -30,7 +30,7 @@ git clone https://github.com/xdebug/xdebug.git
 	<ul>
 		<li>Linux, macOS:
 			<ul class="releases">
-				<li><a title="SHA256:&nbsp;<?= $download->hash ?>" href='<?= $download->href ?>'>source</a></li>
+				<li><a title="SHA256:&nbsp;<?= $download->hash ?>" href='/<?= $download->href ?>'>source</a></li>
 			</ul>
 		</li>
 		<?php if ($download->dlls) : ?>
