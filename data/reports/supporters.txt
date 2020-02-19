@@ -1,3 +1,4 @@
+2020-02-14	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2020-01-22	Intracto	https://www.intracto.com/nl-be
 2020-01-02	Strategery	https://strategery.io/
 2019-11-24	e3N GmbH & Co.	https://e3n.de/
