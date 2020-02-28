@@ -49,17 +49,31 @@ git clone https://github.com/xdebug/xdebug.git
 </div>
 
 <a name='debugclient'></a>
+<a name='dbgpClient'></a>
 <h2>Command Line Debug Client</h2>
 
 <div class="front_releases">
 	<ul class="releases">
-		<li><a title="Linux" href="/files/binaries/linux/debugclient">Linux (x86_64)</a></title>
-		<li><a title="macOS" href="/files/binaries/macos/debugclient">macOS (x86_64)</a></title>
-		<li><a title="Windows" href="/files/binaries/windows/debugclient.exe">Windows (x86_64)</a></title>
+		<li><a title="Linux" href="/files/binaries/dbgpClient">Linux (x86_64)</a></title>
+		<li><a title="macOS" href="/files/binaries/dbgpClient-macos">macOS (x86_64)</a></title>
+		<li><a title="Windows" href="/files/binaries/dbgpClient.exe">Windows (x86_64)</a></title>
 	</ul>
 </div>
 <p>Please refer to the <a href="/docs/debugclient">documentation</a> to learn
 about how to use the debug client.</p>
+
+<a name='dbgpProxy'></a>
+<h2>DBGp Proxy</h2>
+
+<div class="front_releases">
+	<ul class="releases">
+		<li><a title="Linux" href="/files/binaries/dbgpProxy">Linux (x86_64)</a></title>
+		<li><a title="macOS" href="/files/binaries/dbgpProxy-macos">macOS (x86_64)</a></title>
+		<li><a title="Windows" href="/files/binaries/dbgpProxy.exe">Windows (x86_64)</a></title>
+	</ul>
+</div>
+<p>Please refer to the <a href="/docs/proxy">documentation</a> to learn
+about how to use the DBGp proxy tool.</p>
 
 <a name='historical'></a>
 <h2>Historical Releases</h2>

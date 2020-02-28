@@ -79,6 +79,11 @@ class DocsController
 			'The command line debug client allows you to debug PHP scripts
 			without having to set up an IDE.',
 		],
+		'proxy' => [
+			'DBGp Proxy Tool',
+			0,
+			'This tool allows you to proxy and route debugging request to IDEs depending on which IDE key is in use.',
+		],
 		'compat' => [
 			'Compatibility',
 			0,
