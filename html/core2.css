@@ -519,6 +519,8 @@ table.log tr td.type div { border-radius: 5px; padding: 0.25em; text-align: cent
 table.log tr td.description, table.log tr th.description { width: 100%; }
 table.log tr td.hours, table.log tr th.hours { text-align: right; }
 
+table.options tr td { border-bottom: 1px solid #ddd; vertical-align: top; margin: 1em; }
+
 table.table, table.table-inner {
 	margin: 0px;
 	padding: 0px;

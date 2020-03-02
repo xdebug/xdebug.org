@@ -19,11 +19,11 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::download()->render();
 	} elseif ($requested_uri === '/download/historical') {
 		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
-	} elseif (preg_match('/^\/docs(\/([a-z_]+))?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
 		$pages = [
 			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
-			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgp',
-			'garbage_collection', 'contributing', 'debugclient', 'proxy',
+			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgpClient', 'dbgp',
+			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy',
 		];
 
 		if (isset($matches[2])) {

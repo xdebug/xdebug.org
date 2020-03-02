@@ -11,7 +11,7 @@ You only have to download the binary, which you can then run from a command line
 
 <p>The following command line options are available:</p>
 
-<table>
+<table class="options">
 <tr><td><code>-1      </code></td>
     <td>Debug once and then exit</td></tr>
 
@@ -37,20 +37,27 @@ You only have to download the binary, which you can then run from a command line
 <a name='usage'></a>
 <h2>Usage</h2>
 
-<p>To start the client on the command line on Linux and macOS, open a shell,
+<p>To start the client on the command line on Linux, open a shell,
 and then run:</p>
 
 <pre>
-./debugclient
+./dbgpClient
+</pre>
+
+<p>To start the client on the command line on MacOS, open a shell,
+and then run:</p>
+
+<pre>
+./dbgpClient-macos
 </pre>
 
 <p>On Windows, open a command a <em>Command Prompt</em> and run:</p>
 
 <pre>
-debugclient.exe
+dbgpClient.exe
 </pre>
 
-<p>In both cases, you can add the <a href="#cmdline">command line options</a>
+<p>In all cases, you can add the <a href="#cmdline">command line options</a>
 as described above.</p>
 
 <p>When the debug client starts, it shows some version information. It will
@@ -91,7 +98,7 @@ variables are available:</p>
 
 <p>The following commands and options are common:</p>
 
-<table>
+<table class="table">
 <tr><th>Command</th><th>Description</th></tr>
 <tr><td><code><a href='/docs/dbgp#breakpoints'>breakpoint_set</a> -t line -f file:///xdebug-test-2.php -n 5</code></td>
     <td>Sets a breakpoint on line <code>5</code> of <code>file:///xdebug-test-2.php</code></td></tr>
@@ -106,4 +113,4 @@ variables are available:</p>
 documentation</a>.</p>
 
 <p>You can abort the debugging session, and then the client, with
-<code>ctrl-C</code>.</p>
+<code>Ctrl-C</code>.</p>

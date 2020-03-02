@@ -1,0 +1,89 @@
+<a name='download'></a>
+<h2>Installation</h2>
+
+<p>
+A binary for Linux, macOS, and Windows is available on the <a href='/download#dbgpProxy'>downloads</a> page.
+You only have to download the binary, which you can then run from a command line.
+</p>
+
+<a name='cmdline'></a>
+<h2>Command Line Options</h2>
+
+<p>The following command line options are available:</p>
+
+<table class="options">
+<tr><td><code>-h      </code></td>
+    <td>Show this help</td></tr>
+
+<tr><td><code>-c&nbsp;host:port</code><br/><code>--client&nbsp;host:port</code></td>
+    <td>Specify the port to listen on for IDE (client) connections [<code>localhost:9001</code>].</td></tr>
+<!--
+<tr><td><code>- -client-ssl&nbsp;host:port</code>&nbsp;</td>
+    <td>Specify the port to listen on for IDE (client) SSL connections [<code>localhost:9031</code>].</td></tr>
+-->
+<tr><td><code>-s&nbsp;host:port</code><br/><code>--server&nbsp;host:port</code></td>
+    <td>Specify the port to listen on for debugger engine (server) connections [<code>localhost:9000</code>].</td></tr>
+<!--
+<tr><td><code>- -server-ssl&nbsp;host:port</code>&nbsp;</td>
+    <td>Specify the port to listen on for debugger engine (server) SSL connections [<code>localhost:9030</code>].</td></tr>
+-->
+
+<tr><td><code>-v      </code></td>
+    <td>Show version number and exit</td></tr>
+</table>
+
+<a name='usage'></a>
+<h2>Usage</h2>
+
+<p>To start the client on the command line on Linux, open a shell,
+and then run:</p>
+
+<pre>
+./dbgpProxy
+</pre>
+
+<p>To start the client on the command line on Linux, open a shell,
+and then run:</p>
+
+<pre>
+./dbgpProxy-macos
+</pre>
+
+<p>On Windows, open a command a <em>Command Prompt</em> and run:</p>
+
+<pre>
+dbgpProxy.exe
+</pre>
+
+<p>In all cases, you can add the <a href="#cmdline">command line options</a>
+as described above.</p>
+
+<p>When the proxy starts, it shows some version information. It will
+then wait until a connection is made to it by a debugging engine (such as
+Xdebug):</p>
+
+<pre class="shell">
+Xdebug DBGp proxy (0.2)
+Copyright 2020 by Derick Rethans
+Proxy started
+Started client server on 127.0.0.1:9001
+Started server server on 127.0.0.1:9000
+Started server-ssl server on 127.0.0.1:9030
+Started client-ssl server on 127.0.0.1:9031
+</pre>
+
+<p>When a client registers itself with the proxy it displays the IDE Key and
+where to reach that client:</p>
+
+<pre class="shell">
+- Start new client connection from 127.0.0.1:58226
+  - Added connection for IDE Key 'derick': 127.0.0.1:9900
+- Closing client connection from 127.0.0.1:58226
+</pre>
+
+<p>At this point the client should be ready to take incoming debugging
+connections to its registered port (<code>127.0.0.1:9900</code> in this
+example).</p>
+
+<p>You can stop the proxy by pressing <code>Ctrl-C</code> in its terminal. Once
+all debugging connections are closed, the proxy service will stop.</p>

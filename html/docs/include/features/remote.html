@@ -27,8 +27,8 @@ third party tools, so please refer to the original authors for <b>support</b>:
 </ul>
 </p>
 <p>
-A simple command line client for debugging is bundled with Xdebug in the
-<code>debugclient</code> directory.
+The simple command line client <code>dbgpClient</code> for debugging is
+available on the <a href='/download#dbgpClient'>download page</a>.
 </p>
 
 <a name="starting"></a>
@@ -141,45 +141,37 @@ The extensions are:
 Before you start your script you will need to tell your client that it can
 receive debug connections, please refer to the documentation of the specific
 client on how to do this. To use the bundled client simply start it after
-<a href=install#debugclient>compiling and installing</a> it. You can
-start it by running "debugclient".
+<a href='download#dbgpClient'>downloading</a> it. You can
+start it by running <code>dbgpClient</code> on Linux,
+<code>dbgpClient-macos</code> on MacOS, and <code>dbgpClient.exe</code> on
+Windows.
 </p>
 <p>
-When the debugclient starts it will show the following information and then
-waits until a connection is initiated by the debug server:
+When the debug client starts it will show version information and then
+waits until a connection is initiated by the debug server (Xdebug):
 </p>
-<pre class="example">
-Xdebug Simple DBGp client (0.10.0)
-Copyright 2002-2007 by Derick Rethans.
-- libedit support: enabled
-	 
-Waiting for debug server to connect.
+<pre class="shell"
+>Xdebug Simple DBGp client (<font color="#FFFFFF"><b>0.2</b></font>)
+Copyright 2019-2020 by Derick Rethans
+In dumb client mode
+
+Waiting for debug server to connect on port 9000.
 </pre>
 <p>
 After a connection is made the output of the debug server is shown:
 </p>
-<pre class="example">
-Connect
-&lt;?xml version="1.0" encoding="iso-8859-1"?>
-&lt;init xmlns="urn:debugger_protocol_v1"
-      xmlns:xdebug="http://xdebug.org/dbgp/xdebug"
-      fileuri="file:///home/httpd/www.xdebug.org/html/docs/index.php"
-      language="PHP"
-      protocol_version="1.0"
-      appid="13202"
-      idekey="derick">
-  &lt;engine version="2.0.0RC4-dev">&lt;![CDATA[Xdebug]]>&lt;/engine>
-  &lt;author>&lt;![CDATA[Derick Rethans]]>&lt;/author>
-  &lt;url>&lt;![CDATA[http://xdebug.org]]>&lt;/url>
-  &lt;copyright>&lt;![CDATA[Copyright (c) 2002-2007 by Derick Rethans]]>&lt;/copyright>
-&lt;/init>
-(cmd)
+<pre class="shell">
+Connect from [::1]:53764
+DBGp/<font color="#55FF55"><b>1.0</b></font>: <font color="#FFFFFF"><b>Xdebug</b></font> <font color="#55FF55"><b>3.0.0-dev</b></font> — For <font color="#FFFFFF"><b>PHP</b></font> <font color="#55FF55"><b>7.4.3-dev</b></font>
+Debugging <font color="#FFFF55"><b>file:///tmp/test-async.php</b></font> (ID: <font color="#FFFF55">13699</font>/<font color="#FFFF55">derick</font>)
+<font color="#FFFFFF"><b>(cmd) </b></font> 
 </pre>
 <p>
-Now you can use the commandset as explained on the <a
-href="/docs-dbgp.php">DBGp</a> documentation page. When the script ends the
-debug server disconnects from the client and the debugclient resumes with
-waiting for a new connection.
+Now you can use the commands as explained on the <a
+href="/docs/dbgp">DBGp</a> documentation page. When the script ends the
+debug server disconnects from the client and the debug client resumes with
+waiting for a new connection. There is a more comprehensive documentation
+available for [FEAT:dbgpClient] as well.
 </p>
 
 <a name="communication"></a>
@@ -235,14 +227,15 @@ to an URL—or through a POST variable with the same name—Xdebug emits a cooki
 with the name "XDEBUG_SESSION" and as value the value of the
 XDEBUG_SESSION_START URL parameter. The default expiry time of the cookie is
 one hour, but this can be configured through the
-[CFG:remote_cookie_expire_time] setting. The
-DBGp protocol also passes this same value to the init packet when connecting
-to the debugclient in the "idekey" attribute.</li>
+[CFG:remote_cookie_expire_time] setting. The DBGp protocol also passes this
+same value to the <code>init</code> packet when connecting to the debugging
+client in the "idekey" attribute.</li>
 <li>When there is a GET (or POST) variable XDEBUG_SESSION_START or the
-XDEBUG_SESSION cookie is set, Xdebug will try to connect to a debugclient.</li>
+XDEBUG_SESSION cookie is set, Xdebug will try to connect to a debugging
+client.</li>
 <li>To stop a debug session (and to destroy the cookie) simply add the URL
 parameter <code>XDEBUG_SESSION_STOP</code>. Xdebug will then no longer try
-to make a connection to the debugclient.</li>
+to make a connection to the debugging client.</li>
 </ul>
 </p>
 

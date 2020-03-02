@@ -73,13 +73,13 @@ class DocsController
 			running PHP scripts. This section explains how to set-up PHP and Xdebug
 			to allow this, and introduces a few clients.',
 		],
-		'debugclient' => [
+		'dbgpClient' => [
 			'Command Line Debug Client',
 			0,
 			'The command line debug client allows you to debug PHP scripts
 			without having to set up an IDE.',
 		],
-		'proxy' => [
+		'dbgpProxy' => [
 			'DBGp Proxy Tool',
 			0,
 			'This tool allows you to proxy and route debugging request to IDEs depending on which IDE key is in use.',

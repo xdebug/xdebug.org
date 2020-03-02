@@ -59,7 +59,7 @@ git clone https://github.com/xdebug/xdebug.git
 		<li><a title="Windows" href="/files/binaries/dbgpClient.exe">Windows (x86_64)</a></title>
 	</ul>
 </div>
-<p>Please refer to the <a href="/docs/debugclient">documentation</a> to learn
+<p>Please refer to the <a href="/docs/dbgpClient">documentation</a> to learn
 about how to use the debug client.</p>
 
 <a name='dbgpProxy'></a>
