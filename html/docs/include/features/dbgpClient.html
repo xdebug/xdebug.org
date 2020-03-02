@@ -15,6 +15,13 @@ You only have to download the binary, which you can then run from a command line
 <tr><td><code>-1      </code></td>
     <td>Debug once and then exit</td></tr>
 
+<tr><td><code>-f      </code></td>
+	<td>Whether act as fully featured DBGp client. If this is enabled, the
+		client will perform certain tasks for you, such as enabling
+		<em>async</em> support. In the future, this mode will turn the
+		dbgpClient in a fully fledged command line debugging client without the
+		need for you to remember all DBGp commands.</td></tr>
+
 <tr><td><code>-h      </code></td>
     <td>Show this help</td></tr>
 
@@ -24,6 +31,23 @@ You only have to download the binary, which you can then run from a command line
          this port can be configured with the [CFG:remote_port]
          setting.</td></tr>
 
+<tr><td><code>-r&nbsp;idekey</code>&nbsp;</td>
+	<td>If the <code>-r</code> option is given, the client will register itself
+		with a debugging proxy (selected with <code>-y</code>), and then wait
+		for incoming debugging connections as usual on the port configured with
+		<code>-p</code>.</td></tr>
+
+<tr><td><code>-s      </code></td>
+	<td>Enables SSL. With this option on, the client expects incoming
+	connections on the configured port to be in SSL. This is an
+	<em>experimental feature</em> that is not fully finished. Right now, Xdebug
+	does not support SSL yet, but the <a href="/docs/dbgpProxy">dbgpProxy</a>
+	does.</td></tr>
+
+<tr><td><code>-u&nbsp;idekey</code>&nbsp;</td>
+	<td>If the <code>-u</code> option is given, the client will unregister itself
+		with a debugging proxy (selected with <code>-y</code>), and then quit.</td></tr>
+
 <tr><td><code>-v      </code></td>
     <td>Show version number and exit</td></tr>
 
@@ -32,6 +56,10 @@ You only have to download the binary, which you can then run from a command line
         the raw XML data that the debugging engine sends back. This can be
         useful for debugging issues with the interaction between the debugger
         engine, for example Xdebug, and this client.</td></tr>
+
+<tr><td><code>-y&nbsp;host:port&nbsp;</code></td>
+	<td>Configures the host and port of an DBGp proxy. This option is used with
+	    <code>-r</code> and <code>-u</code> only.</td></tr>
 </table>
 
 <a name='usage'></a>
@@ -112,5 +140,10 @@ variables are available:</p>
 <p>There is a full description in the <a href="/docs/dbgp">DBGp
 documentation</a>.</p>
 
-<p>You can abort the debugging session, and then the client, with
-<code>Ctrl-C</code>.</p>
+<p>If the client has been started in "fully featured mode" (<code>-f</code>)
+then it is possible to pause a running debugging session by pressing
+<code>Ctrl-C</code>. The client will return to the prompt where you can then
+issue commands as normal.</p>
+
+<p>On the client's prompt you can abort the debugging session, and then the
+client, with <code>Ctrl-C</code>.</p>
