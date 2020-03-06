@@ -135,7 +135,7 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 				<?php if ($this->x->xdebugVersion) : ?>
 					Update <code><?= $this->x->configFile ?></code>
 				<?php else : ?>
-					Edit <code><?= $this->x->configFile ?></code> <?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
+					Edit <code><?= $this->x->configFile ?></code>
 				<?php endif ?>
 			<?php else : ?>
 				<?php if ($this->x->windows) : ?>
