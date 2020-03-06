@@ -153,6 +153,12 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		</li>
 	<?php endif ?>
 
+	<?php if ($this->x->configFilePerSapi) : ?>
+		<li>Please also update <code>php.ini</code> files in adjacent
+		directories, as your system seems to be configured with a separate
+		<code>php.ini</code> file for the web server and command line.</li>
+	<?php endif ?>
+
 	<?php if ($this->x->sapi !== 'Command Line Interface') : ?>
 		<li>Restart the webserver</li>
 	<?php endif ?>

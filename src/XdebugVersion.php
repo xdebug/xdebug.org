@@ -36,6 +36,9 @@ class XdebugVersion
 	/** @var string|false */
 	public $configFile = false;
 
+	/** @var bool */
+	public $configFilePerSapi = false;
+
 	/** @var string|false */
 	public $configPath = false;
 
@@ -189,6 +192,11 @@ class XdebugVersion
 				$file = false;
 			}
 			$this->configFile = $file;
+			
+			if ( $file && preg_match( '/(apache2)|(cli).*php\.ini/', $file, $m ) )
+			{
+				$this->configFilePerSapi = true;
+			}
 		}
 		if ( preg_match( '/Configuration File \(php.ini\) Path([ =>\t]*)(.*)/', $data, $m ) )
 		{
