@@ -1,4 +1,7 @@
 <?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\Supporters
+ */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Profiler Tool for PHP');
 ?>
 
