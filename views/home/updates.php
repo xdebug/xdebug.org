@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_3'></a>[2020-03-13] &mdash; Xdebug 2.9.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1753); ?>: Resolved breakpoints use information from wrong files</dd>
+<dd>Fixed <?= bug(1758); ?>: Xdebug changes error_get_last results inside a try catch</dd>
+<dd>Fixed <?= bug(1759); ?>: User registered opcode handlers should call ones already set by other extensions</dd>
+
+
 <dt><a name='x_2_9_2'></a>[2020-01-31] &mdash; Xdebug 2.9.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
