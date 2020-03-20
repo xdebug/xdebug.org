@@ -1,0 +1,17 @@
+Xdebug 2.9.3 is out!
+<p>This bug fix release addresses a bug with Xdebug's resolved breakpoints in
+inherited classes, a bug with outdated behaviour with regards to PHP's
+error_get_last(), and an incompatibility with other extensions that overload
+opcodes.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2.9.3">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2.9.3">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<!--
+<p>This release also contains a contribution by: <i>Sammy Powers</i> —
+Thanks!</p>
+-->
