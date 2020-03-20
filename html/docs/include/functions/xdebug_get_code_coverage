@@ -11,36 +11,291 @@ coverage for one specific file:
 
 EXAMPLE:
 <?php
-    xdebug_start_code_coverage();
+xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE);
 
-    function a($a) {
-        echo $a * 2.5;
-    }
+function a($a) {
+	return;
+	echo $a * 2.5;
+}
 
-    function b($count) {
-        for ($i = 0; $i < $count; $i++) {
-            a($i + 0.17);
-        }
-    }
+function b($count) {
+	if ($count > 25) {
+		echo "too much\n";
+	}
+	for ($i = 0; $i < $count; $i++) {
+		a($i + 0.17);
+	}
+}
 
-    b(6);
-    b(10);
+b(6);
+b(10);
 
-    var_dump(xdebug_get_code_coverage());
-?>  
+var_dump(xdebug_get_code_coverage());
+?>
+
 
 RESULT:
 <b>array</b>
-  '/home/httpd/html/test/xdebug/docs/xdebug_get_code_coverage.php' <font color='#888a85'>=&gt;</font> 
-    <b>array</b>
+  '/home/httpd/html/test/xdebug/docs/xdebug_get_code_coverage.php' <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=11)</i>
       5 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      6 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      7 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      9 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      6 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>-2</font>
+      7 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>-2</font>
       10 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      11 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      12 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      11 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>-1</font>
       13 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
-      15 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      14 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
       16 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
       18 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      19 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      21 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+
+TXT:
+The information that is collected consists of an two dimensional array with as
+primary index the executed filename and as secondary key the line number. The
+value in the elements represents whether the line has been executed or whether
+it has unreachable lines.
+
+TXT:
+The returned values for each line are:
+<ul>
+	<li><code>1</code>: this line was executed</li>
+	<li><code>-1</code>: this line was not executed</li>
+	<li><code>-2</code>: this line did not have executable code on it</li>
+</ul>
+
+Value <code>-1</code> is only returned when the <code>XDEBUG_CC_UNUSED</code>
+is enabled and value <code>-2</code> is only returned when both
+<code>XDEBUG_CC_UNUSED</code> and <code>XDEBUG_CC_DEAD_CODE</code> are enabled
+when starting [FEAT:code_coverage] through [FUNC:xdebug_start_code_coverage].
+
+TXT:
+If path and branch checking has been enabled with the
+<code>XDEBUG_CC_BRANCH_CHECK</code> flag to [FUNC:xdebug_start_code_coverage]
+then the returned format is different. The lines array is returned in
+a sub-array element <code>lines</code>, and separate information is returned
+for each function in the <code>functions</code> element.
+
+TXT:
+The following example illustrates that.
+
+EXAMPLE:
+<?php
+xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE);
+
+function c($count) {
+	for ($i = 0; $i < $count; $i++) {
+		$i += 0.17;
+	}
+}
+
+c(10);
+
+var_dump(xdebug_get_code_coverage());
+?>
+
+RESULT:
+<b>array</b> <i>(size=1)</i>
+  '/tmp/foo2.php' <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=2)</i>
+      'lines' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=5)</i>
+          5 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          6 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          8 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          10 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          12 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      'functions' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'c' <font color='#888a85'>=&gt;</font>
+            <b>array</b> <i>(size=2)</i>
+              'branches' <font color='#888a85'>=&gt;</font>
+                <b>array</b> <i>(size=4)</i>
+                  0 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=7)</i>
+                      'op_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+                      'op_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>4</font>
+                      'line_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>4</font>
+                      'line_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                      'out' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                      'out_hit' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                  5 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=7)</i>
+                      'op_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'op_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>8</font>
+                      'line_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>6</font>
+                      'line_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                      'out' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                      'out_hit' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                  9 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=7)</i>
+                      'op_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                      'op_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>11</font>
+                      'line_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'line_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                      'out' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=2)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+                          1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                      'out_hit' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=2)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                          1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                  12 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=7)</i>
+                      'op_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+                      'op_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>13</font>
+                      'line_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>8</font>
+                      'line_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>8</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+                      'out' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2147483645</font>
+                      'out_hit' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=1)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+              'paths' <font color='#888a85'>=&gt;</font>
+                <b>array</b> <i>(size=2)</i>
+                  0 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=2)</i>
+                      'path' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=3)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+                          1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                          2 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+                  1 <font color='#888a85'>=&gt;</font>
+                    <b>array</b> <i>(size=2)</i>
+                      'path' <font color='#888a85'>=&gt;</font>
+                        <b>array</b> <i>(size=5)</i>
+                          0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+                          1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                          2 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+                          3 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+                          4 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+                      'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+
+TXT:
+Inside each function the <code>branches</code> element describes each branch.
+
+RESULT:
+9 <font color='#888a85'>=&gt;</font>
+  <b>array</b> <i>(size=7)</i>
+    'op_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9</font>
+    'op_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>11</font>
+    'line_start' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+    'line_end' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+    'hit' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+    'out' <font color='#888a85'>=&gt;</font>
+      <b>array</b> <i>(size=2)</i>
+        0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+        1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+    'out_hit' <font color='#888a85'>=&gt;</font>
+      <b>array</b> <i>(size=2)</i>
+        0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+        1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+
+TXT:
+The index is the starting opcode, and the fields mean:
+
+<dl>
+<dt>op_start</dt>
+<dd>The starting opcode. This is the same number as the array index.</dd>
+
+<dt>op_end</dt>
+<dd>The last opcode in the branch</dd>
+
+<dt>line_start</dt>
+<dd>The line number of the <code>op_start</code> opcode.</dd>
+
+<dt>line_end</dt>
+<dd>The line number of the <code>op_end</code> opcode. This can potentially be
+a number that is lower than <code>line_start</code> due to the way the PHP
+compiler generates opcodes.</dd>
+
+<dt>hit</dt>
+<dd>Whether the opcodes in this branch have been executed or not.</dd>
+
+<dt>out</dt>
+<dd>An array containing the <code>op_start</code> opcodes for branches that
+can follow this one.</dd>
+
+<dt>out_hit</dt>
+<dd>Each element matches the same index as in <code>out</code> and indicates
+whether this branch exit has been reached.</dd>
+</dl>
+
+TXT:
+Each function also contains a <code>paths</code> element, which shows all the
+possible paths through the function, and whether they have been hit.
+
+RESULT:
+1 =>
+  array (size=2)
+    'path' =>
+      array (size=5)
+        0 => int 0
+        1 => int 9
+        2 => int 5
+        3 => int 9
+        4 => int 12
+    'hit' => int 1
+
+TXT:
+The index is a normal PHP array index, and the fields mean:
+
+<dl>
+<dt>path</dt>
+<dd>An array containing the <code>op_start</code> opcodes indicating the
+branches that make up this path. In the example, <code>9</code> features twice
+because this path (the loop) has after branch <code>9</code> an exit to opcode
+<code>5</code> (the start of the loop), and opcode <code>12</code> (the next
+branch after the loop).</dd>
+
+<dt>hit</dt>
+<dd>Whether this specific path has been followed.</dd>
+</dl>
+
+TXT:
+The Xdebug source contains a
+<a href='https://github.com/xdebug/xdebug/blob/master/tests/coverage/dump-branch-coverage.inc'>file</a>
+containing a <code>dump_branch_coverage</code> function, which you can use the
+show the information in a more concise way. The above array would instead be
+shown as:
+
+RESULT:
+c
+- branches
+  - 00; OP: 00-04; line: 06-07 HIT; out1: 09 HIT
+  - 05; OP: 05-08; line: 08-07 HIT; out1: 09 HIT
+  - 09; OP: 09-11; line: 07-07 HIT; out1: 12 HIT; out2: 05 HIT
+  - 12; OP: 12-13; line: 10-10 HIT; out1: EX  X
+- paths
+  - 0 9 12:  X
+  - 0 9 5 9 12: HIT
+
+TXT:
+The function also generates a file <code>/tmp/paths.dot</code>, which can be
+processed with the <em>dot</em> tool of the
+<a href="https://www.graphviz.org/">Graphviz</a> software to create an image.
+
+EXAMPLE:
+dot -Tpng /tmp/paths.dot > /tmp/paths.png
+
+TXT:
+This generates an image where a solid line means that the path has been
+followed, and a dashed line means that that path has not been followed.
+
+TXT:
+<img src="/images/docs/cc-paths.png">

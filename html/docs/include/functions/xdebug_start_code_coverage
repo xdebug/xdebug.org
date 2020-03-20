@@ -5,23 +5,8 @@ void
 FUNC_CODE_COVERAGE
 
 TXT:
-This function starts gathering the information for code coverage. The
-information that is collected consists of an two dimensional array with as
-primary index the executed filename and as secondary key the line number. The
-value in the elements represents whether the line has been executed or whether
-it has unreachable lines.
-
-TXT:
-The returned values for each line are:
-<ul>
-	<li><code>1</code>: this line was executed</li>
-	<li><code>-1</code>: this line was not executed</li>
-	<li><code>-2</code>: this line did not have executable code on it</li>
-</ul>
-
-Value <code>-1</code> is only returned when the <code>XDEBUG_CC_UNUSED</code>
-is enabled and value <code>-2</code> is only returned when both
-<code>XDEBUG_CC_UNUSED</code> and <code>XDEBUG_CC_DEAD_CODE</code> are enabled.
+This function starts gathering the information for code coverage. The information
+can be retrieved with the [FUNC:xdebug_get_code_coverage] function.
 
 TXT:
 This function has three options, which act as a bitfield:
