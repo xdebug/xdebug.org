@@ -1,0 +1,32 @@
+10.68	15.49	0.99	4.16	48.00
+2020-02-01	ci	1	Fixing links, rename download files, and making sure AppVeyor generates the right file names
+2020-02-02	xdebug3	3	PHP 8: Making it compile again
+2020-02-02	xdebug3	1	PHP 8: Assert tests
+2020-02-02	xdebug3	3	PHP 8 compat
+2020-02-03	xdebug3	7	PHP 8 compat
+2020-02-04	xdebug3	0.5	Testing and merging PHP 8 compat patch
+2020-02-05	ci	0.5	Fixed CI runs with missing USER env (which meant a missing idekey element in some test runs)
+2020-02-05	xdebug3	0.5	Testing and merging PHP 8 compat patch
+2020-02-05	support	1	Triaging and answering StackOverflow questions, and IRC query about function traces
+2020-02-05	talk	4	Preparing Sunshine PHP Xdebug talk
+2020-02-08	talk	2	Giving Xdebug 3.0 talk and interviews
+2020-02-09	ci	1	Fix tests that rely on specific settings to have been set
+2020-02-09	xdebug3	1	Review and test PR #1743: Check ZEND_ACC_CLOSURE flag instead of string comparison
+2020-02-11	support	2	StackOverflow, and triaging bugs
+2020-02-14	xdebug3	1.5	Debug client unregistering with proxy
+2020-02-14	support	1	StackOverflow, and triaging bugs
+2020-02-15	xdebug3	4	Proxy’s client side – piping and copying
+2020-02-16	xdebug3	4.5	SSL support for dbgpProxy and dbgpClient
+2020-02-16	xdebug3	1	Researching SSL library for Xdebug side
+2020-02-17	xdebug3	5	Researching SSL library for Xdebug side
+2020-02-19	xdebug3	3	Researching and vendorizing BearSSL
+2020-02-22	xdebug3	2.5	Researching certificates
+2020-02-23	xdebug3	3.5	Reviewing and testing PR #477: Fixed issue #1016: Support for pause-execution
+2020-02-24	xdebug3	5	Testing PR #477, and adding async support to dbgpClient
+2020-02-25	support	0.5	StackOverflow
+2020-02-27	xdebug3	4.5	Adding async support to dbgpClient
+2020-02-28	xdebug3	1	Review PR #552: Use a pool to manage stack entries
+2020-02-28	xdebug3	4.5	Adding async support to dbgpClient, merge PR #476/Issue #1016: Support for pause-execution
+2020-02-29	xdebug3	5	BearSSL integration
+2020-02-29	support	0.5	StackOverflow
+2020-02-29	docs	1	Docs for dbgpProxy tool
