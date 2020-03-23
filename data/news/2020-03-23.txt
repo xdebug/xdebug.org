@@ -1,0 +1,17 @@
+Xdebug 2.9.4 is out!
+<p>This bug fix release addresses a crash bug introduced in Xdebug 2.9.3 that
+fixed an incompatibility with other extensions that overload
+opcodes. It also makes sure that the Step Debugger's 'detach' command does not
+disable debugging for the rest of the PHP process.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2.9.4">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2.9.4">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<!--
+<p>This release also contains a contribution by: <i>Sammy Powers</i> —
+Thanks!</p>
+-->

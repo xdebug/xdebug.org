@@ -22,6 +22,14 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_4'></a>[2020-03-23] &mdash; Xdebug 2.9.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1763); ?>: Crash while setting opcode overrides in ZTS mode.</dd>
+<dd>Fixed <?= bug(1766); ?>: Using the DBGp detach command disables remote debugging for the whole process.</dd>
+
+
 <dt><a name='x_2_9_3'></a>[2020-03-13] &mdash; Xdebug 2.9.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
