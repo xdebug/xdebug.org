@@ -54,6 +54,12 @@ try {
 		$contents = XdebugDotOrg\Controller\SupportController::log()->render();
 	} elseif ($requested_uri === '/wizard') {
 		$contents = XdebugDotOrg\Controller\WizardController::index()->render();
+	} elseif ($requested_uri === '/core2.css') {
+		header('Content-type: text/css');
+		die(file_get_contents('core2.css'));
+	} elseif (preg_match('/woff2$/', $requested_uri, $matches)) {
+		header('Content-Type: font/woff2');
+		die(file_get_contents($matches[1]));
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();
 	} else {
