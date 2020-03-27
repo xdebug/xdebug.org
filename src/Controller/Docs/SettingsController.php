@@ -337,8 +337,9 @@ class SettingsController
 		foreach ($settings as $name => $setting) {
 			$type = $setting[0];
 			$default = $setting[1];
+			$fileName = str_replace('*', 'asterix', $name);
 
-			$setting_file = dirname(__DIR__, 3) . '/html/docs/include/settings/' . $name . '.html';
+			$setting_file = dirname(__DIR__, 3) . '/html/docs/include/settings/' . $fileName . '.html';
 
 			if (!file_exists($setting_file)) {
 				throw new \Exception($setting_file . ' should exist');
