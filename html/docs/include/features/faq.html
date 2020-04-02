@@ -127,3 +127,21 @@ make: *** [xdebug.la] Error 1 </pre>
 and <a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a>.
 </dd>
 </dl>
+
+<h2>Precompiled Binaries</h2>
+<dl class="faq">
+<dt><a name="linux-not-found"></a>
+I get a "<code>not found</code>" or similar error message when I start a
+precompiled Linux binary such as <code>dbgpClient</code> or <code>dbgpProxy</code>.
+</dt>
+<dd>
+<p>
+The provided binaries are compiled by Go, which generates static binaries.
+The only requirement is that <code>libc6</code> is available on the system.
+Some distributions use a different C library by default. Alpine Linux for
+example uses <code>musl</code>. In order to make the binaries run, you will
+therefore need to install a <code>libc6</code> compatibility package.</p>
+<p>For Alpine Linux, you can install this with: <code>apk add
+libc6-compat</code>.</p>
+</dd>
+</dl>
