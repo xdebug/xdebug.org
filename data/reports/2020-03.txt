@@ -1,0 +1,47 @@
+11.12	4.30	0.99	4.16	48.00
+2020-03-01	xdebug3	1	Removing debugclient from Xdebug source, and fixing DOM test due to changes in PHP 8
+2020-03-01	website	0.5	Fixed Xdebug’s websites config and redirection
+2020-03-02	docs	2.5	Document dbgpClient, dbgpProxy, and rewrite README
+2020-03-02	docs	1.5	Write monthly update report
+2020-03-02	bug	0.5	Checking out issue #1701 and blog post https://joshbutts.com/posts/patching-xdebug-docker-for-mac/
+2020-03-02	xdebug3	1.5	Investigating and fixing timeout issues with dbgpProxy
+2020-03-03	support	0.5	StackOverflow
+2020-03-04	xdebug3	0.25	Added rendering of “eval” output to dbgpClient
+2020-03-04	bug	1.5	Investigating issue #1753: Xdebug behaviour depends on a number of empty lines in another file
+2020-03-05	bug	4	Investigating and fixing issue #1753: Xdebug behaviour depends on a number of empty lines in another file
+2020-03-05	support	1	StackOverflow and issue triaging
+2020-03-06	bug	1	Finalizing for for issue #1753: Xdebug behaviour depends on a number of empty lines in another file
+2020-03-06	website	0.5	Fixed issue #1746: Have wizard show both CLI and Apache php.ini paths
+2020-03-06	bug	0.5	Investigating issue #1754: Incorrect code coverage in nested ifs
+2020-03-06	bug	0.5	Investigating issue #1757: Pause-execution feature degrades performance
+2020-03-06	xdebug3	0.75	Reviewing PR #556: Only check the pid and restart the debugger when running pcntl_fork
+2020-03-07	bug	4	Fixing issue #1759: User registered opcode handlers should call ones already set by other extensions
+2020-03-08	bug	2	Fixing issue #1759: User registered opcode handlers should call ones already set by other extensions
+2020-03-09	bug	5	Fixing issue #1759: User registered opcode handlers should call ones already set by other extensions
+2020-03-09	docs	1	Document how to do opcode handlers in PHP for http://www.phpinternalsbook.com/php7/extensions_design/hooks.html#replacing-opcode-handlers
+2020-03-11	xdebug3	1	PHP 8 compat, due to changes in comparison function
+2020-03-11	bug	1	Investigating #1758: Xdebug changes error_get_last results inside a try catch
+2020-03-12	bug	0.5	Investigating #1760: xdebug appears the line that's not exist at all (PHP 5 only)
+2020-03-12	bug	4	Triaging all open issues
+2020-03-13	bug	1	Investigating #1758: Xdebug changes error_get_last results inside a try catch
+2020-03-13	release	1	Releasing 2.9.3
+2020-03-16	xdebug3	4	SSL for dbgpClient and Xdebug
+2020-03-18	bug	0.5	Checking out test failures for #389 with PHP 8
+2020-03-18	bug	2	Finding and debugging #1766: detach doesn’t detach
+2020-03-19	bug	3	Fixing #1766: detach doesn’t detach
+2020-03-19	bug	2.5	Trying to reproduce #1763: Crashes with Xdebug 2.9.3
+2020-03-20	bug	0.5	Fixing #1766: detach doesn’t detach
+2020-03-20	docs	1	Fixing #1764: Undocumented coverage line constants and branch analysis format
+2020-03-20	xdebug3	1	SSL for dbgpClient and Xdebug
+2020-03-21	bug	3.5	Triying to reproduce #1763: apache 2.4.41 crashes with PHP 7.3.15 and xdebug 2.9.3
+2020-03-22	bug	1.5	Reproduced #1763: Xdebug 2.9.3 crashes in ZTS mode
+2020-03-23	release	1.5	Releasing 2.9.4
+2020-03-23	bug	0.5	Triaging bugs
+2020-03-23	xdebug3	1	Implemented #1712: Add unit to profiler data types (and tidied up profiler tests)
+2020-03-23	xdebug3	2	SSL for dbgpProxy to dbgpClient connections
+2020-03-24	bug	3	Trying to reproduce #1770: fpm child process crashes when there is a php error
+2020-03-26	bug	1.5	Trying to reproduce #1770: fpm child process crashes when there is a php error
+2020-03-27	website	0.75	Fixed xdebug.org issue #83 (Git clone on Windows), and allow website to be served with “php -S”
+2020-03-27	xdebug3	2	Finalize SSL for dbgpProxy to dbgpClient connections
+2020-03-28	bug	3	Fixed #1756 with a workaround for a bug in PhpStorm’s end-of-debug-request handling
+2020-03-28	bug	2	Reviewed, tested, and merged fix for #1755: Overload pcntl_fork() to prevent performance degradation by calling xdebug_get_pid often
