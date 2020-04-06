@@ -7,7 +7,7 @@ FUNC_FUNCTION_TRACE
 TXT:
 Start tracing function calls from this point to the file in the
 <i>trace_file</i> parameter. If no filename is given, then the trace file will
-be placed in the directory as configured by the [CFG:trace_output_dir] setting.
+be placed in the directory as configured by the [CFG:output_dir] setting.
 
 TXT:
 In case a file name is given as first parameter, the name is relative

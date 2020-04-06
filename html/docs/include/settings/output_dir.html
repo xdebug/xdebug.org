@@ -1,0 +1,8 @@
+<p>The directory where Xdebug will write tracing, profiling, and garbage
+collection statistics to. This directory needs to be writable for the system
+user with which PHP is running.</p>
+<p>This setting can be changed in <code>php.ini</code>, <code>.htaccess</code>
+(and equivalent files), and within a PHP file with <code>ini_set()</code>. In
+some cases (such as when [CFG:xdebug.auto_trace] is on, or while profiling),
+Xdebug creates the file before the script runs. In that case, changes made
+through <code>ini_set()</code> will not be taken into account.</p>

@@ -7,7 +7,7 @@ FUNC_GARBAGE_COLLECTION
 TXT:
 Start tracing garbage collection attempts from this point to the file in the
 <i>gcstatsFile</i> parameter. If no filename is given, then garbage collection stats file
-will be placed in the directory as configured by the [CFG:gc_stats_output_dir] setting.
+will be placed in the directory as configured by the [CFG:output_dir] setting.
 
 TXT:
 In case a file name is given as first parameter, the name is relative

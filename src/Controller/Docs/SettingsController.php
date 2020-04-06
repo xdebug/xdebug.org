@@ -121,9 +121,9 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
-		'trace_output_dir' => [
-			'string', '/tmp', null,
-			\FUNC_FUNCTION_TRACE
+		'output_dir' => [
+			'string', '/tmp', '>= 3.0',
+			\FUNC_FUNCTION_TRACE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION
 		],
 
 		'trace_output_name' => [
@@ -232,11 +232,6 @@ class SettingsController
 			\FUNC_PROFILER
 		],
 
-		'profiler_output_dir' => [
-			'string', '/tmp', null,
-			\FUNC_PROFILER
-		],
-
 		'profiler_output_name' => [
 			'string', 'cachegrind.out.%p', null,
 			\FUNC_PROFILER
@@ -244,11 +239,6 @@ class SettingsController
 
 		'gc_stats_enable' => [
 			'bool', 'false', '>= 2.6',
-			\FUNC_GARBAGE_COLLECTION
-		],
-
-		'gc_stats_output_dir' => [
-			'string', '/tmp', '>= 2.6',
 			\FUNC_GARBAGE_COLLECTION
 		],
 
