@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_5'></a>[2020-04-25] &mdash; Xdebug 2.9.5</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1772); ?>: Crash with exception thrown inside a destructor</dd>
+<dd>Fixed <?= bug(1775); ?>: Segfault when another extension compiles a PHP file during RINIT</dd>
+<dd>Fixed <?= bug(1779); ?>: Nested multi-line built-in function in namespace are not covered</dd>
+
+
 <dt><a name='x_2_9_4'></a>[2020-03-23] &mdash; Xdebug 2.9.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
