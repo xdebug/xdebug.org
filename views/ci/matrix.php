@@ -13,6 +13,9 @@
 				<th>
 					<a href='https://github.com/xdebug/xdebug/commit/<?= $m[2] ?>'><?= $m[1] ?></a><br/>
 					<div class='time'><?= (new \DateTime( "@{$version->ts}" ))->format( 'Y-m-d<\b\r/>H:i:s' ) ?></div>
+					<?php if ( isset( $version->cfg->opcache ) ) : ?>
+						<div class='opcache-<?= $version->cfg->opcache?>'><?= $version->cfg->opcache ? "opcache" : "no opcache" ?></div>
+					<?php endif ?>
 				</th>
 				<?php continue; ?>
 			<?php endif ?>
