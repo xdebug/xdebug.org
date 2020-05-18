@@ -16,6 +16,16 @@ class CiController
 		return self::matrix();
 	}
 
+	private static function fixFileNames( object $results ) : object
+	{
+		foreach ( $results->failures as $key => $failure )
+		{
+			$results->failures[$key]->file = str_replace( '.', '/', $results->failures[$key]->file );
+		}
+
+		return $results;
+	}
+
 	private static function run( string $runId ) : HtmlResponse
 	{
 		$m = new \MongoDB\Driver\Manager( "mongodb+srv://ci-reader:{$_ENV['CIREADPASSWORD']}@xdebugci-qftmo.mongodb.net/test?retryWrites=true" );
@@ -30,7 +40,7 @@ class CiController
 			throw new \Exception('There is no CI run with ID ' . $runId);
 		}
 
-		$r = $result[0];
+		$r = self::fixFileNames( $result[0] );
 
 		return new HtmlResponse(new CiRun($r, $runId), 'ci/run.php');
 	}
