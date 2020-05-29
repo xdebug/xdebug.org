@@ -5,10 +5,10 @@ opcodes. It also makes sure that the Step Debugger's 'detach' command does not
 disable debugging for the rest of the PHP process.</p>
 
 <p>The full list of changes can be found on the <a
-href="https://xdebug.org/updates#x_2.9.4">updates</a> page.</p>
+href="https://xdebug.org/updates#x_2_9_4">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
-<a href="https://xdebug.org/download#2.9.4">downloads</a> page, and as usual, Xdebug is
+<a href="https://xdebug.org/download#2_9_4">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
 <!--

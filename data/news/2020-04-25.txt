@@ -4,10 +4,10 @@ thrown in a destructor, and another one where another extension compiles a PHP
 file during request start-up. A Code Coverage anomaly is also resolved.</p>
 
 <p>The full list of changes can be found on the <a
-href="https://xdebug.org/updates#x_2.9.5">updates</a> page.</p>
+href="https://xdebug.org/updates#x_2_9_5">updates</a> page.</p>
 
 <p>The source code and Windows binaries can be found on the
-<a href="https://xdebug.org/download#2.9.5">downloads</a> page, and as usual, Xdebug is
+<a href="https://xdebug.org/download#2_9_5">downloads</a> page, and as usual, Xdebug is
 installable through PECL.</p>
 
 <!--
