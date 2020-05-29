@@ -1,3 +1,4 @@
+2020-02-27	CHECK24	https://jobs.check24.de/open-source
 2020-02-14	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2020-02-12	Supermetrics	https://supermetrics.com
 2020-01-22	Intracto	https://www.intracto.com/nl-be

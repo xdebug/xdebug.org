@@ -1,0 +1,24 @@
+10.59	5.32	0.99	4.16	48.00
+2020-04-02	xdebug3	0.75	PHP 8: Warning format for “undefined variable” changed
+2020-04-02	support	1	Issue triage and StackOverflow
+2020-04-02	support	3	Trying to reproduce #1768: XDEBUG ignored by browser invocation (CentOS 8 - nginx 1.14.1 - PHP 7.4.4 - php-fpm (using socket) - xdebug 2.9.3)
+2020-04-02	xdebug3	1.5	Issue #1773: Replace all xdebug.*_output_dir settings with xdebug.output_dir
+2020-04-03	bug	4	Issue #1772: Crash with exception thrown inside a destructor 
+2020-04-10	bug	3	Trying to reproduce #1775: Segfault when another extension compiles a PHP file during RINIT
+2020-04-11	bug	5	Trying to reproduce #1775: Segfault when another extension compiles a PHP file during RINIT (it was a duplicate)
+2020-04-12	xdebug3	4.5	Xdebug Cloud
+2020-04-13	xdebug3	3.5	Xdebug Cloud
+2020-04-13	bug	0.5	Triaging #1778: Running xdebug with php built in php server does not give always give trace file
+2020-04-15	xdebug3	4	Xdebug Cloud (the annoying “second request just hangs” issue)
+2020-04-16	bug	0.5	Triaging #1778: Running xdebug with php built in php server does not give always give trace file
+2020-04-16	bug	1.5	Fixing #1775: Segfault when another extension compiles a PHP file during RINIT
+2020-04-17	xdebug3	4.5	Allow for Xdebug to connect to Xdebug Cloud, add preliminary dbgpClient support
+2020-04-20	xdebug3	5	Migrating to go modules
+2020-04-21	xdebug3	5.5	Implementing logger interfaces for dbgpClient and dbgpProxy, and a database (mongoDB) logger for xdebugCloud
+2020-04-23	xdebug3	3	AccountInfo, only one session at a time
+2020-04-24	bug	1.5	Fixing #1779: Nested multi-line function showing 'Not executed'
+2020-04-25	release	1.5	Releasing 2.9.5
+2020-04-27	xdebug3	5	Fighting with go “nil != nil” idiosyncrazy, selection of right cloud host
+2020-04-28	xdebug3	5.75	Connection management
+2020-04-29	xdebug3	5	Detecting IDE connection closing for xdebugCloud
+2020-04-30	bug	0.75	Triaging older bug reports
