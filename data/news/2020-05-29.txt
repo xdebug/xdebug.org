@@ -1,0 +1,19 @@
+Xdebug 2.9.6 is out!
+<p>This bug fix release addresses one crash bug when a third-party extension
+(such as protobuf) contains classes that don't expose any properties. There is
+also a fix to make the output of code coverage consistent when "branch
+checking" is enabled. This release also sets the "SameSite" attribute on
+cookies that Xdebug uses for step-debugging session management, but only for
+PHP 7.3 and higher due to API limitations in PHP itself.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2_9_6">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2_9_6">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<!--
+<p>This release also contains a contribution by: <i>Sammy Powers</i> —
+Thanks!</p>
+-->

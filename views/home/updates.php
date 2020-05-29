@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_6'></a>[2020-05-29] &mdash; Xdebug 2.9.6</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1782); ?>: Cookie <code>XDEBUG_SESSION</code> will be soon rejected because it has the “sameSite” attribute set to none</dd>
+<dd>Fixed <?= bug(1787); ?>: Branch coverage data does not always follow the lines/functions format</dd>
+<dd>Fixed <?= bug(1790); ?>: Segfault in var_dump() or while debugging with protobuf extension</dd>
+
+
 <dt><a name='x_2_9_5'></a>[2020-04-25] &mdash; Xdebug 2.9.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
