@@ -1,0 +1,24 @@
+10.35	7.07	0.99	5.00	48.00
+2020-05-01	xdebug3	1.5	Reorganise logger infrastructure in dbgpTools/xdebugCloud
+2020-05-02	xdebug3	4	Timeouts with cloud client
+2020-05-04	xdebug3	5	Handling interrupts and safely shutting down of binaries
+2020-05-11	xdebug3	4	Timeouts and network read/write IO errors checking
+2020-05-13	xdebug3	4.5	Supporting multiple connections through dbgpProxy/xdebugCloud combination
+2020-05-13	xdebug3	0.75	Handle MongoDB connection/query timeouts for xdebugCloud
+2020-05-14	bug	0.5	Triaging #1783/#1784
+2020-05-14	xdebug3	6	Issue #1762: Introduce feature modes
+2020-05-15	xdebug3	5	Issue #1762: Introduce feature modes
+2020-05-16	xdebug3	3	Issue #1762: Introduce feature modes
+2020-05-17	xdebug3	1	Issue #1762: Introduce feature modes
+2020-05-18	xdebug3	5	Issue #1762: Introduce feature modes
+2020-05-18	bug	0.75	Triaging #1784: Values inside the array are being treated as non-executable code.
+2020-05-20	xdebug3	5	Issue #1785: Replace xdebug.remote_mode and xdebug.auto_trace with generic 'start-upon-request' setting
+2020-05-21	xdebug3	3	Issue #1785: Replace xdebug.remote_mode and xdebug.auto_trace with generic 'start-upon-request' setting
+2020-05-22	xdebug3	6	Issue #1791: Replace individual trigger mechanisms with global one
+2020-05-26	xdebug3	3.5	Issue #1791: Replace individual trigger mechanisms with global one
+2020-05-27	bug	4	Triaging, fixing, and testing fix for bug #1790: Segfault in var_dump() or while debugging with protobuf extension
+2020-05-27	bug	1.5	Bug #1787: Branch coverage data does not always follow the lines/functions format
+2020-05-27	bug	0.5	Triaging #1788: Branch coverage data does not always get returned in the lines/functions format (w/Opcache)
+2020-05-27	bug	0.75	Bug triage and bug system maintenance
+2020-05-29	release	1	Make Xdebug 2.9.6 release
+2020-05-29	xdebug3	2	Tests for Xdebug’s debug mode
