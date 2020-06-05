@@ -1,0 +1,33 @@
+<p>This setting can be used when [CFG:start_with_request] is set to
+<code>trigger</code>, which is the default for [FEAT:remote] and [FEAT:trace].</p>
+
+<p>In <code>trigger</code> mode, Xdebug will only start its
+functionality when the <code>XDEBUG_TRIGGER</code> is set in the environment,
+or when the <code>XDEBUG_TRIGGER</code> GET, POST, or COOKIE variable is
+set.</p>
+
+<p>Normally, Xdebug does not look at which value is actually used. If this
+setting is set to a non-empty string, then Xdebug will only trigger if the
+value matches the value of this setting.</p>
+
+<p>With the following settings:</p>
+
+<pre class="example">
+xdebug.mode=profile
+xdebug.start_with_request=trigger
+xdebug.trigger_value=StartProfileForMe
+</pre>
+
+<p>Xdebug's profiler will only start when either the environment variable
+<code>XDEBUG_TRIGGER</code> is set to <code>StartProfileForMe</code>, the GET
+or POST variable <code>XDEBUG_TRIGGER</code> is set to
+<code>StartProfileForMe</code>, or when the cookie <code>XDEBUG_TRIGGER</code>
+has the value <code>StartProfileForMe</code>.
+
+<p>
+See also:
+</p>
+
+<dl>
+<dt>[CFG:start_with_request#trigger]</dt><dd>For how the triggering mechanism works, and which environment and server variables Xdebug acts on.</dd>
+</dl>

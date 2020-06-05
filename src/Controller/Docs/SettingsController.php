@@ -9,45 +9,39 @@ use XdebugDotOrg\Controller\DocsController;
 class SettingsController
 {
 	private const SETTINGS = [
+		'mode' => [
+			'string', 'display', null,
+			-1
+		],
+
 		'collect_vars' => [
 			'boolean', 'false', null,
 			\FUNC_STACK_TRACE
 		],
-		'default_enable' => [
-			'boolean', 'true', null,
-			\FUNC_BASIC
-		],
-		'extended_info' => [
-			'integer', 1, "< 2.8",
-			\FUNC_REMOTE
-		],
+
 		'force_display_errors' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
 		],
 		'force_error_reporting' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
 		],
 		'halt_level' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
-		],
-		'manual_url' => [
-			'string', 'http://www.php.net', "< 2.2.1",
-			\FUNC_STACK_TRACE
 		],
 		'max_nesting_level' => [
 			'integer', 256, null,
 			\FUNC_BASIC
 		],
 		'max_stack_frames' => [
-			'integer', -1, ">= 2.3",
+			'integer', -1, null,
 			\FUNC_BASIC
 		],
 
 		'show_error_trace' => [
-			'integer', 0, ">= 2.4",
+			'integer', 0, null,
 			\FUNC_STACK_TRACE
 		],
 
@@ -86,11 +80,6 @@ class SettingsController
 			\FUNC_STACK_TRACE | \FUNC_VAR_DUMP
 		],
 
-		'auto_trace' => [
-			'boolean', 'false', null,
-			\FUNC_FUNCTION_TRACE
-		],
-
 		'collect_assignments' => [
 			'boolean', 'false', '>= 2.1',
 			\FUNC_FUNCTION_TRACE
@@ -122,7 +111,7 @@ class SettingsController
 		],
 
 		'output_dir' => [
-			'string', '/tmp', '>= 3.0',
+			'string', '/tmp', null,
 			\FUNC_FUNCTION_TRACE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION
 		],
 
@@ -131,16 +120,15 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
-		'trace_enable_trigger' => [
-			'boolean', 'false', '>= 2.2',
-			\FUNC_FUNCTION_TRACE
+		'start_with_request' => [
+			'string', 'default', null,
+			\FUNC_BASIC | \FUNC_REMOTE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
 		],
 
-		'trace_enable_trigger_value' => [
-			'string', '""', '>= 2.3',
-			\FUNC_FUNCTION_TRACE
+		'trigger_value' => [
+			'string', '""', null,
+			\FUNC_BASIC | \FUNC_REMOTE | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE
 		],
-
 
 		'idekey' => [
 			'string', '*complex*', null,
@@ -152,11 +140,6 @@ class SettingsController
 			\FUNC_REMOTE
 		],
 
-		'remote_autostart' => [
-			'boolean', 'false', null,
-			\FUNC_REMOTE
-		],
-
 		'remote_cookie_expire_time' => [
 			'integer', 3600, '>= 2.1',
 			\FUNC_REMOTE
@@ -164,11 +147,6 @@ class SettingsController
 
 		'remote_connect_back' => [
 			'boolean', 'false', '>= 2.1',
-			\FUNC_REMOTE
-		],
-
-		'remote_enable' => [
-			'boolean', 'false', null,
 			\FUNC_REMOTE
 		],
 
@@ -192,11 +170,6 @@ class SettingsController
 			\FUNC_REMOTE
 		],
 
-		'remote_mode' => [
-			'string', 'req', null,
-			\FUNC_REMOTE
-		],
-
 		'remote_port' => [
 			'integer', 9000, null,
 			\FUNC_REMOTE
@@ -217,31 +190,11 @@ class SettingsController
 			\FUNC_PROFILER
 		],
 
-		'profiler_enable' => [
-			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_enable_trigger' => [
-			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_enable_trigger_value' => [
-			'string', '""', '>= 2.3',
-			\FUNC_PROFILER
-		],
-
 		'profiler_output_name' => [
 			'string', 'cachegrind.out.%p', null,
 			\FUNC_PROFILER
 		],
-
-		'gc_stats_enable' => [
-			'bool', 'false', '>= 2.6',
-			\FUNC_GARBAGE_COLLECTION
-		],
-
+		
 		'gc_stats_output_name' => [
 			'string', 'gcstats.%p', '>= 2.6',
 			\FUNC_GARBAGE_COLLECTION
@@ -285,10 +238,6 @@ class SettingsController
 		'scream' => [
 			'boolean', 'false', '>= 2.1',
 			\FUNC_BASIC
-		],
-		'coverage_enable' => [
-			'boolean', 'true', '>= 2.2',
-			\FUNC_CODE_COVERAGE
 		],
 	];
 

@@ -1,12 +1,17 @@
 <p>If enabled, the [CFG:remote_host] setting is ignored and Xdebug will
 try to connect to the client that made the HTTP request. It checks the
-$_SERVER['HTTP_X_FORWARDED_FOR'] and $_SERVER['REMOTE_ADDR'] variables to
-find out which IP address to use.</p>
-<p>If [CFG:remote_addr_header] is configured, then the $SERVER variable with
-the configured name will be checked before the
-$_SERVER['HTTP_X_FORWARDED_FOR'] and $_SERVER['REMOTE_ADDR'] variables.</p>
-<p>This setting does not apply for debugging through the CLI, as the $SERVER
-header variables are not available there.</p>
+<code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
+<code>$_SERVER['REMOTE_ADDR']</code> variables to find out which IP address to
+use.</p>
+
+<p>If [CFG:remote_addr_header] is configured, then the <code>$SERVER</code>
+variable with the configured name will be checked before the
+<code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
+<code>$_SERVER['REMOTE_ADDR']</code> variables.</p>
+
+<p>This setting does not apply for debugging through the CLI, as the
+<code>$SERVER</code> header variables are not available there.</p>
+
 <p>Please note that there is <strong>no</strong> filter
 available, and anybody who can connect to the webserver will then be able to
 start a debugging session, even if their address does not match

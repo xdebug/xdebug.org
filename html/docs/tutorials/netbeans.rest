@@ -35,11 +35,10 @@ Command line scripts
 To debug command line scripts you need to take just a few extra steps.
 
 - Adjust your php.ini to be compatible with these settings, some of these are the
-  default settings used by XDebug: (they are fully compatible with website testing 
+  default settings used by Xdebug: (they are fully compatible with website testing 
   above):: 
 	
-	xdebug.remote_enable=On
-	xdebug.remote_handler=dbgp ; default value
+	xdebug.mode=debug
 	xdebug.remote_host=localhost ; default value
 	xdebug.remote_port=9000 ; default value
 

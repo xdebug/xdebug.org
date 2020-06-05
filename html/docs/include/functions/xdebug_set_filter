@@ -16,8 +16,8 @@ set up a filter. Currently there are two groups:
 
 <dl>
 <dt>XDEBUG_FILTER_TRACING</dt>
-<dd>The filter group used for filtering [FEAT:stack_trace] upon errors, as well
-as [FEAT:execution_trace].</dd>
+<dd>The filter group used for filtering a [FEAT:stack_trace] upon errors, as well
+as for elements in a [FEAT:trace].</dd>
 
 <dt>XDEBUG_FILTER_CODE_COVERAGE</dt>
 <dd>The filter group used for restricting the file paths which Xdebug would use

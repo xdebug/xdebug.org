@@ -5,8 +5,7 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation');
 ?>
 
-<h1>Documentation</h1>
-
+<h1>Xdebug 3 — Documentation</h1>
 <ul class="doc_list">
 	<?php foreach ($this->sections as $section) : ?>
 		<li><a href='<?= $section->href ?>'><?= $section->title ?></a></li>

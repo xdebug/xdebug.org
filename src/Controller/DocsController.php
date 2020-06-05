@@ -38,8 +38,8 @@ class DocsController
 			configured to suit your needs.',
 			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
 		],
-		'execution_trace' => [
-			'Function Traces',
+		'trace' => [
+			'Function Trace',
 			\FUNC_FUNCTION_TRACE,
 			'Xdebug allows you to log all function calls, including parameters and
 			return values to a file in different formats.',
@@ -60,7 +60,7 @@ class DocsController
 			it was able to clean up, how long it took, and how how much memory was actually freed.',
 		],
 		'profiler' => [
-			'Profiling PHP Scripts',
+			'Profiling',
 			\FUNC_PROFILER,
 			'Xdebug\'s built-in profiler allows you to find bottlenecks in your
 			script and visualize those with an external tool such as KCacheGrind or
@@ -69,9 +69,8 @@ class DocsController
 		'remote' => [
 			'Step Debugging',
 			\FUNC_REMOTE,
-			'Xdebug provides an interface for debugger clients that interact with
-			running PHP scripts. This section explains how to set-up PHP and Xdebug
-			to allow this, and introduces a few clients.',
+			"Xdebug's step debugger allows you to interactively walk through your code to
+debug control flow and examine data structures.",
 		],
 		'dbgpClient' => [
 			'Command Line Debug Client',
@@ -88,6 +87,11 @@ class DocsController
 			'Compatibility',
 			0,
 			'Xdebug and PHP version compatibility',
+		],
+		'upgrade_guide' => [
+			'Upgrading from Xdebug 2 to 3',
+			0,
+			'An upgade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
 		],
 		'faq' => [
 			'FAQ',

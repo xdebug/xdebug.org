@@ -1,0 +1,107 @@
+<h2>New Concepts</h2>
+
+<p>Unlike Xdebug 2, where there was an enabling setting for each
+feature, with Xdebug 3 you put Xdebug into a specific
+<i>mode</i>, which can be configured with the [CFG:mode] setting.</p>
+
+<p>This setting, in combination with [CFG:start_at_request] is the new way to
+enable functionality, and to configure when Xdebug's feature activates.</p>
+
+<p>The idea behind this is that it is important that Xdebug only has overhead
+for the features that are actually wanted. For example, it makes no sense have
+both [FEAT:profiler] and [FEAT:remote] active at the same time.</p>
+
+<p>To make sure that just [FEAT:remote] is active, instead of:</p>
+
+<pre>
+xdebug.remote_enable=1
+xdebug.default_enable=0
+xdebug.profiler_enable=0
+xdebug.auto_trace=0
+xdebug.coverage_enable=0
+</pre>
+
+<p>You now only do:</p>
+
+<pre>
+xdebug.mode=debug
+</pre>
+
+<h2>Step Debugging</h2>
+
+<h3>Activating on the Command Line</h3>
+<p>Instead of setting the <code>XDEBUG_CONFIG</code> environment variable to
+<code>idekey=yourname</code>, you must set <code>XDEBUG_SESSION</code> to
+<code>yourname</code>:</p>
+
+<pre>
+export XDEBUG_SESSION=xdebug_is_great
+</pre>
+
+<h3>Automatically Starting the Debugger</h3>
+
+<p>The <code>xdebug.remote_autostart</code> setting has been removed. Instead,
+set [CFG:start_with_request] to <code>always</code>.</p>
+
+<h2>Changed Configuration Settings</h2>
+
+<p>Xdebug 3 has removed and changed a lot of configuration settings. This
+section lists the removed settings and their replacements.</p>
+
+<dl>
+<dt><code>xdebug.auto_trace</code></dt>
+<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_at_request]<code>=always</code>.</p></dd>
+
+<dt><code>xdebug.coverage_enable</code></dt>
+<dd><p>Use [CFG:mode]<code>=coverage</code>.</p></dd>
+
+<dt><code>xdebug.default_enable</code></dt>
+<dd><p>Use [CFG:mode]<code>=display</code>.</p></dd>
+
+<dt><code>xdebug.extended_info</code></dt>
+<dd><p>No replacement. Xdebug turns on this PHP engine setting automatically when needed.</p></dd>
+
+<dt><code>xdebug.gc_stats_enable</code></dt>
+<dd><p>Use [CFG:mode]<code>=gcstats</code>.</p></dd>
+
+<dt><code>xdebug.gc_stats_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><code>xdebug.profiler_enable</code></dt>
+<dd><p>Use [CFG:mode]<code>=profile</code>.</p></dd>
+
+<dt><code>xdebug.profiler_enable_trigger</code></dt>
+<dd><p>Use [CFG:mode]<code>=profile</code> with [CFG:start_at_request]<code>=trigger</code>.</p></dd>
+
+<dt><code>xdebug.profiler_enable_trigger_value</code></dt>
+<dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
+
+<dt><code>xdebug.profiler_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><code>xdebug.remote_autostart</code></dt>
+<dd><p>Use [CFG:mode]<code>=debug</code> with [CFG:start_at_request]<code>=always</code>.</p></dd>
+
+<dt><code>xdebug.remote_enable</code></dt>
+<dd><p>Use [CFG:mode]<code>=debug</code>.</p></dd>
+
+<dt><code>xdebug.remote_handler</code></dt>
+<dd><p>No replacement. Xdebug's step debugger only supported the <a href="/docs/dbgp">DBGp handler</a>.</p></dd>
+
+<dt><code>xdebug.remote_mode</code></dt>
+<dd>
+<p>Use [CFG:mode]<code>=debug</code> with [CFG:start_at_request]<code>=trigger</code>.</p>
+<p>A PHP notice, warning, exception, or a call to [FUNC:xdebug_break] will
+result in Xdebug attempting to make a connection to the debugger client.</p>
+<p>Xdebug 3 does not make a distinction (yet) between the original
+<code>req</code> and <code>jit</code> modes.</p>
+</dt>
+
+<dt><code>xdebug.trace_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><code>xdebug.trace_enable_trigger</code></dt>
+<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_at_request]<code>=trigger</code>.</p></dd>
+
+<dt><code>xdebug.trace_enable_trigger_value</code></dt>
+<dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
