@@ -4,7 +4,7 @@
 feature, with Xdebug 3 you put Xdebug into a specific
 <i>mode</i>, which can be configured with the [CFG:mode] setting.</p>
 
-<p>This setting, in combination with [CFG:start_at_request] is the new way to
+<p>This setting, in combination with [CFG:start_with_request] is the new way to
 enable functionality, and to configure when Xdebug's feature activates.</p>
 
 <p>The idea behind this is that it is important that Xdebug only has overhead
@@ -50,7 +50,7 @@ section lists the removed settings and their replacements.</p>
 
 <dl>
 <dt><code>xdebug.auto_trace</code></dt>
-<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_at_request]<code>=always</code>.</p></dd>
+<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_with_request]<code>=always</code>.</p></dd>
 
 <dt><code>xdebug.coverage_enable</code></dt>
 <dd><p>Use [CFG:mode]<code>=coverage</code>.</p></dd>
@@ -71,7 +71,7 @@ section lists the removed settings and their replacements.</p>
 <dd><p>Use [CFG:mode]<code>=profile</code>.</p></dd>
 
 <dt><code>xdebug.profiler_enable_trigger</code></dt>
-<dd><p>Use [CFG:mode]<code>=profile</code> with [CFG:start_at_request]<code>=trigger</code>.</p></dd>
+<dd><p>Use [CFG:mode]<code>=profile</code> with [CFG:start_with_request]<code>=trigger</code>.</p></dd>
 
 <dt><code>xdebug.profiler_enable_trigger_value</code></dt>
 <dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
@@ -80,7 +80,7 @@ section lists the removed settings and their replacements.</p>
 <dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
 
 <dt><code>xdebug.remote_autostart</code></dt>
-<dd><p>Use [CFG:mode]<code>=debug</code> with [CFG:start_at_request]<code>=always</code>.</p></dd>
+<dd><p>Use [CFG:mode]<code>=debug</code> with [CFG:start_with_request]<code>=always</code>.</p></dd>
 
 <dt><code>xdebug.remote_enable</code></dt>
 <dd><p>Use [CFG:mode]<code>=debug</code>.</p></dd>
@@ -90,7 +90,7 @@ section lists the removed settings and their replacements.</p>
 
 <dt><code>xdebug.remote_mode</code></dt>
 <dd>
-<p>Use [CFG:mode]<code>=debug</code> with [CFG:start_at_request]<code>=trigger</code>.</p>
+<p>Use [CFG:mode]<code>=debug</code> with [CFG:start_with_request]<code>=trigger</code>.</p>
 <p>A PHP notice, warning, exception, or a call to [FUNC:xdebug_break] will
 result in Xdebug attempting to make a connection to the debugger client.</p>
 <p>Xdebug 3 does not make a distinction (yet) between the original
@@ -101,7 +101,7 @@ result in Xdebug attempting to make a connection to the debugger client.</p>
 <dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
 
 <dt><code>xdebug.trace_enable_trigger</code></dt>
-<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_at_request]<code>=trigger</code>.</p></dd>
+<dd><p>Use [CFG:mode]<code>=trace</code> with [CFG:start_with_request]<code>=trigger</code>.</p></dd>
 
 <dt><code>xdebug.trace_enable_trigger_value</code></dt>
 <dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
