@@ -18,7 +18,7 @@ href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
 working directory is.
 
 TXT:
-If [CFG:start_with_request]=<code>always</code>, then filename depends on the
+If [CFG:start_with_request]=<code>yes</code>, then filename depends on the
 [CFG:gc_stats_output_name] setting.
 
 TXT:

@@ -20,7 +20,7 @@ working directory is.
 TXT:
 The name of the trace file is <code>{$trace_file}.xt</code>. If the trace was started at
 the beginning of the request because [CFG:start_with_request] is set to
-<code>always</code>, then the filename depends on the
+<code>yes</code>, then the filename depends on the
 [CFG:trace_output_name] setting.
 
 TXT:

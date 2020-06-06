@@ -10,4 +10,4 @@ collected during all runs of the garbage collector in the current script.
 
 TXT:
 This number is available even if the [CFG:start_with_request] INI setting is
-not set to <code>always</code>.
+not set to <code>yes</code>.

@@ -4,20 +4,20 @@ the value of this setting:</p>
 
 <dl>
 
-<dt><code>always</code></dt>
+<dt><code>yes</code></dt>
 <dd>
 <p>The functionality starts when the PHP request starts, and before any PHP
 code is run.</p>
 
 <p>For example [CFG:mode]=<code>trace</code> and
-[CFG:start_with_request]=<code>always</code> starts a [FEAT:trace] for the
+[CFG:start_with_request]=<code>yes</code> starts a [FEAT:trace] for the
 whole request.</p>
 </dd>
 
 
-<dt><code>never</code></dt>
+<dt><code>no</code></dt>
 <dd>
-<p>The functionality never gets activated when the request starts.</p>
+<p>The functionality does not get activated when the request starts.</p>
 
 <p>You can still start a [FEAT:trace] with [FUNC:xdebug_start_trace], 
 [FEAT:remote] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
@@ -54,8 +54,8 @@ string, <strong>any</strong> value will be accepted.</p>
 <p>The <code>default</code> value depends on [CFG:mode]:</p>
 <ul>
 <li><strong>debug</strong>: <code>trigger</code></p>
-<li><strong>gcstats</strong>: <code>never</code></p>
-<li><strong>profile</strong>: <code>always</code></p>
+<li><strong>gcstats</strong>: <code>no</code></p>
+<li><strong>profile</strong>: <code>yes</code></p>
 <li><strong>trace</strong>: <code>trigger</code></p>
 </ul>
 </dd>
