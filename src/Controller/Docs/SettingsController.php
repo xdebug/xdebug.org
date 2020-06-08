@@ -146,12 +146,7 @@ class SettingsController
 		],
 
 		'remote_connect_back' => [
-			'boolean', 'false', '>= 2.1',
-			\FUNC_REMOTE
-		],
-
-		'remote_handler' => [
-			'string', 'dbgp', '< 2.9',
+			'boolean', 'false', null,
 			\FUNC_REMOTE
 		],
 
@@ -182,11 +177,6 @@ class SettingsController
 
 		'profiler_append' => [
 			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_aggregate' => [
-			'integer', 0, '< 2.9',
 			\FUNC_PROFILER
 		],
 
