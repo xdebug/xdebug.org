@@ -76,12 +76,12 @@ class SettingsController
 		],
 
 		'cli_color' => [
-			'integer', 0, '>= 2.2',
+			'integer', 0, null,
 			\FUNC_STACK_TRACE | \FUNC_VAR_DUMP
 		],
 
 		'collect_assignments' => [
-			'boolean', 'false', '>= 2.1',
+			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE
 		],
 
@@ -136,12 +136,12 @@ class SettingsController
 		],
 
 		'remote_addr_header' => [
-			'string', '""', '>= 2.4',
+			'string', '""', null,
 			\FUNC_REMOTE
 		],
 
 		'remote_cookie_expire_time' => [
-			'integer', 3600, '>= 2.1',
+			'integer', 3600, null,
 			\FUNC_REMOTE
 		],
 
@@ -161,7 +161,7 @@ class SettingsController
 		],
 
 		'remote_log_level' => [
-			'integer', '7', '>= 2.8',
+			'integer', '7', null,
 			\FUNC_REMOTE
 		],
 
@@ -171,7 +171,7 @@ class SettingsController
 		],
 
 		'remote_timeout' => [
-			'integer', 200, '>= 2.6',
+			'integer', 200, null,
 			\FUNC_REMOTE
 		],
 
@@ -186,7 +186,7 @@ class SettingsController
 		],
 		
 		'gc_stats_output_name' => [
-			'string', 'gcstats.%p', '>= 2.6',
+			'string', 'gcstats.%p', null,
 			\FUNC_GARBAGE_COLLECTION
 		],
 
@@ -211,22 +211,22 @@ class SettingsController
 		],
 
 		'overload_var_dump' => [
-			'integer', 2, '> 2.1',
+			'integer', 2, null,
 			\FUNC_VAR_DUMP
 		],
 
 		'file_link_format' => [
-			'string', '', '>= 2.1',
+			'string', '', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'filename_format' => [
-			'string', '...%s%n', '>= 2.6',
+			'string', '...%s%n', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'scream' => [
-			'boolean', 'false', '>= 2.1',
+			'boolean', 'false', null,
 			\FUNC_BASIC
 		],
 	];

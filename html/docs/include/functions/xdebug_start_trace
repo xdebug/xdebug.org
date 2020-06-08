@@ -39,13 +39,11 @@ the format as described under <i>1</i> "[CFG:trace_format]".</dd>
 <dt>XDEBUG_TRACE_NAKED_FILENAME (8)</dt>
 <dd>Normally, Xdebug always adds ".xt" to the end of the filename that you
 pass in as first argument to this function. With the
-<i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added. (New in Xdebug
-2.3).</dd>
+<i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added.</dd>
 </dl>
 
-Unlike Xdebug 1,
-Xdebug 2 will not store function calls in memory, but always only write to disk
-to relieve the pressure on used memory. The settings [CFG:collect_includes],
+TXT:
+The settings [CFG:collect_assignments], [CFG:collect_includes],
 [CFG:collect_params] and [CFG:collect_return] influence what information is
 logged to the trace file and the setting [CFG:trace_format] influences the
 format of the trace file.
