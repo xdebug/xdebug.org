@@ -1,11 +1,31 @@
-<p>By default Xdebug overloads var_dump() with its own improved version
-		for displaying variables when the <a href='https://www.php.net/manual/en/errorfunc.configuration.php#ini.html-errors'>html_errors</a> php.ini setting is set to
-		<code>true</code>. In case you do not want that, you can
-		set this setting to <code>0</code>, but check first if it's not smarter
-		to turn off <code>html_errors</code>.</p>
-		<p><em>New in Xdebug 2.3</em>: You can also use <code>2</code> as value for this setting. Besides
-		formatting the var_dump() output nicely, it will also add filename and
-		line number to the output. The [CFG:file_link_format] setting is also
-		respected.</p>
-		<p><em>Before Xdebug 2.4</em>: the default value of this setting was
-		<code>1</code>.</p>
+<p>Xdebug can replace PHP's bulit-in <code>var_dump()</code> function with its
+own implementation. The extra information includes data types, size of arrays,
+and object IDs. The overloaded function respects the
+[CFG:var_display_max_children], [CFG:var_display_max_data], and
+[CFG:var_display_max_depth] settings.</p>
+
+<p>In an HTML environment, when PHP's <a
+href="https://www.php.net/manual/en/errorfunc.configuration.php#ini.html-errors">html_errors</a>
+set to <code>1</code>, Xdebug's version will use HTML tags to format the
+information.</p>
+
+<p>In a CLI environment, Xdebug's version can also include colours, depending
+on the value of [CFG:cli_color].</p>
+
+<p>This setting can have the following values:</p>
+
+<dl>
+<dt>0</dt>
+<dd><p>Xdebug will not change PHP's built-in <code>var_dump()</code>
+function to an improved implementation.</p></dd>
+
+<dt>1</dt>
+<dd><p>Xdebug replaces PHP's built-in <code>var_dump()</code> function with an
+implementation that shows the described extra information.</p></dd>
+
+<dt>2 (the default)</dt>
+<dd><p>The overloaded <code>var_dump()</code> output will also include the filename
+and line number to the output. The [CFG:file_link_format] setting is respected
+for the formatting of this information.</p></dd>
+
+</dl>
