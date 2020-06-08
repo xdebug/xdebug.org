@@ -5,5 +5,15 @@ none
 FUNC_REMOTE
 
 TXT:
-This function makes the debugger break on the specific line as if a normal
-file/line breakpoint was set on this line.
+This function makes the debugger break on the line it is called from, as if a
+normal file/line breakpoint was set on this line through the debugger protocol.
+
+TXT:
+If no debugging session is active yet, and [CFG:start_upon_request] is set to
+<code>trigger</code>, then Xdebug will attempt to start a new debugging session
+first.
+
+TXT:
+The function returns <code>true</code> if a debugging session is (now) active,
+and the breakpoint was succesfully set. It returns <code>false</code> if a
+debugging session was not active and could not be activated.

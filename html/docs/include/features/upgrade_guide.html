@@ -43,6 +43,32 @@ export XDEBUG_SESSION=xdebug_is_great
 <p>The <code>xdebug.remote_autostart</code> setting has been removed. Instead,
 set [CFG:start_with_request] to <code>yes</code>.</p>
 
+<h3>Starting the Debugger During a Request</h3>
+
+<p>In Xdebug 3 calling [FUNC:xdebug_break] will only initiate a debugging
+session when [CFG:start_with_request] is set to <code>trigger</code>.</p>
+
+<p>It will no longer trigger a debugging session when
+[CFG:start_upon_error]=<code>yes</code> (the replacement for Xdebug 2's
+<code>xdebug.remote_mode=jit</code>).</p>
+
+<p>A debug session will be initiated upon a PHP Notice or Warning, or when a
+Throwable is thrown, when [CFG:start_upon_error] is set to <code>yes</code>,
+regardless of what the value for [CFG:start_with_request] is.</p>
+
+<h2>Changed Function Behaviour</h2>
+
+<dl>
+<dt><code>[FUNC:xdebug_break]</code></dt>
+<dd>
+<p>This function will no longer initiate a debugging session when
+[CFG:start_upon_error] is set to <code>yes</code> (the replacement for Xdebug 2's
+<code>xdebug.remote_mode=jit</code>).
+
+<p>It will still initate a debugging request when [CFG:start_with_request] is
+set to <code>trigger</code>.</p>
+</dd>
+
 <h2>Changed Configuration Settings</h2>
 
 <p>Xdebug 3 has removed and changed a lot of configuration settings. This
@@ -90,11 +116,14 @@ section lists the removed settings and their replacements.</p>
 
 <dt><code>xdebug.remote_mode</code></dt>
 <dd>
-<p>Use [CFG:mode]<code>=debug</code> with [CFG:start_with_request]<code>=trigger</code>.</p>
-<p>A PHP notice, warning, exception, or a call to [FUNC:xdebug_break] will
-result in Xdebug attempting to make a connection to the debugger client.</p>
-<p>Xdebug 3 does not make a distinction (yet) between the original
-<code>req</code> and <code>jit</code> modes.</p>
+<p>For the <code>req</code> value (the original default), use
+[CFG:mode]=<code>debug</code> with
+[CFG:start_with_request]=<code>trigger</code>. If the original
+<code>xdebug.remote_autostart</code> behaviour is necessary, use
+[CFG:start_with_request]=<code>yes</code> instead of <code>trigger</code>.</p>
+
+<p>For the <code>jit</code> value, use [CFG:mode]=<code>debug</code> and
+[CFG:start_upon_error]=<code>yes</code>.</p>
 </dt>
 
 <dt><code>xdebug.trace_output_dir</code></dt>

@@ -122,7 +122,12 @@ class SettingsController
 
 		'start_with_request' => [
 			'string', 'default', null,
-			\FUNC_BASIC | \FUNC_REMOTE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
+			\FUNC_REMOTE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
+		],
+
+		'start_upon_error' => [
+			'string', 'default', null,
+			\FUNC_REMOTE
 		],
 
 		'trigger_value' => [

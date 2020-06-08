@@ -136,6 +136,24 @@ cookie is present, debugging will be initiated for every HTTP request
 <code>POST</code>) HTTP parameter, Xdebug removes the cookie.</p>
 
 
+<h3>Alternative Ways of Triggering the Debugger</h3>
+
+<p>There are other ways how debugger activation can be triggered.</p>
+
+<h4>By Calling xdebug_break()</h4>
+
+<p>Calling [FUNC:xdebug_break] will trigger a debugging connection as long as
+[CFG:start_with_request] is set to <code>trigger</code> and no debugger session
+is active yet. If a debugger session is already active, it will simply act as
+if a breakpoint was set through your IDE.</p>
+
+<h4>Upon an Error Situation</h4>
+
+<p>If you set [CFG:start_upon_error] to <code>yes</code> then Xdebug will
+trigger a debugging connection when a PHP Notice or Warning appears, or when a
+<a href="https://www.php.net/manual/en/class.throwable.php">Throwable</a>
+(Error or Exception) is thrown.</p>
+
 <a name="troubleshoot"></a>
 <h2>Troubleshooting</h2>
 
