@@ -27,8 +27,12 @@ for [FEAT:code_coverage].</dd>
 Each group can be configured independently.
 
 TXT:
-There are different kinds of filters that you can set. There is a white list
-and a black list option for either file paths or fully qualified class names.
+There are different kinds of filters that you can set. You can filter on either
+file path prefix, or fully qualified class name prefix (i.e. namespace). For
+each filter type you can a list of paths/namespaces to include or exclude. All
+matches are done in a case-insensitive way.
+
+TXT:
 The <code>XDEBUG_FILTER_CODE_COVERAGE</code> group only supports
 <code>XDEBUG_PATH_WHITELIST</code>, <code>XDEBUG_PATH_BLACKLIST</code>, and
 <code>XDEBUG_FILTER_NONE</code>. All matches are done in a case-insensitive
@@ -39,22 +43,22 @@ The constants to use as second "<code>$list_type</code>" argument are:
 
 <dl>
 <dt>XDEBUG_PATH_WHITELIST</dt>
-<dd><p>Sets up a white list for file paths. An execution unit is included in the
-output if its file path is prefixed by any of the prefixes in the array passed
-as third <code>$configuration</code> argument.</p><p>Please note that a prefix
-of <code>"/home/derick"</code> would also match files in
-<code>"/home/derickrethans"</code>, so it is recommended that you add the
+<dd><p>Configures a list of file paths to include. An execution unit is
+included in the output if its file path is prefixed by any of the prefixes in
+the array passed as third <code>$configuration</code> argument.</p><p>Please
+note that a prefix of <code>/home/derick</code> would also match files in
+<code>/home/derickrethans</code>, so it is recommended that you add the
 trailing slash to the prefix in order to prevent this.</p></dd>
 
 <dt>XDEBUG_PATH_BLACKLIST</dt>
-<dd><p>Sets up a black list for file paths. An execution unit will be excluded
+<dd><p>Sets up a list of paths to exclude. An execution unit will be excluded
 from the output if its file path is prefixed by any of the prefixes from the
 <code>$configuration</code> array.</p></dd>
 
 <dt>XDEBUG_NAMESPACE_WHITELIST</dt>
-<dd><p>Sets up a white list for class prefixes. An execution unit is included in
+<dd><p>Configures a list of class name prefixes to include. An execution unit is included in
 the output if the class name, after namespace expansion, matches one of the
-prefixes in the <code>$configuration</code> array. The value <code>""</code> is
+prefixes in the <code>$configuration</code> array. An empty string value is
 special, and means functions that do not belong to a class. These are either
 user-defined, or built-in PHP functions (e.g. <code>strlen()</code>).</p>
 <p>Name space expansion happens automatically in PHP, and its engine will
@@ -74,8 +78,8 @@ In order to match for all clases within a namespace, it is recommended to specif
 </p></dd>
 
 <dt>XDEBUG_NAMESPACE_BLACKLIST</dt>
-<dd>The opposite of the white list. Execution units are excluded only if their
-prefix matches one of the prefixes in the <code>$configuration</code>
+<dd>Sets up a list of namespaces to exclude. Execution units are excluded only
+if their prefix matches one of the prefixes in the <code>$configuration</code>
 array.</dd>
 
 <dt>XDEBUG_FILTER_NONE</dt>
@@ -83,9 +87,9 @@ array.</dd>
 </dl>
 
 TXT:
-It is not possible to configure both a black list and a white list, or a
-black-/white-list for paths and namespaces at the same time. Only one of the
-four list types can be active at any one time.
+It is not possible to configure a filter for paths/namespaces at the same time,
+and neither is it possible to configure which paths to exclude and include at
+the same time. Only one of the four list types can be active at any one time.
 
 It is possible however, to turn off the filter altogether by using
 <code>XDEBUG_FILTER_NONE</code>.

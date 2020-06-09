@@ -196,10 +196,9 @@ ini_set('xdebug.show_local_vars', 'on');
 <h2>Filtering</h2>
 <p>
 Xdebug 2.6 introduces filtering capabilities for stack traces. A filter either
-includes through a white list, or excludes through a black list, paths or
-class name prefixes. You can use a filter to prevent anything from a vendor
-directory to appear in a stack trace, or to only include classes from specific
-name spaces.
+includes, or excludes, paths or class name prefixes (namespaces). You can use a
+filter to prevent anything from a vendor directory to appear in a stack trace,
+or to only include classes from specific namespaces.
 </p>
 <p>
 To set-up a filter that shows only functions and methods that either have no
