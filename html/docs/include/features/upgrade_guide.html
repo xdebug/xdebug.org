@@ -1,3 +1,4 @@
+<a name="New-Concepts"></a>
 <h2>New Concepts</h2>
 
 <p>Unlike Xdebug 2, where there was an enabling setting for each
@@ -27,8 +28,10 @@ xdebug.coverage_enable=0
 xdebug.mode=debug
 </pre>
 
+<a name="Step-Debugging"></a>
 <h2>Step Debugging</h2>
 
+<a name="Activating-on-the-Command-Line"></a>
 <h3>Activating on the Command Line</h3>
 <p>Instead of setting the <code>XDEBUG_CONFIG</code> environment variable to
 <code>idekey=yourname</code>, you must set <code>XDEBUG_SESSION</code> to
@@ -38,11 +41,13 @@ xdebug.mode=debug
 export XDEBUG_SESSION=xdebug_is_great
 </pre>
 
+<a name="Automatically-Starting-the-Debugger"></a>
 <h3>Automatically Starting the Debugger</h3>
 
 <p>The <code>xdebug.remote_autostart</code> setting has been removed. Instead,
 set [CFG:start_with_request] to <code>yes</code>.</p>
 
+<a name="Starting-the-Debugger-During-a-Request"></a>
 <h3>Starting the Debugger During a Request</h3>
 
 <p>In Xdebug 3 calling [FUNC:xdebug_break] will only initiate a debugging
@@ -56,6 +61,7 @@ session when [CFG:start_with_request] is set to <code>trigger</code>.</p>
 Throwable is thrown, when [CFG:start_upon_error] is set to <code>yes</code>,
 regardless of what the value for [CFG:start_with_request] is.</p>
 
+<a name="Changed-Function-Behaviour"></a>
 <h2>Changed Function Behaviour</h2>
 
 <dl>
@@ -69,6 +75,7 @@ regardless of what the value for [CFG:start_with_request] is.</p>
 set to <code>trigger</code>.</p>
 </dd>
 
+<a name="Changed-Configuration-Settings"></a>
 <h2>Changed Configuration Settings</h2>
 
 <p>Xdebug 3 has removed and changed a lot of configuration settings. This
@@ -136,6 +143,7 @@ section lists the removed settings and their replacements.</p>
 <dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
 </dl>
 
+<a name="Changed-Constants"></a>
 <h2>Changed Constants</h2>
 
 <p>The following constants have been changed:</p>
