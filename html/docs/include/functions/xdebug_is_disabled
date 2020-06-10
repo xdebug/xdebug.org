@@ -1,8 +1,0 @@
-= xdebug_is_enabled
-Returns whether stack traces are enabled
-bool
-none
-FUNC_BASIC
-
-TXT:
-Return whether stack traces would be shown in case of an error or not.

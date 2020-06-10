@@ -2,7 +2,7 @@
 Displays information about super globals
 void
 none
-FUNC_VAR_DUMP
+FUNC_BASIC
 
 TXT:
 This function dumps the values of the elements of the super globals as

@@ -1,7 +1,7 @@
 = xdebug_debug_zval
 Displays information about a variable
 void
-[string varname [, ...]]
+string ...$varname
 FUNC_VAR_DUMP
 
 TXT:

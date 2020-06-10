@@ -1,12 +1,12 @@
-= xdebug_start_gcstats,2.6
+= xdebug_start_gcstats
 Start the collection of garbage collection statistics
-string
-[ string $gcstats_file ]
+mixed
+?string $gcstatsFile = null
 FUNC_GARBAGE_COLLECTION
 
 TXT:
 Start tracing garbage collection attempts from this point to the file in the
-<i>gcstats_file</i> parameter. If no filename is given, then garbage collection stats file
+<i>gcstatsFile</i> parameter. If no filename is given, then garbage collection stats file
 will be placed in the directory as configured by the [CFG:gc_stats_output_dir] setting.
 
 TXT:

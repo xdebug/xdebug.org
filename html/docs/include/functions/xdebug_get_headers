@@ -1,4 +1,4 @@
-= xdebug_get_headers,2.1
+= xdebug_get_headers
 Returns all the headers as set by calls to PHP's header() function
 array
 none

@@ -1,7 +1,7 @@
 = xdebug_var_dump
 Displays detailed information about a variable
 void
-[mixed var [, ...]]
+mixed ...$variable
 FUNC_VAR_DUMP
 
 TXT:

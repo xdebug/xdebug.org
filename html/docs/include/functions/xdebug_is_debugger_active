@@ -1,4 +1,4 @@
-= xdebug_is_debugger_active,2.6
+= xdebug_is_debugger_active
 Returns whether a debugging session is active
 bool
 none

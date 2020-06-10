@@ -1,7 +1,7 @@
 = xdebug_start_trace
 Starts a new function trace
 string
-[ string trace_file [, integer options] ]
+?string $traceFile = null, int $options = 0
 FUNC_FUNCTION_TRACE
 
 TXT:

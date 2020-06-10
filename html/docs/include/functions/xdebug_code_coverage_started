@@ -1,6 +1,6 @@
 = xdebug_code_coverage_started
-Returns whether code coverage is active.
-boolean
+Returns whether code coverage is active
+bool
 none
 FUNC_CODE_COVERAGE
 

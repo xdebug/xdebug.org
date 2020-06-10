@@ -1,5 +1,5 @@
 = xdebug_break
-Emits a breakpoint to the debug client.
+Emits a breakpoint to the debug client
 bool
 none
 FUNC_REMOTE

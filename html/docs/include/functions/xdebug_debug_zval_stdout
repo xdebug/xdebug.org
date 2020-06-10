@@ -1,7 +1,7 @@
 = xdebug_debug_zval_stdout
-Returns information about variables to stdout.
+Returns information about variables to stdout
 void
-[string varname [, ...]]
+string ...$varname
 FUNC_VAR_DUMP
 
 TXT:

@@ -1,9 +1,10 @@
 = xdebug_get_tracefile_name
 Returns the name of the function trace file
-string
+mixed
 none
 FUNC_FUNCTION_TRACE
 
 TXT:
 Returns the name of the file which is used to trace the output of this
-script too. This is useful when [CFG:auto_trace] is enabled.
+script to, or <code>null</code> if tracing is not active. This is useful
+when traces are made with [CFG:auto_trace] is enabled.

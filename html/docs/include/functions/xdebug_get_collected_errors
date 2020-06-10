@@ -1,7 +1,7 @@
-= xdebug_get_collected_errors,2.1
+= xdebug_get_collected_errors
 Returns all collected error messages
-string
-[int clean]
+array
+bool $emptyList = false
 FUNC_BASIC
 
 TXT:

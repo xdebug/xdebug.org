@@ -1,7 +1,7 @@
-= xdebug_start_function_monitor,2.4
+= xdebug_start_function_monitor
 Starts function monitoring
 void
-array $list_of_functions_to_monitor
+array $listOfFunctionsToMonitor
 FUNC_STACK_TRACE
 
 TXT:

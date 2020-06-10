@@ -1,8 +1,0 @@
-= xdebug_enable
-Enables stack traces
-void
-none
-FUNC_BASIC
-
-TXT:
-Enable showing stack traces on error conditions.

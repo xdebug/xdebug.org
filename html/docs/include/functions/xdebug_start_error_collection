@@ -1,4 +1,4 @@
-= xdebug_start_error_collection,2.1
+= xdebug_start_error_collection
 Starts recording all notices, warnings and errors and prevents their display
 void
 none

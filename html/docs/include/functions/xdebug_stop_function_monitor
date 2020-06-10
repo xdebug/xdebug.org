@@ -1,4 +1,4 @@
-= xdebug_stop_function_monitor,2.4
+= xdebug_stop_function_monitor
 Stops monitoring functions
 void
 none

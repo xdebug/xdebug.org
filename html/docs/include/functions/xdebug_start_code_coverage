@@ -1,7 +1,7 @@
 = xdebug_start_code_coverage
 Starts code coverage
 void
-[int options]
+int $options = 0
 FUNC_CODE_COVERAGE
 
 TXT:

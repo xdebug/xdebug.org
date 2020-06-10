@@ -1,7 +1,7 @@
 = xdebug_print_function_stack
-Displays the current function stack.
-none
-[ string message [, int options ] ]
+Displays the current function stack
+void
+string $message = "user triggered", int $options = 0
 FUNC_STACK_TRACE
 
 TXT:
@@ -10,7 +10,7 @@ display in an error situation.
 
 TXT:
 The "message" argument allows you to replace
-the message in the header with your own. <i>(Introduced in Xdebug 2.1).</i>
+the message in the header with your own.
 
 EXAMPLE:
 <?php
@@ -40,6 +40,5 @@ The following options are currently supported:
 <dd>If this option is set, then the printed stack trace will not have a
 header. This is useful if you want to print a stack trace from your own error
 handler, as otherwise the printed location is where
-<code>xdebug_print_function_stack()</code> was called from. <i>(Introduced in
-Xdebug 2.3).</i></dd>
+<code>xdebug_print_function_stack()</code> was called from.</i></dd>
 </dl>

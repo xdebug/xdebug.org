@@ -1,7 +1,7 @@
-= xdebug_set_filter,2.6
+= xdebug_set_filter
 Set filter
 void
-int $group, int $list_type, array $configuration
+int $group, int $listType, array $configuration
 FUNC_CODE_COVERAGE
 
 TXT:

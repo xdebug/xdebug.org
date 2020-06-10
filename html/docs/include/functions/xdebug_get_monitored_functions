@@ -1,4 +1,4 @@
-= xdebug_get_monitored_functions,2.4
+= xdebug_get_monitored_functions
 Returns information about monitored functions
 array
 none

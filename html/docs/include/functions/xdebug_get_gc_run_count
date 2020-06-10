@@ -1,5 +1,5 @@
-= xdebug_get_gc_run_count,2.6
-Returns the number of garbage collection runs that have been triggered so far.
+= xdebug_get_gc_run_count
+Returns the number of garbage collection runs that have been triggered so far
 int
 none
 FUNC_GARBAGE_COLLECTION

@@ -1,4 +1,4 @@
-= xdebug_stop_error_collection,2.1
+= xdebug_stop_error_collection
 Stops recording of all notices, warnings and errors as started by [FUNC:xdebug_start_error_collection]
 void
 none

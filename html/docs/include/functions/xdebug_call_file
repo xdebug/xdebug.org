@@ -1,12 +1,12 @@
 = xdebug_call_file
-Returns the calling file, or <code>NULL</code> if the stack frame does not exist
-string
-[int $depth = 2]
+Returns the calling file
+mixed
+int $depth = 2
 FUNC_BASIC
 
 TXT:
 This function returns the filename from where the current function/method
-was executed from.
+was executed from, or <code>NULL</code> if the stack frame does not exist
 
 TXT:
 To retrieve information from earlier stack frames, use the optional

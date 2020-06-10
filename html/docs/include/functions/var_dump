@@ -1,7 +1,7 @@
 = var_dump
 Displays detailed information about a variable
 void
-[mixed var [, ...]]
+mixed ...$var
 FUNC_VAR_DUMP
 
 TXT:

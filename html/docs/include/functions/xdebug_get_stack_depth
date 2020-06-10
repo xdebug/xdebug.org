@@ -1,6 +1,6 @@
 = xdebug_get_stack_depth
 Returns the current stack depth level
-integer
+int
 none
 FUNC_STACK_TRACE
 

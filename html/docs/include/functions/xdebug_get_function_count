@@ -1,0 +1,9 @@
+= xdebug_get_function_count
+Returns the number of functions that have been called
+int
+none
+FUNC_BASIC
+
+TXT:
+This function returns the number of functions that have been called so far,
+including this function itself.
