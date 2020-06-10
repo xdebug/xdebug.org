@@ -11,7 +11,7 @@
 	<th>PHP <?= $this->run->cfg->config ?></th>
 	<th>Xdebug: <a href='https://github.com/xdebug/xdebug/commit/<?= $this->run->ref ?>'><?= $this->run->abbrev ?></a></th>
 	<?php if ( isset( $this->run->cfg->opcache ) ) : ?>
-	<th><div class='opcache-<?= $this->run->cfg->opcache ?>'><?= $this->run->cfg->opcache ? 'opcache' : 'no cache' ?></div></th>
+	<th><div class='opcache-<?= $this->run->cfg->opcache ?>'><?= $this->run->cfg->opcache ? 'opcache' : 'no opcache' ?></div></th>
 	<?php endif ?>
 	<th><div class='time'><?= (new \DateTime( "@{$this->run->ts}" ))->format( 'Y-m-d<\b\r/>H:i:s' ) ?></div></th>
 </tr>
