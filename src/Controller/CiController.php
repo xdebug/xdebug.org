@@ -52,6 +52,7 @@ class CiController
 		$query = new \MongoDB\Driver\Command( [
 			'aggregate' => 'run',
 			'pipeline' => [
+				[ '$match' => [ 'ts' => [ '$gt' => strtotime( '-2 weeks' ) ] ] ],
 				[ '$sort' => [ '_id' => -1 ] ],
 				[ '$project' => [
 					'failures' => 0,
