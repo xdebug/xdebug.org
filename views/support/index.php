@@ -15,7 +15,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <ul>
 	<li class="notick">Tech Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
 	<li class="notick">Issue Priority: Low</li>
-	<li>Monthly News Post via Patreon ‡</li>
+	<li>Monthly News Post</li>
 </ul>
 <div class="contact">Support Xdebug via<br/><a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a> or <a href='https://github.com/sponsors/derickr'>GitHub</a></div>
 </div>
@@ -54,5 +54,4 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <div class="terms">
 <p>* Subscriptions are yearly, and can be cancelled two weeks before renewal by e-mail. Price excluding VAT.</li>
 <p>† Invoices have a default 14 day payment term.</p>
-<p>‡ Patreon only, until GitHub Sponsors also adds this functionality.</p>
 </div>
