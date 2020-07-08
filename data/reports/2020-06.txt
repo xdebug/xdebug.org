@@ -1,0 +1,32 @@
+10.57	6.60	0.99	5.00	48.30
+2020-06-01	xdebug3	2	Fixed issue #1762: Introduce feature modes
+2020-06-04	xdebug3	6	Documentation for feature modes, start_up_request and related changs
+2020-06-05	xdebug3	2	Documentation for feature modes, start_up_request and related changs
+2020-06-05	xdebug3	3.5	Initial Xdebug 3 upgrade guide
+2020-06-06	bug	1.5	Issue #1794: Replace the filter's blacklist/whitelist with exclude/include
+2020-06-06	xdebug3	0.75	Issue #1792: Change start_with_request=always/never to start_with_request=yes/no
+2020-06-07	xdebug3	3	Issue #1793: Add xdebug.start_upon_error setting to cover the removed xdebug.remote_mode=jit feature
+2020-06-08	xdebug3	4.5	Issue #1793 and docs/upgrade guide; remove version info from Xdebug 3 docs; rewriting things
+2020-06-08	xdebug3	0.75	PHP 8: zend_error_cb API changes
+2020-06-10	xdebug3	4	Stubs, and updating documentation to have the right types (and syntax)
+2020-06-10	xdebug3	2	Removing PHP 7.2 (and earlier) support
+2020-06-10	ci	0.75	Debugging CI environment
+2020-06-11	ci	0.5	Fixing parallelization with CI environment
+2020-06-11	xdebug3	5	Removing PHP 7.2 (and earlier) support; and updating all the tests
+2020-06-12	xdebug3	4.5	Separating more code into the modules so that less works gets done when not needed
+2020-06-13	xdebug3	5	Separating more code into the modules so that less works gets done when not needed
+2020-06-14	xdebug3	3.75	Separating more code into the modules so that less works gets done when not needed
+2020-06-15	xdebug3	2	Hunting down bugs in xdebugCloud
+2020-06-17	xdebug3	3	Separating more code into the modules so that less works gets done when not needed
+2020-06-18	xdebug3	5	Separating more code into the modules so that less works gets done when not needed
+2020-06-19	xdebug3	5	Separating more code into the modules so that less works gets done when not needed
+2020-06-21	docs	3	Making graphic/animation to illustrate how Xdebug interacts with browser and IDE
+2020-06-22	xdebug3	3	Testing and merging Prs; Renaming “display” mode to “develop”; rearringing header capturing
+2020-06-23	docs	1.25	Stream with Matt about setting up Xdebug with Valet and VS Code
+2020-06-23	docs	0.75	Improving xdebug.remote_log documentation, adding tickets for documentation tasks
+2020-06-24	xdebug3	5.75	Issue #1801: Rename mode 'display' to mode 'develop', and split out from 'base'
+2020-06-25	xdebug3	5.25	Issue #1801: Rename mode 'display' to mode 'develop', and split out from 'base'
+2020-06-26	xdebug3	5.5	Issue #1801 / #1816: Using an Exception breakpoint leaks memory
+2020-06-28	xdebug3	2.75	Changing all filenames from char* to zend_string*
+2020-06-29	xdebug3	3.5	Changing all filenames from char* to zend_string*
+2020-06-29	xdebug3	1	Discussing Xdebug 3 and Xdebug Cloud with JetBrains
