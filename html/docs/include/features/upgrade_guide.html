@@ -85,6 +85,11 @@ section lists the removed settings and their replacements.</p>
 <dt><code>xdebug.auto_trace</code></dt>
 <dd><p>Use [CFG:mode]=<code>trace</code> with [CFG:start_with_request]=<code>yes</code>.</p></dd>
 
+<dt><code>xdebug.collect_includes</code></dt>
+<dd><p>Has been removed. File names for <code>include()</code> and
+<code>require()</code> are now always included in [FEAT:stack_trace] and
+[FEAT:trace] output.</p></dd>
+
 <dt><code>xdebug.coverage_enable</code></dt>
 <dd><p>Use [CFG:mode]=<code>coverage</code>.</p></dd>
 
@@ -99,6 +104,12 @@ section lists the removed settings and their replacements.</p>
 
 <dt><code>xdebug.gc_stats_output_dir</code></dt>
 <dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><code>xdebug.overload_var_dump</code></dt>
+<dd><p>Has been removed. PHP's <code>var_dump()</code> is now always overloaded
+through [FUNC:xdebug_var_dump] when <code>xdebug.mode</code> is set to
+<code>develop</code>. The [FUNC:xdebug_var_dump] function is available
+independent of which mode is configured.</p></dd>
 
 <dt><code>xdebug.profiler_enable</code></dt>
 <dd><p>Use [CFG:mode]=<code>profile</code>.</p></dd>
@@ -132,6 +143,10 @@ section lists the removed settings and their replacements.</p>
 <p>For the <code>jit</code> value, use [CFG:mode]=<code>debug</code> and
 [CFG:start_upon_error]=<code>yes</code>.</p>
 </dt>
+
+<dt><code>xdebug.show_mem_delta</code></dt>
+<dd><p>Has been removed. The difference in memory usage can be calculated by
+comparing the usage in the current frame with the previous one.</p></dd>
 
 <dt><code>xdebug.trace_output_dir</code></dt>
 <dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
