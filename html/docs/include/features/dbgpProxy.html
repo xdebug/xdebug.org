@@ -15,18 +15,10 @@ You only have to download the binary, which you can then run from a command line
 <tr><td><code>-h      </code></td>
     <td>Show this help</td></tr>
 
-<tr><td><code>-c&nbsp;host:port</code><br/><code>--client&nbsp;host:port</code></td>
+<tr><td><code>-i&nbsp;host:port</code><br/><code>--client&nbsp;host:port</code></td>
     <td>Specify the port to listen on for IDE (client) connections [<code>localhost:9001</code>].</td></tr>
-<!--
-<tr><td><code>- -client-ssl&nbsp;host:port</code>&nbsp;</td>
-    <td>Specify the port to listen on for IDE (client) SSL connections [<code>localhost:9031</code>].</td></tr>
--->
 <tr><td><code>-s&nbsp;host:port</code><br/><code>--server&nbsp;host:port</code></td>
     <td>Specify the port to listen on for debugger engine (server) connections [<code>localhost:9000</code>].</td></tr>
-<!--
-<tr><td><code>- -server-ssl&nbsp;host:port</code>&nbsp;</td>
-    <td>Specify the port to listen on for debugger engine (server) SSL connections [<code>localhost:9030</code>].</td></tr>
--->
 
 <tr><td><code>-v      </code></td>
     <td>Show version number and exit</td></tr>
@@ -65,27 +57,24 @@ as described above.</p>
 then wait until a connection is made to it by a debugging engine (such as
 Xdebug):</p>
 
-<pre class="shell">
-Xdebug DBGp proxy (0.2)
+<pre class="shell">Xdebug DBGp proxy (0.3)
 Copyright 2020 by Derick Rethans
-Proxy started
-Started client server on 127.0.0.1:9001
-Started server server on 127.0.0.1:9000
-Started server-ssl server on 127.0.0.1:9030
-Started client-ssl server on 127.0.0.1:9031
+15:17:35.423 [<font color="#FFFF55">warn</font>] [<font color="#AAAAAA">SSL</font>] The &apos;certs/fullchain.pem&apos; file could not be found, not enabling SSL listeners
+15:17:35.424 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">dbgpProxy</font>] Proxy started
+15:17:35.424 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">server</font>] Started server server on 127.0.0.1:9000
+15:17:35.424 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">server</font>] Started client server on 127.0.0.1:9001
 </pre>
 
 <p>When a client registers itself with the proxy it displays the IDE Key and
 where to reach that client:</p>
 
-<pre class="shell">
-- Start new client connection from 127.0.0.1:58226
-  - Added connection for IDE Key 'derick': 127.0.0.1:9900
-- Closing client connection from 127.0.0.1:58226
+<pre class="shell">15:18:57.087 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">server</font>] Start new client connection from 127.0.0.1:54196
+15:18:57.087 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">proxyinit</font>] [<font color="#FFFFFF"><b>derickr</b></font>] Added connection for IDE Key &apos;derickr&apos;: 127.0.0.1:9099
+15:18:57.087 [<font color="#55FF55">info</font>] [<font color="#AAAAAA">server</font>] Closing client connection from 127.0.0.1:54196
 </pre>
 
 <p>At this point the client should be ready to take incoming debugging
-connections to its registered port (<code>127.0.0.1:9900</code> in this
+connections to its registered port (<code>127.0.0.1:9099</code> in this
 example).</p>
 
 <p>You can stop the proxy by pressing <code>Ctrl-C</code> in its terminal. Once
