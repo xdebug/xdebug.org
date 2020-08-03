@@ -1,0 +1,33 @@
+9.08	8.71	0.99	5.00	48.30
+2020-07-01	xdebug3	5.25	Changing all filenames from char* to zend_string*
+2020-07-02	xdebug3	7	PHP 8 compat; #1811: Remove xdebug.collect_includes; #1812: Remove show_mem_delta; #1819: Remove overloaded_var_dump
+2020-07-03	xdebug3	1	#1819: Remove overloaded_var_dump
+2020-07-03	docs	1.5	PhpStorm web cast issues
+2020-07-05	xdebug3	1.75	Use zend_string for variable names
+2020-07-07	docs	1.5	Xdebug Cloud/Player/3 docs for Jetbrains
+2020-07-08	ci	1	PHP 8 on Windows/AppVeyor compatibility
+2020-07-08	xdebug3	3	dbgpProxy (check for SSL, and build with no-cloud) updates, and deployment automation
+2020-07-08	xdebug3	2	Issue #1818: Switch to using zend_string for variable names
+2020-07-09	xdebug3	4.5	Improving performance
+2020-07-10	xdebug3	4.75	Improving performance
+2020-07-13	xdebug3	2	Streaming Xdebug performance enhancements
+2020-07-14	xdebug3	1	Improving performance
+2020-07-15	xdebug3	6.5	Switch alloc-less string formatting for building xdebug_str's
+2020-07-16	xdebug3	0.5	Merging and testing allocation patch
+2020-07-16	xdebug3	3.5	xdebug_func_format to use a static buffer, PHP 8 compat
+2020-07-16	docs	2.5	Stream with Matt about setting up Xdebug
+2020-07-17	xdebug3	1.5	Reviewing PR #602: Increate profile time precision
+2020-07-19	xdebug3	0.75	Reviewing PR #602: Increate profile time precision
+2020-07-19	xdebug3	0.5	Reviewing PR #604: Profiler + fflush after every function end
+2020-07-20	xdebug3	2.75	Converting stack llist to vector
+2020-07-22	xdebug3	2.5	Converting stack llist to vector
+2020-07-23	xdebug3	6	Converting stack llist to vector; Use early return as often as possible
+2020-07-24	xdebug3	7	Reviewing “timezone” PR; finalising timing precision patch; merging early return patch, and fixes; review profiler flush PR
+2020-07-25	xdebug3	3	Profiling Xdebug, and the profiler specifically; Making profiles of Xdebug for benchmarking purposes
+2020-07-26	xdebug3	3	Removing two lines in php-code-coverage and making it a lot faster
+2020-07-27	xdebug3	5	Profiler improvements
+2020-07-28	xdebug3	2	Profiler improvements; Code coverage benchmark graph
+2020-07-29	xdebug3	4	Profiler improvements (issues #1825 and #1826); PR and issue #1824 review; better precision timing
+2020-07-30	xdebug3	4.5	Finalising PR for issue #1820 (more precise timing), and benchmarks
+2020-07-31	xdebug3	5	Benchmarks and profiling
+
