@@ -55,11 +55,6 @@ class SettingsController
 			\FUNC_STACK_TRACE
 		],
 
-		'show_mem_delta' => [
-			'integer', 0, null,
-			\FUNC_STACK_TRACE | \FUNC_FUNCTION_TRACE
-		],
-
 		'var_display_max_children' => [
 			'integer', 128, null,
 			\FUNC_STACK_TRACE | \FUNC_FUNCTION_TRACE | \FUNC_VAR_DUMP
@@ -83,11 +78,6 @@ class SettingsController
 		'collect_assignments' => [
 			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE
-		],
-
-		'collect_includes' => [
-			'boolean', 'true', null,
-			\FUNC_FUNCTION_TRACE | \FUNC_STACK_TRACE
 		],
 
 		'collect_params' => [
@@ -213,11 +203,6 @@ class SettingsController
 		'dump_undefined' => [
 			'boolean', 'false', null,
 			\FUNC_STACK_TRACE
-		],
-
-		'overload_var_dump' => [
-			'integer', 2, null,
-			\FUNC_VAR_DUMP
 		],
 
 		'file_link_format' => [
