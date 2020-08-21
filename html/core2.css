@@ -207,7 +207,7 @@ main h2, main h3 {
 
 pre, code {
 	line-height: 1.5em;
-    font-family: 'IBM Plex Mono';
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 pre, .example > code {

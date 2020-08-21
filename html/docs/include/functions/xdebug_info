@@ -1,0 +1,14 @@
+= xdebug_info
+Show diagnostic information
+void
+none
+FUNC_ALL
+
+TXT:
+This function returns an HTML page which shows diagnostic information. It is
+analogous to PHP's <a href='https://php.net/phpinfo'>phpinfo()</a> function.
+
+TXT:
+The HTML output includes which mode is active, what the settings are, and
+diagnostic information in case there are problems with debugging connections,
+opening of files, etc.

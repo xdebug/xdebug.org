@@ -179,7 +179,7 @@ class SettingsController
 			'string', 'cachegrind.out.%p', null,
 			\FUNC_PROFILER
 		],
-		
+
 		'gc_stats_output_name' => [
 			'string', 'gcstats.%p', null,
 			\FUNC_GARBAGE_COLLECTION
@@ -224,6 +224,11 @@ class SettingsController
 	public static function single(Setting $setting) : HtmlResponse
 	{
 		return new HtmlResponse($setting, 'docs/setting.php');
+	}
+
+	public static function singleLine(Setting $setting) : HtmlResponse
+	{
+		return new HtmlResponse($setting, 'docs/setting_line.php');
 	}
 
 	public static function all() : HtmlResponse

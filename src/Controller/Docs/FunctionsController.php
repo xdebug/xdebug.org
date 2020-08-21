@@ -18,6 +18,11 @@ class FunctionsController
 		return new HtmlResponse($function, 'docs/function.php');
 	}
 
+	public static function singleLine(FunctionDescription $function) : HtmlResponse
+	{
+		return new HtmlResponse($function, 'docs/function_line.php');
+	}
+
 	/**
 	 * @return array<int, FunctionDescription>
 	 */

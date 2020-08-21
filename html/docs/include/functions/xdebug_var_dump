@@ -7,7 +7,7 @@ FUNC_VAR_DUMP
 TXT:
 This function displays structured information about one or more expressions
 that includes its type and value. Arrays are explored recursively with values.
-See the introduction of [FEAT:display] on which php.ini settings affect this
+See the introduction of [FEAT:develop#display] on which php.ini settings affect this
 function.
 
 EXAMPLE:

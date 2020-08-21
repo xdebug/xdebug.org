@@ -21,10 +21,11 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
 	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
 		$pages = [
-			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
+			'install', 'develop', 'trace',
 			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgpClient', 'dbgp',
 			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
+		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
 
 		if (isset($matches[2])) {
 			if ($matches[2] === 'all_settings') {
@@ -33,6 +34,10 @@ try {
 				$contents = XdebugDotOrg\Controller\Docs\FunctionsController::all()->render();
 			} elseif (in_array($matches[2], $pages)) {
 				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2])->render();
+			} elseif (in_array($matches[2], $redirectDevelopPages)) {
+				$contents = XdebugDotOrg\Controller\DocsController::section('develop')->render();
+				header("Location: /docs/develop#{$matches[2]}");
+				exit();
 			} else {
 				header("HTTP/1.0 404 Not Found");
 				$contents = XdebugDotOrg\Controller\FourOhFourController::error()->render();

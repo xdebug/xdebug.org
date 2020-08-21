@@ -12,6 +12,7 @@
 			<?= $this->name ?>( <span class='type'><?= $this->arguments ?></span> )
 		<?php endif ?>
 		<span class='type'> : <?= $this->return_type ?></span>
+		<a href='#<?= $this->name ?>'>#</a>
 	</h3>
 
 	<div class='short-description'><p><?= $this->short_description ?></p></div>

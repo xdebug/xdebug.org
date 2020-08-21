@@ -13,30 +13,16 @@ class DocsController
 			\FUNC_INSTALL,
 			'This section describes on how to install Xdebug.',
 		],
-		'basic' => [
-			'Basic Features',
-			\FUNC_BASIC,
-			'Xdebug\'s basic functions include the display of stack traces on error
-			conditions, maximum nesting level protection and time tracking.',
-		],
-		'display' => [
-			'Variable Display Features',
-			\FUNC_VAR_DUMP,
-			'Xdebug replaces PHP\'s var_dump() function for displaying variables.
-			Xdebug\'s version includes different colors for different types and
-			places limits on the amount of array elements/object properties,
-			maximum depth and string lengths. There are a few other functions
-			dealing with variable display as well.',
-			[ 'tabfields' => [ 'demosettings' ] ]
-		],
-		'stack_trace' => [
-			'Stack Traces',
-			\FUNC_STACK_TRACE,
-			'When Xdebug is activated it will show a stack trace whenever PHP
-			decides to show a notice, warning, error etc. The information that
-			stack traces display, and the way how they are presented, can be
-			configured to suit your needs.',
-			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
+		'develop' => [
+			'Development Aids',
+			\FUNC_BASIC | \FUNC_VAR_DUMP | \FUNC_STACK_TRACE,
+			'Xdebug\'s development aids help you get better error messages and
+			obtain better information from PHP\'s built-in functions. The aids
+			include an upgraded <code>var_dump()</code> function; location,
+			stack, and argument information upon Notices, Warnings and
+			Exceptions; and numerous functions and settings to tweak PHP\'s
+			behaviour.',
+			[ 'tabfields' => [ 'demosettings', 'collectparams', 'othersettings' ] ]
 		],
 		'trace' => [
 			'Function Trace',

@@ -16,7 +16,7 @@ set up a filter. Currently there are two groups:
 
 <dl>
 <dt>XDEBUG_FILTER_TRACING</dt>
-<dd>The filter group used for filtering a [FEAT:stack_trace] upon errors, as well
+<dd>The filter group used for filtering a [FEAT:develop#stack_trace] upon errors, as well
 as for elements in a [FEAT:trace].</dd>
 
 <dt>XDEBUG_FILTER_CODE_COVERAGE</dt>
