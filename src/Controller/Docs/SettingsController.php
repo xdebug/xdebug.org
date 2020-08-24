@@ -14,11 +14,6 @@ class SettingsController
 			-1
 		],
 
-		'collect_vars' => [
-			'boolean', 'false', null,
-			\FUNC_STACK_TRACE
-		],
-
 		'force_display_errors' => [
 			'integer', 0, null,
 			\FUNC_BASIC

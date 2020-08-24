@@ -90,6 +90,11 @@ section lists the removed settings and their replacements.</p>
 <code>require()</code> are now always included in [FEAT:develop#stack_trace] and
 [FEAT:trace] output.</p></dd>
 
+<dt><code>xdebug.collect_vars</code></dt>
+<dd><p>Has been removed, it was only used in combination with the
+<code>xdebug_get_declared_vars()</code> function, which has also been
+removed.</p></dd>
+
 <dt><code>xdebug.coverage_enable</code></dt>
 <dd><p>Use [CFG:mode]=<code>coverage</code>.</p></dd>
 
@@ -158,6 +163,15 @@ comparing the usage in the current frame with the previous one.</p></dd>
 <dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
 </dl>
 
+<a name="Changes-to-Functions"></a>
+<h2>Changes to Functions</h2>
+
+<dl>
+<dt><code>xdebug_get_declared_vars()</code></dt>
+<dd><p>Has been removed. The information that this function returned can be
+obtained through the [FUNC:xdebug_get_function_stack] function.</p></dd>
+
+
 <a name="Changed-Constants"></a>
 <h2>Changed Constants</h2>
 
@@ -165,15 +179,15 @@ comparing the usage in the current frame with the previous one.</p></dd>
 
 <dl>
 <dt><code>XDEBUG_PATH_WHITELIST</code></dt>
-<dd>Is now: <cod>XDEBUG_PATH_INCLUDE</code></dd>
+<dd>Is now: <code>XDEBUG_PATH_INCLUDE</code></dd>
 
 <dt><code>XDEBUG_PATH_BLACKLIST</code></dt>
-<dd>Is now: <cod>XDEBUG_PATH_EXCLUDE</code></dd>
+<dd>Is now: <code>XDEBUG_PATH_EXCLUDE</code></dd>
 
 <dt><code>XDEBUG_NAMESPACE_WHITELIST</code></dt>
-<dd>Is now: <cod>XDEBUG_NAMESPACE_INCLUDE</code></dd>
+<dd>Is now: <code>XDEBUG_NAMESPACE_INCLUDE</code></dd>
 
 <dt><code>XDEBUG_NAMESPACE_BLACKLIST</code></dt>
-<dd>Is now: <cod>XDEBUG_NAMESPACE_EXCLUDE</code></dd>
+<dd>Is now: <code>XDEBUG_NAMESPACE_EXCLUDE</code></dd>
 
 </dl>
