@@ -22,7 +22,7 @@ try {
 	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
 		$pages = [
 			'install', 'develop', 'trace',
-			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgpClient', 'dbgp',
+			'profiler', 'remote', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
 			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];

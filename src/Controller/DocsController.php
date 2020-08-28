@@ -77,12 +77,17 @@ debug control flow and examine data structures.",
 		'upgrade_guide' => [
 			'Upgrading from Xdebug 2 to 3',
 			0,
-			'An upgade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
+			'An upgrade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
 		],
 		'faq' => [
 			'FAQ',
 			0,
 			'Frequently Asked Questions',
+		],
+		'errors' => [
+			'Description of errors',
+			0,
+			'This section lists all errors that show up in the PHP and diagnostic logs.',
 		],
 		'contributing' => [
 			'Contributing',

@@ -1,3 +1,10 @@
-<p>Selects the host where the debug client is running, you can either use a
-host name, IP address, or <code>unix:///path/to/sock</code> for a Unix domain
-socket. This setting is ignored if [CFG:remote_connect_back] is enabled.</p>
+<p>Configures the IP address or hostname where Xdebug will attempt to connect to when initiating a
+debugging connection. This address should be the address of the machine where your IDE or debugging
+client is listening for incoming debugging connections.</p>
+<p>On non-Windows platforms, it is also possible to configure a <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix domain socket</a> which is supported by
+only a select view debugging clients. In that case, instead of the hostname or IP address, use
+<code>unix:///path/to/sock</code>.</p>
+<p>If [CFG:remote_connect_back] is enabled then Xdebug will only use the value of this setting in
+case Xdebug can not connect to an IDE using the information it obtained from HTTP headers. In that
+case, the value of this setting acts as a fallback only.</p>

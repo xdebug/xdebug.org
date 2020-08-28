@@ -16,17 +16,19 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<p class='intro'><?= $this->description ?></p>
 	<?= $this->text ?>
 
-	<h2>Related Settings and Functions</h2>
-	<ul>
-		<?php foreach ($this->related_settings as $setting) : ?>
-			<?= XdebugDotOrg\Controller\Docs\SettingsController::singleLine($setting)->render() ?>
-		<?php endforeach ?>
-	</ul>
-	<ul>
-		<?php foreach ($this->related_functions as $function) : ?>
-			<?= XdebugDotOrg\Controller\Docs\FunctionsController::singleLine($function)->render() ?>
-		<?php endforeach ?>
-	</ul>
+	<?php if ($this->related_settings || $this->related_functions) : ?>
+		<h2>Related Settings and Functions</h2>
+		<ul>
+			<?php foreach ($this->related_settings as $setting) : ?>
+				<?= XdebugDotOrg\Controller\Docs\SettingsController::singleLine($setting)->render() ?>
+			<?php endforeach ?>
+		</ul>
+		<ul>
+			<?php foreach ($this->related_functions as $function) : ?>
+				<?= XdebugDotOrg\Controller\Docs\FunctionsController::singleLine($function)->render() ?>
+			<?php endforeach ?>
+		</ul>
+	<?php endif ?>
 
 	<a name='settings'></a>
 	<?php if ($this->related_settings) : ?>

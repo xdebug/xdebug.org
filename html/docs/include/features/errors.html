@@ -1,0 +1,511 @@
+<a name="Debugger"></a>
+<h2>Debugger</h2>
+
+<dl>
+
+<a name="DBG-E-NOCON"></a>
+<dt>DBG-E-NOCON</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to connect to a debuging client to start a
+	debugging session.
+</p>
+<p>
+	The debugger could not make a connection to the client. The error message
+	indicates which host and port combinations were tried, and through which
+	configuration options it came to that conclusion.
+</p>
+<p>
+	An example:
+</p>
+<p>
+	<code>
+	Could not connect to debugging client. Tried: ::1:9000 (from REMOTE_ADDR
+	HTTP header), localhost:9000 (fallback through
+	xdebug.remote_host/xdebug.remote_port)
+	</code>
+</p>
+<p>
+	This message indicates that Xdebug first tried to use <code>::1:9000</code>
+	(IPv6's localhost) from the <code>REMOTE_ADDR</code> header, and then it
+	fell back to <code>localhost:9000</code> as
+	configured with [CFG:remote_host] and [CFG:remote_port].
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check whether your debugging client is listening on the indicated
+		address and port. On Linux and OSX, you can use <code>netstat -a -n |
+		grep LISTEN</code> to check.</li>
+		<li>Change [CFG:remote_host] and/or [CFG:remote_port] to the right
+		address/hostname and port of where the debugging client is
+		listening.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="DBG-E-NOPERM"></a>
+<dt>DBG-E-NOPERM</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug has no permissions creating a connection to the
+	debugging client.
+</p>
+<p>
+	This can happen because system configuration, such as SELinux, disallows
+	a connection from being created.
+</p>
+<p>
+	Suggested solutions if SELinux is enabled:
+	<ul>
+		<li>Set SELinux to <em>permissive mode</em>, by changing
+		<code>SELINUX=enforcing</code> to <code>SELINUX=permissive</code> in
+		<code>/etc/selinux/config</code>, and rebooting your machine.</li>
+		<li>Allow <em>httpd</em> to make outwards connections by running:
+		<code>setsebool -P httpd_can_network_connect on</code></li>
+	</ul>
+</p>
+</dd>
+
+<a name="DBG-E-SES-INIT"></a>
+<dt>DBG-E-SES-INIT</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug succesfully connected to a debugging client, but
+	something went wrong sending the first data packet.
+</p>
+<p>
+	This can happen if the socket that Xdebug connected to does not have a
+	debugging client listening on it. For example, when it is PHP-FPM instead.
+	Check that the port that PHP-FPM uses is not the same as the one that
+	Xdebug uses. By default, they both use port <code>9000</code>.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li><a href="https://www.php.net/manual/en/install.fpm.configuration.php#listen">Configure
+		PHP-FPM</a> to use a different port than <code>9000</code>, or a Unix
+		domain socket instead.</li>
+		<li>Use [CFG:remote_port] and your debugging client's configuration to
+		change the debugging port to a different value (such as
+		<code>9003</code>).</li>
+	</ul>
+</p>
+</dd>
+
+<a name="DBG-E-TIMEOUT"></a>
+<dt>DBG-E-TIMEOUT</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug connection attempt times out.
+</p>
+<p>
+	This can happen because no debugging client is listenting, a firewall
+	prevents the connection by silently dropping connections, or when the
+	latency is too high.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Check whether a firewall is active, and if it is silently dropping
+		connection attempts from Xdebug to the debugging client.</li>
+		<li>Check whether your debugging client is listening on the address
+		and port as indicated in the error message.</li>
+		<li>Use [CFG:remote_timeout] to increase the time-out value
+		itself. A reasonable value for a time-out is anywhere from
+		<code>200</code> to <code>2000</code> milliseconds.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="DBG-W-CON"></a>
+<dt>DBG-W-CON</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:remote_connect_back] is turned on, and Xdebug could not
+	connect to the client with an address found in the HTTP headers.
+</p>
+<p>
+	This can occur when networking is not correctly set up, or Vagrant and
+	Docker networks are not configured correctly. Connecting back to the
+	address of the machine where the debugging client runs only works if they
+	are on the same network. If a networking set-up makes this impossible,
+	then you can not use [CFG:remote_connect_back].
+</p>
+<p>
+	If the address found in the HTTP headers can not be contacted, Xdebug
+	falls back to the static address as configured by [CFG:remote_host].
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Set [CFG:remote_connect_back] to <code>0</code> and configure a
+		static address with [CFG:remote_host].</li>
+		<li>If a debugging connection is working, ignore the warning or set
+		[CFG:remote_connect_back] to <code>0</code>.</li>
+		<li>Check your networking set up so that the web server sees the HTTP
+		request coming from an IP address on the same network as where the
+		debugging client is listening. For example, you can check the latter
+		on a Unix platform by running <code>ifconfig</code> and see if the IP
+		address matches with what is sent in the HTTP headers.</li>
+	</ul>
+</p>
+</dd>
+
+<a name='DBG-W-HDR'></a>
+<dt>DBG-W-HDR</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug's [CFG:remote_connect_back] setting is configured, and
+	no header could be found to use for information about which host to connect
+	to.
+</p>
+<p>
+	If Xdebug can not find a header containing this information, it will fall
+	back to address configured through [CFG:remote_host]. If a debugging
+	connection is succesfully created with that method, you can ignore this
+	warning.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>If a debugging connection was succesfully made, set
+		[CFG:remote_connect_back] to <code>0</code>.</li>
+		<li>If you are running Xdebug on the command line, then no HTTP
+		headers can be present. Set [CFG:remote_connect_back] to
+		<code>0</code>, or just ignore the warning.</li>
+		<li>Use your brower's debugging tools to see which HTTP headers were
+		sent to the HTTP server. If none were sent, then it is possible
+		that a proxy server or Web server configuration stripped out the
+		header(s). This is unlikely, as at least the <code>REMOTE_ADDR</code>
+		HTTP header should always be present.</li>
+		<li>If using [CFG:remote_addr_header], check if you have not made a
+		typo in your header's name.</li>
+	</ul>
+</p>
+</dd>
+
+<a name='DBG-W-INVADDR'></a>
+<dt>DBG-W-INVADDR</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug's [CFG:remote_connect_back] setting is configured, and
+	while trying to find which host to connect to, finds an address containing
+	<code>://</code>.
+</p>
+<p>
+	This warning indicates that an invalid header was present, perhaps
+	maliciously.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Use your brower's debugging tools to see which HTTP headers were
+		sent to Xdebug, and find out which one contains <code>://</code>. Then
+		make sure that header is either not sent, or disable
+		[CFG:remote_connect_back].</li>
+	</ul>
+</p>
+</dd>
+
+<a name='DBG-W-SENDERR'></a>
+<dt>DBG-W-SENDERR</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is sending data to a debugging client, but it has
+	closed the connection.
+</p>
+<p>
+	Indicates that the debugging client has closed the debugging connection
+	and Xdebug was not aware of this. When this warning happens, the debugging
+	connection is aborted on the Xdebug side too, and the rest of the request
+	can not be debugged.
+</p>
+</dd>
+
+<a name='DBG-W-SOCK1'></a>
+<dt>DBG-W-SOCK1</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to connect to a debuging client to start a
+	debugging session.
+</p>
+<p>
+	Indicates that Xdebug had an issue obtaining information about the
+	configured hostname or IP address from the Operating System. This can
+	indicate an issue with an entry in the <code>/etc/hosts</code> file or an
+	issue with reaching a DNS server.
+</p>
+</dd>
+
+<a name='DBG-W-SOCK2'></a>
+<dt>DBG-W-SOCK2</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to connect to a debuging client to start a
+	debugging session.
+</p>
+<p>
+	Indicates that Xdebug could not create a socket to connect to a debugging
+	client.
+</p>
+</dd>
+
+<a name='DBG-W-SOCK3'></a>
+<dt>DBG-W-SOCK3</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to connect to a debuging client to start a
+	debugging session.
+</p>
+<p>
+	Indicates that Xdebug could not set an option on the socket, such as
+	preventing the inheritance of a socket by client processes, setting the
+	socket in non-blocking mode, or setting the "no delay" option.
+</p>
+</dd>
+
+<a name='DBG-W-SOCK4'></a>
+<dt>DBG-W-SOCK4</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to connect to a debuging client to start a
+	debugging session.
+</p>
+<p>
+	A transient error saying that although a socket was created, it not
+	immediately was ready for handling communications. This can be safely
+	ignored.
+</p>
+</dd>
+
+<a name='DBG-W-UNIX'></a>
+<dt>DBG-W-UNIX</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:remote_host] starts with <code>unix://</code> and
+	something went wrong.
+</p>
+<p>
+	Xdebug could not create a Unix domain socket, connect to the created Unix
+	domain socket, or prevent the created socket from being inherited by
+	forked processes. The error message will indicate the reason that the
+	operating system gave.
+</p>
+<p>
+	A list of possible reasons:
+	<ul>
+		<li><em>connect: No such file or directory</em>: The path that you are
+		trying to use does not exist, or you have no permission to write to
+		it.</li>
+		<li><em>connect: Connection refused</em>: The file name that you
+		specified is not a Unix domain socket. For example, a normal file with
+		that name already exists.</li>
+	</ul>
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check whether the path after the initial <code>unix://</code>
+		exists, is not a normal file, and con be written to by the Operating
+		System users under which PHP and Xdebug run. Please note that this
+		needs to be a fully qualified path, so
+		<code>unix:///tmp/xdebug.socket</code> and not
+		<code>unix://tmp/xdebug.socket</code>.</li>
+		<li>Switch to a non-Unix domain socket value by setting
+		[CFG:remote_host] to an IP address or hostname instead.</li>
+	</ul>
+</p>
+</dd>
+
+<a name='DBG-W-UNIX-WIN'></a>
+<dt>DBG-W-UNIX-WIN</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:remote_host] starts with <code>unix://</code> and
+	Xdebug is running on a Windows platform.
+</p>
+<p>
+	Unix domain sockets are not supported on Windows. Please use a hostname or
+	IP address to configure the step debugger client address through
+	[CFG:remote_host] instead.
+</p>
+</dl>
+
+<h2>Logging</h2>
+
+<dl>
+
+<a name="LOG-E-OPEN"></a>
+<dt>LOG-E-OPEN</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to open a log file, and it can't.
+</p>
+<p>
+	It is likely that either the path configured within [CFG:log] does not
+	exist, or that Xdebug has no permissions creating or writing to the file.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check whether the directory exists, and if not, create it.</li>
+		<li>If the directory exists, check whether the user that Xdebug, PHP,
+		and the web server run at, have permissions to create a file in the
+		directory.</li>
+		<li>If the file exists, check whether the user that Xdebug, PHP, and
+		the web server run at, can write to the file.</li>
+	</ul>
+</p>
+</dd>
+
+</dl>
+
+<h2>Profiling</h2>
+
+<dl>
+
+<a name="PROF-E-OPEN"></a>
+<dt>PROF-E-OPEN</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to create a profiling file, but it can not.
+</p>
+<p>
+	It is likely that either the path configured within [CFG:output_dir] does
+	not exist, or that Xdebug has no permissions creating or writing to the
+	file.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Check the diagnostics log with [FUNC:xdebug_info] or the general
+		Xdebug log file for the reason. There will be either an entry for <a
+		href="#PROF-W-NOTDIR">PROF-E-NOTDIR</a>, <a
+		href="#PROF-W-PERM">PROF-W-PERM</a>, or <a
+		href="#PROF-W-STAT">PROF-W-STAT</a>.
+	</ul>
+</p>
+</dd>
+
+<a name="PROF-W-NOTDIR"></a>
+<dt>PROF-W-NOTDIR</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:output_dir] is not set to a directory, but a normal file.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Set [CFG:output_dir] to a directory.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="PROF-W-PERM"></a>
+<dt>PROF-W-PERM</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug can not create in the [CFG:output_dir] directory.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Change the permissions on [CFG:output_dir] and parent directories
+		so that user under which PHP and Xdebug run at has write
+		permissions.</li>
+		<li>Change [CFG:output_dir] to a directory to which the user that PHP
+		and Xdebug run at has write permissions.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="PROF-W-STAT"></a>
+<dt>PROF-W-STAT</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:output_dir] is not a valid path.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Change [CFG:output_dir] to a valid path.</li>
+	</ul>
+</p>
+</dd>
+
+
+<h2>Tracing</h2>
+
+<dl>
+
+<a name="TRACE-E-OPEN"></a>
+<dt>TRACE-E-OPEN</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is trying to create a trace file, but it can not.
+</p>
+<p>
+	It is likely that either the path configured within [CFG:output_dir] does
+	not exist, or that Xdebug has no permissions creating or writing to the
+	file.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Check the diagnostics log with [FUNC:xdebug_info] or the general
+		Xdebug log file for the reason. There will be either an entry for <a
+		href="#TRACE-W-NOTDIR">TRACE-E-NOTDIR</a>, <a
+		href="#TRACE-W-PERM">TRACE-W-PERM</a>, or <a
+		href="#TRACE-W-STAT">TRACE-W-STAT</a>.
+	</ul>
+</p>
+</dd>
+
+<a name="TRACE-W-NOTDIR"></a>
+<dt>TRACE-W-NOTDIR</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:output_dir] is not set to a directory, but a normal file.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Set [CFG:output_dir] to a directory.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="TRACE-W-PERM"></a>
+<dt>TRACE-W-PERM</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug can not create in the [CFG:output_dir] directory.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Change the permissions on [CFG:output_dir] and parent directories
+		so that user under which PHP and Xdebug run at has write
+		permissions.</li>
+		<li>Change [CFG:output_dir] to a directory to which the user that PHP
+		and Xdebug run at has write permissions.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="TRACE-W-STAT"></a>
+<dt>TRACE-W-STAT</dt>
+<dd>
+<p class="reason">
+	Occurs when [CFG:output_dir] is not a valid path.
+</p>
+<p>
+	Suggested solution:
+	<ul>
+		<li>Change [CFG:output_dir] to a valid path.</li>
+	</ul>
+</p>
+</dd>
+
+</dl>
