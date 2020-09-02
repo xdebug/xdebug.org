@@ -1,0 +1,25 @@
+9.20	8.58	0.99	5.00	48.30
+2020-08-01	xdebug3	2.5	Reviewing profile PRS #618, #619, and #620; Making PR #621 to optimise the size of function_stack_entry
+2020-08-03	docs	1	Xdebug Cloud presentation
+2020-08-05	docs	1.25	Xdebug Cloud retake of video
+2020-08-06	xdebug3	2.5	clock_gettime/MONOTONIC is relative
+2020-08-06	ci	4	Azure Pipelines set-up for OSX
+2020-08-07	ci	3	Azure Pipelines set-up for OSX
+2020-08-07	xdebug3	6	PHP 8 compat, and refactoring collecting variables
+2020-08-08	xdebug3	2	PHP 8 compat, and refactoring collecting variables
+2020-08-10	xdebug3	2	Adding xdebug_info()
+2020-08-12	xdebug3	5	Extract logging into new mechanism
+2020-08-13	xdebug3	5	Diagnostics into xdebug_info()
+2020-08-14	xdebug3	4.75	Diagnostics into xdebug_info()
+2020-08-15	xdebug3	5.25	Extend logging into xdebug_info() with links to documentation; investigate #1830
+2020-08-16	docs	1.5	Rewriting “develop” docs
+2020-08-17	docs	1.5	Rewriting “develop” docs
+2020-08-17	xdebug3	3	Adding XDEBUG_MODE environment variable on stream; Issue #1834: Return type must be bool in overloaded set_time_limit
+2020-08-21	docs	3	Rewrite “develop” docs (and remove stack_trace, display, and basic pages)
+2020-08-22	xdebug3	3.5	variables names for internal functions in traces and stacktraces
+2020-08-23	xdebug3	2	variables names for internal functions in traces and stacktraces
+2020-08-24	xdebug3	8.25	#1836: variable names for internal function, #1810: Remove collect_vars and xdebug_get_declared_vars(), #1838: Remove collect_params setting
+2020-08-26	bug	0.75	Keepalive patch
+2020-08-27	talk	4	Preparing and giving Xdebug 3 talk for PHP UG Mannheim
+2020-08-28	docs	5	Adding documentation for errors through diagnostics log
+2020-08-29	bug	0.5	Keepalive patch
