@@ -62,8 +62,14 @@ try {
 	} elseif ($requested_uri === '/core2.css') {
 		header('Content-type: text/css');
 		die(file_get_contents('core2.css'));
-	} elseif (preg_match('/woff2$/', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*woff2)$@', $requested_uri, $matches)) {
 		header('Content-Type: font/woff2');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*png)$@', $requested_uri, $matches)) {
+		header('Content-Type: image/png');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*jpg)$@', $requested_uri, $matches)) {
+		header('Content-Type: image/jpeg');
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();

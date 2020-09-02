@@ -12,3 +12,10 @@ TXT:
 The HTML output includes which mode is active, what the settings are, and
 diagnostic information in case there are problems with debugging connections,
 opening of files, etc.
+
+TXT:
+Each warning and error in the diagnostics log also links through to the
+[FEAT:errors] documentation page.
+
+TXT:
+<img src="/images/diagnostics.png"/>

@@ -145,14 +145,14 @@ class SettingsController
 			\FUNC_REMOTE
 		],
 
-		'remote_log' => [
+		'log' => [
 			'string', '', null,
-			\FUNC_REMOTE
+			-1
 		],
 
-		'remote_log_level' => [
+		'log_level' => [
 			'integer', '7', null,
-			\FUNC_REMOTE
+			-1
 		],
 
 		'remote_port' => [
