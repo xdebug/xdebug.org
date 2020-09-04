@@ -83,6 +83,12 @@ p a, ul a {
 	font-weight: bold;
 }
 
+p.warning {
+	border-left: #317e1e 3px solid;
+	padding-left: 0.5em;
+	background-color: #e5f5d5;
+}
+
 a:hover {
 	text-decoration: underline;
 }
