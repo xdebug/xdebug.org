@@ -153,6 +153,9 @@ independent of which mode is configured.</p></dd>
 <dt><code>xdebug.remote_handler</code></dt>
 <dd><p>No replacement. Xdebug's step debugger only supported the <a href="/docs/dbgp">DBGp handler</a>.</p></dd>
 
+<dt><code>xdebug.remote_host</code></dt>
+<dd><p>Replaced by [CFG:client_host].</p></dd>
+
 <dt><code>xdebug.remote_log</code></dt>
 <dd><p>Replaced by [CFG:log], which also includes log messages beyond [FEAT:remote].</p></dd>
 
@@ -170,6 +173,12 @@ independent of which mode is configured.</p></dd>
 <p>For the <code>jit</code> value, use [CFG:mode]=<code>debug</code> and
 [CFG:start_upon_error]=<code>yes</code>.</p>
 </dt>
+
+<dt><code>xdebug.remote_port</code></dt>
+<dd><p>Replaced by [CFG:client_port].</p></dd>
+
+<dt><code>xdebug.remote_timeout</code></dt>
+<dd><p>Replaced by [CFG:connect_timeout_ms].</p></dd>
 
 <dt><code>xdebug.show_mem_delta</code></dt>
 <dd><p>Has been removed. The difference in memory usage can be calculated by

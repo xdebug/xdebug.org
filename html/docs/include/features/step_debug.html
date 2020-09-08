@@ -38,8 +38,8 @@ way of set-up if you are sharing a development server among you and your team
 mates.</p>
 
 <p>In more complex set-ups you need to configure the host and port that Xdebug
-connects to yourself. With [CFG:remote_host] you can select the IP or hostname
-of the machine that runs your IDE, and with [CFG:remote_port] the TCP port.
+connects to yourself. With [CFG:client_host] you can select the IP or hostname
+of the machine that runs your IDE, and with [CFG:client_port] the TCP port.
 Make sure that the host running PHP/Xdebug can connect to your IDE with the
 configured IP address and port, and that there is no firewall or other software
 blocking an incoming connection.</p>
@@ -129,8 +129,7 @@ not important.</p>
 cookie is present, debugging will be initiated for every HTTP request
 (including favicons and images if they go through PHP).</p>
 
-<p>The default time-out of the cookie is one hour, but this can be configured with the
-[CFG:remote_cookie_expire_time] setting.</p>
+<p>The time-out of the cookie is one hour.</p>
 
 <p>If you set the <code>XDEBUG_SESSION_STOP</code> <code>GET</code> (or
 <code>POST</code>) HTTP parameter, Xdebug removes the cookie.</p>

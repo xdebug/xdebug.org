@@ -9,7 +9,7 @@ variable with that configured name will be checked before
 
 <p>If Xdebug can not connect to a debugging client as found in one of the HTTP
 headers, it will fall back to the hostname or IP address as configured by the
-[CFG:remote_host] setting.</p>
+[CFG:client_host] setting.</p>
 
 <p>This setting does not apply for debugging through the CLI, as the
 <code>$_SERVER</code> header variables are not available there.</p>
@@ -17,4 +17,4 @@ headers, it will fall back to the hostname or IP address as configured by the
 <p class="warning"><strong>Warning:</strong> Please note that there is no filter
 available, and anybody who can connect to the webserver will then be able to
 start a debugging session, even if their address does not match
-[CFG:remote_host].</p>
+[CFG:client_host].</p>

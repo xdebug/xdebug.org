@@ -22,14 +22,14 @@
 	<code>
 	Could not connect to debugging client. Tried: ::1:9000 (from REMOTE_ADDR
 	HTTP header), localhost:9000 (fallback through
-	xdebug.remote_host/xdebug.remote_port)
+	xdebug.client_host/xdebug.client_port)
 	</code>
 </p>
 <p>
 	This message indicates that Xdebug first tried to use <code>::1:9000</code>
 	(IPv6's localhost) from the <code>REMOTE_ADDR</code> header, and then it
 	fell back to <code>localhost:9000</code> as
-	configured with [CFG:remote_host] and [CFG:remote_port].
+	configured with [CFG:client_host] and [CFG:client_port].
 </p>
 <p>
 	Suggested solutions:
@@ -37,7 +37,7 @@
 		<li>Check whether your debugging client is listening on the indicated
 		address and port. On Linux and OSX, you can use <code>netstat -a -n |
 		grep LISTEN</code> to check.</li>
-		<li>Change [CFG:remote_host] and/or [CFG:remote_port] to the right
+		<li>Change [CFG:client_host] and/or [CFG:client_port] to the right
 		address/hostname and port of where the debugging client is
 		listening.</li>
 	</ul>
@@ -86,7 +86,7 @@
 		<li><a href="https://www.php.net/manual/en/install.fpm.configuration.php#listen">Configure
 		PHP-FPM</a> to use a different port than <code>9000</code>, or a Unix
 		domain socket instead.</li>
-		<li>Use [CFG:remote_port] and your debugging client's configuration to
+		<li>Use [CFG:client_port] and your debugging client's configuration to
 		change the debugging port to a different value (such as
 		<code>9003</code>).</li>
 	</ul>
@@ -111,7 +111,7 @@
 		connection attempts from Xdebug to the debugging client.</li>
 		<li>Check whether your debugging client is listening on the address
 		and port as indicated in the error message.</li>
-		<li>Use [CFG:remote_timeout] to increase the time-out value
+		<li>Use [CFG:connect_timeout_ms] to increase the time-out value
 		itself. A reasonable value for a time-out is anywhere from
 		<code>200</code> to <code>2000</code> milliseconds.</li>
 	</ul>
@@ -134,13 +134,13 @@
 </p>
 <p>
 	If the address found in the HTTP headers can not be contacted, Xdebug
-	falls back to the static address as configured by [CFG:remote_host].
+	falls back to the static address as configured by [CFG:client_host].
 </p>
 <p>
 	Suggested solutions:
 	<ul>
 		<li>Set [CFG:remote_connect_back] to <code>0</code> and configure a
-		static address with [CFG:remote_host].</li>
+		static address with [CFG:client_host].</li>
 		<li>If a debugging connection is working, ignore the warning or set
 		[CFG:remote_connect_back] to <code>0</code>.</li>
 		<li>Check your networking set up so that the web server sees the HTTP
@@ -162,7 +162,7 @@
 </p>
 <p>
 	If Xdebug can not find a header containing this information, it will fall
-	back to address configured through [CFG:remote_host]. If a debugging
+	back to address configured through [CFG:client_host]. If a debugging
 	connection is succesfully created with that method, you can ignore this
 	warning.
 </p>
@@ -283,7 +283,7 @@
 <dt>DBG-W-UNIX</dt>
 <dd>
 <p class="reason">
-	Occurs when [CFG:remote_host] starts with <code>unix://</code> and
+	Occurs when [CFG:client_host] starts with <code>unix://</code> and
 	something went wrong.
 </p>
 <p>
@@ -313,7 +313,7 @@
 		<code>unix:///tmp/xdebug.socket</code> and not
 		<code>unix://tmp/xdebug.socket</code>.</li>
 		<li>Switch to a non-Unix domain socket value by setting
-		[CFG:remote_host] to an IP address or hostname instead.</li>
+		[CFG:client_host] to an IP address or hostname instead.</li>
 	</ul>
 </p>
 </dd>
@@ -322,13 +322,13 @@
 <dt>DBG-W-UNIX-WIN</dt>
 <dd>
 <p class="reason">
-	Occurs when [CFG:remote_host] starts with <code>unix://</code> and
+	Occurs when [CFG:client_host] starts with <code>unix://</code> and
 	Xdebug is running on a Windows platform.
 </p>
 <p>
 	Unix domain sockets are not supported on Windows. Please use a hostname or
 	IP address to configure the step debugger client address through
-	[CFG:remote_host] instead.
+	[CFG:client_host] instead.
 </p>
 </dl>
 

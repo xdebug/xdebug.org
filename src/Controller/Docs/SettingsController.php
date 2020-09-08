@@ -107,42 +107,47 @@ class SettingsController
 
 		'start_with_request' => [
 			'string', 'default', null,
-			\FUNC_REMOTE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
+			\FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
 		],
 
 		'start_upon_error' => [
 			'string', 'default', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
 		'trigger_value' => [
 			'string', '""', null,
-			\FUNC_BASIC | \FUNC_REMOTE | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE
+			\FUNC_BASIC | \FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE
 		],
 
 		'idekey' => [
 			'string', '*complex*', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
 		'remote_addr_header' => [
 			'string', '""', null,
-			\FUNC_REMOTE
-		],
-
-		'remote_cookie_expire_time' => [
-			'integer', 3600, null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
 		'remote_connect_back' => [
 			'boolean', 'false', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
-		'remote_host' => [
+		'client_host' => [
 			'string', 'localhost', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
+		],
+
+		'client_port' => [
+			'integer', 9000, null,
+			\FUNC_STEP_DEBUG
+		],
+
+		'connect_timeout_ms' => [
+			'integer', 200, null,
+			\FUNC_STEP_DEBUG
 		],
 
 		'log' => [
@@ -153,16 +158,6 @@ class SettingsController
 		'log_level' => [
 			'integer', '7', null,
 			-1
-		],
-
-		'remote_port' => [
-			'integer', 9000, null,
-			\FUNC_REMOTE
-		],
-
-		'remote_timeout' => [
-			'integer', 200, null,
-			\FUNC_REMOTE
 		],
 
 		'profiler_append' => [
