@@ -52,9 +52,9 @@ class DocsController
 			script and visualize those with an external tool such as KCacheGrind or
 			WinCacheGrind.',
 		],
-		'remote' => [
+		'step_debug' => [
 			'Step Debugging',
-			\FUNC_REMOTE,
+			\FUNC_STEP_DEBUG,
 			"Xdebug's step debugger allows you to interactively walk through your code to
 debug control flow and examine data structures.",
 		],

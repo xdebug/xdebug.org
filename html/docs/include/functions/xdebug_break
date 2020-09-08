@@ -2,7 +2,7 @@
 Emits a breakpoint to the debug client
 bool
 none
-FUNC_REMOTE
+FUNC_STEP_DEBUG
 
 TXT:
 This function makes the debugger break on the line it is called from, as if a

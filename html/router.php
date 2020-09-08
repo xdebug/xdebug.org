@@ -22,7 +22,7 @@ try {
 	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
 		$pages = [
 			'install', 'develop', 'trace',
-			'profiler', 'remote', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
+			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
 			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
@@ -32,10 +32,14 @@ try {
 				$contents = XdebugDotOrg\Controller\Docs\SettingsController::all()->render();
 			} elseif ($matches[2] === 'all_functions') {
 				$contents = XdebugDotOrg\Controller\Docs\FunctionsController::all()->render();
+			} elseif ($matches[2] === 'remote') {
+				header("HTTP/1.1 301 Moved Permanently");
+				header('Location: /docs/step_debug');
+				exit();
 			} elseif (in_array($matches[2], $pages)) {
 				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2])->render();
 			} elseif (in_array($matches[2], $redirectDevelopPages)) {
-				$contents = XdebugDotOrg\Controller\DocsController::section('develop')->render();
+				header("HTTP/1.1 301 Moved Permanently");
 				header("Location: /docs/develop#{$matches[2]}");
 				exit();
 			} else {

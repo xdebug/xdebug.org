@@ -10,13 +10,13 @@ enable functionality, and to configure when Xdebug's feature activates.</p>
 
 <p>The idea behind this is that it is important that Xdebug only has overhead
 for the features that are actually wanted. For example, it makes no sense have
-both [FEAT:profiler] and [FEAT:remote] active at the same time.</p>
+both [FEAT:profiler] and [FEAT:step_debug] active at the same time.</p>
 
 <p>Besides setting the mode with [CFG:mode], you can also set the mode with the
 <code>XDEBUG_MODE</code> environment variable. If this environment variable is
 active, it overrides the mode as set through [CFG:mode].</p>
 
-<p>To make sure that just [FEAT:remote] is active, instead of:</p>
+<p>To make sure that just [FEAT:step_debug] is active, instead of:</p>
 
 <pre>
 xdebug.remote_enable=1
@@ -157,7 +157,7 @@ independent of which mode is configured.</p></dd>
 <dd><p>Replaced by [CFG:client_host].</p></dd>
 
 <dt><code>xdebug.remote_log</code></dt>
-<dd><p>Replaced by [CFG:log], which also includes log messages beyond [FEAT:remote].</p></dd>
+<dd><p>Replaced by [CFG:log], which also includes log messages beyond [FEAT:step_debug].</p></dd>
 
 <dt><code>xdebug.remote_log_level</code></dt>
 <dd><p>Replaced by [CFG:log_level].</p></dd>

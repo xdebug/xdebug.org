@@ -1,4 +1,4 @@
-<p>A [FEAT:trace], [FEAT:garbage_collection], [FEAT:profiler], or [FEAT:remote]
+<p>A [FEAT:trace], [FEAT:garbage_collection], [FEAT:profiler], or [FEAT:step_debug]
 can be activated at the start of a PHP request. Whether this happens depends on
 the value of this setting:</p>
 
@@ -20,7 +20,7 @@ whole request.</p>
 <p>The functionality does not get activated when the request starts.</p>
 
 <p>You can still start a [FEAT:trace] with [FUNC:xdebug_start_trace], 
-[FEAT:remote] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
+[FEAT:step_debug] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
 </dd>
 
 
@@ -38,9 +38,9 @@ for its presence in either <code>$_ENV</code> (environment variable),
 <p>There is also a legacy fallback to a functionality specific trigger name:
 <code>XDEBUG_PROFILE</code> (for [FEAT:profiler]), <code>XDEBUG_TRACE</code>
 (for a [FEAT:trace]), and <code>XDEBUG_SESSION</code> (for
-[FEAT:remote]).</p>
+[FEAT:step_debug]).</p>
 
-<p>Debug session management for [FEAT:remote#browser_session] is also still available through
+<p>Debug session management for [FEAT:step_debug#browser_session] is also still available through
 <code>XDEBUG_SESSION_START</code>.</p>
 
 <p>With [CFG:trigger_value] you can control which specific trigger value will
