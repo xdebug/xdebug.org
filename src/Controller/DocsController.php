@@ -70,9 +70,9 @@ debug control flow and examine data structures.",
 			'This tool allows you to proxy and route debugging request to IDEs depending on which IDE key is in use.',
 		],
 		'compat' => [
-			'Compatibility',
+			'Supported Versions and Compatibility',
 			0,
-			'Xdebug and PHP version compatibility',
+			'This page lists which versions of Xdebug are still supported, and with which versions of PHP they can be used.',
 		],
 		'upgrade_guide' => [
 			'Upgrading from Xdebug 2 to 3',
