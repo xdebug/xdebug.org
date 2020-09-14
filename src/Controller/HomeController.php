@@ -207,7 +207,7 @@ class HomeController
 			{
 				continue;
 			}
-			if ( $diff->days > 365 )
+			if ( $diff->days > 400 )
 			{
 				continue;
 			}
