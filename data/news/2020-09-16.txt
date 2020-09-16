@@ -1,0 +1,16 @@
+Xdebug 2.9.7 is out!
+<p>This patch release configures the TCP Keepalive Mechanism for debugging
+connections, resulting in better time-out management in case a network
+drops.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2_9_7">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2_9_7">downloads</a> page, and as usual, Xdebug is
+installable through PECL.</p>
+
+<!--
+<p>This release also contains a contribution by: <i>Sammy Powers</i> —
+Thanks!</p>
+-->

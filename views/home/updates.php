@@ -22,6 +22,13 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_7'></a>[2020-09-16] &mdash; Xdebug 2.9.7</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1839); ?>: Add keepalive options to debugging socket</dd>
+
+
 <dt><a name='x_2_9_6'></a>[2020-05-29] &mdash; Xdebug 2.9.6</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
