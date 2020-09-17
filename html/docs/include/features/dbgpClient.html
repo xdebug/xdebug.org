@@ -26,7 +26,7 @@ You only have to download the binary, which you can then run from a command line
     <td>Show this help</td></tr>
 
 <tr><td><code>-p&nbsp;value</code>&nbsp;</td>
-     <td>Specify the port to listen on [<code>9000</code>]. This is the same
+     <td>Specify the port to listen on [<code>9003</code>]. This is the same
          port that Xdebug should initiate a connection on. On the Xdebug side,
          this port can be configured with the [CFG:remote_port]
          setting.</td></tr>
@@ -95,17 +95,17 @@ as described above.</p>
 then wait until a connection is made to it by a debugging engine (such as
 Xdebug):</p>
 
-<pre class="shell">Xdebug Simple DBGp client (<font color="#FFFFFF"><b>0.1</b></font>)
+<pre class="shell">Xdebug Simple DBGp client (<font color="#FFFFFF"><b>0.4.2</b></font>)
 Copyright 2019-2020 by Derick Rethans
 
-Waiting for debug server to connect on port 9000.
+Waiting for debug server to connect on port 9003.
 </pre>
 
 
 <p>After a connection is received, the debug client shows basic information, and then shows the <code>(cmd) </code> prompt and waits for input:</p>
 
 <pre class="shell">Connect from [::1]:51884
-DBGp/<font color="#55FF55"><b>1.0</b></font>: <font color="#FFFFFF"><b>Xdebug</b></font> <font color="#55FF55"><b>2.9.2</b></font> — For <font color="#FFFFFF"><b>PHP</b></font> <font color="#55FF55"><b>7.4.3-dev</b></font>
+DBGp/<font color="#55FF55"><b>1.0</b></font>: <font color="#FFFFFF"><b>Xdebug</b></font> <font color="#55FF55"><b>3.0.0</b></font> — For <font color="#FFFFFF"><b>PHP</b></font> <font color="#55FF55"><b>7.4.3-dev</b></font>
 Debugging <font color="#FFFF55"><b>file:///tmp/xdebug-test-2.php</b></font> (ID: <font color="#FFFF55">5242</font>/<font color="#FFFF55">dr</font>)
 <font color="#FFFFFF"><b>(cmd) </b></font>
 </pre>

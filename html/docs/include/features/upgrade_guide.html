@@ -42,6 +42,9 @@ php script-name.php
 <a name="Step-Debugging"></a>
 <h2>Step Debugging</h2>
 
+<p class="warning">Xdebug's default debugging port has changed from
+<code>9000</code> to <code>9003</code>.</p>
+
 <a name="Activating-on-the-Command-Line"></a>
 <h3>Activating on the Command Line</h3>
 <p>Instead of setting the <code>XDEBUG_CONFIG</code> environment variable to
@@ -175,7 +178,10 @@ independent of which mode is configured.</p></dd>
 </dt>
 
 <dt><code>xdebug.remote_port</code></dt>
-<dd><p>Replaced by [CFG:client_port].</p></dd>
+<dd>
+<p>Replaced by [CFG:client_port].</p>
+<p>The default value has also changed from <code>9000</code> to <code>9003</code>.</p>
+</dd>
 
 <dt><code>xdebug.remote_timeout</code></dt>
 <dd><p>Replaced by [CFG:connect_timeout_ms].</p></dd>

@@ -20,15 +20,15 @@
 </p>
 <p>
 	<code>
-	Could not connect to debugging client. Tried: ::1:9000 (from REMOTE_ADDR
-	HTTP header), localhost:9000 (fallback through
+	Could not connect to debugging client. Tried: ::1:9003 (from REMOTE_ADDR
+	HTTP header), localhost:9003 (fallback through
 	xdebug.client_host/xdebug.client_port)
 	</code>
 </p>
 <p>
-	This message indicates that Xdebug first tried to use <code>::1:9000</code>
+	This message indicates that Xdebug first tried to use <code>::1:9003</code>
 	(IPv6's localhost) from the <code>REMOTE_ADDR</code> header, and then it
-	fell back to <code>localhost:9000</code> as
+	fell back to <code>localhost:9003</code> as
 	configured with [CFG:client_host] and [CFG:client_port].
 </p>
 <p>
@@ -78,17 +78,17 @@
 	This can happen if the socket that Xdebug connected to does not have a
 	debugging client listening on it. For example, when it is PHP-FPM instead.
 	Check that the port that PHP-FPM uses is not the same as the one that
-	Xdebug uses. By default, they both use port <code>9000</code>.
+	Xdebug uses. By default, they both use port <code>9003</code>.
 </p>
 <p>
 	Suggested solution:
 	<ul>
 		<li><a href="https://www.php.net/manual/en/install.fpm.configuration.php#listen">Configure
-		PHP-FPM</a> to use a different port than <code>9000</code>, or a Unix
+		PHP-FPM</a> to use a different port than <code>9003</code>, or a Unix
 		domain socket instead.</li>
 		<li>Use [CFG:client_port] and your debugging client's configuration to
 		change the debugging port to a different value (such as
-		<code>9003</code>).</li>
+		<code>9007</code>).</li>
 	</ul>
 </p>
 </dd>
