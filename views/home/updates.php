@@ -22,6 +22,14 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_2_9_8'></a>[2020-09-28] &mdash; Xdebug 2.9.8</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1851); ?>: Paths are not counted as coveraged with loops calling function</dd>
+<dd>Fixed <?= bug(1855); ?>: Build issues on FreeBSD</dd>
+
+
 <dt><a name='x_2_9_7'></a>[2020-09-16] &mdash; Xdebug 2.9.7</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
