@@ -3,7 +3,7 @@ HTTP request. It checks the <code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
 <code>$_SERVER['REMOTE_ADDR']</code> variables to find out which hostname or IP
 address to use.</p>
 
-<p>If [CFG:remote_addr_header] is configured, then the <code>$_SERVER</code>
+<p>If [CFG:client_discovery_header] is configured, then the <code>$_SERVER</code>
 variable with that configured name will be checked before
 <code>HTTP_X_FORWARDED_FOR</code> and <code>REMOTE_ADDR</code>.</p>
 

@@ -5,6 +5,6 @@ client is listening for incoming debugging connections.</p>
 href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix domain socket</a> which is supported by
 only a select view debugging clients. In that case, instead of the hostname or IP address, use
 <code>unix:///path/to/sock</code>.</p>
-<p>If [CFG:remote_connect_back] is enabled then Xdebug will only use the value of this setting in
+<p>If [CFG:discover_client_host] is enabled then Xdebug will only use the value of this setting in
 case Xdebug can not connect to an IDE using the information it obtained from HTTP headers. In that
 case, the value of this setting acts as a fallback only.</p>

@@ -31,7 +31,7 @@ around.</p>
 
 <p>If PHP/Xdebug run on a different machine in the same sub-net, and you run
 your browser on the same host as your IDE, then you set the
-[CFG:remote_connect_back] setting to <code>1</code>. Xdebug will then use the
+[CFG:discover_client_host] setting to <code>1</code>. Xdebug will then use the
 HTTP headers to find out the IP address of the host that initiated the
 debugging request, and use that IP address to connect to. This is a common
 way of set-up if you are sharing a development server among you and your team

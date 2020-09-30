@@ -122,7 +122,7 @@
 <dt>DBG-W-CON</dt>
 <dd>
 <p class="reason">
-	Occurs when [CFG:remote_connect_back] is turned on, and Xdebug could not
+	Occurs when [CFG:discover_client_host] is turned on, and Xdebug could not
 	connect to the client with an address found in the HTTP headers.
 </p>
 <p>
@@ -130,7 +130,7 @@
 	Docker networks are not configured correctly. Connecting back to the
 	address of the machine where the debugging client runs only works if they
 	are on the same network. If a networking set-up makes this impossible,
-	then you can not use [CFG:remote_connect_back].
+	then you can not use [CFG:discover_client_host].
 </p>
 <p>
 	If the address found in the HTTP headers can not be contacted, Xdebug
@@ -139,10 +139,10 @@
 <p>
 	Suggested solutions:
 	<ul>
-		<li>Set [CFG:remote_connect_back] to <code>0</code> and configure a
+		<li>Set [CFG:discover_client_host] to <code>0</code> and configure a
 		static address with [CFG:client_host].</li>
 		<li>If a debugging connection is working, ignore the warning or set
-		[CFG:remote_connect_back] to <code>0</code>.</li>
+		[CFG:discover_client_host] to <code>0</code>.</li>
 		<li>Check your networking set up so that the web server sees the HTTP
 		request coming from an IP address on the same network as where the
 		debugging client is listening. For example, you can check the latter
@@ -156,7 +156,7 @@
 <dt>DBG-W-HDR</dt>
 <dd>
 <p class="reason">
-	Occurs when Xdebug's [CFG:remote_connect_back] setting is configured, and
+	Occurs when Xdebug's [CFG:discover_client_host] setting is configured, and
 	no header could be found to use for information about which host to connect
 	to.
 </p>
@@ -170,16 +170,16 @@
 	Suggested solutions:
 	<ul>
 		<li>If a debugging connection was succesfully made, set
-		[CFG:remote_connect_back] to <code>0</code>.</li>
+		[CFG:discover_client_host] to <code>0</code>.</li>
 		<li>If you are running Xdebug on the command line, then no HTTP
-		headers can be present. Set [CFG:remote_connect_back] to
+		headers can be present. Set [CFG:discover_client_host] to
 		<code>0</code>, or just ignore the warning.</li>
 		<li>Use your brower's debugging tools to see which HTTP headers were
 		sent to the HTTP server. If none were sent, then it is possible
 		that a proxy server or Web server configuration stripped out the
 		header(s). This is unlikely, as at least the <code>REMOTE_ADDR</code>
 		HTTP header should always be present.</li>
-		<li>If using [CFG:remote_addr_header], check if you have not made a
+		<li>If using [CFG:discover_client_header], check if you have not made a
 		typo in your header's name.</li>
 	</ul>
 </p>
@@ -189,7 +189,7 @@
 <dt>DBG-W-INVADDR</dt>
 <dd>
 <p class="reason">
-	Occurs when Xdebug's [CFG:remote_connect_back] setting is configured, and
+	Occurs when Xdebug's [CFG:discover_client_host] setting is configured, and
 	while trying to find which host to connect to, finds an address containing
 	<code>://</code>.
 </p>
@@ -203,7 +203,7 @@
 		<li>Use your brower's debugging tools to see which HTTP headers were
 		sent to Xdebug, and find out which one contains <code>://</code>. Then
 		make sure that header is either not sent, or disable
-		[CFG:remote_connect_back].</li>
+		[CFG:discover_client_host].</li>
 	</ul>
 </p>
 </dd>

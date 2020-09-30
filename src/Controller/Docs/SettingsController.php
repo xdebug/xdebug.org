@@ -125,12 +125,12 @@ class SettingsController
 			\FUNC_STEP_DEBUG
 		],
 
-		'remote_addr_header' => [
+		'client_discovery_header' => [
 			'string', '""', null,
 			\FUNC_STEP_DEBUG
 		],
 
-		'remote_connect_back' => [
+		'discover_client_host' => [
 			'boolean', 'false', null,
 			\FUNC_STEP_DEBUG
 		],
