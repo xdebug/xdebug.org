@@ -392,7 +392,7 @@ class XdebugVersion
 		}
 		$line .= ' = ';
 
-		if ( $this->extensionDir !== '' )
+		if ( $this->extensionDir !== '' && !$this->windows )
 		{
 			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 			$line .= $this->extensionDir . $this->dirSep;
