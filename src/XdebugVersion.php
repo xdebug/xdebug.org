@@ -12,7 +12,8 @@ class XdebugVersion
 		'7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
 		'7.2' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
 		'7.3' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.4' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ]
+		'7.4' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
+		'8.0' => [ 'src' => '3.0.0beta1',  'win' => '3.0.0beta1'  ]
 	];
 
 	/** @var string|null */
@@ -252,6 +253,7 @@ class XdebugVersion
 					case 'VC11':  $this->winCompiler = 11; $this->windows = true; break;
 					case 'VC14':  $this->winCompiler = 14; $this->windows = true; break;
 					case 'VC15':  $this->winCompiler = 15; $this->windows = true; break;
+					case 'VC16':  $this->winCompiler = 16; $this->windows = true; break;
 				}
 			}
 		}
@@ -327,6 +329,10 @@ class XdebugVersion
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
 			if ( $this->winCompiler != 15 && ( $majorPhpVersion == '7.2' || $majorPhpVersion == '7.3'  || $majorPhpVersion == '7.4') )
+			{
+				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
+			}
+			if ( $this->winCompiler != 16 && ( $majorPhpVersion == '8.0' ) )
 			{
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
