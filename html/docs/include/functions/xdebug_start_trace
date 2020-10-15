@@ -27,6 +27,10 @@ TXT:
 The <i>options</i> parameter is a bitfield;
 currently there are three options:
 
+TXT:
+The <i>options</i> parameter is a bitfield;
+currently there are three options:
+
 <dl>
 <dt>XDEBUG_TRACE_APPEND (1)</dt>
 <dd>makes the trace file open in append mode rather than

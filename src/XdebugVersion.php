@@ -332,6 +332,10 @@ class XdebugVersion
 			{
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
+			if ( $this->winCompiler != 16 && ( $majorPhpVersion == '8.0' ) )
+			{
+				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
+			}
 		}
 		return true;
 	}

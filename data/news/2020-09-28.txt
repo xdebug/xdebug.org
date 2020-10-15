@@ -1,0 +1,14 @@
+Xdebug 2.9.8 is out!
+<p>This patch release fixes a compile error on FreeBSD related to the TCP
+Keepalive Mechanism that was introduced in 2.9.7 and a path/branch coverage
+issue with loops.</p>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_2_9_8">updates</a> page.</p>
+
+<p>The source code and Windows binaries can be found on the
+<a href="https://xdebug.org/download#2_9_8">downloads</a> page, and as usual,
+Xdebug is installable through PECL.</p>
+
+<p>This release also contains a contribution by: <i>Luca Pizzamiglio</i> —
+Thanks!</p>

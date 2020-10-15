@@ -1,3 +1,4 @@
+2020-10-01	Tideways	https://tideways.com/
 2020-05-25	Seravo	https://seravo.com/
 2020-02-27	CHECK24	https://jobs.check24.de/open-source
 2020-02-14	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
@@ -8,4 +9,3 @@
 2019-11-01	Automattic	https://automattic.com
 2019-10-07	JetBrains	https://jetbrains.com
 2019-09-24	TYPO3 GmbH	https://typo3.com
-2019-09-13	Tideways	https://tideways.com/
