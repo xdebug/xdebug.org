@@ -307,6 +307,11 @@ class SettingsController
 		return new HtmlResponse($setting, 'docs/setting.php');
 	}
 
+	public static function singleLine(Setting $setting) : HtmlResponse
+	{
+		return new HtmlResponse($setting, 'docs/setting_line.php');
+	}
+
 	public static function all() : HtmlResponse
 	{
 		$functions = self::getRelatedSettings(null);

@@ -60,11 +60,11 @@ class HomeController
 		$files = [];
 
 		while (false !== ($entry = $d->read())) {
-			if (preg_match( '@^xdebug-([123]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
+			if (preg_match( '@^xdebug-([12]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['source'] = $entry;
 			}
-			if (preg_match( '@^php_xdebug-([23]\.[0-9]\.[0-9].*?)-[45678]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+			if (preg_match( '@^php_xdebug-(2\.[0-9]\.[0-9].*?)-[4567]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['dll'][] = $entry;
 			}

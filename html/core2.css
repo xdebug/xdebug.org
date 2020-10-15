@@ -83,6 +83,12 @@ p a, ul a {
 	font-weight: bold;
 }
 
+p.warning {
+	border-left: #317e1e 3px solid;
+	padding-left: 0.5em;
+	background-color: #e5f5d5;
+}
+
 a:hover {
 	text-decoration: underline;
 }
@@ -207,7 +213,7 @@ main h2, main h3 {
 
 pre, code {
 	line-height: 1.5em;
-    font-family: 'IBM Plex Mono';
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 pre, .example > code {
@@ -223,7 +229,7 @@ pre, .example > code {
 	margin: 0;
 }
 
-p code {
+p code, li code {
 	background: #eee;
 	display: inline-block;
 	padding: 0 0.3em;

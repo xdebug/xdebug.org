@@ -39,7 +39,7 @@ class DocsController
 			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
 		],
 		'execution_trace' => [
-			'Function Traces',
+			'Function Trace',
 			\FUNC_FUNCTION_TRACE,
 			'Xdebug allows you to log all function calls, including parameters and
 			return values to a file in different formats.',
@@ -60,7 +60,7 @@ class DocsController
 			it was able to clean up, how long it took, and how how much memory was actually freed.',
 		],
 		'profiler' => [
-			'Profiling PHP Scripts',
+			'Profiling',
 			\FUNC_PROFILER,
 			'Xdebug\'s built-in profiler allows you to find bottlenecks in your
 			script and visualize those with an external tool such as KCacheGrind or
@@ -85,9 +85,9 @@ class DocsController
 			'This tool allows you to proxy and route debugging request to IDEs depending on which IDE key is in use.',
 		],
 		'compat' => [
-			'Compatibility',
+			'Supported Versions and Compatibility',
 			0,
-			'Xdebug and PHP version compatibility',
+			'This page lists which versions of Xdebug are still supported, and with which versions of PHP they can be used.',
 		],
 		'faq' => [
 			'FAQ',
