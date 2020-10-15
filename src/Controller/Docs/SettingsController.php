@@ -141,7 +141,7 @@ class SettingsController
 		],
 
 		'client_port' => [
-			'integer', 9000, null,
+			'integer', 9003, null,
 			\FUNC_STEP_DEBUG
 		],
 
