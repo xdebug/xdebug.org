@@ -191,8 +191,8 @@ debug control flow and examine data structures.",
 
 	public static function add_keywords(string $text) : string
 	{
-		$text = str_replace( '[KW:last_release_version]', '2.9.6', $text );
-		$text = str_replace( '[KW:last_dev_version]',     '3.0.0dev', $text );
+		$text = str_replace( '[KW:last_release_version]', '2.9.8', $text );
+		$text = str_replace( '[KW:last_dev_version]',     '3.0.0beta1', $text );
 		return $text;
 	}
 }

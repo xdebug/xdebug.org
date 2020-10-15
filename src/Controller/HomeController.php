@@ -108,7 +108,7 @@ class HomeController
 					{
 						$dll_hash = hash_file( 'sha256', "files/$dls" );
 					}
-					preg_match( '@^php_xdebug-2\.[0-9]\.[0-9].*?-([4567]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
+					preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 					$name = $m[1];
 					$namea = '';
 					if (isset($m[4]) && $m[4] != '') {
