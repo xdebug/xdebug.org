@@ -30,6 +30,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<p><a href="/announcements">See all announcements</a></p>
 </div>
 
+<a name="business_supporters"></a>
 <div class="front_supporters">
 
 	<p>This work is made possible through the generous support of Xdebug's business-tier sponsors:

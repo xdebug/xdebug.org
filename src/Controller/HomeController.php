@@ -143,7 +143,7 @@ class HomeController
 
 		return new Downloads($downloads);
 	}
-	
+
 	public static function getLatestDownloadsModel() : Downloads
 	{
 		$allDownloads = self::getAllDownloadsModel();

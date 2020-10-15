@@ -501,6 +501,7 @@ div.comment { height: 100%; float: right; margin-right: 2px;}
 
 div.spend { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
 div.type-bug     { height: 100%; float: left; color: white; background-color: #0121AF;}
+div.type-docs    { height: 100%; float: left; color: white; background-color: #1A3DB7;}
 div.type-generic { height: 100%; float: left; color: white; background-color: #3447BF;}
 div.type-php     { height: 100%; float: left; color: white; background-color: #1A3DB7;}
 div.type-release { height: 100%; float: left; color: white; background-color: #677ACF;}
