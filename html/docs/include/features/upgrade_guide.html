@@ -206,13 +206,34 @@ comparing the usage in the current frame with the previous one.</p></dd>
 <dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
 </dl>
 
+
 <a name="Changes-to-Functions"></a>
 <h2>Changes to Functions</h2>
 
 <dl>
+<dt><code>xdebug_disable()</code></dt>
+<dd>
+<p>Has been removed.</p>
+<p>To prevent Xdebug from showing stack traces, do not configure Xdebug's
+<code>develop</code> mode in [CFG:mode], or turn off PHP's
+<code>html_errors</code> INI setting.</p>
+</dd>
+
+<dt><code>xdebug_enable()</code></dt>
+<dd>
+<p>Has been removed.</p>
+<p>To configure Xdebug to showing stack traces, include
+<code>develop</code> in [CFG:mode].</p>
+</dd>
+
 <dt><code>xdebug_get_declared_vars()</code></dt>
-<dd><p>Has been removed. The information that this function returned can be
-obtained through the [FUNC:xdebug_get_function_stack] function.</p></dd>
+<dd>
+<p>Has been removed.</p>
+<p>The information that this function returned can be obtained through the
+[FUNC:xdebug_get_function_stack] function.</p>
+</dd>
+
+</dl>
 
 
 <a name="Changed-Constants"></a>
