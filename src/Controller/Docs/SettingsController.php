@@ -10,7 +10,7 @@ class SettingsController
 {
 	private const SETTINGS = [
 		'mode' => [
-			'string', 'display', null,
+			'string', 'develop', null,
 			-1
 		],
 

@@ -84,9 +84,9 @@ p a, ul a {
 }
 
 p.warning {
-	border-left: #317e1e 3px solid;
+	border-left: #cc0000 3px solid;
 	padding-left: 0.5em;
-	background-color: #e5f5d5;
+	background-color: #fec1c1;
 }
 
 a:hover {
@@ -233,6 +233,10 @@ p code, li code {
 	background: #eee;
 	display: inline-block;
 	padding: 0 0.3em;
+}
+
+p.warning code {
+	background: #ff9090;
 }
 
 h3 + p {
