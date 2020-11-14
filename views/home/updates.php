@@ -22,10 +22,56 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_0RC1'></a>[2020-11-16] &mdash; Xdebug 3.0.0RC1</dt>
+
+<dd>
+<p class="warning">This is a <strong>BETA</strong> release, and not ready for production
+environments. It adds support for PHP 8.0, and drops support for PHP 7.1.</p>
+
+<p>Xdebug 3 has many changes. Please read the <a
+href="https://3.xdebug.org/docs/upgrade_guide">Upgrade Guide</a>.
+
+<p><a href="https://3.xdebug.org/docs">Xdebug 3 documentation</a> is available
+on a sub-domain.</p>
+</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Implemented <?= issue(1814); ?>: Don't obtain the current time when it's not needed</dd>
+<dd>Implemented <?= issue(1885); ?>: Change xdebug.start_with_ settings to PHP_INI_SYSTEM|PHP_INI_PERDIR</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Implemented <?= issue(1016); ?>: Removed support for pause-execution (introduced in beta1)</dd>
+<dd>Implemented <?= issue(1868); ?>: Remove xdebug_disable and xdebug_enabled</dd>
+<dd>Implemented <?= issue(1883); ?>: Function xdebug_is_enabled has been removed</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1608); ?>: XDEBUG_CONFIG env var make sessions automatically START ever (at least send the XDEBUG_SESSION cookie)</dd>
+<dd>Fixed <?= bug(1757); ?>: Pause-execution feature degrades performance</dd>
+<dd>Fixed <?= bug(1864); ?>: Incompatibility with PCS and protobuf extensions</dd>
+<dd>Fixed <?= bug(1870); ?>: XDEBUG_SESSION_START URL parameter does not override XDEBUG_SESSION cookie</dd>
+<dd>Fixed <?= bug(1871); ?>: The "idekey" is not set when debugging is started through XDEBUG_SESSION cookie</dd>
+<dd>Fixed <?= bug(1873); ?>: xdebug_info() segfaults if the diagnostic buffer is empty</dd>
+<dd>Fixed <?= bug(1874); ?>: Incompatibility with protobuf extension</dd>
+<dd>Fixed <?= bug(1875); ?>: Overflow with large amounts of elements for variadics</dd>
+<dd>Fixed <?= bug(1878); ?>: Compilation failure: Socket options TCP_KEEPCNT and TCP_KEEPINTVL do not exist on Solaris 10 Sparc</dd>
+<dd>Fixed <?= bug(1880); ?>: Bundled unit test tests/debugger/bug00886.phar misses to load phar extension</dd>
+<dd>Fixed <?= bug(1887); ?>: Crash bug with xdebug_call_class and xdebug_call_file</dd>
+
+<dd><h3>Documentation</h3></dd>
+
+<dd>Fixed <?= issue(1865); ?>: Document XDEBUG_TRIGGER environment variable</dd>
+<dd>Fixed <?= issue(1866); ?>: Document comma separated xdebug.mode values</dd>
+<dd>Fixed <?= issue(1884); ?>: Document where Xdebug's settings can be set</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_0beta1'></a>[2020-10-14] &mdash; Xdebug 3.0.0beta1</dt>
 
 <dd>
-<p>This is a <strong>BETA</strong> release, and not ready for production
+<p class="warning">This is a <strong>BETA</strong> release, and not ready for production
 environments. It adds support for PHP 8.0, and drops support for PHP 7.1.</p>
 
 <p>Xdebug 3 has many changes. Please read the <a

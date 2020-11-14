@@ -1,0 +1,47 @@
+Xdebug 3.0.0RC1 is out!
+<p class="warning">
+This is a <strong>BETA</strong> release, and not ready for production environments.
+</p>
+
+<p>
+Compared to Xdebug 3.0.0beta1, this release improve performance when a
+time source is not needed, and fixes various crash bugs. Although no more
+feature have been removed, the changelog of this release does document some
+features that were removed in 3.0.0beta1. The pause-execution support that was
+introduced in 3.0.0beta1 has been backed out.
+</p>
+
+<p>
+In general, Xdebug 3 includes major changes in functionality compared to Xdebug 2. The
+primary way how you turn on functionality is through the new <a
+href="https://3.xdebug.org/docs/all_settings#mode">xdebug.mode</a> PHP
+configuration setting. This made it possible to massively increase performance
+in many of Xdebug's sub systems as Xdebug is now much more conservative in
+which hooks are enabled.
+</p>
+
+<p>Configuration changes, massive performance improvements, and PHP 8 support
+are the primary features in Xdebug 3, but there is much more. The <a
+href="https://3.xdebug.org/docs/upgrade_guide">upgrade guide</a> lists the
+changes in great detail, and the there is (temporary) special sub-domain that
+hosts the <a href="https://3.xdebug.org">Xdebug 3 documentation</a>.
+</p>
+
+<p>Please test Xdebug 3 for functionality. If you find a bug, please file a
+report at Xdebug's <a href="https://bugs.xdebug.org">Issue Tracker</a> —
+especially if it considers PHP 8 support.</p>
+
+<p>I'm also interested to see what the performance optimisations have done for
+your specific situation. Please let me know on Twitter by tagging <a
+href="https://twitter.com/search?q=%23xdebug3">#xdebug3</a>!</a>
+
+<p>The full list of changes can be found on the <a
+href="https://xdebug.org/updates#x_3_0_0RC1">updates</a> page.</p>
+
+<p>The source code can be found on the
+<a href="https://xdebug.org/download#3_0_0RC1">downloads</a> page, and as usual,
+Xdebug is installable through PECL. Windows binaries can (shortly) be found on
+the <a href="https://pecl.php.net/package/xdebug/3.0.0RC1/windows">PECL page</a>.</p>
+
+<p>This release also contains contributions by: <i>Christoph Becker and Jakub
+Zalas</i> — Thanks!</p>
