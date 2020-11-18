@@ -72,7 +72,7 @@ about how to use the debug client.</p>
 		<li><a title="Windows" href="/files/binaries/dbgpProxy.exe">Windows (x86_64)</a></title>
 	</ul>
 </div>
-<p>Please refer to the <a href="/docs/proxy">documentation</a> to learn
+<p>Please refer to the <a href="/docs/dbgpProxy">documentation</a> to learn
 about how to use the DBGp proxy tool.</p>
 
 <a name='historical'></a>
