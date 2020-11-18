@@ -1,0 +1,26 @@
+9.54	7.74	0.99	5.00	23.61
+2020-10-01	docs	1	Documentation typo fixes
+2020-10-02	xdebug3	5.5	Honour E_DEPRECATED, Win test changes, xdebug.cloud_id through env setting
+2020-10-03	xdebug3	3	Massively improve performance with xdebug.mode=off by not setting up any hooks.
+2020-10-05	cloud	4	Website skeleton
+2020-10-07	cloud	3.5	Authentication
+2020-10-09	cloud	5.5	Interactions with cloud database
+2020-10-11	ci	2.5	Authenticate for DockerHub/add 8.0/master builds on XdebugCI
+2020-10-12	cloud	4	Website work
+2020-10-14	cloud	2	Connection management by switching to “Active” from “Connections Remaining”
+2020-10-14	docs	2	Update docs and merge master into xdebug3 branch
+2020-10-14	cloud	2	Use ‘active’ flag for connection allowance, better logging
+2020-10-14	xdebug3	4	Release Xdebug 3.0.0beta1
+2020-10-15	ci	2	PHP 8.0 builds on ApVeyor
+2020-10-15	xdebug3	2	PHP 8 compat
+2020-10-16	cloud	4	Website work
+2020-10-17	docs	1	Fixed download links for Xdebug 3 binaries and source
+2020-10-19	cloud	5.5	Website work
+2020-10-21	cloud	4	Website work
+2020-10-22	cloud	4.5	Website work
+2020-10-23	cloud	3.5	Website work
+2020-10-26	docs	1.5	Document xdebug_enable/xdebug_disable removal, multiple modes at the same time, XDEBUG_MODE env var
+2020-10-28	xdebug3	4	PHP 8 compat (changes in generators)
+2020-10-28	xdebug3	3	Fixing bug #1870/#1871, changes in starting the debugger and PhpStorm compat
+2020-10-30	ci	3	Debugging CI/Azure environment on OSX 10.14
+2020-10-30	xdebug3	1	Fixed #1873, xdebug_info bugs
