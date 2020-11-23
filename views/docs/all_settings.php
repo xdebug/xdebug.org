@@ -10,6 +10,20 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation » A
 <p>
 This section describes all available configuration settings available in Xdebug.
 </p>
+<p>
+Unless specifically mentioneds, each setting can be set in
+<code>php.ini</code>, files like <code>90-xdebug.ini</code>, but also in
+Apache's <code>.htaccess</code> and PHP-FPM's <code>.user.ini</code> files.
+</p>
+<a name="XDEBUG_CONFIG"></a>
+<p>
+A select set of settings can be set through an <code>XDEBUG_CONFIG</code>
+environment variable. In this situation, the <code>xdebug.</code> part should
+be dropped from the setting name. An example of this is:
+</p>
+<pre>
+export XDEBUG_CONFIG="client_host=192.168.42.34 log=/tmp/xdebug.log"
+</pre>
 
 <div class='settings'>
 	<?php foreach ($this->settings as $setting) : ?>
@@ -18,6 +32,3 @@ This section describes all available configuration settings available in Xdebug.
 	<?php endforeach ?>
 </div>
 <hr />
-
-
-

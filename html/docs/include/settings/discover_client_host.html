@@ -14,6 +14,10 @@ headers, it will fall back to the hostname or IP address as configured by the
 <p>This setting does not apply for debugging through the CLI, as the
 <code>$_SERVER</code> header variables are not available there.</p>
 
+<p class="note">This setting can additionally be configured through the
+<code>XDEBUG_CONFIG</code>
+<a href="/docs/all_settings#XDEBUG_CONFIG">environment variable</a>.</p>
+
 <p class="warning"><strong>Warning:</strong> Please note that there is no filter
 available, and anybody who can connect to the webserver will then be able to
 start a debugging session, even if their address does not match
