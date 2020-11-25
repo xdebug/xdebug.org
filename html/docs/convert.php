@@ -278,7 +278,7 @@ foreach ( $extensionSettings as $settingName )
 {
 	$sanitizedSettingName = preg_replace( '/^xdebug\./', '', $settingName );
 
-	if ( !in_array( $sanitizedSettingName, $foundSettings ) )
+	if ( !in_array( $sanitizedSettingName, $foundSettings ) && !preg_match( '@^This setting has been@', ini_get( $settingName ) ) )
 	{
 		fprintf( STDERR, "$settingName is missing\n" );
 	}

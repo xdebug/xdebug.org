@@ -22,6 +22,121 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_0'></a>[2020-11-25] &mdash; Xdebug 3.0.0</dt>
+
+<dd>
+<p>
+Xdebug 3 includes major changes in functionality compared to Xdebug 2. The
+primary way how you turn on functionality is through the new xdebug.mode PHP
+configuration setting. This made it possible to massively increase performance
+in many of Xdebug's sub systems as Xdebug is now much more conservative in
+which hooks are enabled.
+</p>
+<p>
+Configuration changes, massive performance improvements, and PHP 8 support are
+the primary features in Xdebug 3, but there is much more. The
+<a href="https://xdebug.org/docs/upgrade_guide">Upgrade Guide</a>
+lists the changes in great detail, please read it.
+</p>
+</dd>
+
+<dd><h3>New features</h3></dd>
+
+<dd>Implemented <?= issue(1762); ?>: Introduce feature modes</dd>
+<dd>Implemented <?= issue(1793); ?>: Add xdebug.start_upon_error setting to cover the removed xdebug.remote_mode=jit feature.</dd>
+<dd>Implemented <?= issue(1797); ?>: Implement generic logging</dd>
+<dd>Implemented <?= issue(1801); ?>: Rename mode 'display' to mode 'develop'</dd>
+<dd>Implemented <?= issue(1831); ?>: Add diagnostics function xdebug_info()</dd>
+<dd>Implemented <?= issue(1833); ?>: Add links to documentation in diagnostic log</dd>
+<dd>Implemented <?= issue(1837); ?>: Support for associative variadic variable names (PHP 8)</dd>
+<dd>Implemented <?= issue(1841); ?>: Add support for PHP 8 'match' keyword</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Implemented <?= issue(1680); ?>: Update var dumping routines to include relevant information for interned strings and immutable arrays</dd>
+<dd>Implemented <?= issue(1712); ?>: Add unit to profiler data types</dd>
+<dd>Implemented <?= issue(1743); ?>: Figuring out whether a call is a closure uses string comparisions instead of checking the ACC flag (Benjamin Eberlei)</dd>
+<dd>Implemented <?= issue(1752); ?>: Use a stack pool to manage stack entries instead of allocating and deallocating entries</dd>
+<dd>Implemented <?= issue(1755); ?>: Overload pcntl_fork() to prevent performance degradation by calling xdebug_get_pid often (Carlos Granados)</dd>
+<dd>Implemented <?= issue(1781); ?>: Include 'Xdebug' in max nesting level error message</dd>
+<dd>Implemented <?= issue(1783); ?>: Stacktrace needs vertical scrolling on small screens (Tobias Tom)</dd>
+<dd>Implemented <?= issue(1789); ?>: Provide PHP stubs for Xdebug's functions</dd>
+<dd>Implemented <?= issue(1807); ?>: Document Xdebug installation with yum and apt</dd>
+<dd>Implemented <?= issue(1813); ?>: Make sure that the xdebug_init_*_globals don't do more than they need to, and that init is only done when xdebug.mode != off</dd>
+<dd>Implemented <?= issue(1817); ?>: Switch filename storage from char*/size_t to zend_string*</dd>
+<dd>Implemented <?= issue(1818); ?>: Switch variable storage from char*/size_t to zend_string*</dd>
+<dd>Implemented <?= issue(1820); ?>: Increase time tracing precision (Michael Voříšek)</dd>
+<dd>Implemented <?= issue(1824); ?>: Allow Xdebug's mode to be set through an environment variable</dd>
+<dd>Implemented <?= issue(1825); ?>: Improve profiler performance by not calling fflush after every function (Michael Voříšek)</dd>
+<dd>Implemented <?= issue(1826); ?>: Reduce profiler memory allocation and call overhead</dd>
+<dd>Implemented <?= issue(1829); ?>: Switch to 10ns profiler resolution (Michael Voříšek)</dd>
+<dd>Implemented <?= issue(1832); ?>: If connect back host can not be contacted, fallback to remote_host/port</dd>
+<dd>Implemented <?= issue(1858); ?>: Only open/close log if there is an actual message to log</dd>
+<dd>Implemented <?= issue(1860); ?>: Allow xdebug.cloud_id to be set through an environment variable</dd>
+<dd>Implemented <?= issue(1814); ?>: Don't obtain the current time when it's not needed</dd>
+<dd>Implemented <?= issue(1835); ?>: Add current trace and profile file name, to diagnostic page</dd>
+<dd>Implemented <?= issue(1885); ?>: Change xdebug.start_with_ settings to PHP_INI_SYSTEM|PHP_INI_PERDIR</dd>
+<dd>Implemented <?= issue(1889); ?>: max_nesting_level should only trigger in "develop" mode</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Implemented <?= issue(1795); ?>: Deprecate PHP 7.1 support</dd>
+<dd>Implemented <?= issue(1786); ?>: Remove idekey value fallback to USER/USERNAME environment variable</dd>
+<dd>Implemented <?= issue(1809); ?>: Remove "overload_var_dump" setting</dd>
+<dd>Implemented <?= issue(1810); ?>: Remove collect_vars and xdebug_get_declared_vars()</dd>
+<dd>Implemented <?= issue(1812); ?>: Remove show_mem_delta setting</dd>
+<dd>Implemented <?= issue(1838); ?>: Remove collect_params setting, and always default it to "4"</dd>
+<dd>Implemented <?= issue(1847); ?>: Remove xdebug.remote_cookie_expire_time setting</dd>
+<dd>Implemented <?= issue(1016); ?>: Removed support for pause-execution (introduced in beta1)</dd>
+<dd>Implemented <?= issue(1868); ?>: Remove xdebug_disable and xdebug_enabled</dd>
+<dd>Implemented <?= issue(1883); ?>: Function xdebug_is_enabled has been removed</dd>
+
+<dd><h3>Changes</h3></dd>
+
+<dd>Implemented <?= issue(1378); ?>: Unfortunate coupling of default_enable=1 and remote_mode=jit</dd>
+<dd>Implemented <?= issue(1773); ?>: Replace all xdebug.*_output_dir settings with xdebug.output_dir</dd>
+<dd>Implemented <?= issue(1785); ?>: Replace xdebug.remote_mode and xdebug.auto_trace with generic "start-with-request" setting</dd>
+<dd>Implemented <?= issue(1791); ?>: Replace xdebug.*trigger*, xdebug.*trigger_value*, with xdebug.start_with_request=trigger and xdebug.trigger_value</dd>
+<dd>Implemented <?= issue(1792); ?>: Change start_with_request=always/never to start_with_request=yes/no</dd>
+<dd>Implemented <?= issue(1794); ?>: Replace the filter's blacklist/whitelist with exclude/include</dd>
+<dd>Implemented <?= issue(1811); ?>: Remove xdebug.collect_includes setting and always include them</dd>
+<dd>Implemented <?= issue(1843); ?>: Adjust XDEBUG_CONFIG checks, and document what can be set through it</dd>
+<dd>Implemented <?= issue(1844); ?>: Add deprecation warning for removed and renamed configuration setting names</dd>
+<dd>Implemented <?= issue(1845); ?>: Rename xdebug.remote_{host,port} to xdebug.client_{host,port}</dd>
+<dd>Implemented <?= issue(1846); ?>: Rename setting xdebug.remote_timeout to xdebug.connect_timeout_ms</dd>
+<dd>Implemented <?= issue(1848); ?>: Change default Xdebug port from 9000 to 9003</dd>
+<dd>Implemented <?= issue(1850); ?>: Change array variable output in tracing to use modern [] syntax</dd>
+<dd>Implemented <?= issue(1856); ?>: Rename xdebug.remote_connect_back to xdebug.discover_client_host</dd>
+<dd>Implemented <?= issue(1857); ?>: Rename xdebug.remote_addr_header to xdebug.client_discovery_header</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1608); ?>: XDEBUG_CONFIG env var make sessions automatically START ever (at least send the XDEBUG_SESSION cookie)</dd>
+<dd>Fixed <?= bug(1726); ?>: Memory leaks spotted in various places in typical error code paths</dd>
+<dd>Fixed <?= bug(1757); ?>: Pause-execution feature degrades performance</dd>
+<dd>Fixed <?= bug(1864); ?>: Incompatibility with PCS and protobuf extensions</dd>
+<dd>Fixed <?= bug(1870); ?>: XDEBUG_SESSION_START URL parameter does not override XDEBUG_SESSION cookie</dd>
+<dd>Fixed <?= bug(1871); ?>: The "idekey" is not set when debugging is started through XDEBUG_SESSION cookie</dd>
+<dd>Fixed <?= bug(1873); ?>: xdebug_info() segfaults if the diagnostic buffer is empty</dd>
+<dd>Fixed <?= bug(1874); ?>: Incompatibility with protobuf extension</dd>
+<dd>Fixed <?= bug(1875); ?>: Overflow with large amounts of elements for variadics</dd>
+<dd>Fixed <?= bug(1878); ?>: Compilation failure: Socket options TCP_KEEPCNT and TCP_KEEPINTVL do not exist on Solaris 10 Sparc</dd>
+<dd>Fixed <?= bug(1880); ?>: Bundled unit test tests/debugger/bug00886.phar misses to load phar extension</dd>
+<dd>Fixed <?= bug(1887); ?>: Crash bug with xdebug_call_class and xdebug_call_file</dd>
+<dd>Fixed <?= bug(1756); ?>: Php process won't exit after running connected to a client</dd>
+<dd>Fixed <?= bug(1823); ?>: Profiler generates negative data for memory usage</dd>
+<dd>Fixed <?= bug(1834); ?>: Return type must be bool in overloaded set_time_limit</dd>
+<dd>Fixed <?= bug(1888); ?>: Make headers sticky in xdebug_info() output</dd>
+
+<dd><h3>Documentation</h3></dd>
+
+<dd>Fixed <?= bug(1865); ?>: Document XDEBUG_TRIGGER environment variable</dd>
+<dd>Fixed <?= bug(1866); ?>: Document comma separated xdebug.mode values</dd>
+<dd>Fixed <?= bug(1884); ?>: Document where Xdebug's settings can be set</dd>
+<dd>Fixed <?= bug(1892); ?>: Document changed/removed ini settings in the upgrade guide with the links provided</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_0RC1'></a>[2020-11-16] &mdash; Xdebug 3.0.0RC1</dt>
 
 <dd>
