@@ -25,7 +25,7 @@
 
 	<footer class="content_width">
 		<p>
-		This site and all of its contents are Copyright &copy; 2002-<?php echo date("Y"); ?> by Derick Rethans.<br />
+		This site and all of its contents are Copyright &copy; 2002-2020 by Derick Rethans.<br />
 		All rights reserved.
 		</p>
 	</footer>

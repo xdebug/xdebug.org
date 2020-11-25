@@ -20,33 +20,13 @@ git clone https://github.com/xdebug/xdebug.git
 </pre>
 
 <a name='releases'></a>
-<a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', $this->downloads[0]->version) ?>'></a>
-<h2>Latest Release</h2>
-<strong>Xdebug <?= $this->downloads[0]->version ?></strong>
-<div class='copy'>Release date: <?= $this->downloads[0]->date->format('Y-m-d') ?></div>
+<a name='historical'></a>
+<h2>Historical Releases</h2>
 
-<div class="front_releases">
-<?php foreach ($this->downloads as $download) : ?>
-	<ul>
-		<li>Linux, macOS:
-			<ul class="releases">
-				<li><a title="SHA256:&nbsp;<?= $download->hash ?>" href='/<?= $download->href ?>'>source</a></li>
-			</ul>
-		</li>
-		<?php if ($download->dlls) : ?>
-			<li>Windows binaries:<br/>
-
-				<ul class="releases">
-					<?php foreach ($download->dlls as $i => $dll) : ?>
-						<li><a title="SHA256:&nbsp;<?= $dll['hash'] ?>" href='/<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a></li>
-					<?php endforeach ?>
-				</ul>
-
-			</li>
-		<?php endif ?>
-	</ul>
-<?php endforeach ?>
-</div>
+<p>Previous releases can be found on the <a
+href='/download/historical'>historical releases</a> page. Please refer to the
+<a href="/docs/compat#versions">compatibility matrix</a> to find out which one are still
+supported.</p>
 
 <a name='debugclient'></a>
 <a name='dbgpClient'></a>
@@ -75,10 +55,3 @@ about how to use the debug client.</p>
 <p>Please refer to the <a href="/docs/proxy">documentation</a> to learn
 about how to use the DBGp proxy tool.</p>
 
-<a name='historical'></a>
-<h2>Historical Releases</h2>
-
-<p>Previous releases can be found on the <a
-href='/download/historical'>historical releases</a> page. Please refer to the
-<a href="/docs/compat#versions">compatibility matrix</a> to find out which one are still
-supported.</p>

@@ -87,7 +87,7 @@ class DocsController
 		'compat' => [
 			'Supported Versions and Compatibility',
 			0,
-			'This page lists which versions of Xdebug are still supported, and with which versions of PHP they can be used.',
+			'This page lists which historical versions of Xdebug, and with which versions of PHP they could be used.',
 		],
 		'faq' => [
 			'FAQ',
@@ -197,7 +197,7 @@ class DocsController
 	public static function add_keywords(string $text) : string
 	{
 		$text = str_replace( '[KW:last_release_version]', '2.9.8', $text );
-		$text = str_replace( '[KW:last_dev_version]',     '3.0.0RC1', $text );
+		$text = str_replace( '[KW:last_dev_version]',     '2.9.8', $text );
 		return $text;
 	}
 }

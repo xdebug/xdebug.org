@@ -9,6 +9,9 @@
 		</ul>
 	</div>
 </nav>
+<div class="deprecated">
+You're visiting the archived website and documentation of Xdebug 2, which is no longer supported. This website is temporarily available and will be discontinued on Dec 31st, 2021.
+</div>
 
 <?php if (!in_array($_SERVER['REQUEST_URI'], ['/support', '/log'])) : ?>
 	<div class="content_width" id="support">If you find Xdebug useful, please consider <a href='/support'>supporting the project</a>.</div>

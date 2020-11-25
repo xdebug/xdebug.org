@@ -3,7 +3,7 @@ namespace XdebugDotOrg;
 
 class XdebugVersion
 {
-	public const NOT_SUPPORTED_BEFORE = '2.9';
+	public const NOT_SUPPORTED_BEFORE = '3.0';
 	public const LATEST_VERSION = '2.9.8';
 	public const LATEST_WINDOWS_VERSION = '2.9.8';
 
@@ -12,8 +12,7 @@ class XdebugVersion
 		'7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
 		'7.2' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
 		'7.3' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.4' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'8.0' => [ 'src' => '3.0.0RC1',    'win' => '3.0.0RC1'    ]
+		'7.4' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ]
 	];
 
 	/** @var string|null */
