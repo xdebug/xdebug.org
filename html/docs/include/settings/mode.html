@@ -1,0 +1,46 @@
+<p>This setting controls which Xdebug features are enabled.</p>
+
+<p class="note">This setting can only be set in <code>php.ini</code> or
+files like <code>99-xdebug.ini</code> that are read when a PHP process starts
+(directly, or through php-fpm), but not in <code>.htaccess</code> and
+<code>.user.ini</code> files where are read per-request.</p>
+
+<p>The following values are accepted:</p>
+
+<dl>
+<dt><code>off</code></dt>
+<dd>Nothing is enabled. Xdebug does no work besides checking whether
+functionality is enabled. Use this setting if you want close to 0
+overhead.</dd>
+
+<dt><code>develop</code></dt>
+<dd>Enables [FEAT:develop] including the overloaded [FUNC:var_dump].</dd>
+
+<dt><code>coverage</code></dt>
+<dd>Enables [FEAT:code_coverage] to generate code coverage reports, mainly in
+combination with
+<a href="https://phpunit.readthedocs.io/en/9.0/code-coverage-analysis.html">PHPUnit</a>.</dd>
+
+<dt><code>debug</code></dt>
+<dd>Enables [FEAT:step_debug]. This can be used to step through your code while it
+is running, and analyse values of variables.</dd>
+
+<dt><code>gcstats</code></dt>
+<dd>Enables [FEAT:garbage_collection] to collect statistics about PHP's Garbage
+Collection Mechanism.</dd>
+
+<dt><code>profile</code></dt>
+<dd>Enables [FEAT:profiler], with which you can analyse performance bottlenecks
+with tools like <a href="/docs/profiler#kcachegrind">KCacheGrind</a>.</dd>
+
+<dt><code>trace</code></dt>
+<dd>Enables the [FEAT:trace] feature, which allows you record every function
+call, including arguments, variable assignment, and return value that is made
+during a request to a file.</dd>
+</dl>
+
+<p>You can enable multiple modes at the same time by comma separating their
+identifiers as value to [CFG:mode]: <code>xdebug.mode=develop,trace</code>.</p>
+
+<p>You can override [CFG:mode] on the command line by setting the
+<code>XDEBUG_MODE</code> environment variable.</p>

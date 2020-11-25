@@ -19,11 +19,7 @@ the necessary information to your URL. See the
 <a href='remote#activate_debugger'>documentation</a> for
 more information.</dd>
 <dd>A: Have you checked your firewall settings? Make sure the port Xdebug is
-listening on (default 9000) is not blocked.</dd>
-<dd>A: Are you using FastCGI, maybe via FPM (FastCGI Process Manager)? 
-  It uses the same port by default as Xdebug (9000)
-so you will need to change one of them to a different number. In Xdebug you can
-do that with [CFG:remote_port].</dd>
+listening on (default 9003) is not blocked.</dd>
 <dd>A: If you are running with SELinux you should make sure it is not
 preventing connections; look for warnings about <code>name_connect</code> or
 anything related to the Xdebug port. You might have to allow access explicitly.

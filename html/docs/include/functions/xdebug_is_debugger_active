@@ -2,7 +2,7 @@
 Returns whether a debugging session is active
 bool
 none
-FUNC_REMOTE
+FUNC_STEP_DEBUG
 
 TXT:
 Returns <code>true</code> if a debugging session through DBGp is currently

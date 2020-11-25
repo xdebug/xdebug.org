@@ -1,7 +1,5 @@
 <h2 name="introduction">Introduction</h2>
 
-<p><i>New in Xdebug 2.6</i></p>
-
 <p>Garbage Collection (GC) in PHP can have a serious impact on memory and performance,
 so understanding when it is triggered and how efficient each run is, allows
 you to optimise your programs. The PHP Engine does not provide a mechanism to
@@ -21,13 +19,14 @@ use-cases.</p>
 <p>The first is entirely via INI settings and the primary use-case is to
 collect statistics for indiviual CLI script runs (where GC is often an issue).</p>
 
-<p><code>php -dxdebug.gc_stats_enable=1 your_script.php</code></p>
+<pre>php -dxdebug.mode=gcstats -dxdebug.start_with_request=yes your_script.php</pre>
 
 <p>If you wish to collect the garbage collection statistics for every script
-that you execute, you can set the [CFG:gc_stats_enable] INI setting on the system
-or directory-level. Be aware that activating the collection globally will produce
-an output file for <b>every</b> executed script, even if the garbage collector
-didn't run.</p>
+that you execute, you can set the [CFG:mode]=<code>gcstats</code> and
+[CFG:start_with_request]=<code>yes</code> INI settings on the system or
+directory-level. Be aware that activating the collection globally will produce
+an output file for <strong>every</strong> executed script, even if the garbage
+collector didn't run.</p>
 
 <h3 name="with-functions">By Calling a Function</h3>
 <p>The second approach to starting collection is to call the function
@@ -39,8 +38,9 @@ calling [FUNC:xdebug_stop_gcstats].</p>
 
 <h2 name="output-tabular-text">Output</h2>
 
-<p>The default (and only for now) output format of Garbage Collection statistics
-is a tabular human readable text output.</p>
+<p>GC status file are written to the directory configured with
+[CFG:output_dir]. The file name can be configured with
+[CFG:xdebug.gc_stats_output_name].</p>
 
 <p>The output format of Garbage Collection statistics is a tabular human
 readable text output.</p>

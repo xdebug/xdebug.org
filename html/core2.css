@@ -83,6 +83,12 @@ p a, ul a {
 	font-weight: bold;
 }
 
+p.note {
+	border-left: #317e1e 3px solid;
+	padding-left: 0.5em;
+	background-color: #d5f3cd;
+}
+
 p.warning {
 	border-left: #cc0000 3px solid;
 	padding-left: 0.5em;

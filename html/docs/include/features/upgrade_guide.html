@@ -1,0 +1,262 @@
+<a name="New-Concepts"></a>
+<h2>New Concepts</h2>
+
+<p>Unlike Xdebug 2, where there was an enabling setting for each
+feature, with Xdebug 3 you put Xdebug into a specific
+<i>mode</i>, which can be configured with the [CFG:mode] setting.</p>
+
+<p>This setting, in combination with [CFG:start_with_request] is the new way to
+enable functionality, and to configure when Xdebug's feature activates.</p>
+
+<p>The idea behind this is that it is important that Xdebug only has overhead
+for the features that are actually wanted. For example, it makes no sense have
+both [FEAT:profiler] and [FEAT:step_debug] active at the same time.</p>
+
+<p>Besides setting the mode with [CFG:mode], you can also set the mode with the
+<code>XDEBUG_MODE</code> environment variable. If this environment variable is
+active, it overrides the mode as set through [CFG:mode].</p>
+
+<p>To make sure that just [FEAT:step_debug] is active, instead of:</p>
+
+<pre>
+xdebug.remote_enable=1
+xdebug.default_enable=0
+xdebug.profiler_enable=0
+xdebug.auto_trace=0
+xdebug.coverage_enable=0
+</pre>
+
+<p>You now only do:</p>
+
+<pre>
+xdebug.mode=debug
+</pre>
+
+<p>Or, on the command line:</p>
+
+<pre>
+export XDEBUG_MODE=debug
+php script-name.php
+</pre>
+
+<a name="Step-Debugging"></a>
+<h2>Step Debugging</h2>
+
+<p class="warning">Xdebug's default debugging port has changed from
+<code>9000</code> to <code>9003</code>.</p>
+
+<a name="Activating-on-the-Command-Line"></a>
+<h3>Activating on the Command Line</h3>
+<p>Instead of setting the <code>XDEBUG_CONFIG</code> environment variable to
+<code>idekey=yourname</code>, you must set <code>XDEBUG_SESSION</code> to
+<code>yourname</code>:</p>
+
+<pre>
+export XDEBUG_SESSION=xdebug_is_great
+</pre>
+
+<a name="Automatically-Starting-the-Debugger"></a>
+<h3>Automatically Starting the Debugger</h3>
+
+<p>The <code>xdebug.remote_autostart</code> setting has been removed. Instead,
+set [CFG:start_with_request] to <code>yes</code>.</p>
+
+<a name="Starting-the-Debugger-During-a-Request"></a>
+<h3>Starting the Debugger During a Request</h3>
+
+<p>In Xdebug 3 calling [FUNC:xdebug_break] will only initiate a debugging
+session when [CFG:start_with_request] is set to <code>trigger</code>.</p>
+
+<p>It will no longer trigger a debugging session when
+[CFG:start_upon_error]=<code>yes</code> (the replacement for Xdebug 2's
+<code>xdebug.remote_mode=jit</code>).</p>
+
+<p>A debug session will be initiated upon a PHP Notice or Warning, or when a
+Throwable is thrown, when [CFG:start_upon_error] is set to <code>yes</code>,
+regardless of what the value for [CFG:start_with_request] is.</p>
+
+<a name="Changed-Function-Behaviour"></a>
+<h2>Changed Function Behaviour</h2>
+
+<dl>
+<dt><code>[FUNC:xdebug_break]</code></dt>
+<dd>
+<p>This function will no longer initiate a debugging session when
+[CFG:start_upon_error] is set to <code>yes</code> (the replacement for Xdebug 2's
+<code>xdebug.remote_mode=jit</code>).
+
+<p>It will still initate a debugging request when [CFG:start_with_request] is
+set to <code>trigger</code>.</p>
+</dd>
+
+<a name="Changed-Configuration-Settings"></a>
+<h2>Changed Configuration Settings</h2>
+
+<p>Xdebug 3 has removed and changed a lot of configuration settings. This
+section lists the removed settings and their replacements.</p>
+
+<dl>
+<dt><a name="changed-xdebug.auto_trace"></a><code>xdebug.auto_trace</code></dt>
+<dd><p>Use [CFG:mode]=<code>trace</code> with [CFG:start_with_request]=<code>yes</code>.</p></dd>
+
+<dt><a name="removed-xdebug.collect_includes"></a><code>xdebug.collect_includes</code></dt>
+<dd><p>Has been removed. File names for <code>include()</code> and
+<code>require()</code> are now always included in [FEAT:develop#stack_trace] and
+[FEAT:trace] output.</p></dd>
+
+<dt><a name="removed-xdebug.collect_params"></a><code>xdebug.collect_params</code></dt>
+<dd><p>Has been removed. Arguments are now always visible with variable
+contents and argument name in [FEAT:develop#stack_trace] and
+[FEAT:trace] output.</p></dd>
+
+<dt><a name="removed-xdebug.collect_vars"></a><code>xdebug.collect_vars</code></dt>
+<dd><p>Has been removed, it was only used in combination with the
+<code>xdebug_get_declared_vars()</code> function, which has also been
+removed.</p></dd>
+
+<dt><a name="changed-xdebug.coverage_enable"></a><code>xdebug.coverage_enable</code></dt>
+<dd><p>Use [CFG:mode]=<code>coverage</code>.</p></dd>
+
+<dt><a name="changed-xdebug.default_enable"></a><code>xdebug.default_enable</code></dt>
+<dd><p>Use [CFG:mode]=<code>develop</code>.</p></dd>
+
+<dt><a name="removed-xdebug.extended_info"></a><code>xdebug.extended_info</code></dt>
+<dd><p>No replacement. Xdebug turns on this PHP engine setting automatically when needed.</p></dd>
+
+<dt><a name="changed-xdebug.gc_stats_enable"></a><code>xdebug.gc_stats_enable</code></dt>
+<dd><p>Use [CFG:mode]=<code>gcstats</code>.</p></dd>
+
+<dt><a name="changed-xdebug.gc_stats_output_dir"></a><code>xdebug.gc_stats_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><a name="removed-xdebug.overload_var_dump"></a><code>xdebug.overload_var_dump</code></dt>
+<dd><p>Has been removed. PHP's <code>var_dump()</code> is now always overloaded
+through [FUNC:xdebug_var_dump] when <code>xdebug.mode</code> is set to
+<code>develop</code>. The [FUNC:xdebug_var_dump] function is available
+independent of which mode is configured.</p></dd>
+
+<dt><a name="changed-xdebug.profiler_enable"></a><code>xdebug.profiler_enable</code></dt>
+<dd><p>Use [CFG:mode]=<code>profile</code>.</p></dd>
+
+<dt><a name="changed-xdebug.profiler_enable_trigger"></a><code>xdebug.profiler_enable_trigger</code></dt>
+<dd><p>Use [CFG:mode]=<code>profile</code> with [CFG:start_with_request]=<code>trigger</code>.</p></dd>
+
+<dt><a name="changed-xdebug.profiler_enable_trigger_value"></a><code>xdebug.profiler_enable_trigger_value</code></dt>
+<dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
+
+<dt><a name="changed-xdebug.profiler_output_dir"></a><code>xdebug.profiler_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><a name="changed-xdebug.remote_addr_header"></a><code>xdebug.remote_addr_header</code></dt>
+<dd><p>Replaced by [CFG:client_discovery_header].</p></dd>
+
+<dt><a name="changed-xdebug.remote_autostart"></a><code>xdebug.remote_autostart</code></dt>
+<dd><p>Use [CFG:mode]=<code>debug</code> with [CFG:start_with_request]=<code>yes</code>.</p></dd>
+
+<dt><a name="changed-xdebug.remote_connect_back"></a><code>xdebug.remote_connect_back</code></dt>
+<dd><p>Replaced by [CFG:discover_client_host].</p></dd>
+
+<dt><a name="changed-xdebug.remote_enable"></a><code>xdebug.remote_enable</code></dt>
+<dd><p>Use [CFG:mode]=<code>debug</code>.</p></dd>
+
+<dt><a name="removed-xdebug.remote_handler"></a><code>xdebug.remote_handler</code></dt>
+<dd><p>No replacement. Xdebug's step debugger only supported the <a href="/docs/dbgp">DBGp handler</a>.</p></dd>
+
+<dt><a name="changed-xdebug.remote_host"></a><code>xdebug.remote_host</code></dt>
+<dd><p>Replaced by [CFG:client_host].</p></dd>
+
+<dt><a name="changed-xdebug.remote_log"></a><code>xdebug.remote_log</code></dt>
+<dd><p>Replaced by [CFG:log], which also includes log messages beyond [FEAT:step_debug].</p></dd>
+
+<dt><a name="changed-xdebug.remote_log_level"></a><code>xdebug.remote_log_level</code></dt>
+<dd><p>Replaced by [CFG:log_level].</p></dd>
+
+<dt><a name="changed-xdebug.remote_mode"></a><code>xdebug.remote_mode</code></dt>
+<dd>
+<p>For the <code>req</code> value (the original default), use
+[CFG:mode]=<code>debug</code> with
+[CFG:start_with_request]=<code>trigger</code>. If the original
+<code>xdebug.remote_autostart</code> behaviour is necessary, use
+[CFG:start_with_request]=<code>yes</code> instead of <code>trigger</code>.</p>
+
+<p>For the <code>jit</code> value, use [CFG:mode]=<code>debug</code> and
+[CFG:start_upon_error]=<a name="changed-yes"></a><code>yes</code>.</p>
+</dt>
+
+<dt><a name="changed-xdebug.remote_port"></a><code>xdebug.remote_port</code></dt>
+<dd>
+<p>Replaced by [CFG:client_port].</p>
+<p>The default value has also changed from <a name="changed-9000</code> to <code>9003"></a><code>9000</code> to <code>9003</code>.</p>
+</dd>
+
+<dt><a name="changed-xdebug.remote_timeout"></a><code>xdebug.remote_timeout</code></dt>
+<dd><p>Replaced by [CFG:connect_timeout_ms].</p></dd>
+
+<dt><a name="removed-xdebug.show_mem_delta"></a><code>xdebug.show_mem_delta</code></dt>
+<dd><p>Has been removed. The difference in memory usage can be calculated by
+comparing the usage in the current frame with the previous one.</p></dd>
+
+<dt><a name="changed-xdebug.trace_output_dir"></a><code>xdebug.trace_output_dir</code></dt>
+<dd><p>Use the generic [CFG:output_dir] setting.</p></dd>
+
+<dt><a name="changed-xdebug.trace_enable_trigger"></a><code>xdebug.trace_enable_trigger</code></dt>
+<dd><p>Use [CFG:mode]=<code>trace</code> with [CFG:start_with_request]=<code>trigger</code>.</p></dd>
+
+<dt><a name="changed-xdebug.trace_enable_trigger_value"></a><code>xdebug.trace_enable_trigger_value</code></dt>
+<dd><p>Use the generic [CFG:trigger_value] setting.</p></dd>
+</dl>
+
+
+<a name="Changes-to-Functions"></a>
+<h2>Changes to Functions</h2>
+
+<dl>
+<dt><code>xdebug_disable()</code></dt>
+<dd>
+<p>Has been removed.</p>
+<p>To prevent Xdebug from showing stack traces, do not configure Xdebug's
+<code>develop</code> mode in [CFG:mode], or turn off PHP's
+<code>html_errors</code> INI setting.</p>
+</dd>
+
+<dt><code>xdebug_enable()</code></dt>
+<dd>
+<p>Has been removed.</p>
+<p>To configure Xdebug to showing stack traces, include
+<code>develop</code> in [CFG:mode].</p>
+</dd>
+
+<dt><code>xdebug_get_declared_vars()</code></dt>
+<dd>
+<p>Has been removed.</p>
+<p>The information that this function returned can be obtained through the
+[FUNC:xdebug_get_function_stack] function.</p>
+</dd>
+
+<dt><code>xdebug_is_enabled()</code></dt>
+<dd>
+<p>Has been removed, but was never originally documented or supported.</p>
+</dd>
+
+</dl>
+
+
+<a name="Changed-Constants"></a>
+<h2>Changed Constants</h2>
+
+<p>The following constants have been changed:</p>
+
+<dl>
+<dt><code>XDEBUG_PATH_WHITELIST</code></dt>
+<dd>Is now: <code>XDEBUG_PATH_INCLUDE</code></dd>
+
+<dt><code>XDEBUG_PATH_BLACKLIST</code></dt>
+<dd>Is now: <code>XDEBUG_PATH_EXCLUDE</code></dd>
+
+<dt><code>XDEBUG_NAMESPACE_WHITELIST</code></dt>
+<dd>Is now: <code>XDEBUG_NAMESPACE_INCLUDE</code></dd>
+
+<dt><code>XDEBUG_NAMESPACE_BLACKLIST</code></dt>
+<dd>Is now: <code>XDEBUG_NAMESPACE_EXCLUDE</code></dd>
+
+</dl>

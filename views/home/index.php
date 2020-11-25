@@ -11,9 +11,9 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 
 	<ul>
 		<li>It contains a <a href='/docs/remote'>single step debugger</a> to use with IDEs</li>
-		<li>it upgrades PHP's <a href='/docs/display'>var_dump()</a> function</li>
-		<li>it adds <a href='/docs/stack_trace'>stack traces</a> for Notices, Warnings, Errors and Exceptions</li>
-		<li>it features functionality for <a href='/docs/execution_trace'>recording every function call and variable assignment</a> to disk</li>
+		<li>it upgrades PHP's <a href='/docs/develop#display'>var_dump()</a> function</li>
+		<li>it adds <a href='/docs/develop#stack_trace'>stack traces</a> for Notices, Warnings, Errors and Exceptions</li>
+		<li>it features functionality for <a href='/docs/trace'>recording every function call and variable assignment</a> to disk</li>
 		<li>it contains a <a href='/docs/profiler'>profiler</a></li>
 		<li>it provides <a href='/docs/code_coverage'>code coverage</a> functionality for use with <a href='https://phpunit.de'>PHPUnit</a></li>
 	</ul>

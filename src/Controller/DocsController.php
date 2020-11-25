@@ -13,32 +13,18 @@ class DocsController
 			\FUNC_INSTALL,
 			'This section describes on how to install Xdebug.',
 		],
-		'basic' => [
-			'Basic Features',
-			\FUNC_BASIC,
-			'Xdebug\'s basic functions include the display of stack traces on error
-			conditions, maximum nesting level protection and time tracking.',
+		'develop' => [
+			'Development Aids',
+			\FUNC_BASIC | \FUNC_VAR_DUMP | \FUNC_STACK_TRACE,
+			'Xdebug\'s development aids help you get better error messages and
+			obtain better information from PHP\'s built-in functions. The aids
+			include an upgraded <code>var_dump()</code> function; location,
+			stack, and argument information upon Notices, Warnings and
+			Exceptions; and numerous functions and settings to tweak PHP\'s
+			behaviour.',
+			[ 'tabfields' => [ 'demosettings', 'collectparams', 'othersettings' ] ]
 		],
-		'display' => [
-			'Variable Display Features',
-			\FUNC_VAR_DUMP,
-			'Xdebug replaces PHP\'s var_dump() function for displaying variables.
-			Xdebug\'s version includes different colors for different types and
-			places limits on the amount of array elements/object properties,
-			maximum depth and string lengths. There are a few other functions
-			dealing with variable display as well.',
-			[ 'tabfields' => [ 'demosettings' ] ]
-		],
-		'stack_trace' => [
-			'Stack Traces',
-			\FUNC_STACK_TRACE,
-			'When Xdebug is activated it will show a stack trace whenever PHP
-			decides to show a notice, warning, error etc. The information that
-			stack traces display, and the way how they are presented, can be
-			configured to suit your needs.',
-			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
-		],
-		'execution_trace' => [
+		'trace' => [
 			'Function Trace',
 			\FUNC_FUNCTION_TRACE,
 			'Xdebug allows you to log all function calls, including parameters and
@@ -66,12 +52,11 @@ class DocsController
 			script and visualize those with an external tool such as KCacheGrind or
 			WinCacheGrind.',
 		],
-		'remote' => [
+		'step_debug' => [
 			'Step Debugging',
-			\FUNC_REMOTE,
-			'Xdebug provides an interface for debugger clients that interact with
-			running PHP scripts. This section explains how to set-up PHP and Xdebug
-			to allow this, and introduces a few clients.',
+			\FUNC_STEP_DEBUG,
+			"Xdebug's step debugger allows you to interactively walk through your code to
+debug control flow and examine data structures.",
 		],
 		'dbgpClient' => [
 			'Command Line Debug Client',
@@ -89,10 +74,20 @@ class DocsController
 			0,
 			'This page lists which versions of Xdebug are still supported, and with which versions of PHP they can be used.',
 		],
+		'upgrade_guide' => [
+			'Upgrading from Xdebug 2 to 3',
+			0,
+			'An upgrade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
+		],
 		'faq' => [
 			'FAQ',
 			0,
 			'Frequently Asked Questions',
+		],
+		'errors' => [
+			'Description of errors',
+			0,
+			'This section lists all errors that show up in the PHP and diagnostic logs.',
 		],
 		'contributing' => [
 			'Contributing',

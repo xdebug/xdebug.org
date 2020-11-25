@@ -16,8 +16,8 @@ set up a filter. Currently there are two groups:
 
 <dl>
 <dt>XDEBUG_FILTER_TRACING</dt>
-<dd>The filter group used for filtering [FEAT:stack_trace] upon errors, as well
-as [FEAT:execution_trace].</dd>
+<dd>The filter group used for filtering a [FEAT:develop#stack_trace] upon errors, as well
+as for elements in a [FEAT:trace].</dd>
 
 <dt>XDEBUG_FILTER_CODE_COVERAGE</dt>
 <dd>The filter group used for restricting the file paths which Xdebug would use
@@ -34,7 +34,7 @@ matches are done in a case-insensitive way.
 
 TXT:
 The <code>XDEBUG_FILTER_CODE_COVERAGE</code> group only supports
-<code>XDEBUG_PATH_WHITELIST</code>, <code>XDEBUG_PATH_BLACKLIST</code>, and
+<code>XDEBUG_PATH_INCLUDE</code>, <code>XDEBUG_PATH_EXCLUDE</code>, and
 <code>XDEBUG_FILTER_NONE</code>. All matches are done in a case-insensitive
 way.
 
@@ -42,7 +42,7 @@ TXT:
 The constants to use as second "<code>$list_type</code>" argument are:
 
 <dl>
-<dt>XDEBUG_PATH_WHITELIST</dt>
+<dt>XDEBUG_PATH_INCLUDE</dt>
 <dd><p>Configures a list of file paths to include. An execution unit is
 included in the output if its file path is prefixed by any of the prefixes in
 the array passed as third <code>$configuration</code> argument.</p><p>Please
@@ -50,12 +50,12 @@ note that a prefix of <code>/home/derick</code> would also match files in
 <code>/home/derickrethans</code>, so it is recommended that you add the
 trailing slash to the prefix in order to prevent this.</p></dd>
 
-<dt>XDEBUG_PATH_BLACKLIST</dt>
+<dt>XDEBUG_PATH_EXCLUDE</dt>
 <dd><p>Sets up a list of paths to exclude. An execution unit will be excluded
 from the output if its file path is prefixed by any of the prefixes from the
 <code>$configuration</code> array.</p></dd>
 
-<dt>XDEBUG_NAMESPACE_WHITELIST</dt>
+<dt>XDEBUG_NAMESPACE_INCLUDE</dt>
 <dd><p>Configures a list of class name prefixes to include. An execution unit is included in
 the output if the class name, after namespace expansion, matches one of the
 prefixes in the <code>$configuration</code> array. An empty string value is
@@ -77,7 +77,7 @@ TXT:
 In order to match for all clases within a namespace, it is recommended to specify the prefix with the namespace separator
 </p></dd>
 
-<dt>XDEBUG_NAMESPACE_BLACKLIST</dt>
+<dt>XDEBUG_NAMESPACE_EXCLUDE</dt>
 <dd>Sets up a list of namespaces to exclude. Execution units are excluded only
 if their prefix matches one of the prefixes in the <code>$configuration</code>
 array.</dd>
@@ -99,7 +99,7 @@ To exclude all files in the <code>vendor</code> sub-directory in traces:
 
 EXAMPLE:
 <?php
-xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_PATH_BLACKLIST, [ __DIR__ . "/vendor/" ] );
+xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_PATH_EXCLUDE, [ __DIR__ . "/vendor/" ] );
 ?>
 
 TXT:
@@ -108,7 +108,7 @@ To include only function calls (without class name), and methods calls for the
 
 EXAMPLE:
 <?php
-xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_NAMESPACE_WHITELIST, [ "", "ezc", "DramIO\" ] );
+xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_NAMESPACE_INCLUDE, [ "", "ezc", "DramIO\" ] );
 ?>
 
 TXT:
@@ -116,5 +116,5 @@ To only perform code-coverage analysis for files in the <code>src</code> sub-dir
 
 EXAMPLE:
 <?php
-xdebug_set_filter( XDEBUG_FILTER_CODE_COVERAGE, XDEBUG_PATH_WHITELIST, [ __DIR__ . "/src/" ] );
+xdebug_set_filter( XDEBUG_FILTER_CODE_COVERAGE, XDEBUG_PATH_INCLUDE, [ __DIR__ . "/src/" ] );
 ?>

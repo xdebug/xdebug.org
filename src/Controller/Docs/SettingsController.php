@@ -9,45 +9,34 @@ use XdebugDotOrg\Controller\DocsController;
 class SettingsController
 {
 	private const SETTINGS = [
-		'collect_vars' => [
-			'boolean', 'false', null,
-			\FUNC_STACK_TRACE
+		'mode' => [
+			'string', 'develop', null,
+			-1
 		],
-		'default_enable' => [
-			'boolean', 'true', null,
-			\FUNC_BASIC
-		],
-		'extended_info' => [
-			'integer', 1, "< 2.8",
-			\FUNC_REMOTE
-		],
+
 		'force_display_errors' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
 		],
 		'force_error_reporting' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
 		],
 		'halt_level' => [
-			'integer', 0, ">= 2.3",
+			'integer', 0, null,
 			\FUNC_BASIC
-		],
-		'manual_url' => [
-			'string', 'http://www.php.net', "< 2.2.1",
-			\FUNC_STACK_TRACE
 		],
 		'max_nesting_level' => [
 			'integer', 256, null,
 			\FUNC_BASIC
 		],
 		'max_stack_frames' => [
-			'integer', -1, ">= 2.3",
+			'integer', -1, null,
 			\FUNC_BASIC
 		],
 
 		'show_error_trace' => [
-			'integer', 0, ">= 2.4",
+			'integer', 0, null,
 			\FUNC_STACK_TRACE
 		],
 
@@ -59,11 +48,6 @@ class SettingsController
 		'show_local_vars' => [
 			'integer', 0, null,
 			\FUNC_STACK_TRACE
-		],
-
-		'show_mem_delta' => [
-			'integer', 0, null,
-			\FUNC_STACK_TRACE | \FUNC_FUNCTION_TRACE
 		],
 
 		'var_display_max_children' => [
@@ -82,23 +66,13 @@ class SettingsController
 		],
 
 		'cli_color' => [
-			'integer', 0, '>= 2.2',
+			'integer', 0, null,
 			\FUNC_STACK_TRACE | \FUNC_VAR_DUMP
 		],
 
-		'auto_trace' => [
+		'collect_assignments' => [
 			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE
-		],
-
-		'collect_assignments' => [
-			'boolean', 'false', '>= 2.1',
-			\FUNC_FUNCTION_TRACE
-		],
-
-		'collect_includes' => [
-			'boolean', 'true', null,
-			\FUNC_FUNCTION_TRACE | \FUNC_STACK_TRACE
 		],
 
 		'collect_params' => [
@@ -121,9 +95,9 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
-		'trace_output_dir' => [
+		'output_dir' => [
 			'string', '/tmp', null,
-			\FUNC_FUNCTION_TRACE
+			\FUNC_FUNCTION_TRACE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION
 		],
 
 		'trace_output_name' => [
@@ -131,109 +105,63 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
-		'trace_enable_trigger' => [
-			'boolean', 'false', '>= 2.2',
-			\FUNC_FUNCTION_TRACE
+		'start_with_request' => [
+			'string', 'default', null,
+			\FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
 		],
 
-		'trace_enable_trigger_value' => [
-			'string', '""', '>= 2.3',
-			\FUNC_FUNCTION_TRACE
+		'start_upon_error' => [
+			'string', 'default', null,
+			\FUNC_STEP_DEBUG
 		],
 
+		'trigger_value' => [
+			'string', '""', null,
+			\FUNC_BASIC | \FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE
+		],
 
 		'idekey' => [
 			'string', '*complex*', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
-		'remote_addr_header' => [
-			'string', '""', '>= 2.4',
-			\FUNC_REMOTE
+		'client_discovery_header' => [
+			'string', '""', null,
+			\FUNC_STEP_DEBUG
 		],
 
-		'remote_autostart' => [
+		'discover_client_host' => [
 			'boolean', 'false', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
-		'remote_cookie_expire_time' => [
-			'integer', 3600, '>= 2.1',
-			\FUNC_REMOTE
-		],
-
-		'remote_connect_back' => [
-			'boolean', 'false', '>= 2.1',
-			\FUNC_REMOTE
-		],
-
-		'remote_enable' => [
-			'boolean', 'false', null,
-			\FUNC_REMOTE
-		],
-
-		'remote_handler' => [
-			'string', 'dbgp', '< 2.9',
-			\FUNC_REMOTE
-		],
-
-		'remote_host' => [
+		'client_host' => [
 			'string', 'localhost', null,
-			\FUNC_REMOTE
+			\FUNC_STEP_DEBUG
 		],
 
-		'remote_log' => [
+		'client_port' => [
+			'integer', 9003, null,
+			\FUNC_STEP_DEBUG
+		],
+
+		'connect_timeout_ms' => [
+			'integer', 200, null,
+			\FUNC_STEP_DEBUG
+		],
+
+		'log' => [
 			'string', '', null,
-			\FUNC_REMOTE
+			-1
 		],
 
-		'remote_log_level' => [
-			'integer', '7', '>= 2.8',
-			\FUNC_REMOTE
-		],
-
-		'remote_mode' => [
-			'string', 'req', null,
-			\FUNC_REMOTE
-		],
-
-		'remote_port' => [
-			'integer', 9000, null,
-			\FUNC_REMOTE
-		],
-
-		'remote_timeout' => [
-			'integer', 200, '>= 2.6',
-			\FUNC_REMOTE
+		'log_level' => [
+			'integer', '7', null,
+			-1
 		],
 
 		'profiler_append' => [
 			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_aggregate' => [
-			'integer', 0, '< 2.9',
-			\FUNC_PROFILER
-		],
-
-		'profiler_enable' => [
-			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_enable_trigger' => [
-			'integer', 0, null,
-			\FUNC_PROFILER
-		],
-
-		'profiler_enable_trigger_value' => [
-			'string', '""', '>= 2.3',
-			\FUNC_PROFILER
-		],
-
-		'profiler_output_dir' => [
-			'string', '/tmp', null,
 			\FUNC_PROFILER
 		],
 
@@ -242,18 +170,8 @@ class SettingsController
 			\FUNC_PROFILER
 		],
 
-		'gc_stats_enable' => [
-			'bool', 'false', '>= 2.6',
-			\FUNC_GARBAGE_COLLECTION
-		],
-
-		'gc_stats_output_dir' => [
-			'string', '/tmp', '>= 2.6',
-			\FUNC_GARBAGE_COLLECTION
-		],
-
 		'gc_stats_output_name' => [
-			'string', 'gcstats.%p', '>= 2.6',
+			'string', 'gcstats.%p', null,
 			\FUNC_GARBAGE_COLLECTION
 		],
 
@@ -277,28 +195,19 @@ class SettingsController
 			\FUNC_STACK_TRACE
 		],
 
-		'overload_var_dump' => [
-			'integer', 2, '> 2.1',
-			\FUNC_VAR_DUMP
-		],
-
 		'file_link_format' => [
-			'string', '', '>= 2.1',
+			'string', '', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'filename_format' => [
-			'string', '...%s%n', '>= 2.6',
+			'string', '...%s%n', null,
 			\FUNC_STACK_TRACE
 		],
 
 		'scream' => [
-			'boolean', 'false', '>= 2.1',
+			'boolean', 'false', null,
 			\FUNC_BASIC
-		],
-		'coverage_enable' => [
-			'boolean', 'true', '>= 2.2',
-			\FUNC_CODE_COVERAGE
 		],
 	];
 

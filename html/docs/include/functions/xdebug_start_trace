@@ -7,7 +7,7 @@ FUNC_FUNCTION_TRACE
 TXT:
 Start tracing function calls from this point to the file in the
 <code>$trace_file</code> parameter. If no filename is given, then the trace file will
-be placed in the directory as configured by the [CFG:trace_output_dir] setting.
+be placed in the directory as configured by the [CFG:output_dir] setting.
 
 TXT:
 In case a file name is given as first parameter, the name is relative
@@ -18,10 +18,14 @@ href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
 working directory is.
 
 TXT:
-The name of the trace file is "{trace_file}.xt". If [CFG:auto_trace] is
-enabled, then the format of the filename is "{filename}.xt" where the
-"{filename}" part depends on the [CFG:trace_output_name] setting. The
-<i>options</i> parameter is a bitfield; currently there are three options:
+The name of the trace file is <code>{$trace_file}.xt</code>. If the trace was started at
+the beginning of the request because [CFG:start_with_request] is set to
+<code>yes</code>, then the filename depends on the
+[CFG:trace_output_name] setting.
+
+TXT:
+The <i>options</i> parameter is a bitfield;
+currently there are three options:
 
 TXT:
 The <i>options</i> parameter is a bitfield;

@@ -9,4 +9,5 @@ The function returns the number of variable roots that the garbage collection ha
 collected during all runs of the garbage collector in the current script.
 
 TXT:
-This number is available even if the [CFG:gc_stats_enable] INI setting is set to false.
+This number is available even if the [CFG:start_with_request] INI setting is
+not set to <code>yes</code>.
