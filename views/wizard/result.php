@@ -7,8 +7,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Installation instr
 
 <h1>Installation Wizard</h1>
 
-<?= XdebugDotOrg\Controller\TemplateController::default_menu()->render() ?>
-
 <h2>Summary</h2>
 <ul>
 	<?php if ( $this->x->xdebugAsZendExt && $this->x->xdebugVersion) : ?>
@@ -21,8 +19,8 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Installation instr
 	<li><b>Server API:</b> <?= $this->x->sapi ?: 'not found' ?></li>
 	<li><b>Windows:</b> <?= $this->x->windows ? 'yes' : 'no' ?>
 	<?php if ( $this->x->windows ) : ?>
-		 - Compiler: MS VC <?= $this->x->winCompiler ?>
-		 - Architecture: <?= $this->x->architecture ?>
+		<li><b>Compiler:</b> MS <?= $this->x->winCompiler >= 16 ? 'VS' : 'VC' ?><?= $this->x->winCompiler ?></li>
+		<li><b>Architecture:</b> <?= $this->x->architecture ?></li>
 	<?php endif ?>
 	</li>
 	<li><b>Zend Server:</b> <?= $this->x->zendServer ? 'yes' : 'no' ?>
@@ -129,7 +127,7 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		</li>
 	<?php endif ?>
 
-	<?php if ( $this->x->configPath ) : ?>
+	<?php if ( $this->x->configPath || $this->x->windows ) : ?>
 		<li>
 			<?php if ($this->x->configFile) : ?>
 				<?php if ($this->x->xdebugVersion) : ?>
