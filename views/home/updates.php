@@ -22,6 +22,23 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_1'></a>[2020-12-04] &mdash; Xdebug 3.0.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1893); ?>: Crash with ext-fiber and xdebug.mode=coverage</dd>
+<dd>Fixed <?= bug(1896); ?>: Segfault with closures that are not created from user code</dd>
+<dd>Fixed <?= bug(1897); ?>: Crash when removing a breakpoint</dd>
+<dd>Fixed <?= bug(1900); ?>: Update README and add run-xdebug-tests.php to package</dd>
+<dd>Fixed <?= bug(1901); ?>: Stack traces are shown (with a broken time) when Xdebug's mode includes 'debug' but not 'develop' or 'trace'</dd>
+<dd>Fixed <?= bug(1902); ?>: Compillation failure on AIX</dd>
+<dd>Fixed <?= bug(1903); ?>: Constants should always be available, regardless of which mode Xdebug is in</dd>
+<dd>Fixed <?= bug(1904); ?>: Profile and trace files using %t or %u do not get the right names</dd>
+<dd>Fixed <?= bug(1905); ?>: Debugger does not disable request timeouts</dd>
+
+<hr/>
+
+
 <dt><a name='x_3_0_0'></a>[2020-11-25] &mdash; Xdebug 3.0.0</dt>
 
 <dd>
@@ -136,6 +153,7 @@ lists the changes in great detail, please read it.
 <dd>Fixed <?= bug(1892); ?>: Document changed/removed ini settings in the upgrade guide with the links provided</dd>
 
 <hr/>
+
 
 <dt><a name='x_3_0_0RC1'></a>[2020-11-16] &mdash; Xdebug 3.0.0RC1</dt>
 
