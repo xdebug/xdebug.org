@@ -108,7 +108,7 @@ To include only function calls (without class name), and methods calls for the
 
 EXAMPLE:
 <?php
-xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_NAMESPACE_INCLUDE, [ "", "ezc", "DramIO\" ] );
+xdebug_set_filter( XDEBUG_FILTER_TRACING, XDEBUG_NAMESPACE_INCLUDE, [ "", "ezc", "DramIO\\" ] );
 ?>
 
 TXT:
