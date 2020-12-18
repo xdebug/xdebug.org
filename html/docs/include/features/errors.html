@@ -403,6 +403,39 @@
 </p>
 </dl>
 
+
+<h2>Garbage Collection Stats</h2>
+
+<dl>
+
+<a name="GC-E-DISABLED"></a>
+<dt>GC-E-DISABLED</dt>
+<dd>
+<p class="reason">
+	Occurs when garbage collection stats is enabled, but PHP's garbage
+	collection mechanism is turned off.
+</p>
+<p>
+	PHP's garbage collection is turned off through PHP's
+	<code><a href="https://www.php.net/manual/en/info.configuration.php#ini.zend.enable-gc">zend.enable_gc</a></code>
+	setting, or <code><a href="https://www.php.net/gc_disable">gc_disable()</a></code>
+	has been called in a script.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check whether <code>zend.enable_gc</code> is set to <code>0</code>
+		in <code>php.ini</code>, and change the value to <code>1</code>.</li>
+		<li>Check whether your script, framework, or application calls
+		<code><a href="https://www.php.net/gc_disable">gc_disable()</a></code>,
+		and if so, remove that function call.</li>
+	</ul>
+</p>
+</dd>
+
+</dl>
+
+
 <h2>Logging</h2>
 
 <dl>
