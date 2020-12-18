@@ -21,10 +21,14 @@ actually executed.</dd>
 <dd>Enables branch analyzes to figure out whether code can be executed.</dd>
 
 <dt>XDEBUG_CC_BRANCH_CHECK</dt>
-<dd>Enables path execution analysis.</dd>
+<dd>Enables branch and path execution analysis.</dd>
 </dl>
 
-Enabling those options make code coverage drastically slower.
+The options to analyse PHP code will reduce PHP's performance. These options
+also only have effect on code coverage analyses for functions, methods, or
+scripts started <b>after</b> the call to [FUNC:xdebug_start_code_coverage], and
+have no effect on the function where [FUNC:xdebug_start_code_coverage] is
+called in.
 
 TXT:
 You can use the options as shown in the following example.
