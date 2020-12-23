@@ -15,13 +15,15 @@ The first argument, <code>$group</code> selects for which feature you want to
 set up a filter. Currently there are two groups:
 
 <dl>
-<dt>XDEBUG_FILTER_TRACING</dt>
-<dd>The filter group used for filtering a [FEAT:develop#stack_trace] upon errors, as well
-as for elements in a [FEAT:trace].</dd>
-
 <dt>XDEBUG_FILTER_CODE_COVERAGE</dt>
 <dd>The filter group used for restricting the file paths which Xdebug would use
 for [FEAT:code_coverage].</dd>
+
+<dt>XDEBUG_FILTER_STACK</dt>
+<dd>The filter group used for filtering a [FEAT:develop#stack_trace] upon errors.</dd>
+
+<dt>XDEBUG_FILTER_TRACING</dt>
+<dd>The filter group used for filtering elements in a [FEAT:trace].</dd>
 </dl>
 
 Each group can be configured independently.
