@@ -22,6 +22,26 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_2'></a>[2021-01-04] &mdash; Xdebug 3.0.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1907); ?>: Empty exception message when setting the $message property to a stringable object</dd>
+<dd>Fixed <?= bug(1910); ?>: Code coverage misses constructor property promotion code</dd>
+<dd>Fixed <?= bug(1914); ?>: Compillation failure on OpenBSD</dd>
+<dd>Fixed <?= bug(1915); ?>: Debugger should only start with XDEBUG_SESSION and not XDEBUG_PROFILE</dd>
+<dd>Fixed <?= bug(1918); ?>: Warn if PHP's Garbage Collection is disabled in gc_stats mode</dd>
+<dd>Fixed <?= bug(1919); ?>: Crash when enabling filter without the right mode active</dd>
+<dd>Fixed <?= bug(1921); ?>: Xdebug does not start step debugging if start_with_request=trigger</dd>
+<dd>Fixed <?= bug(1922); ?>: Code coverage misses array assignment lines</dd>
+<dd>Fixed <?= bug(1924); ?>: Deprecated INI settings displayed in phpinfo()</dd>
+<dd>Fixed <?= bug(1925); ?>: xdebug.start_with_request and start_upon_error display inconsistent values</dd>
+<dd>Fixed <?= bug(1926); ?>: Add Xdebug mode's source to xdebug_info() output</dd>
+<dd>Fixed <?= bug(1927); ?>: Crash when calling xdebug_stop_trace without a trace in progress</dd>
+<dd>Fixed <?= bug(1928); ?>: xdebug_stop_gcstats() can also return false</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_1'></a>[2020-12-04] &mdash; Xdebug 3.0.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

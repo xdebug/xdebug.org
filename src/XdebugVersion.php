@@ -3,18 +3,18 @@ namespace XdebugDotOrg;
 
 class XdebugVersion
 {
-	public const NOT_SUPPORTED_BEFORE = '3.0';
-	public const LATEST_VERSION = '3.0.1';
-	public const LATEST_WINDOWS_VERSION = '3.0.1';
+    public const NOT_SUPPORTED_BEFORE = '3.0';
+    public const LATEST_VERSION = '3.0.2';
+    public const LATEST_WINDOWS_VERSION = '3.0.2';
 
-	private const VERSIONS =  [
-		'7.0' => [ 'src' => '2.8.1',                              ],
-		'7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.2' => [ 'src' => '3.0.1',       'win' => '3.0.1'       ],
-		'7.3' => [ 'src' => '3.0.1',       'win' => '3.0.1'       ],
-		'7.4' => [ 'src' => '3.0.1',       'win' => '3.0.1'       ],
-		'8.0' => [ 'src' => '3.0.1',       'win' => '3.0.1'       ]
-	];
+    private const VERSIONS =  [
+        '7.0' => [ 'src' => '2.8.1',                        ],
+        '7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8' ],
+        '7.2' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '7.3' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '7.4' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '8.0' => [ 'src' => '3.0.2',       'win' => '3.0.2' ]
+    ];
 
 	/** @var string|null */
 	public $version;
