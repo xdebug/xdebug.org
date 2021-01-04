@@ -16,6 +16,11 @@ both [FEAT:profiler] and [FEAT:step_debug] active at the same time.</p>
 <code>XDEBUG_MODE</code> environment variable. If this environment variable is
 active, it overrides the mode as set through [CFG:mode].</p>
 
+<p>Note that the mode must be set when the PHP process starts, so unlike the 
+settings in XDebug 2 which it replaces, you <strong>can not</strong> set it 
+in configuration files which are loaded on each request such as 
+<code>.htaccess</code> or <code>.user.ini</code>.</p>
+
 <p>To make sure that just [FEAT:step_debug] is active, instead of:</p>
 
 <pre>
