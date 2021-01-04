@@ -157,7 +157,7 @@ trigger a debugging connection when a PHP Notice or Warning appears, or when a
 <h2>Troubleshooting</h2>
 
 <p>You can troubleshoot Xdebug's attempts at initiating debugging connections
-by configuring a log file through [CFG:remote_log]. When the connection is
+by configuring a log file through [CFG:log]. When the connection is
 successfully established the log will also contain the communication between
 Xdebug and IDE.</p>
 
@@ -167,9 +167,9 @@ doesn't work. A "remote log file" is also required when reporting a bug in
 Xdebug's step debugger.</p>
 
 <p>There are several logging levels which can be configured through
-[CFG:remote_log_level].</p>
+[CFG:log_level].</p>
 
-<p>The [CFG:remote_log] setting requires as argument a full path to a file, to
+<p>The [CFG:log] setting requires as argument a full path to a file, to
 which the user that PHP/Xdebug runs as can write to. It is advisable to use
 something like <code>/tmp/xdebug.log</code>.</p>
 
