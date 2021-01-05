@@ -1,0 +1,25 @@
+8.53	5.05	1.00	5.83	10.40
+2020-11-03	bug	1.5	Fixed #1864 – conflicts with PCS and protobuf
+2020-11-04	cloud	3.75	Use tokens instead of UID for connecting sessions
+2020-11-05	xdebug3	3	Fixed #1880 test and switch Travis to GitHub actions
+2020-11-08	cloud	2.5	Privacy and data retention policies
+2020-11-09	cloud	4	Website design structure and designer plan
+2020-11-10	cloud	2.5	Investigate hanging connections
+2020-11-11	xdebug3	5.5	Fixed Solaris compile issue, reduce obtaining system time to improve performance
+2020-11-12	xdebug3	4	Remove pause-execution support
+2020-11-13	bug	4.5	Fixed #1887 and #1875 which both caused crashes
+2020-11-14	bug	3	Fixed #1608 and #1885 – configuration settings
+2020-11-14	website	1	Tweak CSS
+2020-11-14	release	3	Releasing Xdebug 3.0.0RC1
+2020-11-16	release	0.5	Release announcements
+2020-11-18	xdebug3	2	Bug triage and merging xdebug_info() improvement
+2020-11-20	xdebug3	5	Remaining Xdebug 3 tickets, sans XDEBUG_CONFIG docs
+2020-11-21	xdebug3	1	Triage #1898 and messing with documentation
+2020-11-22	docs	1	Document XDEBUG_CONFIG and related setting opportunities
+2020-11-22	xdebug3	3.5	Issue #1891: In extension documentation of removed settings
+2020-11-23	xdebug3	4.75	Prepare documentation for Xdebug 3.0
+2020-11-25	release	5	Release 3.0.0
+2020-11-26	bug	1	Bugs triage
+2020-11-27	website	1.5	Fixed wizard
+2020-11-27	bug	4.75	Fixed crashes with Xdebug 3.0.0
+2020-11-28	bug	4	Bug #1901 (stack trace), #1902 (Compilation failure on AIX)
