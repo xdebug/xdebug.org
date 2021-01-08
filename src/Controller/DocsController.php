@@ -156,7 +156,7 @@ debug control flow and examine data structures.",
 		$text = preg_replace( '/\[CFG:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">xdebug.\1</a>', $text );
 		$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '<a href="/docs/all_settings#\1">\1</a>', $text );
 		$text = preg_replace_callback(
-			'/\[FEAT:([^\]]*?)(#.*)?\]/',
+			'/\[FEAT:([^\]]*?)(#[^\]]*)?\]/',
 			function (array $matches) {
 				if (!array_key_exists(2, $matches)) {
 					$matches[2] = '';
@@ -176,7 +176,7 @@ debug control flow and examine data structures.",
 		$text = preg_replace( '/\[CFG:([^\]]*?)\]/', 'xdebug.\1', $text );
 		$text = preg_replace( '/\[CFGS:([^\]]*?)\]/', '\1', $text );
 		$text = preg_replace_callback(
-			'/\[FEAT:([^\]]*?)(#.*)?\]/',
+			'/\[FEAT:([^\]]*?)(#[^\]]*)?\]/',
 			function (array $matches) {
 				if (!array_key_exists(2, $matches)) {
 					$matches[2] = '';
