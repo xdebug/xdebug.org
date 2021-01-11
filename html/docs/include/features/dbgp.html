@@ -12,7 +12,7 @@
 </tbody>
 </table>
 <div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
+<p class="topic-title">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#description" id="id13">1. Description</a></li>
 <li><a class="reference internal" href="#issues" id="id14">1.1 Issues</a></li>
@@ -925,12 +925,13 @@ See <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for a 
 6 defined breakpoint types.</td>
 </tr>
 <tr><td>resolved_breakpoints</td>
-<td>get</td>
-<td>returns whether the debugging engine
-supports the notion of resolving
-breakpoints. See the <em>resolved</em>
-attribute under <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for
-further information.</td>
+<td>get|set</td>
+<td>whether 'breakpoint_resolved'
+notifications may be send by the
+debugging engine in case it is
+supported. See the <em>resolved</em> attribute
+under <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for further
+information.</td>
 </tr>
 <tr><td>multiple_sessions</td>
 <td>get|set</td>
@@ -1282,12 +1283,14 @@ or the exception name (<em>exception</em> type breakpoints).
 For dynamic languages, that load files as the
 execution happens, this is useful for finding out
 invalid breakpoints. This is a <strong>read only</strong> flag. It
-MUST be included when the debugger engine does support
-resolving of breakpoints, and it MUST NOT be included
-if the debugger engine has no notion of resolved
-breakpoints. An IDE can use the <em>resolved_breakpoints</em>
-feature to find out whether a debugging engine
-supports resolved breakpoints.</td>
+MUST be included when the <em>resolved_breakpoints</em>
+feature has been activated, and it MUST NOT be
+included if the <em>resolved_breakpoints</em> feature has not
+been enabled. An IDE can use <a class="reference internal" href="#feature-set">7.2.3 feature_set</a> to
+enable the feature (if supported), and <a class="reference internal" href="#feature-get">7.2.2
+feature_get</a> to find out whether the debugging engine
+supports <em>resolved_breakpoints</em>, and whether it has
+been enabled.</td>
 </tr>
 <tr><td>hit_count</td>
 <td>Number of effective hits for the breakpoint in the
@@ -1437,7 +1440,8 @@ debugger engine</td>
 <td><em>resolved</em> if the debugger engine knows the
 breakpoint is valid, or <em>unresolved</em> otherwise. This
 attribute is only present if the debugger engine
-implements the &quot;resolving&quot; feature</td>
+implements the &quot;resolving&quot; feature, and the IDE has
+enabled it.</td>
 </tr>
 </tbody>
 </table>
@@ -2702,6 +2706,9 @@ includes the same elements as a return from
 becomes a child element of the <em>notify</em> element
 instead of <em>response</em>. The <em>resolved</em> attribute should
 always be set to <em>resolved</em>.
+A debugger engine MUST NOT send this notification if
+<em>resolved_breakpoints</em> has not been enabled with
+<a class="reference internal" href="#feature-set">7.2.3 feature_set</a>.
 A debugger engine MAY send multiple notifications for
 the same breakpoint ID, but only if their attributes
 have changed (again).</td>
@@ -2719,11 +2726,16 @@ debugging information.</td>
 <p>When a language engine creates a debugging notification, the debugger engine
 MAY convert this to a DBGp notification. As an example, this can be used to
 convert PHP's Notices and Warnings to DBGp notifications.</p>
-<p>With the <tt class="docutils literal">notify_ok</tt> feature set, a notification like the following would be
-returned. As the notification comes straight out of the debugger engine, the
-data passed in this packet is base64 encoded (as indicated by the <tt class="docutils literal">encoding</tt>
-attribute on the <tt class="docutils literal">notify</tt> tag. This extensive XML snippet also displays how
-XML namespaces SHOULD BE used for providing additional information:</p>
+<p>With the <tt class="docutils literal">notify_ok</tt> feature set, a notification like below COULD be
+returned by the debugger engine.</p>
+<p>An <tt class="docutils literal">error</tt> notification MAY include additional information in the body of
+the <tt class="docutils literal">notify</tt> element. As notifications come straight out of the debugger
+engine, the data body returned in this packet is of arbitrary encoding. If
+body data is present, the debugger engine MUST include which encoding is used
+through the <tt class="docutils literal">encoding</tt> attribute on the <tt class="docutils literal">notify</tt> tag. Currently, only the
+<tt class="docutils literal">base64</tt> encoding is supported.</p>
+<p>This extensive XML snippet displays through <tt class="docutils literal">&lt;xmlns:xdebug</tt>, how XML
+namespaces SHOULD BE used for providing additional information:</p>
 <pre class="literal-block">
 &lt;notify xmlns=&quot;urn:debugger_protocol_v1&quot;
         xmlns:xdebug=&quot;http://xdebug.org/dbgp/xdebug&quot;
@@ -2817,7 +2829,7 @@ status is returned unless the mode in the
 command was zero, in which case the
 status will be up to the debugger engine
 (typically the last status before running
-interact), or some error has occurred
+interact), or some error has occured
 that causes a different status.</td>
 </tr>
 <tr><td>CONTINUE_FLAG</td>
@@ -2836,6 +2848,20 @@ next line of code</td>
 </div>
 <div class="section" id="a-changelog">
 <h1><a class="toc-backref" href="#id83">A. ChangeLog</a></h1>
+<p>2021-01-11</p>
+<ul class="simple">
+<li>7.6 Fixed duplicate mention of <a class="reference internal" href="#feature-get">7.2.2 feature_get</a>, where one of them
+should have been <a class="reference internal" href="#feature-set">7.2.3 feature_set</a>.</li>
+</ul>
+<p>2019-04-06</p>
+<ul class="simple">
+<li>7.2.1, 7.6 Change the 'breakpoint_resolved' notification to an opt-in
+feature.</li>
+</ul>
+<p>2018-01-17</p>
+<ul class="simple">
+<li>8.5.2 Clarify that the body (and encoding attribute) is optional.</li>
+</ul>
 <p>2018-01-09 - draft 21</p>
 <ul class="simple">
 <li>6.3.1 Added section detailing escaping rules for sending arguments to the
