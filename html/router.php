@@ -19,13 +19,20 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::download()->render();
 	} elseif ($requested_uri === '/download/historical') {
 		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
-	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?(\/([a-z]{2}))?/', $requested_uri, $matches)) {
 		$pages = [
 			'install', 'develop', 'trace',
 			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
 			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
+
+		$language = null;
+		if (isset($matches[4])) {
+			if ($matches[2] == 'upgrade_guide' && $matches[4] == 'ja') {
+				$language = $matches[4];
+			}
+		}
 
 		if (isset($matches[2])) {
 			if ($matches[2] === 'all_settings') {
@@ -37,7 +44,7 @@ try {
 				header('Location: /docs/step_debug');
 				exit();
 			} elseif (in_array($matches[2], $pages)) {
-				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2])->render();
+				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2], $language)->render();
 			} elseif (in_array($matches[2], $redirectDevelopPages)) {
 				header("HTTP/1.1 301 Moved Permanently");
 				header("Location: /docs/develop#{$matches[2]}");

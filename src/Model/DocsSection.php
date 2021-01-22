@@ -8,6 +8,7 @@ class DocsSection
 {
 	public $title;
 	public $description;
+	public $supported_languages;
 	public $href;
 	public $text;
 	public $related_settings;
@@ -15,6 +16,7 @@ class DocsSection
 	public $tabFields;
 
 	/**
+	 * @param array<string> $supported_languages
 	 * @param array<Setting> $related_settings
 	 * @param array<FunctionDescription> $related_functions
 	 * @param string[] $tabFields
@@ -22,6 +24,7 @@ class DocsSection
 	public function __construct(
 		string $title,
 		string $description,
+		array $supported_languages,
 		string $href,
 		?string $text = null,
 		array $related_settings = [],
@@ -30,6 +33,7 @@ class DocsSection
 	) {
 		$this->title = $title;
 		$this->description = $description;
+		$this->supported_languages = $supported_languages;
 		$this->href = $href;
 		$this->text = $text;
 		$this->related_settings = $related_settings;
