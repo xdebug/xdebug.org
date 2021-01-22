@@ -281,6 +281,10 @@ footer {
 	color: #999;
 }
 
+div.supported_languages span:not(:first-child)::before {
+	content: " | ";
+}
+
 .front_intro {
 	width: 60%;
 	float: left;

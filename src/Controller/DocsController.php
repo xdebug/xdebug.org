@@ -7,6 +7,11 @@ use XdebugDotOrg\Model\DocsSections;
 
 class DocsController
 {
+	private const LANGUAGE_NAMES = [
+		'en' => 'English',
+		'ja' => '日本語',
+	];
+
 	private const SECTIONS = [
 		'install' => [
 			'Installation',
@@ -75,9 +80,15 @@ debug control flow and examine data structures.",
 			'This page lists which versions of Xdebug are still supported, and with which versions of PHP they can be used.',
 		],
 		'upgrade_guide' => [
-			'Upgrading from Xdebug 2 to 3',
+			[
+				'en' => 'Upgrading from Xdebug 2 to 3',
+				'ja' => 'Xdebug 2 から 3 へのアップグレード',
+			],
 			0,
-			'An upgrade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
+			[
+				'en' => 'An upgrade guide detailing which changes there are between Xdebug 2 and 3, and how to reconfigure your set-up to do similar things.',
+				'ja' => 'このアップグレードガイドは、Xdebug 2から3への変更点と、同様のことを行うようにセットアップを再構成する方法を詳しく説明します。',
+			],
 		],
 		'faq' => [
 			'FAQ',
@@ -117,7 +128,7 @@ debug control flow and examine data structures.",
 		return new HtmlResponse(new DocsSections($models), 'docs/index.php');
 	}
 
-	public static function section(string $section) : HtmlResponse
+	public static function section(string $section, ?string $language = null) : HtmlResponse
 	{
 		if (!isset(self::SECTIONS[$section])) {
 			throw new \Exception('bad');
@@ -125,15 +136,49 @@ debug control flow and examine data structures.",
 
 		$data = self::SECTIONS[$section];
 
-		$section_file = dirname(__DIR__, 2) . '/html/docs/include/features/' . $section . '.html';
+		$languageSection = $language ? $language . '/' : '';
+
+		$section_file = dirname(__DIR__, 2) . '/html/docs/include/features/' . $languageSection . $section . '.html';
 
 		if (!file_exists($section_file)) {
 			throw new \Exception($section_file . ' should exist');
 		}
 
+		if (is_array($data[0])) {
+			if ($language && isset($data[0][$language])) {
+				$title = $data[0][$language];
+			} else {
+				$title = $data[0]['en'];
+			}
+			$supportedLanguages = [];
+			foreach ($data[0] as $lang => $dummy)
+			{
+				$supportedLanguages[] = [
+					'url' => "/docs/{$section}/{$lang}",
+					'name' => self::LANGUAGE_NAMES[$lang],
+				];
+			}
+		} else {
+			$title = $data[0];
+			$supportedLanguages = [
+				['url' => "/docs/{$section}/en", 'name' => self::LANGUAGE_NAMES['en'] ]
+			];
+		}
+
+		if (is_array($data[2])) {
+			if ($language && isset($data[2][$language])) {
+				$teaser = $data[2][$language];
+			} else {
+				$teaser = $data[2]['en'];
+			}
+		} else {
+			$teaser = $data[2];
+		}
+
 		$model = new DocsSection(
-			$data[0],
-			$data[2],
+			$title,
+			$teaser,
+			$supportedLanguages,
 			'/docs/' . $section,
 			self::add_links(file_get_contents( $section_file )),
 			Docs\SettingsController::getRelatedSettings($data[1]),
