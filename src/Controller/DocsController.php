@@ -119,8 +119,9 @@ debug control flow and examine data structures.",
 
 		foreach (self::SECTIONS as $name => $section) {
 			$models[] = new DocsSection(
-				$section[0],
-				$section[2],
+				is_array($section[0]) ? $section[0]['en'] : $section[0],
+				is_array($section[2]) ? $section[2]['en'] : $section[2],
+				is_array($section[0]) ? array_keys($section[0]) : ['en'],
 				'/docs/' . $name
 			);
 		}

@@ -12,7 +12,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 
 <h1><?= $this->title ?></h1>
 
-<?php if (count($this->supported_languages) > 0) : ?>
+<?php if (count($this->supported_languages) > 1) : ?>
 	<div class="supported_languages">
 		<?php foreach ($this->supported_languages as $language) : ?>
 			<?= "<span class=\"language\"><a href='{$language['url']}'>{$language['name']}</a></span>"; ?>
