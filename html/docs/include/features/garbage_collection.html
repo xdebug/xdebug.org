@@ -1,4 +1,4 @@
-<h2 name="introduction">Introduction</h2>
+<h2>Introduction <a name="Introduction" href="#Introduction">#</a></h2>
 
 <p>Garbage Collection (GC) in PHP can have a serious impact on memory and performance,
 so understanding when it is triggered and how efficient each run is, allows
@@ -10,12 +10,12 @@ readable, tabular format only, because there are no tools for this kind of repor
 that we could generate machine readable output for. Future versions may include
 exports in other formats to allow machine processing.</p>
 
-<h2 name="usage">Usage</h2>
+<h2>Usage <a name="Usage" href="#Usage">#</a></h2>
 
 <p>There are two approaches to start collecting the GC statistics with two different
 use-cases.</p>
 
-<h3 name="by-settings">By Settings</h3>
+<h3>By Settings</h3>
 <p>The first is entirely via INI settings and the primary use-case is to
 collect statistics for indiviual CLI script runs (where GC is often an issue).</p>
 
@@ -28,7 +28,7 @@ directory-level. Be aware that activating the collection globally will produce
 an output file for <strong>every</strong> executed script, even if the garbage
 collector didn't run.</p>
 
-<h3 name="with-functions">By Calling a Function</h3>
+<h3>By Calling a Function</h3>
 <p>The second approach to starting collection is to call the function
 [FUNC:xdebug_start_gcstats] directly in your PHP script. This gives you
 more control over when statistics collection is started.</p>
@@ -36,7 +36,7 @@ more control over when statistics collection is started.</p>
 <p>You can stop collection for both INI and function based approaches by
 calling [FUNC:xdebug_stop_gcstats].</p>
 
-<h2 name="output-tabular-text">Output</h2>
+<h2>Output <a name="Output" href="#Output">#</a></h2>
 
 <p>GC status file are written to the directory configured with
 [CFG:output_dir]. The file name can be configured with

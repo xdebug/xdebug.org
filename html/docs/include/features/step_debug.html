@@ -1,5 +1,4 @@
-<a name="introduction"></a>
-<h2>Introduction</h2>
+<h2>Introduction <a name="Introduction" href="#Introduction">#</a></h2>
 
 <p>Xdebug interacts with IDEs to provide step debugging functionality, and
 therefore you also need to configure an IDE that knows how to talk to Xdebug
@@ -12,9 +11,8 @@ but it is strongly recommended that you use an IDE for debugging. (An <a
 href="#client">overview of third party clients</a> is available further down
 this page.)</p>
 
-<a name="configure"></a>
 <a name="starting"></a>
-<h2>Configuring Step Debugging</h2>
+<h2>Configuring Step Debugging <a name="configure" href="#configure">#</a></h2>
 
 <p>In your <code>php.ini</code>, <code>90-xdebug.ini</code>, or other
 distribution specific PHP ini file, change (or set) the [CFG:mode] setting to
@@ -44,8 +42,7 @@ Make sure that the host running PHP/Xdebug can connect to your IDE with the
 configured IP address and port, and that there is no firewall or other software
 blocking an incoming connection.</p>
 
-<a name="activate_debugger"></a>
-<h2>Activating Step Debugging</h2>
+<h2>Activating Step Debugging <a name="activate_debugger" href="#activate_debugger">#</a></h2>
 
 <p>In the default configuration, the debugger activates if a "trigger" is
 present, although it's possible to instruct the debugger to always initiate a
@@ -81,7 +78,7 @@ connect to your IDE.</p>
 <p>Please refer to the <a href="#troubleshoot">Troubleshooting</a> section if
 it does not seem like Xdebug is activating.</p>
 
-<h3>Browser Application</h3>
+<h3>Browser Application <a name="browser-extensions" href="#browser-extensions">#</a></h3>
 
 <p>The recommended way to initiate a debugging session is by configuring your
 IDE to accept incoming debugging connections, and then use a browser extension
@@ -92,7 +89,7 @@ which sets the right trigger cookie.</p>
 <p>
 The extensions are:
 </p>
-<a name="browser-extensions"></a><a name="firefox-ext"></a>
+<a name="firefox-ext"></a>
 <ul>
 <li>
 	<a href="https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/">Xdebug Helper for Firefox</a>
@@ -153,8 +150,7 @@ trigger a debugging connection when a PHP Notice or Warning appears, or when a
 <a href="https://www.php.net/manual/en/class.throwable.php">Throwable</a>
 (Error or Exception) is thrown.</p>
 
-<a name="troubleshoot"></a>
-<h2>Troubleshooting</h2>
+<h2>Troubleshooting <a name="troubleshoot" href="#troubleshoot">#</a></h2>
 
 <p>You can troubleshoot Xdebug's attempts at initiating debugging connections
 by configuring a log file through [CFG:log]. When the connection is
@@ -178,8 +174,7 @@ Systemd, the actual file path could be different, such as:</p>
 
 <pre>/tmp/systemd-private-80b2a71a8b9843c0b7c21b0d357e59cc-apache2.service-CN4RBr/xdebug.log</pre>
 
-<a name="clients"></a>
-<h2>Debugging Clients</h2>
+<h2>Debugging Clients <a name="clients" href="#clients">#</a></h2>
 <p>
 This is an incomplete list of third-party clients, both free and commercial.
 Please refer to the original authors of these tools for documentation and
@@ -202,8 +197,7 @@ available on the <a href='/download#dbgpClient'>download page</a>.
 </p>
 
 
-<a name="implementation-details"></a>
-<h2>Implementation Details</h2>
+<h2>Implementation Details <a name="implementation-details" href="#implementation-details">#</a></h2>
 <p>This section documents some implementation details, that are mostly useful
 for authors of debugging clients that interact with Xdebug.</p>
 

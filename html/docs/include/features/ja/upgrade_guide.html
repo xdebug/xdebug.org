@@ -1,5 +1,4 @@
-<a name="New-Concepts"></a>
-<h2>新しいコンセプト</h2>
+<h2>新しいコンセプト <a name="New-Concepts" href="#New-Concepts">#</a></h2>
 
 <p>各機能の有効化設定があったXdebug 2とは異なり、Xdebug 3では、Xdebugを特定の
 <i>モード</i> にします。これは [CFG:mode] で設定できます。</p>
@@ -37,8 +36,7 @@ export XDEBUG_MODE=debug
 php script-name.php
 </pre>
 
-<a name="Step-Debugging"></a>
-<h2>ステップデバッギング</h2>
+<h2>ステップデバッギング <a name="Step-Debugging" href="#Step-Debugging">#</a></h2>
 
 <p class="warning">Xdebugの標準のデバッギングポートは <code>9000</code> から
 <code>9003</code> へ変更されました。</p>
@@ -87,85 +85,84 @@ PHPのNoticeまたはWarning、またはThrowableがスローされたときに�
 に設定されている場合は、デバッグ要求を開始します。</p>
 </dd>
 
-<a name="Changed-Configuration-Settings"></a>
-<h2>構成設定の変更</h2>
+<h2>構成設定の変更 <a name="Changed-Configuration-Settings" href="#Changed-Configuration-Settings">#</a></h2>
 
 <p>Xdebug 3 では、多くの構成設定を削除および変更しました。
 このセクションの一覧は、削除された設定とその置き換えを示します。</p>
 
 <dl>
-<dt><a name="changed-xdebug.auto_trace"></a><code>xdebug.auto_trace</code></dt>
+<dt><code>xdebug.auto_trace</code> <a name="changed-xdebug.auto_trace" href="#changed-xdebug.auto_trace">#</a></dt>
 <dd><p>[CFG:mode]=<code>trace</code> と合わせて [CFG:start_with_request]=<code>yes</code> を使用してください。</p></dd>
 
-<dt><a name="removed-xdebug.collect_includes"></a><code>xdebug.collect_includes</code></dt>
+<dt><code>xdebug.collect_includes</code> <a name="removed-xdebug.collect_includes" href="#removed-xdebug.collect_includes">#</a></dt>
 <dd><p>削除されました。<code>include()</code> と <code>require()</code> のファイル名は、
 [FEAT:develop#stack_trace] と [FEAT:trace] の出力に常に含まれるようになりました。</p></dd>
 
-<dt><a name="removed-xdebug.collect_params"></a><code>xdebug.collect_params</code></dt>
+<dt><code>xdebug.collect_params</code> <a name="removed-xdebug.collect_params" href="#removed-xdebug.collect_params">#</a></dt>
 <dd><p>削除されました。引数は、引数名と変数の内容と合わせて、
 [FEAT:develop#stack_trace] と [FEAT:trace] の出力に常に含まれるようになりました。</p></dd>
 
-<dt><a name="removed-xdebug.collect_vars"></a><code>xdebug.collect_vars</code></dt>
+<dt><code>xdebug.collect_vars</code> <a name="removed-xdebug.collect_vars" href="#removed-xdebug.collect_vars">#</a></dt>
 <dd><p>削除されました。これは、<code>xdebug_get_declared_vars()</code>
 関数との組み合わせでのみ使用されていましたが、これも削除されました。</p></dd>
 
-<dt><a name="changed-xdebug.coverage_enable"></a><code>xdebug.coverage_enable</code></dt>
+<dt><code>xdebug.coverage_enable</code> <a name="changed-xdebug.coverage_enable" href="#changed-xdebug.coverage_enable">#</a></dt>
 <dd><p>[CFG:mode]=<code>coverage</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.default_enable"></a><code>xdebug.default_enable</code></dt>
+<dt><code>xdebug.default_enable</code> <a name="changed-xdebug.default_enable" href="#changed-xdebug.default_enable">#</a></dt>
 <dd><p>[CFG:mode]=<code>develop</code> を使用してください。</p></dd>
 
-<dt><a name="removed-xdebug.extended_info"></a><code>xdebug.extended_info</code></dt>
+<dt><code>xdebug.extended_info</code> <a name="removed-xdebug.extended_info" href="#removed-xdebug.extended_info">#</a></dt>
 <dd><p>代替はありません。 Xdebug は、必要に応じてこのPHPエンジン設定を自動的にオンにします。</p></dd>
 
-<dt><a name="changed-xdebug.gc_stats_enable"></a><code>xdebug.gc_stats_enable</code></dt>
+<dt><code>xdebug.gc_stats_enable</code> <a name="changed-xdebug.gc_stats_enable" href="#changed-xdebug.gc_stats_enable">#</a></dt>
 <dd><p>[CFG:mode]=<code>gcstats</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.gc_stats_output_dir"></a><code>xdebug.gc_stats_output_dir</code></dt>
+<dt><code>xdebug.gc_stats_output_dir</code> <a name="changed-xdebug.gc_stats_output_dir" href="#changed-xdebug.gc_stats_output_dir">#</a></dt>
 <dd><p>一般的な [CFG:output_dir] の設定を使用してください。</p></dd>
 
-<dt><a name="removed-xdebug.overload_var_dump"></a><code>xdebug.overload_var_dump</code></dt>
+<dt><code>xdebug.overload_var_dump</code> <a name="removed-xdebug.overload_var_dump" href="#removed-xdebug.overload_var_dump">#</a></dt>
 <dd><p>削除されました。<code>xdebug.mode</code> が <code>develop</code>
 に設定されている場合、PHPの <code>var_dump()</code> は常に [FUNC:xdebug_var_dump]
 によって上書きされるようになりました。[FUNC:xdebug_var_dump] 関数は、構成されているモードに関係なく使用できます。</p></dd>
 
-<dt><a name="changed-xdebug.profiler_enable"></a><code>xdebug.profiler_enable</code></dt>
+<dt><code>xdebug.profiler_enable</code> <a name="changed-xdebug.profiler_enable" href="#changed-xdebug.profiler_enable">#</a></dt>
 <dd><p>[CFG:mode]=<code>profile</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.profiler_enable_trigger"></a><code>xdebug.profiler_enable_trigger</code></dt>
+<dt><code>xdebug.profiler_enable_trigger</code> <a name="changed-xdebug.profiler_enable_trigger" href="#changed-xdebug.profiler_enable_trigger">#</a></dt>
 <dd><p>[CFG:mode]=<code>profile</code> と合わせて [CFG:start_with_request]=<code>trigger</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.profiler_enable_trigger_value"></a><code>xdebug.profiler_enable_trigger_value</code></dt>
+<dt><code>xdebug.profiler_enable_trigger_value</code> <a name="changed-xdebug.profiler_enable_trigger_value" href="#changed-xdebug.profiler_enable_trigger_value">#</a></dt>
 <dd><p>一般的な [CFG:trigger_value] の設定を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.profiler_output_dir"></a><code>xdebug.profiler_output_dir</code></dt>
+<dt><code>xdebug.profiler_output_dir</code> <a name="changed-xdebug.profiler_output_dir" href="#changed-xdebug.profiler_output_dir">#</a></dt>
 <dd><p>一般的な [CFG:output_dir] の設定を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.remote_addr_header"></a><code>xdebug.remote_addr_header</code></dt>
+<dt><code>xdebug.remote_addr_header</code> <a name="changed-xdebug.remote_addr_header" href="#changed-xdebug.remote_addr_header">#</a></dt>
 <dd><p>[CFG:client_discovery_header] に置き換えられました。</p></dd>
 
-<dt><a name="changed-xdebug.remote_autostart"></a><code>xdebug.remote_autostart</code></dt>
+<dt><code>xdebug.remote_autostart</code> <a name="changed-xdebug.remote_autostart" href="#changed-xdebug.remote_autostart">#</a></dt>
 <dd><p>[CFG:mode]=<code>debug</code> と合わせて [CFG:start_with_request]=<code>yes</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.remote_connect_back"></a><code>xdebug.remote_connect_back</code></dt>
+<dt><code>xdebug.remote_connect_back</code> <a name="changed-xdebug.remote_connect_back" href="#changed-xdebug.remote_connect_back">#</a></dt>
 <dd><p>[CFG:discover_client_host] に置き換えられました。</p></dd>
 
-<dt><a name="changed-xdebug.remote_enable"></a><code>xdebug.remote_enable</code></dt>
+<dt><code>xdebug.remote_enable</code> <a name="changed-xdebug.remote_enable" href="#changed-xdebug.remote_enable">#</a></dt>
 <dd><p>[CFG:mode]=<code>debug</code> を使用してください。</p></dd>
 
-<dt><a name="removed-xdebug.remote_handler"></a><code>xdebug.remote_handler</code></dt>
+<dt><code>xdebug.remote_handler</code> <a name="removed-xdebug.remote_handler" href="#removed-xdebug.remote_handler">#</a></dt>
 <dd><p>代替はありません。 Xdebugのステップデバッガーは <a href="/docs/dbgp">DBGPハンドラー</a> のみをサポートしています。</p></dd>
 
-<dt><a name="changed-xdebug.remote_host"></a><code>xdebug.remote_host</code></dt>
+<dt><code>xdebug.remote_host</code> <a name="changed-xdebug.remote_host" href="#changed-xdebug.remote_host">#</a></dt>
 <dd><p>[CFG:client_host] に置き換えられました。</p></dd>
 
-<dt><a name="changed-xdebug.remote_log"></a><code>xdebug.remote_log</code></dt>
+<dt><code>xdebug.remote_log</code> <a name="changed-xdebug.remote_log" href="#changed-xdebug.remote_log">#</a></dt>
 <dd><p>[CFG:log] に置き換えられました。これは [FEAT:step_debug] 以外のログメッセージも含まれます。</p></dd>
 
-<dt><a name="changed-xdebug.remote_log_level"></a><code>xdebug.remote_log_level</code></dt>
+<dt><code>xdebug.remote_log_level</code> <a name="changed-xdebug.remote_log_level" href="#changed-xdebug.remote_log_level">#</a></dt>
 <dd><p>[CFG:log_level] に置き換えられました。</p></dd>
 
-<dt><a name="changed-xdebug.remote_mode"></a><code>xdebug.remote_mode</code></dt>
+<dt><code>xdebug.remote_mode</code> <a name="changed-xdebug.remote_mode" href="#changed-xdebug.remote_mode">#</a></dt>
 <dd>
 <p><code>req</code>（元のデフォルト）であれば、[CFG:mode]=<code>debug</code> と
 [CFG:start_with_request]=<code>trigger</code> を使用します。
@@ -173,34 +170,33 @@ PHPのNoticeまたはWarning、またはThrowableがスローされたときに�
 の代わりに [CFG:start_with_request]=<code>yes</code> を使用してください。</p>
 
 <p><code>jit</code> であれば、[CFG:mode]=<code>debug</code> と
-[CFG:start_upon_error]=<a name="changed-yes"></a><code>yes</code> を使用してください。</p>
+[CFG:start_upon_error]=<code>yes</code> を使用してください。</p>
 </dd>
 
-<dt><a name="changed-xdebug.remote_port"></a><code>xdebug.remote_port</code></dt>
+<dt><code>xdebug.remote_port</code> <a name="changed-xdebug.remote_port" href="#changed-xdebug.remote_port">#</a></dt>
 <dd>
 <p>[CFG:client_port] に置き換えられました。</p>
-<p>デフォルト値は、<a name="changed-9000</code> to <code>9003"></a><code>9000</code> から <code>9003</code> に変更されました。</p>
+<p>デフォルト値は、<code>9000</code> から <code>9003</code> に変更されました。</p>
 </dd>
 
-<dt><a name="changed-xdebug.remote_timeout"></a><code>xdebug.remote_timeout</code></dt>
+<dt><code>xdebug.remote_timeout</code> <a name="changed-xdebug.remote_timeout" href="#changed-xdebug.remote_timeout">#</a></dt>
 <dd><p>[CFG:connect_timeout_ms] に置き換えられました。</p></dd>
 
-<dt><a name="removed-xdebug.show_mem_delta"></a><code>xdebug.show_mem_delta</code></dt>
+<dt><code>xdebug.show_mem_delta</code> <a name="removed-xdebug.show_mem_delta" href="#removed-xdebug.show_mem_delta">#</a></dt>
 <dd><p>削除されました。メモリ使用量の差異は、現在のフレームの使用量を前のフレームの使用量と比較することで計算できます。</p></dd>
 
-<dt><a name="changed-xdebug.trace_output_dir"></a><code>xdebug.trace_output_dir</code></dt>
+<dt><code>xdebug.trace_output_dir</code> <a name="changed-xdebug.trace_output_dir" href="#changed-xdebug.trace_output_dir">#</a></dt>
 <dd><p>一般的な [CFG:output_dir] の設定を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.trace_enable_trigger"></a><code>xdebug.trace_enable_trigger</code></dt>
+<dt><code>xdebug.trace_enable_trigger</code> <a name="changed-xdebug.trace_enable_trigger" href="#changed-xdebug.trace_enable_trigger">#</a></dt>
 <dd><p>[CFG:mode]=<code>trace</code> と合わせて [CFG:start_with_request]=<code>trigger</code> を使用してください。</p></dd>
 
-<dt><a name="changed-xdebug.trace_enable_trigger_value"></a><code>xdebug.trace_enable_trigger_value</code></dt>
+<dt><code>xdebug.trace_enable_trigger_value</code> <a name="changed-xdebug.trace_enable_trigger_value" href="#changed-xdebug.trace_enable_trigger_value">#</a></dt>
 <dd><p>一般的な [CFG:trigger_value] の設定を使用してください。</p></dd>
 </dl>
 
 
-<a name="Changes-to-Functions"></a>
-<h2>関数への変更</h2>
+<h2>関数への変更 <a name="Changes-to-Functions" href="#Changes-to-Functions">#</a></h2>
 
 <dl>
 <dt><code>xdebug_disable()</code></dt>
@@ -231,8 +227,7 @@ PHPのNoticeまたはWarning、またはThrowableがスローされたときに�
 </dl>
 
 
-<a name="Changed-Constants"></a>
-<h2>変更された定数</h2>
+<h2>変更された定数 <a name="Changed-Constants" href="#Changed-Constants">#</a></h2>
 
 <p>以下の定数が変更されました：</p>
 
