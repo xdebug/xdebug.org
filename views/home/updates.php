@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_3'></a>[2021-02-22] &mdash; Xdebug 3.0.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1930); ?>: No local variables with trigger and xdebug_break()</dd>
+<dd>Fixed <?= bug(1931); ?>: xdebug_info() output misses configuration settings if phpinfo() has been called</dd>
+<dd>Fixed <?= bug(1932); ?>: One line in multi-line string concatenation is not covered</dd>
+<dd>Fixed <?= bug(1940); ?>: Wrong type used for showing GC Stats reports</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_2'></a>[2021-01-04] &mdash; Xdebug 3.0.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

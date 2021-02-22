@@ -1,0 +1,27 @@
+Xdebug 3.0.3 is out!
+<p>
+This is a minor bug fix release that addresses a problem with `xdebug_break()`
+and missing local variables, as well as an issue where `xdebug_info()` output
+would not show INI settings in case `phpinfo()` was called before in the same
+process.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_0_3">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>David Carlier, and Zaid Al Khishman</i> — Thanks!
+</p>
