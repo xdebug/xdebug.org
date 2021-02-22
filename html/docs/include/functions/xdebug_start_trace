@@ -6,8 +6,8 @@ FUNC_FUNCTION_TRACE
 
 TXT:
 Start tracing function calls from this point to the file in the
-<i>trace_file</i> parameter. If no filename is given, then the trace file will
-be placed in the directory as configured by the [CFG:trace_output_dir] setting.
+<code>$trace_file</code> parameter. If no filename is given, then the trace file will
+be placed in the directory as configured by the [CFG:output_dir] setting.
 
 TXT:
 In case a file name is given as first parameter, the name is relative
@@ -18,10 +18,18 @@ href='http://php.net/getcwd'>getcwd()</a> to figure out what the current
 working directory is.
 
 TXT:
-The name of the trace file is "{trace_file}.xt". If [CFG:auto_trace] is
-enabled, then the format of the filename is "{filename}.xt" where the
-"{filename}" part depends on the [CFG:trace_output_name] setting. The
-<i>options</i> parameter is a bitfield; currently there are three options:
+The name of the trace file is <code>{$trace_file}.xt</code>. If the trace was started at
+the beginning of the request because [CFG:start_with_request] is set to
+<code>yes</code>, then the filename depends on the
+[CFG:trace_output_name] setting.
+
+TXT:
+The <i>options</i> parameter is a bitfield;
+currently there are three options:
+
+TXT:
+The <i>options</i> parameter is a bitfield;
+currently there are three options:
 
 <dl>
 <dt>XDEBUG_TRACE_APPEND (1)</dt>
@@ -35,13 +43,11 @@ the format as described under <i>1</i> "[CFG:trace_format]".</dd>
 <dt>XDEBUG_TRACE_NAKED_FILENAME (8)</dt>
 <dd>Normally, Xdebug always adds ".xt" to the end of the filename that you
 pass in as first argument to this function. With the
-<i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added. (New in Xdebug
-2.3).</dd>
+<i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added.</dd>
 </dl>
 
-Unlike Xdebug 1,
-Xdebug 2 will not store function calls in memory, but always only write to disk
-to relieve the pressure on used memory. The settings [CFG:collect_includes],
+TXT:
+The settings [CFG:collect_assignments], [CFG:collect_includes],
 [CFG:collect_params] and [CFG:collect_return] influence what information is
 logged to the trace file and the setting [CFG:trace_format] influences the
 format of the trace file.

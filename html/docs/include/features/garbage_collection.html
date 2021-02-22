@@ -1,6 +1,4 @@
-<h2 name="introduction">Introduction</h2>
-
-<p><i>New in Xdebug 2.6</i></p>
+<h2>Introduction <a name="Introduction" href="#Introduction">#</a></h2>
 
 <p>Garbage Collection (GC) in PHP can have a serious impact on memory and performance,
 so understanding when it is triggered and how efficient each run is, allows
@@ -12,20 +10,25 @@ readable, tabular format only, because there are no tools for this kind of repor
 that we could generate machine readable output for. Future versions may include
 exports in other formats to allow machine processing.</p>
 
-<h2 name="usage">Usage</h2>
+<h2>Usage <a name="Usage" href="#Usage">#</a></h2>
 
 <p>There are two approaches to start collecting the GC statistics with two different
-use-cases. The first is entirely via INI settings and the primary use-case is to
+use-cases.</p>
+
+<h3>By Settings</h3>
+<p>The first is entirely via INI settings and the primary use-case is to
 collect statistics for indiviual CLI script runs (where GC is often an issue).</p>
 
-<p><code>php -dxdebug.gc_stats_enable=1 your_script.php</code></p>
+<pre>php -dxdebug.mode=gcstats -dxdebug.start_with_request=yes your_script.php</pre>
 
 <p>If you wish to collect the garbage collection statistics for every script
-that you execute, you can set the [CFG:gc_stats_enable] INI setting on the system
-or directory-level. Be aware that activating the collection globally will produce
-an output file for <b>every</b> executed script, even if the garbage collector
-didn't run.</p>
+that you execute, you can set the [CFG:mode]=<code>gcstats</code> and
+[CFG:start_with_request]=<code>yes</code> INI settings on the system or
+directory-level. Be aware that activating the collection globally will produce
+an output file for <strong>every</strong> executed script, even if the garbage
+collector didn't run.</p>
 
+<h3>By Calling a Function</h3>
 <p>The second approach to starting collection is to call the function
 [FUNC:xdebug_start_gcstats] directly in your PHP script. This gives you
 more control over when statistics collection is started.</p>
@@ -33,12 +36,16 @@ more control over when statistics collection is started.</p>
 <p>You can stop collection for both INI and function based approaches by
 calling [FUNC:xdebug_stop_gcstats].</p>
 
-<h2 name="output-tabular-text">Tabular Text (Human Readable)</h2>
+<h2>Output <a name="Output" href="#Output">#</a></h2>
 
-<p>The default (and only for now) output format of Garbage Collection statistics
-is a tabular human readable text output.</p>
+<p>GC status file are written to the directory configured with
+[CFG:output_dir]. The file name can be configured with
+[CFG:xdebug.gc_stats_output_name].</p>
 
-<p><code><pre>
+<p>The output format of Garbage Collection statistics is a tabular human
+readable text output.</p>
+
+<pre>
 Garbage Collection Report
 version: 1
 creator: xdebug 2.6.0 (PHP 7.2.0)
@@ -48,7 +55,7 @@ Collected | Efficiency% | Duration | Memory Before | Memory After | Reduction% |
     10000 |    100.00 % |  0.00 ms |       5539880 |       579880 |    79.53 % | bar
     10000 |    100.00 % |  0.00 ms |       5540040 |       580040 |    79.53 % | Garbage::produce
      4001 |     40.01 % |  0.00 ms |       2563048 |       578968 |    77.41 % | gc_collect_cycles
-</pre></code></p>
+</pre>
 
 <p>The header contains the version of the report and the version of Xdebug that generated it.</p>
 
@@ -64,4 +71,6 @@ Collected | Efficiency% | Duration | Memory Before | Memory After | Reduction% |
 	<li><strong>Function</strong> &mdash; The name of the function or method the GC run was triggered in. If it is <code>gc_collect_cycles()</code> then this means the Garbage Collector was triggered explicitly. All other values indicate the GC was triggered implicitly due to the 10 000 "roots" reached metric of the PHP engine.</li>
 </ul>
 
-<p>For details on how PHPs garbage collection works see the <a href="http://php.net/manual/en/features.gc.php">PHP manuals chapter on Garbage Collection</a>.</p>
+<p>For details on how PHPs garbage collection works see the <a
+href="http://php.net/manual/en/features.gc.php">PHP manuals chapter on Garbage
+Collection</a>.</p>

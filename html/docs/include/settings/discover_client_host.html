@@ -1,0 +1,24 @@
+<p>If enabled, Xdebug will first try to connect to the client that made the
+HTTP request. It checks the <code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
+<code>$_SERVER['REMOTE_ADDR']</code> variables to find out which hostname or IP
+address to use.</p>
+
+<p>If [CFG:client_discovery_header] is configured, then the <code>$_SERVER</code>
+variable with that configured name will be checked before
+<code>HTTP_X_FORWARDED_FOR</code> and <code>REMOTE_ADDR</code>.</p>
+
+<p>If Xdebug can not connect to a debugging client as found in one of the HTTP
+headers, it will fall back to the hostname or IP address as configured by the
+[CFG:client_host] setting.</p>
+
+<p>This setting does not apply for debugging through the CLI, as the
+<code>$_SERVER</code> header variables are not available there.</p>
+
+<p class="note">This setting can additionally be configured through the
+<code>XDEBUG_CONFIG</code>
+<a href="/docs/all_settings#XDEBUG_CONFIG">environment variable</a>.</p>
+
+<p class="warning"><strong>Warning:</strong> Please note that there is no filter
+available, and anybody who can connect to the webserver will then be able to
+start a debugging session, even if their address does not match
+[CFG:client_host].</p>

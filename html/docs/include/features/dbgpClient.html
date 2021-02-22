@@ -1,13 +1,11 @@
-<a name='download'></a>
-<h2>Installation</h2>
+<h2>Installation <a name='download' href="#download">#</a></h2>
 
 <p>
 A binary for Linux, macOS, and Windows is available on the <a href='/download#dbgpClient'>downloads</a> page.
 You only have to download the binary, which you can then run from a command line.
 </p>
 
-<a name='cmdline'></a>
-<h2>Command Line Options</h2>
+<h2>Command Line Options <a name='cmdline' href="#cmdline">#</a></h2>
 
 <p>The following command line options are available:</p>
 
@@ -26,7 +24,7 @@ You only have to download the binary, which you can then run from a command line
     <td>Show this help</td></tr>
 
 <tr><td><code>-p&nbsp;value</code>&nbsp;</td>
-     <td>Specify the port to listen on [<code>9000</code>]. This is the same
+     <td>Specify the port to listen on [<code>9003</code>]. This is the same
          port that Xdebug should initiate a connection on. On the Xdebug side,
          this port can be configured with the [CFG:remote_port]
          setting.</td></tr>
@@ -62,8 +60,7 @@ You only have to download the binary, which you can then run from a command line
 	    <code>-r</code> and <code>-u</code> only.</td></tr>
 </table>
 
-<a name='usage'></a>
-<h2>Usage</h2>
+<h2>Usage <a name='usage' href="#usage">#</a></h2>
 
 <p>To start the client on the command line on Linux, open a shell,
 and then run:</p>
@@ -95,17 +92,17 @@ as described above.</p>
 then wait until a connection is made to it by a debugging engine (such as
 Xdebug):</p>
 
-<pre class="shell">Xdebug Simple DBGp client (<font color="#FFFFFF"><b>0.1</b></font>)
+<pre class="shell">Xdebug Simple DBGp client (<font color="#FFFFFF"><b>0.4.2</b></font>)
 Copyright 2019-2020 by Derick Rethans
 
-Waiting for debug server to connect on port 9000.
+Waiting for debug server to connect on port 9003.
 </pre>
 
 
 <p>After a connection is received, the debug client shows basic information, and then shows the <code>(cmd) </code> prompt and waits for input:</p>
 
 <pre class="shell">Connect from [::1]:51884
-DBGp/<font color="#55FF55"><b>1.0</b></font>: <font color="#FFFFFF"><b>Xdebug</b></font> <font color="#55FF55"><b>2.9.2</b></font> — For <font color="#FFFFFF"><b>PHP</b></font> <font color="#55FF55"><b>7.4.3-dev</b></font>
+DBGp/<font color="#55FF55"><b>1.0</b></font>: <font color="#FFFFFF"><b>Xdebug</b></font> <font color="#55FF55"><b>3.0.0</b></font> — For <font color="#FFFFFF"><b>PHP</b></font> <font color="#55FF55"><b>7.4.3-dev</b></font>
 Debugging <font color="#FFFF55"><b>file:///tmp/xdebug-test-2.php</b></font> (ID: <font color="#FFFF55">5242</font>/<font color="#FFFF55">dr</font>)
 <font color="#FFFFFF"><b>(cmd) </b></font>
 </pre>
@@ -137,7 +134,7 @@ variables are available:</p>
 <tr><td><code>run</code></td><td>Runs the script until the next breakpoint, or when the script ends</td></tr>
 <tr><td><code><a href='/docs/dbgp#context-get'>context_get</a></code></td><td>Lists the variables and their values in the current scope</td></tr>
 <tr><td><code><a href='/docs/dbgp#property-get-property-set-property-value'>property_get</a> -n $a</code></td>
-    <td>Retrieves the value of the property <code>$n</code></td></tr>
+    <td>Retrieves the value of the property <code>$a</code></td></tr>
 </table>
 
 <p>There is a full description in the <a href="/docs/dbgp">DBGp

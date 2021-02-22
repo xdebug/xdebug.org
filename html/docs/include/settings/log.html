@@ -1,0 +1,128 @@
+<p>Configures Xdebug's log file.</p>
+
+<p>Xdebug will log to this file all file creations issues, [FEAT:step_debug]
+connection attempts, failures, and debug communication.</p>
+
+<p>Enable this functionality by setting the value to a absolute path. Make sure
+that the system user that PHP runs at (such as <code>www-data</code> if you are
+running with Apache) can create and write to the file.</p>
+
+<p>The file is opened in append-mode,
+and will therefore not be overwritten by default. There is no concurrency
+protection available.</p>
+
+<p>The log file will include any attempt that Xdebug
+makes to connect to an IDE:</p>
+
+<pre>
+[2693358] Log opened at 2020-09-02 07:19:09.616195
+[2693358] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[2693358] [Step Debug] ERR: Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[2693358] [Profiler] ERR: File '/foo/cachegrind.out.2693358' could not be opened.
+[2693358] [Profiler] WARN: /foo: No such file or directory
+[2693358] [Tracing] ERR: File '/foo/trace.1485761369' could not be opened.
+[2693358] [Tracing] WARN: /foo: No such file or directory
+[2693358] Log closed at 2020-09-02 07:19:09.617510
+</pre>
+<p>It includes the opening time (<code>2020-09-02 07:19:09.616195</code>), the
+IP/Hostname and port Xdebug is trying to connect to
+(<code>localhost:9003</code>), and whether it succeeded (<code>Connected to
+client :-)</code>). The number in brackets (<code>[2693358]</code>) is the
+Process ID.</p>
+
+<p>It includes:
+<dl>
+<dt><code>[2693358]</code></dt>
+<dd>process ID in brackets</dd>
+
+<dt><code>2020-09-02 07:19:09.616195</code></dt>
+<dd>opening time<dd>
+</dl>
+</p>
+
+<p>For [FEAT:step_debug]:</p>
+<pre>
+INFO: Connecting to configured address/port: localhost:9003.
+ERR: Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port) :-(
+</pre>
+
+<p>For [FEAT:profiler]:</p>
+<pre>
+ERR: File '/foo/cachegrind.out.2693358' could not be opened.
+WARN: /foo: No such file or directory
+</pre>
+
+<p>For [FEAT:trace]:</p>
+<pre>
+ERR: File '/foo/trace.1485761369' could not be opened.
+WARN: /foo: No such file or directory
+</pre>
+
+<p>All warnings and errors are described on the [FEAT:errors] page, with
+detailed instructions on how to resolve the problem, if possible. All errors are always logged through
+PHP's internal logging mechanism (configured with <a
+href="https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-log">error_log</a>
+in <code>php.ini</code>). All warnings and errors also show up in the
+diagnostics log that you can view by calling [FUNC:xdebug_info].</p>
+
+<h5>Step Debugger Communication</h5>
+
+<p>The debugging log can also log the communication between Xdebug and an IDE.
+This communication is in XML, and starts with the <code>&lt;init</code> XML
+element:</p>
+<pre>
+&lt;init
+    xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
+    fileuri="file:///home/httpd/www.xdebug.org/html/router.php"
+    language="PHP" xdebug:language_version="7.4.11-dev"
+    protocol_version="1.0" appid="2693358" idekey="XDEBUG_ECLIPSE"&gt;
+        &lt;engine version="3.0.0-dev"&gt;&lt;![CDATA[Xdebug]]&gt;&lt;/engine&gt;
+        &lt;author&gt;&lt;![CDATA[Derick Rethans]]&gt;&lt;/author&gt;
+        &lt;url&gt;&lt;![CDATA[https://xdebug.org]]&gt;&lt;/url&gt;
+        &lt;copyright&gt;&lt;![CDATA[Copyright (c) 2002-2020 by Derick Rethans]]&gt;&lt;/copyright&gt;
+&lt;/init&gt;
+</pre>
+<p>The <code>fileuri</code> attribute lists the entry point of your
+application, which can be useful to compare to <code>breakpoint_set</code>
+commands to see if path mappings are set-up correctly.</p>
+
+<p>Beyond the <code>&lt;init</code> element, you will find the configuration of
+<a href="/docs/dbgp#feature-names">features</a>:</p>
+
+<pre>
+&lt;- feature_set -i 4 -n extended_properties -v 1
+-&gt; &lt;response
+       xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
+       command="feature_set" transaction_id="4" feature="extended_properties" success="1"&gt;
+   &lt;/response&gt;
+</pre>
+
+<p>And <a href="/docs/dbgp#continuation-commands">continuation commands</a>:</p>
+
+<pre>
+&lt;- step_into -i 9
+-&gt; &lt;response
+       xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
+       command="step_into" transaction_id="9"
+       status="break" reason="ok"&gt;
+           &lt;xdebug:message filename="file:///home/httpd/www.xdebug.org/html/router.php" lineno="3"&gt;
+           &lt;/xdebug:message&gt;
+   &lt;/response&gt;
+</pre>
+
+<p>You can read about [FEAT:dbgp] at its dedicated documation page.</p>
+
+<p>The [CFG:log_level] setting controls how much information is
+logged.</p>
+
+<p><strong>Note:</strong> Many Linux distributions now use systemd, which
+implements <strong>private tmp</strong> directories. This means that when PHP
+is run through a web server or as PHP-FPM, the <code>/tmp</code> directory is
+prefixed with something akin to:
+<pre>
+/tmp/systemd-private-ea3cfa882b4e478993e1994033fc5feb-apache.service-FfWZRg
+</pre>
+
+<p class="note">This setting can additionally be configured through the
+<code>XDEBUG_CONFIG</code>
+<a href="/docs/all_settings#XDEBUG_CONFIG">environment variable</a>.</p>

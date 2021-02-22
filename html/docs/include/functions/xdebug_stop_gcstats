@@ -1,6 +1,6 @@
 = xdebug_stop_gcstats
 Stops the current garbage collection statistics collection
-string
+false|string
 none
 FUNC_GARBAGE_COLLECTION
 

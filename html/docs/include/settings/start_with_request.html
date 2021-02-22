@@ -1,0 +1,63 @@
+<p>A [FEAT:trace], [FEAT:garbage_collection], [FEAT:profiler], or [FEAT:step_debug]
+can be activated at the start of a PHP request. Whether this happens depends on
+the value of this setting:</p>
+
+<dl>
+
+<dt><code>yes</code></dt>
+<dd>
+<p>The functionality starts when the PHP request starts, and before any PHP
+code is run.</p>
+
+<p>For example [CFG:mode]=<code>trace</code> and
+[CFG:start_with_request]=<code>yes</code> starts a [FEAT:trace] for the
+whole request.</p>
+</dd>
+
+
+<dt><code>no</code></dt>
+<dd>
+<p>The functionality does not get activated when the request starts.</p>
+
+<p>You can still start a [FEAT:trace] with [FUNC:xdebug_start_trace], 
+[FEAT:step_debug] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
+</dd>
+
+
+<a name="start_with_request#trigger"></a>
+<dt><code>trigger</code></dt>
+<dd>
+<p>The functionality only gets activated when a specific trigger is present
+when the request starts.</p>
+
+<p>The name of the trigger is <code>XDEBUG_TRIGGER</code>, and Xdebug checks
+for its presence in either <code>$_ENV</code> (environment variable),
+<code>$_GET</code> or <code>$_POST</code> variable, or <code>$_COOKIE</code>
+(HTTP cookie name).</p>
+
+<p>There is also a legacy fallback to a functionality specific trigger name:
+<code>XDEBUG_PROFILE</code> (for [FEAT:profiler]), <code>XDEBUG_TRACE</code>
+(for a [FEAT:trace]), and <code>XDEBUG_SESSION</code> (for
+[FEAT:step_debug]).</p>
+
+<p>Debug session management for [FEAT:step_debug#browser_session] is also
+available through <code>XDEBUG_SESSION_START</code>.</p>
+
+<p>With [CFG:trigger_value] you can control which specific trigger value will
+activate the trigger. If [CFG:trigger_value] is set to an empty
+string, <strong>any</strong> value will be accepted.</p>
+</dd>
+
+
+<dt><code>default</code></dt>
+<dd>
+<p>The <code>default</code> value depends on [CFG:mode]:</p>
+<ul>
+<li><strong>debug</strong>: <code>trigger</code></p>
+<li><strong>gcstats</strong>: <code>no</code></p>
+<li><strong>profile</strong>: <code>yes</code></p>
+<li><strong>trace</strong>: <code>trigger</code></p>
+</ul>
+</dd>
+
+</dl>

@@ -3,17 +3,18 @@ namespace XdebugDotOrg;
 
 class XdebugVersion
 {
-	public const NOT_SUPPORTED_BEFORE = '2.9';
-	public const LATEST_VERSION = '2.9.8';
-	public const LATEST_WINDOWS_VERSION = '2.9.8';
+    public const NOT_SUPPORTED_BEFORE = '3.0';
+    public const LATEST_VERSION = '3.0.2';
+    public const LATEST_WINDOWS_VERSION = '3.0.2';
 
-	private const VERSIONS =  [
-		'7.0' => [ 'src' => '2.8.1',                              ],
-		'7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.2' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.3' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ],
-		'7.4' => [ 'src' => '2.9.8',       'win' => '2.9.8'       ]
-	];
+    private const VERSIONS =  [
+        '7.0' => [ 'src' => '2.8.1',                        ],
+        '7.1' => [ 'src' => '2.9.8',       'win' => '2.9.8' ],
+        '7.2' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '7.3' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '7.4' => [ 'src' => '3.0.2',       'win' => '3.0.2' ],
+        '8.0' => [ 'src' => '3.0.2',       'win' => '3.0.2' ]
+    ];
 
 	/** @var string|null */
 	public $version;
@@ -109,7 +110,7 @@ class XdebugVersion
 			$this->sapi = trim( $m[2] );
 		}
 
-		if ( preg_match( '/PHP Version([^4567]+)([4567][0-9.dev-]+)/', $data, $m ) )
+		if ( preg_match( '/PHP Version([^45678]+)([45678][0-9.dev-]+)/', $data, $m ) )
 		{
 			$this->version = $m[2];
 		}
@@ -252,6 +253,7 @@ class XdebugVersion
 					case 'VC11':  $this->winCompiler = 11; $this->windows = true; break;
 					case 'VC14':  $this->winCompiler = 14; $this->windows = true; break;
 					case 'VC15':  $this->winCompiler = 15; $this->windows = true; break;
+					case 'VS16':  $this->winCompiler = 16; $this->windows = true; break;
 				}
 			}
 		}
@@ -330,6 +332,10 @@ class XdebugVersion
 			{
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
+			if ( $this->winCompiler != 16 && ( $majorPhpVersion == '8.0' ) )
+			{
+				return "The compiler (MS VS{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
+			}
 		}
 		return true;
 	}
@@ -365,7 +371,13 @@ class XdebugVersion
 			}
 
 			$this->xdebugVersionToInstall = $version;
-			$filename = "{$base}-{$version}-{$majorPhpVersion}-vc{$this->winCompiler}" . ( $this->ts ? '' : '-nts' ) . ( $this->architecture == 'x64' ? '-x86_64' : '' ) . ".dll";
+			$filename = sprintf( '%s-%s-%s-%s%s%s%s.dll',
+				$base, $version, $majorPhpVersion,
+				$this->winCompiler >= 16 ? 'vs' : 'vc', // With PHP 8 and VS16, it now uses 'vs' instead of 'vc'
+				$this->winCompiler,
+				$this->ts ? '' : '-nts',
+				$this->architecture == 'x64' ? '-x86_64' : '',
+			);
 
 			return $filename;
 		}

@@ -17,8 +17,8 @@ instrumentation to find out which branches and paths in functions and methods
 have been followed. The various options are documented with the
 [FUNC:xdebug_start_code_coverage] function.
 </p>
-<a name="coverage-filter"></a>
-<h2>Filtering</h2>
+
+<h2>Filtering <a name="coverage-filter" href="#coverage-filter">#</a></h2>
 <p>
 Xdebug 2.6 introduces filtering capabilities for code coverage. With a filter
 you can include, or exclude, paths or class name prefixes (namespaces) from
@@ -56,7 +56,7 @@ To set-up a filter that only does code coverage analysis for the
 &lt;?php
 xdebug_set_filter(
 	XDEBUG_FILTER_CODE_COVERAGE,
-	XDEBUG_PATH_WHITELIST,
+	XDEBUG_PATH_INCLUDE,
 	[ __DIR__ . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR ]
 );
 ?>

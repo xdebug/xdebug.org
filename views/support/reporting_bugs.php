@@ -140,11 +140,11 @@ right section on this page for further information if necessary.
 
 <p>
 	You can make a remote debugging log by using the <a
-	href="/docs/all_settings#remote_log">xdebug.remote_log</a> php.ini
+	href="/docs/all_settings#log">xdebug.log</a> php.ini
 	setting. I suggest you set its value to something in the
 	<code>/tmp</code> directory (or your operating system's
 	equivalent). I have it set as follows:
-	<code>xdebug.remote_log=/tmp/xdebug.log</code>. Make sure that the
+	<code>xdebug.log=/tmp/xdebug.log</code>. Make sure that the
 	user that runs the script (yourself for CLI, or your web server's
 	user ID if you're debugging through a web server) can write to the
 	file that you have specified.
@@ -162,11 +162,19 @@ right section on this page for further information if necessary.
 	The contents of the log should start with something like:
 </p>
 <pre class="example">
-Log opened at 2019-01-29 15:17:50
-I: Connecting to configured address/port: localhost:9000.
-W: Creating socket for 'localhost:9000', poll success, but error: Operation now in progress (29).
-I: Connected to client. :-)
--> &lt;init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///home/derick/media/movie/TheTube.php
+[3020307] Log opened at 2020-10-29 03:20:25.076271
+[3020307] [Step Debug] INFO: Connecting to configured address/port: 127.0.0.1:43425.
+[3020307] [Step Debug] INFO: Connected to debugging client: 127.0.0.1:43425 (through xdebug.client_host/xdebug.client_port). :-)
+[3020307] [Step Debug] -&gt; &lt;init
+    xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
+    fileuri="file:///home/httpd/www.xdebug.org/html/router.php"
+    language="PHP" xdebug:language_version="7.4.11-dev"
+    protocol_version="1.0" appid="2693358" idekey="XDEBUG_ECLIPSE"&gt;
+        &lt;engine version="3.0.0-dev"&gt;&lt;![CDATA[Xdebug]]&gt;&lt;/engine&gt;
+        &lt;author&gt;&lt;![CDATA[Derick Rethans]]&gt;&lt;/author&gt;
+        &lt;url&gt;&lt;![CDATA[https://xdebug.org]]&gt;&lt;/url&gt;
+        &lt;copyright&gt;&lt;![CDATA[Copyright (c) 2002-2020 by Derick Rethans]]&gt;&lt;/copyright&gt;
+&lt;/init&gt;
 </pre>
 
 <a name='crash'></a>

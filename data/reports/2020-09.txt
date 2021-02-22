@@ -1,0 +1,21 @@
+9.76	8.32	0.83	3.33	48.05
+2020-09-02	docs	1	Updating upgrading guide
+2020-09-03	xdebug3	3.75	PHP 8 support for match in tracing and code coverage
+2020-09-07	xdebug3	4.25	Checking out PHP 8/match patch for ASSIGN line; Fixed off-by-one error in cloud host generation (Xdebug, and dbgpClient)
+2020-09-08	xdebug3	4.25	Renaming remote_host and remote_port settings, adding support for XDEBUG_CONFIG for these new settings
+2020-09-08	docs	1.75	Update docs due to renamed settings; rename “remote” page to “step_debug”
+2020-09-09	xdebug3	3	Add deprecation warnings for renamed/removed settings; Issues with AppVeyor’s cache
+2020-09-09	docs	0.75	Update compatibility table
+2020-09-11	xdebug3	4.5	PHP 8 and fixing filename as zend_string changes; Fixed Azure pipelines ZTS tests; Profiler memory leaks
+2020-09-12	xdebug3	4.75	PHP 8 changes due to ASSIGN operator fixes; fixing filename as zend_string changes
+2020-09-13	xdebug3	2.5	Finalising changes due to script filename no longer be interned
+2020-09-16	xdebug3	5.5	Keepalive fixes for OSX, and adding log messages; Releasing 2.9.7; PHP 8 fixes due to error message changes
+2020-09-17	xdebug3	1.5	Change default port to 9003 (including docs)
+2020-09-21	xdebug3	3.25	PHP 8 test changes due to NOP being removed; Keepalive fix for FreeBSD; Fix logo on CLI
+2020-09-23	xdebug3	3	Only show open/close log when there is a message; #1781 (include “Xdebug” ins some error messages)
+2020-09-24	xdebug3	4	#1850 (Array syntax in output), #1837 (Associative variadics for PHP 8)
+2020-09-25	bug	4.5	#1851 (Paths and branches are not always covered with loops)
+2020-09-28	release	2	Release Xdebug 2.9.8 with keepalive and branch coverage fixes
+2020-09-29	talk	2.5	Xdebug 3 talk for PHP WVL
+2020-09-30	xdebug3	4	Rename xdebug.remote_connect_back and xdebug.remote_addr_header; PHP 8 test fixes due to argument renaming; keep alive conditional
+2020-09-30	docs	0.5	Document changes to remote connect back and header settings

@@ -46,8 +46,28 @@ class drDocumentDocbookToTextInternalLinkHandler extends ezcDocumentDocbookToRst
     }
 }
 
+class drDocumentDocbookToTextListItemHandler extends ezcDocumentDocbookToRstBaseHandler
+{
+    /**
+     * Handle a node
+     *
+     * Handle / transform a given node, and return the result of the
+     * conversion.
+     *
+     * @param ezcDocumentElementVisitorConverter $converter
+     * @param DOMElement $node
+     * @param mixed $root
+     * @return mixed
+     */
+    public function handle( ezcDocumentElementVisitorConverter $converter, DOMElement $node, $root )
+    {
+        $root .= $converter->visitChildren( $node, '' );
+        return $root;
+    }
+}
+
 class drDocumentDocbookToLiteralLayoutHandler extends ezcDocumentDocbookToRstLiteralLayoutHandler
-{   
+{
     /**
      * Handle a node
      *
@@ -70,7 +90,7 @@ class drDocumentDocbookToLiteralLayoutHandler extends ezcDocumentDocbookToRstLit
         {
             $root .= "\n| " . preg_replace( '(\r\n|\r|\n)', "\n| ", $node->textContent ) . "\n";
         }
-    
+
         return $root;
     }
 }
@@ -86,7 +106,7 @@ class drDocumentDocbookToTextTableHandler extends ezcDocumentDocbookToRstTableHa
         $rows = $table->getElementsByTagName( 'row' );
 
 		// Loop over rows, and for each row determine the max width
-		$widths = array(); 
+		$widths = array();
 		$rowNr = 0;
         foreach ( $rows as $row )
         {
@@ -99,10 +119,10 @@ class drDocumentDocbookToTextTableHandler extends ezcDocumentDocbookToRstTableHa
                     $cellContent = explode( "\n", trim( $converter->visitChildren( $cell, '' ) ) );
 					$widths[$cellNr] = @max( $widths[$cellNr], $this->getMaxLineLength( $cellContent ) );
                     ++$cellNr;
-                } 
+                }
             }
             ++$rowNr;
-        }        
+        }
 
 		$converter->storage = $storage;
 
@@ -122,6 +142,7 @@ class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
 		$this->visitorElementHandler['docbook']['ulink'] = new drDocumentDocbookToTextExternalLinkHandler();
 		$this->visitorElementHandler['docbook']['link'] = new drDocumentDocbookToTextInternalLinkHandler();
 		$this->visitorElementHandler['docbook']['table'] = new drDocumentDocbookToTextTableHandler();
+		$this->visitorElementHandler['docbook']['listitem'] = new drDocumentDocbookToTextListItemHandler();
 		$this->visitorElementHandler['docbook']['literallayout'] = new drDocumentDocbookToLiteralLayoutHandler();
 	}
 
@@ -256,8 +277,8 @@ $extensionSettings = array_keys( $ext->getINIEntries() );
 foreach ( $extensionSettings as $settingName )
 {
 	$sanitizedSettingName = preg_replace( '/^xdebug\./', '', $settingName );
-	
-	if ( !in_array( $sanitizedSettingName, $foundSettings ) )
+
+	if ( !in_array( $sanitizedSettingName, $foundSettings ) && !preg_match( '@^This setting has been@', ini_get( $settingName ) ) )
 	{
 		fprintf( STDERR, "$settingName is missing\n" );
 	}

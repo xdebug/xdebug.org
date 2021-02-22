@@ -1,0 +1,21 @@
+<p>[FEAT:step_debug] can be activated when a PHP Notice or Warning is emitted, or
+when a <a href="https://www.php.net/manual/en/class.throwable.php">Throwable</a>
+(Exception/Error) is thrown, depending on the value of this setting:</p>
+
+<dl>
+
+<dt><code>yes</code></dt>
+<dd>
+<p>Initialise a debugging session when a PHP Notice or Warning is emitted, or
+when a Throwable is thrown.</p>
+</dd>
+
+<dt><code>no</code></dt>
+<dt><code>default</code></dt>
+<dd>
+<p>Do not start a debugging session upon an error situation.</p>
+</dd>
+
+<p>This setting is independent of [CFG:start_with_request], and therefore it is
+not necessary to set [CFG:start_with_request]<code>=trigger</code>.</p>
+</dl>

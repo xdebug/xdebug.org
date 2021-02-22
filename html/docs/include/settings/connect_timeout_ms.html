@@ -1,0 +1,9 @@
+<p>The amount of time in milliseconds that Xdebug will wait for on an
+IDE to acknowledge an incoming debugging connection. The default value of 200
+ms should in most cases be enough. In case you often get dropped debugging
+requests, perhaps because you have a high latency network, or a development box
+far away from your IDE, or have a slow firewall, then you can should increase
+this value.</p>
+<p>Please note that increasing this value might mean that your requests seem to
+'hang' in case Xdebug tries to establish a connection, but your IDE is not
+listening.</p>

@@ -1,0 +1,19 @@
+8.26	6.28	1.00	5.83	10.40
+2020-12-02	bug	4	Bug #1903 (constants), #1893 (ext-fiber coverage crash)
+2020-12-03	bug	3	Bug #1904 (profile file wrong time), package.xml updates
+2020-12-04	bug	4.5	Bug #1905 (debugger doesn’t set max execution anymore)
+2020-12-04	ci	1	Add PHP 8/xdebug_3_0 to Azure Pipelines, infrequent permissions error on GHA
+2020-12-04	release	2	Release 3.0.1
+2020-12-10	bug	4	Bug #1910 (coverage misses constructor property promotion)
+2020-12-11	bug	3.75	Bug #1907 (Empty exception message when object is not a string)
+2020-12-11	bug	1	Bug #1914 (Compilation failure on OpenBSD)
+2020-12-13	support	4	Twitter support
+2020-12-13	docs	3	Intro video
+2020-12-14	bug	1	Checking whether DBGp “stop” had the same issue as “detach” wrt to https://youtrack.jetbrains.com/issue/WI-56500
+2020-12-14	docs	0.25	Fix package names
+2020-12-18	docs	1	GC enabled documentation, and #1917 (coverage flags are for new function calls only)
+2020-12-18	bug	3.25	Bug #1918 (GC stats warning), bug #1915 (debug triggers)
+2020-12-23	bug	4	Bug #1919 (Crash with filters without enabled modes)
+2020-12-23	docs	1.5	Document XDEBUG_FILTER_STACK and add critical log level
+2020-12-30	bug	3	Bug #1924/1925 (INI setting display issues), #1922 (code coverage misses lines)
+2020-12-31	bug	2	Bug #1926 (Make it clear where the configured modes come from)

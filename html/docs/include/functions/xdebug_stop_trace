@@ -1,6 +1,6 @@
 = xdebug_stop_trace
 Stops the current function trace
-string
+false|string
 none
 FUNC_FUNCTION_TRACE
 

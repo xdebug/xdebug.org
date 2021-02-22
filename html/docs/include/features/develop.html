@@ -1,0 +1,287 @@
+<div class="toc">
+<h2>Contents</h2>
+<ul>
+<li>An <a href="#display">improved <code>var_dump()</code></a> function</li>
+<li><a href="#stack_trace">Stack Traces</a> upon Errors and Warnings</li>
+<li>Functions to obtain information about the running script</li>
+</ul>
+</div>
+
+<a name="display"></a>
+<h2>Improved var_dump() function <a name="improved_var_dump" href="#improved_var_dump">#</a></h2>
+<p>
+Xdebug changes PHP's built-in <code>var_dump()</code> function to be
+HTML-formatted, and includes information about location. The
+<em>overloaded</em> <code>var_dump()</code> is active in HTML contexts (when
+PHP's <code>html_errors</code> setting is <code>1</code>), as well as on the
+command line.
+</p>
+
+<h3>HTML Context</h3>
+<p>Without Xdebug loaded, and a <code>&lt;pre&gt;</code> tag artificially added:</p>
+<pre>
+array(4) {
+  ["one"]=>
+  string(23) "a somewhat long string!"
+  ["two"]=>
+  array(1) {
+    ["two.one"]=>
+    array(2) {
+      ["two.one.zero"]=>
+      int(210)
+      ["two.one.one"]=>
+      array(2) {
+        ["two.one.one.zero"]=>
+        float(3.141592564)
+        ["two.one.one.one"]=>
+        float(2.7)
+      }
+    }
+  }
+  ["three"]=>
+  object(test)#1 (3) {
+    ["pub"]=>
+    *RECURSION*
+    ["priv":"test":private]=>
+    bool(true)
+    ["prot":protected]=>
+    int(42)
+  }
+  ["four"]=>
+  array(6) {
+    [0]=>
+    int(0)
+    [1]=>
+    int(1)
+    [2]=>
+    int(2)
+    [3]=>
+    int(3)
+    [4]=>
+    int(4)
+    [5]=>
+    int(5)
+  }
+}
+</pre>
+<p>With Xdebug loaded, it will output this instead:</p>
+<pre class='xdebug-var-dump' dir='ltr'>
+<small>/tmp/var_dump.php:23:</small>
+<b>array</b> <i>(size=4)</i>
+  'one' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'a somewhat long string!'</font> <i>(length=23)</i>
+  'two' <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=1)</i>
+      'two.one' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=2)</i>
+          'two.one.zero' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>210</font>
+          'two.one.one' <font color='#888a85'>=&gt;</font>
+            <b>array</b> <i>(size=2)</i>
+              ...
+  'three' <font color='#888a85'>=&gt;</font>
+    <b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>public</i> 'pub' <font color='#888a85'>=&gt;</font>
+        <i>&amp;</i><b>object</b>(<i>test</i>)[<i>1</i>]
+      <i>private</i> 'priv' <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>true</font>
+      <i>protected</i> 'prot' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>42</font>
+  'four' <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=6)</i>
+      0 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+      1 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+      2 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2</font>
+      3 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>3</font>
+      4 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>4</font>
+      5 <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>5</font>
+</pre>
+
+<p>
+The changes are:
+<ul>
+	<li>It has automatically added <code>&lt;pre&gt;</code> tags.</li>
+	<li>It shows the file/line combination where <code>var_dump()</code> was called from. <pre>/tmp/var_dump.php:23</pre></li>
+	<li>The formatting is more concise, due to that array key and type are on the same line.</li>
+	<li>Added a distinct colour per data type.</li>
+	<li>It has limited the depth of nested levels.
+<pre>array (size=2)
+  ...</pre></li>
+	<li>Indicated to which object the recursion was.<pre>&amp;object(test)[1]</pre></li>
+</ul>
+
+<p>
+There are a number of settings that change control how much output is shown and/or hidden.
+These settings are:
+<dl>
+	<dt>[CFG:var_display_max_data]</dt><dd>controls how large strings can be before they're truncated, and shown with elipsis (…).</dd>
+	<dt>[CFG:var_display_max_depth]</dt><dd>controls how many levels deep into a data structure information is shown.</dd>
+	<dt>[CFG:var_display_max_children]</dt><dd>controls how many array elements or object properties are shown.</dd>
+</dl>
+
+<h3>Command Line</h3>
+<p>
+The overloaded <code>var_dump()</code> is also active on the command line, and
+reacts to the same configuration settings with regards to what is shown in the
+HTML context. By default it does not show colours, but this can be turned on by
+setting [CFG:cli_color] to <code>1</code>.
+</p>
+<p>
+That turns:
+</p>
+<pre class="shell">/tmp/var_dump2.php:12:
+array(2) {
+  &apos;one&apos; =&gt;
+  string(23) &quot;a somewhat long string!&quot;
+  &apos;three&apos; =&gt;
+  class test#1 (3) {
+    public $pub =&gt;
+    bool(false)
+    private $priv =&gt;
+    bool(true)
+    protected $prot =&gt;
+    int(42)
+  }
+}
+</pre>
+<p>
+Into:
+</p>
+<pre class="shell"><b>/tmp/var_dump2.php</b>:<b>12</b>:
+<b>array</b>(<font color="#00AA00">2</font>) {
+  &apos;one&apos; =&gt;
+  <b>string</b>(<font color="#00AA00">23</font>) &quot;<font color="#AA0000">a somewhat long string!</font>&quot;
+  &apos;three&apos; =&gt;
+  <b>class</b> <font color="#AA0000">test</font>#1 (<font color="#00AA00">3</font>) {
+    <font color="#55FF55"><b>public</b></font> $pub =&gt;
+    <b>bool</b>(<font color="#AA00AA">false</font>)
+    <font color="#55FF55"><b>private</b></font> $priv =&gt;
+    <b>bool</b>(<font color="#AA00AA">true</font>)
+    <font color="#55FF55"><b>protected</b></font> $prot =&gt;
+    <b>int</b>(<font color="#00AA00">42</font>)
+  }
+}
+</pre>
+
+
+<h2>Stack Traces <a name="stack_trace" href="#stack_trace">#</a></h2>
+<p>
+When Xdebug is loaded, it overrides PHP's standard error handler callbacks, and
+provides one that also shows a stack trace. These stack traces contain a list of
+all the functions and method that were called between the start of the script
+and where the error occurred. An example of such a stack trace is:
+</p>
+<div>
+<font size='1'><table class='xdebug-error xe-fatal-error' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Fatal error: Maximum execution time of 1 second exceeded in <a style='color: black' href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@70'>/home/httpd/html/test/xdebug/docs/stack.php</a> on line <i>70</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0007</td><td bgcolor='#eeeeec' align='right'>374160</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/httpd/html/test/xdebug/docs/stack.php' bgcolor='#eeeeec'><a style='color: black' href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@0'>.../stack.php<b>:</b>0</a></td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>376752</td><td bgcolor='#eeeeec'>foo( <span>$a = </span><span>array (42 =&gt; FALSE, &#39;foo&#39; =&gt; 9121240, 43 =&gt; class stdClass { public $bar = 100 }, 44 =&gt; class stdClass {  }, 45 =&gt; resource(3) of type (stream))</span> )</td><td title='/home/httpd/html/test/xdebug/docs/stack.php' bgcolor='#eeeeec'><a style='color: black' href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@84'>.../stack.php<b>:</b>84</a></td></tr>
+<tr><th align='left' colspan='5' bgcolor='#e9b96e'>Variables in local scope (#2)</th></tr>
+<tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$a&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre class='xdebug-var-dump' dir='ltr'>
+<small><a href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@70'>/home/httpd/html/test/xdebug/docs/stack.php:70</a>:</small>
+<b>array</b> <i>(size=5)</i>
+  42 <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>false</font>
+  'foo' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>9121240</font>
+  43 <font color='#888a85'>=&gt;</font> 
+    <b>object</b>(<i>stdClass</i>)[<i>1</i>]
+      <i>public</i> 'bar' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>100</font>
+  44 <font color='#888a85'>=&gt;</font> 
+    <b>object</b>(<i>stdClass</i>)[<i>2</i>]
+  45 <font color='#888a85'>=&gt;</font> <b>resource</b>(<i>3</i><font color='#2e3436'>,</font> <i>stream</i>)
+</pre></td></tr>
+<tr><td colspan='2' align='right' bgcolor='#eeeeec' valign='top'><pre>$i&nbsp;=</pre></td><td colspan='3' bgcolor='#eeeeec'><pre class='xdebug-var-dump' dir='ltr'>
+<small><a href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@70'>/home/httpd/html/test/xdebug/docs/stack.php:70</a>:</small><small>int</small> <font color='#4e9a06'>3047104</font>
+</pre></td></tr>
+</table></font>
+</div>
+<p>
+This is an example of a stack trace with only some of the optional features
+turned on. The "Variables in local scope" section will only show when you set
+[CFG:show_local_vars] to <code>1</code>.
+</p>
+<p>
+Here follows a list with settings that change the information that is shown in a
+stack trace:
+<dl>
+<dt>[CFG:dump_globals]</dt>
+<dt>[CFG:dump_once]</dt>
+<dt>[CFG:dump_undefined]</dt>
+<dt>[CFG:dump.*]</dt>
+<dd>[CFG:dump_globals] controls whether information from <a href="">super
+globals</a> is added
+to the stack trace. You can configure which super globals and keys are shown
+with the specific [CFG:dump.*] settings, whether they shown only once with
+[CFG:dump_once], and whether to include undefined super global keys with
+[CFG:dump_undefined].</dd>
+
+<dt>[CFG:file_link_format]</dt><dd>The format of the generated link in the
+<em>Location</em> column:
+<code title='/home/httpd/html/test/xdebug/docs/stack.php' bgcolor='#eeeeec'><a style='color: black' href='xdebug:///home/httpd/html/test/xdebug/docs/stack.php@84'>.../stack.php<b>:</b>84</a></code>
+</dd>
+
+<dt>[CFG:filename_format]</dt><dd>Which part(s) of the path to show in the
+<em>Location</em> column.</dd>
+
+<dt>[CFG:max_stack_frames]</dt>
+<dd>How many stack frames to show</dd>
+
+<dt>[CFG:show_local_vars]</dt>
+<dd>Whether to include the available variables from the scope of the last called
+user defined function.</dd>
+
+<dt>[CFG:var_display_max_data]</dt>
+<dt>[CFG:var_display_max_depth]</dt>
+<dt>[CFG:var_display_max_children]</dt>
+<dd>How much information to include for arguments to function calls and local
+variables. These are the same settings as used for <a
+href='#improved_var_dump'>improved var_dump()</a> function.</dd>
+</dl>
+</p>
+
+<p>
+Two more settings control whether Xdebug should show stack traces even when an
+Error or Exception has been caught:
+
+<dl>
+<dt>[CFG:show_error_trace]</dt>
+<dt>[CFG:show_exception_trace]</dt>
+</dl>
+</p>
+
+<p>You can find more detailed information for each setting in their own
+documentation section.</p>
+
+<h3>Filtering <a name="trace-filter" href="#trace-filter">#</a></h3>
+<p>
+Xdebug includes filtering capabilities for stack traces. A filter either
+includes, or excludes, paths or class name prefixes (namespaces). You can use a
+filter to prevent anything from a vendor directory to appear in a stack trace,
+or to only include classes from specific namespaces.
+</p>
+<p>
+To set-up a filter that shows only functions and methods that either have no
+class name, or are prefixed with "Xdebug", you would call
+[FUNC:xdebug_set_filter] with:
+</p>
+
+<h4>Filter Example</h4>
+<div class='example'>
+<code><pre>
+xdebug_set_filter(
+	XDEBUG_FILTER_STACK,
+	XDEBUG_NAMESPACE_INCLUDE,
+	[ '', 'Xdebug' ]
+);
+</pre></code>
+</div>
+<p>
+With this filter set-up, you will only see functions (without class) and all
+method calls of classes that start with "Xdebug". This includes built-in PHP
+functions (such as <code>strlen()</code>) and calls to
+<code>XdebugTest::bar()</code>. The filter does not enforce that "Xdebug" is
+the name of a namespace, and only does a strict character comparison from the
+start of the fully qualified class name. Add a <code>\</code> to the prefix to
+make sure only classes in the <code>Xdebug\</code> namespace are included.
+</p>
+<p>
+The full documentation for the arguments to [FUNC:xdebug_set_filter] are
+described on its own documentation page.
+</p>

@@ -1,0 +1,26 @@
+<p>Configures which logging messages should be added to the log file.</p>
+
+<p>The log file is configured with the [CFG:log] setting.</p>
+
+<p>The following levels are supported:</p>
+<table class='table'>
+<tr><th>Level</th><th>Name</th><th>Example</th></tr>
+<tr><td>0</td><td>Criticals</td><td>Errors in the configuration</td></tr>
+<tr><td>1</td><td>Errors</td><td>Connection errors</td></tr>
+<tr><td>3</td><td>Warnings</td><td>Connection warnings</td></tr>
+<tr><td>5</td><td>Communication</td><td>Protocol messages</td></tr>
+<tr><td><strong>7</strong></td><td>Information</td><td>Information while connecting</td></tr>
+<tr><td>10</td><td>Debug</td><td>Breakpoint resolving information</td></tr>
+</table>
+
+<p>Criticals, errors, and warnings always show up in the
+diagnostics log that you can view by calling [FUNC:xdebug_info].</p>
+
+<p>Criticals and errors are additionally logged through
+PHP's internal logging mechanism (configured with <a
+href="https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-log">error_log</a>
+in <code>php.ini</code>).</p>
+
+<p class="note">This setting can additionally be configured through the
+<code>XDEBUG_CONFIG</code>
+<a href="/docs/all_settings#XDEBUG_CONFIG">environment variable</a>.</p>

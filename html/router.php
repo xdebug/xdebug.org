@@ -19,20 +19,36 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::download()->render();
 	} elseif ($requested_uri === '/download/historical') {
 		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
-	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?(\/([a-z]{2}))?/', $requested_uri, $matches)) {
 		$pages = [
-			'install', 'basic', 'display', 'stack_trace', 'execution_trace',
-			'profiler', 'remote', 'code_coverage', 'compat', 'faq', 'dbgpClient', 'dbgp',
-			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy',
+			'install', 'develop', 'trace',
+			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
+			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
+		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
+
+		$language = null;
+		if (isset($matches[4])) {
+			if ($matches[2] == 'upgrade_guide' && $matches[4] == 'ja') {
+				$language = $matches[4];
+			}
+		}
 
 		if (isset($matches[2])) {
 			if ($matches[2] === 'all_settings') {
 				$contents = XdebugDotOrg\Controller\Docs\SettingsController::all()->render();
 			} elseif ($matches[2] === 'all_functions') {
 				$contents = XdebugDotOrg\Controller\Docs\FunctionsController::all()->render();
+			} elseif ($matches[2] === 'remote') {
+				header("HTTP/1.1 301 Moved Permanently");
+				header('Location: /docs/step_debug');
+				exit();
 			} elseif (in_array($matches[2], $pages)) {
-				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2])->render();
+				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2], $language)->render();
+			} elseif (in_array($matches[2], $redirectDevelopPages)) {
+				header("HTTP/1.1 301 Moved Permanently");
+				header("Location: /docs/develop#{$matches[2]}");
+				exit();
 			} else {
 				header("HTTP/1.0 404 Not Found");
 				$contents = XdebugDotOrg\Controller\FourOhFourController::error()->render();
@@ -57,8 +73,14 @@ try {
 	} elseif ($requested_uri === '/core2.css') {
 		header('Content-type: text/css');
 		die(file_get_contents('core2.css'));
-	} elseif (preg_match('/woff2$/', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*woff2)$@', $requested_uri, $matches)) {
 		header('Content-Type: font/woff2');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*png)$@', $requested_uri, $matches)) {
+		header('Content-Type: image/png');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*jpg)$@', $requested_uri, $matches)) {
+		header('Content-Type: image/jpeg');
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();

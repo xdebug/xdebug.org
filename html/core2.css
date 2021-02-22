@@ -79,8 +79,31 @@ a {
 	text-decoration: none;
 }
 
+h1 a, h2 a, h3 a, h4 a, dt a {
+	font-size: smaller;
+	color: #999;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, dt a:hover {
+	font-size: smaller;
+	color: #317E1E;
+	text-decoration: none;
+}
+
 p a, ul a {
 	font-weight: bold;
+}
+
+p.note {
+	border-left: #317e1e 3px solid;
+	padding-left: 0.5em;
+	background-color: #d5f3cd;
+}
+
+p.warning {
+	border-left: #cc0000 3px solid;
+	padding-left: 0.5em;
+	background-color: #fec1c1;
 }
 
 a:hover {
@@ -207,7 +230,7 @@ main h2, main h3 {
 
 pre, code {
 	line-height: 1.5em;
-    font-family: 'IBM Plex Mono';
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 pre, .example > code {
@@ -223,10 +246,14 @@ pre, .example > code {
 	margin: 0;
 }
 
-p code {
+p code, li code {
 	background: #eee;
 	display: inline-block;
 	padding: 0 0.3em;
+}
+
+p.warning code {
+	background: #ff9090;
 }
 
 h3 + p {
@@ -263,6 +290,10 @@ footer {
 	text-align: center;
 	padding: 40px 20px !important;
 	color: #999;
+}
+
+div.supported_languages span:not(:first-child)::before {
+	content: " | ";
 }
 
 .front_intro {
