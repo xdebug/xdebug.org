@@ -404,7 +404,7 @@ class XdebugVersion
 		}
 		$line .= ' = ';
 
-		if ( $this->extensionDir !== '' && !$this->windows )
+		if ( $this->extensionDir !== '')
 		{
 			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 			$line .= $this->extensionDir . $this->dirSep;
@@ -417,11 +417,6 @@ class XdebugVersion
 		else
 		{
 			$line .= 'xdebug.so';
-		}
-
-		if ( $this->extensionDir !== '' )
-		{
-			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
 		}
 
 		return $line;
