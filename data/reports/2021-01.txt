@@ -1,0 +1,19 @@
+8.57	7.96	0.99	7.91	9.98
+2020-01-01	docs	0.25	xdebug_stop_trace/xdebug_stop_gcstats return types
+2021-01-01	bug	3	Bug #1927/1928 (Crashes with stop functions and feature not active)
+2021-01-03	bug	3.5	Bug #1921 (Triggers and environment variables)
+2021-01-04	release	5	Release 3.0.2, and release automation
+2021-01-06	bug	1	Fix bug in condition (wrong parenthesis)
+2021-01-07	bug	1	Bug #1931: xdebug_info() missing info
+2021-01-07	docs	5.5	Diagnostics video
+2021-01-08	bug	3.5	Bug #1930: No local variables with xdebug_break()
+2021-01-11	php	1	PHP 8.1: Changes to $GLOBALS array
+2021-01-11	docs	1.5	Updating DBGp docs
+2021-01-14	docs	7	Diagnostics video
+2021-01-15	docs	7.5	Diagnostics video
+2021-01-18	docs	7	Diagnostics video
+2021-01-22	bug	1.5	Bug #1932: Coverage misses line
+2021-01-22	ci	1.5	Add PHP 7.2 back to AppVeyor tests
+2021-01-29	bug	4	Triaging Prs
+2021-01-29	docs	4.5	Triaging issues and Prs; Added anchors to headers
+2021-11-22	docs	3	Added Japanse translation to upgrade guide, and logic and support for additional documention languages
