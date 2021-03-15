@@ -74,6 +74,11 @@ p, ol, ul {
     line-height: 1.5em;
 }
 
+p.intro {
+	font-size: larger;
+	font-style: italic;
+}
+
 a {
 	color: #317E1E;
 	text-decoration: none;
@@ -88,6 +93,24 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, dt a:hover {
 	font-size: smaller;
 	color: #317E1E;
 	text-decoration: none;
+}
+
+dl.features dt {
+	margin-left: 0;
+	padding-bottom: 0.5em;
+}
+
+dl.features dd {
+	margin-left: 20px;
+}
+
+dl.features dt a {
+	font-size: initial;
+	color: #317E1E;
+}
+
+dl.features dt a:hover {
+	text-decoration: underline;
 }
 
 p a, ul a {

@@ -6,18 +6,31 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 ?>
 
 <div class="front_intro">
-	<p> Xdebug is an extension for <a href="https://php.net">PHP</a> to assist with
-	debugging and development.</p>
+	<p class="intro">Xdebug is an extension for <a href="https://php.net">PHP</a>, and
+	provides a range of features to improve the PHP development experience.</p>
 
-	<ul>
-		<li>It contains a <a href='/docs/remote'>single step debugger</a> to use with IDEs</li>
-		<li>it upgrades PHP's <a href='/docs/develop#display'>var_dump()</a> function</li>
-		<li>it adds <a href='/docs/develop#stack_trace'>stack traces</a> for Notices, Warnings, Errors and Exceptions</li>
-		<li>it features functionality for <a href='/docs/trace'>recording every function call and variable assignment</a> to disk</li>
-		<li>it contains a <a href='/docs/profiler'>profiler</a></li>
-		<li>it provides <a href='/docs/code_coverage'>code coverage</a> functionality for use with <a href='https://phpunit.de'>PHPUnit</a></li>
-	</ul>
+	<dl class="features">
+		<dt><a href='/docs/step_debug'>Step Debugging</a></dt>
+		<dd>A way to step through your code in your IDE or editor while the script is executing.</dd>
 
+		<dt><a href='/docs/develop'>Improvements to PHP's error reporting</a></dt>
+		<dd>An improved <code><a href='/docs/develop#display'>var_dump()</a></code> function, stack traces for
+		Notices, Warnings, Errors and Exceptions to highlight the code path to
+		the error</dd>
+
+		<dt><a href='/docs/trace'>Tracing</a></dt>
+		<dd>Writes every function call, with arguments and invocation location
+		to disk. Optionally also includes every variable assignment and return
+		value for each function.</dd>
+
+		<dt><a href='/docs/profiler'>Profiling</a></dt>
+		<dd>Allows you, with the help of visualisation tools, to analyse the
+		performance of your PHP application and find bottlenecks.</a>
+
+		<dt><a href='/docs/code_coverage'>Code Coverage Analysis</a></dt>
+		<dd>To show which parts of your code base are executed when running
+		unit tests with PHP Unit.</dd>
+	</dl>
 </div>
 
 <div class="front_announcements">
@@ -33,7 +46,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 <a name="business_supporters"></a>
 <div class="front_supporters">
 
-	<p>This work is made possible through the generous support of Xdebug's business-tier sponsors:
+	<p>Xdebug is made possible through the generous support of Xdebug's business-tier sponsors:</p>
 
 	<ul class='supporters'>
 	<?php foreach ($this->supporters as list($link, $name)) : ?>
