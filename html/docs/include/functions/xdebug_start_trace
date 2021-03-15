@@ -47,10 +47,9 @@ pass in as first argument to this function. With the
 </dl>
 
 TXT:
-The settings [CFG:collect_assignments], [CFG:collect_includes],
-[CFG:collect_params] and [CFG:collect_return] influence what information is
-logged to the trace file and the setting [CFG:trace_format] influences the
-format of the trace file.
+The settings [CFG:collect_assignments] and [CFG:collect_return] influence what
+information is logged to the trace file and the setting [CFG:trace_format]
+influences the format of the trace file.
 
 TXT:
 The full path and filename to which Xdebug traces is returned from this

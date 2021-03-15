@@ -75,11 +75,6 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
-		'collect_params' => [
-			'integer', 0, null,
-			\FUNC_FUNCTION_TRACE | \FUNC_STACK_TRACE
-		],
-
 		'collect_return' => [
 			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE,

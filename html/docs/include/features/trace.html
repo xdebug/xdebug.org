@@ -13,9 +13,10 @@ one is more suited for computer programs as it is easier to parse, and the last
 one uses HTML for formatting the trace. You can switch between the two
 different formats with the [CFG:trace_format] setting. There are a few settings
 that control which information is written to the trace files. There are
-settings for including variables ([CFG:collect_params]) and for including
-return values ([CFG:collect_return]) for example. The example below shows what
-effect the different settings have for the human readable function traces.
+settings for including variable assignments ([CFG:collect_assignments]) and for
+including return values ([CFG:collect_return]) for example. The example below
+shows what effect the different settings have for the human readable function
+traces.
 </p>
 
 <h3>The Script</h3>
@@ -30,84 +31,10 @@ effect the different settings have for the human readable function traces.
 
 <h3>The Results</h3>
 
-<p>
-Below are the results with different settings of the [CFG:collect_params]
-setting. As this is not a web environment the value of 2 does not have any
-meaning as tool tips don't work in text files.
-</p>
+<p>A typical output without the [CFG:collect_return] or
+[CFG:collect_assignments] features turned on is the following trace:</p>
 
-<div id="collectparams" class="yui-navset">
-	<ul class="yui-nav">
-		<li class="selected"><a href="#default1"><em>default</em></a></li>
-		<li><a href="#collect-params-1"><em>collect_params=1</em></a></li>
-		<li><a href="#collect-params-3"><em>collect_params=3</em></a></li>
-		<li><a href="#collect-params-4"><em>collect_params=4</em></a></li>
-	</ul>
-	<div class="yui-content">
-		<div id="default1">
-<pre class="shell">
-TRACE START [2007-05-06 14:37:06]
-    0.0003     114112   -> {main}() ../trace.php:0
-    0.0004     114272     -> str_split() ../trace.php:8
-    0.0153     117424     -> ret_ord() ../trace.php:10
-    0.0165     117584       -> ord() ../trace.php:5
-    0.0166     117584     -> ret_ord() ../trace.php:10
-    0.0167     117584       -> ord() ../trace.php:5
-    0.0168     117584     -> ret_ord() ../trace.php:10
-    0.0168     117584       -> ord() ../trace.php:5
-    0.0170     117584     -> ret_ord() ../trace.php:10
-    0.0170     117584       -> ord() ../trace.php:5
-    0.0172     117584     -> ret_ord() ../trace.php:10
-    0.0172     117584       -> ord() ../trace.php:5
-    0.0173     117584     -> ret_ord() ../trace.php:10
-    0.0174     117584       -> ord() ../trace.php:5
-    0.0177      41152
-TRACE END   [2007-05-06 14:37:07]
-</pre>
-		</div>
-		<div id="collect-params-1">
-<pre class="shell">
-TRACE START [2007-05-06 14:37:11]
-    0.0003     114112   -> {main}() ../trace.php:0
-    0.0004     114272     -> str_split(string(6)) ../trace.php:8
-    0.0007     117424     -> ret_ord(string(1)) ../trace.php:10
-    0.0007     117584       -> ord(string(1)) ../trace.php:5
-    0.0009     117584     -> ret_ord(string(1)) ../trace.php:10
-    0.0009     117584       -> ord(string(1)) ../trace.php:5
-    0.0010     117584     -> ret_ord(string(1)) ../trace.php:10
-    0.0011     117584       -> ord(string(1)) ../trace.php:5
-    0.0012     117584     -> ret_ord(string(1)) ../trace.php:10
-    0.0013     117584       -> ord(string(1)) ../trace.php:5
-    0.0014     117584     -> ret_ord(string(1)) ../trace.php:10
-    0.0014     117584       -> ord(string(1)) ../trace.php:5
-    0.0016     117584     -> ret_ord(string(1)) ../trace.php:10
-    0.0016     117584       -> ord(string(1)) ../trace.php:5
-    0.0019      41152
-TRACE END   [2007-05-06 14:37:11]
-</pre>
-		</div>
-		<div id="collect-params-3">
-<pre class="shell">
-TRACE START [2007-05-06 14:37:13]
-    0.0003     114112   -> {main}() ../trace.php:0
-    0.0004     114272     -> str_split('Xdebug') ../trace.php:8
-    0.0007     117424     -> ret_ord('X') ../trace.php:10
-    0.0007     117584       -> ord('X') ../trace.php:5
-    0.0009     117584     -> ret_ord('d') ../trace.php:10
-    0.0009     117584       -> ord('d') ../trace.php:5
-    0.0010     117584     -> ret_ord('e') ../trace.php:10
-    0.0011     117584       -> ord('e') ../trace.php:5
-    0.0012     117584     -> ret_ord('b') ../trace.php:10
-    0.0013     117584       -> ord('b') ../trace.php:5
-    0.0014     117584     -> ret_ord('u') ../trace.php:10
-    0.0014     117584       -> ord('u') ../trace.php:5
-    0.0016     117584     -> ret_ord('g') ../trace.php:10
-    0.0016     117584       -> ord('g') ../trace.php:5
-    0.0019      41152
-TRACE END   [2007-05-06 14:37:13]
-</pre>
-		</div>
-		<div id="collect-params-4">
+<div id="collect-params-4">
 <pre class="shell">
 TRACE START [2007-05-06 14:37:16]
     0.0003     114112   -> {main}() ../trace.php:0
@@ -127,81 +54,17 @@ TRACE START [2007-05-06 14:37:16]
     0.0019      41152
 TRACE END   [2007-05-06 14:37:16]
 </pre>
-		</div>
-	</div>
 </div>
 
 <p>
-Besides the [CFG:collect_params] settings there is another number of settings
-that affect the output of trace files. The first tab "default" shows the same
-as the default as above. The second tab "show_mem_delta=1" also shows the
-memory usage difference between two different lines in the output file.
+There are a number of settings that affect the output of trace files.
 </p>
 <p>
-On the "collect_return=1" tab the return values of all the function calls are
-also visible.  This you turn on with the [CFG:collect_return] setting.
-</p>
-<p>
-The tab called "collect_assignments=1" shows variable assignments, which can be
-turned on with the [CFG:collect_assignments] setting.
-</p>
-<p>
-The last tab shows a different output format that is much easier to parse, but
-harder to read. The [CFG:trace_format] setting is therefore mostly useful if
-there is an additional tool to interpret the trace files.
+To show the return values of all function and method calls,
+turn on the [CFG:collect_return] and [CFG:collect_assignments] settings.
 </p>
 
-<div id="othersettings" class="yui-navset">
-	<ul class="yui-nav">
-		<li class="selected"><a href="#default2"><em>default</em></a></li>
-		<li><a href="#mem-delta"><em>show_mem_delta=1</em></a></li>
-		<li><a href="#collect-return"><em>collect_return=1</em></a></li>
-		<li><a href="#trace-format"><em>trace_format=1</em></a></li>
-	</ul>
-	<div class="yui-content">
-		<div id="default2">
-<pre class="shell">
-TRACE START [2007-05-06 14:37:06]
-    0.0003     114112   -> {main}() ../trace.php:0
-    0.0004     114272     -> str_split() ../trace.php:8
-    0.0153     117424     -> ret_ord() ../trace.php:10
-    0.0165     117584       -> ord() ../trace.php:5
-    0.0166     117584     -> ret_ord() ../trace.php:10
-    0.0167     117584       -> ord() ../trace.php:5
-    0.0168     117584     -> ret_ord() ../trace.php:10
-    0.0168     117584       -> ord() ../trace.php:5
-    0.0170     117584     -> ret_ord() ../trace.php:10
-    0.0170     117584       -> ord() ../trace.php:5
-    0.0172     117584     -> ret_ord() ../trace.php:10
-    0.0172     117584       -> ord() ../trace.php:5
-    0.0173     117584     -> ret_ord() ../trace.php:10
-    0.0174     117584       -> ord() ../trace.php:5
-    0.0177      41152
-TRACE END   [2007-05-06 14:37:07]
-</pre>
-		</div>
-		<div id="mem-delta">
-<pre class="shell">
-TRACE START [2007-05-06 14:37:26]
-    0.0003     114112  +114112   -> {main}() ../trace.php:0
-    0.0004     114272     +160     -> str_split('Xdebug') ../trace.php:8
-    0.0007     117424    +3152     -> ret_ord($c = 'X') ../trace.php:10
-    0.0007     117584     +160       -> ord('X') ../trace.php:5
-    0.0009     117584       +0     -> ret_ord($c = 'd') ../trace.php:10
-    0.0009     117584       +0       -> ord('d') ../trace.php:5
-    0.0011     117584       +0     -> ret_ord($c = 'e') ../trace.php:10
-    0.0011     117584       +0       -> ord('e') ../trace.php:5
-    0.0013     117584       +0     -> ret_ord($c = 'b') ../trace.php:10
-    0.0013     117584       +0       -> ord('b') ../trace.php:5
-    0.0014     117584       +0     -> ret_ord($c = 'u') ../trace.php:10
-    0.0015     117584       +0       -> ord('u') ../trace.php:5
-    0.0016     117584       +0     -> ret_ord($c = 'g') ../trace.php:10
-    0.0017     117584       +0       -> ord('g') ../trace.php:5
-    0.0019      41152
-TRACE END   [2007-05-06 14:37:26]
-</pre>
-		</div>
-		<div id="collect-return">
+<div id="collect-return">
 <pre class="shell">
 TRACE START [2007-05-06 14:37:35]
     0.0003     114112   -> {main}() ../trace.php:0
@@ -235,10 +98,21 @@ TRACE START [2007-05-06 14:37:35]
     0.0021      41152
 TRACE END   [2007-05-06 14:37:35]
 </pre>
-		</div>
-		<div id="trace-format">
+</div>
+
+<p>
+The default format is meant for consumption by humans. It is also possible to
+generate a tab separated trace by setting [CFG:trace_format] to <code>1</code>.
+</p>
+<p>
+The Xdebug source distribution has a <a
+href='https://github.com/xdebug/xdebug/blob/master/contrib/tracefile-analyser.php'>script</a>
+that can be used to run some minimal analyses on these files.
+</p>
+
+<div id="trace-format">
 <pre class="shell">
-Version: 2.0.0RC4-dev
+Version: 3.0.3
 TRACE START [2007-05-06 18:29:01]
 1	0	0	0.010870	114112	{main}	1	../trace.php	0
 2	1	0	0.032009	114272	str_split	0	../trace.php	8
@@ -270,8 +144,6 @@ TRACE START [2007-05-06 18:29:01]
 1	0	1	0.034636	117584
 TRACE END   [2007-05-06 18:29:01]
 </pre>
-		</div>
-	</div>
 </div>
 
 <h2>VIM syntax file <a name="vim" href="#vim">#</a></h2>
