@@ -230,8 +230,13 @@ nav ul li a {
 
 #support {
 	text-align: center;
-	padding: 0 20px 40px;
+	width: max-content;
+	padding: 5px;
+	margin-top: 15px;
+	margin-bottom: 20px;
 	line-height: 1.5em;
+	border-top: 1px solid #317E1E;
+	border-bottom: 1px solid #317E1E;
 }
 
 #support a {
@@ -339,7 +344,6 @@ div.supported_languages span:not(:first-child)::before {
 .front_supporters {
 	width: 100%;
 	float: left;
-	margin-top: 1em;
 }
 
 .front_supporters p {
