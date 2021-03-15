@@ -1,0 +1,6 @@
+9.06	5.86	1.00	7.08	9.98
+2021-02-18	release	2	DebugClient 0.4.2 release
+2021-02-18	bug	5	Triaging, commenting, and creating a few more issues for Xdebug 3.1
+2021-02-22	release	3	Release 3.0.3
+2021-02-24	docs	0.5	Documentation fixes
+2021-02-24	bug	2.5	Investigating crash bug with tracing (and object property by-ref)
