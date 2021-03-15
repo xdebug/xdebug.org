@@ -57,6 +57,10 @@ foreach( $functions as $info )
 		{
 			$entry = "/** @return void */\n" . $entry;
 		}
+		else if ( strpos( $info->return_type, '|' ) !== false )
+		{
+			$entry = "/** @return {$info->return_type} */\n" . $entry;
+		}
 		else
 		{
 			$entry .= ": {$info->return_type}";
