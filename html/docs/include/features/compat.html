@@ -28,11 +28,27 @@ href='http://php.net/supported-versions.php'>PHP versions</a>.
 
 <h2>Compatibility <a name='compat' href="#compat">#</a></h2>
 <p>
-Xdebug does work together with the Zend Opcache, albeit with reducued or
-crippled functionality, as Opcache optimises out information that Xdebug could
-use.
-</p>
-<p>Xdebug does <b>not</b> work together with other extensions
-that deal with PHP's internals (DBG, APD, ioncube etc). This is due to
-compatibility problems with those modules.
-</p>
+<dl>
+<dt>Zend Opcache</dt>
+<dd>
+	<p>Can be loaded together with Xdebug, but it is not 100% compatible.</p>
+	<p>Load Xdebug after Opcache in <code>php.ini</code> for better
+	compatibility. When running <code>php -v</code> or when looking at
+	<code>phpinfo();</code> output, Xdebug should be listed below Opcache.</p>
+	<p>When Opcache's optimiser is enabled, some functionality in Xdebug will
+	not work, or differently, because it removes or changes PHP's VM
+	instructions that Xdebug relies on.</p>
+</dd>
+<dt>PHP 8 JIT</dt>
+<dd>
+	<p>Xdebug does not work with PHP's JIT engine, which is implemented in
+	Opcache. When Xdebug is loaded with PHP's JIT on, you will get a warning,
+	and JIT will be disabled.</p>
+</dd>
+<dt>DBG, APD, ioncube etc</dt>
+<dd>
+	<p>Xdebug does <b>not</b> work together with other extensions
+	hat deal with PHP's internals. This is due to
+	compatibility problems with those modules.</p>
+</dd>
+</dl>
