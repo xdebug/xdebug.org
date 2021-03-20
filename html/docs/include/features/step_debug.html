@@ -111,15 +111,15 @@ every request as long as the debug toggle has been enabled.</p>
 <p>Alternatively, you can signal Xdebug to initiate debugging for a
 <strong>single</strong> request by adding
 <code>XDEBUG_SESSION=session_name</code> as additional <code>GET</code> (or
-<code>POST</code>) parameter.</p>
+<code>POST</code>) parameter. You can pick any value for
+<code>session_name</code>, unless [CFG:trigger_value] is set.</p>
 
 <a name="browser_session"></a>
 <p>For debugging <strong>multiple</strong> subsequent requests, Xdebug supports
 debugging sessions managed by a cookie.</p>
 
 <p>Set the <code>XDEBUG_SESSION_START=session_name</code> <code>GET</code> (or
-<code>POST</code>) HTTP parameter. The value for <code>session_name</code> is
-not important.</p>
+<code>POST</code>) HTTP parameter.</p>
 
 <p>Xdebug will set the <code>XDEBUG_SESSION</code> cookie. As long as the
 cookie is present, debugging will be initiated for every HTTP request

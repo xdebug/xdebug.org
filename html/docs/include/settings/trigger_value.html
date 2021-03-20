@@ -6,6 +6,10 @@ functionality when the <code>XDEBUG_TRIGGER</code> is set in the environment,
 or when the <code>XDEBUG_TRIGGER</code> GET, POST, or COOKIE variable is
 set.</p>
 
+<p>The legacy names <code>XDEBUG_SESSION</code> (for [FEAT:step_debug]),
+<code>XDEBUG_PROFILE</code> (for [FEAT:profiler]), and <code>XDEBUG_TRACE</code>
+(for [FEAT:trace]) can also be used instead of <code>XDEBUG_TRIGGER</code>.</p>
+
 <p>Normally, Xdebug does not look at which value is actually used. If this
 setting is set to a non-empty string, then Xdebug will only trigger if the
 value matches the value of this setting.</p>
