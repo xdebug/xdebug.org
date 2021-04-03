@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:8.0-fpm
 
 RUN pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
 RUN pecl install mongodb
