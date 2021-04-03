@@ -109,9 +109,10 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 				<p>If it does not, you are using the wrong <code>phpize</code>. Please follow
 					<a href='/docs/faq#custom-phpize'>this FAQ entry</a> and skip the next step.
 				</p>
-				<li>Run: <code>./configure</code></li>
-				<li>Run: <code>make</code></li>
-				<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?></code></li>
+            </li>
+            <li>Run: <code>./configure</code></li>
+			<li>Run: <code>make</code></li>
+			<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?></code></li>
 		<?php endif ?>
 	<?php else : ?>
 		<li>Move the downloaded file to <?= $this->x->extensionDir ?></li>
