@@ -1,0 +1,12 @@
+12.43	6.81	1.00	7.91	5.08
+2021-03-04	php	5	Making things work with PHP 8.1 again
+2021-03-04	bug	2	Implementing #1947: xdebug_info enhancements
+2021-03-14	bug	3.5	Fixing #1950: Tracing crash with ASSIGN_OBJ_REF
+2021-03-14	bug	1	Fixing #1954: start_trace without mode creates fatal
+2021-03-15	bug	2	Fixing #1944: Issues with triggering features
+2021-03-15	xdebug3	4	Enhance xdebug_info() output
+2021-03-15	website	2.5	Improve wording on Xdebug.org front page; XDEBUG_MODE confusion
+2021-03-17	bug	4	Triaging all outstanding issues
+2021-03-17	docs	2	Documentation updates wrt var_display
+2021-03-20	docs	0.5	Clarify what ‘session_name’ means in step debug documentation
+2021-03-20	docs	2	Document incompatibilities with PHP 8 JIT (and/or opcache)
