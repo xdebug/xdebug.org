@@ -22,6 +22,18 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_0_4'></a>[2021-04-08] &mdash; Xdebug 3.0.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1802); ?>: Improve xdebug.org home page</dd>
+<dd>Fixed <?= bug(1944); ?>: tracing is started without trigger, when profiler is also enabled</dd>
+<dd>Fixed <?= bug(1947); ?>: xdebug_info() settings section does not show the modes that are overridden by XDEBUG_MODE</dd>
+<dd>Fixed <?= bug(1950); ?>: Assignment trace with ASSIGN_OBJ_REF crashes</dd>
+<dd>Fixed <?= bug(1954); ?>: Calling xdebug_start_trace without mode including tracing results in a fatal error</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_3'></a>[2021-02-22] &mdash; Xdebug 3.0.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
