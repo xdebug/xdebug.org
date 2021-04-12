@@ -43,11 +43,17 @@ instead.</p>
 <h2>Installing with PECL <a name='pecl' href="#pecl">#</a></h2>
 
 <p>
-You can install Xdebug through PECL on Linux &amp; macOS with Homebrew</sup>.
+You can install Xdebug through PECL on Linux &amp; macOS with Homebrew.
 Run:
 </p>
 <pre class='example'>
 pecl install xdebug
+</pre>
+<p>
+On Apple M1 hardware, you might instead need to use:
+</p>
+<pre class='example'>
+arch -x86_64 sudo pecl install xdebug
 </pre>
 <p class="warning"><strong>Warning:</strong> You should ignore any prompts to add
 <code>"extension=xdebug.so"</code> to
