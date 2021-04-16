@@ -2,6 +2,8 @@ version: '3.7'
 services:
   php-lighttpd:
     container_name: xdebug-php
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     build:
       context: .
       dockerfile: Dockerfile

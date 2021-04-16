@@ -2,6 +2,8 @@ FROM php:8.0-fpm
 
 RUN pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
 RUN pecl install mongodb
+RUN pecl install xdebug
+COPY docker/90-xdebug.ini "${PHP_INI_DIR}/conf.d"
 
 RUN apt-get update && apt-get install -y lighttpd
 
