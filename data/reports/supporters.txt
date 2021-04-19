@@ -12,3 +12,4 @@
 2021-01-01	Offers.com	https://offers.com
 2021-02-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2021-02-12	Supermetrics	https://supermetrics.com
+2021-01-01	Xdebug Cloud	https://xdebug.cloud
