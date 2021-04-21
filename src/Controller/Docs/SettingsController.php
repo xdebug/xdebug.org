@@ -140,6 +140,11 @@ class SettingsController
 			\FUNC_STEP_DEBUG
 		],
 
+		'cloud_id' => [
+			'string', '', null,
+			\FUNC_STEP_DEBUG
+		],
+
 		'connect_timeout_ms' => [
 			'integer', 200, null,
 			\FUNC_STEP_DEBUG

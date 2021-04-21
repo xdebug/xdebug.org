@@ -222,6 +222,48 @@
 </p>
 </dd>
 
+<a name="DBG-W-DETACH"></a>
+<dt>DBG-W-DETACH</dt>
+<dd>
+<p class="reason">
+	Xdebug succesfully connected to an IDE or <a
+	href="https://xdebug.cloud">Xdebug Cloud</a>, but the IDE or Xdebug Cloud
+	aborted the debugging session with the <code>detach</code> protocol
+	command.
+</p>
+<p>
+	IDEs can detach for several reasons:
+	<ul>
+		<li>The IDE can detach when it can not relate the incoming request and associated file name with its path mappings.</li>
+		<li>The IDE chooses to ignore the request on your behalf, through a dialog.</li>
+		<li>The IDE chooses to ignore the request for other reasons.</li>
+		<li>You can instruct the IDE to stop debugging, and let the application running.</li>
+	</ul>
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Set up the right path mappings for your IDE.</li>
+		<li>Don't choose to ignore the incoming debugging session when the IDE asks.</li>
+	</ul>
+</p>
+<p>
+	Xdebug Cloud uses detach when the Cloud ID is not existing, or when no IDE
+	is connected for the Cloud ID. A message with the exact reason Diagnostics
+	Log that is part of [FUNC:xdebug_info]'s output.</p>
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check whether the Cloud ID as configured in Xdebug with
+		[CFG:cloud_id] matches the one set in your IDE.</li>
+		<li>Check your Xdebug Cloud <a
+		href='https://xdebug.cloud/profile#tokens'>profile page</a> to see if
+		you have used an available token.</li>
+	</ul>
+</p>
+</dd>
+
 <a name='DBG-W-HDR'></a>
 <dt>DBG-W-HDR</dt>
 <dd>
