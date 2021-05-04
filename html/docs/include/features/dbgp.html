@@ -5,7 +5,7 @@
 <tr><th class="docinfo-name">Version:</th>
 <td>1.0</td></tr>
 <tr><th class="docinfo-name">Status:</th>
-<td>draft 21</td></tr>
+<td>draft 22</td></tr>
 <tr><th class="docinfo-name">Authors:</th>
 <td>Shane Caraveo, ActiveState &lt;<a class="reference external" href="mailto:shanec&#64;ActiveState.com">shanec&#64;ActiveState.com</a>&gt;
 <br />Derick Rethans &lt;<a class="reference external" href="mailto:derick&#64;derickrethans.nl">derick&#64;derickrethans.nl</a>&gt;</td></tr>
@@ -924,15 +924,6 @@ the breakpoint types that are supported.
 See <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for a list of the
 6 defined breakpoint types.</td>
 </tr>
-<tr><td>resolved_breakpoints</td>
-<td>get|set</td>
-<td>whether 'breakpoint_resolved'
-notifications may be send by the
-debugging engine in case it is
-supported. See the <em>resolved</em> attribute
-under <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for further
-information.</td>
-</tr>
 <tr><td>multiple_sessions</td>
 <td>get|set</td>
 <td>{0|1}</td>
@@ -953,15 +944,6 @@ initially retrieve.</td>
 engine may return when sending arrays,
 hashs or object structures to the IDE.</td>
 </tr>
-<tr><td>extended_properties</td>
-<td>get|set</td>
-<td>{0|1} Extended properties are required if
-there are property names (name, fullname
-or classname) that can not be represented
-as valid XML attribute values (such as
-<tt class="docutils literal">&amp;#0;</tt>). See also
-<a class="reference internal" href="#properties-variables-and-values">7.11 Properties, variables and values</a>.</td>
-</tr>
 </tbody>
 </table>
 </blockquote>
@@ -975,6 +957,36 @@ assume that the feature is not available:</p>
 <col width="57%" />
 </colgroup>
 <tbody valign="top">
+<tr><td>breakpoint_details</td>
+<td>get|set</td>
+<td>whether breakpoint information is
+included in the response to a
+continuation command, when the debugger
+hits a 'break' state (for example, when
+encountering a breakpoint)</td>
+</tr>
+<tr><td>extended_properties</td>
+<td>get|set</td>
+<td>{0|1} Extended properties are required if
+there are property names (name, fullname
+or classname) that can not be represented
+as valid XML attribute values (such as
+<tt class="docutils literal">&amp;#0;</tt>). See also
+<a class="reference internal" href="#properties-variables-and-values">7.11 Properties, variables and values</a>.</td>
+</tr>
+<tr><td>notify_ok</td>
+<td>get|set</td>
+<td>[0|1]  See section <a class="reference internal" href="#notifications">8.5 Notifications</a>.</td>
+</tr>
+<tr><td>resolved_breakpoints</td>
+<td>get|set</td>
+<td>whether 'breakpoint_resolved'
+notifications may be send by the
+debugging engine in case it is
+supported. See the <em>resolved</em> attribute
+under <a class="reference internal" href="#breakpoints">7.6 breakpoints</a> for further
+information.</td>
+</tr>
 <tr><td>supported_encodings</td>
 <td>get</td>
 <td>returns a comma separated list of all
@@ -994,10 +1006,6 @@ if it wants to have more detailed internal
 information on properties (eg. private
 members of classes, etc.)  Zero means that
 hidden members are not shown to the IDE.</td>
-</tr>
-<tr><td>notify_ok</td>
-<td>get|set</td>
-<td>[0|1]  See section <a class="reference internal" href="#notifications">8.5 Notifications</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1144,9 +1152,38 @@ run -i transaction_id
 <p>debugger engine</p>
 <pre class="literal-block">
 &lt;response command=&quot;run&quot;
-          status=&quot;starting&quot;
-          reason=&quot;ok&quot;
-          transaction_id=&quot;transaction_id&quot;/&gt;
+          transaction_id=&quot;transaction_id&quot;
+          status=&quot;break&quot;
+          reason=&quot;ok&quot;/&gt;
+</pre>
+<p>A debugger engine may include extra information as sub element to <cite>response</cite>,
+as long as it is in its own name space. In the example below the debugger
+engine added the file and line location where the application is now paused:</p>
+<pre class="literal-block">
+&lt;response xmlns=&quot;urn:debugger_protocol_v1&quot; xmlns:xdebug=&quot;https://xdebug.org/dbgp/xdebug&quot;
+          command=&quot;run&quot;
+          transaction_id=&quot;transaction_id&quot;
+          status=&quot;break&quot;
+          reason=&quot;ok&quot;&gt;
+    &lt;xdebug:message filename=&quot;file://bug01312.inc&quot; lineno=&quot;26&quot;/&gt;
+&lt;/response&gt;
+</pre>
+<p>If the <em>breakpoint_details</em> feature is enabled with <a class="reference internal" href="#feature-set">7.2.3 feature_set</a> then
+the debugger information MAY also include a sub element to described the
+breakpoint. The <em>breakpoint</em> element has the same format and contents as the
+response to a <a class="reference internal" href="#id4">7.6.2 breakpoint_get</a> command:</p>
+<pre class="literal-block">
+&lt;response command=&quot;run&quot;
+          transaction_id=&quot;6&quot;
+          status=&quot;break&quot;
+          reason=&quot;ok&quot;&gt;
+    &lt;breakpoint id=&quot;BREAKPOINT_ID&quot;
+                type=&quot;call&quot;
+                function=&quot;breaking::staticMe&quot;
+                state=&quot;enabled&quot;
+                hit_count=&quot;2&quot;
+                hit_value=&quot;0&quot;/&gt;
+&lt;/response&gt;
 </pre>
 </div>
 <div class="section" id="breakpoints">
@@ -2848,6 +2885,11 @@ next line of code</td>
 </div>
 <div class="section" id="a-changelog">
 <h1><a class="toc-backref" href="#id83">A. ChangeLog</a></h1>
+<p>2021-05-04</p>
+<ul class="simple">
+<li>7.2.1, 7.5 Added 'breakpoint_details' feature to include breakpoint info
+in the response to applicable continuation commands.</li>
+</ul>
 <p>2021-01-11</p>
 <ul class="simple">
 <li>7.6 Fixed duplicate mention of <a class="reference internal" href="#feature-get">7.2.2 feature_get</a>, where one of them
