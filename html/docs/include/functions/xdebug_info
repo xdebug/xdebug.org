@@ -1,12 +1,18 @@
 = xdebug_info
-Show diagnostic information
-void
-none
+Show and retrieve diagnostic information
+mixed
+string $category = null
 FUNC_ALL
 
 TXT:
-This function returns an HTML page which shows diagnostic information. It is
-analogous to PHP's <a href='https://php.net/phpinfo'>phpinfo()</a> function.
+This function presents APIs to retrieve information about Xdebug itself. Which
+information gets returned, or displayed, depends on which arguments, or none at
+all, are given.
+
+TXT:
+Without arguments, this function returns an HTML page which shows diagnostic
+information. It is analogous to PHP's <a
+href='https://php.net/phpinfo'>phpinfo()</a> function.
 
 TXT:
 The HTML output includes which mode is active, what the settings are, and
@@ -19,3 +25,27 @@ Each warning and error in the diagnostics log also links through to the
 
 TXT:
 <img src="/images/diagnostics.png"/>
+
+TXT:
+<strong><code>$category</code> = <code>'mode'</code></strong> <em>(New in Xdebug 3.1)</em>
+
+TXT:
+The function returns an array of all the
+enabled modes, whether through [CFG:xdebug_mode] or the
+<code>XDEBUG_MODE</code> environment variable.
+
+EXAMPLE:
+<?php
+var_dump( xdebug_info( 'mode' ) );
+?>
+
+RESULT:
+<pre><b>array</b>(<font color="#00AA00">3</font>) {
+  [0] =&gt;
+  <b>string</b>(<font color="#00AA00">5</font>) &quot;<font color="#AA0000">debug</font>&quot;
+  [1] =&gt;
+  <b>string</b>(<font color="#00AA00">7</font>) &quot;<font color="#AA0000">develop</font>&quot;
+  [2] =&gt;
+  <b>string</b>(<font color="#00AA00">5</font>) &quot;<font color="#AA0000">trace</font>&quot;
+}
+</pre>
