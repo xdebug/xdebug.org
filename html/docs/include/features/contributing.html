@@ -31,8 +31,8 @@ need to follow the instructions below.
 <li>Add the original repository as remote (after removing the old one):<br/>
 	<code>git remote add upstream git://github.com/xdebug/xdebug.git &amp;&amp; git fetch upstream</code>
 </li>
-<li>Add a tracking branch for xdebug 2.5:<br/>
-	<code>git checkout --track origin/xdebug_2_5</code>
+<li>Add a tracking branch for xdebug 3.0:<br/>
+	<code>git checkout --track origin/xdebug_3_0</code>
 </li>
 </ol>
 
@@ -42,16 +42,16 @@ need to follow the instructions below.
 	<code>cd xdebug</code>
 </li>
 <li>Run:<br/><code>git checkout master &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/master</code></li>
-<li>Run:<br/><code>git checkout xdebug_2_5 &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_5</code></li>
+<li>Run:<br/><code>git checkout xdebug_3_0 &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/xdebug_3_0</code></li>
 </ol>
 
 <h2>Working on a bug fix <a name="bugfix" href="#bugfix">#</a></h2>
 <p>The steps for this are the same as for <a href='#newfeature'>working on new
-features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
+features</a> except that you make a branch of <b>xdebug_3_0</b> instead of
 <b>master</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
-<li>Checkout the <code>xdebug_2_5</code> branch:<br/><code>git checkout xdebug_2_5</code>.</li>
+<li>Checkout the <code>xdebug_3_0</code> branch:<br/><code>git checkout xdebug_3_0</code>.</li>
 <li>Create a feature branch:<br/>
 	<code>git checkout -b issue<i>{issue&nbsp;number}</i></code><br/>
 	for example:<br/>
@@ -69,7 +69,7 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 <li>Repeat the previous two steps as long as you want.</li>
 <li>Bring things up-to-date with the original repository, especially important
 	if it took some time since you branched:<br/>
-	<code>git fetch upstream &amp;&amp; git rebase upstream/xdebug_2_5</code></li>
+	<code>git fetch upstream &amp;&amp; git rebase upstream/xdebug_3_0</code></li>
 <li>Push your changes to your remote repository:<br/>
 	<code>git push origin <i>{issue&nbsp;number}</i></code><br/>
 	for example:<br/>
@@ -88,7 +88,7 @@ features</a> except that you make a branch of <b>xdebug_2_5</b> instead of
 <h2>Working on a new feature <a name="newfeature" href="#newfeature">#</a></h2>
 <p>The steps for this are the same as for <a href='#bugfix'>fixing bugs</a>
 except that you make a branch of <b>master</b> instead of
-<b>xdebug_2_5</b>.</p>
+<b>xdebug_3_0</b>.</p>
 <ol>
 <li>First of all, make sure you're <a href="#uptodate">up-to-date</a>.</li>
 <li>Checkout the <code>master</code> branch:<br/><code>git checkout master</code>.</li>
