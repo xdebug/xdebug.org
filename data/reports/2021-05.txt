@@ -1,0 +1,11 @@
+7.25	8.23	0.99	7.91	5.08
+2021-05-03	xdebug3	3.5	Issue #1969: Add breakpoint information when a break happens
+2021-05-03	ci	2	Set-up GCOV
+2021-05-04	docs	0.5	xdebug_info addition docs
+2021-05-05	bug	2.5	Fissue #1970: Fixed get_function_stack parameter indexes
+2021-05-06	xdebug3	2	Issue #1474: Add assignments to computer readable trace format
+2021-05-07	docs	0.5	Improve upgrade guide
+2021-05-09	xdebug3	5	Add support for PHP 8.1 Fibers
+2021-05-14	xdebug3	1.5	Meeting with Danjam about VS Code plugin
+2021-05-19	docs	1	Update contributing guidelines
+2021-05-21	bug	2	Fixed bug with log messages being cut off at 512 bytes

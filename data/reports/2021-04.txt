@@ -1,0 +1,14 @@
+7.55	7.01	0.99	7.91	5.08
+2021-04-03	docs	4	Create two videos to set-up Xdebug with Docker and PhpStorm
+2021-04-08	release	2	Release 3.0.4
+2021-04-09	xdebug3	8	Implemented #1853: compression of profiler files
+2021-04-12	docs	0.5	Add documentation for pecl on M1 hardware
+2021-04-16	bug	4	Fixed #1963: Crash on windows with mode=off
+2021-04-16	docs	1	Made a video profiling from within Docker
+2021-04-19	docs	1	Made a video showing debugging unit tests with phpstorm on Linux
+2021-04-21	xdebug3	2.5	Allow cloud Id to come in through browser helpers
+2021-04-21	xdebug3	3.5	Fixed #1898: Add API for retrieving modes
+2021-04-21	docs	1	Document new DBG-W-DETACH error and XDEBUG_MODE env var
+2021-04-23	xdebug3	2.5	Fixed #1948: Don’t send messages to PHP error log if Xdebug log is active
+2021-04-25	php	2	PHP 8.1: error_cb API change
+2021-04-28	bug	3	Fixed #1949: private properties of internal classes
