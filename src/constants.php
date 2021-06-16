@@ -10,4 +10,6 @@ const FUNC_CODE_COVERAGE      = 0x0040000;
 const FUNC_GARBAGE_COLLECTION = 0x0080000;
 
 const FUNC_ALL                = 0x007ffff;
+
+const TYPE_YOUTUBE            = 1;
 ?>

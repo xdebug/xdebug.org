@@ -1,0 +1,5 @@
+FUNC_PROFILER
+TYPE_YOUTUBE
+Profiling with Xdebug in Docker
+This video explains how to change a Docker configuration to enable profiling without rebuilding the container.
+https://www.youtube.com/watch?v=8yUY063WgDg

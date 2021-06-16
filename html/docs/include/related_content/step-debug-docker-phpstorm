@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Step Debugging with Docker and PhpStorm
+This video explains in a few minutes how to set-up debugging with PHP and Xdebug running in Docker and PhpStorm.
+https://www.youtube.com/watch?v=4opFac50Vwo

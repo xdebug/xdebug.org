@@ -39,6 +39,8 @@ try {
 				$contents = XdebugDotOrg\Controller\Docs\SettingsController::all()->render();
 			} elseif ($matches[2] === 'all_functions') {
 				$contents = XdebugDotOrg\Controller\Docs\FunctionsController::all()->render();
+			} elseif ($matches[2] === 'all_related_content') {
+				$contents = XdebugDotOrg\Controller\Docs\RelatedContentController::all()->render();
 			} elseif ($matches[2] === 'remote') {
 				header("HTTP/1.1 301 Moved Permanently");
 				header('Location: /docs/step_debug');
@@ -81,6 +83,9 @@ try {
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('@/(.*jpg)$@', $requested_uri, $matches)) {
 		header('Content-Type: image/jpeg');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*svg)$@', $requested_uri, $matches)) {
+		header('Content-Type: image/svg+xml');
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();
