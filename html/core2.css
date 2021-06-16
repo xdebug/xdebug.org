@@ -365,7 +365,7 @@ div.supported_languages span:not(:first-child)::before {
 	margin-top: 1em;
 }
 
-.front_announcements ul {
+.front_announcements ul, .doc_section .content ul {
 	margin: 0;
 	padding: 0;
 }
@@ -374,6 +374,24 @@ div.supported_languages span:not(:first-child)::before {
 	list-style: none;
 	margin: 1em 0;
 	padding: 0;
+}
+
+.doc_section .content ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.related_content span.type img {
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+}
+
+.content span.type img {
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
 }
 
 @media all and (max-device-width: 640px) {

@@ -176,6 +176,8 @@ debug control flow and examine data structures.",
 			$teaser = $data[2];
 		}
 
+		$relatedContent = [];
+
 		$model = new DocsSection(
 			$title,
 			$teaser,
@@ -184,6 +186,7 @@ debug control flow and examine data structures.",
 			self::add_links(file_get_contents( $section_file )),
 			Docs\SettingsController::getRelatedSettings($data[1]),
 			Docs\FunctionsController::getRelatedFunctions($data[1]),
+			Docs\RelatedContentController::getRelatedContent($data[1]),
 			$data[3]['tabfields'] ?? []
 		);
 

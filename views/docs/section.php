@@ -24,6 +24,19 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<p class='intro'><?= $this->description ?></p>
 	<?= $this->text ?>
 
+	<a name='related_content'></a>
+	<?php if ($this->related_content) : ?>
+		<div class="content">
+			<h2>Related Content</h2>
+
+			<ul>
+				<?php foreach ($this->related_content as $content) : ?>
+					<?= XdebugDotOrg\Controller\Docs\RelatedContentController::singleLine($content)->render() ?>
+				<?php endforeach ?>
+			</ul>
+		</div>
+	<?php endif ?>
+
 	<?php if ($this->related_settings || $this->related_functions) : ?>
 		<h2>Related Settings and Functions</h2>
 		<ul>

@@ -14,6 +14,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation');
 
 	<li><a href='/docs/all_settings'>All Configuration Settings</a></li>
 	<li><a href='/docs/all_functions'>All Functions</a></li>
+	<li><a href='/docs/all_related_content'>All Related Content</a></li>
 </ul>
 
 <?php if (idate('Y') <= 2021) : ?>

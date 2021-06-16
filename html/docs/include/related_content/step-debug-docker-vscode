@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Step Debugging with Docker and VS Code
+This video explains how to dockerify the Symfony Demo Application, and then setup debugging with Xdebug and VS Code.
+https://www.youtube.com/watch?v=ZIGdBSD6zvU

@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Step Debugging Unit Tests with PhpStorm on Linux
+This video explains how to install Xdebug on the Linux command line through PECL, and then shows how to find and fix bugs when running unit tests with PHPUnit.
+https://www.youtube.com/watch?v=AsBLzqj3B2U
