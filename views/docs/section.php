@@ -27,7 +27,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<a name='related_content'></a>
 	<?php if ($this->related_content) : ?>
 		<div class="content">
-			<h2>Related Content</h2>
+			<h2>Related Content <a name="related_content" href="#related_content">#</a></h2>
 
 			<ul>
 				<?php foreach ($this->related_content as $content) : ?>
@@ -38,7 +38,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<?php endif ?>
 
 	<?php if ($this->related_settings || $this->related_functions) : ?>
-		<h2>Related Settings and Functions</h2>
+		<h2>Related Settings and Functions <a name="related_settings_and_functions" href="#related_settings_and_functions">#</a></h2>
 		<ul>
 			<?php foreach ($this->related_settings as $setting) : ?>
 				<?= XdebugDotOrg\Controller\Docs\SettingsController::singleLine($setting)->render() ?>
@@ -54,7 +54,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<a name='settings'></a>
 	<?php if ($this->related_settings) : ?>
 		<div class='settings'>
-			<h3>Settings</h3>
+			<h3>Settings <a name="related_settings" href="#related_settings">#</a></h3>
 
 			<?php foreach ($this->related_settings as $setting) : ?>
 				<hr>
@@ -66,7 +66,7 @@ XdebugDotOrg\Controller\TemplateController::setHeadExtra(
 	<a name='functions'></a>
 	<?php if ($this->related_functions) : ?>
 		<div class='functions'>
-			<h3>Functions</h3>
+			<h3>Functions <a name="related_functions" href="#related_functions">#</a></h3>
 
 			<?php foreach ($this->related_functions as $function) : ?>
 				<hr>
