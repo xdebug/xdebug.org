@@ -12,7 +12,6 @@ class WizardController
 	{
 		if ($_POST
 			&& isset( $_POST['submit'] )
-			&& $_POST['submit'] === 'Analyse my phpinfo() output'
 			&& isset( $_POST['data'] )
 		) {
 			return self::getResults($_POST['data']);
