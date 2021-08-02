@@ -1,0 +1,14 @@
+6.62	8.95	1.16	7.08	1.18	24.99	100.00
+2021-07-02	website	0.5	Tweak wizard to not check for button value upon submit to support auto-translated text
+2021-07-14	bug	2.5	Issue #1992: Code coverage crash with filters
+2021-07-14	xdebug3	0.5	PHP 8.1 test tweaks
+2021-07-16	bug	6	Issue #1993: eval-ing broken code breaks debugger
+2021-07-16	xdebug3	4	Issue #1976: Change Xdebug session cookies to Lax, and remove timeout
+2021-07-21	docs	4	Video: Triaging an Xdebug bug (which turned out to be a PHP bug)
+2021-07-23	xdebug3	7.5	Issue #1996: Support for closure visualisation, and PHP 8.1 First Class Callable Syntax
+2021-07-23	xdebug3	5	PHP 8.1 changes to how static members are handled
+2021-07-26	docs	4	Video: Profiling step 1, setting up Xdebug for profiling
+2021-07-27	xdebug3	4.5	Support for PHP 8.1 readonly properties for debugging and tracing
+2021-07-28	bug	3	Issue #1998: Tweak support for enum facet, which was emitted twice as XML attribute
+2021-07-30	xdebug3	3	Issue #1997: Added a new xdebug_connect_to_client() function to (re-)try initiated a debugging connection
+2021-07-31	bug	4.5	Issue #1989: Profiler shows wrong scope for inherited methods
