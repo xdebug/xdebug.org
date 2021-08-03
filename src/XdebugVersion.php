@@ -464,6 +464,11 @@ class XdebugVersion
 
 	public function determineIniLine() : string
 	{
+		if ( version_compare( $this->version, '7.2', '>=' ) )
+		{
+			return 'zend_extension = xdebug';
+		}
+
 		$line = 'zend_extension';
 
 		if (!$this->version) {
