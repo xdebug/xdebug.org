@@ -1,0 +1,19 @@
+= xdebug_connect_to_client,3.1
+Instructs Xdebug to establish a debugging session
+void
+none
+FUNC_STEP_DEBUG
+
+TXT:
+This functions instructs Xdebug to try to establish a connection to a debugging
+client.
+
+TXT:
+Normally, Xdebug tries to start a debugging session at the start of the
+request. If a debugging client is not listening at that point, then Xdebug does
+not try to re-establish a connection during the remainder of the request.
+
+TXT:
+In the situation where one long running PHP process handles multiple tasks,
+perhaps from a queue, calling [FUNC:xdebug_connect_to_client] can then be used
+to re-try to establish a connection for a specific worker job.
