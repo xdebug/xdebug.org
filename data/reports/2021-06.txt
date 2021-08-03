@@ -1,0 +1,13 @@
+6.67	7.72	1.16	7.08	1.18	23.81
+2021-06-03	xdebug3	4	Issue #1738 Add xdebug_notify() function to send data to the IDE
+2021-06-04	xdebug3	1	Updates due to changes in PHP 8.1 with regards to fibers
+2021-06-08	xdebug3	5	Added PHP 8.1 enum support to tracing, stack tracing, and debugging
+2021-06-13	xdebug3	6	Code coverage code and performance improvements
+2021-06-14	docs	3	Created the “Code Coverage for Websites” video
+2021-06-16	bug	0.5	Merging some pull request warnings
+2021-06-16	docs	4	Improvements to profiler documentation
+2021-06-16	docs	2	Improve documentation by adding links to YouTube videos
+2021-06-17	xdebug3	6	Code coverage code and performance improvements
+2021-06-22	xdebug3	6.5	Code coverage code and performance improvements
+2021-06-28	docs	3	Created the “Debugging Symfony Console Commands” video
+2021-06-29	xdebug3	7	Issue #1986: Added support for multi-value shared secret triggers
