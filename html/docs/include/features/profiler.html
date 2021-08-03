@@ -28,7 +28,13 @@ from the profiler trace files.</p>
 
 <h2>Starting The Profiler <a name="starting" href="#starting">#</a></h2>
 
-<p>Profiling is enabled by setting [CFG:mode] to <code>profile</code>. This
+<p>In your <code>php.ini</code>, <code>99-xdebug.ini</code>, or other
+distribution specific PHP ini file, change (or set) the [CFG:mode] setting to
+<code>profile</code>. Please refer to <a
+href='/docs/install#configure-php'>Configure PHP</a> in the documentation to
+find out which PHP ini file to modify.</p>
+
+<p>This
 instructs Xdebug to start writing profiling information into the directory
 configured with the [CFG:output_dir] directive. The name of the generated file
 always starts with "<span class="filename">cachegrind.out.</span>" and ends by

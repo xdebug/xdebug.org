@@ -12,7 +12,7 @@ This section describes all available configuration settings available in Xdebug.
 </p>
 <p>
 Unless specifically mentioneds, each setting can be set in
-<code>php.ini</code>, files like <code>90-xdebug.ini</code>, but also in
+<code>php.ini</code>, files like <code>99-xdebug.ini</code>, but also in
 Apache's <code>.htaccess</code> and PHP-FPM's <code>.user.ini</code> files.
 </p>
 <a name="XDEBUG_CONFIG"></a>

@@ -14,9 +14,13 @@ this page.)</p>
 <a name="starting"></a>
 <h2>Configuring Step Debugging <a name="configure" href="#configure">#</a></h2>
 
-<p>In your <code>php.ini</code>, <code>90-xdebug.ini</code>, or other
+<p>In your <code>php.ini</code>, <code>99-xdebug.ini</code>, or other
 distribution specific PHP ini file, change (or set) the [CFG:mode] setting to
-<code>debug</code>. In set-ups where PHP/Xdebug and your IDE all run on the
+<code>debug</code>. Please refer to <a
+href='/docs/install#configure-php'>Configure PHP</a> in the documentation to
+find out which PHP ini file to modify.</p>
+
+<p>In set-ups where PHP/Xdebug and your IDE all run on the
 same host, this is all you need to configure on the PHP and Xdebug side.
 <small>(Skip to <a href='#activate_debugger'>Activating the Debugger</a> if
 that's the case.)</small> </p>

@@ -158,3 +158,24 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		<li>Restart the webserver</li>
 	<?php endif ?>
 </ol>
+
+<h2>Enabling Features</h2>
+
+<p>Now Xdebug is installed, you can enable its features. Please refer to the
+dedicated sections in the documentation about information on how to enable and
+configure these Xdebug features.
+<?php if ( $iniFileName ) : ?>
+	Where these sections refer to <code>php.ini</code> or similar, please
+	remember to use <code><?= $iniFileName ?></code>:</p>
+<?php endif ?>
+
+<ul>
+	<li><a href='/docs/develop'>Development Helpers</a> — help you get better
+	error messages and obtain better information from PHP's built-in
+	functions.</li>
+	<li><a href='/docs/step_debug'>Step Debugging</a> — allows you to
+	interactively walk through your code to debug control flow and examine data
+	structures.</li>
+	<li><a href='/docs/profiler'>Profiling</a> — allows you to find
+	bottlenecks in your script and visualize those with an external tool.</li>
+</ul>
