@@ -1,0 +1,17 @@
+= xdebug_notify,3.1
+Sends data to a debugging client
+bool
+mixed $data
+FUNC_STEP_DEBUG
+
+TXT:
+This function sends the contents of the <code>$data</code> variable over the debugging
+protocol to a client.
+
+TXT:
+If the step debugger mode is not active, or if there is no active debugging
+session, this function returns <code>false</code>, otherwise <code>true</code>
+is returned.
+
+TXT:
+A debugging client needs specific support to handle these notifications.
