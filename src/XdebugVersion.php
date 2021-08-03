@@ -43,6 +43,12 @@ class XdebugVersion
 	/** @var string|false */
 	public $configPath = false;
 
+	/** @var string|false */
+	public $configExtraPath = false;
+
+	/** @var array|false */
+	public $configExtraFiles = false;
+
 	/** @var string */
 	public $extensionDir = '';
 
@@ -184,6 +190,31 @@ class XdebugVersion
 			$this->zendApi = $m[2];
 		}
 
+		// extra path
+		if ( preg_match( '/Scan this dir for additional .ini files([ =>\t]*)(.*)/', $data, $m ) )
+		{
+			$directory = trim( $m[2] );
+			if ( $directory == '(none)' )
+			{
+				$directory = false;
+			}
+			$this->configExtraPath = $directory;
+		}
+
+		// extra files
+		if ( preg_match( '/Additional .ini files parsed([ =>\t]*)(.*)PHP API/s', $data, $m ) )
+		{
+			$extraFiles = false;
+			$fileString = strtr( trim( $m[2] ), "\r\n", '  ' );
+			if ( $fileString !== '(none)' && $fileString != '' )
+			{
+				$extraFiles = explode( ', ', $fileString );
+				$extraFiles = array_map( 'trim', $extraFiles );
+			}
+
+			$this->configExtraFiles = $extraFiles;
+		}
+
 		// paths
 		if ( preg_match( '/Loaded Configuration File([ =>\t]*)(.*)/', $data, $m ) )
 		{
@@ -194,7 +225,7 @@ class XdebugVersion
 			}
 			$this->configFile = $file;
 
-			if ( $file && preg_match( '/(apache2)|(cli).*php\.ini/', $file, $m ) )
+			if ( $file && preg_match( '/(php-fpm)|(fpm)|(apache2)|(cli).*php\.ini/', $file, $m ) )
 			{
 				$this->configFilePerSapi = true;
 			}
@@ -381,6 +412,54 @@ class XdebugVersion
 
 			return $filename;
 		}
+	}
+
+	public function determineIniFileInstruction( &$iniFileName ) : string
+	{
+		$defaultFileName = '99-xdebug.ini';
+
+		if ( $this->configExtraFiles )
+		{
+			foreach ( $this->configExtraFiles as $extraFile )
+			{
+				if ( preg_match( '/xdebug/', $extraFile ) )
+				{
+					$iniFileName = $extraFile;
+					return "Update <code>{$extraFile}</code> to have";
+				}
+			}
+		}
+
+		if ( $this->configExtraPath && !$this->xdebugVersion )
+		{
+			$iniFileName = "{$this->configExtraPath}{$this->dirSep}{$defaultFileName}";
+			return "Create <code>{$iniFileName}</code> and add";
+		}
+
+		if ( $this->configFile )
+		{
+			$iniFileName = $this->configFile;
+
+			if ( $this->xdebugVersion )
+			{
+				return "Update <code>{$iniFileName}</code> to have";
+			}
+			return "Update <code>{$iniFileName}</code> and add";
+		}
+
+		if ( $this->configPath )
+		{
+			if ( $this->windows )
+			{
+				$iniFileName = false;
+				return "Create <code>php.ini</code> in the same folder as where <code>php.exe</code> is, and add";
+			}
+			$iniFileName = "{$this->configExtraPath}{$this->dirSep}php.ini";
+			return "Create <code>{$iniFileName}</code>, and add";
+		}
+
+		$iniFileName = false;
+		return "Find your <code>php.ini</code> file, and add";
 	}
 
 	public function determineIniLine() : string

@@ -48,11 +48,18 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Installation instr
 			<?php endif ?>
 		<?php endif ?>
 	<?php endif ?>
+	<?php if ( $this->x->configExtraPath ) : ?>
+		<li><b>Extra Configuration Files Path:</b> <?= $this->x->configExtraPath ?></li>
+	<?php endif ?>
+	<?php if ( $this->x->configExtraFiles ) : ?>
+		<li><b>Extra Configuration Files:</b><br/><?= join( "<br/>\n", $this->x->configExtraFiles ); ?></li>
+	<?php endif ?>
 	<li><b>Extensions directory:</b> <?= $this->x->extensionDir ?></li>
 </ul>
 
 <?php
 $dlFile = $this->x->determineFile();
+$iniFileInstruction = $this->x->determineIniFileInstruction( $iniFileName );
 $iniLine = $this->x->determineIniLine();
 
 // add quotes when necessary
@@ -128,29 +135,12 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		</li>
 	<?php endif ?>
 
-	<?php if ( $this->x->configPath || $this->x->windows ) : ?>
-		<li>
-			<?php if ($this->x->configFile) : ?>
-				<?php if ($this->x->xdebugVersion) : ?>
-					Update <code><?= $this->x->configFile ?></code>
-				<?php else : ?>
-					Edit <code><?= $this->x->configFile ?></code>
-				<?php endif ?>
-			<?php else : ?>
-				<?php if ($this->x->windows) : ?>
-					Create <code>php.ini</code> in the same folder as where <code>php.exe</code> is
-				<?php else : ?>
-					Create <code><?= $this->x->configPath . $this->x->dirSep ?>php.ini</code>
-				<?php endif ?>
-			<?php endif ?>
-		 and <?= $this->x->xdebugVersion ? "change " : ( $this->x->zendServer ? "add at the begining of the file " : "add " ) ?>
-		the line<br/><code><?= $iniLine ?></code>
+	<li><?= $iniFileInstruction ?> the line:<br/><code><?= $iniLine ?></code>
 
-		<?php if ($this->x->opcacheLoaded) : ?>
-			<br/>Make sure that <code><?= $iniLine ?></code> is <b>below</b> the line for OPcache.
-		<?php endif ?>
-		</li>
+	<?php if ($this->x->opcacheLoaded && $this->x->configExtraPath === false) : ?>
+		<br/>Make sure that <code><?= $iniLine ?></code> is <b>below</b> the line for OPcache.
 	<?php endif ?>
+	</li>
 
 	<?php if ($this->x->configFilePerSapi) : ?>
 		<li>Please also update <code>php.ini</code> files in adjacent
@@ -158,7 +148,13 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
 		<code>php.ini</code> file for the web server and command line.</li>
 	<?php endif ?>
 
-	<?php if ($this->x->sapi !== 'Command Line Interface') : ?>
+	<?php if ($this->x->sapi === 'Apache 2.0 Handler') : ?>
+		<li>Restart the Apache Webserver</li>
+	<?php elseif ($this->x->sapi === 'FPM/FastCGI') : ?>
+		<li>Restart PHP-FPM</li>
+	<?php elseif ($this->x->sapi === 'Built-in HTTP server') : ?>
+		<li>Restart PHP's built-in HTTP server (php -S)</li>
+	<?php elseif ($this->x->sapi !== 'Command Line Interface') : ?>
 		<li>Restart the webserver</li>
 	<?php endif ?>
 </ol>
