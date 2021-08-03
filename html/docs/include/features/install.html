@@ -156,16 +156,27 @@ issues with finding which phpize to use.</p></li>
 <h3>Configure PHP <a name='configure-php' href="#configure-php">#</a></h3>
 
 <ol>
-<li><p>Add the following line to <code>php.ini</code>:</p>
-<p><code>zend_extension=/wherever/you/put/it/xdebug</code></p>
 
-<p>To find out which <code>php.ini</code> file to modify, run a script with the
-following:</p>
+<li><p>Find out which PHP ini file to modify.
+
+<p>Run a script with the following to find all configuration files that PHP has
+loaded:</p>
 <pre>
 &lt;?php
 var_dump(php_ini_loaded_file(), php_ini_scanned_files());
 </pre>
 <p>Alternatively, you can run <code>php --ini</code> on the command line.</p>
+
+<p>If there is a file with <code>xdebug</code> in the name, such as
+<code>/etc/php/7.4/cli/conf.d/99-xdebug.ini</code>, then this is the
+file to use.</p>
+
+<p>If that file does not exist, but there are other files in a
+<code>conf.d</code> or similar directory, you can create a new file there too.
+Please name it <code>99-xdebug.ini</code> in that case.</p>
+
+<p>Otherwise, modify the <code>php.ini</code> file that is displayed through
+the script, or <code>php --ini</code> command.</p>
 
 <p class="warning"><strong>Note:</strong> There could be more than one
 <code>php.ini</code> file. In many set-ups there is a different one for the
@@ -174,7 +185,14 @@ command line (often <code>cli/php.ini</code>) and the web server (often
 
 <p class="warning"><strong>Note:</strong> If you want to use Xdebug and
 OPCache together, you must have the <code>zend_extension</code> line for Xdebug
-below the line for OPCache. Otherwise, they won't work properly together.</p>
+below the line for OPCache, or in a file starting with a higher number (ie.
+<code>99-xdebug.ini</code> vs <code>20-opcache.ini</code>), otherwise they
+won't work properly together.</p>
+
+</li>
+
+<li><p>Add the following line to this PHP ini file:</p>
+<p><code>zend_extension=xdebug</code></p>
 </li>
 
 <li><p>Restart your webserver, or PHP-FPM, depending on what you are
@@ -195,8 +213,22 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
   with Zend OPcache v7.4.10-dev, Copyright (c), by Zend Technologies
   with Xdebug v3.0.0-dev, Copyright (c) 2002-2020, by Derick Rethans
 </pre>
+
+<p>If Xdebug does not show up, or you get a warning from PHP that an
+<code>xdebug.so</code> file or similar was not found, you might need to use the
+full path instead of just <code>zend_extension=xdebug</code>, such as
+<code>zend_extension=/usr/lib/php/20190902/xdebug.so</code>.</p>
+
+<p>On Windows, you should place the <code>php_xdebug.dll</code> in the
+<code>ext/</code> directory, which is a child directory in your PHP
+installation tree.</p>
+
 </li>
 </ol>
+
+<p>If you have trouble with this, please refer to the <a
+href='/wizard'>installation wizard</a> to help you guide through this
+process.</p>
 
 <p>With Xdebug loaded, you can now enable individual features, such as
 [FEAT:step_debug], or [FEAT:profiler].</p>
