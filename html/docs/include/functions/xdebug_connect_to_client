@@ -1,6 +1,6 @@
 = xdebug_connect_to_client,3.1
 Instructs Xdebug to establish a debugging session
-void
+bool
 none
 FUNC_STEP_DEBUG
 
