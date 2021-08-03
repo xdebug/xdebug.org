@@ -19,10 +19,10 @@ class DocsController
 			'This section describes on how to install Xdebug.',
 		],
 		'develop' => [
-			'Development Aids',
+			'Development Helpers',
 			\FUNC_BASIC | \FUNC_VAR_DUMP | \FUNC_STACK_TRACE,
-			'Xdebug\'s development aids help you get better error messages and
-			obtain better information from PHP\'s built-in functions. The aids
+			'Xdebug\'s development helpers allow you to get better error messages and
+			obtain more information from PHP\'s built-in functions. The helpers
 			include an upgraded <code>var_dump()</code> function; location,
 			stack, and argument information upon Notices, Warnings and
 			Exceptions; and numerous functions and settings to tweak PHP\'s
