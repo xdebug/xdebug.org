@@ -28,6 +28,14 @@ or POST variable <code>XDEBUG_TRIGGER</code> is set to
 <code>StartProfileForMe</code>, or when the cookie <code>XDEBUG_TRIGGER</code>
 has the value <code>StartProfileForMe</code>.
 
+<p>From Xdebug 3.1, it is possible to configure multiple values by using a
+comma separated list. In that case, Xdebug will trigger if the supplied value
+matches any of the entries that are configured through this setting:</p>
+
+<pre class="example">
+xdebug.trigger_value=StartDebuggerForMe,StartDebuggerForYou
+</pre>
+
 <p>
 See also:
 </p>
