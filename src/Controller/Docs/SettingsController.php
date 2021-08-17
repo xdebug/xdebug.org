@@ -209,6 +209,11 @@ class SettingsController
 			'boolean', 'false', null,
 			\FUNC_BASIC
 		],
+
+		'use_compression' => [
+			'boolean', 'true', '>= 3.1',
+			\FUNC_PROFILER | \FUNC_FUNCTION_TRACE
+		],
 	];
 
 	public static function single(Setting $setting) : HtmlResponse

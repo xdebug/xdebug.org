@@ -1,0 +1,14 @@
+<p>If enabled, the [FEAT:trace] and [FEAT:profiler] features will create GZip
+compressed files as output. This reduces diskspace.</p>
+
+<p>If GZip compression is not supported by Xdebug, because it was not compiled
+in, then Xdebug will add a warning to its log and [FUNC:xdebug_info]
+diagnostics section.</p>
+
+<p>It is enabled by default if Xdebug has GZip support, and disable if Xdebug
+does not have GZip support.</p>
+
+<p>The QCacheGrind tool that you can use to visualise profiling information
+does not support reading GZip compressed profile files, whereas KCacheGrind and
+PhpStorm do. If you are a QCacheGrind user, you should set
+[CFG:use_compression] to <code>false</code>.</p>
