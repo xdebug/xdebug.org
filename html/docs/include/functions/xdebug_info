@@ -10,6 +10,9 @@ information gets returned, or displayed, depends on which arguments, or none at
 all, are given.
 
 TXT:
+<h4><code>$category</code> = </h4>
+
+TXT:
 Without arguments, this function returns an HTML page which shows diagnostic
 information. It is analogous to PHP's <a
 href='https://php.net/phpinfo'>phpinfo()</a> function.
@@ -26,12 +29,13 @@ Each warning and error in the diagnostics log also links through to the
 TXT:
 <img src="/images/diagnostics.png"/>
 
+
 TXT:
-<strong><code>$category</code> = <code>'mode'</code></strong> <em>(New in Xdebug 3.1)</em>
+<h4><code>$category</code> = <code>'mode'</code> <em>(New in Xdebug 3.1)</em></h4>
 
 TXT:
 The function returns an array of all the
-enabled modes, whether through [CFG:xdebug_mode] or the
+enabled modes, whether through [CFG:mode] or the
 <code>XDEBUG_MODE</code> environment variable.
 
 EXAMPLE:
