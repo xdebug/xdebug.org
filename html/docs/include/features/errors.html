@@ -65,6 +65,71 @@
 </p>
 </dd>
 
+<a name="CFG-W-TRGSEC-MNO"></a>
+<dt>CFG-W-TRGSEC-MNO</dt>
+<dd>
+<p class="reason">
+	Xdebug is configured to only activate when one of the specific trigger
+	values is present, which matches an entry which is configured through
+	[CFG:trigger_value]. Your trigger value did not match one of these values.
+</p>
+<p>
+	Xdebug's [CFG:trigger_value] setting can be used to restrict which GET,
+	POST, and COOKIE value(s) will activate features. You can use this to only
+	allow authorised people to initiate a debugging session, or create a
+	profiling file. In this case, a [CFG:trigger_value] has been configured,
+	but the value that you used for an <code>XDEBUG_SESSION_START</code> GET or
+	POST value, or an <code>XDEBUG_SESSION</code> COOKIE value (also used by
+	the <a href='/docs/step_debug#browser-extensions'>browser extensions</a>)
+	did not match one of the configured values.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check the [CFG:trigger_value] setting, and use one of the comma
+		separated entries as value of the <code>XDEBUG_SESSION_START</code> GET
+		or POST variable.</li>
+		<li>Check the [CFG:trigger_value] setting, and configure your <a
+		href='/docs/step_debug#browser-extensions'>browser extension</a> to use
+		one of the values from the comma separated list.</li>
+		<li>Remove the [CFG:trigger_value] setting for your php.ini (or
+		friends) file.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="CFG-W-TRGSEC-NO"></a>
+<dt>CFG-W-TRGSEC-NO</dt>
+<dd>
+<p class="reason">
+	Xdebug is configured to only activate when specific trigger value is
+	present which matches what is configured with [CFG:trigger_value]. Your
+	trigger value did not match.
+</p>
+<p>
+	Xdebug's [CFG:trigger_value] setting can be used to restrict which GET,
+	POST, and COOKIE value(s) will activate features. You can use this to only
+	allow authorised people to initiate a debugging session, or create a
+	profiling file. In this case, a [CFG:trigger_value] has been configured,
+	but the value that you used for an <code>XDEBUG_SESSION_START</code> GET or
+	POST value, or an <code>XDEBUG_SESSION</code> COOKIE value (also used by
+	the <a href='/docs/step_debug#browser-extensions'>browser extensions</a>)
+	did not match this value.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Check the [CFG:trigger_value] setting, and use it as value of the
+		<code>XDEBUG_SESSION_START</code> GET or POST variable.</li>
+		<li>Check the [CFG:trigger_value] setting, and configure your <a
+		href='/docs/step_debug#browser-extensions'>browser extension</a> to use
+		the same value.</li>
+		<li>Remove the [CFG:trigger_value] setting for your php.ini (or
+		friends) file.</li>
+	</ul>
+</p>
+</dd>
+
 </dl>
 
 
