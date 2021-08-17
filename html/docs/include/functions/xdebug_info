@@ -53,3 +53,32 @@ RESULT:
   <b>string</b>(<font color="#00AA00">5</font>) &quot;<font color="#AA0000">trace</font>&quot;
 }
 </pre>
+
+
+TXT:
+<h4><code>$category</code> = <code>'extension-flags'</code> <em>(New in Xdebug 3.1)</em></h4>
+
+TXT:
+The function returns an array of all the compile flags that were enabled when
+running <code>./configure</code> as part of Xdebug's compilation process.
+
+TXT:
+The only flag that is available, is the <code>compression</code> flag. If this
+flag is enabled, then the [CFG:use_compression] setting is available, and enabled by default.
+
+TXT:
+[FEAT:profiler] and [FEAT:trace] will create GZip compressed files if the
+[CFG:use_compression] setting is turned on (the default).
+
+
+EXAMPLE:
+<?php
+var_dump( xdebug_info( 'extension-flags' ) );
+?>
+
+RESULT:
+<pre><b>array</b>(<font color="#00AA00">1</font>) {
+  [0] =&gt;
+  <b>string</b>(<font color="#00AA00">11</font>) &quot;<font color="#AA0000">compression</font>&quot;
+}
+</pre>
