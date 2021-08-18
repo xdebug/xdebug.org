@@ -128,10 +128,20 @@ p.note {
 	background-color: #d5f3cd;
 }
 
+p.note::before {
+	content: "Note: ";
+	font-weight: bold;
+}
+
 p.warning {
 	border-left: #cc0000 3px solid;
 	padding-left: 0.5em;
 	background-color: #fec1c1;
+}
+
+p.warning::before {
+	content: "Warning: ";
+	font-weight: bold;
 }
 
 a:hover {

@@ -55,7 +55,7 @@ On Apple M1 hardware, you might instead need to use:
 <pre class='example'>
 arch -x86_64 sudo pecl install xdebug
 </pre>
-<p class="warning"><strong>Warning:</strong> You should ignore any prompts to add
+<p class="warning">You should ignore any prompts to add
 <code>"extension=xdebug.so"</code> to
 <code>php.ini</code> &mdash; this <strong>will</strong> cause problems.</p>
 
@@ -178,12 +178,12 @@ Please name it <code>99-xdebug.ini</code> in that case.</p>
 <p>Otherwise, modify the <code>php.ini</code> file that is displayed through
 the script, or <code>php --ini</code> command.</p>
 
-<p class="warning"><strong>Note:</strong> There could be more than one
+<p class="note">There could be more than one
 <code>php.ini</code> file. In many set-ups there is a different one for the
 command line (often <code>cli/php.ini</code>) and the web server (often
 <code>fpm/php.ini</code>).</p>
 
-<p class="warning"><strong>Note:</strong> If you want to use Xdebug and
+<p class="note">If you want to use Xdebug and
 OPCache together, you must have the <code>zend_extension</code> line for Xdebug
 below the line for OPCache, or in a file starting with a higher number (ie.
 <code>99-xdebug.ini</code> vs <code>20-opcache.ini</code>), otherwise they
