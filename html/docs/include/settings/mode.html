@@ -42,6 +42,19 @@ during a request to a file.</dd>
 <p>You can enable multiple modes at the same time by comma separating their
 identifiers as value to [CFG:mode]: <code>xdebug.mode=develop,trace</code>.</p>
 
-<p>You can also set the mode by setting the <code>XDEBUG_MODE</code> environment
-variable on the command-line; this will take precedence over the [CFG:mode] 
-setting, but will not change the value of the [CFG:mode] setting.</p>
+<h4>XDEBUG_MODE environment variable</h4>
+<p>You can also set Xdebug's mode by setting the <code>XDEBUG_MODE</code>
+environment variable on the command-line; this will take precedence over the
+[CFG:mode] setting, but will not change the value of the [CFG:mode]
+setting.</p>
+
+<p class="warning">Some web servers have a configuration option to
+prevent environment variables from being propagated to PHP and Xdebug.
+<br/><br/>
+For example, PHP-FPM has a <a
+href="https://www.php.net/manual/en/install.fpm.configuration.php#clear-env"><code>clear_env</code></a>
+configuration setting that is <code>on</code> by default, which you will
+need to turn <code>off</code> if you want to use <code>XDEBUG_MODE</code>.
+<br/><br/>
+Make sure that your web server does not clean the environment, or specifically
+allows the <code>XDEBUG_MODE</code> environment variable to be passed on.</p>
