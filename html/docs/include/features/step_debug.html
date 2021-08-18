@@ -55,7 +55,7 @@ debugging session by setting [CFG:start_with_request] to <code>yes</code>.</p>
 through <a href='#activate_browser'>a browser</a>, or on the <a
 href='#activate_cmdline'>command line</a>, such as when running unit tests.</p>
 
-<h3>Command Line</h3>
+<h3>Command Line <a name="activate-debugger-cmd" href="#activate-debugger-cmd">#</a></h3>
 
 <p>To signal the debugger to initiate connections, Xdebug will look whether the
 <code>XDEBUG_SESSION</code> environment variable is present.</p> <p>The value
@@ -81,13 +81,13 @@ connect to your IDE.</p>
 <p>Please refer to the <a href="#troubleshoot">Troubleshooting</a> section if
 it does not seem like Xdebug is activating.</p>
 
-<h3>Browser Application <a name="browser-extensions" href="#browser-extensions">#</a></h3>
+<h3>Web Application <a name="web-application" href="#web-application">#</a></h3>
 
 <p>The recommended way to initiate a debugging session is by configuring your
 IDE to accept incoming debugging connections, and then use a browser extension
 which sets the right trigger cookie.</p>
 
-<h4>Browser Extension Initiation</h4>
+<h4>Browser Extension Initiation <a name="browser-extensions" href="#browser-extensions">#</a></h4>
 
 <p>
 The extensions are:
@@ -111,7 +111,7 @@ The extensions are:
 functionality you want to trigger. Xdebug will continue to start debugging for
 every request as long as the debug toggle has been enabled.</p>
 
-<h4>Manual Initiation</h4>
+<h4>Manual Initiation <a name="manual-init" href="#manual-init">#</a></h4>
 <p>Alternatively, you can signal Xdebug to initiate debugging for a
 <strong>single</strong> request by adding
 <code>XDEBUG_SESSION=session_name</code> as additional <code>GET</code> (or
@@ -129,13 +129,26 @@ debugging sessions managed by a cookie.</p>
 cookie is present, debugging will be initiated for every HTTP request
 (including favicons and images if they go through PHP).</p>
 
-<p>The time-out of the cookie is one hour.</p>
+<p>Before Xdebug 3.1, the time-out of the cookie is one hour. Starting with
+Xdebug 3.1, the cookie has no time-out configured.</p>
 
 <p>If you set the <code>XDEBUG_SESSION_STOP</code> <code>GET</code> (or
 <code>POST</code>) HTTP parameter, Xdebug removes the cookie.</p>
 
 
-<h3>Alternative Ways of Triggering the Debugger</h3>
+<h4>HTTP Cookie <a name="cookie-init" href="#cookie-init">#</a></h4>
+<p>Xdebug will initiate a debug session in the presence of the
+<code>XDEBUG_SESSION</code> HTTP cookie. You can pick any value for the cookie,
+unless [CFG:trigger_value] is set, in which case the value needs to match the
+value/one of the values from [CFG:trigger_value].</p>
+
+<p>A typical header looks like:</p>
+<pre>
+Cookie: XDEBUG_SESSION=start
+</pre>
+
+
+<h3>Alternative Ways of Triggering the Debugger <a name="alternative" href="#alterative">#</a></h3>
 
 <p>There are other ways how debugger activation can be triggered.</p>
 
