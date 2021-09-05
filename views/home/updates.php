@@ -22,6 +22,50 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_0beta1'></a>[2021-09-05] &mdash; Xdebug 3.1.0beta1</dt>
+
+<dd><h3>New features</h3></dd>
+<dd>Fixed <?= bug(1738); ?>: Add xdebug_notify() function to send data through DBGp to a debugging client</dd>
+<dd>Fixed <?= bug(1853); ?>: Enable profile compression for cachegrind files</dd>
+<dd>Fixed <?= bug(1898); ?>: API for querying the currently active mode(s)</dd>
+<dd>Fixed <?= bug(1972); ?>: Add support for PHP 8.1 Fibers</dd>
+<dd>Fixed <?= bug(1974); ?>: Add gzip support to trace files</dd>
+<dd>Fixed <?= bug(1997); ?>: Added xdebug_connect_to_client() to attempt a debugging connect while running code</dd>
+<dd>Fixed <?= bug(2001); ?>: Add 'xdebug.use_compression' setting to turn on/off compression for profiling files</dd>
+<dd>Fixed <?= bug(2013); ?>: Support PHP 8.1</dd>
+
+<dd><h3>Improvements</h3></dd>
+<dd>Fixed <?= bug(1472); ?>: Add assignments to computer readable trace format</dd>
+<dd>Fixed <?= bug(1890); ?>: Add connected client and protocol features to diagnostic page</dd>
+<dd>Fixed <?= bug(1933); ?>: Allow for cloud ID to be set through the trigger</dd>
+<dd>Fixed <?= bug(1969); ?>: Provide breakpoint ID / info in DBGp run command responses</dd>
+<dd>Fixed <?= bug(1976); ?>: Switch debug session cookie to Lax, and remove expiry time</dd>
+<dd>Fixed <?= bug(1980); ?>: PHP 8.1: Mark enum classes as &quot;enum&quot;</dd>
+<dd>Fixed <?= bug(1986); ?>: Add support for multiple trigger values</dd>
+<dd>Fixed <?= bug(1996); ?>: Add support for Closure visualisation in traces, debugging, and Xdebug's var_dump</dd>
+<dd>Fixed <?= bug(1999); ?>: Add &quot;readonly&quot; facet to PHP 8.1 readonly properties</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?= bug(1938); ?>: Branches in traits aren’t marked as executed</dd>
+<dd>Fixed <?= bug(1948); ?>: Do not redirect warning and error messages to PHP's error log if an Xdebug log is active</dd>
+<dd>Fixed <?= bug(1949); ?>: private properties for internal classes can't be fetched for debugging</dd>
+<dd>Fixed <?= bug(1963); ?>: php exit code = -1073741819 when xdebug.mode = off (Windows Thread Safe Only)</dd>
+<dd>Fixed <?= bug(1970); ?>: xdebug_get_function_stack with unnamed (internal) parameters have wrong index</dd>
+<dd>Fixed <?= bug(1978); ?>: Xdebug's log messages are cut off at 512 bytes</dd>
+<dd>Fixed <?= bug(1989); ?>: Profiling does not output correct class when parent keyword is used</dd>
+<dd>Fixed <?= bug(1992); ?>: Code Coverage with filter produces Segmentation fault on xdebug_stop_code_coverage()</dd>
+<dd>Fixed <?= bug(1993); ?>: eval-ing broken code causes stepping to break</dd>
+<dd>Fixed <?= bug(1998); ?>: Double facet attribute generated for enums that are stored in properties</dd>
+<dd>Fixed <?= bug(2004); ?>: Figure out what &quot;XDEBUG_SHOW_FNAME_TODO&quot; define is for</dd>
+<dd>Fixed <?= bug(2008); ?>: Using the XDEBUG_SESSION cookie could bypass shared-secret checks</dd>
+<dd>Fixed <?= bug(2009); ?>: xdebug_stop_code_coverage's argument has type mismatch</dd>
+<dd>Fixed <?= bug(2011); ?>: Closures as protected properties have double facet XML attribute</dd>
+
+<dd><h3>Documentation</h3></dd>
+<dd>Fixed <?= bug(1537); ?>: Add links to documentation to various different &quot;features&quot; after wizard has run</dd>
+
+<hr/>
+
 <dt><a name='x_3_0_4'></a>[2021-04-08] &mdash; Xdebug 3.0.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
