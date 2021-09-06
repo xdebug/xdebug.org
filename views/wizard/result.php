@@ -86,7 +86,7 @@ $this->x->extensionDir = strpos( $this->x->extensionDir, ' ') === false ? $this-
 <?php endif ?>
 
 <ol>
-	<li>Download <a href='http://xdebug.org/files/<?= $dlFile ?>'><?= $dlFile ?></a></li>
+	<li>Download <a href='https://xdebug.org/files/<?= $dlFile ?>'><?= $dlFile ?></a></li>
 
 	<?php if (!$this->x->windows) : ?>
 		<li>Install the pre-requisites for compiling PHP extensions.
