@@ -1,0 +1,16 @@
+Xdebug 3.1.0beta2 is out!
+<p>
+This is a packaging fix as 3.1.0beta1's package failed to compile on all
+PHP 7.2 and PHP 8.1 versions.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>

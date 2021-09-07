@@ -22,6 +22,13 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_0beta2'></a>[2021-09-07] &mdash; Xdebug 3.1.0beta2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed a packaging bug that prevented compilation on PHP 7.2 and PHP 8.1</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_0beta1'></a>[2021-09-05] &mdash; Xdebug 3.1.0beta1</dt>
 
 <dd><h3>New features</h3></dd>
