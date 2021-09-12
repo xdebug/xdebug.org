@@ -17,27 +17,32 @@ Installing Xdebug with a package manager is often the fastest way. Depending on 
 	<li><strong>Alpinelinux</strong>:<br/><code>sudo apk add php7-pecl-xdebug</code></li>
 	<li><strong>Arch Linux</strong>:<br/><code>sudo pacman -S xdebug</code></li>
 	<li><strong>CentOS</strong>:<br/><code>sudo yum install php-xdebug</code></li>
-	<li><strong>CentOS</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug</code></li>
+	<li><strong>CentOS</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
 	<li><strong>Debian</strong> (9/stretch, testing/buster/bullseye/sid):<br/><code>sudo apt-get install php-xdebug</code></li>
 	<li><strong>Fedora</strong> (32):<br/><code>sudo yum install php-xdebug</code></li>
-	<li><strong>Fedora</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug</code></li>
+	<li><strong>Fedora</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
 	<li><strong>Gentoo</strong>:<br/><code>emerge dev-php/xdebug</code></li>
 	<li><strong>Manjaro</strong> (20.1/Mikah):<br/><code>sudo pacman -S xdebug</code></li>
 	<li><strong>RHEL</strong>:<br/><code>sudo yum install php-xdebug</code></li>
-	<li><strong>RHEL</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug</code></li>
+	<li><strong>RHEL</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
 	<li><strong>SUSE</strong> (openSUSE, Enterprise):<br/><code>sudo zypper in php7-xdebug</code></li>
 	<li><strong>Ubuntu</strong> (18.04 LTS/Bionic, 20.04 LTS/Focal):<br/><code>sudo apt-get install php-xdebug</code></li>
 	<li><strong>Ubuntu</strong> (Ondřej Surý's PPA):<br/><code>sudo apt-get install php7.4-xdebug</code></li>
 </ul>
 </p>
 
-<p>Linux distributions might be providing an old and/or outdated version.
+<p>Xdebug's latest version is [KW:last_release_version].</p>
+
+<p>For packages that have the PHP version in the package name, such as in
+<code>php<strong>74</strong>-php-xdebug3</code>, you can substitute the PHP
+version with the one that matches the PHP version that you are running.</p>
+
+<p class="warning">Linux distributions might be providing an old and/or outdated version.
 If the package manager
 installs a version that is no longer supported (see <a
 href='/docs/compat#supported-versions'>Supported Versions</a>), please install
 Xdebug with <a href='#pecl'>PECL</a>, or from <a href='#source'>source</a>
 instead.</p>
-<p>Xdebug's latest version is [KW:last_release_version].</p>
 
 
 <h2>Installing with PECL <a name='pecl' href="#pecl">#</a></h2>
