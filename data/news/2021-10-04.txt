@@ -1,0 +1,34 @@
+Xdebug 3.1.0 is out!
+<p>
+This is the first release of Xdebug 3.1. This release adds support for
+PHP 8.1, as well as a set of new features. These new features include: file
+compression for trace and profiling files, the new
+<a href='/docs/all_functions#xdebug_notify'><code>xdebug_notify()</code></a> and
+<a href='/docs/all_functions#xdebug_connect_to_client'><code>xdebug_connect_to_client()</code></a>
+functions, an API through
+<a href='/docs/all_functions#xdebug_info'><code>xdebug_info()</code></a> to request which modes
+are enabled, and the possibility to set the <a
+href='https://xdebug.cloud'>Xdebug Cloud</a> ID through Xdebug's triggers,
+including browser extensions.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_1_0">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Aaron Piotrowski, Christoph
+M. Becker, Martin Schröder, Patrick Allaert, and Yang Xikun</i> — Thanks!
+</p>
