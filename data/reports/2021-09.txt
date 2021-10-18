@@ -1,0 +1,15 @@
+6.94	8.16	1.16	7.08	1.18
+2021-09-01	xdebug3	4	Drop PHP 7.2 support for Xdebug 3.2 and later
+2021-09-03	bug	4.5	Fixed memory leaks and prepare for PHP 8.1.0RC1
+2021-09-04	ci	5	Switch away from AppVeyor to GHA for Windows builds
+2021-09-05	release	2.5	Release 3.1.0beta1
+2021-09-06	docs	0.5	Update compatibility table and use https for download links
+2021-09-07	release	2	Tweaks to packaging windows binaries, and release 3.1.0beta2
+2021-09-13	docs	4.5	Video: File Compression in Xdebug 3.1
+2021-09-16	xdebug3	2.5	Support file compression on Windows (with help from Christoph Becker)
+2021-09-16	bug	0.5	Review and merge for bug #2019: uninitialised values
+2021-09-20	docs	4	Video: xdebug_info() improvements in Xdebug 3.1
+2021-09-22	bug	2	Fixed #2020: segfault with xdebug.dump.GET
+2021-09-24	bug	3	Messing around with clock sources and compilation issues for old OSX (10.11)
+2021-09-27	docs	4	Video: Xdebug Cloud and Multiple Triggers in Xdebug 3.1
+2021-09-30	bug	4	Fixed crashes and memory leaks related to anonymous classes
