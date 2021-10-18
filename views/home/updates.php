@@ -22,6 +22,20 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_1'></a>[2021-10-15] &mdash; Xdebug 3.1.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2016); ?>: apache gives no output with xdebug 3.1.0b2 installed</dd>
+<dd>Fixed <?= bug(2024); ?>: Apache restarts in a loop under PHP 8.1.0 RC3</dd>
+<dd>Fixed <?= bug(2029); ?>: incorrect and inaccurate date and time displayed in xdebug.log and trace files</dd>
+<dd>Fixed <?= bug(2030); ?>: PhpStorm step-debug not working on PHP 8.0.11</dd>
+<dd>Fixed <?= bug(2032); ?>: Use runtime PHP version in DBGp and info pages instead of compiled-against version</dd>
+<dd>Fixed <?= bug(2034); ?>: Xdebug throws a Segmentation fault when 'set_time_limit' function is disabled</dd>
+<dd>Fixed <?= bug(2035); ?>: Xdebug block everything with localhost in XAMMP</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_0'></a>[2021-10-04] &mdash; Xdebug 3.1.0</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
