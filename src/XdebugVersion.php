@@ -17,6 +17,12 @@ class XdebugVersion
         '8.1' => [ 'src' => '3.1.1',       'win' => '3.1.1' ]
     ];
 
+	/* Start one is inclusive, end is exclusive */
+	private const UNSUPPORTED_WIN_VERSIONS = [
+		[ '7.4.0', '7.4.20', 'due to missing exported symbols in zlib' ],
+		[ '8.0.0', '8.0.7',  'due to missing exported symbols in zlib' ],
+	];
+
 	/** @var string|null */
 	public $version;
 
@@ -335,6 +341,16 @@ class XdebugVersion
 
 		if ( $this->windows )
 		{
+			foreach ( self::UNSUPPORTED_WIN_VERSIONS as $versionRange )
+			{
+				if (
+					version_compare( $this->version, $versionRange[0], '>=' ) &&
+					version_compare( $this->version, $versionRange[1], '<' )
+				) {
+					return "PHP version {$this->version} is not supported on Windows {$versionRange[2]}, upgrade to at least {$versionRange[1]}.";
+				}
+			}
+
 			if ( !array_key_exists( 'win', self::VERSIONS[$majorPhpVersion] ) )
 			{
 				return "Windows binaries for PHP version {$majorPhpVersion} are not available, because this PHP version is no longer supported by the PHP project.";

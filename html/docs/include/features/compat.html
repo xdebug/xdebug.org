@@ -12,8 +12,8 @@ href='http://php.net/supported-versions.php'>PHP versions</a>.
 </thead>
 <tbody>
 <tr><th class='future'   >PHP 8.1</td>     <td class='future'   >✔</td><td class='supported'>✔</td><td class='supported'> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
-<tr><th class='supported'>PHP 8.0</td>     <td class='future'   >✔</td><td class='supported'>✔</td><td class='supported'>✔</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
-<tr><th class='supported'>PHP 7.4</th>     <td class='future'   >✔</td><td class='supported'>✔</td><td class='supported'>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td><td> </td><td> </td></tr>
+<tr><th class='supported'>PHP 8.0</td>     <td class='future'   >✔</td><td class='supported'>✔ <span class='footnote'><a href='#f1'>1</a></span></td><td class='supported'>✔</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><th class='supported'>PHP 7.4</th>     <td class='future'   >✔</td><td class='supported'>✔ <span class='footnote'><a href='#f1'>1</a></span></td><td class='supported'>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td><td> </td><td> </td></tr>
 <tr><th class='supported'>PHP 7.3</th>     <td class='future'   >✔</td><td class='supported'>✔</td><td class='supported'>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td><td> </td><td> </td></tr>
 <tr><th class='legacy'>PHP 7.2</th>        <td> </td><td class='legacy'   >✔</td><td class='legacy'   >✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td><td> </td></tr>
 <tr><th>PHP 7.1</th>                       <td> </td><td> </td><td> </td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td> </td></tr>
@@ -26,6 +26,15 @@ href='http://php.net/supported-versions.php'>PHP versions</a>.
 <tr><th class='supported'>Supported</th><th class='legacy'>Security Fixes</th><th>Unsupported</th><th class='future'>Future</th></tr>
 </tbody>
 </table>
+
+<ol class='compat-notes'>
+<li>
+<a name='f1' href='#f1'></a>
+On Windows you need at least PHP 7.4.20 or PHP 8.0.7. Earlier Windows builds of
+PHP do not export the zlib function <code>gzfwrite</code> which Xdebug 3.1
+needs for compression of profile and trace files.</p>
+</li>
+</ol>
 
 <h2>Compatibility <a name='compat' href="#compat">#</a></h2>
 <p>
