@@ -4,8 +4,6 @@
 2020-01-02	Strategery	https://strategery.io/
 2020-02-27	CHECK24	https://jobs.check24.de/open-source
 2020-05-25	Seravo	https://seravo.com/
-2020-09-14	TYPO3 GmbH	https://typo3.com
-2020-10-01	Tideways	https://tideways.com/
 2020-11-26	Edmonds Commerce	https://www.edmondscommerce.co.uk/
 2020-11-26	Find My Electric	https://www.findmyelectric.com/
 2021-01-01	Xdebug Cloud	https://xdebug.cloud
@@ -13,3 +11,6 @@
 2021-02-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2021-02-12	Supermetrics	https://supermetrics.com
 2021-02-12	Intracto	https://www.intracto.com/nl-be
+2021-09-14	TYPO3 GmbH	https://typo3.com
+2021-10-01	Tideways	https://tideways.com/
+2021-10-15	Real Estate Learning Center	https://realestatelc.com
