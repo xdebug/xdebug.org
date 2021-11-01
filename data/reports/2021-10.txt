@@ -1,0 +1,14 @@
+6.92	8.23	1.16	7.08	1.08
+2021-10-01	bug	3	Fixed #2021 and #2025, related to anonymous classes
+2021-10-04	release	2.5	Release 3.1.0
+2021-10-06	bug	2	Fixed #2016: Crashes with code coverage
+2021-10-06	bug	3	Fixed #2019: Properly initialise nanotype struct on Windows
+2021-10-08	xdebug3	1	Fixed #2032: Show and use runtime PHP version instead of compiled-against PHP version in protocol and xdebug_info()
+2021-10-12	bug	1	Fixed #2034: Segmentation fault when set_time_limit is part of “disabled_functions”
+2021-10-12	docs	3	Created video to explain the new additions to step debugging in Xdebug 3.1
+2021-10-13	bug	4	Addressed crashing issue on Windows since 3.1.0
+2021-10-15	release	2	Release 3.1.1
+2021-10-20	bug	1.5	Fixed #2037: Fixed crash for when a profile file could not be created
+2021-10-20	bug	2	Fixed #2036: Crash with switching between fibers
+2021-10-27	docs	2	Fixed #2039/#2040: Update wizard to account for zlib-on-Windows version requirements
+2021-10-28	bug	2	Fixed #2041: __debugInfo() is not used
