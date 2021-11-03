@@ -94,9 +94,9 @@ $this->x->extensionDir = strpos( $this->x->extensionDir, ' ') === false ? $this-
 		<?php if ( $this->x->distribution == 'Debian' || $this->x->distribution == 'Ubuntu' ) : ?>
 			<br />On your <?= $this->x->distribution ?> system, install them with: <code>apt-get install php-dev autoconf automake</code>
 		<?php elseif ( $this->x->distribution == 'RedHat' || $this->x->distribution == 'Fedora' ) : ?>
-			<br />On your <?= $this->x->distribution ?> system, install them with: <code>yum groupinstall "Development tools" && yum install php-devel autoconf automake</code>
+			<br />On your <?= $this->x->distribution ?> system, install them with: <code>yum groupinstall "Development tools" &amp;&amp; yum install php-devel autoconf automake</code>
 		<?php elseif ( $this->x->distribution == 'Darwin' ) : ?>
-			<br />On your Mac, we only support installations with 'homebrew', and <code>brew install php && brew install autoconf</code> should pull in the right packages.
+			<br />On your Mac, we only support installations with 'homebrew', and <code>brew install php &amp;&amp; brew install autoconf</code> should pull in the right packages.
 		<?php else : ?>
 			These packages are often called 'php-dev', or 'php-devel', 'automake' and 'autoconf'.
 		<?php endif ?>
