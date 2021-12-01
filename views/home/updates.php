@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_2'></a>[2021-12-01] &mdash; Xdebug 3.1.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2036); ?>: Segfault on fiber switch in finally block in garbage collected fiber</dd>
+<dd>Fixed <?= bug(2037); ?>: Crash when profile file can not be created</dd>
+<dd>Fixed <?= bug(2041); ?>: __debugInfo is not used for var_dump output</dd>
+<dd>Fixed <?= bug(2046); ?>: Segault on xdebug_get_function_stack inside a Fiber</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_1'></a>[2021-10-15] &mdash; Xdebug 3.1.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
