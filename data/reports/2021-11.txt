@@ -1,0 +1,7 @@
+6.72	7.75	1.33	7.08	1.08
+2021-11-03	docs	3	Created video to explain Short Closures and Conditional Breakpoints
+2021-11-03	bug	4	Fixed Xdebug Wizard for Windows
+2021-11-08	docs	4	Created video about setting up Apache, PHP, VS Code, and Xdebug in 10 minutes
+2021-11-10	bug	4	Triaging issues
+2021-11-24	bug	0.25	Triaging issues
+2021-11-30	release	2	Release preparation
