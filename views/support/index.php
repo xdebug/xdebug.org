@@ -41,6 +41,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 <ul>
 	<li>Tech Support: E-mail</li>
 	<li>Issue Priority: High</li>
+	<li>An hour long presentation or workshop</li>
 	<li>Access to Commercial Add-ons&nbsp;(soon)</li>
 	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
 	<li>Invoice †</li>
