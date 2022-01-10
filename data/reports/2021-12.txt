@@ -1,0 +1,9 @@
+6.01	8.76	0.83	5.00	1.08
+2021-12-01	release	0.5	Release 3.1.2
+2021-12-08	docs	0.5	Remove smileys from code
+2021-12-15	bug	4	Bug #2049 (exceptions with eval)
+2021-12-15	bug	2	Fixed #2052 (Memory Leaks)
+2021-12-23	bug	4	Fixed #2055 (Double Facet XML errors)
+2021-12-24	bug	4	Fixed #2054 (Performance improvements with string escaping)
+2021-12-20	bug	5	Investigating issue #2051 (FPM Globals issues)
+2021-12-31	bug	6	Investigating issue #2053 (PHP 8.1 GLOBALS issue with PhpStorm)

@@ -5,8 +5,6 @@
 2020-02-27	CHECK24	https://jobs.check24.de/open-source
 2020-05-25	Seravo	https://seravo.com/
 2020-11-26	Edmonds Commerce	https://www.edmondscommerce.co.uk/
-2021-01-01	Xdebug Cloud	https://xdebug.cloud
-2021-01-01	Offers.com	https://offers.com
 2021-02-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2021-02-12	Supermetrics	https://supermetrics.com
 2021-02-12	Intracto	https://www.intracto.com/nl-be
@@ -14,3 +12,7 @@
 2021-10-01	Tideways	https://tideways.com/
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
 2021-12-01	Find My Electric	https://www.findmyelectric.com/
+2022-01-01	Xdebug Cloud	https://xdebug.cloud
+2022-01-01	Seiden Group	http://www.seidengroup.com
+2022-01-01	Offers.com	https://offers.com
+2021-01-01	Digitell, Inc	https://digitellinc.com
