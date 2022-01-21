@@ -1,6 +1,6 @@
 2021-02-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2021-02-12	Supermetrics	https://supermetrics.com
-2021-02-12	Intracto	https://www.intracto.com/nl-be
+2021-02-12	iO	https://www.iodigital.com/en
 2021-09-14	TYPO3 GmbH	https://typo3.com
 2021-10-01	Tideways	https://tideways.com/
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
