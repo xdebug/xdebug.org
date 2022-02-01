@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_3'></a>[2022-02-01] &mdash; Xdebug 3.1.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2049); ?>: evaling broken code (still) causes unhandled exception in PHP 7.4</dd>
+<dd>Fixed <?= bug(2052); ?>: Memory leak when a trace file can't be opened because xdebug.trace_output_name is invalid</dd>
+<dd>Fixed <?= bug(2054); ?>: Slowdown when calling a function with long string parameters</dd>
+<dd>Fixed <?= bug(2055); ?>: Debugger creates XML with double facet attribute</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_2'></a>[2021-12-01] &mdash; Xdebug 3.1.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
