@@ -1,0 +1,11 @@
+6.03	8.17	0.50	5.00	4.60
+2022-02-03	release	2	Release 3.1.3
+2022-02-07	bug	0.5	Writing test for issue #2053 (PHP 8.1 GLOBALS issue with PhpStorm)
+2022-02-11	xdebug3	5	Xdebug Recorder
+2022-02-21	bug	5	#2064: Crash with closuers and unset static properties
+2022-02-21	ci	2	Getting builds to work on Windows with GHA again, as they’ve changed things
+2022-02-24	docs	2.5	Created video about Debugging Unit Tests with PhpStorm
+2022-02-25	bug	4	Investigating #2068: Trigger secret ignored with XDEBUG_SESSION_START
+2022-02-25	docs	0.5	Fixed compatibility matrix
+2022-02-27	bug	0.5	Verifying and merging #2061: Possible user after free with GC Stats
+2022-02-28	docs	4	Answering questions on StackOverflow
