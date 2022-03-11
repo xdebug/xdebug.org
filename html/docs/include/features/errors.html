@@ -50,6 +50,45 @@
 </p>
 </dd>
 
+<a name="CFG-W-NOZLIB"></a>
+<dt>CFG-W-NOZLIB</dt>
+<dd>
+<p class="reason">
+	The [CFG:use_compression] setting is set to <code>true</code>, but support
+	for zlib compressed files is not enabled in your build of Xdebug.
+</p>
+<p>
+	Zlib compression needs to be enabled when Xdebug is compiled. Without any
+	compile flags, the <code>./configure</code> build script will enable zlib
+	compression as long as that library and its development headers are
+	installed. If they are not installed, or can't be found, then zlib
+	compression will not be available.
+</p>
+<p>
+	If zlib compression is enabled, then the [CFG:use_compression] setting
+	defaults to <code>true</code>, and if it is not enabled, the setting
+	defaults to <code>false</code>.
+</p>
+<p>
+	If zlib compression is not enabled, and you set [CFG:use_compression] to
+	<code>true</code>, then you will get this warning when Xdebug tries to
+	create a compressed trace or profiling file.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Turn off the [CFG:use_compression] setting. This will remove the
+		warning, and the same behaviour remains: Xdebug will create
+		uncompressed trace files and profiling files.</li>
+		<li>Recompile Xdebug with the <code>--with-xdebug-compression</code>
+		flag, making sure that zlib and its development header files are
+		installed on your system. On Ubuntu/Debian this is the
+		<code>zlib1g-dev</code> package, and on RedHat/Fedora you need to
+		install the <code>zlib-devel</code> package.</li>
+	</ul>
+</p>
+</dd>
+
 <a name="CFG-C-REMOVED"></a>
 <dt>CFG-C-REMOVED</dt>
 <dd>
@@ -126,6 +165,32 @@
 		the same value.</li>
 		<li>Remove the [CFG:trigger_value] setting for your php.ini (or
 		friends) file.</li>
+	</ul>
+</p>
+</dd>
+
+<a name="CFG-W-ZLIB-A"></a>
+<dt>CFG-W-ZLIB-A</dt>
+<dd>
+<p class="reason">
+	The [CFG:profiler_append] and [CFG:use_compression] settings are both enabled.
+</p>
+<p>
+	Zlib compressed files don't support updates, so they can not be appended
+	to. With both these settings enabled, Xdebug will ignore the
+	[CFG:use_compression] setting, and instead create a new uncompressed
+	profiling file, or append to an already existing uncompressed profiling
+	file.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>Turn off the [CFG:use_compression] setting. This will remove the
+		warning, and the same behaviour remains: Xdebug is appending to
+		uncompressed profiling files.</li>
+		<li>Turn off the [CFG:profiler_append] setting. This means that Xdebug
+		will overwrite already existing profiling files with the same
+		name.</li>
 	</ul>
 </p>
 </dd>
