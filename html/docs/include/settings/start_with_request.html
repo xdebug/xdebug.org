@@ -35,10 +35,13 @@ for its presence in either <code>$_ENV</code> (environment variable),
 <code>$_GET</code> or <code>$_POST</code> variable, or <code>$_COOKIE</code>
 (HTTP cookie name).</p>
 
-<p>There is also a legacy fallback to a functionality specific trigger name:
+<p>There is a legacy fallback to a functionality specific trigger name:
 <code>XDEBUG_PROFILE</code> (for [FEAT:profiler]), <code>XDEBUG_TRACE</code>
 (for a [FEAT:trace]), and <code>XDEBUG_SESSION</code> (for
 [FEAT:step_debug]).</p>
+
+<p>There is another legacy trigger. If you set the <code>XDEBUG_CONFIG</code>
+environment variable to any value, then Xdebug will also get activated.</p>
 
 <p>Debug session management for [FEAT:step_debug#browser_session] is also
 available through <code>XDEBUG_SESSION_START</code>.</p>
