@@ -1,0 +1,11 @@
+5.45	9.70	1.50	5.00	3.76
+2022-03-01	bug	1	Merging and testing new Windows auto-builds
+2022-03-02	bug	1.5	Test and merge #2064 (Crash with closures and unset static properties)
+2022-03-04	xdebug3	4	#2062 (Show warnings when PrivateTmp is enabled)
+2022-03-07	bug	4	#2068 (Disallow shared secret triggers through XDEBUG_SESSION_START)
+2022-03-09	bug	3	#2063 (Can’t inspect ArrayObject storage elements)
+2022-03-09	bug	2	#2069 (Warn when profiler_append is used with zlib compression)
+2022-03-11	docs	1	#2070 (Document XDEBUG_CONFIG acting as trigger)
+2022-03-24	xdebug3	12	Investigating and implementing #2079 (Pseudo hosts for docker/WSL containers)
+2022-03-25	bug	4	#2075 (Code coverage misses static array assignment lines)
+2022-03-30	bug	6	#2006 (Removing second call breakpoint with same name crashes)
