@@ -1,0 +1,30 @@
+Xdebug 3.1.4 is out!
+<p>
+This is a bug fix release that addresses bugs related to the step debugger,
+including debugging <code>ArrayObject objects</code>, crashes with closures with unset
+static properties, and a crash when removing a duplicate "call" or "return"
+breakpoint. It also fixes missing static array assignment lines with code
+coverage, and adds a warning when zlib compression with
+<code>xdebug.profiler_append</code> is used.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_1_4">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains contributions by: <i>Christoph Becker, and Remi
+Collet</i> — Thanks!
+</p>

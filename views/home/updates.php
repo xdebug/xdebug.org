@@ -22,6 +22,21 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_4'></a>[2022-04-04] &mdash; Xdebug 3.1.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2006); ?>: Removing second call breakpoint with same function name</dd>
+<dd>Fixed <?= bug(2060); ?>: XDebug breaks the Symfony &quot;PhpFilesAdapter&quot; cache adapter</dd>
+<dd>Fixed <?= bug(2061); ?>: Possible use after free with GC Stats</dd>
+<dd>Fixed <?= bug(2063); ?>: Can't inspect ArrayObject storage elements</dd>
+<dd>Fixed <?= bug(2064); ?>: Segmentation fault in symfony cache</dd>
+<dd>Fixed <?= bug(2068); ?>: Debug session can be started with &quot;XDEBUG_SESSION_START=anything&quot; when xdebug.trigger_value is set</dd>
+<dd>Fixed <?= bug(2069); ?>: Warn when profiler_append is used together with zlib compression</dd>
+<dd>Fixed <?= bug(2075); ?>: Code coverage misses static array assignment lines</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_3'></a>[2022-02-01] &mdash; Xdebug 3.1.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
