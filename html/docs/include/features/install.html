@@ -49,14 +49,37 @@ instead.</p>
 
 <p>
 You can install Xdebug through PECL on Linux &amp; macOS with Homebrew.
+</p>
+<p>
+Prerequisites:
+</p>
+<ul>
+	<li>macOS:<ul>
+		<li>Xcode (from the <a
+		href='https://apps.apple.com/ca/app/xcode/id497799835'>App Store</a>),
+		and Xcode's command line tools (run: <code>xcode-select
+		--install</code>). </li>
+		<li>PHP installed through Homebrew.</li>
+	</ul></li>
+	<li>Linux:<ul>
+		<li>GCC and associated libraries.</li>
+		<li>PHP development headers (see <a href='#compile'>Compile</a> below).</li>
+	</ul></li>
+</ul>
+<p>
 Run:
 </p>
 <pre class='example'>
 pecl install xdebug
 </pre>
 <p>
-On Apple M1 hardware, you might instead need to use:
+On Apple M1 hardware, you might need to use a different command, depending
+on how PHP is compiled, and what the default architecture is:
 </p>
+<pre class='example'>
+arch -arm64 sudo pecl install xdebug
+</pre>
+or:
 <pre class='example'>
 arch -x86_64 sudo pecl install xdebug
 </pre>
