@@ -5,7 +5,7 @@
 2022-01-01	Xdebug Cloud	https://xdebug.cloud
 2022-01-01	Seiden Group	http://www.seidengroup.com
 2022-01-01	Offers.com	https://offers.com
-2022-01-01	Digitell, Inc	https://digitellinc.com
+1999-01-01	Digitell, Inc	https://digitellinc.com
 2022-02-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2022-02-01	VEMA eG	https://www.vema-eg.de
 2022-02-01	iO	https://www.iodigital.com/en
