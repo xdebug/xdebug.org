@@ -1,0 +1,11 @@
+9.14	8.40	1.50	5.00	3.76
+2022-04-02	xdebug3	6	Continuing to work on pseudo-hosts
+2022-04-04	release	2	Releasing 3.1.4
+2022-04-11	docs	0.5	Document Xcode requirement and related docs for M1 macs
+2022-04-13	bug	1	Fixed #2082 (Build issues with phpcize –clean)
+2022-04-13	bug	0.5	Fixed #2083 (debug issues with constant enums)
+2022-04-13	bug	4	Investigating #1155 (Showing local vars in error handler)
+2022-04-17	xdebug3	3	Working on integrating flamegraph generation
+2022-04-19	docs	4	Creating video to show debugging with Laravel Sail and PhpStorm
+2022-04-26	xdebug3	8	Support for return values in exit breakpoints, and stepping to see return values
+
