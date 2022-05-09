@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Laravel Sail with PhpStorm
+This video shows how to enable and set-up Xdebug within the Laravel Sail Docker environment.
+https://www.youtube.com/watch?v=Xgn0EtB4chc
