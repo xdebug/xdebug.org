@@ -55,7 +55,9 @@ git clone https://github.com/xdebug/xdebug.git
 <div class="front_releases">
 	<ul class="releases">
 		<li><a title="Linux" href="/files/binaries/dbgpClient">Linux (x86_64)</a></title>
+		<li><a title="Linux-ARM" href="/files/binaries/dbgpClient-arm64">Linux (arm64)</a></title>
 		<li><a title="macOS" href="/files/binaries/dbgpClient-macos">macOS (x86_64)</a></title>
+		<li><a title="macOS-ARM" href="/files/binaries/dbgpClient-macos-arm64">macOS (arm64)</a></title>
 		<li><a title="Windows" href="/files/binaries/dbgpClient.exe">Windows (x86_64)</a></title>
 	</ul>
 </div>
