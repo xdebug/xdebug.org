@@ -48,7 +48,7 @@ instead.</p>
 <h2>Installing with PECL <a name='pecl' href="#pecl">#</a></h2>
 
 <p>
-You can install Xdebug through PECL on Linux &amp; macOS with Homebrew.
+You can install Xdebug through PECL on Linux &amp; macOS with <a href='https://formulae.brew.sh/formula/php'>Homebrew</a>.
 </p>
 <p>
 Prerequisites:
@@ -59,7 +59,7 @@ Prerequisites:
 		href='https://apps.apple.com/ca/app/xcode/id497799835'>App Store</a>),
 		and Xcode's command line tools (run: <code>xcode-select
 		--install</code>). </li>
-		<li>PHP installed through Homebrew.</li>
+		<li>PHP installed through <a href='https://formulae.brew.sh/formula/php'>Homebrew</a>.</li>
 	</ul></li>
 	<li>Linux:<ul>
 		<li>GCC and associated libraries.</li>
@@ -73,16 +73,35 @@ Run:
 pecl install xdebug
 </pre>
 <p>
-On Apple M1 hardware, you might need to use a different command, depending
-on how PHP is compiled, and what the default architecture is:
+On Apple M1 hardware, programs can either be compiled for the native M1/ARM64
+architecture, or for the emulated x86_64 architecure. Sometimes there is a
+mismatch with the default and PECL will fail, or Xdebug won't load with a
+message such as:
+</p>
+<pre class='example'>
+PHP Warning:  Failed loading Zend extension 'xdebug.so' (tried: /opt/homebrew/lib/php/pecl/20190902/xdebug.so (dlopen(/opt/homebrew/lib/php/pecl/20190902/xdebug.so, 9): no suitable image found.  Did find:
+        /opt/homebrew/lib/php/pecl/20190902/xdebug.so: mach-o, but wrong architecture
+        /opt/homebrew/lib/php/pecl/20190902/xdebug.so: stat() failed with errno=22), /opt/homebrew/lib/php/pecl/20190902/xdebug.so.so (dlopen(/opt/homebrew/lib/php/pecl/20190902/xdebug.so.so, 9): image not found)) in Unknown on line 0
+</pre>
+<p>
+You can verify what your PHP's architecture is with:
+</p>
+<pre class='example'>
+file `which php`
+</pre>
+<p>
+If that says <code>arm64e</code>, then you need to run:
 </p>
 <pre class='example'>
 arch -arm64 sudo pecl install xdebug
 </pre>
-or:
+<p>
+And if it's <code>x86_64</code>, then you need to run:
+</p>
 <pre class='example'>
 arch -x86_64 sudo pecl install xdebug
 </pre>
+
 <p class="warning">You should ignore any prompts to add
 <code>"extension=xdebug.so"</code> to
 <code>php.ini</code> &mdash; this <strong>will</strong> cause problems.</p>
