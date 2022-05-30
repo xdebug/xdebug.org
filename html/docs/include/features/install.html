@@ -14,27 +14,41 @@ How you install Xdebug depends on your system. There are the following possibili
 <p>
 Installing Xdebug with a package manager is often the fastest way. Depending on your distribution, run the following command:
 <ul>
-	<li><strong>Alpinelinux</strong>:<br/><code>sudo apk add php7-pecl-xdebug</code></li>
-	<li><strong>Arch Linux</strong>:<br/><code>sudo pacman -S xdebug</code></li>
-	<li><strong>CentOS</strong>:<br/><code>sudo yum install php-xdebug</code></li>
-	<li><strong>CentOS</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
-	<li><strong>Debian</strong> (9/stretch, testing/buster/bullseye/sid):<br/><code>sudo apt-get install php-xdebug</code></li>
+	<li><strong>Alpinelinux</strong>:<br/>
+		<code>sudo apk add php7-pecl-xdebug</code>, or <br/>
+		<code>sudo apk add <a href='https://pkgs.alpinelinux.org/packages?name=php8-pecl-xdebug&branch=edge'>php8-pecl-xdebug</a></code>
+	</li>
+	<li><strong>Arch Linux</strong>:<br/><code>sudo pacman -S <a href='https://archlinux.org/packages/community/x86_64/xdebug/'>xdebug</a></code></li>
+	<li><strong>CentOS</strong>:<br/><code>sudo yum install <a href='https://rpmfind.net/linux/rpm2html/search.php?query=php-xdebug(x86-64)'>php-xdebug</a></code></li>
+	<li><strong>CentOS</strong> (Remi Repro):<br/>
+		<code>sudo yum install php74-php-xdebug3</code>, or<br/>
+		<code>sudo yum install php80-php-xdebug3</code>, or<br/>
+		<code>sudo yum install php81-php-xdebug3</code>
+	</li>
+	<li><strong>Debian</strong> (9/stretch, testing/buster/bullseye/sid):<br/><code>sudo apt-get install <a href='https://packages.debian.org/search?keywords=php-xdebug'>php-xdebug</a></code></li>
 	<li><strong>Fedora</strong> (32):<br/><code>sudo yum install php-xdebug</code></li>
 	<li><strong>Fedora</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
-	<li><strong>Gentoo</strong>:<br/><code>emerge dev-php/xdebug</code></li>
-	<li><strong>Manjaro</strong> (20.1/Mikah):<br/><code>sudo pacman -S xdebug</code></li>
+	<li><strong>Gentoo</strong>:<br/><code>emerge <a href='https://packages.gentoo.org/packages/dev-php/xdebug'>dev-php/xdebug</a></code></li>
+	<li><strong>Manjaro</strong> (20.1/Mikah):<br/><code>sudo pacman -S <a href='https://archlinux.org/packages/community/x86_64/xdebug/'>xdebug</a></code></li>
 	<li><strong>RHEL</strong>:<br/><code>sudo yum install php-xdebug</code></li>
 	<li><strong>RHEL</strong> (Remi Repro):<br/><code>sudo yum install php74-php-xdebug3</code></li>
-	<li><strong>SUSE</strong> (openSUSE, Enterprise):<br/><code>sudo zypper in php7-xdebug</code></li>
-	<li><strong>Ubuntu</strong> (18.04 LTS/Bionic, 20.04 LTS/Focal):<br/><code>sudo apt-get install php-xdebug</code></li>
-	<li><strong>Ubuntu</strong> (Ondřej Surý's PPA):<br/><code>sudo apt-get install php7.4-xdebug</code></li>
+	<li><strong>SUSE</strong> (openSUSE, Enterprise):<br/>
+		<code>sudo zypper in <a href='https://software.opensuse.org/package/php7-xdebug'>php7-xdebug</a></code>, or<br/>
+		<code>sudo zypper in <a href='https://software.opensuse.org/package/php8-xdebug'>php8-xdebug</a></code>
+	</li>
+	<li><strong>Ubuntu</strong> (18.04 LTS/Bionic, 20.04 LTS/Focal):<br/><code>sudo apt-get install <a href='https://packages.ubuntu.com/search?keywords=php-xdebug'>php-xdebug</a></code></li>
+	<li><strong>Ubuntu</strong> (<a href='https://launchpad.net/%7Eondrej/+archive/ubuntu/php/+sourcepub/13437320/+listing-archive-extra'>Ondřej Surý's PPA</a>):<br/>
+		<code>sudo apt-get install php7.4-xdebug</code>, or<br/>
+		<code>sudo apt-get install php8.0-xdebug</code>, or<br/>
+		<code>sudo apt-get install php8.1-xdebug</code>
+	</li>
 </ul>
 </p>
 
 <p>Xdebug's latest version is [KW:last_release_version].</p>
 
 <p>For packages that have the PHP version in the package name, such as in
-<code>php<strong>74</strong>-php-xdebug3</code>, you can substitute the PHP
+<code>php<strong>81</strong>-php-xdebug3</code>, you can substitute the PHP
 version with the one that matches the PHP version that you are running.</p>
 
 <p class="warning">Linux distributions might be providing an old and/or outdated version.
