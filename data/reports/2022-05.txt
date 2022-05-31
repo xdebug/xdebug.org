@@ -1,0 +1,15 @@
+5.44	12.27	1.50	5.00	3.76
+2022-05-04	xdebug3	1	Fixed #2079: Finalize and merge pseudo hosts feature
+2022-05-06	xdebug3	4	Fixed #2086/2987: Return value debugging Prs and tests
+2022-05-09	docs	0.5	Add all recent YouTube videos to documentation
+2022-05-10	xdebug3	4	Fixed #2089: Alpine’s muslc does not support res_init
+2022-05-11	bug	1	Triaging #2091 (8.1-dev PHP version issue with fibres), and fixing #2090 (weird FFI crash)
+2022-05-11	xdebug3	0.75	Continuating to talk to Randy Fay about pseudo-hosts
+2022-05-11	bug	1	Fixed #2090: Segfault with FFI and __callStatic()
+2022-05-11	bug	0.5	Fixed #2085: Invstigate and merge PR to fix crash with source guardian encoded files
+2022-05-16	bug	0.5	Test for #2094: public static properties with closure has double facet in XML
+2022-05-17	bug	1	Fixed #2093: Missing linux/rtnetlink.h on Alpine
+2022-05-18	xdebug3	0.75	Communicating about return value feature
+2022-05-22	xdebug3	0.5	dbgpClient binaries for Linux/Arm64 and OSX/Arm64, and release 0.5.0 of dbgpClient
+2022-05-25	docs	4	Creating video to show debugging with Atom
+2022-05-30	docs	1	Document M1/ARM PECL installs, as well as adding links to package manage lists for Xdebug
