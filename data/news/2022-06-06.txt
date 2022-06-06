@@ -1,0 +1,33 @@
+Xdebug 3.1.5 is out!
+<p>
+This is a bug fix release that fixes a crash with <code>__callStatic</code>
+and FFI and when Xdebug is used with Source Guardian encoded files. It also
+solves an issue where the debugger would generate two XML attributes with the
+same name for some variable types, confusing IDEs. It also solves a build
+issue when <code>phpize --clean</code> is used.
+</p>
+
+<p>
+This is likely the last release of the 3.1 series.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_1_5">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Aaron Piotrowski, and Ray
+Perea</i> — Thanks!
+</p>

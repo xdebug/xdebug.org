@@ -22,6 +22,18 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_5'></a>[2022-06-06] &mdash; Xdebug 3.1.5</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2056); ?>: Install documentation gives wrong arch for installation on M1 Macs</dd>
+<dd>Fixed <?= bug(2082); ?>: phpize --clean removes required clocks.m4 file</dd>
+<dd>Fixed <?= bug(2083); ?>: Constant defined with an enum case produce double &quot;facet&quot; attribute in context_get response</dd>
+<dd>Fixed <?= bug(2085); ?>: Crash when used with source guardian encoded files</dd>
+<dd>Fixed <?= bug(2090); ?>: Segfault in __callStatic() after FFI initialization</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_4'></a>[2022-04-04] &mdash; Xdebug 3.1.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
