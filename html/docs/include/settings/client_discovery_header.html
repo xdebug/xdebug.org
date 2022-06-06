@@ -4,7 +4,15 @@ which header to use to find the IP address or hostname to use for 'connecting
 back to'. This setting is only used in combination with
 [CFG:discover_client_host] and is otherwise ignored.</p>
 
-<p>For example, if [CFG:client_discovery_header] is set to <code>FORWARD_HOST</code>,
-then Xdebug will check <code>$_SERVER['FORWARD_HOST']</code> before the
+<p>For example, if [CFG:client_discovery_header] is set to
+<code>HTTP_FORWARD_HOST</code>, then Xdebug will check
+<code>$_SERVER['HTTP_FORWARD_HOST']</code> before the
 <code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
 <code>$_SERVER['REMOTE_ADDR']</code> variables.</p>
+
+<p class="warning">PHP automatically prepends <code>HTTP_</code>, and converts
+<code>-</code> to <code>_</code>, for received HTTP header names. The
+<code>THIS-IS-MY-HOST</code> HTTP header is converted into
+<code>$_SERVER['HTTP_THIS_IS_MY_HOST']</code>. Therefore, the
+[CFG:client_discovery_header] needs to be set to
+<code>HTTP_THIS_IS_MY_HOST</code> to match this.</p>
