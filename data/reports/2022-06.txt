@@ -1,0 +1,11 @@
+5.59	9.11	1.50	5.00	3.76
+2022-06-01	xdebug3	0.5	Add ‘readonly’ facet to return value properties
+2022-06-06	docs	0.5	Document xdebug.client_discovery_header better (#1967)
+2022-06-06	release	2	Releasing 3.1.5
+2022-06-07	xdebug3	2	Fixed #1819: Allow list of headers for xdebug.client_discovery_header’
+2022-06-08	bug	6	Fixed #2051: Segfault on fatal error with Xdebug activated through php-fpm pool
+2022-06-22	xdebug3	6	Preliminary PHP 8.2 support
+2022-06-27	bug	3	Fixed #2101: breakpoint_list should show hit remp breakpoint as disabled
+2022-06-28	bug	2	Fixed #2098: breakpoint_include_return_value interrupts at every function exit
+2022-06-29	xdebug3	2	Drop support for PHP 7.3
+2022-06-30	docs	0.5	Update compatibility table
