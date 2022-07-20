@@ -22,6 +22,36 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0alpha1'></a>[2022-07-20] &mdash; Xdebug 3.2.0alpha1</dt>
+
+<dd><h3>New Features</h3></dd>
+
+<dd>Fixed <?= bug(1819); ?>: Allow a list of headers in &#039;xdebug.client_discovery_header&#039;</dd>
+<dd>Fixed <?= bug(2079); ?>: Add pseudo hosts xdebug://gateway and xdebug://nameserver</dd>
+<dd>Fixed <?= bug(2087); ?>: Introduce step for the return state and virtual property for return value</dd>
+<dd>Fixed <?= bug(2104); ?>: Add support for PHP 8.2 &quot;SensitiveParameter&quot; attribute</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2086); ?>: Include return value in return breakpoint interruption response</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+<dd>Fixed <?= bug(2014); ?>: Drop support for PHP 7.2</dd>
+<dd>Fixed <?= bug(2102); ?>: Drop support for PHP 7.3</dd>
+<dd>Fixed <?= bug(2103); ?>: Drop support for PHP 7.4</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2002); ?>: xdebug_trace_handler_t handler members are not always checked for NULL when executing</dd>
+<dd>Fixed <?= bug(2045); ?>: Inapproriate frowny face</dd>
+<dd>Fixed <?= bug(2062); ?>: Profiler can&#039;t able to write cachegrind file at /tmp</dd>
+<dd>Fixed <?= bug(2089); ?>: Alpine Linux does not support res_ninit</dd>
+<dd>Fixed <?= bug(2093); ?>: Fatal error: linux/rtnetlink.h: No such file or directory  linux/rtnetlink.h</dd>
+<dd>Fixed <?= bug(2098); ?>: With breakpoint_include_return_value enabled step_out break at every function</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_5'></a>[2022-06-06] &mdash; Xdebug 3.1.5</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

@@ -1,0 +1,34 @@
+Xdebug 3.2.0alpha1 is out!
+<p>
+This is a preview release of the Xdebug 3.2 series to accompany the imminent
+release of PHP 8.2 beta 1. Xdebug 3.2 adds support for PHP 8.2, and drops
+support for PHP versions before 8.0.
+</p>
+
+<p>
+This release also contains a few new features to step debugging. You can now
+debug the return values of functions (with IDE support), and also configure
+where the debugger needs to connect to with the <code>xdebug://gateway</code>
+and <code>xdebug://nameserver</code> pseudo hosts as values of
+[CFG:xdebug.client_host].
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_2_0alpha1">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Marko Kaznovac and Pierre Rineau</i> — Thanks!
+</p>
