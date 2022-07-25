@@ -22,6 +22,14 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0alpha2'></a>[2022-07-25] &mdash; Xdebug 3.2.0alpha2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2105); ?>: 3.2.0alpha1 package misses the php-header.h file</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0alpha1'></a>[2022-07-20] &mdash; Xdebug 3.2.0alpha1</dt>
 
 <dd><h3>New Features</h3></dd>

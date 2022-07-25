@@ -1,0 +1,25 @@
+Xdebug 3.2.0alpha2 is out!
+<p>
+This is a rebuild of the Xdebug 3.2.0alpha1 source package, which was missing
+a header file. There are no changes to the source code, or Windows binaries.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_2_0alpha2">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Andy Postnikov</i> — Thanks!
+</p>
