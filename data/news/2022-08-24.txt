@@ -1,0 +1,27 @@
+Xdebug 3.2.0alpha3 is out!
+<p>
+This release forces the new return value debugging step and information to
+be on, to be able to test features in Xdebug that are not strictly supported
+yet in all IDEs. This is likely a temporary change, which has a chance of
+being reverted in the next release.
+</p>
+
+<p>
+This is a source only release, without support for Windows.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_2_0alpha3">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>

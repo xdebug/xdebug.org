@@ -22,6 +22,14 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0alpha3'></a>[2022-08-24] &mdash; Xdebug 3.2.0alpha3</dt>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2112); ?>: Force &#039;return_value&#039; breakpoint information and step to &#039;on&#039; temporarily</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0alpha2'></a>[2022-07-25] &mdash; Xdebug 3.2.0alpha2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
