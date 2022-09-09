@@ -698,3 +698,32 @@ span.footnote { font-size: xx-small; vertical-align: super; }
 div.opcache-0, div.opcache-1 { font-size: small; color: white; border-radius: 10px; }
 div.opcache-0 { background-color: red }
 div.opcache-1 { background-color: green }
+
+
+@media screen and (prefers-color-scheme: dark) {
+	html, body { background-color: #000; color: #333; }
+	p.note {
+		/* background-color: #d5f3cd; */
+		background-color: #104601;
+	}
+
+	p code, li code {
+		/* background: #eee; */
+		background: #00000070;
+	}
+
+	p.warning {
+		/* background-color: #fec1c1; */
+		background-color: #590000;
+	}
+
+	p.warning code {
+		/* background: #ff9090; */
+		background: #00000070;
+	}
+
+	pre, .example > code {
+		/* background: #eee; */
+		background: #eeeeee70;
+	}
+}
