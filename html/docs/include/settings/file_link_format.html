@@ -40,7 +40,7 @@ Add to that one of (depending whether you have komodo, gvim or netbeans):
 <li>Set the [CFG:file_link_format] setting to <code>xdebug://%f@%l</code></li>
 </ul>
 
-<h4>Windows and netbeans</h4>
+<h4>Windows and Netbeans</h4>
 <ul>
 <li>Create the file <code>netbeans.bat</code> and save it in your path (<code>C:\Windows</code> will work):
 <pre>
@@ -48,6 +48,7 @@ Add to that one of (depending whether you have komodo, gvim or netbeans):
 setlocal enableextensions enabledelayedexpansion
 set NETBEANS=%1
 set FILE=%~2
+set FILE=!FILE:%%5C=\!
 %NETBEANS% --nosplash --console suppress --open "%FILE:~19%"
 nircmd win activate process netbeans.exe
 </pre>
