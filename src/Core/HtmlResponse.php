@@ -1,7 +1,7 @@
 <?php
 namespace XdebugDotOrg\Core;
 
-class HtmlResponse
+class HtmlResponse extends \StdClass
 {
 	public $model;
 	public $view;
