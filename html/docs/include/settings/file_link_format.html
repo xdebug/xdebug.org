@@ -17,6 +17,13 @@ The possible format specifiers are:
 <p>
 For various IDEs/OSses there are some instructions listed on how to make this work:
 </p>
+<h4>PhpStorm</h4>
+<p>In the configuration file, add the following line, including the single
+quotes. This uses PhpStorm's REST API.</p>
+<pre>
+xdebug.file_link_format='javascript: var r = new XMLHttpRequest; r.open("get", "http://localhost:63342/api/file/%f:%l");r.send()'
+</pre>
+
 <h4>Firefox on Linux</h4>
 <ul>
 <li>Open <a href="about:config">about:config</a></li>
