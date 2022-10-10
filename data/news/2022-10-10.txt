@@ -1,0 +1,29 @@
+Xdebug 3.2.0RC1 is out!
+<p>
+This is the first release candidate of Xdebug 3.2. This version fixes numerous
+bugs that were found in Xdebug 3.2.0alpha3 and improves PHP 8.2 support. With
+step debugging, Xdebug will now also log a warning if an IDE attempts to set a
+breakpoint on a file that does not exist on the file system.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_2_0RC1">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<!--
+<p>
+This release also contains a contribution by: <i></i> — Thanks!
+</p>
+-->

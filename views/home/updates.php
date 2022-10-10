@@ -22,6 +22,20 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0RC1'></a>[2022-10-10] &mdash; Xdebug 3.2.0RC1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2113); ?>: Crash at step_into after thrown exception with return value debugging en</dd>
+<dd>Fixed <?= bug(2117); ?>: Removed emulated properties for closures, as PHP 8.2 adds debug information for them</dd>
+<dd>Fixed <?= bug(2121); ?>: Xdebug does not use local independent float-to-string functions</dd>
+<dd>Fixed <?= bug(2122); ?>: Local variables are not available when using start_upon_error</dd>
+<dd>Fixed <?= bug(2123); ?>: Add warning in log and diagnositics information when a breakpoint is set on a non-existing file</dd>
+<dd>Fixed <?= bug(2124); ?>: Xdebug incorrectly reports that there are no children for static closure properties, even thought there are</dd>
+<dd>Fixed <?= bug(2125); ?>: Crash with PHP 8.2 on 32-bit due to change in &quot;not set&quot; value with CATCH opcode</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0alpha3'></a>[2022-08-24] &mdash; Xdebug 3.2.0alpha3</dt>
 
 <dd><h3>Improvements</h3></dd>
