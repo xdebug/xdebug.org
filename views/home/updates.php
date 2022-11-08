@@ -22,6 +22,16 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_1_6'></a>[2022-11-08] &mdash; Xdebug 3.1.6</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2100); ?>: "Fatal error: debuginfo() must return an array" when Exception is thrown from debugInfo in PHP 8.x</dd>
+<dd>Fixed <?= bug(2101); ?>: When a temporary breakpoint is hit, breakpoint_list should show it as disabled</dd>
+<dd>Fixed <?= bug(2129); ?>: Cannot read snapshot Gzip-compressed data is corrupt</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0RC1'></a>[2022-10-10] &mdash; Xdebug 3.2.0RC1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
