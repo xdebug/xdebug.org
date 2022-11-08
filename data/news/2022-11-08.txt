@@ -17,7 +17,7 @@ The full list of changes can be found on the
 
 <p>
 The source code can be found on the
-<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+<a href="https://xdebug.org/download/historical#3_1_6">historical downloads</a> page, and as
 usual, Xdebug is installable through PECL.
 </p>
 
