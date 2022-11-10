@@ -3,9 +3,9 @@ namespace XdebugDotOrg;
 
 class XdebugVersion
 {
-    public const NOT_SUPPORTED_BEFORE = '3.0';
-    public const LATEST_VERSION = '3.1.5';
-    public const LATEST_WINDOWS_VERSION = '3.1.5';
+    public const NOT_SUPPORTED_BEFORE = '3.1';
+    public const LATEST_VERSION = '3.1.6';
+    public const LATEST_WINDOWS_VERSION = '3.1.6';
 
     private const VERSIONS =  [
         '7.0' => [ 'src' => '2.8.1',                        ],

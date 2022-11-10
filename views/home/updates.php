@@ -22,6 +22,22 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0RC2'></a>[2022-11-10] &mdash; Xdebug 3.2.0RC2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2100); ?>: "Fatal error: debuginfo() must return an array" when Exception is thrown from debugInfo in PHP 8.x</dd>
+<dd>Fixed <?= bug(2101); ?>: When a temporary breakpoint is hit, breakpoint_list should show it as disabled</dd>
+<dd>Fixed <?= bug(2126); ?>: Problems with retrieving global variables</dd>
+<dd>Fixed <?= bug(2127); ?>: Tracing does not handle NUL char in anonymous closure scope</dd>
+<dd>Fixed <?= bug(2129); ?>: Cannot read snapshot Gzip-compressed data is corrupt</dd>
+<dd>Fixed <?= bug(2133); ?>: Warning with regards to extra NUL character in xdebug_setcookie call</dd>
+<dd>Fixed <?= bug(2134); ?>: Xdebug stops at the line where the exception is created, not where it is thrown</dd>
+<dd>Fixed <?= bug(2135); ?>: Xdebug stops twice at the same line after a call breakpoint or xdebug_break()</dd>
+<dd>Fixed <?= bug(2136); ?>: Duplicate line/conditional breakpoints are not rejected</dd>
+
+<hr/>
+
 <dt><a name='x_3_1_6'></a>[2022-11-08] &mdash; Xdebug 3.1.6</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
