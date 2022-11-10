@@ -1,5 +1,3 @@
-2021-09-14	TYPO3 GmbH	https://typo3.com
-2021-10-01	Tideways	https://tideways.com/
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
 2021-12-01	Find My Electric	https://www.findmyelectric.com/
 2022-01-01	Xdebug Cloud	https://xdebug.cloud
@@ -9,3 +7,5 @@
 2022-02-01	VEMA eG	https://www.vema-eg.de
 2022-02-01	iO	https://www.iodigital.com/en
 2022-03-08	Supermetrics	https://supermetrics.com
+2022-11-01	TYPO3 GmbH	https://typo3.com
+2022-11-01	Tideways	https://tideways.com/
