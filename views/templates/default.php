@@ -12,6 +12,7 @@
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta name="DESCRIPTION" content="Xdebug: A powerful debugger for PHP" />
 	<meta name="AUTHOR" content="Derick Rethans, as in derick@xdebug.org" />
+	<link type="rel" rel="me" href="https://derickrethans.nl/@derick"/>
 	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<?= $this->headExtra ?>
 	<link rel="stylesheet" type="text/css" href="/core2.css" />
