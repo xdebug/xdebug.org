@@ -450,17 +450,33 @@
 </p>
 </dd>
 
-<a name='DBG-W-SENDERR'></a>
-<dt>DBG-W-SENDERR</dt>
+<a name='DBG-W-REMCLOSE'></a>
+<dt>DBG-W-REMCLOSE</dt>
 <dd>
 <p class="reason">
-	Occurs when Xdebug is sending data to a debugging client, but it has
-	closed the connection.
+	Occurs when Xdebug is sending data to a debugging client, but the debugging
+	client has closed the connection.
 </p>
 <p>
 	Indicates that the debugging client has closed the debugging connection
 	and Xdebug was not aware of this. When this warning happens, the debugging
 	connection is aborted on the Xdebug side too, and the rest of the request
+	can not be debugged.
+</p>
+</dd>
+
+<a name='DBG-W-SENDERR'></a>
+<dt>DBG-W-SENDERR</dt>
+<dd>
+<p class="reason">
+	Occurs when Xdebug is sending data to a debugging client, but it could not
+	send all, or any data.
+</p>
+<p>
+	This could indicate that the debugging client has closed the debugging
+	connection, or that an interrupt interrupted the transmission of the full
+	packet of data. This is not something that Xdebug can recover from, and the
+	debugging connection will be in an unstable state. The rest of the request
 	can not be debugged.
 </p>
 </dd>
