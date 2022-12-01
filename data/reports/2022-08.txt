@@ -1,0 +1,5 @@
+5.22	8.55	1.50	5.00	3.76
+2022-08-08	docs	4	New video: Debugging with VIM and Vdebug
+2022-08-14	docs	5	Adding missing subtitles for videos
+2022-08-24	xdebug3	3	Release 3.2.0alpha3 with return value debugging forced on
+2022-08-30	xdebug3	4	Rebuilding Xdebug CI

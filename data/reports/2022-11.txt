@@ -1,0 +1,21 @@
+5.20	9.04	1.66	4.16	3.76
+2022-11-02	bug	0.5	Rebasing fix for #2129 to xdebug_3_1 branch
+2022-11-02	bug	0.5	Merging fix for #2126 (Problems with retrieving global variables)
+2022-11-02	bug	0.5	Rebase, marge, and reword fix by Remi for #2132 (systemd private tmp)
+2022-11-02	bug	0.5	Create and merge issue #2133 (xdebug_setcookie extra NUL character)
+2022-11-02	bug	0.75	Triage #2131, issue with SplFileObject, which turned out to be an Spl issue/feature
+2022-11-02	xdebug3	0.5	Rebase code coverage improvements branch
+2022-11-02	bug	1	Fixed #2127: Tracing does not handle NUL char in anonymous closure scope
+2022-11-07	bug	1	PR merge – 3.1.6 fix??? compression
+2022-11-07	bug	1	Investigate double breakpoint
+2022-11-08	xdebug3	3	Release 3.1.6
+2022-11-08	bug	2.5	Fixed #2136: Duplicate line/conditional breakpoints are not rejected
+2022-11-10	bug	0.75	Fixed #2135: Xdebug stops twice’
+2022-11-10	xdebug3	1.25	Release 3.2.0RC2
+2022-11-10	bug	0.5	Fixed an issue with ignored uninitialised variables
+2022-11-22	docs	4	Made the “xdebug_connect_to_client” video
+2022-11-22	docs	0.5	Document the new REMCLOSE error message
+2022-11-22	bug	3.5	Fixed #2138: Step debugger does not stop when the debugging client closes the connection
+2022-11-24	bug	1	Triaging #2139: segfault with code coverage
+2022-11-25	bug	5.25	Triaging #2139: segfault with code coverage
+2022-11-28	bug	1	Re-try and evaluate Xdebug related issues on PhpStorm’s YouTrack

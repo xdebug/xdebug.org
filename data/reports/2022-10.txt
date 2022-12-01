@@ -1,0 +1,17 @@
+6.33	10.84	1.50	5.00	3.76
+2022-10-02	docs	1.5	Investigate and document file_link_format settings for PhpStorm
+2022-10-02	website	0.25	Make website PHP 8.2 supported
+2022-10-02	bug	2.5	Fixed #2121: Xdebug uses locale-aware floating point conversions
+2022-10-02	docs	0.5	Triage #2120: Installation with PECL on OSX fails
+2022-10-05	bug	3	Fixed #2125: Crash with PHP 8.2 on 32-bit builds
+2022-10-05	bug	1.5	Fixed #2124: Virtual closure information reported wrongly
+2022-10-07	bug	2.25	Fixed #2122: Local variables are not available with start_upon_error
+2022-10-07	xdebug3	2.75	Testing new VS Code adapter, including its new support for Xdebug Cloud
+2022-10-07	bug	0.75	Triage #1155 again: Local variables not shown in error_handler
+2022-10-10	xdebug3	4	Release 3.2.0RC1
+2022-10-11	xdebug3	2	Tidy up CI build configurations, stop testing 32-bit on CI
+2022-10-14	bug	3.5	Fixed #2126: Problems with retrieving global variables
+2022-10-17	bug	0.5	Triage #2111: missing symbol due to RC version mismatch
+2022-10-20	bug	3	Fixed #2129: Gzip-compressed data is corrupt on Windows
+2022-10-21	bug	1.5	Triage #2130: Crash when set an array key containing “Day-s”
+2022-10-31	docs	0.75	Created tickets with PhpStorm to improve debugging

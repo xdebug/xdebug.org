@@ -1,0 +1,6 @@
+5.26	17.07	1.50	5.00	3.76
+2022-07-05	xdebug3	6	Removed support for PHP 7.3 and PHP 7.4 (#2102 and #2103)
+2022-07-13	xdebug3	4	Merge PHP 8.2 support
+2022-07-18	xdebug3	2.5	Added support for PHP 8.2 Sensitive Parameter attribute (#2104)
+2022-07-20	xdebug3	4	Release Xdebug 3.2.0alpha1 with PHP 8.2 support
+2022-07-25	xdebug3	1.5	Fixed PECL package, and release Xdebug 3.2.0alpha2

@@ -1,0 +1,5 @@
+5.84	9.68	1.50	5.83	3.51
+2022-09-07	bug	6	Fixed #2113: Crash with return value stack points and exceptions
+2022-09-07	docs	3	Fixed #2123: Add warning when setting breakpoint on non-existing path
+2022-09-09	xdebug3	3	Fixed #2117: Removed emulated closure content for PHP 8.2+ as it now does that itself
+2022-09-28	docs	4	Created “Xdebug 3: Start Upon Error” video
