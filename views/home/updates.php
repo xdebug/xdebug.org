@@ -22,6 +22,53 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_0'></a>[2022-12-08] &mdash; Xdebug 3.2.0</dt>
+
+<dd><h3>New Features</h3></dd>
+
+<dd>Fixed <?= bug(1819); ?>: Allow a list of headers in &#039;xdebug.client_discovery_header&#039;</dd>
+<dd>Fixed <?= bug(2079); ?>: Add pseudo hosts xdebug://gateway and xdebug://nameserver</dd>
+<dd>Fixed <?= bug(2086); ?>: Include return value in return breakpoint interruption response</dd>
+<dd>Fixed <?= bug(2087); ?>: Introduce step for the return state and virtual property for return value</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2062); ?>: Xdebug now records whether systemd's PrivateTmp is used in its diagnostics information</dd>
+<dd>Fixed <?= bug(2104); ?>: Add support for PHP 8.2 &quot;SensitiveParameter&quot; attribute</dd>
+<dd>Fixed <?= bug(2117); ?>: Removed emulated properties for closures, as PHP 8.2 adds debug information for them</dd>
+<dd>Fixed <?= bug(2122); ?>: Local variables are now available when using start_upon_error</dd>
+<dd>Fixed <?= bug(2123); ?>: Add warning in log and diagnositics information when a breakpoint is set on a non-existing file</dd>
+<dd>Fixed <?= bug(2136); ?>: Duplicate line/conditional breakpoints are not rejected</dd>
+<dd>Fixed <?= bug(2138); ?>: Step debugger now disconnects and continues running the script, when the debugging client closes the connection</dd>
+
+<dd><h3>Deprecations</h3></dd>
+
+<dd>Fixed <?= bug(2014); ?>: Drop support for PHP 7.2</dd>
+<dd>Fixed <?= bug(2102); ?>: Drop support for PHP 7.3</dd>
+<dd>Fixed <?= bug(2103); ?>: Drop support for PHP 7.4</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2002); ?>: xdebug_trace_handler_t handler members are not always checked for NULL when executing</dd>
+<dd>Fixed <?= bug(2045); ?>: Inapproriate frowny face</dd>
+<dd>Fixed <?= bug(2089); ?>: Alpine Linux does not support res_ninit</dd>
+<dd>Fixed <?= bug(2093); ?>: Fatal error: linux/rtnetlink.h: No such file or directory  linux/rtnetlink.h</dd>
+<dd>Fixed <?= bug(2098); ?>: With breakpoint_include_return_value enabled step_out break at every function</dd>
+<dd>Fixed <?= bug(2105); ?>: 3.2.0alpha1 package misses the php-header.h file</dd>
+<dd>Fixed <?= bug(2108); ?>: Segfault on PHP8.1 with PHPUnit 10 when path coverage is enabled</dd>
+<dd>Fixed <?= bug(2112); ?>: Force &#039;return_value&#039; breakpoint information and step to &#039;on&#039; temporarily</dd>
+<dd>Fixed <?= bug(2113); ?>: Crash at step_into after thrown exception with return value debugging en</dd>
+<dd>Fixed <?= bug(2121); ?>: Xdebug does not use local independent float-to-string functions</dd>
+<dd>Fixed <?= bug(2124); ?>: Xdebug incorrectly reports that there are no children for static closure properties, even thought there are</dd>
+<dd>Fixed <?= bug(2125); ?>: Crash with PHP 8.2 on 32-bit due to change in &quot;not set&quot; value with CATCH opcode</dd>
+<dd>Fixed <?= bug(2126); ?>: Problems with retrieving global variables</dd>
+<dd>Fixed <?= bug(2127); ?>: Tracing does not handle NUL char in anonymous closure scope</dd>
+<dd>Fixed <?= bug(2133); ?>: Warning with regards to extra NUL character in xdebug_setcookie call</dd>
+<dd>Fixed <?= bug(2134); ?>: Xdebug stops at the line where the exception is created, not where it is thrown</dd>
+<dd>Fixed <?= bug(2135); ?>: Xdebug stops twice at the same line after a call breakpoint or xdebug_break()</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0RC2'></a>[2022-11-10] &mdash; Xdebug 3.2.0RC2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>

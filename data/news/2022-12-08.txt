@@ -1,0 +1,37 @@
+Xdebug 3.2.0 is out!
+<p>
+This is the first release of Xdebug 3.2. This release adds support for PHP
+8.2, and drops support for PHP 7.2 through PHP 7.4.
+</p>
+
+<p>
+The main new features include being able to inspect the return value of
+function calls while debugging; more and better warning messages when
+setting breakpoints in non-existing files, or writing to PrivateTmp
+directories; and, the addition of the pseudo host names xdebug://gateway and
+xdebug://nameserver to facilitate easier set-ups in more complex networking
+environments. Documentation and <a
+href="https://www.youtube.com/playlist?list=PLg9Kjjye-m1g_eXpdaifUqLqALLqZqKd4">feature
+videos</a> on YouTube will follow shortly.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_2_0">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Alex Liberman, Andy Postnikov, Marko
+Kaznovac, and Pierre Rineau</i> — Thanks!
+</p>
