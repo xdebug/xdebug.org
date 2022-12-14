@@ -29,7 +29,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 
 		<dt><a href='/docs/code_coverage'>Code Coverage Analysis</a></dt>
 		<dd>To show which parts of your code base are executed when running
-		unit tests with PHP Unit.</dd>
+		unit tests with PHPUnit.</dd>
 	</dl>
 </div>
 
