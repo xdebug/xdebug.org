@@ -9,7 +9,7 @@ This function makes the debugger break on the line it is called from, as if a
 normal file/line breakpoint was set on this line through the debugger protocol.
 
 TXT:
-If no debugging session is active yet, and [CFG:start_upon_request] is set to
+If no debugging session is active yet, and [CFG:start_with_request] is set to
 <code>trigger</code>, then Xdebug will attempt to start a new debugging session
 first.
 
