@@ -385,6 +385,10 @@ class XdebugVersion
 			{
 				return "The compiler (MS VS{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
+			if ( $this->architecture != 'x64' )
+			{
+				return "32-bit builds of Xdebug on Windows are no longer available. Please change to use a 64-bit version of PHP on Windows.";
+			}
 		}
 		return true;
 	}
