@@ -377,11 +377,11 @@ class XdebugVersion
 			{
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
-			if ( $this->winCompiler != 15 && ( $majorPhpVersion == '7.2' || $majorPhpVersion == '7.3'  || $majorPhpVersion == '7.4') )
+			if ( $this->winCompiler != 15 && ( $majorPhpVersion == '7.2' || $majorPhpVersion == '7.3'  || $majorPhpVersion == '7.4' ) )
 			{
 				return "The compiler (MS VC{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
-			if ( $this->winCompiler != 16 && ( $majorPhpVersion == '8.0' ) )
+			if ( $this->winCompiler != 16 && ( $majorPhpVersion == '8.0' || $majorPhpVersion == '8.1'  || $majorPhpVersion == '8.2' ) )
 			{
 				return "The compiler (MS VS{$this->winCompiler}) that this PHP {$majorPhpVersion} was build with, is not supported.";
 			}
