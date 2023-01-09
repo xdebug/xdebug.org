@@ -1,0 +1,11 @@
+4.86	9.00	1.83	5.41	0.25	21.35
+2022-12-05	bug	3	Fixed #2108: segfault with code coverage, hopefully
+2022-12-07	bug	3	Triaging #2139: segfault with code coverage
+2022-12-08	release	1.75	Releasing 3.2.0
+2022-12-12	bug	1.5	Triaging bugs
+2022-12-12	docs	1.5	Return Value Debugging video
+2022-12-14	bug	6	Triaging and fixing several bugs
+2022-12-14	docs	0.5	Update compatibility table
+2022-12-16	bug	0.75	Checking out Sebastian’s PHP-CC issue.
+2022-12-18	bug	4.5	Triage weird bugs on Windows with apache
+2022-12-19	docs	3	Skipping Files video
