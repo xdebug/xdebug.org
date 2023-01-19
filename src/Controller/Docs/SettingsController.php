@@ -121,7 +121,7 @@ class SettingsController
 		],
 
 		'client_discovery_header' => [
-			'string', '""', null,
+			'string', '"HTTP_X_FORWARDED_FOR,REMOTE_ADDR"', null,
 			\FUNC_STEP_DEBUG
 		],
 

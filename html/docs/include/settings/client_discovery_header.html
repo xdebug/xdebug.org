@@ -6,9 +6,14 @@ back to'. This setting is only used in combination with
 
 <p>For example, if [CFG:client_discovery_header] is set to
 <code>HTTP_FORWARD_HOST</code>, then Xdebug will check
-<code>$_SERVER['HTTP_FORWARD_HOST']</code> before the
-<code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
-<code>$_SERVER['REMOTE_ADDR']</code> variables.</p>
+<code>$_SERVER['HTTP_FORWARD_HOST']</code> to obtain the IP address to use for
+'connecting back'.</p>
+
+<p>It is possible to configure multiple fallbacks by using a comma separated
+list of values. For example if you want to use <code>HTTP_FORWARD_HOST</code>
+first, and then also want to check <code>REMOTE_ADDR</code>, then you set
+[CFG:client_discovery_header] to
+<code>HTTP_FORWARD_HOST,REMOTE_ADDR</code>.</p>
 
 <p class="warning">PHP automatically prepends <code>HTTP_</code>, and converts
 <code>-</code> to <code>_</code>, for received HTTP header names. The
@@ -16,3 +21,15 @@ back to'. This setting is only used in combination with
 <code>$_SERVER['HTTP_THIS_IS_MY_HOST']</code>. Therefore, the
 [CFG:client_discovery_header] needs to be set to
 <code>HTTP_THIS_IS_MY_HOST</code> to match this.</p>
+
+<p>If you have logging enabled, and set the [CFG:log_level] setting to
+<code>10</code>, then Xdebug will list every header, the header value, and the
+used header (if any) when attempting to find the IP address to connect back
+to.</code>
+
+<p class="note">Xdebug 3.2 and later no longer fall back to the 
+<code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
+<code>$_SERVER['REMOTE_ADDR']</code> header values by default. If you want
+these headers to be used as well, you specifically need to add these to the
+list of headers, by setting [CFG:client_discovery_header] to
+<code>YOUR_OWN_HEADER,HTTP_X_FORWARDED_FOR,REMOTE_ADDR</code>.</p>
