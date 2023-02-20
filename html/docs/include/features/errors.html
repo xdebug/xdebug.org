@@ -318,6 +318,33 @@
 </p>
 </dd>
 
+<a name="DBG-W-BRKFILE"></a>
+<dt>DBG-W-BRKFILE</dt>
+<dd>
+<p class="reason">
+	Occurs when the IDE tries to set a breakpoint in in a file that
+	not exist on the filesystem.
+</p>
+<p>
+	The likely reason for this to happen is that the IDE debug configuration
+	does not have path mappings set up, or correctly set up. Path mappings are
+	needed to map filenames as Xdebug seems them on a remote host, to filenames
+	as the IDE sees them on the local host. Without a path mapping, the IDE can
+	not translate to the filename that Xdebug requires for setting a
+	breakpoint.
+</p>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>PhpStorm: Follow the <a href="https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-mappings">instructions</a>
+		on how to set up path mappings.</li>
+		<li>Visual Studio Code: Refer to the paragraph on <a
+		href="https://github.com/xdebug/vscode-php-debug#remote-host-debugging">pathMappings</a>
+		in the Remote Host Debugging section.</li>
+	</ul>
+</p>
+</dd>
+
 <a name="DBG-W-CON"></a>
 <dt>DBG-W-CON</dt>
 <dd>
