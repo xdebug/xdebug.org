@@ -20,7 +20,7 @@
 <?php if ( $this->run->buildSuccess == false ) : ?>
 	<h2 class='bf'>Build Failure</h2>
 
-	<pre class='log'><?= htmlspecialchars($this->run->buildLog) ?></pre>
+	<pre class='log'><?= htmlspecialchars((string) $this->run->buildLog) ?></pre>
 <?php else : ?>
 	<h2 class='success'>Build Success</h2>
 
@@ -55,7 +55,7 @@
 				<td><?= $f->desc ?></td>
 			</tr>
 			<tr>
-				<td class='log'><pre class='log'><?= htmlspecialchars( $f->reason ) ?></pre></td>
+				<td class='log'><pre class='log'><?= htmlspecialchars( (string) $f->reason ) ?></pre></td>
 			</tr>
 			</table>
 		<?php endforeach ?>

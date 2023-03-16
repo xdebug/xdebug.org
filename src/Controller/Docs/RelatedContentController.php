@@ -67,9 +67,7 @@ class RelatedContentController
 	{
 		$content = array_filter(
 			self::getContent(),
-			function ($function) use ($func) {
-				return $func & $function->type;
-			}
+			fn($function) => $func & $function->type
 		);
 
 		usort($content, fn($a, $b) => $a->title <=> $b->title );

@@ -3,7 +3,7 @@ namespace XdebugDotOrg\Controller;
 
 class LinksController
 {
-	const LINKS = [
+	final public const LINKS = [
 		'giftlist' => 'http://www.amazon.co.uk/exec/obidos/registry/SLCB276UZU8B',
 
 		'xdebug060' => 'http://files.derickrethans.nl/xdebug-0.6.0.tar.gz',

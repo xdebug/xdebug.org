@@ -33,9 +33,7 @@ class HomeController
 		return new HtmlResponse(
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
 				Supporters::class,
-				function() : Supporters {
-					return self::getSupportersModel();
-				},
+				fn(): Supporters => self::getSupportersModel(),
 				'log'
 			),
 			'home/index.php'
@@ -156,9 +154,7 @@ class HomeController
 		return new HtmlResponse(
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
 				Downloads::class,
-				function() : Downloads {
-					return self::getLatestDownloadsModel();
-				},
+				fn(): Downloads => self::getLatestDownloadsModel(),
 				'download'
 			),
 			'home/download.php'
@@ -170,9 +166,7 @@ class HomeController
 		return new HtmlResponse(
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
 				Downloads::class,
-				function() : Downloads {
-					return self::getAllDownloadsModel();
-				},
+				fn(): Downloads => self::getAllDownloadsModel(),
 				'historical-releases'
 			),
 			'home/historical-releases.php'
@@ -196,8 +190,8 @@ class HomeController
 		$supporters = [];
 
 		foreach ($f as $line) {
-			$line = trim( $line );
-			list( $date, $name, $link ) = explode( "\t", $line );
+			$line = trim( (string) $line );
+			[$date, $name, $link] = explode( "\t", $line );
 
 			$now = new \DateTimeImmutable();
 			$d = new \DateTimeImmutable( $date );

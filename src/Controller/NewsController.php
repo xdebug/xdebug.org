@@ -27,7 +27,7 @@ class NewsController
 		foreach ($d as $item) {
 			$file = file( $item );
 			$title = array_shift( $file );
-			$date = new \DateTimeImmutable(preg_replace( '@.+news/(.*).txt$@', '\1', $item ));
+			$date = new \DateTimeImmutable(preg_replace( '@.+news/(.*).txt$@', '\1', (string) $item ));
 			$contents = join( '', $file );
 
 			$news_items[] = new NewsItem($title, $date, $contents);

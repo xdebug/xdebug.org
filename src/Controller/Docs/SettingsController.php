@@ -241,9 +241,7 @@ class SettingsController
 		if ($func !== null) {
 			$settings = array_filter(
 				self::SETTINGS,
-				function (array $setting) use ($func) {
-					return (bool)($func & $setting[3]);
-				}
+				fn(array $setting) => (bool)($func & $setting[3])
 			);
 		} else {
 			$settings = self::SETTINGS;

@@ -49,7 +49,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<p>Xdebug is made possible through the generous support of Xdebug's business-tier sponsors:</p>
 
 	<ul class='supporters'>
-	<?php foreach ($this->supporters as list($link, $name)) : ?>
+	<?php foreach ($this->supporters as [$link, $name]) : ?>
 		<li><a href="<?= $link ?>"><?= $name ?></a></li>
 	<?php endforeach ?>
 	</ul>

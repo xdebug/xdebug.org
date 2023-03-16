@@ -20,7 +20,7 @@ git clone https://github.com/xdebug/xdebug.git
 </pre>
 
 <a name='releases'></a>
-<a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', $this->downloads[0]->version) ?>'></a>
+<a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', (string) $this->downloads[0]->version) ?>'></a>
 <h2>Latest Release</h2>
 <strong>Xdebug <?= $this->downloads[0]->version ?></strong>
 <div class='copy'>Release date: <?= $this->downloads[0]->date->format('Y-m-d') ?></div>

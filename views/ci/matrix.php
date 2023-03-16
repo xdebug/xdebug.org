@@ -9,7 +9,7 @@
 		<th></th>
 
 		<?php foreach ( $this->abbrevs as $version ) : ?>
-			<?php if ( preg_match('@(.*)-g([0-9a-f]+)$@', $version->abbrev, $m) ) : ?>
+			<?php if ( preg_match('@(.*)-g([0-9a-f]+)$@', (string) $version->abbrev, $m) ) : ?>
 				<th>
 					<a href='https://github.com/xdebug/xdebug/commit/<?= $m[2] ?>'><?= $m[1] ?></a><br/>
 					<div class='time'><?= (new \DateTime( "@{$version->ts}" ))->format( 'Y-m-d<\b\r/>H:i:s' ) ?></div>

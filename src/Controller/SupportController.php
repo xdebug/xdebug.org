@@ -24,9 +24,7 @@ class SupportController
 		return new HtmlResponse(
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
 				SupportLog::class,
-				function() : SupportLog {
-					return self::getLogModel();
-				},
+				fn(): SupportLog => self::getLogModel(),
 				'log'
 			),
 			'support/log.php'
@@ -49,9 +47,7 @@ class SupportController
 
 		return new SupportLog(
 			array_map(
-				function($file) {
-					return self::getMonthReport($file);
-				},
+				fn($file) => self::getMonthReport($file),
 				$files
 			)
 		);
@@ -65,7 +61,7 @@ class SupportController
 		preg_match( '/[0-9]{4}-[0-9]{2}/', $file, $matches );
 		$d = new \DateTimeImmutable( "{$matches[0]}-01" );
 
-		list($patreon, $github, $pro, $business, $others) = explode("\t", trim($summary));
+		[$patreon, $github, $pro, $business, $others] = explode("\t", trim((string) $summary));
 		$total = (int) $patreon + (int) $github  + (int) $pro + (int) $business + (int) $others;
 
 		$totalHours = [];
@@ -73,11 +69,11 @@ class SupportController
 		$days = [];
 
 		foreach ($f as $line) {
-			$line = trim( $line );
+			$line = trim( (string) $line );
 			if ( $line == '' ) {
 				continue;
 			}
-			list( $day, $type, $hours, $description ) = explode( "\t",  $line );
+			[$day, $type, $hours, $description] = explode( "\t",  $line );
 
 			$day = (int) substr( $day, 8, 2);
 			$hours = sprintf( '%.2f', $hours );

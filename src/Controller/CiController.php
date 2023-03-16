@@ -20,7 +20,7 @@ class CiController
 	{
 		foreach ( $results->failures as $key => $failure )
 		{
-			$results->failures[$key]->file = str_replace( '.', '/', $results->failures[$key]->file );
+			$results->failures[$key]->file = str_replace( '.', '/', (string) $results->failures[$key]->file );
 		}
 
 		return $results;
@@ -82,11 +82,11 @@ class CiController
 			foreach ( $info as $key => $version )
 			{
 				$phpVersions[ $version->cfg->version ] = true;
-				$latestAbbrev = trim( $version->run );
+				$latestAbbrev = trim( (string) $version->run );
 				$abbrevs[ $latestAbbrev ] = $version;
-				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->version )][ trim( $version->cfg->config ) ] ) )
+				if ( !isset( $matrix[ trim( $latestAbbrev ) ][ trim( (string) $version->cfg->version )][ trim( (string) $version->cfg->config ) ] ) )
 				{
-					$matrix[ trim( $latestAbbrev ) ][ trim( $version->cfg->version )][ trim( $version->cfg->config ) ] = $version;
+					$matrix[ trim( $latestAbbrev ) ][ trim( (string) $version->cfg->version )][ trim( (string) $version->cfg->config ) ] = $version;
 				}
 			}
 		}
@@ -95,9 +95,7 @@ class CiController
 		$phpVersions = array_keys( $phpVersions );
 
 		uksort(
-			$abbrevs, function(string $aIndex, string $bIndex) use ( $abbrevs ) {
-				return $abbrevs[$aIndex]->ts <=> $abbrevs[$bIndex]->ts;
-			}
+			$abbrevs, fn(string $aIndex, string $bIndex) => $abbrevs[$aIndex]->ts <=> $abbrevs[$bIndex]->ts
 		);
 
 		$abbrevs = array_reverse( $abbrevs );
@@ -136,7 +134,7 @@ class CiController
 					return -$c;
 				}
 
-				return strcmp( isset( $aMatch[3] ) ? $aMatch[3] : '', isset( $bMatch[3] ) ? $bMatch[3] : '' );
+				return strcmp( $aMatch[3] ?? '', $bMatch[3] ?? '' );
 			}
 		);
 

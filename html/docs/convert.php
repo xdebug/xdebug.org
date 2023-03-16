@@ -106,7 +106,7 @@ class drDocumentDocbookToTextTableHandler extends ezcDocumentDocbookToRstTableHa
         $rows = $table->getElementsByTagName( 'row' );
 
 		// Loop over rows, and for each row determine the max width
-		$widths = array();
+		$widths = [];
 		$rowNr = 0;
         foreach ( $rows as $row )
         {
@@ -116,7 +116,7 @@ class drDocumentDocbookToTextTableHandler extends ezcDocumentDocbookToRstTableHa
                 if ( ( $cell->nodeType === XML_ELEMENT_NODE ) &&
                      ( $cell->tagName === 'entry' ) )
                 {
-                    $cellContent = explode( "\n", trim( $converter->visitChildren( $cell, '' ) ) );
+                    $cellContent = explode( "\n", trim( (string) $converter->visitChildren( $cell, '' ) ) );
 					$widths[$cellNr] = @max( $widths[$cellNr], $this->getMaxLineLength( $cellContent ) );
                     ++$cellNr;
                 }
@@ -186,7 +186,7 @@ class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
             $root .= '[' . ( $index + 1 ) . "] {$link}\n";
             $appended = true;
         }
-        $this->links = array();
+        $this->links = [];
 
         // Append directive targets to paragraph
         foreach ( $this->directives as $directive )
@@ -194,7 +194,7 @@ class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
             $root .= $directive;
             $appended = true;
         }
-        $this->directives = array();
+        $this->directives = [];
 
         return $root . ( $appended ? "\n" : '' );
     }
@@ -231,7 +231,7 @@ foreach( $settings as $info )
 	$version = ";";
 	if ( $info->version )
 	{
-		list( $constraint, $settingVersion ) = explode( ' ', $info->version );
+		[$constraint, $settingVersion] = explode( ' ', (string) $info->version );
 
 		if ( version_compare( $settingVersion, $extVersion, $constraint ) )
 		{
@@ -245,7 +245,7 @@ foreach( $settings as $info )
 
 	$d = $rst->save();
 
-	$d = join( "\n; ", explode( "\n", $d ) );
+	$d = join( "\n; ", explode( "\n", (string) $d ) );
 	$desc = '';
 	foreach( explode( "\n", trim( $d ) ) as $s )
 	{

@@ -63,7 +63,7 @@ $iniFileInstruction = $this->x->determineIniFileInstruction( $iniFileName );
 $iniLine = $this->x->determineIniLine();
 
 // add quotes when necessary
-$this->x->extensionDir = strpos( $this->x->extensionDir, ' ') === false ? $this->x->extensionDir : "\"{$this->x->extensionDir}\"";
+$this->x->extensionDir = !str_contains( (string) $this->x->extensionDir, ' ') ? $this->x->extensionDir : "\"{$this->x->extensionDir}\"";
 ?>
 
 <?php if ($this->x->xdebugAsPhpExt && !$this->x->xdebugAsZendExt ) : ?>

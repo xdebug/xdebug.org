@@ -25,7 +25,7 @@ class ContentsCache
 				if ($serialized_contents) {
 					$contents = unserialize($serialized_contents);
 
-					if (get_class($contents) === $modelClass) {
+					if ($contents::class === $modelClass) {
 						return $contents;
 					}
 				}

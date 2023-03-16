@@ -7,7 +7,7 @@ $d = glob( "../data/news/*txt" );
 sort($d);
 $d = array_reverse( $d );
 
-$latest = preg_replace( '@^../data/news/(.*).txt$@', '\1', $d[0] );
+$latest = preg_replace( '@^../data/news/(.*).txt$@', '\1', (string) $d[0] );
 
 
 $feed = new ezcFeed();
@@ -22,12 +22,12 @@ $link->href = 'http://xdebug.org';
 
 foreach ( $d as $item )
 {
-	$date = preg_replace( '@^../data/news/(.*).txt$@', '\1', $item );
+	$date = preg_replace( '@^../data/news/(.*).txt$@', '\1', (string) $item );
 	$file = file( $item );
 	$title = array_shift( $file );
 
 	$item = $feed->add( 'item' );
-	$item->title = trim( $title );
+	$item->title = trim( (string) $title );
 	$item->description = join( '', $file );
 	$item->published = new DateTime( "$date 09:00" );
 }

@@ -57,7 +57,7 @@ foreach( $functions as $info )
 		{
 			$entry = "/** @return void */\n" . $entry;
 		}
-		else if ( strpos( $info->return_type, '|' ) !== false )
+		else if ( str_contains( (string) $info->return_type, '|' ) )
 		{
 			$entry = "/** @return {$info->return_type} */\n" . $entry;
 		}

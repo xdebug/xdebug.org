@@ -15,7 +15,7 @@ instructions</a>.</p>
 
 <div class="front_releases">
 <?php foreach ($this->downloads as $download) : ?>
-	<a name='<?=preg_replace('/[^0-9A-Za-z]/', '_', $download->version) ?>'></a>
+	<a name='<?=preg_replace('/[^0-9A-Za-z]/', '_', (string) $download->version) ?>'></a>
 	<strong>Xdebug <?= $download->version ?></strong>
 	<div class='copy'>Release date: <?=$download->date->format('Y-m-d') ?></div>
 	<ul>

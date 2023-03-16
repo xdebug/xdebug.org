@@ -12,7 +12,7 @@ class RelatedContentDescription
 	public $description;
 	public $url;
 
-	const TYPE_YOUTUBE = 1;
+	final public const TYPE_YOUTUBE = 1;
 
 	public function __construct(
 		int $type,

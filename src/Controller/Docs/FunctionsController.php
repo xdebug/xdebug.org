@@ -51,8 +51,8 @@ class FunctionsController
 			$function = trim( $contents[0], "= \n" );
 			$version = null;
 
-			if (strpos( $function, ',' ) !== false) {
-				list( $function, $version ) = explode( ',', $function );
+			if (str_contains( $function, ',' )) {
+				[$function, $version] = explode( ',', $function );
 			}
 
 			$arguments = trim( $contents[3] );
@@ -78,9 +78,7 @@ class FunctionsController
 	{
 		$functions = array_filter(
 			self::getFunctions(),
-			function ($function) use ($func) {
-				return $func & $function->type;
-			}
+			fn($function) => $func & $function->type
 		);
 
 		ksort($functions);
@@ -135,7 +133,7 @@ class FunctionsController
 		$formatted_data = '';
 		foreach( $contents as $line )
 		{
-			if ( substr( $line, 0, 4 ) == 'TXT:' )
+			if ( str_starts_with((string) $line, 'TXT:') )
 			{
 				if ( $state ) {
 					$formatted_data .= self::formatDataByState( $data, $state );
@@ -144,7 +142,7 @@ class FunctionsController
 				$state = 'TXT';
 				continue;
 			}
-			if ( substr( $line, 0, 8 ) == 'EXAMPLE:' )
+			if ( str_starts_with((string) $line, 'EXAMPLE:') )
 			{
 				if ( $state ) {
 					$formatted_data .= self::formatDataByState( $data, $state );
@@ -153,7 +151,7 @@ class FunctionsController
 				$state = 'EXAMPLE';
 				continue;
 			}
-			if ( substr( $line, 0, 7 ) == 'RESULT:' )
+			if ( str_starts_with((string) $line, 'RESULT:') )
 			{
 				if ( $state ) {
 					$formatted_data .= self::formatDataByState( $data, $state );

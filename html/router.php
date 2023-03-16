@@ -2,7 +2,7 @@
 
 $requested_uri = $_SERVER['REQUEST_URI'];
 
-if (strpos('router.php', $requested_uri) !== false) {
+if (str_contains('router.php', (string) $requested_uri)) {
     throw new \Exception('bad');
 }
 
@@ -19,7 +19,7 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::download()->render();
 	} elseif ($requested_uri === '/download/historical') {
 		$contents = XdebugDotOrg\Controller\HomeController::historicalReleases()->render();
-	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?(\/([a-z]{2}))?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/docs(\/([A-Za-z_]+))?(\/([a-z]{2}))?/', (string) $requested_uri, $matches)) {
 		$pages = [
 			'install', 'develop', 'trace',
 			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
@@ -58,7 +58,7 @@ try {
 		} else {
 			$contents = XdebugDotOrg\Controller\DocsController::index()->render();
 		}
-	} elseif (preg_match('/^\/announcements\/(\d\d\d\d-\d\d-\d\d)\/?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/announcements\/(\d\d\d\d-\d\d-\d\d)\/?/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\NewsController::item($matches[1])->render();
 	} elseif ($requested_uri === '/announcements') {
 		$contents = XdebugDotOrg\Controller\NewsController::items()->render();
@@ -75,19 +75,19 @@ try {
 	} elseif ($requested_uri === '/core2.css') {
 		header('Content-type: text/css');
 		die(file_get_contents('core2.css'));
-	} elseif (preg_match('@/(.*woff2)$@', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*woff2)$@', (string) $requested_uri, $matches)) {
 		header('Content-Type: font/woff2');
 		die(file_get_contents($matches[1]));
-	} elseif (preg_match('@/(.*png)$@', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*png)$@', (string) $requested_uri, $matches)) {
 		header('Content-Type: image/png');
 		die(file_get_contents($matches[1]));
-	} elseif (preg_match('@/(.*jpg)$@', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*jpg)$@', (string) $requested_uri, $matches)) {
 		header('Content-Type: image/jpeg');
 		die(file_get_contents($matches[1]));
-	} elseif (preg_match('@/(.*svg)$@', $requested_uri, $matches)) {
+	} elseif (preg_match('@/(.*svg)$@', (string) $requested_uri, $matches)) {
 		header('Content-Type: image/svg+xml');
 		die(file_get_contents($matches[1]));
-	} elseif (preg_match('/^\/ci(\?r=.*)?/', $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/ci(\?r=.*)?/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();
 	} else {
 		header("HTTP/1.0 404 Not Found");

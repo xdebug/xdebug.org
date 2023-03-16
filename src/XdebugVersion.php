@@ -106,7 +106,7 @@ class XdebugVersion
 	{
 		$html = false;
 		$htmlData = null;
-		if ( strpos( $data, 'extension_dir</td>' ) !== false )
+		if ( str_contains( $data, 'extension_dir</td>' ) )
 		{
 			$html = true;
 			$htmlData = $data;
@@ -326,7 +326,7 @@ class XdebugVersion
 	/**
 	 * @return string|true
 	 */
-	public function determineSupported()
+	public function determineSupported(): string|bool
 	{
 		if ( !$this->version || !$this->phpApi )
 		{
@@ -444,7 +444,7 @@ class XdebugVersion
 		{
 			foreach ( $this->configExtraFiles as $extraFile )
 			{
-				if ( preg_match( '/xdebug/', $extraFile ) )
+				if ( preg_match( '/xdebug/', (string) $extraFile ) )
 				{
 					$iniFileName = $extraFile;
 					return "Update <code>{$extraFile}</code> to have";
@@ -512,7 +512,7 @@ class XdebugVersion
 
 		if ( $this->extensionDir !== '' )
 		{
-			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
+			$line .= !str_contains( $this->extensionDir, ' ') ? '' : '"';
 			$line .= $this->extensionDir . $this->dirSep;
 		}
 
@@ -527,7 +527,7 @@ class XdebugVersion
 
 		if ( $this->extensionDir !== '' )
 		{
-			$line .= strpos( $this->extensionDir, ' ') === false ? '' : '"';
+			$line .= !str_contains( $this->extensionDir, ' ') ? '' : '"';
 		}
 
 		return $line;
