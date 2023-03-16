@@ -9,3 +9,4 @@
 2023-01-01	Offers.com	https://offers.com
 2023-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2023-01-01	VEMA eG	https://www.vema-eg.de
+2023-03-09	Bubble Shooter	https://www.bubbleshooter.net/

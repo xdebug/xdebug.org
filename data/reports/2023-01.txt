@@ -1,0 +1,14 @@
+4.56	11.97	1.83	7.91	0.25	26.52
+2023-01-05	bug	0.5	Update wizard to warn about 32-bit; 
+2023-01-10	bug	1	Triaging and updating existing YouTrack/PhpStorm tickets
+2023-01-11	bug	4	Trying to find out mode corruption bug(s)
+2023-01-12	bug	2.5	Triaging wrong features enabled issue
+2023-01-12	bug	3.75	Trying to find out mode corruption bug(s)
+2023-01-17	bug	0.5	Fixed ZPP warnings and a few crashes if modes weren’t enabled
+2023-01-18	support	0.5	Going through support emails and StackOverflow questions
+2023-01-19	docs	1	Document new client discovery header
+2023-01-23	support	0.5	Triaging tickets, and engaging with xdebug.mode issue PR author
+2023-01-25	bug	1	Investigating float var_dump display issues
+2023-01-27	support	1	Hunting down sshfs issues
+2023-01-27	support	1.5	Investigating ssh:// file path debugging with VS Code
+2023-01-30	support	0.5	Trying out Damjan’s new VS Code build for ssh debugging
