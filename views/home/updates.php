@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_1'></a>[2023-03-21] &mdash; Xdebug 3.2.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2144); ?>: Xdebug 3.2.0 ignores xdebug.mode and enables all features</dd>
+<dd>Fixed <?= bug(2145); ?>: Xdebug 3.2.0 crash PHP on Windows if xdebug.mode = off</dd>
+<dd>Fixed <?= bug(2146); ?>: apache2 segfaulting with version 3.2.0 on PHP 8.0</dd>
+<dd>Fixed <?= bug(2148); ?>: Icon for link to docs in xdebug_info() HTML output does not always render correctly</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_0'></a>[2022-12-08] &mdash; Xdebug 3.2.0</dt>
 
 <dd><h3>New Features</h3></dd>
