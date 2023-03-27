@@ -1,12 +1,12 @@
 <?php
+require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/../config.php');
 
 $requested_uri = $_SERVER['REQUEST_URI'];
 
 if (str_contains('router.php', (string) $requested_uri)) {
     throw new \Exception('bad');
 }
-
-require_once(__DIR__ . '/../vendor/autoload.php');
 
 $contents = '';
 
@@ -70,6 +70,19 @@ try {
 		$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 	} elseif ($requested_uri === '/log') {
 		$contents = XdebugDotOrg\Controller\SupportController::log()->render();
+	} elseif (preg_match('/^\/support\/buy\/(\w+)\/(\w+)/', (string) $requested_uri, $matches)) {
+		$contents = XdebugDotOrg\Controller\StripeController::stripeResult( $matches[1], $matches[2] )->render();
+
+	} elseif (preg_match('/^\/support\/buy\/(\w+)/', (string) $requested_uri, $matches)) {
+		$result = XdebugDotOrg\Controller\StripeController::buyForm($matches[1]);
+		if ($result instanceof XdebugDotOrg\Core\HtmlResponse) {
+			$contents = $result->render();
+		} else if ($result instanceof XdebugDotOrg\Core\HtmlRedirect) {
+			header("HTTP/1.1 302 Found");
+			header("Location: " . $result->getURI());
+			exit();
+		}
+
 	} elseif ($requested_uri === '/wizard') {
 		$contents = XdebugDotOrg\Controller\WizardController::index()->render();
 	} elseif ($requested_uri === '/core2.css') {
