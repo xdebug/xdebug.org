@@ -10,6 +10,6 @@
 	</div>
 </nav>
 
-<?php if (!in_array($_SERVER['REQUEST_URI'], ['/support', '/log'])) : ?>
+<?php if ( !in_array( $_SERVER['REQUEST_URI'], [ '/log' ] ) && ( !str_starts_with( $_SERVER['REQUEST_URI'], '/support' ) ) ) : ?>
 	<div class="content_width" id="support">If you find Xdebug useful, please consider <a href='/support'>supporting the project</a>.</div>
 <?php endif ?>

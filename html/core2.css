@@ -433,10 +433,10 @@ div.supported_languages span:not(:first-child)::before {
 }
 
 .support_options .option {
-    width: 30%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+	width: 30%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 
 @media all and (max-device-width: 640px) {
@@ -460,7 +460,7 @@ div.supported_languages span:not(:first-child)::before {
 
 .support_options .option:first-child h2 {
 	background-color: #e8e8e8;
-    border-top-color: #a9a9a9;
+	border-top-color: #a9a9a9;
 }
 
 .support_options h3, .support_options h4 {
@@ -507,17 +507,20 @@ div.supported_languages span:not(:first-child)::before {
 
 .support_options .contact {
 	background: #e5f5d3;
-    padding: 1em;
-    border: 2px solid #307e1e;
-    text-align: center;
-    border-left: 0;
-    border-right: 0;
+	padding: 1em;
+	border: 2px solid #307e1e;
+	text-align: center;
+	border-left: 0;
+	border-right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .support_options .option:first-child .contact {
 	background-color: #e8e8e8;
-    border-color: #a9a9a9;
-    font-weight: bold;
+	border-color: #a9a9a9;
+	font-weight: bold;
 }
 
 .terms p {
@@ -532,16 +535,16 @@ div.supported_languages span:not(:first-child)::before {
 }
 
 .supporters li {
-    list-style: none;
-    display: inline-block;
-    border: 3px outset #9fc596;
-    margin: 0 1em 1em 0;
+	list-style: none;
+	display: inline-block;
+	border: 3px outset #9fc596;
+	margin: 0 1em 1em 0;
 }
 
 .supporters li a {
-    display: inline-block;
-    padding: .25em .5em;
-    background-color: #e5f5d5;
+	display: inline-block;
+	padding: .25em .5em;
+	background-color: #e5f5d5;
 }
 
 .front_releases {
@@ -554,6 +557,13 @@ div.supported_languages span:not(:first-child)::before {
     max-width: 100%;
 }
 
+.back_campaign {
+	font-size: larger;
+}
+.back_campaign ul li {
+	padding: 0em 0.5em;
+	background-color: #e5f5d5;
+}
 
 .releases {
 	max-width: initial;
@@ -698,3 +708,7 @@ span.footnote { font-size: xx-small; vertical-align: super; }
 div.opcache-0, div.opcache-1 { font-size: small; color: white; border-radius: 10px; }
 div.opcache-0 { background-color: red }
 div.opcache-1 { background-color: green }
+
+form.support input[type='text'], form.support select, form.support textarea {
+	width: 100%
+}

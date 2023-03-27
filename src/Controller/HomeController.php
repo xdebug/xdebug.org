@@ -11,18 +11,6 @@ class HomeController
 {
 	public static function getSupportersModel() : Supporters
 	{
-		$d = \dir( '../data/reports' );
-
-		$files = [];
-
-		while ( false !== ( $entry = $d->read() ) ) {
-			if (preg_match( '@^20[0-9][0-9]-[01][0-9]\.txt$@', $entry, $m)) {
-				$files[] = $entry;
-			}
-		}
-
-		\rsort($files);
-
 		return new Supporters(
 			self::get_supporters()
 		);
