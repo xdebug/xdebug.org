@@ -70,6 +70,9 @@ try {
 		$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 	} elseif ($requested_uri === '/log') {
 		$contents = XdebugDotOrg\Controller\SupportController::log()->render();
+	} elseif ($requested_uri === '/ai') {
+		$contents = XdebugDotOrg\Controller\AiController::index()->render();
+
 	} elseif (preg_match('/^\/support\/buy\/(\w+)\/(\w+)/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\StripeController::stripeResult( $matches[1], $matches[2] )->render();
 
