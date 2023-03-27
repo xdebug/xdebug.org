@@ -43,10 +43,18 @@ class StripeController
 
 		$stripeSession = $stripe->getSession( $guid );
 
-		if ( $stripeSession != NULL && $mode === 'success' && $stripeSession->hasPaid() )
+		if ( $stripeSession != NULL )
 		{
-			$stripeSession->updateAsSuccess();
-			return new HtmlResponse( $stripeSession, 'stripe/thanks.php' );
+			if ( $mode === 'success' && $stripeSession->hasPaid() )
+			{
+				$stripeSession->updateAsSuccess();
+				return new HtmlResponse( $stripeSession, 'stripe/thanks.php' );
+			}
+			else
+			{
+				$stripeSession->updateAsFailure();
+				return new HtmlResponse( $stripeSession, 'stripe/cancelled.php' );
+			}
 		}
 
 		return new HtmlResponse( $stripeSession, 'stripe/cancelled.php' );
