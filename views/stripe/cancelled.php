@@ -19,7 +19,7 @@ fund the development and maintenance of Xdebug.
 </p>
 <p>
 If you want to support Xdebug in a different way, please do not
-hesitate to reach out to us.
+hesitate to <a href="mailto:support@xdebug.org">reach out to us</a>.
 </p>
 <p>
 Thank you for considering supporting Xdebug.
