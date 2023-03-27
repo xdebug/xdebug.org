@@ -25,7 +25,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 
 		<dt><a href='/docs/profiler'>Profiling</a></dt>
 		<dd>Allows you, with the help of visualisation tools, to analyse the
-		performance of your PHP application and find bottlenecks.</a>
+		performance of your PHP application and find bottlenecks.</dd>
 
 		<dt><a href='/docs/code_coverage'>Code Coverage Analysis</a></dt>
 		<dd>To show which parts of your code base are executed when running
@@ -43,7 +43,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<p><a href="/announcements">See all announcements</a></p>
 </div>
 
-<a name="business_supporters"></a>
+<a id="business_supporters"></a>
 <div class="front_supporters">
 
 	<p>Xdebug is made possible through the generous support of Xdebug's business-tier sponsors:</p>

@@ -53,6 +53,6 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 </div>
 
 <div class="terms">
-<p>* Subscriptions are yearly, and can be cancelled two weeks before renewal by e-mail. Price excluding VAT.</li>
+<p>* Subscriptions are yearly, and can be cancelled two weeks before renewal by e-mail. Price excluding VAT.</p>
 <p>† Invoices have a default 14 day payment term.</p>
 </div>
