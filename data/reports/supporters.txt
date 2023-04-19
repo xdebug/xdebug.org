@@ -1,5 +1,4 @@
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
-2021-12-01	Find My Electric	https://www.findmyelectric.com/
 2022-02-01	iO	https://www.iodigital.com/en
 2022-03-08	Supermetrics	https://supermetrics.com
 2022-11-01	TYPO3 GmbH	https://typo3.com
@@ -10,3 +9,4 @@
 2023-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo
 2023-01-01	VEMA eG	https://www.vema-eg.de
 2023-03-09	Bubble Shooter	https://www.bubbleshooter.net/
+2023-04-30	Find My Electric	https://www.findmyelectric.com/
