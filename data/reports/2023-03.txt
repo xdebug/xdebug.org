@@ -1,0 +1,7 @@
+5.04	7.85	1.00	7.91	0.25
+2023-03-08	bug	4.5	Trying to support Laravel serializable closures
+2023-03-13	bug	1	Trying to reproduce modes-enabled bug
+2023-03-15	bug	0.5	Triaging PhpStorm bug with globals and -c 1
+2023-03-20	bug	2.75	Fixing issue #2144: All modes are enabled in 3.2 in ZTS environments
+2023-03-21	release	2.5	Merging the #2144 PR, and making 3.2.1 release
+2023-03-31	xdebug3	1.5	Tests etc for PHP 8.3
