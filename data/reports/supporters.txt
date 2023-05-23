@@ -10,3 +10,4 @@
 2023-01-01	VEMA eG	https://www.vema-eg.de
 2023-03-09	Bubble Shooter	https://www.bubbleshooter.net/
 2023-04-19	Find My Electric	https://www.findmyelectric.com/
+2023-05-23	11com7	https://www.11com.de
