@@ -86,6 +86,7 @@ class StripeHandler
 		$optionalProperties = [
 			'billing_email',
 			'newsletter_email',
+			'vat_number',
 			'link_text',
 			'link_target',
 		];
