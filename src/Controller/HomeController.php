@@ -33,9 +33,9 @@ class HomeController
 		return new HtmlResponse(null, 'home/updates.php');
 	}
 
-	public static function license() : HtmlResponse
+	public static function license(string $version) : HtmlResponse
 	{
-		return new HtmlResponse(null, 'home/license.php');
+		return new HtmlResponse(null, "home/license_{$version}.php");
 	}
 
 	public static function getAllDownloadsModel() : Downloads

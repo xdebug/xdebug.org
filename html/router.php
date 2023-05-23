@@ -63,7 +63,9 @@ try {
 	} elseif ($requested_uri === '/announcements') {
 		$contents = XdebugDotOrg\Controller\NewsController::items()->render();
 	} elseif ($requested_uri === '/license') {
-		$contents = XdebugDotOrg\Controller\HomeController::license()->render();
+		$contents = XdebugDotOrg\Controller\HomeController::license('1.03')->render();
+	} elseif (preg_match('/^\/license\/((1\.01)|(1\.03))/', (string) $requested_uri, $matches)) {
+		$contents = XdebugDotOrg\Controller\HomeController::license($matches[1])->render();
 	} elseif ($requested_uri === '/support') {
 		$contents = XdebugDotOrg\Controller\SupportController::index()->render();
 	} elseif ($requested_uri === '/reporting-bugs') {
