@@ -7,6 +7,12 @@ if ( $SK === false || $SK === '' )
 	$SK = getenv( 'STRIPETESTSECRET' );
 	$STRIPE_TEST = true;
 }
+if ( $SK === false || $SK === '' )
+{
+	$SK = 'unavailable';
+	$STRIPE_TEST = true;
+}
+
 $stripeClient = new \Stripe\StripeClient( $SK );
 
 /* MongoDB Link */
