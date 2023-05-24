@@ -2,8 +2,10 @@
 
 <p class="note">This setting can only be set in <code>php.ini</code> or
 files like <code>99-xdebug.ini</code> that are read when a PHP process starts
-(directly, or through php-fpm), but not in <code>.htaccess</code> and
-<code>.user.ini</code> files, which are read per-request.</p>
+(directly, or through php-fpm). You can not set this value in
+<code>.htaccess</code> and <code>.user.ini</code> files, which are read
+per-request, nor through <code>php_admin_value</code> as used in Apache VHOSTs
+and PHP-FPM pools.</p>
 
 <p>The following values are accepted:</p>
 
