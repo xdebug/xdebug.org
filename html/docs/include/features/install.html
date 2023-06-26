@@ -192,17 +192,22 @@ following steps:
 </p>
 <p>
 <ol>
-<li><p>Unpack the tarball:</p>
+<li><p>If you downloaded a <strong>tarball</strong>, unpack it:</p>
 <p><code>tar -xzf xdebug-[KW:last_release_version].tgz</code></p>
 <p>You should <strong>not</strong>
 unpack the tarball inside the PHP source code tree.
 Xdebug is compiled separately, all by itself, as stated above.</p></li>
 
-<li><p><code>cd xdebug-[KW:last_release_version]</code></p></li>
+<li><p>Change into the source directory:</p>
+	<ol>
+		<li>tarball: <code>cd xdebug-[KW:last_release_version]</code></li>
+		<li>GIT clone: <code>cd xdebug</code></li>
+	</ol>
+</li>
 
 <li><p><code>phpize</code></p>
 <p>If phpize is not in your path, please make sure
-that it is by expanding the <code>PATH</code> environment variable. Make sure
+that it is, by expanding the <code>PATH</code> environment variable. Make sure
 you use the phpize that belongs to the PHP version that you want to use Xdebug
 with. See <a href='/docs/faq#api'>this FAQ entry</a> if you're having some
 issues with finding which phpize to use.</p></li>
