@@ -167,7 +167,7 @@ class HomeController
 	}
 
 	/**
-	 * @return array<int, array{0: string, 1: string}>
+	 * @return array<int, array{0: string, 1: string, 2: ?string, 3: bool}>
 	 */
 	private static function get_supporters() : array
 	{
@@ -179,7 +179,7 @@ class HomeController
 
 		foreach ($f as $line) {
 			$line = trim( (string) $line );
-			[$date, $name, $link] = explode( "\t", $line );
+			@[$date, $name, $link, $svg] = explode( "\t", $line );
 
 			$now = new \DateTimeImmutable();
 			$d = new \DateTimeImmutable( $date );
@@ -194,7 +194,19 @@ class HomeController
 				continue;
 			}
 
-			$supporters[] = [$link, $name];
+			$logo = null;
+			$both = false;
+			if ( $svg && strlen( $svg ) > 0 )
+			{
+				$logo = $svg;
+				if ( $svg[0] === '+' )
+				{
+					$logo = substr( $svg, 1 );
+					$both = true;
+				}
+			}
+
+			$supporters[] = [$link, $name, $logo, $both];
 		}
 
 		return $supporters;

@@ -539,11 +539,12 @@ div.supported_languages span:not(:first-child)::before {
 	display: inline-block;
 	border: 3px outset #9fc596;
 	margin: 0 1em 1em 0;
+	vertical-align: middle;
 }
 
 .supporters li a {
 	display: inline-block;
-	padding: .25em .5em;
+	padding: .25em .5em 0em 0.5em;
 	background-color: #e5f5d5;
 }
 
