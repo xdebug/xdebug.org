@@ -548,6 +548,28 @@ div.supported_languages span:not(:first-child)::before {
 	background-color: #e5f5d5;
 }
 
+.supporters li.text a {
+	padding: .75em 1em 0.5em 1em;
+}
+
+.supporters li.both div {
+	display: flex;
+	align-items: center;
+	background-color: #e5f5d5;
+}
+
+.supporters li.both div div img {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+}
+
+.supporters li.logo a img {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+}
+
 .front_releases {
 	width: 100%;
 	float: left;

@@ -3,7 +3,7 @@
 2022-03-08	Supermetrics	https://supermetrics.com
 2022-11-01	TYPO3 GmbH	https://typo3.com	typo3.svg
 2022-11-01	Tideways	https://tideways.com/
-2023-01-01	Xdebug Cloud	https://xdebug.cloud
+2023-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
 2023-01-01	Seiden Group	http://www.seidengroup.com
 2023-01-01	Offers.com	https://offers.com
 2023-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
