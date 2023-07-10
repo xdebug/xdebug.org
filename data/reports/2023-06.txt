@@ -1,0 +1,10 @@
+4.28	7.13	1.66	11.25	0.25
+2023-04-04	bug	1	Spl Iterator test cases
+2023-05-23	docs	1	License update; showing off the new path-mappings branch
+2023-05-24	bug	1	Issue #2180: Segfault with extended SplFixedArray
+2023-05-24	bug	5.5	Triage 
+2023-06-15	xdebug3	4	Source Map Research and specs
+2023-06-16	xdebug3	3	Source Map Research and specs
+2023-06-15	docs	0.5	Update version compat table
+2023-06-21	xdebug3	1.5	Implementing issue #2183: error message with DBGp eval
+2023-06-26	docs	0.5	Update installation instructions from source
