@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_2_2'></a>[2023-07-14] &mdash; Xdebug 3.2.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2175); ?>: Crash with EXC_BAD_ACCESS in xdebug_str_create</dd>
+<dd>Fixed <?= bug(2180); ?>: Crash on extended SplFixedArray</dd>
+<dd>Fixed <?= bug(2182); ?>: Segfault with ArrayObject on stack</dd>
+<dd>Fixed <?= bug(2186); ?>: Segfault with trampoline functions and debugger activation</dd>
+
+<hr/>
+
 <dt><a name='x_3_2_1'></a>[2023-03-21] &mdash; Xdebug 3.2.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
