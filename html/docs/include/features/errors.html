@@ -492,6 +492,89 @@
 </p>
 </dd>
 
+<a name='DBG-W-OPCACHE'></a>
+<dt>DBG-W-OPCACHE</dt>
+<dd>
+<p class="reason">
+	Occurs when the debugger detects that Zend OPcache is loaded after Xdebug
+	as Zend extension.
+</p>
+<p>
+	This is problematic, as both Xdebug and OPcache insert handlers into PHP's
+	execution pipeline. If OPcache is loaded after Xdebug, it installs its own
+	handler, which then has the possibility to prevent Xdebug from doing work.
+</p>
+<p>
+	This problem does not occur if Xdebug is loaded after OPcache, because
+	Xdebug does not prevent other extensions from doing their work.
+</p>
+<p>
+	You can verify the loading order by searching for the "Zend Scripting
+	Language Engine" section in <code>phpinfo()</code> output. It is next to
+	the Zend Engine logo. The following shows the <em>wrong</em> loading order,
+	because Zend OPcache follows Xdebug:
+</p>
+<pre>
+This program makes use of the Zend Scripting Language Engine:
+Zend Engine v4.1.21, Copyright (c) Zend Technologies
+    with Xdebug v3.2.3, Copyright (c) 2002-2023, by Derick Rethans
+    with Zend OPcache v8.1.21, Copyright (c), by Zend Technologies
+</pre>
+<p>
+	Suggested solutions:
+	<ul>
+		<li>
+			<p>
+				Change the order in which INI files are loaded so that the one
+				for Xdebug sorts later than OPcache.
+			</p>
+			<p>
+				You can find which INI files are loaded in
+				<code>phpinfo()</code> output behind "Loaded Configuration
+				File" and "Additional .ini files parsed".
+			</p>
+			<p>
+				This is an example of how this should look like, with
+				<code>99-xdebug.ini</code> sorting after
+				<code>20-opcache.ini</code>:
+			</p>
+		</li>
+	</ul>
+</p>
+<pre>
+Configuration File (php.ini) Path:       /usr/local/php/lib
+Loaded Configuration File:               /usr/local/php/lib/php.ini
+Scan this dir for additional .ini files: /usr/local/php/lib/conf.d
+Additional .ini files parsed:            /usr/local/php/lib/conf.d/20-mongodb.ini,
+                                         /usr/local/php/lib/conf.d/20-opcache.ini,
+                                         /usr/local/php/lib/conf.d/99-xdebug.ini
+</pre>
+<p>
+	<ul>
+		<li>
+			Stop OPcache from loading, by removing the
+			<code>zend_extension=opcache</code> line from all INI files that
+			are loaded, or by removing a <code>20-opcache.ini</code> file or
+			similar, if it exists.
+		</li>
+		<li>
+			Disable OPcache, by setting <code>opcache.enable=0</code> in
+			any INI file.
+		</li>
+	</ul>
+</p>
+<p>
+	Once you have made the necessary changes, and restarted your webserver, or
+	PHP-FPM processes, the correct order should look like this:
+</p>
+<pre>
+This program makes use of the Zend Scripting Language Engine:
+Zend Engine v4.1.21, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.21, Copyright (c), by Zend Technologies
+    with Xdebug v3.2.3, Copyright (c) 2002-2023, by Derick Rethans
+</pre>
+</dd>
+
 <a name='DBG-W-SENDERR'></a>
 <dt>DBG-W-SENDERR</dt>
 <dd>
