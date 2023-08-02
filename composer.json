@@ -18,5 +18,10 @@
         "stripe/stripe-php": "^10.10",
         "ext-mongodb": "^1.5",
         "zetacomponents/mail": "^1.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "ocramius/package-versions": true
+        }
     }
 }
