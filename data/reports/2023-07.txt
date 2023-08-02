@@ -1,0 +1,8 @@
+4.44	7.66	1.83	11.24	0.25
+2023-07-04	bug	2	Fixed #2182: Crash with ArrayObject on stack
+2023-07-10	xdebug3	1.5	Adding tests for coverage issues without curly breaces and else
+2023-07-11	bug	1.25	Triaging and fixing #2186
+2023-07-13	bug	0.75	Finialising the #2186 bug fix
+2023-07-13	release	2	Releasing 23.2.2
+2023-07-26	xdebug3	3	PHP 8.3 test updates; better step-over with Fibers; GHA maintenance
+2023-07-31	bug	3.25	Analysing why sometimes resolved breakpoints don’t work, adding a warning, and new documentation
