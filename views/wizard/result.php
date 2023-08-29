@@ -119,6 +119,9 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
             </li>
             <li>Run: <code>./configure</code></li>
 			<li>Run: <code>make</code></li>
+			<?php if ( $this->x->distribution == 'Darwin' ) : ?>
+				<li>Run: <code>mkdir -p <?= $this->x->extensionDir ?></code></li>
+			<?php endif ?>
 			<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?>/</code></li>
 		<?php endif ?>
 	<?php else : ?>
