@@ -119,7 +119,7 @@ Zend Extension Api No:   <?= $this->x->zendApi ?>
             </li>
             <li>Run: <code>./configure</code></li>
 			<li>Run: <code>make</code></li>
-			<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?></code></li>
+			<li>Run: <code>cp modules/xdebug.so <?= $this->x->extensionDir ?>/</code></li>
 		<?php endif ?>
 	<?php else : ?>
 		<li>Move the downloaded file to <?= $this->x->extensionDir ?>, and rename it to <code>php_xdebug.dll</code></li>
