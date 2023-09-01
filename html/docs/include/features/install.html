@@ -84,6 +84,24 @@ Run:
 <pre class='example'>
 pecl install xdebug
 </pre>
+
+<p class="warning">You should ignore any prompts to add
+<code>"extension=xdebug.so"</code> to
+<code>php.ini</code> &mdash; this <strong>will</strong> cause problems.</p>
+
+<p>In some cases <code>pecl</code> will change the <code>php.ini</code> file to
+add a configuration line to load Xdebug. You can check whether it did by
+running <code>php -v</code>. If Xdebug shows up with a version number, than
+you're all set and you can configure Xdebug's other functions, such as
+[FEAT:step_debug], or [FEAT:profiler].</p>
+
+<p>If it is there, you can skip to the <a href='#what-is-next'>What's Next?</a>
+section.</p>
+
+<p>If <code>pecl</code> did not add the right line, skip to the <a
+href='#configure-php'>Configure PHP</a> section.</p>
+
+<h3>Issues on macOS <a name='macos-issues' href="#macos-issues">#</a></h3>
 <p>
 On Apple M1 hardware, programs can either be compiled for the native M1/ARM64
 architecture, or for the emulated x86_64 architecure. Sometimes there is a
@@ -113,19 +131,6 @@ And if it's <code>x86_64</code>, then you need to run:
 <pre class='example'>
 arch -x86_64 sudo pecl install xdebug
 </pre>
-
-<p class="warning">You should ignore any prompts to add
-<code>"extension=xdebug.so"</code> to
-<code>php.ini</code> &mdash; this <strong>will</strong> cause problems.</p>
-
-<p>In some cases <code>pecl</code> will change the <code>php.ini</code> file to
-add a configuration line to load Xdebug. You can check whether it did by
-running <code>php -v</code>. If Xdebug shows up with a version number, than
-you're all set and you can configure Xdebug's other functions, such as
-[FEAT:step_debug], or [FEAT:profiler].</p>
-
-<p>If <code>pecl</code> did not add the right line, skip to the <a
-href='#configure-php'>Configure PHP</a> section.</p>
 
 <p class='footnote'><sup><a name='1' href="#1">1</a></sup> On macOS, you should have PHP installed with <a href='https://formulae.brew.sh/formula/php'>Homebrew</a>.</p>
 
