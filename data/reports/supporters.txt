@@ -13,3 +13,4 @@
 2023-05-23	11com7	https://www.11com7.de	11com7.svg
 2023-05-23	IO Belgium	https://www.iodigital.com	+io.svg
 2023-05-25	b13	https://b13.com
+2023-08-28	REWE Digital GmbH	https://rewe-digital.com

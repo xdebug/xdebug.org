@@ -1,0 +1,10 @@
+11.48	6.22	1.99	12.08	0.25
+2023-08-01	xdebug3	2.5	Triage and adding local vars to xdebug_get_function_stack; fixing tests for PHP 8.3
+2023-08-01	docs	0.75	Writing blog post about breakpoint resolving
+2023-08-03	xdebug3	4	Adding local vars to xdebug_get_function_stack
+2023-08-14	xdebug3	4	Issue #2195: Add ‘from_exception’ option to ‘xdebug_get_function_stack’
+2023-08-16	xdebug3	3	Issue #2194: Add ‘params_as_values’ option to ‘xdebug_get_function_stack’
+2023-08-18	bug	5	Re-fixed exception chains showing stack traces, after I disabled that for PHP 8.2 and later
+2023-08-23	xdebug3	1.5	Issue #2197: Add time index and memory to output of ‘xdebug_get_function_stack’
+2023-08-23	xdebug3	4	Issue #476: Redo showing nested/previous exceptions in stack dumps
+2023-08-24	bug	2.25	Issue #450: Incomplete backtraces when an exception gets rethrown
