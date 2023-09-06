@@ -16,7 +16,7 @@ class XdebugVersion
         '8.0' => [ 'src' => '3.2.2',       'win' => '3.2.2' ],
         '8.1' => [ 'src' => '3.2.2',       'win' => '3.2.2' ],
         '8.2' => [ 'src' => '3.2.2',       'win' => '3.2.2' ],
-        '8.3' => [ 'src' => '3.3.0alpha1', 'win' => '3.3.0alpha1' ]
+        '8.3' => [ 'src' => '3.3.0alpha2', 'win' => '3.3.0alpha2' ]
     ];
 
 	/* Start one is inclusive, end is exclusive */

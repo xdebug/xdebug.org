@@ -22,6 +22,14 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_3_0alpha2'></a>[2023-09-06] &mdash; Xdebug 3.3.0alpha2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2200); ?>: PECL package file has wrong max PHP version number, and peclweb refuses the package</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_0alpha1'></a>[2023-09-06] &mdash; Xdebug 3.3.0alpha1</dt>
 
 <dd><h3>New Features</h3></dd>

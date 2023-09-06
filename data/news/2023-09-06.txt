@@ -1,4 +1,4 @@
-Xdebug 3.3.0alpha1 is out!
+Xdebug 3.3.0alpha2 is out!
 <p>
 This is an alpha release to be able to test Xdebug with PHP 8.3. Not all the
 features on the <a
@@ -9,13 +9,13 @@ have been implemented, but neither is the scope for Xdebug 3.3 final yet.
 <p>
 Although the primary reason for this release is PHP 8.3 compatibility, there
 are also a few features for the <code>xdebug_get_function_stack()</code>
-method. Besides that, a few bugs have been fixed with regards to chained and
+method. Besides that, a few bugs have been fixed with regard to chained and
 incomplete backtraces.
 </p>
 
 <p>
 The full list of changes can be found on the
-<a href="https://xdebug.org/updates#x_3_3_0alpha1">updates</a> page.
+<a href="https://xdebug.org/updates#x_3_3_0alpha2">updates</a> page.
 </p>
 
 <p>
