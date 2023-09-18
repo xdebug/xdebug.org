@@ -75,6 +75,11 @@ class SettingsController
 			\FUNC_FUNCTION_TRACE
 		],
 
+		'collect_params' => [
+			'boolean', 'true', '>= 3.3',
+			\FUNC_FUNCTION_TRACE
+		],
+
 		'collect_return' => [
 			'boolean', 'false', null,
 			\FUNC_FUNCTION_TRACE,
