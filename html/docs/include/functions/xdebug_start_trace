@@ -25,33 +25,45 @@ the beginning of the request because [CFG:start_with_request] is set to
 
 TXT:
 The <i>options</i> parameter is a bitfield;
-currently there are three options:
-
-TXT:
-The <i>options</i> parameter is a bitfield;
-currently there are three options:
+currently there are four options:
 
 <dl>
 <dt>XDEBUG_TRACE_APPEND (1)</dt>
-<dd>makes the trace file open in append mode rather than
-overwrite mode</dd>
+<dd>Trace file data will be appended to an already existing file with the same
+name, instead of it being overwritten.</dd>
 <dt>XDEBUG_TRACE_COMPUTERIZED (2)</dt>
-<dd>creates a trace file with
-the format as described under <i>1</i> "[CFG:trace_format]".</dd>
+<dd>Switches the file format to the tab separated format. The format is described in
+the [CFG:trace_format] setting as "format 1".</dd>
 <dt>XDEBUG_TRACE_HTML (4)</dt>
-<dd>creates a trace file as an HTML table</dd>
+<dd>Switches to a file format that shows data as an HTML table</dd>
 <dt>XDEBUG_TRACE_NAKED_FILENAME (8)</dt>
-<dd>Normally, Xdebug always adds ".xt" to the end of the filename that you
-pass in as first argument to this function. With the
-<i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, ".xt" is not added.</dd>
+<dd>With the <i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, <code>.xt</code> is
+not added automatically to the end of trace file names.</dd>
 </dl>
 
+EXAMPLE:
+<?php
+xdebug_start_trace("/tmp/xdebug.trace", XDEBUG_TRACE_COMPUTERIZED|XDEBUG_TRACE_NAKED_FILENAME);
+?>
+
 TXT:
-The settings [CFG:collect_assignments] and [CFG:collect_return] influence what
-information is logged to the trace file and the setting [CFG:trace_format]
-influences the format of the trace file.
+The line above creates a file named <code>/tmp/xdebug.trace</code>.
+
+TXT:
+It does not add <code>.xt</code> to the end of the filename (due to
+<code>XDEBUG_TRACE_NAKED_FILENAME</code>).
+
+TXT:
+The tab-separated trace file format is used due to
+<code>XDEBUG_TRACE_COMPUTERIZED</code>.
+
+TXT:
+The settings [CFG:collect_assignments], [CFG:collect_params], and
+[CFG:collect_return] influence what information is logged to the trace file and
+the setting [CFG:trace_format] influences the format of the trace file.
 
 TXT:
 The full path and filename to which Xdebug traces is returned from this
-function. This will be either the filename you pass in (potentially with ".xt"
-added), or the auto generated filename if no filename has been passed in.
+function. This will be either the filename you pass in (potentially with
+<code>.xt</code> added), or the auto generated filename if no filename has been
+passed in.
