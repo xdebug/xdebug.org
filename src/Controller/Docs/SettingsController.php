@@ -27,7 +27,7 @@ class SettingsController
 			\FUNC_BASIC
 		],
 		'max_nesting_level' => [
-			'integer', 256, null,
+			'integer', 512, null,
 			\FUNC_BASIC
 		],
 		'max_stack_frames' => [
