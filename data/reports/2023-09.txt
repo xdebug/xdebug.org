@@ -1,0 +1,14 @@
+3.93	7.49	1.99	12.08	0.25
+2023-09-03	bug	0.5	Reinvestigating comments to #1374
+2023-09-05	xdebug3	4	Preparing releases etc for PHP 8.3 and a 3.3.0alpha1 release
+2023-09-06	xdebug3	0.75	Finalising 3.3.0alpha1 release
+2023-09-06	xdebug3	0.75	Making 3.3.0alpha2 release as PECL web was broken
+2023-09-08	xdebug3	0.25	Issue #2203: Change default max_nesting_level to 512
+2023-09-14	bug	2.5	Triaging issues
+2023-09-18	xdebug3	3	Issue #2077: Reimplementing collect_params, after a few exploratory implementations
+2023-09-19	xdebug3	2	Issue #1732: Finalise and merge flamegraph tracing output
+2023-09-25	bug	1	Investigate read after free with generators
+2023-09-25	docs	1.5	Make flamegraph video
+2023-09-25	docs	3	Make dbgpProxy video
+2023-09-28	xdebug3	4	Switching from intercepting execute_ex to Observer API
+2023-09-29	xdebug3	5	Switching from intercepting execute_ex to Observer API
