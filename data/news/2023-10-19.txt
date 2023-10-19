@@ -1,0 +1,32 @@
+Xdebug 3.3.0alpha3 is out!
+<p>
+This is the third alpha release. It adds support for the 'flamegraph' trace
+format, and re-introduces the 'xdebug.collect_params' setting, which had been
+removed in Xdebug 3.0.
+</p>
+
+</p>
+The other major changes are improvements to the performance of the step debugger.
+It also bumps the default maximum nesting level from 256 to 512.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_3_0alpha3">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains a contribution by: <i>Jeremy Mikola, Niels
+Keurentjes, and Pierre Rineau</i> — Thanks!
+</p>

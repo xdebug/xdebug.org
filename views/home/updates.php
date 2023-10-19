@@ -22,6 +22,18 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_3_0alpha3'></a>[2023-10-19] &mdash; Xdebug 3.3.0alpha3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(1732); ?>: Add support for flame graph outputs</dd>
+<dd>Fixed <?= bug(2000); ?>: Debugger evaluate expression: &quot;can&#039;t evaluate expression&quot;</dd>
+<dd>Fixed <?= bug(2077); ?>: Bring back xdebug.collect_params</dd>
+<dd>Fixed <?= bug(2203); ?>: Increase default max nesting time out from 256 to 512</dd>
+<dd>Fixed <?= bug(2206); ?>: Optimise debugger breakpoints checking</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_0alpha2'></a>[2023-09-06] &mdash; Xdebug 3.3.0alpha2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
