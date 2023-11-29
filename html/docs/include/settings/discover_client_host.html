@@ -4,8 +4,7 @@ HTTP request. It checks the <code>$_SERVER['HTTP_X_FORWARDED_FOR']</code> and
 address to use.</p>
 
 <p>If [CFG:client_discovery_header] is configured, then the <code>$_SERVER</code>
-variable with that configured name will be checked before
-<code>HTTP_X_FORWARDED_FOR</code> and <code>REMOTE_ADDR</code>.</p>
+variable with that configured name will be checked instead of the default variables.</p>
 
 <p>If Xdebug can not connect to a debugging client as found in one of the HTTP
 headers, it will fall back to the hostname or IP address as configured by the
