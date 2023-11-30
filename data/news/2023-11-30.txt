@@ -1,0 +1,55 @@
+Xdebug 3.3.0 is out!
+<p>
+This new release introduces support for PHP 8.3, <a
+href="https://derickrethans.nl/flamboyant-flamegraphs.html">flame graphs</a>,
+and control sockets.
+</p>
+
+<img src="https://derickrethans.nl/images/content/flamegraph-docs.png"/>
+
+<p>
+With flame graphs you can visualize hierarchical data, created to visualize
+stack traces of profiled software so that the most frequent code-paths to be
+identified quickly and accurately. You can read more about it in an <a
+href="https://derickrethans.nl/flamboyant-flamegraphs.html">article</a>, or
+see it in action through a <a
+href="https://www.youtube.com/watch?v=4EocpeKxI0k">YouTube video</a>.
+</p>
+
+<img align="left" style="width: 300px; margin: 1em" src="/images/breakpoint-optimisation.png"/>
+
+<p>
+The debugger sees significant performance improvements in relation to
+breakpoints. It can now also show the contents of ArrayIterator,
+SplDoublyLinkedList, SplPriorityQueue objects, and information about thrown
+exceptions. There are also improvements with stepping in and around Fibers.
+</p>
+
+<p>
+The <a href="https://xdebug.org/docs/all_functions#xdebug_get_function_stack">xdebug_get_function_stack</a>
+function also received an update. With an argument you can now include
+information about local variables, or obtain the stack trace when an exception
+was thrown.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_3_0">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through PECL.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<!--
+<p>
+This release also contains a contribution by: <i></i> — Thanks!
+</p>
+-->

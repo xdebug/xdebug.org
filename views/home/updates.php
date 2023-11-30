@@ -22,6 +22,43 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_3_0'></a>[2023-11-30] &mdash; Xdebug 3.3.0</dt>
+
+<dd><h3>New Features</h3></dd>
+<dd>Fixed <?= bug(2171); ?>: Build from master fails on php 8.3</dd>
+<dd>Fixed <?= bug(1732); ?>: Add support for flame graph outputs</dd>
+<dd>Fixed <?= bug(2219); ?>: Add control socket on Linux to obtain information and initiate debugger or breakpoint</dd>
+<dd>Fixed <?= bug(1562); ?>: Add &#039;local_vars&#039; option to &#039;xdebug_get_function_stack&#039; to include variables for each st</dd>
+<dd>Fixed <?= bug(2194); ?>: Add &#039;params_as_values&#039; option to &#039;xdebug_get_function_stack&#039; to return data as values</dd>
+<dd>Fixed <?= bug(2195); ?>: Add &#039;from_exception&#039; option to &#039;xdebug_get_function_stack&#039; to return the stack trace where an exception was thrown</dd>
+
+<dd><h3>Improvements</h3></dd>
+<dd>Fixed <?= bug(2077); ?>: Bring back xdebug.collect_params</dd>
+<dd>Fixed <?= bug(2170); ?>: Show contents of Spl&#039;s ArrayIterator</dd>
+<dd>Fixed <?= bug(2172); ?>: Show contents of SplDoublyLinkedList and SplPriorityQueue</dd>
+<dd>Fixed <?= bug(2183); ?>: Bubble up exception message when using code evalution through protocol</dd>
+<dd>Fixed <?= bug(2188); ?>: Step over with fibers does still step into fiber routines</dd>
+<dd>Fixed <?= bug(2197); ?>: Add time index and memory to output of xdebug_get_function_stack</dd>
+<dd>Fixed <?= bug(2203); ?>: Increase default max nesting time out from 256 to 512</dd>
+<dd>Fixed <?= bug(2206); ?>: Optimise debugger breakpoints checking</dd>
+<dd>Fixed <?= bug(2207); ?>: Add filenames for include and friends to flamegraph output</dd>
+<dd>Fixed <?= bug(2217); ?>: xdebug://gateway pseudo host does not support IPv6</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+<dd>Fixed <?= bug(450); ?>: &quot;Incomplete&quot; backtraces when an exception gets rethrown</dd>
+<dd>Fixed <?= bug(476); ?>: Exception chaining does not work properly</dd>
+<dd>Fixed <?= bug(1155); ?>: Local variables are not shown when execution break in error_handler</dd>
+<dd>Fixed <?= bug(2000); ?>: Dubugger evaluate expression: &quot;can&#039;t evaluate expression&quot;</dd>
+<dd>Fixed <?= bug(2027); ?>: Branch/path code coverage for traits drops trait name since 3.1.0</dd>
+<dd>Fixed <?= bug(2132); ?>: Errors when mountinfo does not have enough information for finding systemd private tmp directory</dd>
+<dd>Fixed <?= bug(2200); ?>: PECL package file has wrong max PHP version number, and peclweb refuses the package</dd>
+<dd>Fixed <?= bug(2208); ?>: Superfluous `...` (three omission dots) in var_dump()</dd>
+<dd>Fixed <?= bug(2210); ?>: Flamegraphs crash when using `start_with_request`</dd>
+<dd>Fixed <?= bug(2211); ?>: File wrappers get wrong filename location in stack.</dd>
+<dd>Fixed <?= bug(2214); ?>: Array keys aren&#039;t escaped in traces</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_0alpha3'></a>[2023-10-19] &mdash; Xdebug 3.3.0alpha3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
