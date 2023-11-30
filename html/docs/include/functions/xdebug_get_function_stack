@@ -1,7 +1,7 @@
 = xdebug_get_function_stack
 Returns information about the stack
 array
-none
+array $options = []
 FUNC_STACK_TRACE
 
 TXT:
@@ -28,30 +28,279 @@ EXAMPLE:
 
 RESULT:
 <b>array</b>
-  0 <font color='#888a85'>=&gt;</font> 
+  0 <font color='#888a85'>=&gt;</font>
     <b>array</b>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
       'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
       'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
-      'params' <font color='#888a85'>=&gt;</font> 
+      'params' <font color='#888a85'>=&gt;</font>
         <b>array</b>
           <i><font color='#888a85'>empty</font></i>
-  1 <font color='#888a85'>=&gt;</font> 
+  1 <font color='#888a85'>=&gt;</font>
     <b>array</b>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_strings'</font> <i>(length=11)</i>
       'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
       'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
       'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>18</font>
-      'params' <font color='#888a85'>=&gt;</font> 
+      'params' <font color='#888a85'>=&gt;</font>
         <b>array</b>
           'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'array (0 =&gt; &apos;Derick&apos;)'</font> <i>(length=21)</i>
-  2 <font color='#888a85'>=&gt;</font> 
+  2 <font color='#888a85'>=&gt;</font>
     <b>array</b>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_string'</font> <i>(length=10)</i>
       'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
       'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
       'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
-      'params' <font color='#888a85'>=&gt;</font> 
+      'params' <font color='#888a85'>=&gt;</font>
         <b>array</b>
           'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&apos;Derick&apos;'</font> <i>(length=8)</i>
 
+TXT:
+Through the <code>$options</code> array you can tune what information is
+returned. These options were introduced in Xdebug 3.3.
+
+If you set the <code>local_vars</code> option to <code>true</code>, then the
+stack trace contains an extra element called <code>variables</code>, which is
+an array where each element represents a local variable name/value pair:
+
+EXAMPLE:
+<?php
+    class strings {
+        function fix_string($a)
+        {
+            var_dump(xdebug_get_function_stack( [ 'local_vars' => true ] ));
+        }
+
+        function fix_strings($b) {
+            foreach ($b as $item) {
+                $this->fix_string($item);
+            }
+        }
+    }
+
+    $s = new strings();
+    $ret = $s->fix_strings(array('Derick'));
+?>
+
+RESULT:
+<b>array</b> <i>(size=3)</i>
+  0 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=7)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>4.507993828</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>586272</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=0)</i>
+          <i><font color='#888a85'>empty</font></i>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=2)</i>
+          's' <font color='#888a85'>=&gt;</font>
+            <b>object</b>(<i>strings</i>)[<i>1</i>]
+          'ret' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  1 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=9)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>4.508039954</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>586416</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_strings'</font> <i>(length=11)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>16</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'[0 =&gt; &#39;Derick&#39;]'</font> <i>(length=15)</i>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=2)</i>
+          'b' <font color='#888a85'>=&gt;</font>
+            <b>array</b> <i>(size=1)</i>
+              ...
+          'item' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Derick'</font> <i>(length=6)</i>
+  2 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=9)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>4.508065061</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>586416</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_string'</font> <i>(length=10)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>10</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&#39;Derick&#39;'</font> <i>(length=8)</i>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Derick'</font> <i>(length=6)</i>
+
+TXT:
+The values in the <code>params</code> array are still stringified variants of the values, unlike the one in the <code>variables</code> element.
+You can changes these to also be values by setting the <code>params_as_values</code> option.
+
+EXAMPLE:
+<?php
+    class strings {
+        function fix_string($a)
+        {
+            var_dump(xdebug_get_function_stack( [ 'params_as_values' => true ] ));
+        }
+
+        function fix_strings($b) {
+            foreach ($b as $item) {
+                $this->fix_string($item);
+            }
+        }
+    }
+
+    $s = new strings();
+    $ret = $s->fix_strings(array('Derick'));
+?>
+
+RESULT:
+<b>array</b> <i>(size=3)</i>
+  0 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=6)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.128140207</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>589968</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=0)</i>
+          <i><font color='#888a85'>empty</font></i>
+  1 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=8)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.128188808</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>590112</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_strings'</font> <i>(length=11)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>16</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'b' <font color='#888a85'>=&gt;</font>
+            <b>array</b> <i>(size=1)</i>
+              ...
+  2 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=8)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.128214727</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>590112</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_string'</font> <i>(length=10)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>10</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Derick'</font> <i>(length=6)</i>
+
+TXT:
+The last option is <code>from_exception</code>, which takes a thrown Exception
+or Error object as argument. Instead of showing the stack trace of where
+<code>xdebug_get_function_stack</code> gets called from, you instead get the
+stack trace of where this Exception or Error was thrown.
+
+TXT:
+This should be used in a user-defined exception handler.
+
+EXAMPLE:
+<?php
+class Handlers
+{
+	function __construct(private string $title, private float $PIE) {}
+
+	static function exceptionHandler($exception)
+	{
+		var_dump( xdebug_get_function_stack( [ 'from_exception' => $exception ] ) );
+	}
+}
+
+class Elephpant
+{
+	function __construct(private string $title, private string $PIE) {}
+}
+
+class Error_Class
+{
+	public static function newError($errno = false)
+	{
+		$elephpant = new Elephpant("Bluey", M_PI);
+		$randoVar = 42;
+
+		throw new Exception();
+	}
+
+}
+
+class Error_Entry
+{
+	public function __construct($base, $errno)
+	{
+		$return = Error_Class::newError(true);
+	}
+}
+
+set_exception_handler(['Handlers', 'exceptionHandler']);
+$e = new Error_Entry(1, 2);
+
+?>
+
+RESULT:
+<b>array</b> <i>(size=3)</i>
+  0 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=7)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.194523655</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>595976</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=0)</i>
+          <i><font color='#888a85'>empty</font></i>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'e' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  1 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=9)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.194572727</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>596440</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'__construct'</font> <i>(length=11)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Error_Entry'</font> <i>(length=11)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>38</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=2)</i>
+          'base' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          'errno' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2</font>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=3)</i>
+          'base' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          'errno' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2</font>
+          'return' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  2 <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=9)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>5.194576134</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>596440</font>
+      'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'newError'</font> <i>(length=8)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'static'</font> <i>(length=6)</i>
+      'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Error_Class'</font> <i>(length=11)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>33</font>
+      'params' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=1)</i>
+          'errno' <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>true</font>
+      'variables' <font color='#888a85'>=&gt;</font>
+        <b>array</b> <i>(size=3)</i>
+          'errno' <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>true</font>
+          'elephpant' <font color='#888a85'>=&gt;</font>
+            <b>object</b>(<i>Elephpant</i>)[<i>2</i>]
+              ...
+          'randoVar' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>42</font>
+
+TXT:
+The stack trace you get when using <code>params_as_values</code> also always
+includes the local variables in the <code>variables</code> element, and
+non-stringified values for the function's arguments in the <code>params</code>
+element.
