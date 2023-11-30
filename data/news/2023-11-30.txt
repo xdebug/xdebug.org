@@ -48,8 +48,8 @@ If you find a bug, please file a report at Xdebug's
 <a href="https://bugs.xdebug.org">Issue Tracker</a>.
 </p>
 
-<!--
 <p>
-This release also contains a contribution by: <i></i> — Thanks!
+This release also contains contributions by: <i>Cédric Anne, Codinghuang,
+Damjan Cvetko, Jeremy Mikola, Niels Keurentjes, Pierre Rineau, Remi Collet,
+and Sebastian Bergmann</i> — Thanks!
 </p>
--->
