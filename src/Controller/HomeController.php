@@ -63,6 +63,11 @@ class HomeController
 		$downloads = [];
 
 		foreach ($files as $version => $tar) {
+			if ( ! array_key_exists( 'source', $tar ) )
+			{
+				continue;
+			}
+
 			$f = stat( "files/{$tar['source']}" );
 			$hashFile = "files/{$tar['source']}.sha256.txt";
 			if ( file_exists( $hashFile ) )
