@@ -1,0 +1,11 @@
+3.92	6.66	1.83	12.08	0.00
+2023-11-03	bug	0.75	Fixing #2208: Superfluous …
+2023-11-07	bug	3	Issue #2027: Trait names
+2023-11-07	bug	1	Investigating issue #2109 block command crash
+2023-11-08	bug	0.75	Fixing #2210: Crash with flamegraph and start_with_request
+2023-11-10	xdebug3	2.5	Rewriting control socket running with g-routines
+2023-11-28	xdebug3	8	Control socket, 8.3 tests, protocol streams
+2023-11-29	bug	2	inet_ntop PR, make tests more robust, dependabot
+2023-11-29	bug	2.5	Fixing #2214: Array keys
+2023-11-29	xdebug3	0.5	Memory leak with control socket
+2023-11-30	xdebug3	3	Releasing Xdebug 3.3.0, and documentation

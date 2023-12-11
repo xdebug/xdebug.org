@@ -1,0 +1,13 @@
+4.37	7.19	1.99	12.08	0.00
+2023-10-01	bug	1	Fixed use-after-free with generator values
+2023-10-02	xdebug3	3	Switching from intercepting execute_internal to Observer API
+2023-10-09	xdebug3	5	Speeding up the debugger
+2023-10-10	xdebug3	3.75	Speeding up the debugger
+2023-10-11	xdebug3	3	Speeding up the debugger
+2023-10-12	xdebug3	3.75	Speeding up the debugger
+2023-10-13	xdebug3	2.75	Speeding up the debugger
+2023-10-18	xdebug3	0.5	Finalise and merge optimisations PR
+2023-10-19	xdebug3	1	Release Xdebug 3.3.0alpha3
+2023-10-27	xdebug3	1	Improve flamegraphs by adding name to require and friends
+2023-10-30	xdebug3	1.75	Xdebug control socket
+2023-10-31	xdebug3	5	Xdebug control socket
