@@ -22,6 +22,19 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_3_1'></a>[2023-12-14] &mdash; Xdebug 3.3.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2220); ?>: Test failure</dd>
+<dd>Fixed <?= bug(2221); ?>: Crash when other extensions run PHP code without the stack being initialised yet</dd>
+<dd>Fixed <?= bug(2223); ?>: Xdebug&#039;s constants are not available with `xdebug.mode=off`</dd>
+<dd>Fixed <?= bug(2226); ?>: xdebug_get_function_stack([&#039;from_exception&#039;]) does not always find stored trace</dd>
+<dd>Fixed <?= bug(2227); ?>: Crash with return value and observers</dd>
+<dd>Fixed <?= bug(2228); ?>: Return value can not be fetched with property_get if top frame is an internal function</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_0'></a>[2023-11-30] &mdash; Xdebug 3.3.0</dt>
 
 <dd><h3>New Features</h3></dd>
