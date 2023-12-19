@@ -15,3 +15,4 @@
 2023-11-01	TYPO3 GmbH	https://typo3.com	typo3.svg
 2023-11-01	Tideways	https://tideways.com/
 2023-11-01	Clever Age	https://www.clever-age.com/	cleverage.svg
+2023-12-19	Inpsyde	https://inpsyde.com	inpsyde.svg
