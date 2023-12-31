@@ -70,8 +70,11 @@ about how to use the debug client.</p>
 <div class="front_releases">
 	<ul class="releases">
 		<li><a title="Linux" href="/files/binaries/dbgpProxy">Linux (x86_64)</a></title>
+		<li><a title="Linux-ARM" href="/files/binaries/dbgpProxy-arm64">Linux (arm64)</a></title>
 		<li><a title="macOS" href="/files/binaries/dbgpProxy-macos">macOS (x86_64)</a></title>
+		<li><a title="macOS-ARM" href="/files/binaries/dbgpProxy-macos-arm64">macOS (arm64)</a></title>
 		<li><a title="Windows" href="/files/binaries/dbgpProxy.exe">Windows (x86_64)</a></title>
+		<li><a title="IBMi" href="/files/binaries/dbgpProxy-IBMi">IBMi (ppc64)</a></title>
 	</ul>
 </div>
 <p>Please refer to the <a href="/docs/dbgpProxy">documentation</a> to learn
