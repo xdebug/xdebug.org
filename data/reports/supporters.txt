@@ -1,8 +1,6 @@
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
 2022-02-01	iO	https://www.iodigital.com/en
 2022-03-08	Supermetrics	https://supermetrics.com
-2023-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
-2023-01-01	Seiden Group	http://www.seidengroup.com
 2023-01-01	Offers.com	https://offers.com
 2023-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
 2023-01-01	VEMA eG	https://www.vema-eg.de
@@ -16,3 +14,5 @@
 2023-11-01	Tideways	https://tideways.com/
 2023-11-01	Clever Age	https://www.clever-age.com/	cleverage.svg
 2023-12-19	Inpsyde	https://inpsyde.com	inpsyde.svg
+2024-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
+2024-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
