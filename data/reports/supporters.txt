@@ -16,3 +16,4 @@
 2024-01-01	ZiffDavies	https://www.ziffdavis.com/	ziff-davies.svg
 2024-01-01	VEMA eG	https://www.vema-eg.de	vema.svg
 2024-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
+2024-01-01	PhpStorm	https://www.jetbrains.com/phpstorm/	PhpStorm.svg
