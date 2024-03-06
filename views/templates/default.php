@@ -15,6 +15,7 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<?= $this->headExtra ?>
 	<link rel="stylesheet" type="text/css" href="/core2.css" />
+	<link type="rel" rel="me" href="https://phpc.social/@xdebug"/>
 	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 </head>
 <body>
