@@ -26,6 +26,9 @@ try {
 			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
+		$redirectDocPages = [
+			'debugclient' => 'dbgpClient',
+		];
 
 		$language = null;
 		if (isset($matches[4])) {
@@ -47,6 +50,10 @@ try {
 				exit();
 			} elseif (in_array($matches[2], $pages)) {
 				$contents = XdebugDotOrg\Controller\DocsController::section($matches[2], $language)->render();
+			} elseif (array_key_exists($matches[2], $redirectDocPages)) {
+				header("HTTP/1.1 301 Moved Permanently");
+				header("Location: /docs/{$redirectDocPages[$matches[2]]}");
+				exit();
 			} elseif (in_array($matches[2], $redirectDevelopPages)) {
 				header("HTTP/1.1 301 Moved Permanently");
 				header("Location: /docs/develop#{$matches[2]}");
