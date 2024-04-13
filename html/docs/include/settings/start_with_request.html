@@ -21,6 +21,8 @@ whole request.</p>
 
 <p>You can still start a [FEAT:trace] with [FUNC:xdebug_start_trace], 
 [FEAT:step_debug] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
+
+<p>The [FEAT:profiler] will never activate with this value.</p>
 </dd>
 
 
@@ -40,8 +42,9 @@ for its presence in either <code>$_ENV</code> (environment variable),
 (for a [FEAT:trace]), and <code>XDEBUG_SESSION</code> (for
 [FEAT:step_debug]).</p>
 
-<p>There is another legacy trigger. If you set the <code>XDEBUG_CONFIG</code>
-environment variable to any value, then Xdebug will also get activated.</p>
+<p>There is another legacy trigger for [FEAT:step_debug] only. If you set the
+<code>XDEBUG_CONFIG</code> environment variable to any value, then the step
+debugger will also get activated.</p>
 
 <p>Debug session management for [FEAT:step_debug#browser_session] is also
 available through <code>XDEBUG_SESSION_START</code>.</p>
