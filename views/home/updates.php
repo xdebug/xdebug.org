@@ -22,6 +22,16 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_3_2'></a>[2024-04-15] &mdash; Xdebug 3.3.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2216); ?>: With PHP8.3 and Apache 2.4.58 error_reporting() causing Apache process to hang</dd>
+<dd>Fixed <?= bug(2230); ?>: Crash when xdebug and blackfire extensions are active</dd>
+<dd>Fixed <?= bug(2233); ?>: High and continuous Apache server CPU use</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_1'></a>[2023-12-14] &mdash; Xdebug 3.3.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
