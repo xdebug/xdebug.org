@@ -1,6 +1,7 @@
 {
     "name": "xdebug/xdebug.org",
     "type": "project",
+    "license": "MIT",
     "require-dev": {
         "zetacomponents/feed": "^1.4",
         "composer/xdebug-handler": "^3.0",
