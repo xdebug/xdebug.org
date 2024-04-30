@@ -8,7 +8,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Projects');
 	<?php foreach ($this->projects as $project) : ?>
 		<?php $id = preg_replace( '@-.*$@', '', $project->id ); ?>
 		<h2> <?= $project->title ?> <a name="<?= $id ?>" href="#<?= $id ?>">#<?= $id ?></a></h2>
-		<div class='funding'>
+		<div class='progress'>
 			<div title='Contributions' class='business' style='width: <?= ($project->amountRaised / $project->amountRequested) * 100 ?>%'></div>
 			<div class='comment'><?= sprintf( '%0.1f %% of £%.0f Raised', ($project->amountRaised / $project->amountRequested) * 100, $project->amountRequested) ?></div>
 		</div>
