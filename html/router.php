@@ -75,6 +75,10 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::license($matches[1])->render();
 	} elseif ($requested_uri === '/support') {
 		$contents = XdebugDotOrg\Controller\SupportController::index()->render();
+	} elseif ($requested_uri === '/funding') {
+		$contents = XdebugDotOrg\Controller\FundingController::index()->render();
+	} elseif (preg_match('/^\/funding\/(.*)/', (string) $requested_uri, $matches)) {
+		$contents = XdebugDotOrg\Controller\FundingController::project( $matches[1] )->render();
 	} elseif ($requested_uri === '/reporting-bugs') {
 		$contents = XdebugDotOrg\Controller\SupportController::reporting_bugs()->render();
 	} elseif ($requested_uri === '/log') {
@@ -82,10 +86,10 @@ try {
 	} elseif ($requested_uri === '/ai') {
 		$contents = XdebugDotOrg\Controller\AiController::index()->render();
 
-	} elseif (preg_match('/^\/support\/buy\/(\w+)\/(\w+)/', (string) $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/support\/buy\/([-\w]+)\/(\w+)/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\StripeController::stripeResult( $matches[1], $matches[2] )->render();
 
-	} elseif (preg_match('/^\/support\/buy\/(\w+)/', (string) $requested_uri, $matches)) {
+	} elseif (preg_match('/^\/support\/buy\/([-\w]+)/', (string) $requested_uri, $matches)) {
 		$result = XdebugDotOrg\Controller\StripeController::buyForm($matches[1]);
 		if ($result instanceof XdebugDotOrg\Core\HtmlResponse) {
 			$contents = $result->render();

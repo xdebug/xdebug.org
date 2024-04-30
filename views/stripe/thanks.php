@@ -13,8 +13,8 @@ the development and maintenance of Xdebug, an essential tool for PHP developers.
 </p>
 <p>
 You will receive an invoice for your records at your
-<?= is_string( $this->data->customer->billing_email ) ? 'billing' : 'contact'; ?>
-email address in the next few days.
+<?= is_string( $this->data->customer->billing_email ) ? 'billing' : 'contact'; ?> email
+address in the next few days.
 </p>
 <p>
 As a supporter, you'll be able to email me for personalized technical support.

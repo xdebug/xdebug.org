@@ -6,6 +6,7 @@ use XdebugDotOrg\Core\HtmlRedirect;
 
 use XdebugDotOrg\StripeHandler;
 
+use XdebugDotOrg\Model\FundingProjectsList;
 use XdebugDotOrg\Model\StripeResult;
 use XdebugDotOrg\Model\SubscriptionData;
 
@@ -18,7 +19,23 @@ class StripeController
 			return self::processSubmit($_POST);
 		}
 
-		return new HtmlResponse(new SubscriptionData(package: $package), 'stripe/index.php');
+		return new HtmlResponse(new SubscriptionData(package: $package, projects: self::getProjectSummary()), 'stripe/index.php');
+	}
+
+	private static function getProjectSummary() : array
+	{
+		$fundingProjects = \XdebugDotOrg\Core\ContentsCache::fetchModel(
+			FundingProjectsList::class,
+			fn(): FundingProjectsList => FundingController::getProjects(),
+			'funding-idx'
+		);
+
+		$fundingProjectsList = [];
+		foreach ($fundingProjects->projects as $fundingProject) {
+			$fundingProjectsList[$fundingProject->id] =	$fundingProject->title;
+		}
+
+		return $fundingProjectsList;
 	}
 
 	private static function processSubmit( array $data )
@@ -27,7 +44,7 @@ class StripeController
 
 		if ( ( $reason = $stripe->validateData( $data ) ) !== true )
 		{
-			return new HtmlResponse(new StripeResult(false, $reason, package: $_POST['package'] ), 'stripe/index.php');
+			return new HtmlResponse(new StripeResult(false, $reason, package: $_POST['package'], projects: self::getProjectSummary() ), 'stripe/index.php');
 		}
 		if ( ( $reason = $stripe->processPayment() ) !== true )
 		{
@@ -48,6 +65,19 @@ class StripeController
 			if ( $mode === 'success' && $stripeSession->hasPaid() )
 			{
 				$stripeSession->updateAsSuccess();
+
+				$packageInfo = new StripeResult(
+					success: true,
+					reason: '',
+					package: $stripeSession->data->customer->package,
+					projects: (array) $stripeSession->data->customer->projects,
+				);
+
+				if ( $packageInfo->isOpenAmount() )
+				{
+					return new HtmlResponse( $stripeSession, 'stripe/thanks-funding.php' );
+				}
+
 				return new HtmlResponse( $stripeSession, 'stripe/thanks.php' );
 			}
 			else
