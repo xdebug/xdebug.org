@@ -3,8 +3,11 @@ namespace XdebugDotOrg;
 
 use MongoDB\Driver\Query;
 use XdebugDotOrg\Model\Country;
+use XdebugDotOrg\Model\FundingProjectsList;
 use XdebugDotOrg\Model\StripeSession;
 use XdebugDotOrg\Model\SubscriptionData;
+
+use XdebugDotOrg\Controller\FundingController;
 
 use ReflectionException;
 
@@ -23,6 +26,22 @@ class StripeHandler
 
 	public function __construct(private StripeClient $client, private Manager $mongodb, private bool $testMode = true)
 	{
+	}
+
+	private static function getProjectSummary() : array
+	{
+		$fundingProjects = \XdebugDotOrg\Core\ContentsCache::fetchModel(
+			FundingProjectsList::class,
+			fn(): FundingProjectsList => FundingController::getProjects(),
+			'funding-idx'
+		);
+
+		$fundingProjectsList = [];
+		foreach ($fundingProjects->projects as $fundingProject) {
+			$fundingProjectsList[$fundingProject->id] =	$fundingProject->title;
+		}
+
+		return $fundingProjectsList;
 	}
 
 	public function validateData(array $data): string|true
@@ -73,14 +92,29 @@ class StripeHandler
 			$reasons[] = 'The VAT number must be filled in';
 		}
 
+		$projects = self::getProjectSummary();
+		$subscriptionData['projects'] = $projects;
+
 		if (
 			!array_key_exists('package', $data) ||
-			!in_array($data['package'], ['pro', 'business'])
+			(
+				!in_array($data['package'], ['pro', 'business']) &&
+				!array_key_exists($data['package'], $projects)
+			)
 		) {
-			$reasons[] = 'The selected package must be pro or business';
+			$reasons[] = 'The selected package must be pro, business, or a project';
 			$subscriptionData['package'] = 'business';
 		} else {
 			$subscriptionData['package'] = trim($data['package']);
+		}
+
+		if ($data['package'] !== 'pro' && $data['package'] !== 'business') {
+			$amount = (int) $data['contribution_amount'];
+			$subscriptionData['contribution_amount'] = $amount;
+			if ($amount < 100) {
+				$reasons[] = 'The minimum contribution amount is GBP 100';
+				$subscriptionData['contribution_amount'] = 100;
+			}
 		}
 
 		$optionalProperties = [
@@ -89,6 +123,7 @@ class StripeHandler
 			'vat_number',
 			'link_text',
 			'link_target',
+			'link_svg',
 		];
 
 		foreach ($optionalProperties as $property) {

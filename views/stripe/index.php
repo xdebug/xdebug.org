@@ -4,7 +4,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support Sign Up');
 use XdebugDotOrg\Model\Country;
 ?>
 
-<h1>Sign Up to Support</h1>
+<h1>Sign Up to <?= $this->model->getName() ?></h1>
 
 <?php if ( isset( $this->success ) && ! $this->success ): ?>
 <p class="warning"><?= $this->reason; ?></p>
@@ -48,7 +48,7 @@ use XdebugDotOrg\Model\Country;
 	Newsletter Email (optional):
 	<input name='newsletter_email' type='text'/>
 </p>
-<?php if ($this->package == 'business'): ?>
+<?php if ($this->model->packageProvidesLinks()): ?>
 <br/>
 <p>
 	Link Text:
@@ -58,11 +58,29 @@ use XdebugDotOrg\Model\Country;
 	Link Target:
 	<input name='link_target' type='text' value='https://'/>
 </p>
+<p>
+	Link SVG:
+	<input name='link_svg' type='text'/>
+	<br/><small>Provide a direct link to an SVG file to show instead of your
+	Link Text. If you would rather email it, just write 'email' and I will
+	reach out to you.</small>
+</p>
 <br/>
 <?php endif ?>
+
+<?php if ($this->model->isOpenAmount()) : ?>
+<p>
+	Contribution to <?= $this->model->getName() ?>
+	<input name='contribution_amount' type='text' value=''/>
+	<br/><small>(in GBP, VAT is added if applicable, minimum £<?= $this->model->contribution_amount ?>)</small>
+</p>
+<?php endif ?>
+<?php if (!$this->model->isOpenAmount()) : ?>
 <p>
 	To Pay: £ <?= floor( $this->model->getCost() / 100 ); ?> + VAT (if applicable)
 </p>
+<?php endif ?>
+
 <br/>
 <p>
 	<input type='hidden' name='package' value='<?= $this->package; ?>'>

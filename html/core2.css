@@ -521,13 +521,13 @@ div.supported_languages span:not(:first-child)::before {
 	color: #555;
 }
 
-.supporters {
+.supporters, .funding {
 	max-width: initial;
 	margin: 1em 0;
 	padding: 0 1em;
 }
 
-.supporters li {
+.supporters li, .funding li {
 	list-style: none;
 	display: inline-block;
 	border: 3px outset #9fc596;
@@ -535,29 +535,34 @@ div.supported_languages span:not(:first-child)::before {
 	vertical-align: middle;
 }
 
-.supporters li a {
+.supporters li a, .funding li a {
 	display: inline-block;
 	padding: .25em .5em 0em 0.5em;
 	background-color: #e5f5d5;
 }
 
-.supporters li.text a {
+.supporters li.text a, .funding li.text a {
 	padding: .75em 1em 0.5em 1em;
 }
 
-.supporters li.both div {
+.supporters li.both div, .funding li.both div.outer div.inner {
 	display: flex;
 	align-items: center;
 	background-color: #e5f5d5;
 }
 
-.supporters li.both div div img {
+.funding li div.outer div.amount {
+	text-align: center;
+	background-color: #e5f5d5;
+}
+
+.supporters li.both div div img, .funding li.both div div img {
 	height: 50px;
 	padding: 0;
 	margin: 0;
 }
 
-.supporters li.logo a img {
+.supporters li.logo a img, .funding li.logo a img {
 	height: 50px;
 	padding: 0;
 	margin: 0;
@@ -602,13 +607,16 @@ div.supported_languages span:not(:first-child)::before {
 
 div.report {}
 
-div.funding { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
+div.projects div.progress { max-width: 600px; margin: 0 }
+
+div.progress { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 2em; position: relative; border-radius: 5px;}
 div.patreon { height: 100%; float: left; color: #44AF56; background-color: #44AF56;}
 div.github  { height: 100%; float: left; color: #44AF56; background-color: #69BF78;}
 div.pro     { height: 100%; float: left; color: #69BF78; background-color: #8FCF9A;}
 div.business{ height: 100%; float: left; color: #8FCF9A; background-color: #69BF78;}
 div.others  { height: 100%; float: left; color: #B4DFBB; background-color: #B4DFBB;}
-div.comment { height: 100%; float: right; margin-right: 2px;}
+div.comment { height: 100%; position: absolute; right: 0; top: 2px; margin-right: 2px;}
+div.progress div.business { border-radius: 5px; }
 
 div.spend { width: 100%; height: 20px; color: black; background-color: white; border: 1px solid black; margin: 1em;}
 div.type-bug     { height: 100%; float: left; color: white; background-color: #0121AF;}
