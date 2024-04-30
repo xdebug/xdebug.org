@@ -1,0 +1,5 @@
+Native Xdebug path Mapping
+12000
+001-native-path-mapping
+4971	Flownative GmbH	https://www.flownative.com/	flownative.svg
+5000	theAverageDev	https://theaveragedev.com/	+theAverageDev.svg

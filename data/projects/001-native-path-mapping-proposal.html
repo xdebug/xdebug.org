@@ -1,0 +1,215 @@
+<h2>Introduction <a name="introduction" href="#introduction">#</a></h2>
+<p>Currently Xdebug only operates and handles system-local file names. It only
+sees names as they are on the system that Xdebug/PHP runs on. Many IDEs and
+debug adapters (IDEs) employ a "path mapping" feature, to map
+Xdebug/PHP-local paths to the filesystem on which IDE users edit files. This
+allows for IDEs to set breakpoints to the paths that Xdebug sees after
+translating them from local paths.</p>
+
+<p>To make this terminology more clear, from now on I will refer to
+"remote paths" as the paths and file names that Xdebug sees on the
+system that it runs on, and "local paths" as the paths and file
+names in the environment where the IDE runs.</p>
+
+<p>An example: Xdebug runs on a staging server, where an application is
+located in the directory <code>/var/www/staging.example.com</code>. These same files are
+equivalent to local paths on the system where the IDE can edit them in
+<code>/home/user/projects/example.com</code>. The remote path here is
+<code>/var/www/staging.example.com</code>, and the local path is
+<code>/home/user/projects/example.com</code>.</p>
+
+<p>Although path mapping features for debugging in IDEs are a sensible
+solution, there are a few situations where this is not always enough:</p>
+
+<ul>
+<li>Some applications in PHP, most notably Neos/Flow, rewrite files during
+execution into a cache, which then do not match the right files that a
+developer would be editing. This is also a problem on local-only projects,
+where the application runs on the same host as where the code is edited.</li>
+<li>Setting up path mappings in an IDE can be challenging for developers of
+WordPress plugins.</li>
+<li>Templating systems often compile their template language down to PHP files
+with a different name, but also the generating PHP code will not match the
+line numbers with the lines in the template file.</li>
+<li> Xdebug can <a href="https://xdebug.org/docs/all_settings#file_link_format">render links</a>
+to paths whenever it displays a filename (in HTML) output, regardless of
+whether debugging is even enabled. Because IDEs are not involved here, their
+path mappings don't apply.
+</li>
+</ul>
+
+<h2>Proposal <a name="proposal" href="#proposal">#</a></h2>
+<p>In order to make Xdebug more adoptable and usable for these cases where
+IDEs can't always help, a new feature is needed which would allow the
+configuration of path, file, and line mappings solely through Xdebug.</p>
+
+<p>Xdebug native path mappings can be configured through files.</p>
+
+<p>Xdebug will scan for files ending in <code>.map</code> in the
+<code>.xdebug</code> directory when a script starts, and the Xdebug mode (set through
+the <a href="https://xdebug.org/docs/all_settings#mode">xdebug.mode</a> setting
+or <code>XDEBUG_MODE</code> environment setting) is not <code>off</code>.</p>
+
+<p>Xdebug will check for the <code>.xdebug</code> directory in the grand-parent
+directory of the file that is being requested first, then in the parent
+directory, and then in the directory of the file that is being requested. This
+is mostly because it is common to have an entry file (often
+<code>index.php</code>) in a <code>public_html</code> or <code>www</code>
+directory, with other project files (including for example the vendor/
+directory) in a parent directory. It allows for company/project wide path
+names as well.</p>
+
+<p>Mappings in files that are scanned later, override already existing
+mappings.</p>
+
+<p>More specific rules apply before more generic rules.</p>
+
+<p>Xdebug native path mappings are used in the following situations:</p>
+<ol start="1">
+<li>initiating a debugging connection through the <a
+href="https://xdebug.org/docs/dbgp#connection-initialization">fileurl
+element</a> of the debug initiation request.</li>
+<li>setting a breakpoint</li>
+<li>checking for breakpoints</li>
+<li>rendering file names where <a
+href="https://xdebug.org/docs/all_settings#file_link_format">xdebug.file_link_format</a>
+applies</li>
+</ol>
+
+<p>An application can additionally configure path maps by calling
+<code>xdebug_set_source_map()</code> with a file name as argument. Rules in
+the parsed file(s) override earlier path mappings of the same type.</p>
+
+<p>The file scanning based approach is necessary so that the <a
+href="https://xdebug.org/docs/dbgp#connection-initialization">fileurl
+element</a> in the debug initiation request can be mapped, as when an
+application gets to call xdebug_set_source_map() during script execution, it
+is already too late to apply that mapping to the debug initiation.</p>
+
+<h2>File Format <a name="file-format" href="#file-format">#</a></h2>
+<p>Each mapping file must end in <code>.map</code>, and the following stanzas
+and syntax is supported:</p>
+
+<dl>
+<dt>remote_prefix: &lt;path&gt; (optional)</dt>
+<dd>Defines the prefix that is prepended to every remote path. Can be present
+more than once, and applies from the moment it is parsed only.</dd>
+
+<dt>local_prefix: &lt;path&gt; (optional)</dt>
+<dd>Defines the prefix that is prepended to every local path. Can be present
+more than once, and applies from the moment it is parsed only.</dd>
+
+<dt>&lt;remote_path&gt; = &lt;local_path&gt;</dt>
+<dd>Creates a mapping from remote_path to local_path. Both of these paths are either:
+<ul>
+<li>
+	a directory name (<code>cache/</code>) &mdash; <b>must</b> end in a <code>/</code>.
+</li>
+<li>
+	a file name (<code>cache/MyRewrittenClass.php</code>)
+</li>
+<li>
+	a file name + line number (range) (<code>templates/layout.ezt:4-20</code> or
+	<code>templates/layout.ezt:24</code>). A single number means the start
+	and end "range" is the same.
+</li>
+</ul>
+<p>A <b>remote path</b> is the directory/file name as seen by Xdebug on the system
+where it runs, and a <b>local</b> path is the directory/file name that an IDE
+user would edit directly.</p>
+</dd>
+
+<p>Lines starting with # are comments.</p>
+
+<p>Empty lines are allowed, and are ignored.</p>
+
+<h2>Example Files <a name="example-files" href="#example-files">#</a></h2>
+
+<h3>Full Directories</h3>
+<p>This is an equivalent to what IDE's currently provide.</p>
+
+<pre>
+/var/www/ = /home/derick/projects/example.com/
+</pre>
+
+<p>This one line file maps all files under the <code>/var/www/</code>
+directory to the equivalent file name in the
+<code>/home/derick/projects/example.com/</code> directory.</p>
+
+<p>Alternatives to this mapping file, with the same exact meaning:</p>
+
+<pre>
+local_prefix: /home/derick/projects
+
+/var/www/ = example.com/
+</pre>
+
+<p>The local_prefix gets prepended to <code>example.com/</code>, making it
+<code>/home/derick/projects/example.com/</code> again.</p>
+
+<h3>File to File Maps</h3>
+<p>These are primarily for the Neos/Flow use case, that require mapping of
+file names to other file names.</p>
+
+<pre>
+# Path prefixes
+remote_prefix: /home/derick/dev/neos/Data/Temporary/Development/Cache/Code/Flow_Object_Classes
+local_prefix: /home/derick/dev/neos/Packages
+
+# The mapping table
+Neos_Behat_Command_BehatCommandController.php = Application/Neos.Behat/Classes/Command/BehatCommandController.php
+Neos_CliSetup_Command_SetupCommandController.php = Application/Neos.CliSetup/Classes/Command/SetupCommandController.php
+Neos_CliSetup_Command_WelcomeCommandController.php = Application/Neos.CliSetup/Classes/Command/WelcomeCommandController.php
+</pre>
+
+<p>You can see why it makes sense to have the <code>remote_prefix</code> and
+<code>local_prefix</code> stanzas, as they drastically reduce the contents of
+the files, also making them more legible.</p>
+
+<h3>Line Range Maps</h3>
+<p>For use with for example templating systems.</p>
+
+<pre>
+# Path prefixes
+remote_prefix: /home/derick/dev/xdebug.cloud/src/cache/compiled_templates/xhtml-updqr0
+local_prefix: /home/derick/dev/xdebug.cloud/src/templates
+
+# The mapping table
+user-info-823edfe12e38a649355c5172b9d98e0a.php:2-31 = user-info.ezt:1
+user-info-823edfe12e38a649355c5172b9d98e0a.php:32-33 = user-info.ezt:2
+user-info-823edfe12e38a649355c5172b9d98e0a.php:34-36 = user-info.ezt:3
+user-info-823edfe12e38a649355c5172b9d98e0a.php:37 = user-info.ezt:4
+user-info-823edfe12e38a649355c5172b9d98e0a.php:38 = user-info.ezt:5
+user-info-823edfe12e38a649355c5172b9d98e0a.php:39-40 = user-info.ezt:6
+user-info-823edfe12e38a649355c5172b9d98e0a.php:41-46 = user-info.ezt:7
+…
+user-info-823edfe12e38a649355c5172b9d98e0a.php:301-302 = user-info.ezt:73
+user-info-823edfe12e38a649355c5172b9d98e0a.php:303 = user-info.ezt:74-75
+user-info-823edfe12e38a649355c5172b9d98e0a.php:304-306 = user-info.ezt:76
+</pre>
+
+<p>As you can see, these files will get pretty big fast.</p>
+
+
+<h2>Tasks and Estimation <a name="tasks-and-estimates" href="#tasks-and-estimates">#</a></h2>
+<ul>
+<li>Implement robust file parser with new test framework [16 hours]</li>
+<li>Modify DBGp's breakpoint_set to use source maps [8 hours]</li>
+<li>Update breakpoint_get and breakpoint_list to use source maps, if appropriate [4 hours]</li>
+<li>Modify DBGp's fileuri element to use source maps [2 hours]</li>
+<li>Change breakpoint checking algorithm to use source maps [16 hours]</li>
+<li>Rewrite breakpoints when xdebug_set_source_map() is called [8 hours]</li>
+<li>Investigate all other locations where path names are displayed and used [6 hours]</li>
+<li>Testing many scenarios, integrations, and real life use cases [20 hours]</li>
+</ul>
+
+<h2>Future Scope <a name="future-scope" href="#future-scope">#</a></h2>
+<ul>
+<li>A more condensed approach to line range maps</li>
+<li>Extending line range maps to also include column information, although
+IDEs can't do anything with this yet, and neither does the DBGp protocol
+support this yet either.</li>
+<li>Functions to invoke the mapper from userland through PHP functions.</li>
+<li>Support source maps when generating profile information</li>
+<li>Support source maps in code coverage information</li>
+</ul>
