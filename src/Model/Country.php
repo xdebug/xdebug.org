@@ -291,6 +291,7 @@ enum Country : string {
 		};
 	}
 
+	/** @psalm-mutation-free */
 	public function isVatChargable() : bool
 	{
 		return match($this) {
@@ -300,6 +301,7 @@ enum Country : string {
 		};
 	}
 
+	/** @psalm-mutation-free */
 	public function getVATPercentage()
 	{
 	    return $this->isVatChargable() ? 0.20 : 0;

@@ -1,4 +1,7 @@
 <?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\FundingProjectsList
+ */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Projects');
 ?>
 

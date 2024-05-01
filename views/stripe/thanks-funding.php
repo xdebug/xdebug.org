@@ -1,4 +1,7 @@
 <?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\StripeSession
+ */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support — Thanks');
 ?>
 

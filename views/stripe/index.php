@@ -1,4 +1,7 @@
 <?php
+/**
+ * @psalm-scope-this XdebugDotOrg\Model\SubscriptionData
+ */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support Sign Up');
 
 use XdebugDotOrg\Model\Country;
