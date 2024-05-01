@@ -2,7 +2,15 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Projects');
 ?>
 
-<h1>Projects Xdebug</h1>
+<h1>Projects</h1>
+
+<p class="intro">
+Welcome to our projects page, where we list initiatives seeking funding
+support for Xdebug. Below, you'll find a list of projects aimed at improving
+and advancing the capabilities of Xdebug, the debugging and profiling tool for
+PHP. Explore these projects and consider supporting them to help enhance PHP
+development with Xdebug.
+</p>
 
 <div class="projects">
 	<?php foreach ($this->projects as $project) : ?>
