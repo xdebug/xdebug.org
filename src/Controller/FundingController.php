@@ -24,14 +24,11 @@ class FundingController
 	public static function project( string $project ) : HtmlResponse
 	{
 		return new HtmlResponse(
-			self::getProjectDescription( $project . '.txt'),
-/*
 			\XdebugDotOrg\Core\ContentsCache::fetchModel(
-				FundingProjectsList::class,
-				fn(): FundingProjectsList => self::getProjects(),
+				FundingProject::class,
+				fn(): FundingProject => self::getProjectDescription( $project . '.txt' ),
 				'funding-project-' . $project . '.txt'
 			),
-*/
 			'funding/project.php'
 		);
 	}
