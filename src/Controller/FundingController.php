@@ -109,5 +109,17 @@ class FundingController
 			$contributors,
 		);
 	}
+
+	public static function front_page() : HtmlResponse
+	{
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				FundingProjectsList::class,
+				fn(): FundingProjectsList => self::getProjects(),
+				'funding-idx'
+			),
+			'funding/front_page.php'
+		);
+	}
 }
 ?>

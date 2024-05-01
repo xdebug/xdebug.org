@@ -34,6 +34,16 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 </div>
 
 <div class="front_announcements">
+	<h3>Projects</h3>
+
+	<?= XdebugDotOrg\Controller\FundingController::front_page()->render() ?>
+
+	<hr>
+
+	<p><a href="/funding">See all projects</a></p>
+</div>
+
+<div class="front_announcements">
 	<h3>Announcements</h3>
 
 	<?= XdebugDotOrg\Controller\NewsController::front_page()->render() ?>
