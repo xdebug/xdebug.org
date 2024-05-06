@@ -41,7 +41,7 @@ readonly class SubscriptionData
 
 		if ( array_key_exists( $package, $this->projects ) )
 		{
-			return "funding '{$this->projects[$package]}'";
+			return "Fund '{$this->projects[$package]}'";
 		}
 
 		return NULL;
