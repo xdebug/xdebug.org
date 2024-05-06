@@ -3,3 +3,5 @@ Native Xdebug path Mapping
 001-native-path-mapping
 4971	Neos Foundation	https://www.neos.io/	neos.svg
 5000	theAverageDev	https://theaveragedev.com/	+theAverageDev.svg
+100	Filina Consulting	https://afilina.com
+100	Keith Davis	https://laurinkeithdavis.com
