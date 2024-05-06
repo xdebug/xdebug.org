@@ -1,1 +1,2 @@
-In order to make Xdebug more adoptable and usable for these cases where IDEs can’t always help, a new feature is needed which would allow the configuration of path, file, and line mappings solely through Xdebug.
+Path mappings are a feature in IDEs that allow remote directories to be mapped to local directories. This is necessary when PHP and Xdebug run in a remote environment, including containers, where the paths that contain PHP files differ from the local machine where they are edited.</p>
+<p>In some cases mapping specfic files containing PHP code, or template code, to other files or even line ranges is required. This project adds functionality to Xdebug to handle these cases.
