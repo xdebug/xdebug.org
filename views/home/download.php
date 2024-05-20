@@ -52,6 +52,15 @@ git clone https://github.com/xdebug/xdebug.git
 <a name='dbgpClient'></a>
 <h2>Command Line Debug Client</h2>
 
+<p>
+A lightweight debugging client, mainly used for debugging the DBGp
+implementation with Xdebug. It can show raw protocol information.
+</p>
+<p>
+This binary may be used free of charge, but as-is and without warranty. Source
+code will be available in the future.
+</p>
+
 <div class="front_releases">
 	<ul class="releases">
 		<li><a title="Linux" href="/files/binaries/dbgpClient">Linux (x86_64)</a></title>
@@ -66,6 +75,17 @@ about how to use the debug client.</p>
 
 <a name='dbgpProxy'></a>
 <h2>DBGp Proxy</h2>
+
+<p>
+A proxy implementation for the DBGp protocol. For some situations, it allows
+for multiple developers to debug their application in a shared remote server.
+For more complex situations, <a href="https://xdebug.cloud">Xdebug Cloud</a>
+provides a superior alternative.
+</p>
+<p>
+This binary may be used free of charge, but as-is and without warranty. Source
+code will be available in the future.
+</p>
 
 <div class="front_releases">
 	<ul class="releases">
