@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_0alpha1'></a>[2024-05-31] &mdash; Xdebug 3.4.0alpha1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2239); ?>: Add &#039;XDEBUG_IGNORE&#039; GET/POST/COOKIE/ENV to make the step debugger ignore that specific request</dd>
+<dd>Fixed <?= bug(2262); ?>: PHP 8.4: Closure names need different wrapping algorithm</dd>
+
+<hr/>
+
 <dt><a name='x_3_3_2'></a>[2024-04-15] &mdash; Xdebug 3.3.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
