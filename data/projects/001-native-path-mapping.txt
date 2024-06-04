@@ -5,3 +5,4 @@ Native Xdebug path Mapping
 5000	theAverageDev	https://theaveragedev.com/	+theAverageDev.svg
 100	Filina Consulting	https://afilina.com
 100	Keith Davis	https://laurinkeithdavis.com
+750	Stefna ehf	https://stefna.is
