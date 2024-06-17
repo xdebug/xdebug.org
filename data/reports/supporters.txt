@@ -1,7 +1,6 @@
 2021-10-15	Real Estate Learning Center	https://realestatelc.com
 2022-03-08	Supermetrics	https://supermetrics.com
 2023-04-19	Find My Electric	https://www.findmyelectric.com/
-2023-05-25	b13	https://b13.com
 2023-08-28	REWE Digital GmbH	https://rewe-digital.com
 2023-11-01	TYPO3 GmbH	https://typo3.com	typo3.svg
 2023-11-01	Tideways	https://tideways.com/
@@ -16,3 +15,4 @@
 2024-03-01	Bubble Shooter	https://www.bubbleshooter.net/
 2024-06-01	11com7	https://www.11com7.de	11com7.svg
 2024-06-01	IO Belgium	https://www.iodigital.com	+io.svg
+2024-06-01	b13	https://b13.com	+b13.svg
