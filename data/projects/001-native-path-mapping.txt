@@ -6,3 +6,4 @@ Native Xdebug path Mapping
 100	Filina Consulting	https://afilina.com
 100	Keith Davis	https://laurinkeithdavis.com
 750	Stefna ehf	https://stefna.is
+1000	Awesome	https://awesome.co	awesome.svg
