@@ -7,3 +7,4 @@ Native Xdebug path Mapping
 100	Keith Davis	https://laurinkeithdavis.com
 750	Stefna ehf	https://stefna.is
 1100	Awesome	https://awesome.co	awesome.svg
+200	Arroba IT	https://arroba-it.de
