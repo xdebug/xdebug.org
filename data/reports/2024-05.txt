@@ -1,4 +1,4 @@
-2.99	9.42	1.83	8.50	0.00	22.74
+3.11	9.42	1.83	8.50	0.00	22.74
 2024-05-01	bug	2	Issue #2264: Precision with overloaded var_dump
 2024-05-01	website	6	Update website with “projects” features, including accepting funding for projects
 2024-05-20	bug	1	Triage, and dbgpProxy/dgpClient binaries license questions
