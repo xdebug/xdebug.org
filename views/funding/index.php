@@ -20,7 +20,7 @@ development with Xdebug.
 		<?php $id = preg_replace( '@-.*$@', '', $project->id ); ?>
 		<h2> <?= $project->title ?> <a name="<?= $id ?>" href="#<?= $id ?>">#<?= $id ?></a></h2>
 		<div class='progress'>
-			<div title='Contributions' class='business' style='width: <?= ($project->amountRaised / $project->amountRequested) * 100 ?>%'></div>
+			<div title='Contributions' class='business' style='width: <?= min(($project->amountRaised / $project->amountRequested) * 100, 100) ?>%'></div>
 			<div class='comment'><?=
 				sprintf(
 					'%0.1f %% of £%s',

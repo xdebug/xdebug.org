@@ -9,8 +9,13 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Project: ' . $this
 
 <div class="projects">
 	<h2>Contributors</h2>
-	<div class='progress'>
-		<div title='Contributions' class='business' style='width: <?= ($this->amountRaised / $this->amountRequested) * 100 ?>%'></div>
+	<div class='progress-with-overflow'>
+		<?php if (($this->amountRaised / $this->amountRequested) <= 1) : ?>
+			<div title='Contributions' class='business' style='width: <?= min(($this->amountRaised / $this->amountRequested) * 100, 100) ?>%'></div>
+		<?php else : ?>
+			<div title='Contributions' class='overflow' style='width: <?= min(($this->amountRaised / $this->amountRequested) * 100, 100) ?>%'></div>
+			<div title='Extra Contributions' class='business' style='width: <?= min((($this->amountRaised / $this->amountRequested) * 100) - 100, 100) ?>%'></div>
+		<?php endif ?>
 		<div class='comment'><?= sprintf( '%0.1f %% of £ %s', ($this->amountRaised / $this->amountRequested) * 100, number_format( $this->amountRequested, 0, 2 ) ) ?></div>
 	</div>
 
