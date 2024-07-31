@@ -21,7 +21,7 @@ address in the next few days.
 </p>
 <p>
 As a supporter, you'll be able to email me for personalized technical support.
-The support period runs until <?= $this->data->paid_at->toDateTime()->format( 'l F jS, Y' ); ?>.
+The support period runs until <?= $this->data->paid_at->toDateTime()->modify("+1 year")->format( 'l F jS, Y' ); ?>.
 You will receive an email near that date, for the opportunity to renew.
 </p>
 <?php if ( $this->data->customer->package === 'business' && isset( $this->data->customer->link_target ) && isset( $this->data->customer->link_text ) ): ?>
