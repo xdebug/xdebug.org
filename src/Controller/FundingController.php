@@ -6,6 +6,8 @@ use XdebugDotOrg\Core\HtmlResponse;
 use XdebugDotOrg\Model\FundingProjectsList;
 use XdebugDotOrg\Model\FundingProject;
 use XdebugDotOrg\Model\FundingProjectContributor;
+use XdebugDotOrg\Model\FundingProjectUpdates;
+use XdebugDotOrg\Model\NewsItem;
 
 class FundingController
 {
@@ -107,6 +109,40 @@ class FundingController
 		);
 	}
 
+	/**
+	 * @return NewsItem[]
+	 */
+	private static function getProjectUpdates(string $project) : FundingProjectUpdates
+	{
+		$projectUpdatesDir = self::getNewsDataDir($project);
+
+		if (!is_dir($projectUpdatesDir)) {
+			throw new \Exception('Directory ' . $projectUpdatesDir . ' should exist');
+		}
+
+		$d = glob($projectUpdatesDir . '*.html');
+		sort($d);
+		$d = array_reverse( $d );
+
+		$news_items = [];
+
+		foreach ($d as $item) {
+			$file = file( $item );
+			$title = array_shift( $file );
+			$date = new \DateTimeImmutable(preg_replace( '@.+' . $project . '/(.*).html$@', '\1', (string) $item ));
+			$contents = join( '', $file );
+
+			$news_items[] = new NewsItem($title, $date, $contents);
+		}
+
+		return new FundingProjectUpdates($project, $news_items);
+	}
+
+	private static function getNewsDataDir(string $project) : string
+	{
+		return dirname(__DIR__, 2) . '/data/projects/' . $project . '/';
+	}
+
 	public static function front_page() : HtmlResponse
 	{
 		return new HtmlResponse(
@@ -117,6 +153,34 @@ class FundingController
 			),
 			'funding/front_page.php'
 		);
+	}
+
+	public static function project_updates( string $project ) : HtmlResponse
+	{
+		return new HtmlResponse(
+			\XdebugDotOrg\Core\ContentsCache::fetchModel(
+				FundingProjectUpdates::class,
+				fn(): FundingProjectUpdates => self::getProjectUpdates( $project ),
+				'funding-project-updates-' . $project . '.txt'
+			),
+			'funding/project_updates.php'
+		);
+	}
+
+	public static function project_update(string $project, string $date) : HtmlResponse
+	{
+		$newsFile = self::getNewsDataDir($project) . $date . '.html';
+
+		if (!is_file($newsFile)) {
+			throw new \XdebugDotOrg\PageNotFoundException('Project update item ' . $date . ' not found');
+		}
+
+		$file = file( $newsFile );
+		$title = array_shift( $file );
+		$date = new \DateTimeImmutable($date);
+		$contents = join( '', $file );
+
+		return new HtmlResponse(new NewsItem($title, $date, $contents), 'news/item.php');
 	}
 }
 ?>

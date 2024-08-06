@@ -65,6 +65,15 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Project: ' . $this
 		<li class="text"><a href="/support/buy/<?= $this->id ?>">Contribute</a></li>
 	</ul>
 
-	<hr/>
-	<?= $this->proposal ?>
+    <hr/>
+
+    <div class="front_intro">
+		<?= $this->proposal ?>
+    </div>
+
+    <div class="front_announcements">
+        <h3>Updates</h3>
+
+		<?= XdebugDotOrg\Controller\FundingController::project_updates($this->id)->render() ?>
+    </div>
 </div>

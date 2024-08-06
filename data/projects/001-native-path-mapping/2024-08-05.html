@@ -1,0 +1,29 @@
+July: Creating the Parser
+<p>
+    In this first month, or rather, the last week of July, I have been working
+    on setting up a testing framework
+    for the parser. Previously Xdebug only had tests in
+    <a href="https://qa.php.net/write-test.php">PHPT</a> form, PHP's standard
+    for
+    testing syntax and functions. However, this is rather more an integration
+    test framework, as it compares the output of a script with an expected
+    output.
+</p>
+<p>
+    For low-level features, such as testing the implementation of the parser
+    that parses the path mapping files, PHPT tests are not suitable. Instead,
+    the testing framework tests the return values and generated structures
+    directly, without PHP having to be involved. The
+    <a href="https://cpputest.github.io/manual.html">CppUTest</a> framework
+    that I use for this, is much more similar to PHPUnit. It is also a framework
+    that I have used for testing
+    <a href="https://github.com/derickr/timelib">timelib</a>,
+    the library that powers PHP and MongoDB's date/time functionality.
+</p>
+<p>
+    Beyond the testing framework, I have also made a start on the parser itself.
+    It can currently parse the <code>remote_prefix</code> and
+    <code>local_prefix</code> stanzas, as well as mapping lines, although it
+    does not distinguish between directory maps, file maps, or line maps yet,
+    nor does it apply the prefix stanzas yet.
+</p>

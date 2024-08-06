@@ -77,6 +77,8 @@ try {
 		$contents = XdebugDotOrg\Controller\SupportController::index()->render();
 	} elseif ($requested_uri === '/funding') {
 		$contents = XdebugDotOrg\Controller\FundingController::index()->render();
+	} elseif (preg_match('@^/funding/(.*)/updates/(.*)@', (string) $requested_uri, $matches)) {
+		$contents = XdebugDotOrg\Controller\FundingController::project_update( $matches[1], $matches[2] )->render();
 	} elseif (preg_match('/^\/funding\/(.*)/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\FundingController::project( $matches[1] )->render();
 	} elseif ($requested_uri === '/reporting-bugs') {
