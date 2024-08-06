@@ -10,7 +10,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Log');
 <div class="log_left">
 	<?php foreach ($this->reports as $report) : ?>
 		<h2><?= $report->start->format( "F Y" ) ?></h2>
-		<div class='funding'>
+		<div class='spend'>
 			<div title='Funding Partners' class='others' style='width: <?= $report->others ?>%'></div>
 			<div title='Business Support' class='business' style='width: <?= $report->business ?>%'></div>
 			<div title='Pro Support' class='pro' style='width: <?= $report->pro ?>%'></div>
