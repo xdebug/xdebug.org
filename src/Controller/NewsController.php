@@ -18,7 +18,7 @@ class NewsController
 			throw new \Exception('Directory ' . $newsDataDir . ' should exist');
 		}
 
-		$d = glob($newsDataDir . '*.txt');
+		$d = glob($newsDataDir . '*.html');
 		sort($d);
 		$d = array_reverse( $d );
 
@@ -27,7 +27,7 @@ class NewsController
 		foreach ($d as $item) {
 			$file = file( $item );
 			$title = array_shift( $file );
-			$date = new \DateTimeImmutable(preg_replace( '@.+news/(.*).txt$@', '\1', (string) $item ));
+			$date = new \DateTimeImmutable(preg_replace( '@.+news/(.*).html$@', '\1', (string) $item ));
 			$contents = join( '', $file );
 
 			$news_items[] = new NewsItem($title, $date, $contents);
@@ -48,7 +48,7 @@ class NewsController
 
 	public static function item(string $date) : HtmlResponse
 	{
-		$newsFile = self::getNewsDataDir() . $date . '.txt';
+		$newsFile = self::getNewsDataDir() . $date . '.html';
 
 		if (!is_file($newsFile)) {
 			throw new \XdebugDotOrg\PageNotFoundException('News item ' . $date . ' not found');

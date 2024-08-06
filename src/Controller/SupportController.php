@@ -38,7 +38,7 @@ class SupportController
 		$files = [];
 
 		while ( false !== ( $entry = $d->read() ) ) {
-			if (preg_match( '@^20[0-9][0-9]-[01][0-9]\.txt$@', $entry, $m)) {
+			if (preg_match( '@^20[0-9][0-9]-[01][0-9]\.html$@', $entry, $m)) {
 				$files[] = $entry;
 			}
 		}
