@@ -1,4 +1,4 @@
-Native Xdebug path Mapping
+Native Xdebug Path Mapping
 12000
 001-native-path-mapping
 4971	Neos Foundation	https://www.neos.io/	neos.svg
