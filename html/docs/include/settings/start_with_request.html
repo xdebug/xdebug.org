@@ -20,9 +20,9 @@ whole request.</p>
 <p>The functionality does not get activated when the request starts.</p>
 
 <p>You can still start a [FEAT:trace] with [FUNC:xdebug_start_trace], 
-[FEAT:step_debug] with [FUNC:xdebug_break], or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
+or [FEAT:garbage_collection] with [FUNC:xdebug_start_gcstats].</p>
 
-<p>The [FEAT:profiler] will never activate with this value.</p>
+<p>[FEAT:step_debug] and [FEAT:profiler] will never activate with this value.</p>
 </dd>
 
 
@@ -52,6 +52,9 @@ available through <code>XDEBUG_SESSION_START</code>.</p>
 <p>With [CFG:trigger_value] you can control which specific trigger value will
 activate the trigger. If [CFG:trigger_value] is set to an empty
 string, <strong>any</strong> value will be accepted.</p>
+
+<p>In this mode it is also possible to activate [FEAT:step_debug] with
+[FUNC:xdebug_break].</p>
 </dd>
 
 
