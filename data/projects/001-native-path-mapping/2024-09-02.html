@@ -1,0 +1,99 @@
+August: Finalising the Parser
+<p>
+	In this hectic month, I continued with the parser to parse the path mapping
+	files. The parsing is now finished, although I do still need to modify how
+	the parsed information is stored. Right now, the data structures are not
+	optimised to be able to do line mapping as well.
+</p>
+<p>
+	Because the parser parsers user input, it is important that the parser is
+	rubust. It should be able to handle correctly formatted files, but also
+	files with errors.
+</p>
+<p>
+	It is not always possible to come up with all the failure situations by
+	thinking, and therefore a common technique is to use a fuzzer. For PHP
+	there is <a href="https://infection.github.io">Infection PHP</a> for
+	mutation testing for example. For C, and C++, a commonly used tool is <a
+	href="https://github.com/AFLplusplus/AFLplusplus">AFL++</a>. This provides
+	a compiler wrapper and a run-time to fuzz the input to your application.
+	You first provide a template, which it then modifies to try to break your
+	code.
+</p>
+<p>
+	The template that I used in this case was a minimal map file:
+</p>
+<pre>
+remote_prefix: /usr/local/www
+local_prefix: /home/derick/project
+/projects/example.php:5-17 = /example.php:8
+/example.php:5-17 = /example.php:8-20
+/example.php:17 = /example.php:20
+/projects/php-web/ = /php-web/
+</pre>
+<p>
+	In addition to the template you also need to provide a shim — the program
+	that in my case takes the argument given to it and then parses that as a
+	file. The AFL++ tool's compiler wrapper adds some magic to it to be able to
+	catch errors.
+</p>
+<p>
+	When you then run the fuzzer, such as with:
+</p>
+<pre>AFL_SKIP_CPUFREQ=1 afl-fuzz -b 7 -i fuzz-seeds -o fuzz-output -- ./afl-test @@
+</pre>
+<p>
+	It then runs your program with your template files (in
+	<code>fuzz-seeds</code> in my example). And then also with loads of
+	variants.
+</p>
+<p>
+	The output of it looks something like:
+</p>
+<pre style="background-color: black; color: white; font-family: monospace;">
+<font color="#FFFF55"><b>american fuzzy lop </b></font><font color="#55FFFF"><b>++4.21c</b></font><font color="#5555FF"><b> {default} </b></font><font color="#55FF55"><b>(./afl-test) </b></font><font color="#FF55FF"><b>[explore]          </b></font>
+<font color="#555555"><b>┌─</b></font><font color="#00AAAA"> process timing </font><font color="#555555"><b>────────────────────────────────────┬─</b></font><font color="#00AAAA"> overall results </font><font color="#555555"><b>────┐</b></font>
+<font color="#555555"><b>│        run time : </b></font>0 days, 0 hrs, 0 min, 19 sec      <font color="#555555"><b>│  cycles done : </b></font><font color="#AA00AA">0     </font><font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│   last new find : </b></font>0 days, 0 hrs, 0 min, 6 sec       <font color="#555555"><b>│ corpus count : </b></font>44    <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│last saved crash : </b></font>none seen yet                     <font color="#555555"><b>│saved crashes : </b></font>0     <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│ last saved hang : </b></font>none seen yet                     <font color="#555555"><b>│  saved hangs : </b></font>0     <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>├─</b></font><font color="#00AAAA"> cycle progress </font><font color="#555555"><b>─────────────────────┬─</b></font><font color="#00AAAA"> map coverage</font><font color="#555555"><b>┴──────────────────────┤</b></font>
+<font color="#555555"><b>│  now processing : </b></font>0.1 (0.0%)         <font color="#555555"><b>│    map density : </b></font>0.01% / 0.01%      <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│  runs timed out : </b></font>0 (0.00%)          <font color="#555555"><b>│ count coverage : </b></font>2.37 bits/tuple    <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>├─</b></font><font color="#00AAAA"> stage progress </font><font color="#555555"><b>─────────────────────┼─</b></font><font color="#00AAAA"> findings in depth </font><font color="#555555"><b>─────────────────┤</b></font>
+<font color="#555555"><b>│  now trying : </b></font>interest 32/8          <font color="#555555"><b>│ favored items : </b></font>1 (2.27%)           <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│ stage execs : </b></font>285/9626 (2.96%)       <font color="#555555"><b>│  new edges on : </b></font>26 (59.09%)         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│ total execs : </b></font>4403                   <font color="#555555"><b>│ total crashes : </b></font>0 (0 saved)         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│  exec speed : </b></font>248.6/sec              <font color="#555555"><b>│  total tmouts : </b></font>0 (0 saved)         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>├─</b></font><font color="#00AAAA"> fuzzing strategy yields </font><font color="#555555"><b>────────────┴─────────────┬─</b></font><font color="#00AAAA"> item geometry </font><font color="#555555"><b>───────┤</b></font>
+<font color="#555555"><b>│   bit flips : </b></font>5/1408, 2/1407, 1/1405               <font color="#555555"><b>│    levels : </b></font>2         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│  byte flips : </b></font>0/176, 0/175, 0/173                  <font color="#555555"><b>│   pending : </b></font>44        <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│ arithmetics : </b></font>6/11.9k, 0/20.6k, 0/20.3k            <font color="#555555"><b>│  pend fav : </b></font>1         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│  known ints : </b></font>0/1481, 0/6354, 0/0                  <font color="#555555"><b>│ own finds : </b></font>43        <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│  dictionary : </b></font>0/0, 0/0, 0/0, 0/0                   <font color="#555555"><b>│  imported : </b></font>0         <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│havoc/splice : </b></font>0/0, 0/0                             <font color="#555555"><b>│ stability : </b></font>100.00%   <font color="#555555"><b>│</b></font>
+<font color="#555555"><b>│py/custom/rq : </b></font>unused, unused, unused, unused       <font color="#555555"><b>├───────────────────────┘</b></font>
+<font color="#555555"><b>│    trim/eff : </b></font>16.98%/83, 83.52%                    <font color="#555555"><b>│          [cpu007:</b></font><font color="#55FF55"><b> 12%</b></font><font color="#555555"><b>]</b></font>
+<font color="#555555"><b>└─</b></font><font color="#00AAAA"> strategy:</font><font color="#FF55FF"><b> explore </b></font><font color="#555555"><b>──────────</b></font><font color="#00AAAA"> state:</font><font color="#FF55FF"><b> started :-) </b></font><font color="#555555"><b>──┘</b></font></pre>
+<p>
+	The fuzzer found a few errors in my parser, which ended up crashing it. One
+	such examples that I hadn't thought of is of a line starting with a
+	<code>=</code>:
+</p>
+<pre>
+remote_prefix: /usr/local/www
+local_prefix: /home/derick/project
+=/example.php:42-5 = /example.php
+</pre>
+<p>
+	You can find the other cases it found in <a
+	href="https://github.com/derickr/xdebug/blob/001-native-path-mapping/tests/ctest/fuzz-cases.cpp#L93">a
+	dedicated test file</a>.
+</p>
+<p>
+	In September I hope to finish the parser (by storing things more
+	efficiently internally) as well as creating APIs to do the mapping.
+</p>
+<p>
+I have spent 8½ hours in August on Native Xdebug Path Mapping.
+</p>
