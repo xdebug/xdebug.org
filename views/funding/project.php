@@ -26,7 +26,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Project: ' . $this
 				<li class="both">
 					<div class="outer">
 						<div class="inner">
-							<div><a href="<?= $contributor->link ?>"><img src="/images/logos/<?= $contributor->logo ?>"/></a></div>
+							<div><a href="<?= $contributor->link ?>"><img alt="" src="/images/logos/<?= $contributor->logo ?>"/></a></div>
 							<div><a href="<?= $contributor->link ?>"><?= $contributor->name ?></a></div>
 						</div>
 						<div class="amount">
@@ -38,7 +38,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Project: ' . $this
 				<li class="logo">
 					<div class="outer">
 						<div class="inner">
-							<div><a href="<?= $contributor->link ?>"><img src="/images/logos/<?= $contributor->logo ?>"/></a></div>
+							<div><a href="<?= $contributor->link ?>"><img alt="<?= $contributor->name; ?>" src="/images/logos/<?= $contributor->logo ?>"/></a></div>
 						</div>
 						<div class="amount">
 							£ <?= number_format( $contributor->amount, 0, 2 ) ?>
