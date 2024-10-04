@@ -135,7 +135,7 @@ class drDocumentDocbookToTextConvertor extends ezcDocumentDocbookToRstConverter
 {
 	public $storage;
 
-	function __construct( ezcDocumentDocbookToRstConverterOptions $options = null )
+	function __construct( ?ezcDocumentDocbookToRstConverterOptions $options = null )
 	{
 		parent::__construct( $options );
 
