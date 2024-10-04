@@ -2,9 +2,11 @@
     "name": "xdebug/xdebug.org",
     "type": "project",
     "require-dev": {
-        "vimeo/psalm": "^5.23",
+        "vimeo/psalm": "^5.26",
         "zetacomponents/feed": "^1.4",
-        "composer/xdebug-handler": "^3.0"
+        "composer/xdebug-handler": "^3.0",
+        "php": "*",
+        "amphp/amp": "^2.6"
     },
     "autoload": {
         "files": [
@@ -15,7 +17,7 @@
     	}
     },
     "require": {
-        "zetacomponents/document": "^1.3",
+        "zetacomponents/document": "^1.3.5",
         "stripe/stripe-php": "^10.10",
         "ext-mongodb": "^1.5",
         "zetacomponents/mail": "^1.9"
