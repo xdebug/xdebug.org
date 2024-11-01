@@ -1,0 +1,93 @@
+September and October: Finished the Parser, and Starting Integration
+<p>
+	In the last two months, I finished the parser and improved the way how
+	information is stored.
+</p>
+<p>
+	The path mappings support distinct mappings per line, and I was storing
+	each entry in a linked list. A linked list is a structure that contains
+	data for one element, and then a pointer to the next one, like this:
+</p>
+<pre>
+┌───────┐         ┌────────────────────┐
+│ head* │ ──────► │ remote lines: 1-4  │
+│ tail* │ ──┐     │ local lines:  1-4  │
+└───────┘   │     │ next*  ─┐          │
+            │     └─────────┼──────────┘ 
+            │               ▼
+            │     ┌────────────────────┐
+            │     │ remote lines: 5-8  │
+            │     │ local lines:  5    │
+            │     │ next*  ─┐          │
+            │     └─────────┼──────────┘ 
+            │               ▼
+            │     ┌────────────────────┐
+            │     │ remote lines: 9-13 │
+            │     │ local lines:  6-10 │
+            │     │ next*  ─┐          │
+            │     └─────────┼──────────┘ 
+            │               ▼
+            │     ┌────────────────────┐
+            └───► │ remote lines: 14   │
+                  │ local lines:  11   │
+                  │ next*  ─┐          │
+                  └─────────┼──────────┘ 
+                            ▼
+</pre>
+<p>
+	With this structure, mapping remote line 14 to local line 11 means
+	traversing the whole linked list, starting from the head. This is not so
+	bad with only 4 items, but when there are hundreds, this becomes slow, with
+	the worst case having to search through all the items (<i>O(n)</i>).
+</p>
+<p>
+	Instead of a linked list, the new implementation now uses a <b>Vector</b>,
+	which uses a fixed size data structure per entry:
+</p>
+<pre>
+┌──────────┐       ┌────────────────────┐
+│ head*    │ ────► │ remote lines: 1-4  │
+│ count: 4 │       │ local lines:  1-4  │
+└──────────┘       ├────────────────────┤
+                   │ remote lines: 5-8  │
+                   │ local lines:  5    │
+                   ├────────────────────┤
+                   │ remote lines: 9-13 │
+                   │ local lines:  6-10 │
+                   ├────────────────────┤
+                   │ remote lines: 14   │
+                   │ local lines:  11   │
+                   └────────────────────┘
+</pre>
+<p>
+	With a structure like this, it is now possible to do a <a
+	href="https://en.wikipedia.org/wiki/Binary_search">binary search</a> over
+	all the elements. A binary search algorithm works by looking whether the
+	item we are looking for is the middle item that we are working on. If it is
+	not, it the searches either in the first half or the second half of what
+	still needs to be searched. The computational complexity for that is much
+	better: <i>O(log n)</i>.
+</p>
+<p>
+	In some benchmarking, this made looking up the right element significantly
+	faster, but the data structure itself is also more compact, as we don't
+	need to keep track of the <code>next*</code> pointer, and the array can be
+	indexed directly.
+</p>
+<p>
+	One thing that I have not added yet, is a reverse mapping as well. Right
+	now, the algorithms can only map remote a file/line to a local file/line,
+	but in order to be able for an IDE to set a breakpoint on a local file line
+	(which is how you would edit it), it also needs to have a reverse map.
+</p>
+<p>
+	In November I will work on that, and making sure that checking whether
+	there is a breakpoint on a line, as well as setting breakpoints, now use
+	the native path mapping. Right now, I don't expect this to be in Xdebug
+	3.4, as I will need to release this earlier to be able for the users to
+	have a debugger that works with PHP 8.4 the moment it comes out. PHP 8.4's
+	release date is currently scheduled for November 21st.
+</p>
+<p>
+	I have spent 16½ hours in September and October on Native Xdebug Path Mapping.
+</p>
