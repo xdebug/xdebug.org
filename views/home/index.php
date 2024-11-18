@@ -62,7 +62,7 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<?php foreach ($this->supporters as [$link, $name, $logo, $both]) : ?>
 		<?php if ($logo !== null) : ?>
 			<?php if ($both) : ?>
-				<li class="both"><div><div><a href="<?= $link ?>"><img alt="" src="/images/logos/<?= $logo ?>"/></a></div><div><a href="<?= $link ?>"><?= $name ?></a></div></div></li>
+				<li class="both"><div><div><a href="<?= $link ?>"><img alt="<?= $name; ?>" src="/images/logos/<?= $logo ?>"/></a></div><div><a href="<?= $link ?>"><?= $name ?></a></div></div></li>
 			<?php else : ?>
 				<li class="logo"><a href="<?= $link ?>"><img alt="<?= $name; ?>" src="/images/logos/<?= $logo ?>"/></a></li>
 			<?php endif ?>
