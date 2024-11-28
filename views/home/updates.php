@@ -22,6 +22,27 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_0'></a>[2024-11-28] &mdash; Xdebug 3.4.0</dt>
+
+<dd><h3>New Features</h3></dd>
+
+<dd>Fixed <?= bug(2281); ?>: PHP 8.4 support</dd>
+<dd>Fixed <?= bug(2239); ?>: Add &#039;XDEBUG_IGNORE&#039; GET/POST/COOKIE/ENV to make the step debugger ignore that specific request</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2261); ?>: Send control socket location in init packet</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2262); ?>: PHP 8.4: Closure names need different wrapping algorithm</dd>
+<dd>Fixed <?= bug(2283); ?>: SoapClient usage causes segfault with codecoverage</dd>
+<dd>Fixed <?= bug(2294); ?>: Nette Tester always crashes in all test jobs when running with XDebug 3.4.0beta1 active</dd>
+<dd>Fixed <?= bug(2304); ?>: Seg fault on throw exception</dd>
+<dd>Fixed <?= bug(2305); ?>: Segfault when checking whether to ignore creating a debug connection during shutdown functions</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_0beta1'></a>[2024-10-04] &mdash; Xdebug 3.4.0beta1</dt>
 
 <dd><h3>New Features</h3></dd>
