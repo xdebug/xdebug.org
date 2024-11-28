@@ -50,7 +50,7 @@ class HomeController
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['source'] = $entry;
 			}
-			if (preg_match( '@^php_xdebug-([123]\.[0-9]\.[0-9].*?)-[45678]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+			if (preg_match( '@^php_xdebug-([123]\.[0-9]\.[0-9].*?)-[45678]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16|17))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['dll'][] = $entry;
 			}
@@ -99,13 +99,13 @@ class HomeController
 					{
 						$dll_hash = hash_file( 'sha256', "files/$dls" );
 					}
-					preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
+					preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16|17)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
 					$name = $m[1];
 					$namea = '';
 					if (isset($m[4]) && $m[4] != '') {
 						$namea .= strtoupper( " {$m[4]}" );
 					} else {
-						$namea = ' VC6';
+						$namea = ' VC??';
 					}
 
 					if (isset($m[5]) && $m[5] == '-nts') {

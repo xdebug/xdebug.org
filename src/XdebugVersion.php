@@ -295,6 +295,7 @@ class XdebugVersion
 					case 'VC14':  $this->winCompiler = 14; $this->windows = true; break;
 					case 'VC15':  $this->winCompiler = 15; $this->windows = true; break;
 					case 'VS16':  $this->winCompiler = 16; $this->windows = true; break;
+					case 'VS17':  $this->winCompiler = 17; $this->windows = true; break;
 				}
 			}
 		}
