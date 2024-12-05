@@ -12,6 +12,7 @@
 2024-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
 2024-01-01	PhpStorm	https://www.jetbrains.com/phpstorm/	PhpStorm.svg
 2024-03-01	Bubble Shooter	https://www.bubbleshooter.net/
+2024-03-01	CHECK24	https://jobs.check24.de/de/	check24.svg
 2024-06-01	11com7	https://www.11com7.de	11com7.svg
 2024-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2024-06-01	b13	https://b13.com	+b13.svg
