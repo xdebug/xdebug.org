@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_1'></a>[2025-01-06] &mdash; Xdebug 3.4.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2306); ?>: Segmentation fault on each HTTP request when not listening to debugging connections</dd>
+<dd>Fixed <?= bug(2307); ?>: Segmentation fault due to a superglobal being a reference while checking for triggers</dd>
+<dd>Fixed <?= bug(2309); ?>: Installation on Windows with PHP PIE failing</dd>
+<dd>Fixed <?= bug(2310); ?>: xdebug 3.4.0 crashes php8.1-fpm after script execution</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_0'></a>[2024-11-28] &mdash; Xdebug 3.4.0</dt>
 
 <dd><h3>New Features</h3></dd>
