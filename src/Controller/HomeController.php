@@ -103,6 +103,7 @@ class HomeController
 					{
 						$dll_hash = hash_file( 'sha256', "files/$dls" );
 					}
+
 					/* Old Style */
 					if (preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16|17)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m)) {
 						$name = $m[1];
@@ -125,12 +126,13 @@ class HomeController
 						}
 
 						$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
-					}
+					} else
 					/* New Style / PIE Style */
 					if (preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-ts|-nts)?(-(v[cs](?>6|9|11|14|15|16|17)))?(-(x86|x86_64))?\.dll$@', $dls, $m)) {
+						var_dump($m);
 						$name = $m[1];
 						$namea = '';
-						if (isset($m[4]) && $m[4] == '-nts') {
+						if (isset($m[3]) && $m[3] == '-nts') {
 						} else {
 							$namea .= " TS";
 						}
