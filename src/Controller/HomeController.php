@@ -49,8 +49,12 @@ class HomeController
 			if (preg_match( '@^xdebug-([123]\.[0-9]\.[0-9].*?)\.tgz$@', $entry, $m)) {
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['source'] = $entry;
-			}
+			} else
 			if (preg_match( '@^php_xdebug-([123]\.[0-9]\.[0-9].*?)-[45678]\.[0-9](\.[0-9])?(-v[cs](?>6|9|11|14|15|16|17))?(-nts)?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
+				$m[1] = str_replace( 'rc', 'RC', $m[1] );
+				$files[$m[1]]['dll'][] = $entry;
+			} else
+			if (preg_match( '@^php_xdebug-([123]\.[0-9]\.[0-9].*?)-[45678]\.[0-9](\.[0-9])?(-nts|-ts)?(-v[cs](?>6|9|11|14|15|16|17))?(-(x86|x86_64))?\.dll$@', $entry, $m)) {
 				$m[1] = str_replace( 'rc', 'RC', $m[1] );
 				$files[$m[1]]['dll'][] = $entry;
 			}
@@ -99,27 +103,52 @@ class HomeController
 					{
 						$dll_hash = hash_file( 'sha256', "files/$dls" );
 					}
-					preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16|17)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m);
-					$name = $m[1];
-					$namea = '';
-					if (isset($m[4]) && $m[4] != '') {
-						$namea .= strtoupper( " {$m[4]}" );
-					} else {
-						$namea = ' VC??';
-					}
+					/* Old Style */
+					if (preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-(v[cs](?>6|9|11|14|15|16|17)))?(-nts)?(-(x86|x86_64))?\.dll$@', $dls, $m)) {
+						$name = $m[1];
+						$namea = '';
+						if (isset($m[4]) && $m[4] != '') {
+							$namea .= strtoupper( " {$m[4]}" );
+						} else {
+							$namea = ' VC??';
+						}
 
-					if (isset($m[5]) && $m[5] == '-nts') {
-					} else {
-						$namea .= " TS";
-					}
+						if (isset($m[5]) && $m[5] == '-nts') {
+						} else {
+							$namea .= " TS";
+						}
 
-					if (isset($m[7]) && $m[7] == 'x86_64') {
-						$namea .= " (64 bit)";
-					} else {
-						$namea .= " (32 bit)";
-					}
+						if (isset($m[7]) && $m[7] == 'x86_64') {
+							$namea .= " (64 bit)";
+						} else {
+							$namea .= " (32 bit)";
+						}
 
-					$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
+						$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
+					}
+					/* New Style / PIE Style */
+					if (preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-ts|-nts)?(-(v[cs](?>6|9|11|14|15|16|17)))?(-(x86|x86_64))?\.dll$@', $dls, $m)) {
+						$name = $m[1];
+						$namea = '';
+						if (isset($m[4]) && $m[4] == '-nts') {
+						} else {
+							$namea .= " TS";
+						}
+
+						if (isset($m[5]) && $m[5] != '') {
+							$namea .= strtoupper( " {$m[5]}" );
+						} else {
+							$namea = ' VC??';
+						}
+
+						if (isset($m[7]) && $m[7] == 'x86_64') {
+							$namea .= " (64 bit)";
+						} else {
+							$namea .= " (32 bit)";
+						}
+
+						$dlls[] = ['href' => 'files/' . $dls, 'name' => $name . $namea, 'hash' => $dll_hash];
+					}
 				}
 			}
 
