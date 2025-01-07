@@ -427,13 +427,29 @@ class XdebugVersion
 			}
 
 			$this->xdebugVersionToInstall = $version;
-			$filename = sprintf( '%s-%s-%s-%s%s%s%s.dll',
-				$base, $version, $majorPhpVersion,
-				$this->winCompiler >= 16 ? 'vs' : 'vc', // With PHP 8 and VS16, it now uses 'vs' instead of 'vc'
-				$this->winCompiler,
-				$this->ts ? '' : '-nts',
-				$this->architecture == 'x64' ? '-x86_64' : '',
-			);
+
+			if (version_compare($version, '3.4.1') >= 0)
+			{
+				/* New PIE-style file names */
+				$filename = sprintf( '%s-%s-%s%s-%s%s%s.dll',
+					$base, $version, $majorPhpVersion,
+					$this->ts ? '-ts' : '-nts',
+					$this->winCompiler >= 16 ? 'vs' : 'vc', // With PHP 8 and VS16, it now uses 'vs' instead of 'vc'
+					$this->winCompiler,
+					$this->architecture == 'x64' ? '-x86_64' : '',
+				);
+			}
+			else
+			{
+				/* Old style PECL names */
+				$filename = sprintf( '%s-%s-%s-%s%s%s%s.dll',
+					$base, $version, $majorPhpVersion,
+					$this->winCompiler >= 16 ? 'vs' : 'vc', // With PHP 8 and VS16, it now uses 'vs' instead of 'vc'
+					$this->winCompiler,
+					$this->ts ? '' : '-nts',
+					$this->architecture == 'x64' ? '-x86_64' : '',
+				);
+			}
 
 			return $filename;
 		}
