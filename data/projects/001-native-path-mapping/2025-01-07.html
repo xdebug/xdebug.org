@@ -1,0 +1,56 @@
+November and December: Relative and Reverse Mappings
+<p>
+	In the last two months, I added support for relative (to the current
+	working directory) mappings, as well as reverse mappings.
+</p>
+<p>
+	Reverse mappings are needed to map local path names to remote path names,
+	for example when an IDE wants to set a breakpoint. The IDE only knows about
+	the path names as they are locally, and Xdebug needs to convert these into
+	the path names that the remote uses (ie, the place where PHP and Xdebug
+	run).
+</p>
+<p>
+	There are three types of mappings: full directory mappings; file mappings;
+	and file mappings with line ranges. I wrote how Xdebug stores line ranges
+	in a previous post.
+</p>
+<p>
+	Each item itself is linked to from a hash table, where they can be found
+	via a key consisting of a local path name. For reverse mappings, we need to
+	have an additional hash table where items can be found through a key
+	created from the <b>remote</b> path name.
+</p>
+<p>
+	A naive implementation would also clone the data as well, which is indeed
+	what my first implementation did too. But there is an alternative way,
+	which is reference counting.
+</p>
+<p>
+	Not to be confused with user-level references, PHP also employs this
+	mechanism to vastly improve its speed. Simplified, when you do <code>$new =
+	"Very long string …"; $new = $old;</code>, PHP does not copy the string
+	when you assign the value to <code>$new</code>. Instead it remembers how
+	often the string content has been <i>referenced</i> to, by increasing its
+	"refcount" by one. When a variable leaves a scope, or gets reassigned, PHP
+	will decrease the refcount by one. Only when the refcount reaches zero, PHP
+	will free the associated string.
+</p>
+<p>
+	We can do the same for the information for each item in our mapping list.
+	Instead of cloning (copying the associated memory) of an item, we can store
+	a reference count. Each time we add it to a hash table, we increase it by
+	one. When a hash table gets destroyed, it will also then "destroy" the
+	associated data by decreasing its reference count by one again. Just like
+	with PHP, only when the reference count reaches zero, the associated
+	information is freed.
+</p>
+<p>
+	This new algorithm will be the first that I implement in the new year,
+	before continuing with the integration of the maps wherever Xdebug uses
+	filenames and line numbers.
+</p>
+<p>
+	I have spent 4 hours in November and December on Native Xdebug Path
+	Mapping, which is far less than I intended.
+</p>
