@@ -217,6 +217,12 @@ nav ul li a {
     -webkit-font-smoothing: antialiased;
 }
 
+hr.section {
+	margin-left: 0px;
+	color: #eee;
+	max-width: 600px;
+}
+
 @media all and (max-device-width: 640px) {
 	nav ul {
 		margin: 10px 0;

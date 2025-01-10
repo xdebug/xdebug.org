@@ -60,7 +60,7 @@ class FunctionsController
 			$functions[] = new FunctionDescription(
 				$function,
 				DocsController::add_links(trim( $contents[1] )),
-				self::do_format_data( array_slice( $contents, 6 ) ),
+				self::do_format_data( $function, array_slice( $contents, 6 ) ),
 				$version,
 				trim( $contents[2] ),
 				$arguments && $arguments !== 'none' ? $arguments : null,
@@ -126,7 +126,17 @@ class FunctionsController
 		throw new \Exception('bad');
 	}
 
-	private static function do_format_data(array $contents) : string
+	private static function formatSectionHeader(string $function, string $line) : string
+	{
+		$title = trim( substr( $line, strlen( 'SECTION:' ) ) );
+		$anchor = preg_replace( '/_+/', '_', $function . '-' . trim( preg_replace( '/[^a-z0-9]/', '_', strtolower( $title ) ), '_' ) );
+
+		return "<hr class='section'/>\n".
+			"<a name='{$anchor}'></a>\n" .
+			"<h4 class='section'>{$title} <a href='#{$anchor}'>#</a></h4>\n";
+	}
+
+	private static function do_format_data(string $function, array $contents) : string
 	{
 		$state = null;
 		$data = [];
@@ -158,6 +168,16 @@ class FunctionsController
 					$data = [];
 				}
 				$state = 'RESULT';
+				continue;
+			}
+			if ( str_starts_with((string) $line, 'SECTION:') )
+			{
+				if ( $state ) {
+					$formatted_data .= self::formatDataByState( $data, $state );
+					$data = [];
+				}
+				$formatted_data .= self::formatSectionHeader( $function, $line );
+				$state = null;
 				continue;
 			}
 			$data[] = $line;

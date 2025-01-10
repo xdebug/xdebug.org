@@ -59,6 +59,9 @@ TXT:
 Through the <code>$options</code> array you can tune what information is
 returned. These options were introduced in Xdebug 3.3.
 
+SECTION: $options['local_vars']
+
+TXT:
 If you set the <code>local_vars</code> option to <code>true</code>, then the
 stack trace contains an extra element called <code>variables</code>, which is
 an array where each element represents a local variable name/value pair:
@@ -135,6 +138,10 @@ RESULT:
 
 TXT:
 The values in the <code>params</code> array are still stringified variants of the values, unlike the one in the <code>variables</code> element.
+
+SECTION: $options['params_as_values']
+
+TXT:
 You can changes these to also be values by setting the <code>params_as_values</code> option.
 
 EXAMPLE:
@@ -194,6 +201,8 @@ RESULT:
       'params' <font color='#888a85'>=&gt;</font>
         <b>array</b> <i>(size=1)</i>
           'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Derick'</font> <i>(length=6)</i>
+
+SECTION: $options['from_exception']
 
 TXT:
 The last option is <code>from_exception</code>, which takes a thrown Exception
