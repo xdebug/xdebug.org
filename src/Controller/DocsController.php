@@ -55,7 +55,7 @@ class DocsController
 			\FUNC_PROFILER,
 			'Xdebug\'s built-in profiler allows you to find bottlenecks in your
 			script and visualize those with an external tool such as KCacheGrind or
-			WinCacheGrind.',
+			QCacheGrind.',
 		],
 		'step_debug' => [
 			'Step Debugging',
