@@ -129,7 +129,6 @@ class HomeController
 					} else
 					/* New Style / PIE Style */
 					if (preg_match( '@^php_xdebug-[23]\.[0-9]\.[0-9].*?-([45678]\.[0-9])(\.[0-9])?(-ts|-nts)?(-(v[cs](?>6|9|11|14|15|16|17)))?(-(x86|x86_64))?\.dll$@', $dls, $m)) {
-						var_dump($m);
 						$name = $m[1];
 						$namea = '';
 						if (isset($m[3]) && $m[3] == '-nts') {
