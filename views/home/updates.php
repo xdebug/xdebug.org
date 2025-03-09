@@ -22,6 +22,21 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_2'></a>[2025-03-09] &mdash; Xdebug 3.4.2</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2313); ?>: var_dump does not output some Russian characters</dd>
+<dd>Fixed <?= bug(2314); ?>: Class properties with hooks are always shown as null</dd>
+<dd>Fixed <?= bug(2315); ?>: xdebug_dump_superglobals() leaks memory</dd>
+<dd>Fixed <?= bug(2317); ?>: Code coverage leaks memory</dd>
+<dd>Fixed <?= bug(2319); ?>: emoji character become diamond question marks</dd>
+<dd>Fixed <?= bug(2321); ?>: Segfault when null is assigned to a superglobal</dd>
+<dd>Fixed <?= bug(2323); ?>: xdebug_notify() does not respect xdebug.var_display_max_* Settings</dd>
+<dd>Fixed <?= bug(2327); ?>: Segmentation Fault 139 if exception thrown in callback since PHP 8.4</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_1'></a>[2025-01-06] &mdash; Xdebug 3.4.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
