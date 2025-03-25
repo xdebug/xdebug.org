@@ -97,6 +97,7 @@ function issue(int $nr) : string {
 <dd>Fixed <?= bug(2216); ?>: With PHP8.3 and Apache 2.4.58 error_reporting() causing Apache process to hang</dd>
 <dd>Fixed <?= bug(2230); ?>: Crash when xdebug and blackfire extensions are active</dd>
 <dd>Fixed <?= bug(2233); ?>: High and continuous Apache server CPU use</dd>
+<dd>Fixed <?= bug(2250); ?>: Multiple 'DEBUG SESSION ENDED' messages with XDEBUG_SESSION_STOP_NO_EXEC</dd>
 
 <hr/>
 
