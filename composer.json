@@ -1,6 +1,7 @@
 {
     "name": "xdebug/xdebug.org",
     "type": "project",
+    "license": "MIT",
     "require-dev": {
         "vimeo/psalm": "^5.26",
         "zetacomponents/feed": "^1.4",
