@@ -1,0 +1,34 @@
+January through May: Finishing the Initial Preview
+<p>
+In the last months, I have continued to slowly work on Native Path Mapping, and
+am now at a stage where I am testing things out with real projects and code.
+</p>
+<p>
+The basics seem to work, which is great. But there are some complications with
+IDEs. Although PhpStorm allows you to associate any file type with PHP, it
+wouldn't actually allow me to set a breakpoint. I have filed a <a
+href="https://youtrack.jetbrains.com/issue/WI-81344/Cant-Set-Breakpoints-in-Template-Files-Even-Though-I-Added-The-File-Name-Pattern-to-PHP">ticket</a>
+for that with JetBrains. This is not a problem with the VS Code plugin, which
+is why I have been using that for testing for now.
+</p>
+<p>
+I have recorded a <a href="https://www.youtube.com/watch?v=8tHKq_5-cXo">teaser
+video</a> that shows what the current state is too.
+</p>
+<p>
+This is mostly a recording of me trying things out, and it brought up a few
+rough edges that need solving — such as realising that "step over" needs to
+step over multiple lines sometimes.
+</p>
+<p>
+Beyond these rough edges, I also still need to add more functional tests, and
+implement the function to allow for parsing extra path map files. It is also
+very likely I will need to come up with a more comphrehensive file format. I
+did look into what JavaScript source maps do, but this is based on JSON, which
+would mean adding a JSON parser to Xdebug, as I can't rely on the JSON
+extension to be (statically) available in PHP.
+</p>
+<p>
+I will not have much time during the rest of this month, but will be able to
+commence working on this from June again.
+</p>
