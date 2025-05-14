@@ -22,6 +22,21 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_3'></a>[2025-05-14] &mdash; Xdebug 3.4.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2322); ?>: Xdebug tries to open debugging connection in destructors during shutdown</dd>
+<dd>Fixed <?= bug(2325); ?>: Referred chrome browser extension is no longer working</dd>
+<dd>Fixed <?= bug(2326); ?>: Step debugger finishes if property debugging handler in PHP throws an exception</dd>
+<dd>Fixed <?= bug(2331); ?>: Segmentation fault with &#039;invalid&#039; variable names</dd>
+<dd>Fixed <?= bug(2339); ?>: Trying to throw an exception can cause a zend_mm_heap corrupted error under specific circumstances</dd>
+<dd>Fixed <?= bug(2340); ?>: Xdebug case sensitivity issues on some files introduced since 3.3.0</dd>
+<dd>Fixed <?= bug(2343); ?>: Fatal error on virtual property hook step debugging</dd>
+<dd>Fixed <?= bug(2348); ?>: Xdebug does not resolve breakpoints in property hooks</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_2'></a>[2025-03-09] &mdash; Xdebug 3.4.2</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
