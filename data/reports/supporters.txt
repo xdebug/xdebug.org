@@ -3,9 +3,6 @@
 2023-04-19	Find My Electric	https://www.findmyelectric.com/
 2023-08-28	REWE Digital GmbH	https://rewe-digital.com
 2023-12-19	Syde	https://syde.com	syde.svg
-2024-01-01	Ziff Davies	https://www.ziffdavis.com/	ziff-davies.svg
-2024-03-01	CHECK24	https://jobs.check24.de/de/	check24.svg
-2024-06-01	11com7	https://www.11com7.de	11com7.svg
 2024-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2024-06-01	b13	https://b13.com	+b13.svg
 2024-08-07	uConnect	https://gouconnect.com	uconnect.svg
@@ -16,6 +13,9 @@
 2025-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
 2025-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
 2025-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
+2025-01-01	Ziff Davies	https://www.ziffdavis.com/	ziff-davies.svg
 2025-02-01	Bubble Shooter	https://www.bubbleshooter.net/
 2025-02-01	VEMA eG	https://www.vema-eg.de	vema.svg
 2025-03-01	weCreate	https://www.wecreate.com/manufacturing-marketing/	weCreate.svg
+2025-03-01	CHECK24	https://jobs.check24.de/de/	check24.svg
+2025-06-01	11com7	https://www.11com7.de	11com7.svg
