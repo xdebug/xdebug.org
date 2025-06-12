@@ -22,6 +22,17 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_4'></a>[2025-06-12] &mdash; Xdebug 3.4.4</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2349); ?>: Regression in Xdebug 3.4.3 breaks throwing exceptions in nested generators</dd>
+<dd>Fixed <?= bug(2350); ?>: Crash when a certain page generates an exception since Xdebug 3.4.3</dd>
+<dd>Fixed <?= bug(2352); ?>: Crash when using latest Xdebug version when throwing exceptions</dd>
+<dd>Fixed <?= bug(2354); ?>: The __invoke frame in call stacks don&#039;t have the argument name in the trace</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_3'></a>[2025-05-14] &mdash; Xdebug 3.4.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
