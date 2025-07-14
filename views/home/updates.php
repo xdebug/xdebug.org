@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_5'></a>[2025-07-14] &mdash; Xdebug 3.4.5</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2332); ?>: Segmentation fault for code coverage with nested fibers</dd>
+<dd>Fixed <?= bug(2356); ?>: Reading properties with get hooks may modify property value</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_4'></a>[2025-06-12] &mdash; Xdebug 3.4.4</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
