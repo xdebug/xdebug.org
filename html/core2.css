@@ -389,6 +389,26 @@ div.supported_languages span:not(:first-child)::before {
 	padding: 0;
 }
 
+.front_advertisement {
+	width: 100%;
+	float: left;
+	background: #FFFFFF url("https://xdebug.cloud/assets/images/gradient.svg") no-repeat fixed center;
+	margin-bottom: 2em;
+	border-top: 1px solid #317E1E;
+	border-bottom: 1px solid #317E1E;
+}
+
+.front_advertisement img {
+	width: 20%;
+	float: left;
+	margin: 1em;
+}
+
+.front_advertisement p {
+    max-width: 95%;
+}
+
+
 .doc_section .content ul li {
 	list-style: none;
 	margin: 0;
@@ -408,7 +428,7 @@ div.supported_languages span:not(:first-child)::before {
 }
 
 @media all and (max-device-width: 640px) {
-	.front_intro, .front_announcements, .front_supporters {
+	.front_intro, .front_announcements, .front_supporters, .front_advertisement {
 		float: none;
 		width: auto;
 	}

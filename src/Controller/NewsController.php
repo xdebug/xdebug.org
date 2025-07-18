@@ -64,7 +64,7 @@ class NewsController
 
 	public static function front_page() : HtmlResponse
 	{
-		return new HtmlResponse(new NewsItems(array_slice(self::getNewsItems(), 0, 5)), 'news/front_page.php');
+		return new HtmlResponse(new NewsItems(array_slice(self::getNewsItems(), 0, 3)), 'news/front_page.php');
 	}
 }
 ?>

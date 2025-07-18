@@ -53,6 +53,23 @@ XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug - Debugger and Prof
 	<p><a href="/announcements">See all announcements</a></p>
 </div>
 
+<div class="front_advertisement">
+
+	<img src="https://xdebug.cloud/assets/images/logo.svg" alt="Xdebug Cloud"/>
+
+	<p>
+		<a href="https://xdebug.cloud">Xdebug Cloud</a> is a
+		Proxy-as-a-Service, which can help you with complexities with regards
+		to networking. A common use case is having multiple developers, who
+		share a common development server on private network, while working in
+		a remote location.
+	</p>
+
+	<p>
+		» <a href="https://xdebug.cloud">Xdebug Cloud Website</a>
+	</p>
+</div>
+
 <a id="business_supporters"></a>
 <div class="front_supporters">
 
