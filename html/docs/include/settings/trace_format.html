@@ -16,41 +16,51 @@ Fields are tab separated.
 <tr><td class='ctr'>2</td><td>writes a trace formatted in (simple) HTML.</td></tr>
 </table>
 <p>
-Fields for the computerized format:
+Fields for the computerized format, depend on the record type.
+</p>
+
+<p>
+<em>Entry Line</em>
 </p>
 <table class='table'>
-<tr><th>Record type</th><th class='ctr'>1</th><th class='ctr'>2</th><th class='ctr'>3</th><th class='ctr'>4</th><th class='ctr'>5</th><th class='ctr'>6</th><th class='ctr'>7</th><th class='ctr'>8</th><th class='ctr'>9</th><th class='ctr'>10</th><th class='ctr'>11</th><th class='ctr'>12 - ...</th></tr>
-<tr>
-	<th class='ctr'>Entry</th>
-	<td>level</td>
-	<td>function #</td>
-	<td>always '0'</td>
-	<td>time index</td>
-	<td>memory usage</td>
-	<td>function name</td>
-	<td>user-defined (1) or internal function (0)</td>
-	<td>name of the include or require file</td>
-	<td>filename</td>
-	<td>line number</td>
-	<td>no. of arguments</td>
-	<td>arguments (as many as specified in field 11) - tab separated</td>
-</tr>
-<tr><th class='ctr'>Exit</th>
-	<td>level</td>
-	<td>function #</td>
-	<td>always '1'</td>
-	<td>time index</td>
-	<td>memory usage</td>
-	<td colspan='7' class='ctr'><em>empty</em></td>
-</tr>
-<tr><th class='ctr'>Return</th>
-	<td>level</td>
-	<td>function #</td>
-	<td>always 'R'</td>
-	<td colspan='2' class='ctr'><em>empty</em></td>
-	<td>return value</td>
-	<td colspan='6' class='ctr'><em>empty</em></td>
-</tr>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><th class='ctr'>1</th><td>level</td></tr>
+<tr><th class='ctr'>2</th><td>function #</td></tr>
+<tr><th class='ctr'>3</th><td>always <em>'0'</em></td></tr>
+<tr><th class='ctr'>4</th><td>time index</td></tr>
+<tr><th class='ctr'>5</th><td>memory usage</td></tr>
+<tr><th class='ctr'>6</th><td>function name</td></tr>
+<tr><th class='ctr'>7</th><td>user-defined (1) or internal function (0)</td></tr>
+<tr><th class='ctr'>8</th><td>name of the include or require file</td></tr>
+<tr><th class='ctr'>9</th><td>filename</td></tr>
+<tr><th class='ctr'>10</th><td>line number</td></tr>
+<tr><th class='ctr'>11</th><td>no. of arguments</td></tr>
+<tr><th class='ctr'>12..</th><td>arguments (as many as specified in field 11) — tab separated</td></tr>
+</table>
+
+<p>
+<em>Exit Line</em>
+</p>
+<table class='table'>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><th class='ctr'>1</th><td>level</td></tr>
+<tr><th class='ctr'>2</th><td>function #</td></tr>
+<tr><th class='ctr'>3</th><td>always <em>'1'</em></td></tr>
+<tr><th class='ctr'>4</th><td>time index</td></tr>
+<tr><th class='ctr'>5</th><td>memory usage</td></tr>
+</table>
+
+<p>
+<em>Return Line</em>
+</p>
+<table class='table'>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><th class='ctr'>1</th><td>level</td></tr>
+<tr><th class='ctr'>2</th><td>function #</td></tr>
+<tr><th class='ctr'>3</th><td>always <em>'R'</em></td></tr>
+<tr><th class='ctr'>4</th><td class='ctr'><em>empty</em></td></tr>
+<tr><th class='ctr'>5</th><td class='ctr'><em>empty</em></td></tr>
+<tr><th class='ctr'>6</th><td>return value</td></tr>
 </table>
 
 <p>
