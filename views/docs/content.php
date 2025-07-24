@@ -9,7 +9,9 @@
 		if ($this->media_type == TYPE_YOUTUBE) {
 			$link = str_replace( 'https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/', (string) $this->url );
 	?>
-			<iframe width="560" height="315" src="<?= $link ?>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div class="youtubeWrapper">
+			<iframe width="560" height="349" src="<?= $link ?>?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
 	<?php
 		}
 	?>
