@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Start Upon an Error
+In this video we're going to have a look at one of Xdebug's lesser known and used features: starting a debugging request only when an error happens.
+https://www.youtube.com/watch?v=jEjo6wyTggA

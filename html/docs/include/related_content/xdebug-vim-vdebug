@@ -1,0 +1,5 @@
+FUNC_STEP_DEBUG
+TYPE_YOUTUBE
+Debugging with VIM and Vdebug
+In this video I show how I installed vdebug for VIM, to be able to step debug through the Xdebug website, all on the command line.
+https://www.youtube.com/watch?v=6CIOxguEQao
