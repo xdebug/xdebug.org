@@ -1,0 +1,5 @@
+FUNC_FUNCTION_TRACE
+TYPE_YOUTUBE
+Flamegraphs
+In this video I am showing how to create flamegraphs with Xdebug 3.3. The Perl script to create the SVGs can be found in the <a href='https://github.com/brendangregg/FlameGraph'>https://github.com/brendangregg/FlameGraph</a> GitHub repository. An article version is available at <a href='https://derickrethans.nl/flamboyant-flamegraphs.html'>https://derickrethans.nl/flamboyant-flamegraphs.html</a>.
+https://www.youtube.com/watch?v=4EocpeKxI0k
