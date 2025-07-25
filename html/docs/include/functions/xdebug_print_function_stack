@@ -2,7 +2,7 @@
 Displays the current function stack
 void
 string $message = "user triggered", int $options = 0
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 Displays the current function stack, in a similar way as what Xdebug would

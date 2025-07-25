@@ -2,7 +2,7 @@
 Stops monitoring functions
 void
 none
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 This function stops the function monitor. In order to get the list of monitored

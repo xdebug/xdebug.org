@@ -2,7 +2,7 @@
 Starts function monitoring
 void
 array $listOfFunctionsToMonitor
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 This function starts the monitoring of functions that were given in a list as

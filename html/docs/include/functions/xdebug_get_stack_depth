@@ -2,7 +2,7 @@
 Returns the current stack depth level
 int
 none
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 Returns the stack depth level. The main body of a script is level 0 and

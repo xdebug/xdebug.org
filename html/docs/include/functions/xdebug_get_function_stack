@@ -2,7 +2,7 @@
 Returns information about the stack
 array
 array $options = []
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 Returns an array which resembles the stack trace up to this point. The example script:

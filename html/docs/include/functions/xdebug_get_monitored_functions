@@ -2,7 +2,7 @@
 Returns information about monitored functions
 array
 none
-FUNC_STACK_TRACE
+FUNC_FUNCTION_TRACE
 
 TXT:
 Returns a structure which contains information about where the monitored
