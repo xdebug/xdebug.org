@@ -776,6 +776,13 @@ table.versions td.legacy { text-align: center; border: 1px solid grey; color: #f
 table.versions td.supported { text-align: center; border: 1px solid grey; color: green; }
 table.versions td.future { text-align: center; border: 1px solid grey; color: lightblue; }
 
+table.unsupported th { background-color: white !important; }
+table.unsupported td { color: darkgrey !important; }
+
+table.legend { margin-top: 2em; }
+table.legend tbody tr { display: grid; grid-template-columns: repeat(4, 1fr); }
+table.legend tbody th { border: none; }
+
 ol.compat-notes { margin: 2em 0; font-size: small; list-style: none; counter-reset: footnotes; }
 ol.compat-notes li { counter-increment: footnotes; padding: 0 0 0 .5em; }
 ol.compat-notes li::marker { content: counter(footnotes) "."; }
