@@ -65,8 +65,9 @@ needs for compression of profile and trace files.</p>
 <dd>
 	<p>Can be loaded together with Xdebug, but it is not 100% compatible.</p>
 	<p>Load Xdebug after Opcache in <code>php.ini</code> for better
-	compatibility. When running <code>php -v</code> or when looking at
-	<code>phpinfo();</code> output, Xdebug should be listed below Opcache.</p>
+	compatibility. When running <code>php -v</code>, Xdebug should be listed
+	below Opcache. In <code>phpinfo();</code> output, Xdebug should be listed
+	behind Opcache in the <em>Zend Scripting Language Engine</em> section.</p>
 	<p>When Opcache's optimiser is enabled, some functionality in Xdebug will
 	not work, or differently, because it removes or changes PHP's VM
 	instructions that Xdebug relies on.</p>
