@@ -3,7 +3,6 @@
 2023-04-19	Find My Electric	https://www.findmyelectric.com/
 2023-08-28	REWE Digital GmbH	https://rewe-digital.com
 2023-12-19	Syde	https://syde.com	syde.svg
-2024-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2024-08-01	Clever Age	https://www.clever-age.com/	cleverage.svg
 2024-10-01	Tideways	https://tideways.com/	tideways.svg
 2024-10-01	TYPO3 GmbH	https://typo3.com	typo3.svg
@@ -19,3 +18,4 @@
 2025-06-01	11com7	https://www.11com7.de	11com7.svg
 2025-06-01	b13	https://b13.com	+b13.svg
 2025-06-01	uConnect	https://gouconnect.com	uconnect.svg
+2025-06-01	IO Belgium	https://www.iodigital.com	+io.svg
