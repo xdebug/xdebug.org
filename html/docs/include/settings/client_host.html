@@ -1,10 +1,35 @@
 <p>Configures the IP address or hostname where Xdebug will attempt to connect to when initiating a
 debugging connection. This address should be the address of the machine where your IDE or debugging
 client is listening for incoming debugging connections.</p>
-<p>On non-Windows platforms, it is also possible to configure a <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix domain socket</a> which is supported by
-only a select view debugging clients. In that case, instead of the hostname or IP address, use
-<code>unix:///path/to/sock</code>.</p>
+
+<p>Xdebug also supports a few other ways of specifying the host to connect to,
+but these methods are not always available. [FUNC:xdebug_info] shows whether
+the <code>xdebug://*</code> methods are available.</p>
+
+<dl>
+	<dt><code>xdebug://gateway</code></dt>
+	<dd>
+		<p>Use the system defined network gateway.</p>
+		<p><em>Supported on Linux only.</em></p>
+	</dd>
+
+	<dt><code>xdebug://nameserver</code></dt>
+	<dd>
+		<p>Use the system defined private network nameserver.</p>
+		<p><em>Supported on Linux only, and not with distributions that use <a
+		href="https://en.wikipedia.org/wiki/Musl">musl libc</a>, such as Alpine
+		Linux.</em></p>
+	</dd>
+
+	<dt><code>unix:///path/to/sock</code></dt>
+	<dd>
+		<p>A <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix
+		domain socket</a>.</p>
+		<p><em>Supported on non-Windows platforms, and only supported by select
+		few debugging clients.</em></p>
+	</dd>
+</dl>
+
 <p>If [CFG:discover_client_host] is enabled then Xdebug will only use the value of this setting in
 case Xdebug can not connect to an IDE using the information it obtained from HTTP headers. In that
 case, the value of this setting acts as a fallback only.</p>
