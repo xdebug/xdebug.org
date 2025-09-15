@@ -44,7 +44,7 @@ information:
 		</p>
 		<p>
 			If you <strong>really</strong> can't make a short script after
-			trying for several hours ;-), then please prepare something that I
+			trying for several hours, then please prepare something that I
 			can: clone from GitHub, use something like composer to install
 			dependencies, and then can run. The script can still not have
 			dependencies on things like databases, as I won't have them
@@ -57,7 +57,7 @@ information:
 			The <b>exact</b> version of Xdebug.
 		</p>
 		<p>
-			For example: <code>2.6.1</code>.
+			For example: <code>3.4.5</code>.
 		</p>
 	</li>
 	<li>
@@ -68,7 +68,7 @@ information:
 			This can be selected in the bug report. If you are using a
 			development version of PHP, please use the one with the
 			<code>-dev</code> prefix for that version, for example:
-			<code>7.4-dev</code>.
+			<code>8.5-dev</code>.
 		</p>
 	</li>
 	<li>
@@ -77,11 +77,11 @@ information:
 		</p>
 		<pre class="example">
 derick@gargleblaster:~$ php -v
-PHP 7.2.14 (cli) (built: Jan 24 2019 11:47:11) ( NTS DEBUG )
-Copyright (c) 1997-2018 The PHP Group
-Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-    with Zend OPcache v7.2.14, Copyright (c) 1999-2018, by Zend Technologies
-    with Xdebug v2.7.0beta2-dev, Copyright (c) 2002-2018, by Derick Rethans
+PHP 8.4.12 (cli) (built: Aug 12 2025 12:21:50) (NTS DEBUG)
+Copyright (c) The PHP Group
+Zend Engine v4.4.12-dev, Copyright (c) Zend Technologies
+    with Zend OPcache v8.4.12, Copyright (c), by Zend Technologies
+    with Xdebug v3.4.3, Copyright (c) 2002-2024, by Derick Rethans
 		</pre>
 		<p>
 			Or otherwise the information next to the "zend® engine" logo in the output of <code>phpinfo();</code> :
@@ -162,18 +162,24 @@ right section on this page for further information if necessary.
 	The contents of the log should start with something like:
 </p>
 <pre class="example">
-[3020307] Log opened at 2020-10-29 03:20:25.076271
-[3020307] [Step Debug] INFO: Connecting to configured address/port: 127.0.0.1:43425.
-[3020307] [Step Debug] INFO: Connected to debugging client: 127.0.0.1:43425 (through xdebug.client_host/xdebug.client_port). :-)
-[3020307] [Step Debug] -&gt; &lt;init
+[2825283] Log opened at 2025-08-05 16:40:13.262097
+[2825283] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.2825283'
+[2825283] [Config] DEBUG: Checking if trigger 'XDEBUG_TRIGGER' is enabled for mode 'debug'
+[2825283] [Config] INFO: No shared secret: Activating
+[2825283] [Step Debug] INFO: Connecting to configured address/port: localhost:9003.
+[2825283] [Step Debug] WARN: Creating socket for 'localhost:9003', poll success, but error: Operation now in progress (29).
+[2825283] [Step Debug] INFO: Connected to debugging client: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+[2825283] [Step Debug] ->
+&lt;init
     xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug"
-    fileuri="file:///home/httpd/www.xdebug.org/html/router.php"
-    language="PHP" xdebug:language_version="7.4.11-dev"
-    protocol_version="1.0" appid="2693358" idekey="XDEBUG_ECLIPSE"&gt;
-        &lt;engine version="3.0.0-dev"&gt;&lt;![CDATA[Xdebug]]&gt;&lt;/engine&gt;
+    fileuri="file:///home/derick/dev/php/derickr-xdebug/tests/debugger/pipes.inc"
+    language="PHP" xdebug:language_version="8.5.0-dev"
+    protocol_version="1.0" appid="2825283" idekey="yes"
+    xdebug:ctrl_socket="xdebug-ctrl.2825283"&gt;
+        &lt;engine version="3.5.0-dev"&gt;&lt;![CDATA[Xdebug]]&gt;&lt;/engine&gt;
         &lt;author&gt;&lt;![CDATA[Derick Rethans]]&gt;&lt;/author&gt;
         &lt;url&gt;&lt;![CDATA[https://xdebug.org]]&gt;&lt;/url&gt;
-        &lt;copyright&gt;&lt;![CDATA[Copyright (c) 2002-2020 by Derick Rethans]]&gt;&lt;/copyright&gt;
+        &lt;copyright&gt;&lt;![CDATA[Copyright (c) 2002-2024 by Derick Rethans]]&gt;&lt;/copyright&gt;
 &lt;/init&gt;
 </pre>
 

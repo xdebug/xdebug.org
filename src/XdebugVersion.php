@@ -3,7 +3,7 @@ namespace XdebugDotOrg;
 
 class XdebugVersion
 {
-    public const NOT_SUPPORTED_BEFORE = '3.1';
+    public const NOT_SUPPORTED_BEFORE = '3.3';
     public const LATEST_VERSION = '3.4.5';
     public const LATEST_WINDOWS_VERSION = '3.4.5';
 
