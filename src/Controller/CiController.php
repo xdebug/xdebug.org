@@ -18,6 +18,11 @@ class CiController
 
 	private static function fixFileNames( object $results ) : object
 	{
+		if ( !isset( $results->failures ) )
+		{
+			return $results;
+		}
+
 		foreach ( $results->failures as $key => $failure )
 		{
 			$results->failures[$key]->file = str_replace( '.', '/', (string) $results->failures[$key]->file );
