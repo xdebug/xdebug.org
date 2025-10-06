@@ -240,7 +240,7 @@ debug control flow and examine data structures.",
 
 	public static function add_keywords(string $text) : string
 	{
-		$text = str_replace( '[KW:last_release_version]', '3.4.5', $text );
+		$text = str_replace( '[KW:last_release_version]', '3.4.6', $text );
 		$text = str_replace( '[KW:last_dev_version]',     '3.5.0dev', $text );
 		return $text;
 	}
