@@ -1,0 +1,58 @@
+June through October: Testing, More Testing, and Then Some More Testing
+<p>
+In the last months, I have finished the initial preview of Native Path Mapping,
+and I have just released Xdebug 3.5.0alpha2 which contains this preview.
+</p>
+<p>
+Since the last update, I also realised that it is actually quite important to
+also allow for certain directories, paths, and lines to be skipped. This makes
+the feature also useful to ignore <code>vendor/</code> directories, or similar,
+while debugging. It also makes it possible to fast-forward through generated
+lines of code that don't have an original equivalent line. Instead of
+specifying a location to map to, you can use the <code>SKIP</code> keyword
+instead.
+</p>
+<p>
+You can see this in action in a new <a
+href="https://www.youtube.com/watch?v=hYmCjrBwNNg">video</a> that I recorded.
+</p>
+<p>
+This required a bit more engineering, as the original data structures that I
+had devised could not handle this. This meant that this took therefore more
+time than I had allocated. Luckily, other aspects went faster so the project is
+still within budget.
+</p>
+
+<p>
+I will still need to add more functional tests, and implement the function to
+allow for parsing extra path map files. It is also very likely I will need to
+come up with a more comphrehensive file format, as mapping lines to other lines
+is now a very cumbersome and repetitive task. In addition to that, I might also
+think about adding a function that allows a program to specify other
+directories to consider for parsing files.
+</p>
+
+<p>
+The <a
+href="https://youtrack.jetbrains.com/issue/WI-81344/Cant-Set-Breakpoints-in-Template-Files-Even-Though-I-Added-The-File-Name-Pattern-to-PHP">ticket</a>
+that I filed with JetBrains for PhpStorm to allow setting breakpoints in
+non-PHP files has not yet been looked at, although it is now assigned to an
+engineer. I hope to see if I can convince them to look at this. Again, this is
+not a problem with the VS Code PHP Debugging Plugin.
+</p>
+
+<p>
+Now that 3.5.0alpha2 is out, it is also time to put the feature through its
+paces. <em>Which means that I am asking you to test it!</em> You can see some examples
+in the official test suite. There is one for
+<a href="https://github.com/xdebug/xdebug/tree/master/tests/debugger/maps/map-single-line">mapping single line</a>,
+<a href="https://github.com/xdebug/xdebug/tree/master/tests/debugger/maps/skip-single-line">skipping a single line</a>,
+and
+<a href="https://github.com/xdebug/xdebug/tree/master/tests/debugger/maps/skip-vendor-directory">skipping a vendor directory</a>.
+</p>
+
+<p>
+If you encounter any issues, please add a new issue in the <a
+href="https://bugs.xdebug.org">issue tracker</a>, specifying the <em>Path
+Mapping</em> category while doing so.
+</p>
