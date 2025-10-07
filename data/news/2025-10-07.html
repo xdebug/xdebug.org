@@ -1,0 +1,59 @@
+Xdebug 3.5.0alpha2 is out!
+<p>
+This is a preview release of Xdebug 3.5, also containing support for PHP 8.5.
+</p>
+
+<p>
+The biggest new feature is the <b>Native Path Mapping</b> in the step debugger.
+This which makes it possible for projects and developers to create mapping
+definitions that maps files in directories, individual files, and even line
+ranges in files, that are being run, to files that you would edit. This is
+useful for generated files, compiled templates files, etc.
+</p>
+
+<p>
+Path mapping also allows you to define directories, files, and lines in
+files to skip. This makes it possible to exclude for example
+<code>vendor/</code> directories etc. You can read more about this on the
+dedicated <a href="https://xdebug.org/funding/001-native-path-mapping">Project
+Page</a>, but please be aware that not everything has been implemented yet.
+</p>
+
+<p>
+You can see path mapping and skipping in action, in a few teaser videos that I have produced:
+</p>
+
+<ol>
+<li><a href="https://www.youtube.com/watch?v=8tHKq_5-cXo">Xdebug 3.5: Native Path Mapping Teaser</a></li>
+<li><a href="https://www.youtube.com/watch?v=hYmCjrBwNNg">Xdebug 3.5: Skipping Elements While Debugging</a></li>
+</ol>
+
+<p>
+Beyond Native Path Mapping, this release also adds experimental support for
+Windows Named Pipes control sockets, exposes the value of the current exception
+in a pseudo variable while debugging. There are also several bug fixes and
+performance improvements.
+</p>
+
+<p>
+The full list of changes can be found on the
+<a href="https://xdebug.org/updates#x_3_5_0alpha2">updates</a> page.
+</p>
+
+<p>
+The source code can be found on the
+<a href="https://xdebug.org/download#releases">downloads</a> page, and as
+usual, Xdebug is installable through <a href="https://pecl.php.net/">PECL</a> and <a
+href="https://github.com/php/pie">PIE</a>, and is also available as package
+for most Linux distributions.
+</p>
+
+<p>
+If you find a bug, please file a report at Xdebug's
+<a href="https://bugs.xdebug.org">Issue Tracker</a>.
+</p>
+
+<p>
+This release also contains contributions by: <i>Carlos Granados, Damjan Cvetko,
+Jesper Noordsij, and Shivam Mathur</i> — Thanks!
+</p>

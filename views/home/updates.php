@@ -22,6 +22,29 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_5_0alpha1'></a>[2025-10-06] &mdash; Xdebug 3.5.0alpha1</dt>
+
+<dd><h3>New features</h3></dd>
+
+<dd>Fixed <?= bug(2213); ?>: Expose __EXCEPTION virtual variable for current EG(exception)</dd>
+<dd>Fixed <?= bug(2369); ?>: Implement &quot;Native Xdebug Path Mapping&quot; project</dd>
+<dd>Fixed <?= bug(2370); ?>: PHP 8.5 support</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2336); ?>: Optimise xdebug_init_oparray</dd>
+<dd>Fixed <?= bug(2337); ?>: Modify xdebug_add_stack_frame to always work on the passed execute_data</dd>
+<dd>Fixed <?= bug(2338); ?>: Add experimental support for Windows Named Pipes control socket</dd>
+<dd>Fixed <?= bug(2363); ?>: Add better debugging support for PHP 8.5&#039;s pipes</dd>
+<dd>Fixed <?= bug(2367); ?>: Debugger should not break on return out of include files when return value debugger is enabled</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2335); ?>: Failed dbgp connection is not marked as not active</dd>
+<dd>Fixed <?= bug(2345); ?>: DBGP&#039;s detach does not support base64 encoded strings</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_6'></a>[2025-10-06] &mdash; Xdebug 3.4.6</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
