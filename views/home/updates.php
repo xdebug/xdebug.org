@@ -22,6 +22,16 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_4_7'></a>[2025-10-26] &mdash; Xdebug 3.4.7</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2359); ?>: PHP 8.4 Lazy Ghost Object inoperable/defunct when Xdebug is enabled</dd>
+<dd>Fixed <?= bug(2371); ?>: Step debugging initialize lazy objects</dd>
+<dd>Fixed <?= bug(2375); ?>: Xdebug&#039;s exception trace conversion initialises lazy objects</dd>
+
+<hr/>
+
 <dt><a name='x_3_5_0alpha1'></a>[2025-10-06] &mdash; Xdebug 3.5.0alpha1</dt>
 
 <dd><h3>New features</h3></dd>
