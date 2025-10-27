@@ -20,6 +20,7 @@ git clone https://github.com/xdebug/xdebug.git
 </pre>
 
 <a name='releases'></a>
+
 <a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', (string) $this->downloads[0]->version) ?>'></a>
 <h2>Latest Release</h2>
 <strong>Xdebug <?= $this->downloads[0]->version ?></strong>
@@ -47,6 +48,38 @@ git clone https://github.com/xdebug/xdebug.git
 	</ul>
 <?php endforeach ?>
 </div>
+
+<?php if (array_key_exists(1, $this->downloads)): ?>
+
+<a name='<?= preg_replace('/[^0-9A-Za-z]/', '_', (string) $this->downloads[1]->version) ?>'></a>
+<h2>Latest Pre-Release</h2>
+<strong>Xdebug <?= $this->downloads[1]->version ?></strong>
+<div class='copy'>Release date: <?= $this->downloads[1]->date->format('Y-m-d') ?></div>
+
+<div class="front_releases">
+<?php foreach ($this->downloads as $download) : ?>
+	<ul>
+		<li>Linux, macOS:
+			<ul class="releases">
+				<li><a title="SHA256:&nbsp;<?= $download->hash ?>" href='/<?= $download->href ?>'>source</a></li>
+			</ul>
+		</li>
+		<?php if ($download->dlls) : ?>
+			<li>Windows binaries:<br/>
+
+				<ul class="releases">
+					<?php foreach ($download->dlls as $i => $dll) : ?>
+						<li><a title="SHA256:&nbsp;<?= $dll['hash'] ?>" href='/<?= $dll['href'] ?>'>PHP <?= $dll['name'] ?></a></li>
+					<?php endforeach ?>
+				</ul>
+
+			</li>
+		<?php endif ?>
+	</ul>
+<?php endforeach ?>
+</div>
+
+<?php endif ?>
 
 <a name='debugclient'></a>
 <a name='dbgpClient'></a>

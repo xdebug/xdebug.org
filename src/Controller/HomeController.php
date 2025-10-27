@@ -169,7 +169,26 @@ class HomeController
 	{
 		$allDownloads = self::getAllDownloadsModel();
 
-		return new Downloads( [ $allDownloads->downloads[0] ] );
+		$allStableReleaseDownloads = array_filter(
+			$allDownloads->downloads,
+			fn($v) => !preg_match('/(alpha)|(beta)|(RC)/', $v->version),
+		);
+
+		$allUnstableReleaseDownloads = array_filter(
+			$allDownloads->downloads,
+			fn($v) => preg_match('/(alpha)|(beta)|(RC)/', $v->version),
+		);
+
+		$lastStableDownload = current($allStableReleaseDownloads);
+		$lastUnstableDownload = current($allUnstableReleaseDownloads);
+
+		$downloads = [ $lastStableDownload ];
+
+		if (version_compare($lastUnstableDownload->version, $lastStableDownload->version, '>') == 1) {
+			$downloads[] = $lastUnstableDownload;
+		}
+
+		return new Downloads( $downloads );
 	}
 
 	public static function download() : HtmlResponse
