@@ -2,7 +2,6 @@
     "name": "xdebug/xdebug.org",
     "type": "project",
     "require-dev": {
-        "vimeo/psalm": "^5.26",
         "zetacomponents/feed": "^1.4",
         "composer/xdebug-handler": "^3.0",
         "php": "*",

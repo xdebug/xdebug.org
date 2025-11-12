@@ -22,6 +22,15 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_5_0alpha3'></a>[2025-11-12] &mdash; Xdebug 3.5.0alpha3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2372); ?>: Build failed on MSVC</dd>
+<dd>Fixed <?= bug(2374); ?>: Breakpoints in mapped paths don&#039;t trigger as they&#039;re mapped back before matching</dd>
+
+<hr/>
+
 <dt><a name='x_3_4_7'></a>[2025-10-26] &mdash; Xdebug 3.4.7</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
