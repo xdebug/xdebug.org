@@ -190,6 +190,21 @@ trigger a debugging connection when a PHP Notice or Warning appears, or when a
 <a href="https://www.php.net/manual/en/class.throwable.php">Throwable</a>
 (Error or Exception) is thrown.</p>
 
+<h3>Ignoring a Request to Trigger the Debugger <a name="ignore" href="#ignore">#</a></h3>
+
+<p>In some situations, it might be necessary to prevent Xdebug from initiating
+a debug session, even if any of the triggers (such as the
+<code>XDEBUG_SESSION</code> cookie) is present. For example when <a
+href="https://github.com/symfony/symfony/pull/52950">your application is making
+an XHR request from a debug toolbar</a>.</p>
+
+<p>In this situation you can set <code>XDEBUG_IGNORE</code> as cookie, GET, or
+POST variable to any value besides <code>no</code> or <code>0</code>. If Xdebug
+detects its presence with any other value, it will not start a debug
+connection, but also not modify or remove an existing
+<code>XDEBUG_SESSION</code> cookie.</p>
+
+
 <h2>Troubleshooting <a name="troubleshoot" href="#troubleshoot">#</a></h2>
 
 <p>You can troubleshoot Xdebug's attempts at initiating debugging connections
