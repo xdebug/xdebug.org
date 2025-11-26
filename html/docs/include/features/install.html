@@ -3,11 +3,18 @@ How you install Xdebug depends on your system. There are the following possibili
 <ul>
 	<li><a href='#linux'>Linux with a package manager</a> such
 	as <code>apt</code>, <code>yum</code>, or something else.</li>
+	<li><a href='#pie'>Linux without a package manager</a>, with PIE.</li>
+	<li><a href='#pie'>macOSX with homebrew</a>, through PIE.</li>
+	<li><a href='#pie'>Windows</a>, through PIE.</li>
+	<li><a href='#source'>Unix-like operating systems</a>, from source.</li>
+</ul>
+You can also install Xdebug with the following legacy installation methods:
+<ul>
 	<li><a href='#pecl'>Linux without an Xdebug package</a> with PECL.</li>
 	<li><a href='#pecl'>macOSX with homebrew</a>, through PECL.</li>
 	<li><a href='#windows'>Windows</a>, with help from a wizard.</li>
-	<li><a href='#source'>Unix-like operating systems</a>, from source.</li>
 </ul>
+</p>
 
 <h2>Installing on Linux <a name='linux' href="#linux">#</a></h2>
 
@@ -54,14 +61,78 @@ version with the one that matches the PHP version that you are running.</p>
 If the package manager
 installs a version that is no longer supported (see <a
 href='/docs/compat#supported-versions'>Supported Versions</a>), please install
-Xdebug with <a href='#pecl'>PECL</a>, or from <a href='#source'>source</a>
+Xdebug with <a href='#pie'>PIE</a>, or from <a href='#source'>source</a>
 instead.</p>
+
+<h2>Installing with PIE <a name='pie' href="#pie">#</a></h2>
+
+<p>
+<a href="https://www.php.net/manual/en/install.pie.intro.php">PIE</a> is an
+installer for PHP extensions on Linux, macOS, and Windows. It builds on top of
+the <a href="https://packagist.org/packages/xdebug/xdebug">Packagist</a>
+ecosystem, and the installer tool is modelled on <a
+href="https://getcomposer.org">Composer</a>.
+</p>
+
+<dl>
+<dt>Linux</dt>
+<dd>
+<p><a
+href="https://github.com/php/pie?tab=readme-ov-file#what-do-i-need-to-get-started">Install
+PIE</a>, but also the required packages for building PHP extensions from <a
+href="#source">source</a>.</p>
+</dd>
+
+<dt>macOS</dt>
+<dd><p>Install PIE via homebrew with <code>brew install pie</code>.</p>
+<p>This will also install the required packages for compiling and installing
+Xdebug from source.</p>
+</dd>
+
+<dt>Windows</dt>
+<dd><p>You only have to <a
+href="https://github.com/php/pie?tab=readme-ov-file#what-do-i-need-to-get-started">install
+PIE</a> because it will download the pre-built Xdebug extension DLLs.</p>
+</dd>
+</dl>
+
+<p>
+When PIE is available, you can install Xdebug with:
+</p>
+
+<pre>
+pie install xdebug/xdebug
+</pre>
+
+<p>
+If you are running macOS, Linux, or any Unix-like operating system, then PIE
+will first download the source code of the extension. Then it will configure,
+compile, and install the extension into the right directory.
+</p>
+<p>
+On Windows, PIE will download the pre-built binaries from a GIT release.
+</p>
+<p>
+In either situation, PIE will also attempt to enable Xdebug by creating an INI
+file (such as <code>90-xdebug.ini</code>), or adding the correct line to
+<code>php.ini</code>.
+</p>
+<p>
+After PIE has installed Xdebug, you can <a href="#what-is-next">start using its
+features</a>.
+</p>
 
 
 <h2>Installing with PECL <a name='pecl' href="#pecl">#</a></h2>
 
+<p class="warning">
+The PECL installation tool and PECL web site are deprecated. PIE (PHP Installer
+for Extensions) is the replacement for PECL. You can find the instructions for
+<a href="#pie">installing Xdebug with PIE above</a>.
+</p>
+
 <p>
-You can install Xdebug through PECL on Linux &amp; macOS with <a href='https://formulae.brew.sh/formula/php'>Homebrew</a>.
+You can install Xdebug through PECL on Linux and on macOS with <a href='https://formulae.brew.sh/formula/php'>Homebrew</a> available.
 </p>
 <p>
 Prerequisites:
@@ -137,10 +208,18 @@ arch -x86_64 sudo pecl install xdebug
 <h2>Installing on Windows <a name='windows' href="#windows">#</a></h2>
 
 <p>
-There are a few precompiled modules for Windows, they are all for the non-debug
-version of PHP. You can get those at the <a href='/download'>download</a>
-page. Follow <a href='/wizard'>these instructions</a> to get Xdebug
-installed.
+The easiest way is to use <a
+href="https://github.com/php/pie?tab=readme-ov-file#-pie-php-installer-for-extensions">PIE</a>
+to install Xdebug on Windows. Please refer to <a href="#pie">the instructions
+above</a>.
+</p>
+
+<p>
+There are a few precompiled modules (DLLs) available for Windows as well, in
+case you want to do the installation by hand. These pre-built DLLs are for the
+non-debug version of PHP. You can get those at the <a
+href='/download'>download</a> page. Follow <a href='/wizard'>these
+instructions</a> to install Xdebug manually.
 </p>
 
 <h2>Installation From Source <a name='source' href="#source">#</a></h2>
@@ -301,7 +380,7 @@ process.</p>
 <h2>What's Next? <a name='what-is-next' href="#what-is-next">#</a></h2>
 
 <p>With Xdebug loaded, you can now enable individual features, such as
-[FEAT:step_debug], or [FEAT:profiler]. Information on what these featers are,
+[FEAT:step_debug], or [FEAT:profiler]. Information on what these features are,
 how they work, and how to configure them is available on each feature's
 documentation page:</p>
 
@@ -310,4 +389,5 @@ documentation page:</p>
 	<li>[FEAT:profiler] — Check your application for performance issues</li>
 	<li>[FEAT:trace] — Show every function call, assignment, and return value</li>
 	<li>[FEAT:code_coverage] — Analyse whether your tests cover your whole code base</li>
+	<li>[FEAT:flamegraphs] — Visualise performance bottlenecks</li>
 </ul>
