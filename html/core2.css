@@ -393,16 +393,22 @@ div.supported_languages span:not(:first-child)::before {
 	padding: 0;
 }
 
-.front_advertisement {
+.front_advertisement, .side_advertisement {
 	width: 100%;
 	float: left;
-	background: #FFFFFF url("https://xdebug.cloud/assets/images/gradient.svg") no-repeat fixed center;
+	background: #FFFFFF url("https://xdebug.cloud/assets/images/gradient.svg") no-repeat fixed top;
 	margin-bottom: 2em;
 	border-top: 1px solid #317E1E;
 	border-bottom: 1px solid #317E1E;
 }
 
-.front_advertisement img {
+.side_advertisement {
+	width: 50%;
+	float: right;
+	margin-left: 1em;
+}
+
+.front_advertisement img, .side_advertisement img {
 	width: 20%;
 	float: left;
 	margin: 1em;
@@ -412,6 +418,9 @@ div.supported_languages span:not(:first-child)::before {
     max-width: 95%;
 }
 
+.side_advertisement p {
+	margin: 1em;
+}
 
 .doc_section .content ul li {
 	list-style: none;
@@ -439,6 +448,12 @@ div.supported_languages span:not(:first-child)::before {
 
 	#support {
 		width: 80%
+	}
+
+	.side_advertisement {
+		float: none;
+		width: auto;
+		margin: 0;
 	}
 }
 

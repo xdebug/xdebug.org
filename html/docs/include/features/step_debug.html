@@ -7,9 +7,9 @@ with the open <a href="/docs/dbgp">DBGp</a> protocol.</p>
 <p>This protocol is supported by nearly every PHP IDE (including Visual Studio 
 Code and PhpStorm), and also by text-based editors. There is
 also a simple [FEAT:dbgpClient] available as part of the Xdebug project,
-but it is strongly recommended that you use an IDE for debugging. (An <a
-href="#clients">overview of third party clients</a> is available further down
-this page.)</p>
+but it is strongly recommended that you use an IDE for debugging.</p>
+<p>An <a href="#clients">overview of third party clients</a> is available
+further down this page.</p>
 
 <a name="starting"></a>
 <h2>Configuring Step Debugging <a name="configure" href="#configure">#</a></h2>
@@ -25,18 +25,31 @@ same host, this is all you need to configure on the PHP and Xdebug side.
 <small>(Skip to <a href='#activate_debugger'>Activating the Debugger</a> if
 that's the case.)</small> </p>
 
-<p>If PHP/Xdebug run on a different machine, virtual host, or in a Docker
-container, you need to tell Xdebug where to make the debugging connection
+<p>If PHP/Xdebug run on a different machine than your IDE, or in a Docker
+container, then you need to tell Xdebug where to make the debugging connection
 <b>to</b>, as it is Xdebug that initiates the communication to the IDE, and not
 the other way around.</p>
 
-<p>If PHP/Xdebug run on a different machine in the same sub-net, and you run
-your browser on the same host as your IDE, then you set the
+<p>If PHP/Xdebug run on a different machine than your IDE in the same sub-net,
+and you run your browser on the same host as your IDE, then you set the
 [CFG:discover_client_host] setting to <code>1</code>. Xdebug will then use the
 HTTP headers to find out the IP address of the host that initiated the
-debugging request, and use that IP address to connect to. This is a common
-way of set-up if you are sharing a development server among you and your team
-mates.</p>
+debugging request, and use that IP address to connect to. This set up is common
+among multiple developers working in the same office.</p>
+
+<div class="side_advertisement">
+	<img src="https://xdebug.cloud/assets/images/logo.svg" alt="Xdebug Cloud"/>
+	<p>
+		<a href="https://xdebug.cloud?utm_source=xdebug&amp;utm_campaign=docs">Xdebug Cloud</a> is a
+		Proxy-as-a-Service, which can help you with complexities with regards
+		to networking. A common use case is having multiple developers, who
+		share a common development server on private network, while working in
+		a remote location.
+	</p>
+	<p>
+		» <a href="https://xdebug.cloud?utm_source=xdebug&amp;utm_campaign=docs">Xdebug Cloud Website</a>
+	</p>
+</div>
 
 <p>In more complex set-ups you need to configure the host and port that Xdebug
 connects to yourself. With [CFG:client_host] you can select the IP or hostname
@@ -44,6 +57,12 @@ of the machine that runs your IDE, and with [CFG:client_port] the TCP port.
 Make sure that the host running PHP/Xdebug can connect to your IDE with the
 configured IP address and port, and that there is no firewall or other software
 blocking an incoming connection.</p>
+
+<p>If it is not possible for Xdebug to make a direct connection to the IDE due
+to networking or a firewall, then you can only use the <a
+href="https://xdebug.cloud?utm_source=xd-cfg">Xdebug Cloud</a> service. This
+acts like a relay between Xdebug and your IDE so that you can succesfully
+initiate a debug session.</p>
 
 <h2>Activating Step Debugging <a name="activate_debugger" href="#activate_debugger">#</a></h2>
 
