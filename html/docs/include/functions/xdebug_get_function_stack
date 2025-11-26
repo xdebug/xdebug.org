@@ -27,33 +27,41 @@ EXAMPLE:
 ?>
 
 RESULT:
-<b>array</b>
+<b>array</b> <i>(size=3)</i>
   0 <font color='#888a85'>=&gt;</font>
-    <b>array</b>
+    <b>array</b> <i>(size=6)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>2.648155248</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>530520</font>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'{main}'</font> <i>(length=6)</i>
-      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
       'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
       'params' <font color='#888a85'>=&gt;</font>
-        <b>array</b>
+        <b>array</b> <i>(size=0)</i>
           <i><font color='#888a85'>empty</font></i>
   1 <font color='#888a85'>=&gt;</font>
-    <b>array</b>
+    <b>array</b> <i>(size=8)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>2.648221973</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>530664</font>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_strings'</font> <i>(length=11)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
       'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
-      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
-      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>18</font>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>16</font>
       'params' <font color='#888a85'>=&gt;</font>
-        <b>array</b>
-          'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'array (0 =&gt; &apos;Derick&apos;)'</font> <i>(length=21)</i>
+        <b>array</b> <i>(size=1)</i>
+          'b' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'[0 =&gt; &#39;Derick&#39;]'</font> <i>(length=15)</i>
   2 <font color='#888a85'>=&gt;</font>
-    <b>array</b>
+    <b>array</b> <i>(size=8)</i>
+      'time' <font color='#888a85'>=&gt;</font> <small>float</small> <font color='#f57900'>2.648243513</font>
+      'memory' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>530664</font>
       'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'fix_string'</font> <i>(length=10)</i>
+      'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dynamic'</font> <i>(length=7)</i>
       'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'strings'</font> <i>(length=7)</i>
-      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/xdebug_get_function_stack.php'</font> <i>(length=63)</i>
-      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>12</font>
+      'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Standard input code'</font> <i>(length=19)</i>
+      'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>10</font>
       'params' <font color='#888a85'>=&gt;</font>
-        <b>array</b>
-          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&apos;Derick&apos;'</font> <i>(length=8)</i>
+        <b>array</b> <i>(size=1)</i>
+          'a' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&#39;Derick&#39;'</font> <i>(length=8)</i>
 
 TXT:
 Through the <code>$options</code> array you can tune what information is

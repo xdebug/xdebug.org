@@ -1,0 +1,130 @@
+<p>
+Those so-called "flame graphs" can be useful to find out bottlenecks in your
+code. Xdebug supports both "cost" flame graphs, indicating CPU run time, and
+"memory usage" flame graphs, which visualise memory usage. The latter are only
+an indication, as PHP's garbage collector can reduce memory at unpredictable
+points.
+</p>
+
+<p>
+In Xdebug, flame graphs are implemented as a special kind of [FEAT:trace].
+Therefore you must include <code>trace</code> in your [CFG:mode] setting
+or <code>XDEBUG_MODE</code> environment variable.
+</p>
+
+<p>
+You must also set the [CFG:trace_format] setting to <code>3</code> for cost
+flame graphs, or <code>4</code> for memory usage flame graphs.
+</p>
+
+<p>
+After flame graph data has been generated with Xdebug, a <a
+href="https://github.com/brendangregg/FlameGraph">separate tool</a> then
+converts this data into an SVG file to display and use.
+</p>
+
+<p>
+Although it is possible to do partial flame graphs by using [FUNC:xdebug_start_trace]
+and [FUNC:xdebug_stop_trace], but this is not advised. It is best to create a flame
+graph for the whole request by having it trigger when the request starts.
+</p>
+
+<h2>Configure for Flame Graph Generation <a name="Configure-for-Flame-Graph-Generation" href="#Configure-for-Flame-Graph-Generation">#</a></h2>
+<p>
+To make a flame graph, you first need to use Xdebug to generate data. The
+following settings are required:
+</p>
+<pre>
+xdebug.mode=trace      // or xdebug.mode=trace,develop
+xdebug.trace_format=3  // or xdebug.trace_format=4 for memory graphs
+</pre>
+<p>
+Because each PHP request will create flame graph data, it is also recommended
+to set [CFG:trace_output_name] to something that includes the full URL, such
+as:
+</p>
+<pre>
+xdebug.trace_output_name=xdebug-flame.%R
+</pre>
+<p>
+By default, flame graph data is written to the <code>/tmp</code> directory. You
+can change that by using the [CFG:output_dir] setting.
+</p>
+<p>
+Don't forget to restart the web server or PHP-FPM after you make changes to
+PHP's configuration files.
+</p>
+
+<h2>Generate Flame Graph Data <a name="Generate-Flame-Graph-Data" href="#Generate-Flame-Graph-Data">#</a></h2>
+<p>
+Like with [FEAT:step_debug] or [FEAT:trace], Xdebug needs to be triggered to generate flame graph data.
+</p>
+<p>
+There are several ways of doing that, depending on the situation:
+</p>
+
+<dl>
+<dt>Every Request</h3>
+<dd>
+Set [CFG:start_with_request] to <code>yes</code>; this will result in a flame
+graph data file for every request.
+</dd>
+
+<dt>Command Line Scripts</dt>
+<dd>
+Set the <code>XDEBUG_TRACE</code> environment variable to any value, or the configured [CFG:trigger_value].
+</dd>
+
+<dt>Web Requests</dt>
+<dd>
+<p>
+Install one of the browser extensions listed in the
+[FEAT:step_debug#browser-extensions] section, and then activate trace file
+generation by selecting the "Trace" option from its menu:
+</p>
+<p>
+<img src="/images/browser-ext.png" alt=""/>
+</p>
+</dd>
+</dl>
+
+<h2>Create Flame Graph from Data <a name="Create-Flame-Graph-from-Data" href="#Create-Flame-Graph-from-Data">#</a></h2>
+
+<p>
+First, clone the FlameGraph GIT repository:
+</p>
+<pre>
+cd ~/dev
+git clone https://github.com/brendangregg/FlameGraph brendangreeg-FlameGraph
+</pre>
+<p>
+Then convert the file that Xdebug generated, adjusting paths where necesary:
+</p>
+<pre>
+zcat /tmp/xdebug-flame._docs_flamegraphs.xt.gz \
+        | ~/dev/brendangreeg-FlameGraph/flamegraph.pl \
+        &gt; /tmp/flame-docs.svg
+</pre>
+<p class="note">
+If [CFG:use_compression] is set to <code>off</code>, or compression support has
+not been enabled in Xdebug, then the file will <em>not</em> have the
+<code>.gz</code> extension, and you should use <code>cat</code> instead of
+<code>zcat</code> in the command above.
+</p>
+
+<h2>Display the Flame Graph</h2>
+<p>
+You can now open the generated <code>SVG</code> file in your browser, and
+something like this will display:
+</p>
+<iframe src="/images/flame-docs.svg.gz" width="984" height="326"></iframe>
+<p>
+The SVG is interactive. You can hover over a segment to see the full function
+name and the "length" of the segment. You can also select an element to zoom
+into that part of the graph, or search for function names.
+</p>
+<p>
+The <code>flamegraph.pl</code> script has several <a
+href="https://github.com/brendangregg/FlameGraph?tab=readme-ov-file#options">configuration
+options</a> to tweak the appearance of the graph.
+</p>

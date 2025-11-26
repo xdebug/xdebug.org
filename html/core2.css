@@ -760,6 +760,10 @@ pre.shell {
 div.youtubeWrapper { position: relative; padding-bottom: 56.25%; height: 0; }
 div.youtubeWrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+iframe {
+	border: 0;
+}
+
 table.versions { width: 100%; border: 1px solid black; border-collapse: collapse; }
 table.versions thead th { text-align: center; }
 table.versions thead tr.xdebugversion th { background-color: #ff7f7f; }

@@ -1,6 +1,7 @@
-<p>A [FEAT:trace], [FEAT:garbage_collection], [FEAT:profiler], or [FEAT:step_debug]
-can be activated at the start of a PHP request. Whether this happens depends on
-the value of this setting:</p>
+<p>[FEAT:step_debug], a [FEAT:trace], [FEAT:flamegraphs],
+[FEAT:garbage_collection], or [FEAT:profiler] can be
+activated at the start of a PHP request. Whether this happens depends on the
+value of this setting:</p>
 
 <dl>
 
@@ -39,7 +40,7 @@ for its presence in either <code>$_ENV</code> (environment variable),
 
 <p>There is a legacy fallback to a functionality specific trigger name:
 <code>XDEBUG_PROFILE</code> (for [FEAT:profiler]), <code>XDEBUG_TRACE</code>
-(for a [FEAT:trace]), and <code>XDEBUG_SESSION</code> (for
+(for a [FEAT:trace] or [FEAT:flamegraphs]), and <code>XDEBUG_SESSION</code> (for
 [FEAT:step_debug]).</p>
 
 <p>There is another legacy trigger for [FEAT:step_debug] only. If you set the

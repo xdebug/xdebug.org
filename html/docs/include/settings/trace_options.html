@@ -2,20 +2,24 @@
 This settings accepts a bitfield to enable options:
 </p>
 <dl>
-<dt>1</dt>
+<dt>0x01</dt>
 <dd>Trace file data will be appended to an already existing file with the same name, instead of it being overwritten.</dd>
-<dt>2</dt>
+<dt>0x02</dt>
 <dd>Switches the file format to a tab separated format. The format is described in the [CFG:trace_format] setting as "format 1".</dd>
-<dt>4</dt>
+<dt>0x04</dt>
 <dd>Switches to a file format that shows data as an HTML table</dd>
-<dt>8</dt>
+<dt>0x08</dt>
 <dd>With this bit set, <code>.xt</code> is not added automatically to the end
 of trace file names.</dd>
+<dt>0x10</dt>
+<dd>Switches to a file format that provides information for "cost" flamegraphs.</dd>
+<dt>0x20</dt>
+<dd>Switches to a file format that provides information for "memory usage" flamegraphs.</dd>
 </dl>
 <p>
 To combine multiple flags, you can use bitwise-OR (<code>|</code>).
 </p>
 <p>
-<code>xdebug.trace_options=2|8</code> enables both the tab separated format,
+<code>xdebug.trace_options=0x02|0x08</code> enables both the tab separated format,
 and stops the addition of <code>.xt</code> to the end of the file name.
 </p>

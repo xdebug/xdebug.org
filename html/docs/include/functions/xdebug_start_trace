@@ -2,7 +2,7 @@
 Starts a new function trace
 ?string
 ?string $traceFile = null, int $options = 0
-FUNC_FUNCTION_TRACE
+FUNC_FUNCTION_TRACE|FUNC_FLAMEGRAPH
 
 TXT:
 Start tracing function calls from this point to the file in the
@@ -28,18 +28,27 @@ The <i>options</i> parameter is a bitfield;
 currently there are four options:
 
 <dl>
-<dt>XDEBUG_TRACE_APPEND (1)</dt>
+<dt>XDEBUG_TRACE_APPEND (0x01)</dt>
 <dd>Trace file data will be appended to an already existing file with the same
 name, instead of it being overwritten.</dd>
-<dt>XDEBUG_TRACE_COMPUTERIZED (2)</dt>
+<dt>XDEBUG_TRACE_COMPUTERIZED (0x02)</dt>
 <dd>Switches the file format to the tab separated format. The format is described in
 the [CFG:trace_format] setting as "format 1".</dd>
-<dt>XDEBUG_TRACE_HTML (4)</dt>
-<dd>Switches to a file format that shows data as an HTML table</dd>
-<dt>XDEBUG_TRACE_NAKED_FILENAME (8)</dt>
+<dt>XDEBUG_TRACE_HTML (0x04)</dt>
+<dd>Switches to a file format that shows data as an HTML table.</dd>
+<dt>XDEBUG_TRACE_NAKED_FILENAME (0x08)</dt>
 <dd>With the <i>XDEBUG_TRACE_NAKED_FILENAME</i> flag set, <code>.xt</code> is
 not added automatically to the end of trace file names.</dd>
+<dt>XDEBUG_TRACE_FLAMEGRAPH_COST (0x10)</dt>
+<dd>Switches to a file format that contains data to create a flame graph visualing CPU time.</dd>
+<dt>XDEBUG_TRACE_FLAMEGRAPH_MEM (0x20)</dt>
+<dd>Switches to a file format that contains data to create a flame graph visualing memory usage.</dd>
 </dl>
+
+TXT:
+The <code>XDEBUG_TRACE_FLAMEGRAPH_COST</code> and
+<code>XDEBUG_TRACE_FLAMEGRAPH_MEM</code> flags are used to create flame graph
+data. [FEAT:flamegraphs] are described separately.
 
 EXAMPLE:
 <?php

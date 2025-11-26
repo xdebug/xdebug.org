@@ -23,7 +23,7 @@ try {
 		$pages = [
 			'install', 'develop', 'trace',
 			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
-			'garbage_collection', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
+			'garbage_collection', 'flamegraphs', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
 		$redirectDocPages = [
@@ -118,6 +118,10 @@ try {
 		header('Content-Type: image/jpeg');
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('@/(.*svg)$@', (string) $requested_uri, $matches)) {
+		header('Content-Type: image/svg+xml');
+		die(file_get_contents($matches[1]));
+	} elseif (preg_match('@/(.*svg.gz)$@', (string) $requested_uri, $matches)) {
+		header('Content-Encoding: gzip');
 		header('Content-Type: image/svg+xml');
 		die(file_get_contents($matches[1]));
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', (string) $requested_uri, $matches)) {

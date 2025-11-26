@@ -57,6 +57,12 @@ class FunctionsController
 
 			$arguments = trim( $contents[3] );
 
+			$typeMask = 0;
+			$typeConstants = explode( '|', trim( $contents[4] ) );
+			foreach ($typeConstants as $typeConstant) {
+				$typeMask |= constant($typeConstant);
+			}
+
 			$functions[] = new FunctionDescription(
 				$function,
 				DocsController::add_links(trim( $contents[1] )),
@@ -64,7 +70,7 @@ class FunctionsController
 				$version,
 				trim( $contents[2] ),
 				$arguments && $arguments !== 'none' ? $arguments : null,
-				constant( trim( $contents[4] ) )
+				$typeMask,
 			);
 		}
 

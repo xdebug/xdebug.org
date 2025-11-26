@@ -2,7 +2,7 @@
 Returns the name of the function trace file
 mixed
 none
-FUNC_FUNCTION_TRACE
+FUNC_FUNCTION_TRACE|FUNC_FLAMEGRAPH
 
 TXT:
 Returns the name of the file which is used to trace the output of this

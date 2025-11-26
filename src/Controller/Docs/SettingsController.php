@@ -87,27 +87,27 @@ class SettingsController
 
 		'trace_format' => [
 			'integer', 0, null,
-			\FUNC_FUNCTION_TRACE
+			\FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH,
 		],
 
 		'trace_options' => [
 			'integer', 0, null,
-			\FUNC_FUNCTION_TRACE
+			\FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH,
 		],
 
 		'output_dir' => [
 			'string', '/tmp', null,
-			\FUNC_FUNCTION_TRACE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION
+			\FUNC_FUNCTION_TRACE | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FLAMEGRAPH,
 		],
 
 		'trace_output_name' => [
 			'string', 'trace.%c', null,
-			\FUNC_FUNCTION_TRACE
+			\FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH,
 		],
 
 		'start_with_request' => [
 			'string', 'default', null,
-			\FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE
+			\FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_GARBAGE_COLLECTION | \FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH,
 		],
 
 		'start_upon_error' => [
@@ -117,7 +117,7 @@ class SettingsController
 
 		'trigger_value' => [
 			'string', '""', null,
-			\FUNC_BASIC | \FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE
+			\FUNC_BASIC | \FUNC_STEP_DEBUG | \FUNC_PROFILER | \FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH,
 		],
 
 		'idekey' => [
@@ -217,7 +217,7 @@ class SettingsController
 
 		'use_compression' => [
 			'boolean', 'true', '>= 3.1',
-			\FUNC_PROFILER | \FUNC_FUNCTION_TRACE
+			\FUNC_PROFILER | \FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH
 		],
 	];
 

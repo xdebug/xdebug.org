@@ -36,6 +36,12 @@ class DocsController
 			return values to a file in different formats.',
 			[ 'tabfields' => [ 'collectparams', 'othersettings' ] ]
 		],
+		'flamegraphs' => [
+			'Flame Graphs',
+			\FUNC_FLAMEGRAPH,
+			'Flame graphs are a special type of trace file that can be used to
+			visualise performance metrics.',
+		],
 		'code_coverage' => [
 			'Code Coverage Analysis',
 			\FUNC_CODE_COVERAGE,
