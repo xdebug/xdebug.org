@@ -13,7 +13,7 @@ how to install Xdebug.</p>
 <h2>Source</h2>
 
 <p>Xdebug is hosted in GIT. The source code can be browsed through <a
-href='https://github.com/xdebug/xdebug'>github</a> and can be checked out with:
+href='https://github.com/xdebug/xdebug'>GitHub</a> and can be checked out with:
 </p>
 <pre>
 git clone https://github.com/xdebug/xdebug.git
@@ -91,7 +91,7 @@ implementation with Xdebug. It can show raw protocol information.
 </p>
 <p>
 This binary may be used free of charge, but as-is and without warranty. Source
-code will be available in the future.
+code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/dbgpClient'>GitHub</a>.
 </p>
 
 <div class="front_releases">
@@ -117,7 +117,7 @@ provides a superior alternative.
 </p>
 <p>
 This binary may be used free of charge, but as-is and without warranty. Source
-code will be available in the future.
+code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/dbgpProxy'>GitHub</a>.
 </p>
 
 <div class="front_releases">
