@@ -98,6 +98,12 @@ class DocsController
 			"Xdebug's step debugger allows you to interactively walk through your code to
 debug control flow and examine data structures.",
 		],
+		'xdebugctl' => [
+			'Xdebug Control',
+			0,
+			'A command line tool to instruct Xdebug\'s step debugger to connect
+			to the IDE or pause execution.',
+		],
 		'dbgpClient' => [
 			'Command Line Debug Client',
 			0,

@@ -81,30 +81,32 @@ git clone https://github.com/xdebug/xdebug.git
 
 <?php endif ?>
 
-<a name='debugclient'></a>
-<a name='dbgpClient'></a>
-<h2>Command Line Debug Client</h2>
+<!-------------------------- -->
+
+<a name='xdebugctl'></a>
+<h2>Xdebug Control Tool</h2>
 
 <p>
-A lightweight debugging client, mainly used for debugging the DBGp
-implementation with Xdebug. It can show raw protocol information.
+A tool to send commands to interact with Xdebug while a script is running. This
+allows you to request process information, or instruct Xdebug to initiate a
+debugging request, or breakpoint.
 </p>
 <p>
 This binary may be used free of charge, but as-is and without warranty. Source
-code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/dbgpClient'>GitHub</a>.
+code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/xdebugctl'>GitHub</a>.
 </p>
 
 <div class="front_releases">
 	<ul class="releases">
-		<li><a title="Linux" href="/files/binaries/dbgpClient">Linux (x86_64)</a></title>
-		<li><a title="Linux-ARM" href="/files/binaries/dbgpClient-arm64">Linux (arm64)</a></title>
-		<li><a title="macOS" href="/files/binaries/dbgpClient-macos">macOS (x86_64)</a></title>
-		<li><a title="macOS-ARM" href="/files/binaries/dbgpClient-macos-arm64">macOS (arm64)</a></title>
-		<li><a title="Windows" href="/files/binaries/dbgpClient.exe">Windows (x86_64)</a></title>
+		<li><a title="Linux" href="/files/binaries/xdebugctl">Linux (x86_64)</a></title>
+		<li><a title="Linux-ARM" href="/files/binaries/xdebugctl-arm64">Linux (arm64)</a></title>
+		<li><a title="Windows" href="/files/binaries/xdebugctl.exe">Windows (x86_64)</a></title>
 	</ul>
 </div>
-<p>Please refer to the <a href="/docs/dbgpClient">documentation</a> to learn
-about how to use the debug client.</p>
+<p>Please refer to the <a href="/docs/xdebugctl">documentation</a> to learn
+about how to use the Xdebug Control Tool.</p>
+
+<!-------------------------- -->
 
 <a name='dbgpProxy'></a>
 <h2>DBGp Proxy</h2>
@@ -132,6 +134,35 @@ code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/
 </div>
 <p>Please refer to the <a href="/docs/dbgpProxy">documentation</a> to learn
 about how to use the DBGp proxy tool.</p>
+
+<!-------------------------- -->
+
+<a name='debugclient'></a>
+<a name='dbgpClient'></a>
+<h2>Command Line Debug Client</h2>
+
+<p>
+A lightweight debugging client, mainly used for debugging the DBGp
+implementation with Xdebug. It can show raw protocol information.
+</p>
+<p>
+This binary may be used free of charge, but as-is and without warranty. Source
+code is available on <a href='https://github.com/derickr/dbgp-tools/tree/master/dbgpClient'>GitHub</a>.
+</p>
+
+<div class="front_releases">
+	<ul class="releases">
+		<li><a title="Linux" href="/files/binaries/dbgpClient">Linux (x86_64)</a></title>
+		<li><a title="Linux-ARM" href="/files/binaries/dbgpClient-arm64">Linux (arm64)</a></title>
+		<li><a title="macOS" href="/files/binaries/dbgpClient-macos">macOS (x86_64)</a></title>
+		<li><a title="macOS-ARM" href="/files/binaries/dbgpClient-macos-arm64">macOS (arm64)</a></title>
+		<li><a title="Windows" href="/files/binaries/dbgpClient.exe">Windows (x86_64)</a></title>
+	</ul>
+</div>
+<p>Please refer to the <a href="/docs/dbgpClient">documentation</a> to learn
+about how to use the debug client.</p>
+
+<!-------------------------- -->
 
 <a name='historical'></a>
 <h2>Historical Releases</h2>
