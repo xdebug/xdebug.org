@@ -60,16 +60,27 @@ TXT:
 
 TXT:
 The function returns an array of all the compile flags that were enabled when
-running <code>./configure</code> as part of Xdebug's compilation process.
+running <code>./configure</code> as part of Xdebug's compilation process, and
+all the system-specific detected features that effect Xdebug's behaviour.
 
 TXT:
-The only flag that is available, is the <code>compression</code> flag. If this
-flag is enabled, then the [CFG:use_compression] setting is available, and enabled by default.
+If the <code>compression</code> flag is enabled, then the [CFG:use_compression]
+setting is available, and enabled by default.
 
 TXT:
 [FEAT:profiler] and [FEAT:trace] will create GZip compressed files if the
 [CFG:use_compression] setting is turned on (the default).
 
+TXT:
+If the <code>control-socket</code> and <code>tsc</code> elements are present,
+then Xdebug can be controlled with the [FEAT:xdebugctl] tool, as long as
+[CFG:control_socket] is not set to <code>"off"</code>.
+
+TXT:
+If the <code>control-socket</code> flag is present, but the <code>tsc</code>
+flag is <em>not</em> present, then you must set [CFG:control_socket] to
+<code>"time"</code> deliberately for [FEAT:xdebugctl] to be able to interact
+with Xdebug.
 
 EXAMPLE:
 <?php
@@ -80,5 +91,9 @@ RESULT:
 <pre><b>array</b>(<font color="#00AA00">1</font>) {
   [0] =&gt;
   <b>string</b>(<font color="#00AA00">11</font>) &quot;<font color="#AA0000">compression</font>&quot;
+  [1] =&gt;
+  <b>string</b>(<font color="#00AA00">14</font>) &quot;<font color="#AA0000">control-socket</font>&quot;
+  [2] =&gt;
+  <b>string</b>(<font color="#00AA00">3</font>) &quot;<font color="#AA0000">tsc</font>&quot;
 }
 </pre>

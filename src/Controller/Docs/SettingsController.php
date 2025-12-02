@@ -219,6 +219,11 @@ class SettingsController
 			'boolean', 'true', '>= 3.1',
 			\FUNC_PROFILER | \FUNC_FUNCTION_TRACE | \FUNC_FLAMEGRAPH
 		],
+
+		'control_socket' => [
+			'string', '"default"', '>= 3.3',
+			\FUNC_STEP_DEBUG
+		],
 	];
 
 	public static function single(Setting $setting) : HtmlResponse

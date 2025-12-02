@@ -123,26 +123,34 @@ p a, ul a {
 	font-weight: bold;
 }
 
-p.note {
+p.note, div.note {
 	border-left: #317e1e 3px solid;
 	padding-left: 0.5em;
 	background-color: #d5f3cd;
 }
 
-p.note::before {
+p.note::before, div.node p:first-child::before {
 	content: "Note: ";
 	font-weight: bold;
 }
 
-p.warning {
+div.note {
+	max-width: 600px;
+}
+
+p.warning, div.warning {
 	border-left: #cc0000 3px solid;
 	padding-left: 0.5em;
 	background-color: #fec1c1;
 }
 
-p.warning::before {
+p.warning::before, div.warning p:first-child::before {
 	content: "Warning: ";
 	font-weight: bold;
+}
+
+div.warning {
+	max-width: 600px;
 }
 
 a:hover {
