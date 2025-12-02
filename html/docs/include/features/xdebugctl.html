@@ -1,0 +1,101 @@
+<h2>Installation <a name='download' href="#download">#</a></h2>
+
+<p>
+A binary for Linux and Windows is available on the <a href='/download#xdebugctl'>downloads</a> page.
+You only have to download the binary, which you can then run from a command line.
+</p>
+
+<h2>Command Line Options <a name='cmdline' href="#cmdline">#</a></h2>
+
+<p>The following command line options are available:</p>
+
+<table class="options">
+<tr><td><code>-h      </code></td>
+    <td>Show this help</td></tr>
+
+<tr><td><code>-p&nbsp;value</code>&nbsp;</td>
+	 <td>Specify the PID (Process ID) of the PHP script to operate on. This is
+		 needed when there are multiple PHP scripts running at the same time.
+		 </td></tr>
+
+<tr><td><code>-v      </code></td>
+    <td>Show version number and exit</td></tr>
+
+<tr><td><code>-x      </code></td>
+    <td>Show protocol XML. With this option enabled, the client will also show
+        the raw XML data that the Xdebug sends back. This can be
+		useful for debugging issues with the interaction between Xdebug, and
+		this tool.</td></tr>
+</table>
+
+<h2>Usage <a name='usage' href="#usage">#</a></h2>
+
+<h3>Listing Processes <a name='list-processes' href='#list-processes'>#</a></h3>
+
+<p>To list all PHP scripts that have the control socket available, run:</p>
+
+<pre>
+./xdebugctl ps
+</pre>
+
+<p>This should output a list with all running PHP scripts:</p>
+
+<pre class="shell"><font color="#AAAAAA">       PID      RSS     TIME </font><font color="#FFFFFF">COMMAND</font>
+<font color="#AAAAAA">   1414004     1193 23596.36 </font><font color="#FFFFFF">/home/derick/dev/derickr-mqtt-fun/test.php</font> (Xdebug3.5.0alpha3)
+<font color="#AAAAAA">   2638744      510    10.51 </font><font color="#FFFFFF">/tmp/show-time.php</font> (Xdebug3.5.0alpha4-dev)
+</pre>
+
+<p>
+For each running script, it shows the Process ID (PID), the current memory
+usage (RSS), how long the script has been running for (TIME), the script's file
+name (COMMAND), and the Xdebug version.
+</p>
+
+<p>
+If a PHP script does not respond to the command within 100ms, then the tool will show a warning:
+</p>
+
+<pre class="shell"><font color="#AAAAAA">       PID      RSS     TIME </font><font color="#FFFFFF">COMMAND</font>
+<font color="#AAAAAA">    263942 </font><font color="#FF5555">Error</font>: No response on: @xdebug-ctrl.263942
+</pre>
+
+<h3>Pausing Running Scripts <a name='pause-scripts' href='#pause-scripts'>#</a></h3>
+
+<p>With the <code>pause</code> command you can ask Xdebug's step debugger to
+make a debug connection to a listening IDE, or if a connection is already
+active, to force a breakpoint.</p>
+
+<pre>
+./xdebugctl pause
+</pre>
+
+<p class="warning">Xdebug's step debugger <em>must</em> be enabled through the
+<a href='/docs/all_settings#mode'>xdebug.mode</a> setting for this command to
+have any effect.</p>
+
+<p>
+If the running script is not yet connected to an IDE, this produces:
+</p>
+<pre class="shell"><font color="#AAAAAA">   2677578 </font><font color="#FFFF55">IDE Connection Signalled</font>
+</pre>
+
+<p>
+If the running script is connected to an IDE, but not in a "breakpoint" state,
+then the command forces a breakpoint, and displays:
+</p>
+<pre class="shell"><font color="#AAAAAA">   2677578 </font><font color="#FFFF55">Breakpoint Signalled</font>
+</pre>
+
+<p>
+If there is more than one PHP script running, and you don't specify its PID,
+then you will get the following error (followed by the help text):
+</p>
+<pre class="shell"><font color="#FF5555">Error</font>: You must specify a PID with -p as there is more than one script
+</pre>
+<p>
+In this case, you <em>must</em> use the <code>-p</code> flag with the Process
+ID so that the tool can distinguish the different running scripts:
+</p>
+<pre>
+./xdebugctl -p 2677578 pause
+</pre>

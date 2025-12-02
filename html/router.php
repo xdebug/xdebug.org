@@ -24,6 +24,7 @@ try {
 			'install', 'develop', 'trace',
 			'profiler', 'step_debug', 'code_coverage', 'compat', 'errors', 'faq', 'dbgpClient', 'dbgp',
 			'garbage_collection', 'flamegraphs', 'contributing', 'dbgpClient', 'dbgpProxy', 'upgrade_guide',
+			'xdebugctl',
 		];
 		$redirectDevelopPages = [ 'basic', 'display', 'stack_trace' ];
 		$redirectDocPages = [
