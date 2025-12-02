@@ -1,25 +1,38 @@
 <?php
 /**
- * @psalm-scope-this XdebugDotOrg\Model\DocsSections
+ * @psalm-scope-this XdebugDotOrg\Model\DocsCategories
  */
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Documentation');
 ?>
 
 <h1>Xdebug 3 — Documentation</h1>
 
-<ul class="doc_list">
-	<?php foreach ($this->sections as $section) : ?>
-		<li><a href='<?= $section->href ?>'><?= $section->title ?></a></li>
-	<?php endforeach ?>
-
-	<li><a href='/docs/all_settings'>All Configuration Settings</a></li>
-	<li><a href='/docs/all_functions'>All Functions</a></li>
-	<li><a href='/docs/all_related_content'>All Related Content</a></li>
-</ul>
-
-<?php if (idate('Y') <= 2021) : ?>
-	<p style="font-size: small">
-		Xdebug 2 documentation is available as an
-		<a href='https://2.xdebug.org/docs/'>archived website</a> until Dec 31st, 2021.
-	</p>
-<?php endif ?>
+<?php foreach ($this->categories as $category) : ?>
+	<h2><?= $category->title ?></h2>
+	<?php if (in_array($category->title, ['Installation', 'Features', 'Compatibility'])) : ?>
+	<div class="doc_overview_category" id="cat_<?= strtolower($category->title); ?>">
+		<?php foreach ($category->sections as $section) : ?>
+			<?php if ($section->href == '/docs/garbage_collection') { continue; } ?>
+			<div class="doc_overview_section">
+				<div class="doc_overview_section_icon">
+					<a href='<?= $section->href ?>'>
+						<?php if (in_array($category->title, ['Features', 'Compatibility'])) : ?>
+						<img id="doc-<?= $section->href; ?>" src="/images<?= $section->href ?>.png" alt="<?= $section->title ?>">
+						<?php else : ?>
+						<img id="doc-<?= $section->href; ?>" src="/images<?= $section->href ?>.svg" alt="<?= $section->title ?>">
+						<?php endif; ?>
+					</a>
+				</div>
+				<div class="doc_overview_section_text"><?= $section->title; ?></div>
+			</div>
+		<?php endforeach ?>
+	</div>
+	<?php else: ?>
+	<dl>
+		<?php foreach ($category->sections as $section) : ?>
+		<dt><a href='<?= $section->href; ?>'><?= $section->title; ?></a></dt>
+		<dd><?= $section->description; ?></dd>
+		<?php endforeach ?>
+	</dl>
+	<?php endif; ?>
+<?php endforeach ?>

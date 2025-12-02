@@ -2,6 +2,8 @@
 namespace XdebugDotOrg\Controller;
 
 use XdebugDotOrg\Core\HtmlResponse;
+use XdebugDotOrg\Model\DocsCategory;
+use XdebugDotOrg\Model\DocsCategories;
 use XdebugDotOrg\Model\DocsSection;
 use XdebugDotOrg\Model\DocsSections;
 
@@ -10,6 +12,33 @@ class DocsController
 	private const LANGUAGE_NAMES = [
 		'en' => 'English',
 		'ja' => '日本語',
+	];
+
+	private const CATEGORIES = [
+		[
+			'title' => 'Installation',
+			'sections' => [ 'install', 'faq', 'errors' ],
+		],
+		[
+			'title' => 'Features',
+			'sections' => [ 'step_debug', 'profiler', 'develop', 'trace', 'code_coverage', 'flamegraphs', 'garbage_collection' ],
+		],
+		[
+			'title' => 'Tools',
+			'sections' => [ 'dbgpClient', 'dbgpProxy', 'xdebugctl' ],
+		],
+		[
+			'title' => 'Compatibility',
+			'sections' => [ 'compat', 'upgrade_guide' ],
+		],
+		[
+			'title' => 'Community',
+			'sections' => [ 'contributing', 'dbgp' ],
+		],
+		[
+			'title' => 'Reference',
+			'sections' => [ 'all_settings', 'all_functions', 'all_related_content' ],
+		],
 	];
 
 	private const SECTIONS = [
@@ -87,7 +116,7 @@ debug control flow and examine data structures.",
 		],
 		'upgrade_guide' => [
 			[
-				'en' => 'Upgrading from Xdebug 2 to 3',
+				'en' => 'Upgrading from Xdebug&nbsp;2&nbsp;to&nbsp;3',
 				'ja' => 'Xdebug 2 から 3 へのアップグレード',
 			],
 			0,
@@ -109,30 +138,53 @@ debug control flow and examine data structures.",
 		'contributing' => [
 			'Contributing',
 			0,
-			'',
+			'A guide on how to contribute bug fixes and new features.',
 		],
 		'dbgp' => [
 			'DBGP - A common debugger protocol specification',
 			0,
-			''
+			'Describes the protocol that Xdebug uses for communicating with IDEs.'
+		],
+		'all_settings' => [
+			'All Settings',
+			0,
+			'All configuration settings documented on one page in alphabetical order.'
+		],
+		'all_functions' => [
+			'All Functions',
+			0,
+			'All Xdebug\'s functions documented on one page in alphabetical order.'
+		],
+		'all_related_content' => [
+			'Related Content',
+			0,
+			'A list of all related content, such as videos that explain Xdebug and its features.'
 		],
 	];
 
 
 	public static function index() : HtmlResponse
 	{
-		$models = [];
+		$categories = [];
 
-		foreach (self::SECTIONS as $name => $section) {
-			$models[] = new DocsSection(
-				is_array($section[0]) ? $section[0]['en'] : $section[0],
-				is_array($section[2]) ? $section[2]['en'] : $section[2],
-				is_array($section[0]) ? array_keys($section[0]) : ['en'],
-				'/docs/' . $name
-			);
+		foreach (self::CATEGORIES as $category) {
+			$sections = [];
+
+			foreach ($category['sections'] as $sectionName) {
+				$section = self::SECTIONS[$sectionName];
+
+				$sections[] = new DocsSection(
+					is_array($section[0]) ? $section[0]['en'] : $section[0],
+					is_array($section[2]) ? $section[2]['en'] : $section[2],
+					is_array($section[0]) ? array_keys($section[0]) : ['en'],
+					'/docs/' . $sectionName
+				);
+			}
+
+			$categories[] = new DocsCategory($category['title'], $sections);
 		}
 
-		return new HtmlResponse(new DocsSections($models), 'docs/index.php');
+		return new HtmlResponse(new DocsCategories($categories), 'docs/index.php');
 	}
 
 	public static function section(string $section, ?string $language = null) : HtmlResponse

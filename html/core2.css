@@ -658,6 +658,56 @@ div.supported_languages span:not(:first-child)::before {
     background-color: #e5f5d5;
 }
 
+.doc_overview_category {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.doc_overview_section {
+	display: block;
+	width: 256px;
+	border: 1px solid #317E1E;
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.doc_overview_section:hover {
+	background-color: #d5f3cd;
+}
+
+#cat_installation .doc_overview_section:hover {
+	border: 1px solid #317E1E;
+	background-color: #d5f3cd;
+}
+
+#cat_installation .doc_overview_section {
+	border: 1px solid #dddddd;
+}
+
+#cat_installation .doc_overview_section_icon img {
+	height: 64px;
+}
+
+.doc_overview_section_icon {
+	text-align: center;
+}
+
+.doc_overview_section_icon img {
+	filter: grayscale(50%);
+}
+
+.doc_overview_section_icon img:hover {
+	filter: grayscale(0%);
+}
+
+.doc_overview_section_text {
+	margin-top: 0.5em;
+	text-align: center;
+	font-size: larger;
+}
+
 div.report {}
 
 div.projects div.progress { max-width: 600px; margin: 0 }
