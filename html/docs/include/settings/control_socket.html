@@ -1,0 +1,41 @@
+<p>Linux and Windows <em>only</em>.</p>
+
+<p>When set to <code>"default"</code> (the default value) or
+<code>"time"</code>, then Xdebug will poll an anonymous pipe (Linux) or Named
+Pipe (Windows) every 25 ms for a command.</p>
+
+<p>A command can currently be used to:
+<ul>
+	<li>request process information (time, memory usage, and entry file)</li>
+	<li>initiate a debugging session by (trying to) connect to the IDE</li>
+	<li>force a breakpoint</li>
+</ul>
+</p>
+
+<p>You should use the [FEAT:xdebugctl] tool to interact with this control
+socket.</p>
+
+<p>When this setting is set to <code>"off"</code>, then Xdebug will not create
+a control socket, and hence you can't send commands to it.</p>
+
+<div class="warning">
+<p>
+If your system (or container) does not have a reliable <em>TSC</em> clock, then
+<code>"default"</code> does <em>not enable</em> control sockets. You have to
+change this setting to <code>"time"</code> instead.<br/><br/>
+This is to prevent slowing down PHP by wasting time to check the current time
+through a slow clock interface.<br/><br/>
+If Xdebug detects that the TSC clock is not available, it will print a warning
+in the log file.<br/><br/>
+You can find out which clock source Xdebug has detected in [FUNC:xdebug_info]
+output.<br/><br/>
+</p>
+</div>
+
+<p class="note">
+You can programatically check whether control sockets are enabled for your PHP
+build by calling [FUNC:xdebug_info] with <code>extension-flags</code> as
+category. If control sockets are available, then <code>control-socket</code> is
+returned in the resulting array. If a TSC clock is available, then
+<code>tsc</code> is also present in the resulting array.
+</p>
