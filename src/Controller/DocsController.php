@@ -278,6 +278,12 @@ debug control flow and examine data structures.",
 			},
 			$text
 		);
+		$text = preg_replace_callback(
+			'/\[AD:([^\]]*?)\]/',
+			function (array $matches) {
+				return file_get_contents(__DIR__ . "/../../data/ads/{$matches[1]}.html");
+			}, $text
+		);
 		$text = self::add_keywords( $text );
 		return $text;
 	}
@@ -298,6 +304,7 @@ debug control flow and examine data structures.",
 			},
 			$text
 		);
+		$text = preg_replace( '/\[AD:([^\]]*?)\]/', '', $text );
 		$text = self::add_keywords( $text );
 		return $text;
 	}
