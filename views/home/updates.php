@@ -22,6 +22,32 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_5_0'></a>[2025-12-04] &mdash; Xdebug 3.5.0</dt>
+
+<dd><h3>New Features</h3></dd>
+
+<dd>Fixed <?= bug(2338); ?>: Add experimental support for Windows Named Pipes control socket</dd>
+<dd>Fixed <?= bug(2369); ?>: Implement &quot;Native Xdebug Path Mapping&quot; project</dd>
+<dd>Fixed <?= bug(2370); ?>: PHP 8.5 support</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(2213); ?>: Expose __EXCEPTION virtual variable for current EG(exception)</dd>
+<dd>Fixed <?= bug(2345); ?>: DBGP&#039;s detach does not support base64 encoded strings</dd>
+<dd>Fixed <?= bug(2363); ?>: Add better debugging support for PHP 8.5&#039;s pipes</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2335); ?>: Failed dbgp connection is not marked as not active</dd>
+<dd>Fixed <?= bug(2336); ?>: Optimise xdebug_init_oparray</dd>
+<dd>Fixed <?= bug(2337); ?>: Modify xdebug_add_stack_frame to always work on the passed execute_data</dd>
+<dd>Fixed <?= bug(2367); ?>: Debugger should not break on return out of include files when return value debugger is enabled</dd>
+<dd>Fixed <?= bug(2372); ?>: Build failed on MSVC</dd>
+<dd>Fixed <?= bug(2374); ?>: Breakpoints in mapped paths don&#039;t trigger as they&#039;re mapped back before matching</dd>
+<dd>Fixed <?= bug(2386); ?>: Crashes when running context_get in an exception thrown from an internal function</dd>
+
+<hr/>
+
 <dt><a name='x_3_5_0alpha3'></a>[2025-11-12] &mdash; Xdebug 3.5.0alpha3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
