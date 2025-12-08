@@ -1,9 +1,3 @@
-2021-10-15	Real Estate Learning Center	https://realestatelc.com
-2022-03-08	Supermetrics	https://supermetrics.com
-2023-04-19	Find My Electric	https://www.findmyelectric.com/
-2023-08-28	REWE Digital GmbH	https://rewe-digital.com
-2023-12-19	Syde	https://syde.com	syde.svg
-2024-08-01	Clever Age	https://www.clever-age.com/	cleverage.svg
 2025-01-01	PhpStorm	https://www.jetbrains.com/phpstorm/	PhpStorm.svg
 2025-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
 2025-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
@@ -19,3 +13,4 @@
 2025-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2025-10-01	Tideways	https://tideways.com/	tideways.svg
 2025-10-01	TYPO3 GmbH	https://typo3.com	typo3.svg
+2026-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
