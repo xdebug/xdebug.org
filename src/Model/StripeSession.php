@@ -4,7 +4,7 @@ namespace XdebugDotOrg\Model;
 
 use ezcMailAddress;
 use ezcMailComposer;
-use ezcMailMtaTransport;
+use ezcMailSmtpTransport;
 
 use MongoDB\BSON\UTCDateTime;
 use MongoDB\Driver\BulkWrite;
@@ -72,7 +72,7 @@ class StripeSession
 
 		$m->build();
 
-		$s = new ezcMailMtaTransport();
+		$s = new ezcMailSmtpTransport('localhost');
 		$s->send( $m );
 	}
 
@@ -87,7 +87,7 @@ class StripeSession
 
         $m->build();
 
-        $s = new ezcMailMtaTransport();
+		$s = new ezcMailSmtpTransport('localhost');
         $s->send( $m );
     }
 
