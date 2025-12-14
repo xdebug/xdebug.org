@@ -803,9 +803,9 @@ lists the changes in great detail, please read it.
 environments. It adds support for PHP 8.0, and drops support for PHP 7.1.</p>
 
 <p>Xdebug 3 has many changes. Please read the <a
-href="https://3.xdebug.org/docs/upgrade_guide">Upgrade Guide</a>.
+href="https://xdebug.org/docs/upgrade_guide">Upgrade Guide</a>.
 
-<p><a href="https://3.xdebug.org/docs">Xdebug 3 documentation</a> is available
+<p><a href="https://xdebug.org/docs">Xdebug 3 documentation</a> was available
 on a sub-domain.</p>
 </dd>
 
@@ -849,9 +849,9 @@ on a sub-domain.</p>
 environments. It adds support for PHP 8.0, and drops support for PHP 7.1.</p>
 
 <p>Xdebug 3 has many changes. Please read the <a
-href="https://3.xdebug.org/docs/upgrade_guide">Upgrade Guide</a>.
+href="https://xdebug.org/docs/upgrade_guide">Upgrade Guide</a>.
 
-<p><a href="https://3.xdebug.org/docs">Xdebug 3 documentation</a> is available
+<p><a href="https://xdebug.org/docs">Xdebug 3 documentation</a> was available
 on a sub-domain.</p>
 </dd>
 
