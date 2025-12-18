@@ -59,5 +59,5 @@
 			</tr>
 			</table>
 		<?php endforeach ?>
-	<? endif ?>
-<? endif ?>
+	<?php endif ?>
+<?php endif ?>
