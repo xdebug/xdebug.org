@@ -107,23 +107,6 @@ well with Xdebug. So look for the related entry in php.ini, and comment it out.
 setting name, and not zend_extension_ts.</strong>
 </dd>
 
-<dt>Q: On Debian, I am seeing the following problem with the build of
-Xdebug.... any fixes?
-<pre>
-/usr/lib/libc_nonshared.a(stat.oS)(.text.__i686.get_pc_thunk.bx+0x0):
-In function `__i686.get_pc_thunk.bx':
-: multiple definition of `__i686.get_pc_thunk.bx'
-/usr/lib/gcc-lib/i486-linux/3.3.5/crtbeginS.o
-(.gnu.linkonce.t.__i686.get_pc_thunk.bx+0x0): first defined here
-collect2: ld returned 1 exit status
-make: *** [xdebug.la] Error 1 </pre>
-</dt>
-<dd>A: This is an issue with Debian itself, see for more information
-<a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a> 
-and <a href="http://www.xdebug.org/archives/xdebug-general/0825.html">here</a>.
-</dd>
-</dl>
-
 <h2>Precompiled Binaries</h2>
 <dl class="faq">
 <dt><a name="linux-not-found"></a>
