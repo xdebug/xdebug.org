@@ -2,57 +2,50 @@
 XdebugDotOrg\Controller\TemplateController::setTitle('Xdebug: Support');
 ?>
 
-<h1>Support Xdebug</h1>
+<div class="front_intro">
+	<h1>Support</h1>
 
-<p><a href="/log">Where does this money go?</a></p>
+	<p>
+	Xdebug is an Open Source project, and is developed on a voluntary basis, with
+	generous support of <a href="/#business_supporters">business-tier sponsors</a>,
+	patrons on <a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a>,
+	and sponsors on <a href='https://github.com/sponsors/derickr'>GitHub</a>.
+	</p>
 
-<div class="support_options">
+	<p>
+	If you think you have have found a problem with Xdebug, you must report bugs through our <a
+	href="https://bugs.xdebug.org">issue tracker</a>. Please read our <a
+	href="/reporting-bugs">guide</a> on how to report bugs effectively first.
+	</p>
 
-<div class="option">
-<h2>Community</h2>
-<h4>&nbsp;</h4>
-<h3>Choose amount on <a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a> or <a href='https://github.com/sponsors/derickr'>GitHub</a></h3>
+	<p>
+	The issue tracker is not a support forum, and any issues that are not
+	deemed to be a bug, will be closed.
+	</p>
+
+	<p>
+	Unless you have a commercial arrangement with us, all support must happen in an
+	<em>open accessible place</em>.
+	</p>
+
+	<p>
+	Without a <a href='/support-commercial'>commercial support agreement</a> in
+	place, Xdebug's developers will <em>not</em>:
+	<ul>
+		<li>provide private support via email</li>
+		<li>debug users' private projects, services, or servers</li>
+		<li>sign any contract or NDA</li>
+	</ul>
+	</p>
+</div>
+
+<div class="front_announcements">
+<h3>Quick Links</h3>
+
 <ul>
-	<li class="notick">Tech Support: <a href='https://stackoverflow.com/questions/tagged/xdebug'>Stackoverflow</a></li>
-	<li class="notick">Issue Priority: Low</li>
-	<li>Monthly News Post</li>
+	<li><a href="/reporting-bugs">Bug Reporting Guide</a></li>
+	<li><a href="https://bugs.xdebug.org">Report Issues</a></li>
+	<li><a href="/support-commercial">Commercial Support</a></li>
 </ul>
-<div class="contact"><span>Support Xdebug via<br/><a href='https://www.patreon.com/bePatron?u=7864328'>Patreon</a> or <a href='https://github.com/sponsors/derickr'>GitHub</a></span></div>
-</div>
 
-<div class="option">
-<h2>Pro</h2>
-<h4>1 developer</h4>
-<h3>£ 200/year *</h3>
-<ul>
-	<li>Tech Support: E-mail</li>
-	<li>Issue Priority: Medium</li>
-	<li>Access to Commercial Add-ons&nbsp;(soon)</li>
-	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
-	<li>Invoice †</li>
-</ul>
-<div class="contact"><a href='/support/buy/pro'>Sign Up</a></div>
-</div>
-
-<div class="option">
-<h2>Business</h2>
-<h4>2-20 developers</h4>
-<h3>£ 1000/year *</h3>
-<ul>
-	<li>Tech Support: E-mail</li>
-	<li>Issue Priority: High</li>
-	<li>An hour long presentation or workshop</li>
-	<li>Access to Commercial Add-ons&nbsp;(soon)</li>
-	<li>Monthly E-mail Newsletter&nbsp;(opt-in)</li>
-	<li>Invoice †</li>
-	<li>"Thank You" with link on site</li>
-</ul>
-<div class="contact"><a href='/support/buy/business'>Sign Up</a></div>
-</div>
-
-</div>
-
-<div class="terms">
-<p>* Subscriptions are yearly, and can be cancelled two weeks before renewal by e-mail. Price excluding VAT.</p>
-<p>† Invoices have a default 14 day payment term.</p>
 </div>

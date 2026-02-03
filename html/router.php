@@ -76,6 +76,8 @@ try {
 		$contents = XdebugDotOrg\Controller\HomeController::license($matches[1])->render();
 	} elseif ($requested_uri === '/support') {
 		$contents = XdebugDotOrg\Controller\SupportController::index()->render();
+	} elseif ($requested_uri === '/support-commercial') {
+		$contents = XdebugDotOrg\Controller\SupportController::commercial()->render();
 	} elseif ($requested_uri === '/funding') {
 		$contents = XdebugDotOrg\Controller\FundingController::index()->render();
 	} elseif (preg_match('@^/funding/(.*)/updates/(.*)@', (string) $requested_uri, $matches)) {

@@ -14,6 +14,11 @@ class SupportController
 		return new HtmlResponse(null, 'support/index.php');
 	}
 
+	public static function commercial() : HtmlResponse
+	{
+		return new HtmlResponse(null, 'support/commercial.php');
+	}
+
 	public static function reporting_bugs() : HtmlResponse
 	{
 		return new HtmlResponse(null, 'support/reporting_bugs.php');
