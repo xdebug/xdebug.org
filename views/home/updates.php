@@ -22,6 +22,16 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_5_1'></a>[2026-02-03] &mdash; Xdebug 3.5.1</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2391); ?>: Code Coverage times out on random tests</dd>
+<dd>Fixed <?= bug(2395); ?>: Severe performance degredation on Windows</dd>
+<dd>Fixed <?= bug(2397); ?>: Very slow with Xdebug 3.5.0</dd>
+
+<hr/>
+
 <dt><a name='x_3_5_0'></a>[2025-12-04] &mdash; Xdebug 3.5.0</dt>
 
 <dd><h3>New Features</h3></dd>
