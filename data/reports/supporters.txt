@@ -1,7 +1,4 @@
 2025-01-01	PhpStorm	https://www.jetbrains.com/phpstorm/	PhpStorm.svg
-2025-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
-2025-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
-2025-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
 2025-01-01	Ziff Davies	https://www.ziffdavis.com/	ziff-davies.svg
 2025-02-01	Bubble Shooter	https://www.bubbleshooter.net/
 2025-02-01	VEMA eG	https://www.vema-eg.de	vema.svg
@@ -13,4 +10,6 @@
 2025-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2025-10-01	Tideways	https://tideways.com/	tideways.svg
 2025-10-01	TYPO3 GmbH	https://typo3.com	typo3.svg
+2026-01-01	Xdebug Cloud	https://xdebug.cloud	xdebug-cloud.svg
 2026-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
+2026-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
