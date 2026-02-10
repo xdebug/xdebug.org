@@ -1,0 +1,70 @@
+February: Native Path Mappping in the Wild
+<p>
+Fabian Potencier, from Symfony fame, has created an exploratory <a
+href="https://github.com/twigphp/Twig/pull/4733">patch</a> for Twig to make use
+of Xdebug's new <a href="https://xdebug.org/funding/001-native-path-mapping"
+rel="nofollow">Native Path Mapping functionality</a>.
+</p>
+<p>
+From the initial patch, it became clear that a few things need to be improved
+on the Xdebug side for this to be a complete feature. For that reason, I have
+created a few issues to work on:
+</p>
+<dl>
+<dt><a href="https://bugs.xdebug.org/2398">Invent better way of configuring lots of line-to-line mappings</a></dt>
+<dd>
+<p>
+Right now, each line mapping needs to have a special line, resulting in mapping file that look like:
+</p>
+<pre>
+user-info-823edfe12e38a649355c5172b9d98e0a.php:2-31 = user-info.ezt:1
+user-info-823edfe12e38a649355c5172b9d98e0a.php:32-33 = user-info.ezt:2
+user-info-823edfe12e38a649355c5172b9d98e0a.php:34-36 = user-info.ezt:3
+user-info-823edfe12e38a649355c5172b9d98e0a.php:37 = user-info.ezt:4
+user-info-823edfe12e38a649355c5172b9d98e0a.php:38 = user-info.ezt:5
+user-info-823edfe12e38a649355c5172b9d98e0a.php:39-40 = user-info.ezt:6
+user-info-823edfe12e38a649355c5172b9d98e0a.php:41-46 = user-info.ezt:7
+…
+user-info-823edfe12e38a649355c5172b9d98e0a.php:301-302 = user-info.ezt:73
+user-info-823edfe12e38a649355c5172b9d98e0a.php:303 = user-info.ezt:74-75
+user-info-823edfe12e38a649355c5172b9d98e0a.php:304-306 = user-info.ezt:76
+</pre>
+<p>
+This is really ineffecient, so I will be looking at a way to collapse these all in one line.
+</p>
+</dd>
+
+<dt><a href="https://bugs.xdebug.org/2399">Create <code>xdebug_add_source_map_directory()</code> function</a></dt>
+<dd>
+<p>
+Right now, Xdebug will check for path mapping files only in some parent
+<code>.xdebug/</code> directories. As Twig, and likely other tools, would want
+to generate their own files into their own cache directory, it is needed that
+tools can specify these extra directories.
+</p>
+</dd>
+
+<dt><a href="https://bugs.xdebug.org/2400">Add EOF marker/stanza to native path file mapper</a></dt>
+<dd>
+<p>
+The Twig mapping generator is using <code>999999</code> to denote the end of a
+line range, to mean "end of file". It would be better that Xdebug implements a
+specific keyword (think <code>EOF</code>) for this instead so that now
+arbitrary numbers have to be used.
+</p>
+</dd>
+</dl>
+<p>
+I am hoping to work on these features in the next few months to land in Xdebug 3.6, which I am planning to release in the middle of this year.
+</p>
+
+<p>
+Additionally, my <a
+href="https://youtrack.jetbrains.com/issue/WI-81344/Cant-Set-Breakpoints-in-Template-Files-Even-Though-I-Added-The-File-Name-Pattern-to-PHP">PhpStorm issue</a>
+to allow for the setting of breakpoints in
+template file has now been merged, and is scheduled for 2026.1 EAP 2. At the
+time of writing this isn't quite out yet, so I will keep you posted.
+</p>
+
+
+
