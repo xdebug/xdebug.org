@@ -2,8 +2,10 @@
 namespace XdebugDotOrg\Controller;
 
 use XdebugDotOrg\Core\HtmlResponse;
+use XdebugDotOrg\Core\JsonResponse;
 use XdebugDotOrg\Model\CiMatrix;
 use XdebugDotOrg\Model\CiRun;
+use XdebugDotOrg\Model\CiSummary;
 
 class CiController
 {
@@ -14,6 +16,38 @@ class CiController
 		}
 
 		return self::matrix();
+	}
+
+	public static function summary() : JsonResponse
+	{
+		$m = new \MongoDB\Driver\Manager( "mongodb+srv://ci-reader:{$_ENV['CIREADPASSWORD']}@xdebugci-qftmo.mongodb.net/test?retryWrites=true" );
+
+		$query = new \MongoDB\Driver\Command( [
+			'aggregate' => 'run',
+			'pipeline' => [
+				[ '$group' => [ '_id' => '$run', 'docs' => [ '$push' => '$$ROOT' ] ] ],
+				[ '$sort' => [ '_id' => -1 ] ],
+				[ '$limit' => 1 ],
+				[ '$unwind' => '$docs' ],
+				[ '$project' => [
+					'_id' => 0,
+					'version' => '$docs.cfg.version',
+					'zts' => '$docs.cfg.zts',
+					'buildSuccess' => '$docs.buildSuccess',
+					'testFailure' => [ '$or' => [ '$docs.stats.errors' ,'$docs.stats.failures' ] ]
+				] ],
+				[ '$sort' => [ 'version' => -1, 'zts' => -1 ] ],
+			],
+			'cursor' => (object) [],
+		] );
+
+		$summary = [];
+		foreach ( $m->executeCommand( 'ci', $query ) as $result )
+		{
+			$summary[] = $result;
+		}
+
+		return new JsonResponse(new CiSummary($summary));
 	}
 
 	private static function fixFileNames( object $results ) : object

@@ -127,6 +127,9 @@ try {
 		header('Content-Encoding: gzip');
 		header('Content-Type: image/svg+xml');
 		die(file_get_contents($matches[1]));
+	} elseif (preg_match('/^\/ci.json/', (string) $requested_uri, $matches)) {
+		XdebugDotOrg\Controller\CiController::summary()->render();
+		die();
 	} elseif (preg_match('/^\/ci(\?r=.*)?/', (string) $requested_uri, $matches)) {
 		$contents = XdebugDotOrg\Controller\CiController::index()->render();
 	} else {
