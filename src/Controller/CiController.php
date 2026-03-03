@@ -27,16 +27,17 @@ class CiController
 			'pipeline' => [
 				[ '$group' => [ '_id' => '$run', 'docs' => [ '$push' => '$$ROOT' ] ] ],
 				[ '$sort' => [ '_id' => -1 ] ],
-				[ '$limit' => 1 ],
+				[ '$limit' => 2 ],
 				[ '$unwind' => '$docs' ],
 				[ '$project' => [
 					'_id' => 0,
 					'version' => '$docs.cfg.version',
 					'zts' => '$docs.cfg.zts',
+					'opcache' => '$docs.cfg.opcache',
 					'buildSuccess' => '$docs.buildSuccess',
 					'testFailure' => [ '$or' => [ '$docs.stats.errors' ,'$docs.stats.failures' ] ]
 				] ],
-				[ '$sort' => [ 'version' => -1, 'zts' => -1 ] ],
+				[ '$sort' => [ 'opcache' => 1, 'version' => -1, 'zts' => -1 ] ],
 			],
 			'cursor' => (object) [],
 		] );
