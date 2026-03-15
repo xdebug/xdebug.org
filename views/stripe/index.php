@@ -34,7 +34,7 @@ use XdebugDotOrg\Model\Country;
 	Company Country:
 	<select name='country'>
 		<?php foreach( Country::cases() as $country ): ?>
-			<option <?php if ($country == Country::GB): ?>selected<? endif ?> value='<?= $country->name; ?>'><?= $country->value; ?></option>
+			<option <?php if ($country == Country::GB): ?>selected<?php endif ?> value='<?= $country->name; ?>'><?= $country->value; ?></option>
 		<?php endforeach ?>
 	</select>
 </p>
