@@ -12,4 +12,4 @@
 2026-01-01	Seiden Group	http://www.seidengroup.com	seidengroup.svg
 2026-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
 2026-02-01	VEMA eG	https://www.vema-eg.de	vema.svg
-2026-04-01	weCreate	https://www.wecreate.com/manufacturing-marketing/	weCreate.svg
+2026-04-01	weCreate	https://www.wecreate.com/insights	weCreate.svg
