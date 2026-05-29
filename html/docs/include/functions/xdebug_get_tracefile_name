@@ -1,6 +1,6 @@
 = xdebug_get_tracefile_name
 Returns the name of the function trace file
-mixed
+?string
 none
 FUNC_FUNCTION_TRACE|FUNC_FLAMEGRAPH
 
