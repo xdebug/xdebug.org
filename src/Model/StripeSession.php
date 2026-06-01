@@ -6,16 +6,13 @@ use ezcMailAddress;
 use ezcMailComposer;
 use ezcMailSmtpTransport;
 
-use MongoDB\BSON\UTCDateTime;
-use MongoDB\Driver\BulkWrite;
-use MongoDB\Driver\Manager;
 use Stripe\StripeClient;
 
 class StripeSession
 {
-	const ns = 'xdebug.stripe';
+	const table = 'stripe';
 
-	public function __construct( private StripeClient $client, private Manager $mongodb, public object $data )
+	public function __construct( private StripeClient $client, private \Pdo\Sqlite $sqlite, public object $data )
 	{
 
 	}
@@ -31,13 +28,15 @@ class StripeSession
 
 		if ( $paid )
 		{
-			if ( !isset( $this->data->paid_at ) )
+			$this->data->paid_at = new \DateTimeImmutable();
+			try
 			{
-				$this->data->paid_at = new UTCDateTime();
+				$this->sendSignupEmail( $this->data );
 			}
-			$this->data->stripe->payment_status = 'paid';
-
-			$this->sendSignupEmail( $this->data );
+			catch ( \ezcMailTransportException $e )
+			{
+				echo $e->getMessage(), "\n";
+			}
 			return true;
 		}
 
@@ -46,19 +45,8 @@ class StripeSession
 
 	public function updateAsSuccess()
 	{
-		if ( !isset( $this->data->paid_at ) )
-		{
-			$bw = new BulkWrite();
-			$bw->update(
-				['_id' => $this->data->_id],
-				['$set' => [
-					'paid_at' => new UTCDateTime(),
-					'stripe.payment_status' => 'paid'
-				]]
-			);
-
-			$res = $this->mongodb->executeBulkWrite(self::ns, $bw);
-		}
+		$stmt = $this->sqlite->prepare( 'UPDATE ' . self::table . ' SET paidAt = ? WHERE id = ?' );
+		$stmt->execute( [ $this->data->paid_at->getTimestamp(), $this->data->_id ] );
 	}
 
 	private function sendSignupEmail( $data )
@@ -93,6 +81,13 @@ class StripeSession
 
     public function updateAsFailure()
     {
-        $this->sendPaymentCancelled( $this->data );
+		try
+		{
+			$this->sendPaymentCancelled( $this->data );
+		}
+		catch ( \ezcMailTransportException $e )
+		{
+			echo $e->getMessage(), "\n";
+		}
     }
 }

@@ -1,7 +1,6 @@
 <?php
 namespace XdebugDotOrg;
 
-use MongoDB\Driver\Query;
 use XdebugDotOrg\Model\Country;
 use XdebugDotOrg\Model\FundingProjectsList;
 use XdebugDotOrg\Model\StripeSession;
@@ -13,18 +12,15 @@ use ReflectionException;
 
 use Stripe\Checkout\Session;
 use Stripe\StripeClient;
-use MongoDB\Driver\BulkWrite;
-use MongoDB\Driver\Manager;
-use MongoDB\BSON\UTCDateTime;
 
 class StripeHandler
 {
-	const ns = 'xdebug.stripe';
+	const table = 'stripe';
 
 	private SubscriptionData $subscriptionData;
 	private ?string $url = NULL;
 
-	public function __construct(private StripeClient $client, private Manager $mongodb, private bool $testMode = true)
+	public function __construct(private StripeClient $client, private \Pdo\Sqlite $sqlite, private bool $testMode = true)
 	{
 	}
 
@@ -199,7 +195,7 @@ class StripeHandler
 		$subscriberInformation = [
 			'_id' => $session->metadata->sub,
 			'test' => $GLOBALS['STRIPE_TEST'] ? true : false,
-			'created' => new UTCDateTime($session->created * 1000),
+			'created' => time(),
 			'stripe' => [
 				'id' => $session->id,
 				'amount_subtotal' => $session->amount_subtotal,
@@ -219,37 +215,29 @@ class StripeHandler
 			'line_items' => $lineItems,
 		];
 
-		$bw = new BulkWrite;
-		$bw->insert($subscriberInformation);
-
-		$res = $this->mongodb->executeBulkWrite(self::ns, $bw);
+		$stmt = $this->sqlite->prepare( 'INSERT INTO ' . self::table. ' (id, content) VALUES (?, ?)' );
+		$stmt->execute( [ $session->metadata->sub, json_encode( $subscriberInformation ) ] );
 	}
 
-	private function fetchOne( \MongoDB\Driver\Query $q ) : ?\stdClass
+	private function fetchOne( string $id ) : ?\stdClass
 	{
-		$res = [];
-		$qRes = $this->mongodb->executeQuery( self::ns, $q );
+		$stmt = $this->sqlite->prepare( 'SELECT * FROM ' . self::table . ' WHERE id = ?' );
+		$stmt->execute( [ $id ] );
+		$res = $stmt->fetchAll();
 
-		foreach ( $qRes as $r )
-		{
-			$res[] = $r;
-		}
-
-		return count( $res ) > 0 ? $res[0] : null;
+		return json_decode( $res[0]['content'] );
 	}
 
 	public function getSession( string $guid ): ?StripeSession
 	{
-		$filter = [ '_id' => $guid ];
-		$q = new Query( $filter );
-		$data = $this->fetchOne( $q );
+		$data = $this->fetchOne( $guid );
 
 		if ( $data === null )
 		{
 			return null;
 		}
 
-		return new StripeSession( $this->client, $this->mongodb, $data );
+		return new StripeSession( $this->client, $this->sqlite, $data );
 	}
 }
 ?>

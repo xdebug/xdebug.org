@@ -15,8 +15,9 @@ if ( $SK === false || $SK === '' )
 
 $stripeClient = new \Stripe\StripeClient( $SK );
 
-/* MongoDB Link */
-$mongoDB = new \MongoDB\Driver\Manager( 'mongodb://localhost:27017/' );
+/* Sqlite Link */
+$sqlitePath = __DIR__ . '/cache/stripe.sqlite';
+$sqlite = PDO::connect( "sqlite:{$sqlitePath}" );
 
 /* Protocol */
 $protocol = 'https';
