@@ -19,6 +19,15 @@ $stripeClient = new \Stripe\StripeClient( $SK );
 $sqlitePath = __DIR__ . '/cache/stripe.sqlite';
 $sqlite = PDO::connect( "sqlite:{$sqlitePath}" );
 
+/* SMTP Service */
+$SMTP_SERVER   = getenv( 'SMTP_SERVER' );
+$SMTP_USERNAME = getenv( 'SMTP_USERNAME' );
+$SMTP_PASSWORD = getenv( 'SMTP_PASSWORD' );
+
+$o = new ezcMailSmtpTransportOptions();
+$o->connectionType = ezcMailSmtpTransport::CONNECTION_TLS;
+$smtpServer = new ezcMailSmtpTransport( $GLOBALS['SMTP_SERVER'], $GLOBALS['SMTP_USERNAME'], $GLOBALS['SMTP_PASSWORD'], null, $o );
+
 /* Protocol */
 $protocol = 'https';
 

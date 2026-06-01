@@ -60,24 +60,24 @@ class StripeSession
 
 		$m->build();
 
-		$s = new ezcMailSmtpTransport('localhost');
+		$s = $GLOBALS['smtpServer'];
 		$s->send( $m );
 	}
 
-    private function sendPaymentCancelled( $data )
-    {
-        $m = new ezcMailComposer;
-        $m->from = new ezcMailAddress( 'support@xdebug.org', 'Xdebug Support Subscription Form' );
-        $m->addTo( new ezcMailAddress( 'support@xdebug.org', 'Xdebug Support', 'utf-8' ) );
-        $m->subject = 'Xdebug Subscription Payment CANCELLED';
+	private function sendPaymentCancelled( $data )
+	{
+		$m = new ezcMailComposer;
+		$m->from = new ezcMailAddress( 'support@xdebug.org', 'Xdebug Support Subscription Form' );
+		$m->addTo( new ezcMailAddress( 'support@xdebug.org', 'Xdebug Support', 'utf-8' ) );
+		$m->subject = 'Xdebug Subscription Payment CANCELLED';
 
-        $m->plainText = json_encode( $data, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_INVALID_UTF8_IGNORE );
+		$m->plainText = json_encode( $data, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT | JSON_INVALID_UTF8_IGNORE );
 
-        $m->build();
+		$m->build();
 
-		$s = new ezcMailSmtpTransport('localhost');
-        $s->send( $m );
-    }
+		$s = $GLOBALS['smtpServer'];
+		$s->send( $m );
+	}
 
     public function updateAsFailure()
     {
