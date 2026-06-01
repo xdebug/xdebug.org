@@ -90,7 +90,7 @@ class FundingController
 				$name,
 				$logo,
 				$both,
-				(double) $amount,
+				(float) $amount,
 			);
 
 			$amountRaised += $amount;
