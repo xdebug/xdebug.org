@@ -2,8 +2,6 @@
 2025-01-01	Ziff Davies	https://www.ziffdavis.com/	ziff-davies.svg
 2025-02-01	Bubble Shooter	https://www.bubbleshooter.net/
 2025-03-01	CHECK24	https://jobs.check24.de/de/	check24.svg
-2025-06-01	11com7	https://www.11com7.de	11com7.svg
-2025-06-01	b13	https://b13.com	+b13.svg
 2025-06-01	uConnect	https://gouconnect.com	uconnect.svg
 2025-06-01	IO Belgium	https://www.iodigital.com	+io.svg
 2025-10-01	Tideways	https://tideways.com/	tideways.svg
@@ -13,3 +11,5 @@
 2026-01-01	Private Packagist	https://packagist.com/?utm_source=xdebug&utm_medium=homepage&utm_campaign=sponsorlogo	private-packagist.svg
 2026-02-01	VEMA eG	https://www.vema-eg.de	vema.svg
 2026-04-01	weCreate	https://www.wecreate.com/insights	weCreate.svg
+2026-06-01	11com7	https://www.11com7.de	11com7.svg
+2026-06-01	b13	https://b13.com	+b13.svg
