@@ -22,6 +22,26 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_5_3'></a>[2026-06-08] &mdash; Xdebug 3.5.3</dt>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2404); ?>: Xdebug outputs a message to stderr when path mapping is enabled, and a directory is present</dd>
+<dd>Fixed <?= bug(2405); ?>: Handle minimum path in .xdebug directory discovery</dd>
+<dd>Fixed <?= bug(2411); ?>: Native Path Mapping is not applied to the initial fileuri in the init packet</dd>
+<dd>Fixed <?= bug(2421); ?>: Crash with wrong option letter in DBGP and socket commands</dd>
+<dd>Fixed <?= bug(2422); ?>: No limit on DBGP read buffer</dd>
+<dd>Fixed <?= bug(2423); ?>: Don&#039;t follow symlinks with file creation</dd>
+<dd>Fixed <?= bug(2424); ?>: Control-socket buffer crashes</dd>
+<dd>Fixed <?= bug(2426); ?>: xdebug_get_tracefile_name incorrectly throws notice</dd>
+<dd>Fixed <?= bug(2427); ?>: Crash when file_link_format setting is wrong</dd>
+<dd>Fixed <?= bug(2429); ?>: Crash when trace_output_name setting is wrong</dd>
+<dd>Fixed <?= bug(2430); ?>: Variable fetching may crash with `::` if there is no active stack</dd>
+<dd>Fixed <?= bug(2431); ?>: Crash when trying to retrieve Windows-style URL with not enough characters</dd>
+<dd>Fixed <?= bug(2433); ?>: Refactor finding variable names in trace files with assignments</dd>
+
+<hr/>
+
 <dt><a name='x_3_5_1'></a>[2026-02-03] &mdash; Xdebug 3.5.1</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
