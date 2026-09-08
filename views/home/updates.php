@@ -22,6 +22,33 @@ function issue(int $nr) : string {
 
 <span class='quote'>
 <dl>
+<dt><a name='x_3_6_0alpha1'></a>[2026-09-08] &mdash; Xdebug 3.6.0alpha1</dt>
+
+<dd><h3>New features</h3></dd>
+
+<dd>Added support for PHP 8.6</dd>
+<dd>Fixed <?= bug(2398); ?>: Add EOF marker/stanza to native path file mapper</dd>
+
+<dd><h3>Improvements</h3></dd>
+
+<dd>Fixed <?= bug(1799); ?>: Inconsistent output of branch/path data when running under Opcache</dd>
+<dd>Fixed <?= bug(2267); ?>: Application slow when debugger is not listening on Windows</dd>
+<dd>Fixed <?= bug(2403); ?>: Reinit debugger for requests in FrankenPHP worker mode</dd>
+
+<dd><h3>Fixed bugs</h3></dd>
+
+<dd>Fixed <?= bug(2435); ?>: Xdebug does not handle &#039;muiltiple_sessions&#039; dbgp feature correctly</dd>
+<dd>Fixed <?= bug(2436); ?>: Potential crash when remembering on which lines breakpoints can be set</dd>
+<dd>Fixed <?= bug(2437); ?>: systemd private /tmp path reported is incorrect</dd>
+
+<dd><h3>Removed features</h3></dd>
+
+
+<dd>Drop support for PHP 8.0 and PHP 8.1</dd>
+<dd>Fixed <?= bug(2387); ?>: Remove INI entries for changed and removed Xdebug 2 settings</dd>
+
+<hr/>
+
 <dt><a name='x_3_5_3'></a>[2026-06-08] &mdash; Xdebug 3.5.3</dt>
 
 <dd><h3>Fixed bugs</h3></dd>
