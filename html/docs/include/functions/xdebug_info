@@ -1,7 +1,7 @@
 = xdebug_info
 Show and retrieve diagnostic information
 mixed
-string $category = null
+?string $category = null
 FUNC_ALL
 
 TXT:
