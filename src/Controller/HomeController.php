@@ -263,7 +263,7 @@ class HomeController
 			$supporters[] = [$link, $name, $logo, $both];
 		}
 
-		return $supporters;
+		return array_reverse($supporters);
 	}
 }
 ?>

@@ -14,7 +14,7 @@ class Supporters
 	public function __construct(
 		array $supporters
 	) {
-		$this->supporters = array_reverse($supporters);
+		$this->supporters = $supporters;
 	}
 }
 ?>
